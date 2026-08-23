@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700&display=swap');
+
+:root {
+  --font-display: "Baloo 2", "DM Sans", sans-serif;
+  --font-body: "Nunito", "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.unsealed{position:absolute;top:77px;right:5vw;color:#edff4c;background:#101027d9;border:1px solid #edff4c66;padding:9px 12px;font:10px "DM Mono";letter-spacing:.11em;z-index:3}.brand-rank{max-width:880px;margin:-14px 0 30px;border-left:2px solid #ff8dce;padding:9px 0 9px 16px}.brand-rank>span{font:10px "DM Mono";letter-spacing:.12em;color:#ff8dce}.brand-rank p{margin:10px 0 0;font:600 14px "DM Sans"}.brand-rank b{font:10px "DM Mono";color:#edff4c;margin-right:12px}.brand-rank i{font:400 12px "DM Sans";color:#bcb8d1;margin-left:11px}

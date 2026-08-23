@@ -1,0 +1,28 @@
+.stage {
+  height: 100dvh;
+  width: 100vw;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.vnLayer {
+  width: 100%;
+  padding: 0 28px calc(4vh + 8px);
+  padding-top: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 28vh;
+  max-height: 32vh;
+}
+
+@media (max-width: 720px) {
+  .vnLayer {
+    padding: 0 12px 3vh;
+    min-height: 34vh;
+    max-height: 40vh;
+  }
+}
