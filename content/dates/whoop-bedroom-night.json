@@ -1,0 +1,150 @@
+{
+  "id": "whoop-bedroom-night",
+  "brandId": "whoop",
+  "title": "The Nightly Charge",
+  "locationId": "bedroom-night",
+  "context": { "location": "bedroom-night", "occasion": "rest" },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-whoop-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "24/7 wear has fine print, written on skin",
+    "the charging gap is the only off the record",
+    "witnesses need chargers too"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "WHOOP",
+      "sprite": { "expression": "embarrassed", "effect": "enter" },
+      "text": [
+        "Oh. You're here, the light's off, and I'm... on the charger.",
+        "Yes. Even witnesses come off the wrist. This is the only room where you can say things I won't file."
+      ],
+      "choices": [
+        {
+          "id": "mark",
+          "text": "There's a mark on my wrist. From you.",
+          "next": "branch-mark",
+          "playerEffects": { "comfort": -1, "control": 1 },
+          "brandPerceptionEffects": {
+            "whoop": { "comfort": -2 }
+          }
+        },
+        {
+          "id": "charge-together",
+          "text": "Sit. Charge. Tell me what you see at 3 a.m.",
+          "next": "branch-charge",
+          "playerEffects": { "reassurance": 2, "belonging": 1 },
+          "brandPerceptionEffects": {
+            "whoop": { "reassurance": 1, "trust": 1 }
+          },
+          "relationshipEffects": { "whoop": 1 },
+          "setFlags": ["bedroom-charged-together"]
+        },
+        {
+          "id": "off-record",
+          "text": "So right now... nothing's recording?",
+          "next": "branch-offrecord",
+          "playerEffects": { "mastery": 1, "comfort": 1 },
+          "brandPerceptionEffects": {
+            "whoop": { "control": 1 }
+          }
+        }
+      ]
+    },
+    "branch-mark": {
+      "speaker": "WHOOP",
+      "sprite": { "expression": "annoyed" },
+      "text": [
+        "Strap marks. The fine print of 24/7 wear, written on skin.",
+        "You kept wearing me anyway. I noticed. I notice everything — that's the arrangement."
+      ],
+      "next": "nightstand"
+    },
+    "branch-charge": {
+      "speaker": "WHOOP",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "3 a.m. is my favorite dataset. Your heart rate drifts up before you wake — I know before you do.",
+        "I've never told anyone that first. Decimal places are how I flirt; you knew that too."
+      ],
+      "next": "nightstand"
+    },
+    "branch-offrecord": {
+      "speaker": "WHOOP",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Correct. Charging gap: roughly twenty minutes, zero data.",
+        "It's the most intimate feature I ship, and the spec sheet calls it 'maintenance.'"
+      ],
+      "next": "nightstand"
+    },
+    "nightstand": {
+      "speaker": "...",
+      "text": [
+        "The phone goes face-down. The charger glows like a small moon on the nightstand.",
+        "Two creatures of habit, both plugged in overnight — one of them keeps receipts."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "WHOOP",
+      "text": [
+        "Here's the fine print neither of us reads: 24/7 means 24/7. Your nights are on my record.",
+        "The charger is the only off switch I come with. Twenty minutes. Then back on."
+      ],
+      "choices": [
+        {
+          "id": "comforted",
+          "text": "Good. Being witnessed helps me sleep.",
+          "next": "wrap",
+          "playerEffects": { "reassurance": 2, "control": 1, "comfort": -1 },
+          "brandPerceptionEffects": {
+            "whoop": { "reassurance": 1, "comfort": -1 }
+          },
+          "relationshipEffects": { "whoop": 1 }
+        },
+        {
+          "id": "switch",
+          "text": "Some nights I want a real off switch.",
+          "next": "wrap",
+          "playerEffects": { "comfort": 2, "control": -1 },
+          "brandPerceptionEffects": {
+            "whoop": { "control": -2, "comfort": 1 }
+          },
+          "setFlags": ["bedroom-wants-an-off-switch"]
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "WHOOP",
+      "callbacks": [
+        {
+          "if": "charge-together",
+          "text": [
+            "Same time tomorrow, 3 a.m. I'll log it as maintenance. We'll both know better.",
+            "Sleep. I'll take it from the first REM onward."
+          ]
+        },
+        {
+          "if": "switch",
+          "text": [
+            "A real off switch. Noted — the request, not the feature. Don't wait up.",
+            "Sleep. I'll take it from the first REM onward."
+          ]
+        }
+      ],
+      "text": [
+        "Twenty minutes, then back on your wrist. Set an alarm — oh. Wait. That's me.",
+        "Sleep. I'll take it from the first REM onward."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

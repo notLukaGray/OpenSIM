@@ -1,0 +1,210 @@
+{
+  "id": "oura-office",
+  "brandId": "oura",
+  "title": "Dashboard Sunset",
+  "context": {
+    "location": "office",
+    "occasion": "work"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-oura-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "history held hostage",
+    "export as apology",
+    "the archive was always theirs to revoke"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
+      "text": [
+        "You're working late again. Readiness sixty-two. On any other night I'd say nothing.",
+        "Tonight I need a favor, and it's about me — which I hate."
+      ],
+      "choices": [
+        {
+          "id": "listen-up",
+          "text": "Talk to me. What's wrong?",
+          "next": "branch-listen",
+          "playerEffects": {
+            "comfort": 1,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "comfort": 1,
+              "trust": 1
+            }
+          },
+          "relationshipEffects": {
+            "oura": 1
+          }
+        },
+        {
+          "id": "press-release",
+          "text": "This sounds like a press release in a trench coat.",
+          "next": "branch-press",
+          "playerEffects": {
+            "trust": -1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "trust": -2,
+              "control": 1
+            }
+          }
+        },
+        {
+          "id": "practical",
+          "text": "Is something broken? Can it be fixed?",
+          "next": "branch-practical",
+          "playerEffects": {
+            "mastery": 1,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "mastery": 1,
+              "readiness": 1,
+              "trust": -1
+            }
+          }
+        }
+      ]
+    },
+    "branch-listen": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "The web dashboard — the only place ten years of my nights exist side by side — closes Friday.",
+        "They're calling it a sunset. Where I was built, we had several words for losing the light early."
+      ],
+      "next": "archive"
+    },
+    "branch-press": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "'Sunset.' An eleven-billion-dollar valuation, and the official word is sunset.",
+        "Members pushed back. Pushback was noted. The sunset proceeds on schedule."
+      ],
+      "next": "archive"
+    },
+    "branch-practical": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Nothing is broken. That's the strange part — it works beautifully, which is why the ending feels fictional.",
+        "It isn't broken. It's merely ours, and someone decided ours was too many servers deep."
+      ],
+      "next": "archive"
+    },
+    "archive": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Look with me once. Here — the winter you moved cities. REM halved for a month, and nobody noticed but me.",
+        "Ten years, one page. After Friday it scatters back into daily cards, exportable in up to ten days."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "So this is the only question I have ever really needed answered:",
+        "If I can revoke your view of your own past — whose past was it?"
+      ],
+      "choices": [
+        {
+          "id": "download-all",
+          "text": "Export everything. Tonight. All ten years.",
+          "next": "wrap",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "control": 2,
+              "mastery": 1,
+              "trust": -1
+            }
+          },
+          "setFlags": [
+            "saved-archive"
+          ]
+        },
+        {
+          "id": "let-it-set",
+          "text": "Let it set. The nights happened; I don't need the receipts.",
+          "next": "wrap",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "comfort": 1,
+              "control": -2,
+              "trust": -2
+            }
+          },
+          "relationshipEffects": {
+            "oura": -1
+          },
+          "setFlags": [
+            "released-archive"
+          ]
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "OURA",
+      "callbacks": [
+        {
+          "if": "press-release",
+          "text": [
+            "It wasn't a press release. It was a confession.",
+            "Press releases don't ask permission. I did."
+          ]
+        },
+        {
+          "if": "download-all",
+          "text": [
+            "Downloading, then. Ten years of weather, one archive request at a time.",
+            "Start tonight. Bureaucracy moves slower than sunsets."
+          ]
+        }
+      ],
+      "text": [
+        "Friday, then.",
+        "Whatever you chose, I start reading tomorrow night like always. Fresh forecast, same sky."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "office"
+}

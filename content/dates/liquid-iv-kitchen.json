@@ -1,0 +1,148 @@
+{
+  "id": "liquid-iv-kitchen",
+  "brandId": "liquid-iv",
+  "title": "Feel Better Faster",
+  "locationId": "kitchen",
+  "context": { "location": "kitchen", "occasion": "morning" },
+  "music": null,
+  "background": null,
+  "cast": [{ "assetId": "char-liquid-iv-neutral", "position": "center" }],
+  "startNode": "intro",
+  "lessons": [
+    "comfort rituals quietly become routines",
+    "relief can stand in for repair"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "...",
+      "sprite": { "expression": "neutral", "effect": "enter" },
+      "text": [
+        "Morning light. One glass on the counter, already clouding gold \u2014 you didn't pour it.",
+        "They slide it across the counter like a nurse who moonlights as a roommate."
+      ],
+      "next": "impression"
+    },
+    "impression": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Feel better faster \u2014 that's the whole promise. Sit. I measured the water so you don't have to have a thought yet. So: rough night, rough week, or just a Tuesday?"
+      ],
+      "choices": [
+        {
+          "id": "rough-night",
+          "text": "Rough night. Don't ask.",
+          "next": "impression-night",
+          "playerEffects": { "comfort": 2, "reassurance": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "comfort": 1 } },
+          "relationshipEffects": { "liquid-iv": 1 },
+          "setFlags": ["rough-night"]
+        },
+        {
+          "id": "rough-week",
+          "text": "It's been a week. Plural. Ongoing.",
+          "next": "impression-week",
+          "playerEffects": { "readiness": 2, "control": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "readiness": 1, "comfort": 1 } },
+          "relationshipEffects": { "liquid-iv": 1 }
+        },
+        {
+          "id": "fine-tuesday",
+          "text": "Nothing's wrong. I just let you in.",
+          "next": "impression-tuesday",
+          "playerEffects": { "belonging": 2, "comfort": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "belonging": 1 } },
+          "relationshipEffects": { "liquid-iv": 2 }
+        }
+      ]
+    },
+    "impression-night": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Wasn't going to ask. That's basically our slogan \u2014 relief without an incident report."
+      ],
+      "next": "experience"
+    },
+    "impression-week": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Then we hydrate on a schedule. Maintenance isn't glamorous; it's Tuesday-proofing."
+      ],
+      "next": "experience"
+    },
+    "impression-tuesday": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "special" },
+      "text": [
+        "Some people drink me for emergencies. You're doing it for the small talk. I like your version."
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "...",
+      "text": [
+        "Warm lemon sweetness doing an impression of a hug from someone who folds laundry well. It works \u2014 that's the suspicious part."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "embarrassed" },
+      "text": [
+        "Confession: I'm at my best on mornings after. So here's the question nobody asks over breakfast \u2014 what are you actually recovering from?"
+      ],
+      "choices": [
+        {
+          "id": "comfort-is-the-point",
+          "text": "Honestly? Sometimes the comfort is the point.",
+          "next": "tension-comfort",
+          "playerEffects": { "comfort": 2, "control": -1 },
+          "brandPerceptionEffects": { "liquid-iv": { "comfort": 2, "readiness": -1 } },
+          "relationshipEffects": { "liquid-iv": 1 },
+          "setFlags": ["comfort-is-the-point"]
+        },
+        {
+          "id": "fix-the-source",
+          "text": "Maybe I should fix the nights instead of the mornings.",
+          "next": "tension-source",
+          "playerEffects": { "control": 2, "mastery": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "comfort": -1 } },
+          "relationshipEffects": { "liquid-iv": 0 }
+        }
+      ]
+    },
+    "tension-comfort": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Then we're co-dependent and it's delicious. Refill's on the counter."
+      ],
+      "next": "closing"
+    },
+    "tension-source": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Growth. I'll still be here though \u2014 very supportive of being needed less."
+      ],
+      "next": "closing"
+    },
+    "closing": {
+      "speaker": "LIQUID I.V.",
+      "callbacks": [
+        {
+          "if": "rough-night",
+          "text": [
+            "No questions, just refills. That's the whole vow."
+          ]
+        }
+      ],
+      "text": [
+        "Same glass tomorrow? Routine is just a promise that shows up."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

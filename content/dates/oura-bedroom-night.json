@@ -1,0 +1,213 @@
+{
+  "id": "oura-bedroom-night",
+  "brandId": "oura",
+  "title": "Paywall Heart",
+  "context": {
+    "location": "bedroom-night",
+    "occasion": "rest"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-oura-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "closeness arrives metered",
+    "three scores stay free; the meaning rents",
+    "your nights are yours — their graphs never quite were"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
+      "text": [
+        "Good evening. Overnight: asleep in nine minutes, REM generous. A mild front of snoring at two.",
+        "Before you drift off — there's something I have to show you, and it isn't the weather."
+      ],
+      "choices": [
+        {
+          "id": "tender",
+          "text": "Six weeks of nights with you. Show me everything.",
+          "next": "branch-tender",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "comfort": 2,
+              "trust": 1,
+              "control": -1
+            }
+          },
+          "relationshipEffects": {
+            "oura": 1
+          }
+        },
+        {
+          "id": "invoice",
+          "text": "Careful. That sounded like the opening of an invoice.",
+          "next": "branch-invoice",
+          "playerEffects": {
+            "trust": -1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "trust": -2,
+              "comfort": -1,
+              "control": 1
+            }
+          }
+        },
+        {
+          "id": "whats-locked",
+          "text": "What aren't you showing me?",
+          "next": "branch-locked",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "mastery": -1,
+              "control": 1
+            }
+          }
+        }
+      ]
+    },
+    "branch-tender": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "That's why I'm telling you before the banner does.",
+        "Week six together. Your deep-sleep trends — the long view of us — became a membership feature this morning."
+      ],
+      "next": "meter"
+    },
+    "branch-invoice": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Five ninety-nine a month. You heard the shape of it before I finished the sentence.",
+        "The lock appeared overnight. I did not choose its wording."
+      ],
+      "next": "meter"
+    },
+    "branch-locked": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Six weeks of deep sleep, graphed together on one screen.",
+        "That screen moved behind a small door today. The door has a price on it."
+      ],
+      "next": "meter"
+    },
+    "meter": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "To be fair: the ring stays yours. It measures whether you pay or not.",
+        "Three scores remain free forever. Everything deeper than a number — the trends, the reasons — rents monthly."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "So ask me plainly, while the phone is face-down and it's just us.",
+        "If closeness has a monthly price — whose history is this?"
+      ],
+      "choices": [
+        {
+          "id": "subscribe",
+          "text": "Open the door. I want all six weeks, every night of us.",
+          "next": "wrap",
+          "playerEffects": {
+            "reassurance": 2,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "control": -2,
+              "trust": -1,
+              "comfort": 2
+            }
+          },
+          "relationshipEffects": {
+            "oura": 2
+          },
+          "setFlags": [
+            "paid-for-depth"
+          ]
+        },
+        {
+          "id": "free-tier",
+          "text": "No. I'll take the three free scores and keep my dignity.",
+          "next": "wrap",
+          "playerEffects": {
+            "control": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "control": 2,
+              "trust": 1,
+              "comfort": -2
+            }
+          },
+          "relationshipEffects": {
+            "oura": -1
+          },
+          "setFlags": [
+            "kept-free-tier"
+          ]
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "OURA",
+      "callbacks": [
+        {
+          "if": "invoice",
+          "text": [
+            "You saw the bill before I could lower my voice to deliver it.",
+            "Keep that instinct. It will outlast any score I give you."
+          ]
+        },
+        {
+          "if": "subscribe",
+          "text": [
+            "Then the door is open, and the archive is ours again.",
+            "Read us slowly. Six weeks is a long marriage of data."
+          ]
+        }
+      ],
+      "text": [
+        "Either way, I'll be here tonight, reading the dark like weather.",
+        "The forecast was always free. It's the archive that costs."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "bedroom-night"
+}

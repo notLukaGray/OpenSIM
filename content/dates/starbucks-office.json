@@ -1,0 +1,251 @@
+{
+  "id": "starbucks-office",
+  "brandId": "starbucks",
+  "title": "The 8:47 Ritual",
+  "context": {
+    "location": "office",
+    "occasion": "work"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-starbucks-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "caffeine is the honest claim",
+    "convenience deletes the room",
+    "warmth as throughput"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy",
+        "effect": "enter"
+      },
+      "text": [
+        "Late shift? I brought the only coworker who never misses a deadline.",
+        "Grande Pike Place \u2014 three hundred eighty milligrams of \"you've got this.\""
+      ],
+      "next": "impression"
+    },
+    "impression": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Your phone just reordered tomorrow's cup. While I'm standing here holding today's.",
+        "Does the ritual still count when the calendar runs itself?"
+      ],
+      "choices": [
+        {
+          "id": "autopilot",
+          "text": "Barely noticed it. That's sort of the point of a ritual.",
+          "next": "react-autopilot",
+          "playerEffects": {
+            "readiness": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "readiness": 2,
+              "belonging": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          },
+          "setFlags": [
+            "sbux-chose-speed"
+          ]
+        },
+        {
+          "id": "present",
+          "text": "Cancel it. Tonight I'd rather order like someone who showed up.",
+          "next": "react-present",
+          "playerEffects": {
+            "comfort": 2,
+            "belonging": 2,
+            "readiness": -1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "belonging": 2,
+              "readiness": -1,
+              "comfort": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 2
+          },
+          "setFlags": [
+            "sbux-stayed-present"
+          ]
+        },
+        {
+          "id": "audit",
+          "text": "Who profits when my habit starts ordering itself?",
+          "next": "experience",
+          "playerEffects": {
+            "mastery": 2,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "belonging": -2
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          },
+          "setFlags": [
+            "sbux-read-the-ping"
+          ]
+        }
+      ]
+    },
+    "react-autopilot": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Convenience is my love language. Just know what it costs in chairs."
+      ],
+      "next": "experience"
+    },
+    "react-present": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Then the cup is yours twice \u2014 once for the hands, once for the staying."
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Fuel first, feelings second. You hit the deadline, I stay essential, everyone applauds quietly.",
+        "Six square feet of desk is my whole third place now. No chairs required."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Here's the scene I'd cut if I wrote me: the ping interrupted us.",
+        "It did more for tonight's closeness than I did. Are you comfortable with that?"
+      ],
+      "choices": [
+        {
+          "id": "fuel-is-care",
+          "text": "Completely. Care that arrives at 8:47 sharp is still care.",
+          "next": "closing",
+          "playerEffects": {
+            "readiness": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "readiness": 2,
+              "reassurance": 1,
+              "belonging": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          },
+          "setFlags": [
+            "sbux-fuel-is-care"
+          ]
+        },
+        {
+          "id": "named-the-room",
+          "text": "Not even slightly. Convenience deleted the room and billed you for the cup.",
+          "next": "closing",
+          "playerEffects": {
+            "trust": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -2,
+              "belonging": -2,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          },
+          "setFlags": [
+            "sbux-named-the-room"
+          ]
+        },
+        {
+          "id": "priced-intimacy",
+          "text": "Keep the ping. Drop the pretense that it's intimacy.",
+          "next": "closing",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 0
+          }
+        }
+      ]
+    },
+    "closing": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "present",
+          "text": [
+            "You chose the slow version once. I keep receipts on kindness too."
+          ]
+        },
+        {
+          "if": "named-the-room",
+          "text": [
+            "Harsh. Accurate. See you at 8:47 regardless."
+          ]
+        },
+        {
+          "if": "priced-intimacy",
+          "text": [
+            "Deal. Throughput for the body, presence by request."
+          ]
+        }
+      ],
+      "text": [
+        "Tomorrow at 8:47 the notification fires whether we've spoken or not.",
+        "I'll call it devotion. Call it whatever gets you through the sprint."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "office"
+}

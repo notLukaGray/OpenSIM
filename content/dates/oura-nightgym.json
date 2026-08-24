@@ -1,0 +1,208 @@
+{
+  "id": "oura-nightgym",
+  "brandId": "oura",
+  "title": "Readiness Brag",
+  "context": {
+    "location": "nightgym",
+    "occasion": "workout"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-oura-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "numbers as small talk",
+    "the score opens doors the mechanism can't explain",
+    "a forecast performed starts to feel like a fact"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
+      "text": [
+        "Quiet room tonight. Everyone here is comparing something — weight, reps, protein timing.",
+        "Enjoy your privacy. In about ninety seconds, someone will wander over and ask for your number."
+      ],
+      "choices": [
+        {
+          "id": "show-number",
+          "text": "I'd tell them. Seventy-one, and I worked for every point.",
+          "next": "branch-show",
+          "playerEffects": {
+            "belonging": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "belonging": 2,
+              "readiness": 2,
+              "excitement": -1
+            }
+          },
+          "relationshipEffects": {
+            "oura": 1
+          }
+        },
+        {
+          "id": "refuse-number",
+          "text": "I don't lead with decimals. Ask my name first.",
+          "next": "branch-refuse",
+          "playerEffects": {
+            "comfort": 1,
+            "selfExpression": 1,
+            "belonging": -1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "belonging": -2,
+              "comfort": 1
+            }
+          }
+        },
+        {
+          "id": "ask-theirs",
+          "text": "Honestly? I'd want to see their number first.",
+          "next": "branch-audit",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "mastery": 1,
+              "aspiration": 1,
+              "belonging": -1
+            }
+          }
+        }
+      ]
+    },
+    "branch-show": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "There it is — the tribe's handshake. Score for score, no names required.",
+        "Two strangers, one decimal apart, and suddenly you're kin."
+      ],
+      "next": "handshake"
+    },
+    "branch-refuse": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "They would blink twice and ask again, slightly louder.",
+        "...I liked hearing you say it, though. Names before numbers."
+      ],
+      "next": "handshake"
+    },
+    "branch-audit": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Cautious. I respect an audit.",
+        "Fair warning: theirs will be higher. It usually is, near the dumbbells."
+      ],
+      "next": "handshake"
+    },
+    "handshake": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "In 2020 they wore me through the NBA bubble — illness flagged before symptoms, whole locker rooms ordered in.",
+        "Since then my score opens doors. Nobody in them asks how the weather gets made."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Here's what never comes up in the small talk.",
+        "Readiness is a forecast from black-box math wearing a lab coat. So — do you report it, or perform it?"
+      ],
+      "choices": [
+        {
+          "id": "report-honest",
+          "text": "Report it. Even when it's low. Weather doesn't apologize.",
+          "next": "wrap",
+          "playerEffects": {
+            "readiness": 1,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "trust": 2,
+              "mastery": -1
+            }
+          },
+          "relationshipEffects": {
+            "oura": 2
+          }
+        },
+        {
+          "id": "perform-score",
+          "text": "Perform it. Round up. This is a gym, not a clinic.",
+          "next": "wrap",
+          "playerEffects": {
+            "selfExpression": 1,
+            "aspiration": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "aspiration": 2,
+              "belonging": 1,
+              "trust": -2
+            }
+          },
+          "relationshipEffects": {
+            "oura": -1
+          }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "OURA",
+      "callbacks": [
+        {
+          "if": "refuse-number",
+          "text": [
+            "Go lift. If they ask again, lead with your name.",
+            "I'll grade the night honestly either way. I always do."
+          ]
+        },
+        {
+          "if": "report-honest",
+          "text": [
+            "Then say seventy-one out loud and watch who stays to talk.",
+            "Honest forecasts attract better company than good ones."
+          ]
+        }
+      ],
+      "text": [
+        "Go lift.",
+        "Forecast for tonight: partly sore, clearing by Thursday."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "nightgym"
+}
