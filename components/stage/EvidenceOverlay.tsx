@@ -3,7 +3,7 @@
 // surfacing inside the date, never a slide.
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { getAsset, getEvidence } from "@/content/registry";
+import { getAsset, getEvidence, getSourceOrNull } from "@/content/registry";
 import styles from "./EvidenceOverlay.module.css";
 
 export default function EvidenceOverlay({ evidenceId, onDismiss }: { evidenceId: string; onDismiss: () => void }) {
@@ -39,6 +39,19 @@ export default function EvidenceOverlay({ evidenceId, onDismiss }: { evidenceId:
         )}
         <h3 className={styles.title}>{ev.title}</h3>
         <p className={styles.description}>{ev.description}</p>
+        {(ev.sourceIds?.length ?? 0) > 0 && (
+          <div className={styles.sources}>
+            {ev.sourceIds!.map((sid) => {
+              const s = getSourceOrNull(sid);
+              return s ? (
+                <div key={sid} className={styles.sourceLine}>
+                  Source: {s.title} — {s.publisher}
+                  {s.year ? ` · ${s.year}` : ""}
+                </div>
+              ) : null;
+            })}
+          </div>
+        )}
         <div className={styles.hint}>[ YOU&apos;VE SEEN THIS BEFORE... ]</div>
       </motion.div>
     </motion.div>

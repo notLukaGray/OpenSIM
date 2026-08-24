@@ -15,6 +15,7 @@ import type {
   Evidence,
   GameLocation,
   Modifier,
+  Source,
 } from "./schema";
 import type { Need, NeedVector } from "@/game/types";
 import { needs, zeroNeeds } from "@/game/types";
@@ -25,6 +26,7 @@ import evidenceJson from "./evidence.json";
 import assetsJson from "./assets.json";
 import audioJson from "./audio.json";
 import locationsJson from "./locations.json";
+import sourcesJson from "./sources.json";
 import { dateFiles } from "./date-registry.generated";
 
 // ── shape guards ─────────────────────────────────────────────────────────────
@@ -136,6 +138,15 @@ export const locations: GameLocation[] = (locationsJson as unknown as Record<str
   }
 );
 const locationIds = new Set(locations.map((l) => l.id));
+
+// ── sources ──────────────────────────────────────────────────────────────────
+export const sources = sourcesJson as unknown as Source[];
+const sourceIdSet = new Set(sources.map((x) => x.id));
+
+/** Citation lookup for evidence cards (P6-01). Unknown ids return null. */
+export function getSourceOrNull(id: string): Source | null {
+  return sources.find((x) => x.id === id) ?? null;
+}
 
 // ── dates ────────────────────────────────────────────────────────────────────
 // Files are auto-discovered; run `npm run sync:dates` after adding one.

@@ -26,6 +26,8 @@ const evidence = await loadJson(path.join(contentDir, "evidence.json"));
 const assetsJson = await loadJson(path.join(contentDir, "assets.json"));
 const audioTracks = await loadJson(path.join(contentDir, "audio.json"));
 const locations = await loadJson(path.join(contentDir, "locations.json"));
+let sources = [];
+try { sources = await loadJson(path.join(contentDir, "sources.json")); } catch {}
 let charactersGenerated = [];
 try {
   charactersGenerated = await loadJson(path.join(contentDir, "asset-characters.generated.json"));
@@ -47,6 +49,7 @@ const bundle = {
   assets: tag(assets, "content/assets.json"),
   audioTracks: tag(audioTracks, "content/audio.json"),
   locations: tag(locations, "content/locations.json"),
+  sources: tag(sources, "content/sources.json"),
   trees,
 };
 

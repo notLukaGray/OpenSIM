@@ -87,3 +87,13 @@
   line-height: 1.25;
   color: rgba(244, 236, 242, 0.95);
 }
+
+.sources {
+  margin-top: 14px;
+}
+
+.sourceLine {
+  font-size: 10.5px;
+  color: rgba(232, 228, 240, 0.55);
+  padding: 3px 0;
+}

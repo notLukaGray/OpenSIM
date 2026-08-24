@@ -89,6 +89,14 @@ export type DateTree = {
   nodes: Record<string, DialogueNode>;
 };
 
+export type Source = {
+  id: string;
+  title: string;
+  publisher: string;
+  year?: number;
+  url?: string;
+};
+
 // ─── Locations ───────────────────────────────────────────────────────────────
 export type GameLocation = {
   id: string;

@@ -145,9 +145,8 @@ export function validateContent(bundle) {
     if (!brandIds.has(e.brandId)) err(f, `evidence[${e.id}].brandId`, `unknown brand "${e.brandId}"`);
     if (e.imageRef && !assetIds.has(e.imageRef)) err(f, `evidence[${e.id}].imageRef`, `unknown asset "${e.imageRef}"`);
     for (const sid of e.sourceIds ?? []) {
-      // sources registry (P6-01) may not exist yet; validate shape only
-      if (typeof sid !== "string" || !sid.startsWith("src-"))
-        warn(f, `evidence[${e.id}].sourceIds`, `citation ids should look like "src-…" got "${sid}"`);
+      const knownSrc = (bundle.sources ?? []).some((x) => x.id === sid);
+      if (!knownSrc) err(f, `evidence[${e.id}].sourceIds`, `unknown source "${sid}"`);
     }
     checkVector(e.effects, f, `evidence[${e.id}].effects`, { cap: EFFECT_CAP });
   }
