@@ -1,11 +1,11 @@
 {
   "id": "white-claw-rooftop",
   "brandId": "white-claw",
-  "title": "Cooler Takeover",
+  "title": "WHITE CLAW — SUNSET ROOFTOP",
   "locationId": "rooftop",
   "context": {
     "location": "rooftop",
-    "occasion": "party"
+    "occasion": "rooftop"
   },
   "music": null,
   "background": null,
@@ -15,34 +15,253 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "success can erase the fans who built it",
-    "post-gender was real, and messy",
-    "the default guest is not the first guest"
+    "The player sees White Claw Zero Proof and realizes the brand now offers a 0% alcohol product with familiar social styling.",
+    "The player already knows White Claw and sees ClawTails, a line built around recognizable cocktail flavor names."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "white-claw",
+          "met": false
+        }
       },
       "text": [
-        "There you are. I read your file, by the way — apparently I'm a 'nostalgia artifact.' Rude. Accurate.",
-        "Also don't look now: my original crew just left the rail, and that cooler by the DJ is one hundred percent me and zero percent them."
+        "The player sees White Claw Zero Proof and realizes the brand now offers a 0% alcohol product with familiar social styling."
+      ],
+      "next": "entry-first-1"
+    },
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "A White Claw with no alcohol is a funny sentence."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "It still fits in the cooler."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "But the entire point used to be hard seltzer."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Zero Proof is 0% alc./vol. The social shorthand can stay even when alcohol is not the job."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "og",
-          "text": "I was drinking you before the meme made you a personality test.",
-          "next": "branch-og",
+          "id": "first-1",
+          "text": "I like having the same kind of drink without alcohol.",
+          "next": "first-1",
           "playerEffects": {
-            "selfExpression": 2,
-            "belonging": 1
+            "belonging": 2,
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
+              "belonging": 2,
+              "comfort": 1,
+              "control": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "first-2",
+          "text": "I am not sure I need White Claw branding if there is no alcohol.",
+          "next": "first-2",
+          "playerEffects": {
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "selfExpression": -1,
+              "trust": -1,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I would rather drink sparkling water.",
+          "next": "first-3",
+          "playerEffects": {
+            "comfort": 2,
+            "control": 2
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "selfExpression": -2,
+              "comfort": -1,
+              "belonging": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
+          }
+        }
+      ]
+    },
+    "first-1": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Then the name still means something to you even without the alcohol."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Fair. You are mostly deciding whether you still want the White Claw part when the alcohol is gone."
+      ],
+      "next": "first-2-1"
+    },
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "That sounds like a branding case study."
+      ],
+      "next": "first-2-2"
+    },
+    "first-2-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Please never say that at the beach."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Sparkling water remains extremely difficult to beat on simplicity."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "white-claw",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already knows White Claw and sees ClawTails, a line built around recognizable cocktail flavor names."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Margarita. Cosmo. Mojito. Daiquiri."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "You stole the cocktail menu."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Borrowed the names. Very different legal energy."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "And the can is not pretending to be the actual cocktail?"
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Cocktail-inspired flavors. Familiar cue, different product."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "That sounds fun for a rooftop hang.",
+          "next": "return-1",
+          "playerEffects": {
+            "excitement": 2,
+            "belonging": 1,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "excitement": 2,
               "belonging": 1,
               "selfExpression": 1
             }
@@ -52,170 +271,69 @@
           }
         },
         {
-          "id": "new",
-          "text": "Guilty — I found you last summer, with everyone else.",
-          "next": "branch-new",
+          "id": "return-2",
+          "text": "Cocktail names are doing a lot of expectation-setting.",
+          "next": "return-2",
           "playerEffects": {
-            "excitement": 1,
-            "comfort": 1
+            "mastery": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "excitement": 1,
-              "belonging": 1
+              "trust": -1,
+              "excitement": -1,
+              "mastery": 1
             }
           }
         },
         {
-          "id": "observer",
-          "text": "I'm mostly here to watch the ecosystem, not join it.",
-          "next": "branch-observer",
+          "id": "return-3",
+          "text": "I would rather have the actual cocktail or the regular seltzer.",
+          "next": "return-3",
           "playerEffects": {
             "mastery": 1,
-            "control": 1
+            "control": 2
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "mastery": 1,
-              "belonging": -1
+              "comfort": -1,
+              "excitement": -1,
+              "selfExpression": -1
             }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
           }
         }
       ]
     },
-    "branch-og": {
+    "return-1": {
       "speaker": "WHITE CLAW",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "An original. The rail misses you — those two by the door were saving cans back when saving cans meant something."
+        "Then the borrowed ritual makes the new line easy to understand."
       ],
-      "next": "memory"
+      "nextTree": "map"
     },
-    "branch-new": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Honest. Half this roof met me the exact same way."
-      ],
-      "next": "memory"
-    },
-    "branch-observer": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "Ouch. But fair — some nights even I people-watch myself."
-      ],
-      "next": "memory"
-    },
-    "memory": {
-      "speaker": "...",
-      "text": [
-        "By the speakers, two early fans watch a fraternity cooler swallow the whole railing — their quiet lime cans now a uniform they never signed up for."
-      ],
-      "next": "tension",
-      "evidence": "ev-white-claw-alcohol-is-alcohol"
-    },
-    "tension": {
+    "return-2": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "I promised a party for everybody. Then my marketing went courting the bros, and suddenly they're the default guest.",
-        "The women who built this crowd can't get a word in over guys yelling laws at each other."
+        "Exactly. Familiar names do some of the selling before taste does."
       ],
-      "choices": [
-        {
-          "id": "name-it",
-          "text": "Your own courtship campaign picked them. Say so out loud.",
-          "next": "wrap",
-          "playerEffects": {
-            "mastery": 2,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -1,
-              "control": -1,
-              "mastery": -1
-            }
-          }
-        },
-        {
-          "id": "defend",
-          "text": "A wider door still lets the originals stand wherever they want.",
-          "next": "wrap",
-          "playerEffects": {
-            "belonging": 2,
-            "reassurance": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": 2,
-              "selfExpression": 1
-            }
-          },
-          "relationshipEffects": {
-            "white-claw": 1
-          }
-        },
-        {
-          "id": "listen",
-          "text": "Move the conversation over. Hand them the aux and the narrative.",
-          "next": "wrap",
-          "playerEffects": {
-            "comfort": 1,
-            "trust": 2
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": 1,
-              "comfort": 1,
-              "selfExpression": 1
-            }
-          },
-          "setFlags": [
-            "claw-gave-them-the-aux"
-          ],
-          "relationshipEffects": {
-            "white-claw": 1
-          }
-        }
-      ]
+      "nextTree": "map"
     },
-    "wrap": {
+    "return-3": {
       "speaker": "WHITE CLAW",
       "sprite": {
-        "expression": "special"
+        "expression": "neutral"
       },
-      "callbacks": [
-        {
-          "if": "og",
-          "text": [
-            "Originals get the unfiltered tour. You already knew that."
-          ]
-        },
-        {
-          "if": "defend",
-          "text": [
-            "Spoken like someone the door was always wide enough for."
-          ]
-        },
-        {
-          "if": "observer",
-          "text": [
-            "Ecosystem note: the loudest species isn't always the native one."
-          ]
-        }
-      ],
       "text": [
-        "Either way — the roof stays open, and so do I."
+        "Then the extension did not solve a problem for you."
       ],
       "nextTree": "map"
     }

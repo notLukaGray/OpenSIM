@@ -1,16 +1,17 @@
-// Flag/archetype/post-reveal condition evaluation (P1-05, P7-02). Pure.
+// Flag/brand-history/archetype/post-reveal condition evaluation. Pure.
 import type { Condition } from "@/content/schema";
 import { GameState } from "./types";
 
 export function evalCondition(cond: Condition | undefined, state: GameState): boolean {
   if (!cond) return true;
-  const { flags, archetype, postReveal } = cond;
+  const { flags, brand, archetype, postReveal } = cond;
   if (flags) {
     const { all, any, none } = flags;
     if (all && !all.every((f) => Boolean(state.flags[f]))) return false;
     if (any && any.length > 0 && !any.some((f) => Boolean(state.flags[f]))) return false;
     if (none && none.some((f) => Boolean(state.flags[f]))) return false;
   }
+  if (brand && state.dated.includes(brand.id) !== brand.met) return false;
   if (archetype !== undefined) {
     // Only meaningful post-reveal; pre-reveal it fails so variant content hides.
     if (!state.hasSeenReveal || revealedArchetypeId(state) !== archetype) return false;

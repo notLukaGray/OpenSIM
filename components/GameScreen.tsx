@@ -59,7 +59,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
       key: cm.assetId.replace(/^char-(.+)-[a-z]+$/, "$1"),
       assetId: cm.assetId,
       alt: getAsset(cm.assetId).alt ?? "",
-      name: getBrandOrNull(cm.assetId.replace(/^char-(.+)-[a-z]+$/, "$1"))?.name ?? cm.assetId,
+      name: cm.name ?? getBrandOrNull(cm.assetId.replace(/^char-(.+)-[a-z]+$/, "$1"))?.name ?? cm.assetId,
       position: cm.position,
       effect: firstEntry ? "enter" : "none",
       speaking: false,

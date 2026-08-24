@@ -6,7 +6,7 @@
   "context": { "location": "bedroom-night", "occasion": "lights-out" },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-sleep-neutral", "position": "center" }],
+  "cast": [],
   "startNode": "intro",
   "lessons": [
     "the baseline every product prices against",
@@ -19,7 +19,6 @@
         "You put the phone face-down on the nightstand.",
         "That's the whole invitation."
       ],
-      "sprite": { "expression": "neutral", "effect": "enter" },
       "next": "greet"
     },
 
@@ -58,14 +57,12 @@
 
     "branch-owe": {
       "speaker": "SLEEP",
-      "sprite": { "expression": "embarrassed" },
       "text": ["Six years, give or take.", "I don't do interest. Just show up and we're even."],
       "next": "fall"
     },
 
     "branch-only": {
       "speaker": "SLEEP",
-      "sprite": { "expression": "happy" },
       "text": [
         "Don't romanticize it.",
         "I'm just really, really old."
@@ -75,14 +72,12 @@
 
     "branch-cheating": {
       "speaker": "SLEEP",
-      "sprite": { "expression": "annoyed" },
       "text": ["I know. It has a nice glow.", "So did the sun, once."],
       "next": "fall"
     },
 
     "fall": {
       "speaker": "...",
-      "sprite": { "expression": "special" },
       "text": [
         "No score to check. No streak to protect.",
         "Just the long dark, doing what it has always done, free of charge, no account required."

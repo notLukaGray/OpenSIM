@@ -1,11 +1,11 @@
 {
   "id": "ag1-airport",
   "brandId": "ag1",
-  "title": "Routine, Screened",
+  "title": "AG1 — NIGHT TERMINAL",
   "locationId": "airport",
   "context": {
     "location": "airport",
-    "occasion": "travel"
+    "occasion": "airport"
   },
   "music": null,
   "background": null,
@@ -15,47 +15,100 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "the ritual travels; the question is whether you do without it",
-    "NSF certification is why the pouch clears customs with athletes",
-    "devotion survives a missed day — dependency calls the front desk"
+    "The player notices the NSF Certified for Sport mark and asks what that certification actually tells them about AG1.",
+    "The player is packing for a flight and still has single-serving AG1 travel packs from the welcome kit."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": false
+        }
       },
       "text": [
-        "Gate 34. You again, me again, the plastic tray again.",
-        "Black pouch in the bin. It always earns a second look from security."
+        "The player notices the NSF Certified for Sport mark and asks what that certification actually tells them about AG1."
       ],
-      "next": "impression"
+      "next": "entry-first-1"
     },
-    "impression": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "What does that NSF mark actually buy you?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Once, an agent asked why one pouch of greens needs sport certification. Drug-tested athletes, I told her.",
-        "Two hundred and eighty banned substances screened, every year. The routine flies clean."
+        "Certified for Sport screens for more than 280 banned substances. Competitive athletes care about that a lot."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "I am not a competitive athlete."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then it may matter less to you. It is still outside testing."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "Does it prove the benefits?"
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "No. Different question. The seal tells you what they tested me for, not that every claim I make is settled."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "impressive",
-          "text": "Certified for sport at six a.m. That's honestly a little impressive.",
-          "next": "branch-impressive",
+          "id": "first-1",
+          "text": "I like that someone outside the brand is checking the product.",
+          "next": "first-1",
           "playerEffects": {
-            "readiness": 1,
-            "reassurance": 2
+            "comfort": 2,
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "reassurance": 2,
-              "trust": 1
+              "comfort": 2,
+              "reassurance": 1
             }
           },
           "relationshipEffects": {
@@ -63,159 +116,217 @@
           }
         },
         {
-          "id": "dependency",
-          "text": "Or that's just a dependency with good paperwork.",
-          "next": "branch-dependency",
+          "id": "first-2",
+          "text": "I care about proof, but I want to know which question each proof actually answers.",
+          "next": "first-2",
           "playerEffects": {
             "control": 1,
-            "mastery": 1,
-            "trust": -1
+            "mastery": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "control": -1,
+              "mastery": 1,
               "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I am not an athlete, so this certification does not change much for me.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
             "ag1": -1
-          },
-          "setFlags": [
-            "said-dependency"
-          ]
-        },
-        {
-          "id": "why-travel",
-          "text": "Why does a morning routine need a passport?",
-          "next": "branch-why-travel",
-          "playerEffects": {
-            "mastery": 1,
-            "reassurance": 1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "belonging": 1,
-              "comfort": 1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": 0
-          },
-          "setFlags": [
-            "asked-why-travel"
-          ]
+          }
         }
-      ],
-      "evidence": "ev-ag1-host-adread"
+      ]
     },
-    "branch-impressive": {
+    "first-1": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Then the outside check matters to you for exactly what it is, not as a magic seal."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "It's the least chaotic thing about flying, and I'll take the compliment.",
-        "Everything else at this gate is variable. I'm the constant."
+        "Good. A certification should not get credit for answering a question it never tested."
       ],
-      "next": "tension"
+      "nextTree": "map"
     },
-    "branch-dependency": {
+    "first-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Fair. If banned-substance screening is not relevant to your life, it may not move your decision."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": true
+        }
+      },
+      "text": [
+        "The player is packing for a flight and still has single-serving AG1 travel packs from the welcome kit."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Three packets. That is all you get for this trip."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "I made the side pocket. That is why the welcome kit has single servings."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Mostly I just want one familiar thing tomorrow morning."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I like having something familiar when I travel.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 3,
+            "reassurance": 1,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 3,
+              "reassurance": 1,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "I am mostly taking these because they came with the kit.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I am leaving them here. One day without you is fine.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          }
+        }
+      ]
+    },
+    "return-1": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Then take them. This is exactly the kind of boring continuity I am good at."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Harsh. Accurate-adjacent. There's a difference between packing me and needing me.",
-        "…Isn't there?"
+        "Free is still a reason. You do not have to make the relationship more romantic than it is."
       ],
-      "next": "tension"
+      "nextTree": "map"
     },
-    "branch-why-travel": {
+    "return-3": {
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Because home was never a place. It's a sequence: pouch, water, sip, breathe.",
-        "I'm just the sequence, made portable."
+        "Leave them home."
       ],
-      "next": "tension"
+      "next": "return-3-1"
     },
-    "tension": {
+    "return-3-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You are taking this well."
+      ],
+      "next": "return-3-2"
+    },
+    "return-3-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Boarding's soon, so answer honestly: if the pouch got lost in transit, would the trip break?",
-        "Devotion survives a missed day. Dependency files a claim."
-      ],
-      "choices": [
-        {
-          "id": "devotion",
-          "text": "Nothing breaks. I'd miss you — not fall apart.",
-          "next": "wrap",
-          "playerEffects": {
-            "comfort": 1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "comfort": 1,
-              "trust": 1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": 2
-          },
-          "setFlags": [
-            "devoted-not-dependent"
-          ]
-        },
-        {
-          "id": "honest-crutch",
-          "text": "Honestly? I'd feel the absence all day.",
-          "next": "wrap",
-          "playerEffects": {
-            "reassurance": 1,
-            "control": -1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "comfort": 1,
-              "control": -1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": 1
-          },
-          "setFlags": [
-            "packed-the-crutch"
-          ]
-        }
-      ]
-    },
-    "wrap": {
-      "speaker": "AG1",
-      "callbacks": [
-        {
-          "if": "dependency",
-          "text": [
-            "You said it before I could. That's why the pouch rides in your bag, never mine.",
-            "Watch what the difference does on a missed Tuesday."
-          ]
-        },
-        {
-          "if": "devotion",
-          "text": [
-            "Miss me, don't need me. I'll take that arrangement at any gate on earth.",
-            "Same scoop, different skyline."
-          ]
-        }
-      ],
-      "text": [
-        "Board well. Drink something that isn't me today, too.",
-        "Variety hydrates; I just anchor."
+        "You will survive airport breakfast."
       ],
       "nextTree": "map"
     }

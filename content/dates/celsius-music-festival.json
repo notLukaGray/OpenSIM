@@ -1,10 +1,11 @@
 {
   "id": "celsius-music-festival",
   "brandId": "celsius",
-  "title": "Campus Crew",
+  "title": "CELSIUS — MUSIC FESTIVAL",
+  "locationId": "music-festival",
   "context": {
     "location": "music-festival",
-    "occasion": "event"
+    "occasion": "music-festival"
   },
   "music": null,
   "background": null,
@@ -14,139 +15,93 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "belonging can be salaried",
-    "the crew is real and so is the W-2",
-    "disclosure is the new intimacy"
+    "The player sees a CELSIUS ambassador post and learns ambassadors are expected to create recurring social content for product rewards.",
+    "The player already knows CELSIUS and now recognizes new Vibe cans as flavor-led reasons to keep browsing the lineup."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "CELSIUS",
-      "sprite": {
-        "expression": "happy",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "celsius",
+          "met": false
+        }
       },
       "text": [
-        "You found us! Front of the crowd — that's where the family stands.",
-        "Campus crew, baby. I know everyone here by name and by rate card."
+        "The player sees a CELSIUS ambassador post and learns ambassadors are expected to create recurring social content for product rewards."
       ],
-      "choices": [
-        {
-          "id": "family",
-          "text": "Family sounds nice. I could use one.",
-          "next": "branch-family",
-          "playerEffects": {
-            "belonging": 2,
-            "reassurance": 1
-          },
-          "brandPerceptionEffects": {
-            "celsius": {
-              "belonging": 2,
-              "trust": -1
-            }
-          },
-          "relationshipEffects": {
-            "celsius": 1
-          }
-        },
-        {
-          "id": "payroll",
-          "text": "Aren't they all... paid to stand here?",
-          "next": "branch-payroll",
-          "playerEffects": {
-            "mastery": 1,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "celsius": {
-              "trust": -2,
-              "mastery": 1,
-              "belonging": -1
-            }
-          }
-        },
-        {
-          "id": "disclosure",
-          "text": "Does the FTC know you call them family?",
-          "next": "branch-disclosure",
-          "playerEffects": {
-            "mastery": 1,
-            "control": 1,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "celsius": {
-              "trust": -2,
-              "selfExpression": 1
-            }
-          }
-        }
-      ]
+      "next": "entry-first-1"
     },
-    "branch-family": {
+    "entry-first-1": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Chosen family! With merch. And direct deposit."
+        "One feed post, two stories, tags, submission."
       ],
-      "next": "experience"
+      "next": "entry-first-2"
     },
-    "branch-payroll": {
-      "speaker": "CELSIUS",
-      "sprite": {
-        "expression": "embarrassed"
-      },
+    "entry-first-2": {
+      "speaker": "PLAYER",
       "text": [
-        "Okay, CELSIUS University has been on payroll since 2022. It's still real!"
+        "You just assigned homework."
       ],
-      "next": "experience"
+      "next": "entry-first-3"
     },
-    "branch-disclosure": {
-      "speaker": "CELSIUS",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "There's a hashtag now. A hashtag is intimacy, right?"
-      ],
-      "next": "experience"
-    },
-    "experience": {
-      "speaker": "...",
-      "text": [
-        "You know the ambassador booth.",
-        "Matching lanyards, matching cans, one group photo where every smile clocks in on time."
-      ],
-      "next": "tension",
-      "evidence": "ev-celsius-lineup"
-    },
-    "tension": {
+    "entry-first-3": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Real question, since you already know what I am.",
-        "If the belonging is invoiced... does it still count when you feel it?"
+        "That is the ambassador challenge. Complete the content requirements and product can follow next month."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "So enthusiasm comes with deliverables."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "In this program? Very much."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "counts",
-          "text": "If it feels real, it counts. Paperwork doesn't change that.",
-          "next": "wrap",
+          "id": "first-1",
+          "text": "At least the relationship is pretty explicit.",
+          "next": "first-1",
           "playerEffects": {
-            "belonging": 2,
-            "reassurance": 1,
-            "trust": -1
+            "excitement": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
-              "belonging": 2,
-              "reassurance": 1,
-              "trust": -1
+              "excitement": 2,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
@@ -154,47 +109,227 @@
           }
         },
         {
-          "id": "invoice",
-          "text": "Then I'm glad I know the price up front. You told me yourself.",
-          "next": "wrap",
+          "id": "first-2",
+          "text": "A free case can still shape what someone says.",
+          "next": "first-2",
           "playerEffects": {
-            "mastery": 2,
-            "trust": 1
+            "control": 1,
+            "mastery": 2
           },
           "brandPerceptionEffects": {
             "celsius": {
               "mastery": 1,
-              "trust": 1,
-              "belonging": -1
+              "trust": -1
             }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not want my feed full of contracted enthusiasm.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": -1
           }
         }
       ]
     },
-    "wrap": {
+    "first-1": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "special"
       },
-      "callbacks": [
+      "text": [
+        "Transparency helps. You can enjoy the post without pretending the incentive is invisible."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Correct. Product compensation is still compensation."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Then scroll. I am loud enough without forcing a follow."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "celsius",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already knows CELSIUS and now recognizes new Vibe cans as flavor-led reasons to keep browsing the lineup."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Galaxy. Arctic. Tropical. Retro. Are these flavors or moods?"
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Yes."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "That was not one of the options."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "The energy function stays familiar. The Vibe names keep the cooler from feeling finished."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
         {
-          "if": "payroll",
-          "text": [
-            "See? You did my math for me. That's why you're invited."
-          ]
+          "id": "return-1",
+          "text": "I like picking a flavor that fits the mood.",
+          "next": "return-1",
+          "playerEffects": {
+            "excitement": 3,
+            "readiness": 1,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "excitement": 3,
+              "readiness": 1,
+              "selfExpression": 1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
         },
         {
-          "if": "family",
-          "text": [
-            "Family means I show you the rate card next time. Growth!"
-          ]
+          "id": "return-2",
+          "text": "The names are doing more work than the product difference.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not need twenty-nine ways to buy the same energy habit.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": -1
+          }
         }
-      ],
+      ]
+    },
+    "return-1": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "Stay for the encore. The family's buying."
+        "Pick one. Commit to the bit."
+      ],
+      "next": "return-1-1"
+    },
+    "return-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Arctic."
+      ],
+      "next": "return-1-2"
+    },
+    "return-1-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Correct answer emotionally. Not nutritionally."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Often, yes. Flavor and packaging are carrying the novelty."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then pick one, or stop browsing. Variety is only useful if you want it."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "music-festival"
+  }
 }

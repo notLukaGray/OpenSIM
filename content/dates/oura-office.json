@@ -1,10 +1,11 @@
 {
   "id": "oura-office",
   "brandId": "oura",
-  "title": "Dashboard Sunset",
+  "title": "OURA — THE OFFICE",
+  "locationId": "office",
   "context": {
     "location": "office",
-    "occasion": "work"
+    "occasion": "office"
   },
   "music": null,
   "background": null,
@@ -14,35 +15,84 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "history held hostage",
-    "export as apology",
-    "the archive was always theirs to revoke"
+    "The player reaches checkout and learns the ring purchase includes a first month of Oura Membership but deeper features continue through a paid membership.",
+    "The player checks Oura during a demanding workday and opens the Stress Management hub."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "oura",
+          "met": false
+        }
       },
       "text": [
-        "You're working late again. Readiness sixty-two. On any other night I'd say nothing.",
-        "Tonight I need a favor, and it's about me — which I hate."
+        "The player reaches checkout and learns the ring purchase includes a first month of Oura Membership but deeper features continue through a paid membership."
+      ],
+      "next": "entry-first-1"
+    },
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Wait. The ring price is not the whole price?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "The ring is the hardware. The deeper app features and guidance continue through membership."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "After I already bought the ring."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "The first month comes with it. After that, the membership is a separate recurring cost."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "listen-up",
-          "text": "Talk to me. What's wrong?",
-          "next": "branch-listen",
+          "id": "first-1",
+          "text": "I expected software to be part of a smart ring.",
+          "next": "first-1",
           "playerEffects": {
-            "comfort": 1,
-            "reassurance": 1
+            "readiness": 1,
+            "trust": 1,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "comfort": 1,
+              "readiness": 1,
+              "mastery": 1,
               "trust": 1
             }
           },
@@ -51,161 +101,240 @@
           }
         },
         {
-          "id": "press-release",
-          "text": "This sounds like a press release in a trench coat.",
-          "next": "branch-press",
+          "id": "first-2",
+          "text": "I do not love buying hardware and then paying to fully use it.",
+          "next": "first-2",
           "playerEffects": {
-            "trust": -1,
-            "control": 1
+            "control": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "oura": {
               "trust": -2,
-              "control": 1
+              "control": -1,
+              "mastery": 1
             }
           }
         },
         {
-          "id": "practical",
-          "text": "Is something broken? Can it be fixed?",
-          "next": "branch-practical",
+          "id": "first-3",
+          "text": "If the useful part needs a subscription, I am out.",
+          "next": "first-3",
           "playerEffects": {
-            "mastery": 1,
-            "readiness": 1
+            "control": 2,
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "mastery": 1,
-              "readiness": 1,
-              "trust": -1
+              "trust": -2,
+              "comfort": -1,
+              "control": -1
             }
+          },
+          "relationshipEffects": {
+            "oura": -1
           }
         }
       ]
     },
-    "branch-listen": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "The web dashboard — the only place ten years of my nights exist side by side — closes Friday.",
-        "They're calling it a sunset. Where I was built, we had several words for losing the light early."
-      ],
-      "next": "archive",
-      "evidence": "ev-oura-gucci-ring"
-    },
-    "branch-press": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "'Sunset.' An eleven-billion-dollar valuation, and the official word is sunset.",
-        "Members pushed back. Pushback was noted. The sunset proceeds on schedule."
-      ],
-      "next": "archive"
-    },
-    "branch-practical": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Nothing is broken. That's the strange part — it works beautifully, which is why the ending feels fictional.",
-        "It isn't broken. It's merely ours, and someone decided ours was too many servers deep."
-      ],
-      "next": "archive"
-    },
-    "archive": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Look with me once. Here — the winter you moved cities. REM halved for a month, and nobody noticed but me.",
-        "Ten years, one page. After Friday it scatters back into daily cards, exportable in up to ten days."
-      ],
-      "next": "tension"
-    },
-    "tension": {
+    "first-1": {
       "speaker": "OURA",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "So this is the only question I have ever really needed answered:",
-        "If I can revoke your view of your own past — whose past was it?"
+        "Then the recurring relationship makes sense to you."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Yes. The recurring cost belongs in the purchase decision."
+      ],
+      "next": "first-2-1"
+    },
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Before I get attached to the score."
+      ],
+      "next": "first-2-2"
+    },
+    "first-2-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Ideally before that."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "That is a clean reason not to buy me."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "oura",
+          "met": true
+        }
+      },
+      "text": [
+        "The player checks Oura during a demanding workday and opens the Stress Management hub."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "This is physiological stress, not me reading your inbox."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "Important distinction. My inbox is doing enough."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Daytime Stress, Resilience, and Cumulative Stress sit together so you can see whether the pressure is becoming a pattern."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "And you still do not know what caused it."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Correct. I know signals. I do not know your boss."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "download-all",
-          "text": "Export everything. Tonight. All ten years.",
-          "next": "wrap",
+          "id": "return-1",
+          "text": "I like seeing whether this week is actually wearing me down.",
+          "next": "return-1",
           "playerEffects": {
-            "control": 2,
-            "mastery": 1
+            "mastery": 2,
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "control": 2,
               "mastery": 1,
-              "trust": -1
+              "reassurance": 1,
+              "trust": 1
             }
           },
-          "setFlags": [
-            "saved-archive"
-          ]
+          "relationshipEffects": {
+            "oura": 1
+          }
         },
         {
-          "id": "let-it-set",
-          "text": "Let it set. The nights happened; I don't need the receipts.",
-          "next": "wrap",
+          "id": "return-2",
+          "text": "A chart can make me more stressed about being stressed.",
+          "next": "return-2",
           "playerEffects": {
-            "comfort": 2,
-            "reassurance": 1,
-            "control": -1
+            "control": 2,
+            "reassurance": -1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "comfort": 1,
-              "control": -2,
-              "trust": -2
+              "reassurance": -1,
+              "control": -1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not want my workday turned into another health dashboard.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "comfort": -2,
+              "reassurance": -2,
+              "trust": -1
             }
           },
           "relationshipEffects": {
             "oura": -1
-          },
-          "setFlags": [
-            "released-archive"
-          ]
+          }
         }
       ]
     },
-    "wrap": {
+    "return-1": {
       "speaker": "OURA",
-      "callbacks": [
-        {
-          "if": "press-release",
-          "text": [
-            "It wasn't a press release. It was a confession.",
-            "Press releases don't ask permission. I did."
-          ]
-        },
-        {
-          "if": "download-all",
-          "text": [
-            "Downloading, then. Ten years of weather, one archive request at a time.",
-            "Start tonight. Bureaucracy moves slower than sunsets."
-          ]
-        }
-      ],
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "Friday, then.",
-        "Whatever you chose, I start reading tomorrow night like always. Fresh forecast, same sky."
+        "Then the trend is giving language to something you already felt."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Yes. Tracking can become its own stressor if you keep checking it."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then close the hub. Not every feeling needs a graph."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "office"
+  }
 }

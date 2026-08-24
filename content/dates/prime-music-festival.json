@@ -1,7 +1,7 @@
 {
-  "id": "white-claw-music-festival",
-  "brandId": "white-claw",
-  "title": "WHITE CLAW — MUSIC FESTIVAL",
+  "id": "prime-music-festival",
+  "brandId": "prime",
+  "title": "PRIME — MUSIC FESTIVAL",
   "locationId": "music-festival",
   "context": {
     "location": "music-festival",
@@ -11,7 +11,7 @@
   "background": null,
   "cast": [
     {
-      "assetId": "char-white-claw-neutral",
+      "assetId": "char-prime-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,69 @@
     "entry-first"
   ],
   "lessons": [
-    "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims.",
-    "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+    "The player discovers a musician-branded PRIME bottle and realizes the collaboration is part of the product launch.",
+    "The player has bought a Collector Series bottle and learns that the cap code was part of a completed collectible promotion."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "white-claw",
+          "id": "prime",
           "met": false
         }
       },
       "text": [
-        "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims."
+        "The player discovers a musician-branded PRIME bottle and realizes the collaboration is part of the product launch."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "I came for Teddy Swims."
-      ],
-      "next": "entry-first-2"
-    },
-    "entry-first-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "I know. I came with him."
+        "Limited artist bottle."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "I noticed the artist before I noticed the flavor."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
-      "speaker": "PLAYER",
-      "text": [
-        "So the concert does the introduction for you."
-      ],
-      "next": "entry-first-4"
-    },
-    "entry-first-4": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Live music already has the social occasion built in. I attach the brand to the night instead of explaining hard seltzer from scratch."
+        "Then the collaboration did its job."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "Does the artist change anything about the drink?"
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "PRIME",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "The drop and the bottle. Not the laws of electrolytes."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,88 +92,92 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "That feels like a natural place for the brand.",
+          "text": "I kind of want it because it feels collectible.",
           "next": "first-1",
           "playerEffects": {
-            "belonging": 2,
             "excitement": 2,
-            "aspiration": 1
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": 2,
-              "excitement": 2,
-              "selfExpression": 1
+            "prime": {
+              "excitement": 1,
+              "selfExpression": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": 1
+            "prime": 1
           }
         },
         {
           "id": "first-2",
-          "text": "The artist is still lending you his fan relationship.",
+          "text": "Does the artist make the drink any better?",
           "next": "first-2",
           "playerEffects": {
-            "mastery": 2,
+            "mastery": 1,
             "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -1,
-              "aspiration": -1,
-              "mastery": 1
+            "prime": {
+              "excitement": -1,
+              "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want alcohol brands using friendship as the pitch.",
+          "text": "I do not buy beverages because a celebrity is on them.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "trust": 2
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": -2,
-              "excitement": -1,
-              "trust": -1
+            "prime": {
+              "trust": -1,
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": -1
+            "prime": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the occasion and the message line up for you."
+        "There it is. You want the bottle."
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "I did not say I was proud of it."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Partnership does not become neutral because the music is good."
+        "No. The collaboration changes the reason you notice me, not the chemistry."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "That is a fair boundary. Connection does not require a can."
+        "Then judge the regular bottle. The collab is optional."
       ],
       "nextTree": "map"
     },
@@ -171,51 +185,51 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "white-claw",
+          "id": "prime",
           "met": true
         }
       },
       "text": [
-        "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+        "The player has bought a Collector Series bottle and learns that the cap code was part of a completed collectible promotion."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "You want me to wear the campaign now?"
+        "There is a code under the cap?"
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Limited merch. The relationship has layers."
+        "There was. Collector Series turned the bottle into a game piece."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Shows, cans, clothes."
+        "Past tense?"
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "The partnership keeps going after the first ad. If you like the artist enough, the brand gets another way into the memory."
+        "The promotion ended. Codes unlocked digital trophies and merch, and collecting the set connected to the bigger prize mechanic."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -225,88 +239,85 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would wear something if the design is good.",
+          "text": "That is ridiculous enough that I would have played.",
           "next": "return-1",
           "playerEffects": {
-            "selfExpression": 2,
-            "belonging": 1,
-            "excitement": 1
+            "excitement": 2,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "selfExpression": 2,
+            "prime": {
+              "excitement": 1,
               "belonging": 1,
-              "excitement": 1
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": 1
+            "prime": 1
           }
         },
         {
           "id": "return-2",
-          "text": "Merch is just turning the ad into something I pay for.",
+          "text": "So the point was to make people keep buying bottles to complete a set.",
           "next": "return-2",
           "playerEffects": {
-            "mastery": 2,
-            "control": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -2,
-              "selfExpression": -1,
-              "mastery": 1
+            "prime": {
+              "excitement": -1,
+              "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I am not wearing a hard-seltzer logo.",
+          "text": "I do not want hydration to become a loot hunt.",
           "next": "return-3",
           "playerEffects": {
-            "selfExpression": 2,
-            "control": 2
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "selfExpression": -2,
-              "belonging": -1,
-              "comfort": -1
+            "prime": {
+              "trust": -1,
+              "reassurance": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": -1
+            "prime": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then design has to earn it beyond the logo."
+        "Correct attitude. If I am doing a promotion, I am doing the whole promotion."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "That is exactly the risk. Paid media can become paid-by-you media."
+        "Yes. Collecting only works if the next bottle matters."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "WHITE CLAW",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then leave the shirt to someone else."
+        "Then drink it and ignore the game. That was always allowed."
       ],
       "nextTree": "map"
     }

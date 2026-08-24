@@ -172,6 +172,12 @@ export function validateContent(bundle) {
         for (const fl of c.setFlags ?? []) declaredFlags.add(fl);
 
   const checkCondition = (cond, file, path) => {
+    if (cond?.brand) {
+      if (!brandIds.has(cond.brand.id))
+        err(file, path, `references unknown brand "${String(cond.brand.id)}"`);
+      if (typeof cond.brand.met !== "boolean")
+        err(file, path, "brand.met must be boolean");
+    }
     const fc = cond?.flags;
     if (!fc) return;
     for (const key of ["all", "any", "none"]) {
@@ -212,8 +218,9 @@ export function validateContent(bundle) {
       }
       const sp = owner.sprite;
       if (sp?.expression) {
-        const exprAsset = `char-${t.brandId}-${sp.expression}`;
-        if (t.brandId && !assetIds.has(exprAsset))
+        const castAssetId = sp.assetId ?? t.cast?.[0]?.assetId;
+        const exprAsset = castAssetId?.replace(/-(neutral|happy|annoyed|embarrassed|special)$/, `-${sp.expression}`);
+        if (!exprAsset || !assetIds.has(exprAsset))
           err(f, `${path}.sprite.expression`, `no asset "${exprAsset}" for expression "${sp.expression}"`);
       }
     };

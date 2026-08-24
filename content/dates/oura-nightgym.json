@@ -1,10 +1,11 @@
 {
   "id": "oura-nightgym",
   "brandId": "oura",
-  "title": "Readiness Brag",
+  "title": "OURA — THE LATE GYM",
+  "locationId": "nightgym",
   "context": {
     "location": "nightgym",
-    "occasion": "workout"
+    "occasion": "nightgym"
   },
   "music": null,
   "background": null,
@@ -14,37 +15,67 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "numbers as small talk",
-    "the score opens doors the mechanism can't explain",
-    "a forecast performed starts to feel like a fact"
+    "The player notices Oura through its ability to connect workouts and scores with Strava.",
+    "The player opens Oura before a hard workout and sees a lower Readiness Score than expected."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "oura",
+          "met": false
+        }
       },
       "text": [
-        "Quiet room tonight. Everyone here is comparing something — weight, reps, protein timing.",
-        "Enjoy your privacy. In about ninety seconds, someone will wander over and ask for your number."
+        "The player notices Oura through its ability to connect workouts and scores with Strava."
+      ],
+      "next": "entry-first-1"
+    },
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Do you talk to Strava?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "If you let me. Its workouts can count in Oura, and you can share Oura scores back."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "show-number",
-          "text": "I'd tell them. Seventy-one, and I worked for every point.",
-          "next": "branch-show",
+          "id": "first-1",
+          "text": "I like not having to log the same workout twice.",
+          "next": "first-1",
           "playerEffects": {
-            "belonging": 2,
+            "mastery": 2,
             "readiness": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "belonging": 2,
-              "readiness": 2,
-              "excitement": -1
+              "mastery": 2,
+              "control": 1,
+              "trust": 1
             }
           },
           "relationshipEffects": {
@@ -52,126 +83,34 @@
           }
         },
         {
-          "id": "refuse-number",
-          "text": "I don't lead with decimals. Ask my name first.",
-          "next": "branch-refuse",
+          "id": "first-2",
+          "text": "I do not need my recovery score in my social fitness feed.",
+          "next": "first-2",
           "playerEffects": {
-            "comfort": 1,
-            "selfExpression": 1,
-            "belonging": -1
-          },
-          "brandPerceptionEffects": {
-            "oura": {
-              "belonging": -2,
-              "comfort": 1
-            }
-          }
-        },
-        {
-          "id": "ask-theirs",
-          "text": "Honestly? I'd want to see their number first.",
-          "next": "branch-audit",
-          "playerEffects": {
-            "mastery": 1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "oura": {
-              "mastery": 1,
-              "aspiration": 1,
-              "belonging": -1
-            }
-          }
-        }
-      ]
-    },
-    "branch-show": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "There it is — the tribe's handshake. Score for score, no names required.",
-        "Two strangers, one decimal apart, and suddenly you're kin."
-      ],
-      "next": "handshake",
-      "evidence": "ev-oura-pre-symptom-flag"
-    },
-    "branch-refuse": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "They would blink twice and ask again, slightly louder.",
-        "...I liked hearing you say it, though. Names before numbers."
-      ],
-      "next": "handshake"
-    },
-    "branch-audit": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Cautious. I respect an audit.",
-        "Fair warning: theirs will be higher. It usually is, near the dumbbells."
-      ],
-      "next": "handshake"
-    },
-    "handshake": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "In 2020 they wore me through the NBA bubble — illness flagged before symptoms, whole locker rooms ordered in.",
-        "Since then my score opens doors. Nobody in them asks how the weather gets made."
-      ],
-      "next": "tension"
-    },
-    "tension": {
-      "speaker": "OURA",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "Here's what never comes up in the small talk.",
-        "Readiness is a forecast from black-box math wearing a lab coat. So — do you report it, or perform it?"
-      ],
-      "choices": [
-        {
-          "id": "report-honest",
-          "text": "Report it. Even when it's low. Weather doesn't apologize.",
-          "next": "wrap",
-          "playerEffects": {
-            "readiness": 1,
+            "control": 2,
             "trust": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": 2,
-              "mastery": -1
+              "selfExpression": -1,
+              "control": -1,
+              "trust": -1
             }
-          },
-          "relationshipEffects": {
-            "oura": 2
           }
         },
         {
-          "id": "perform-score",
-          "text": "Perform it. Round up. This is a gym, not a clinic.",
-          "next": "wrap",
+          "id": "first-3",
+          "text": "I already have a fitness app. I do not need another layer.",
+          "next": "first-3",
           "playerEffects": {
-            "selfExpression": 1,
-            "aspiration": 1,
-            "trust": -1
+            "control": 2,
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "aspiration": 2,
-              "belonging": 1,
-              "trust": -2
+              "mastery": -1,
+              "comfort": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -180,30 +119,212 @@
         }
       ]
     },
-    "wrap": {
+    "first-1": {
       "speaker": "OURA",
-      "callbacks": [
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Exactly. Integration is useful when it removes duplicate work."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Then keep the score private. Sharing is optional."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "That is reasonable. More data is not automatically more useful."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "oura",
+          "met": true
+        }
+      },
+      "text": [
+        "The player opens Oura before a hard workout and sees a lower Readiness Score than expected."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "I feel fine."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I did not say you feel bad."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Your Readiness score is making a face at me."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "I do not have a face."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "Metaphorically, you do."
+      ],
+      "next": "entry-return-6"
+    },
+    "entry-return-6": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I am comparing last night and your recent balance with your own baseline. You decide what to do with that."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
         {
-          "if": "refuse-number",
-          "text": [
-            "Go lift. If they ask again, lead with your name.",
-            "I'll grade the night honestly either way. I always do."
-          ]
+          "id": "return-1",
+          "text": "I will make today easier.",
+          "next": "return-1",
+          "playerEffects": {
+            "readiness": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "readiness": 2,
+              "reassurance": 1,
+              "control": 1
+            }
+          },
+          "relationshipEffects": {
+            "oura": 1
+          }
         },
         {
-          "if": "report-honest",
-          "text": [
-            "Then say seventy-one out loud and watch who stays to talk.",
-            "Honest forecasts attract better company than good ones."
-          ]
+          "id": "return-2",
+          "text": "One score is not deciding my workout.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "control": -1,
+              "trust": -1,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "This is exactly why I do not like wearables. They make me second-guess my body.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "comfort": 1,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "oura": {
+              "control": -2,
+              "reassurance": -2,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "oura": -1
+          }
         }
-      ],
+      ]
+    },
+    "return-1": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "Go lift.",
-        "Forecast for tonight: partly sore, clearing by Thursday."
+        "Then the score gave you a useful second opinion."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Good. Treat the score as information, not permission."
+      ],
+      "next": "return-2-1"
+    },
+    "return-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You say that now."
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "I have been trying to say that for several nights."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "That can happen. Measurement can create doubt as easily as clarity."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "nightgym"
+  }
 }

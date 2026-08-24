@@ -1,7 +1,7 @@
 {
-  "id": "celsius-beach-day",
-  "brandId": "celsius",
-  "title": "CELSIUS — BEACH DAY",
+  "id": "prime-beach-day",
+  "brandId": "prime",
+  "title": "PRIME — BEACH DAY",
   "locationId": "beach-day",
   "context": {
     "location": "beach-day",
@@ -11,7 +11,7 @@
   "background": null,
   "cast": [
     {
-      "assetId": "char-celsius-neutral",
+      "assetId": "char-prime-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can.",
-    "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+    "The player notices PRIME because a bright seasonal Summer Pop flavor is available for a limited run.",
+    "The player wants a specific PRIME flavor that is unavailable online and uses the brand's store locator instead."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "celsius",
+          "id": "prime",
           "met": false
         }
       },
       "text": [
-        "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can."
+        "The player notices PRIME because a bright seasonal Summer Pop flavor is available for a limited run."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I picked this up because the can looks like vacation."
+        "Summer Pop again?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Thank you for proving the point."
+        "Seasonal. Loud. Limited window. Of course you looked."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "The point being?"
+        "So the flavor is partly an excuse to put you back in front of me."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Seasonal flavor and seasonal packaging get you to look again. After that, it is still a caffeinated CELSIUS."
+        "Absolutely. Limited-time drops give a familiar brand a fresh entrance."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,93 +82,85 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "The flavor sounds fun for a long day out.",
+          "text": "I like trying seasonal flavors.",
           "next": "first-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
+            "excitement": 2,
             "selfExpression": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
+            "prime": {
+              "excitement": 1,
+              "selfExpression": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": 1
+            "prime": 1
           }
         },
         {
           "id": "first-2",
-          "text": "A beach mood does not change what 200 milligrams of caffeine does.",
+          "text": "Limited does not mean better.",
           "next": "first-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 2,
-            "reassurance": 1,
-            "excitement": 1,
-            "selfExpression": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
-              "trust": -1,
-              "reassurance": -1,
-              "excitement": -1
+            "prime": {
+              "excitement": -1,
+              "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want an energy drink deciding the vibe of the day.",
+          "text": "I hate being rushed into buying a drink.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "selfExpression": 2,
-            "excitement": 1
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
+            "prime": {
               "trust": -1,
-              "comfort": -1,
-              "excitement": -1
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
-            "celsius": -1
+            "prime": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the packaging earned the trial and the product still has to earn the repeat."
+        "Then this is exactly your kind of nonsense."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "Correct. Aesthetic context does not change stimulant content."
+        "Correct. Limited means limited, not automatically good."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "neutral"
       },
       "text": [
-        "Good news: beaches existed before me."
+        "Then wait. There will be another flavor later."
       ],
       "nextTree": "map"
     },
@@ -176,34 +168,41 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "celsius",
+          "id": "prime",
           "met": true
         }
       },
       "text": [
-        "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+        "The player wants a specific PRIME flavor that is unavailable online and uses the brand's store locator instead."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I like Arctic Vibe. Why do I need it twice?"
+        "I checked two stores already."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "neutral"
+        "expression": "annoyed"
       },
       "text": [
-        "You do not. The stick is there if you want the same flavor without the can or the fizz."
+        "Stop freestyle shopping. Use Find In Store."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "You could have led with that."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -213,86 +212,85 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I like keeping the flavor while changing the format.",
+          "text": "Fine. I care enough about the flavor to check.",
           "next": "return-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
+            "readiness": 2,
+            "excitement": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "excitement": 3,
+            "prime": {
               "readiness": 1,
-              "selfExpression": 1
+              "excitement": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": 1
+            "prime": 1
           }
         },
         {
           "id": "return-2",
-          "text": "That makes it easier to have CELSIUS everywhere.",
+          "text": "If it takes three stores, I am giving up.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 2
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
+            "prime": {
+              "readiness": -1,
               "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need one energy brand following me across every occasion.",
+          "text": "I am not hunting across town for a sports drink.",
           "next": "return-3",
           "playerEffects": {
-            "control": 2,
-            "selfExpression": 1
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "trust": -1,
-              "comfort": -1
+            "prime": {
+              "readiness": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": -1
+            "prime": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Then keep the flavor and use the format that actually fits the day."
+        "You are really going to a third store for me. I respect the commitment."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Ubiquity is convenient until it starts feeling like pressure."
+        "Also fair. A locator helps, but it cannot make stock appear."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then choose the occasion where I actually add something and leave me out of the rest."
+        "Then pick another flavor or another drink. Scarcity has a limit."
       ],
       "nextTree": "map"
     }

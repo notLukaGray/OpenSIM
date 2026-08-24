@@ -1,0 +1,14 @@
+{
+  "id": "cafe-reading", "brandId": "cafe-reading", "title": "A Table, Unclaimed", "locationId": "corner-cafe",
+  "context": { "location": "corner-cafe", "occasion": "slow-hour" }, "music": null, "background": null, "cast": [], "startNode": "intro",
+  "lessons": ["a third place can be yours without a transaction", "attention is a choice"],
+  "nodes": {
+    "intro": { "speaker": "...", "text": ["The corner table is empty because everyone assumes it belongs to someone else.", "You sit down with your book and an hour that has not been assigned."], "next": "choose" },
+    "choose": { "speaker": "...", "text": ["Around you, people rehearse their busyness."], "choices": [
+      { "id": "read", "text": "Read until the room disappears around the page.", "next": "read-end", "playerEffects": { "mastery": 2, "comfort": 1 }, "setFlags": ["control-cafe-focus"] },
+      { "id": "notice", "text": "Close the book and people-watch without inventing their lives.", "next": "notice-end", "playerEffects": { "selfExpression": 1, "belonging": 1 }, "setFlags": ["control-cafe-observe"] }
+    ] },
+    "read-end": { "speaker": "...", "text": ["A chapter ends. Nothing pings to congratulate you.", "You turn the page anyway."], "nextTree": "map" },
+    "notice-end": { "speaker": "...", "text": ["The room becomes a room again: cups, coats, bad posture, weather.", "That is plenty."], "nextTree": "map" }
+  }
+}

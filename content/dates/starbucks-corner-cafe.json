@@ -1,10 +1,11 @@
 {
   "id": "starbucks-corner-cafe",
   "brandId": "starbucks",
-  "title": "Third Place Audition",
+  "title": "STARBUCKS — CORNER CAFE",
+  "locationId": "corner-cafe",
   "context": {
     "location": "corner-cafe",
-    "occasion": "cafe"
+    "occasion": "corner-cafe"
   },
   "music": null,
   "background": null,
@@ -14,63 +15,111 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "third place as a performed role",
-    "scripted tenderness with genuine follow-through",
-    "belonging sold at scale"
+    "The player first engages with Starbucks through the unusually customizable drink order itself.",
+    "The player is already in Starbucks Rewards and sees a monthly benefit that covers one drink customization up to the program limit."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": false
+        }
       },
       "text": [
-        "You're the 8:47 americano. I knew that without opening the app.",
-        "Sit. The mugs are ceramic again, and nobody here is timing you."
+        "The player first engages with Starbucks through the unusually customizable drink order itself."
       ],
-      "next": "impression"
+      "next": "entry-first-1"
     },
-    "impression": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "At what point does my order become embarrassing?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "This corner is my audition, you know. For \"third place\" — not home, not work.",
-        "So. Honest first impression, and be gentle — the whole street is watching."
+        "Around the third modifier, but I will still make it."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "You encourage this."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Milk, syrup, foam, temperature, shots, toppings. Customization is part of the product, not a secret menu accident."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "hearth",
-          "text": "It's working. I already don't want to leave.",
-          "next": "react-hearth",
+          "id": "first-1",
+          "text": "I like being able to get exactly what I want.",
+          "next": "first-1",
           "playerEffects": {
             "comfort": 2,
-            "belonging": 2
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
               "comfort": 2,
-              "belonging": 1
+              "readiness": 1
             }
           },
           "relationshipEffects": {
             "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-settled-in"
-          ]
+          }
         },
         {
-          "id": "scripted",
-          "text": "\"Audition\" is doing a lot of load-bearing work in that sentence.",
-          "next": "react-scripted",
+          "id": "first-2",
+          "text": "Too many options makes ordering feel like work.",
+          "next": "first-2",
           "playerEffects": {
             "control": 1,
-            "trust": 1
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I would rather have a coffee shop tell me what it makes well.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
@@ -79,173 +128,206 @@
             }
           },
           "relationshipEffects": {
-            "starbucks": 0
-          },
-          "setFlags": [
-            "sbux-spotted-script"
-          ]
-        },
-        {
-          "id": "queue",
-          "text": "Nice chair. Shame about the pickup queue breathing down my neck.",
-          "next": "experience",
-          "playerEffects": {
-            "mastery": 1,
-            "belonging": -1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "belonging": -2,
-              "trust": -1
-            }
-          },
-          "relationshipEffects": {
             "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-noticed-queue"
-          ]
+          }
         }
       ]
     },
-    "react-hearth": {
+    "first-1": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Careful. That is exactly the sentence I was engineered to earn."
+        "Then customization is part of the comfort for you."
       ],
-      "next": "experience"
+      "nextTree": "map"
     },
-    "react-scripted": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "A good host rehearses. Mine just happens to rehearse nationwide."
-      ],
-      "next": "experience"
-    },
-    "experience": {
+    "first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Watch the Sharpie. Your name, spelled right, lettered while you stand there.",
-        "Tiny thing. Mandated since the great comeback tour — but tiny."
+        "Then keep it simple. Customization is an option, not a citizenship test."
       ],
-      "next": "tension",
-      "evidence": "ev-starbucks-float-ledger"
+      "next": "first-2-1"
     },
-    "tension": {
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Tall coffee."
+      ],
+      "next": "first-2-2"
+    },
+    "first-2-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Beautifully legible."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "That is a different kind of coffee relationship, and I get the appeal."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": true
+        }
+      },
+      "text": [
+        "The player is already in Starbucks Rewards and sees a monthly benefit that covers one drink customization up to the program limit."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "One customization is on me this month."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "You mean the thing I already pay extra for?"
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Within the Mod Monday program limit, yes."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "So my existing habit became a loyalty perk."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "I know what you like. I might as well reward the expensive part."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I was going to add it anyway, so that is useful.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "comfort": 2,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "A free modification is tiny compared with what I spend here.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not want a reward system nudging me to decorate every drink.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          }
+        }
+      ]
+    },
+    "return-1": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "That is exactly when a small perk feels real."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Confession: miss the note twice, and a manager \"coaches\" you on warmth.",
-        "A sociologist once called me an imitation third place. Straight answer — was he wrong?"
+        "It is a small benefit. I am not going to call two dollars life-changing."
       ],
-      "choices": [
-        {
-          "id": "defended",
-          "text": "Imitation of what, though? The chair held me when I needed sitting.",
-          "next": "closing",
-          "playerEffects": {
-            "comfort": 2,
-            "reassurance": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "comfort": 1,
-              "belonging": 1,
-              "trust": 1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": 2
-          },
-          "setFlags": [
-            "sbux-defended-hearth"
-          ]
-        },
-        {
-          "id": "receipt",
-          "text": "Warmth on a quota isn't warmth. It's throughput wearing a smile.",
-          "next": "closing",
-          "playerEffects": {
-            "mastery": 1,
-            "trust": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "trust": -2,
-              "belonging": -1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-demanded-receipts"
-          ]
-        },
-        {
-          "id": "held-both",
-          "text": "Both things are true. That's exactly what unsettles me.",
-          "next": "closing",
-          "playerEffects": {
-            "control": 1,
-            "belonging": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "trust": -1,
-              "belonging": 1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": 0
-          }
-        }
-      ]
+      "nextTree": "map"
     },
-    "closing": {
+    "return-3": {
       "speaker": "STARBUCKS",
       "sprite": {
-        "expression": "special"
+        "expression": "neutral"
       },
-      "callbacks": [
-        {
-          "if": "defended",
-          "text": [
-            "Then I'll keep earning it. Identically, on schedule, forever.",
-            "You will never catch me not meaning it."
-          ]
-        },
-        {
-          "if": "receipt",
-          "text": [
-            "Fair. And yet you stayed for the whole refill.",
-            "Nobody has ever left me over a Sharpie."
-          ]
-        },
-        {
-          "if": "held-both",
-          "text": [
-            "Keep holding both. It's the entire business model."
-          ]
-        }
-      ],
       "text": [
-        "Come back tomorrow and I'll perform all of it again, exactly the same.",
-        "Whether that's the sweetest thing about me or the saddest — homework."
+        "Then order it plain. A reward does not need to invent a need."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "corner-cafe"
+  }
 }

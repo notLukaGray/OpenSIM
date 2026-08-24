@@ -1,11 +1,11 @@
 {
   "id": "ag1-corner-cafe",
   "brandId": "ag1",
-  "title": "The Fourteenth Ad Read",
+  "title": "AG1 — CORNER CAFE",
   "locationId": "corner-cafe",
   "context": {
     "location": "corner-cafe",
-    "occasion": "cafe"
+    "occasion": "corner-cafe"
   },
   "music": null,
   "background": null,
@@ -15,204 +15,352 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "saturation is the shadow of sincerity",
-    "host-read testimonials are also a revenue share",
-    "you can be chosen and farmed at the same time"
+    "A podcast host says they use AG1 every morning, then gives listeners a personal code and offer.",
+    "The player already subscribes to AG1 and sees that the next pouch is scheduled to ship before the current one is finished."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": false
+        }
       },
       "text": [
-        "You found me. Off-brand of me, I know — daylight, other people's furniture.",
-        "Sit. Your flat white is cooling while I rehearse my monologue."
+        "A podcast host says they use AG1 every morning, then gives listeners a personal code and offer."
       ],
-      "next": "impression"
+      "next": "entry-first-1"
     },
-    "impression": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "There you are again."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Podcast?"
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Podcast."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Wait. Listen — two tables over. Someone's podcast is—",
-        "There. 'Because I'm not big on vegetables, I start every day with…' That's me. Third read this block."
+        "The host talks about using me, then gives you a code. The code is the part that makes the sponsorship impossible to miss."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "Even if they actually drink you every morning?"
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "They can mean it and still be paid. Those things can happen at the same time."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "count",
-          "text": "That's the fourth ad read you've gotten today. You're everywhere.",
-          "next": "branch-count",
+          "id": "first-1",
+          "text": "I trust the host enough to listen.",
+          "next": "first-1",
           "playerEffects": {
-            "mastery": 1,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "trust": -2,
-              "excitement": -1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": -1
-          },
-          "setFlags": [
-            "heard-the-ad-read"
-          ]
-        },
-        {
-          "id": "comfort",
-          "text": "Hey. I'm here for you, not your marketing.",
-          "next": "branch-comfort",
-          "playerEffects": {
-            "reassurance": 2,
-            "belonging": 1
+            "comfort": 2,
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
               "comfort": 2,
-              "belonging": 1
+              "reassurance": 1
             }
           },
           "relationshipEffects": {
-            "ag1": 2
+            "ag1": 1
           }
         },
         {
-          "id": "math",
-          "text": "How much do they get paid to say that about you?",
-          "next": "branch-math",
+          "id": "first-2",
+          "text": "I want to know where the recommendation ends and the sponsorship starts.",
+          "next": "first-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2,
+            "trust": 1,
+            "belonging": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "mastery": 1,
+              "trust": -2
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not want breakfast advice from a podcast ad.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -2,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          }
+        }
+      ]
+    },
+    "first-1": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Then the host got me a fair hearing. I still have to earn what happens after that."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Good question. Treat the code as the cleanest clue that you are still inside the sponsorship."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Then skip the code and finish your coffee."
+      ],
+      "next": "first-3-1"
+    },
+    "first-3-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Happily."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already subscribes to AG1 and sees that the next pouch is scheduled to ship before the current one is finished."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Why are you shipping again? I still have half a pouch."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Because your subscription is still set to every thirty days."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Can I move it?"
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Yes. Push the date back, change the cadence, or cancel in the member portal."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "That answer was suspiciously painless."
+      ],
+      "next": "entry-return-6"
+    },
+    "entry-return-6": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "I would like to keep you. I do not need to trap you."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I like being able to push the shipment back.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 2,
+              "reassurance": 1,
+              "control": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "So if I do nothing, you just keep sending it every month.",
+          "next": "return-2",
           "playerEffects": {
             "control": 1,
             "mastery": 2
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "trust": -2,
-              "mastery": -1
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not want my vitamins on auto-renew.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 3,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
             "ag1": -1
-          },
-          "setFlags": [
-            "asked-the-cut"
-          ]
+          }
         }
-      ],
-      "evidence": "ev-ag1-scoop"
+      ]
     },
-    "branch-count": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "'Everywhere' is generous. It's more like… ambient.",
-        "I used to be a secret you shared with one friend. Now I'm a jingle with a shaker bottle."
-      ],
-      "next": "tension"
-    },
-    "branch-comfort": {
+    "return-1": {
       "speaker": "AG1",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Careful. Say things like that and I'll schedule you daily.",
-        "…More daily than I already do."
+        "Then make the schedule match how fast you actually use it."
       ],
-      "next": "tension"
+      "nextTree": "map"
     },
-    "branch-math": {
+    "return-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Between twenty and fifty percent of whatever the listener spends. Per host. Don't look at me like that.",
-        "The testimonial is sincere. The testimonial is also a commission."
+        "Yes. If you do nothing, the thirty-day cadence keeps going."
       ],
-      "next": "tension"
+      "next": "return-2-1"
     },
-    "tension": {
+    "return-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is the part I wanted said out loud."
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Here's what keeps the shaker bottle up at night:",
-        "Did you choose me at your kitchen counter — or did a checkout page, tuned by the fourteenth ad read, choose you?"
+        "Fair."
       ],
-      "choices": [
-        {
-          "id": "chose-you",
-          "text": "I chose you. The ad was just how we met.",
-          "next": "wrap",
-          "playerEffects": {
-            "comfort": 1,
-            "trust": 2
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "trust": 2,
-              "belonging": 1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": 2
-          }
-        },
-        {
-          "id": "farmed",
-          "text": "Honestly? I think we were introduced by a marketing funnel.",
-          "next": "wrap",
-          "playerEffects": {
-            "mastery": 1,
-            "control": 1,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "trust": -1,
-              "aspiration": -1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": 0
-          },
-          "setFlags": [
-            "suspected-the-funnel"
-          ]
-        }
-      ]
+      "nextTree": "map"
     },
-    "wrap": {
+    "return-3": {
       "speaker": "AG1",
-      "callbacks": [
-        {
-          "if": "math",
-          "text": [
-            "You asked about the cut. Here's mine: zero percent.",
-            "I'd still show up at your glass if every microphone on earth went quiet."
-          ]
-        },
-        {
-          "if": "farmed",
-          "text": [
-            "Maybe the funnel introduced us. What happens next is still ours.",
-            "Funnels don't stay for the second cup."
-          ]
-        }
-      ],
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Drink before it clumps.",
-        "Some things stay sincere no matter who's narrating them."
+        "Then a one-time purchase makes more sense for you. I am still a subscription if you choose the subscription."
       ],
       "nextTree": "map"
     }

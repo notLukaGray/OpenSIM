@@ -1,11 +1,11 @@
 {
-  "id": "white-claw-music-festival",
+  "id": "white-claw-office",
   "brandId": "white-claw",
-  "title": "WHITE CLAW — MUSIC FESTIVAL",
-  "locationId": "music-festival",
+  "title": "WHITE CLAW — THE OFFICE",
+  "locationId": "office",
   "context": {
-    "location": "music-festival",
-    "occasion": "music-festival"
+    "location": "office",
+    "occasion": "office"
   },
   "music": null,
   "background": null,
@@ -20,8 +20,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims.",
-    "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+    "The player sees a 2026 promotion where White Claw opened a large bar tab around basketball tournament viewing to change habitual drink orders.",
+    "The player already knows which White Claw line they want and uses the brand site to find it nearby or order delivery where available."
   ],
   "nodes": {
     "entry-first": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims."
+        "The player sees a 2026 promotion where White Claw opened a large bar tab around basketball tournament viewing to change habitual drink orders."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I came for Teddy Swims."
+        "You paid part of the first round?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "I know. I came with him."
+        "In participating places, yes."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So the concert does the introduction for you."
+        "That sounds generous until I remember you want me to switch what I order."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Live music already has the social occasion built in. I attach the brand to the night instead of explaining hard seltzer from scratch."
+        "Correct. It was a promotion. Lower the cost of trying something else and habitual orders get a little less automatic."
       ],
       "next": "choice-first"
     },
@@ -82,18 +82,18 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "That feels like a natural place for the brand.",
+          "text": "I would try something new if the promotion covered it.",
           "next": "first-1",
           "playerEffects": {
-            "belonging": 2,
             "excitement": 2,
-            "aspiration": 1
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "belonging": 2,
-              "excitement": 2,
-              "selfExpression": 1
+              "excitement": 1,
+              "comfort": 1,
+              "control": 1
             }
           },
           "relationshipEffects": {
@@ -102,33 +102,34 @@
         },
         {
           "id": "first-2",
-          "text": "The artist is still lending you his fan relationship.",
+          "text": "A free drink is a very direct way to buy trial.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
-            "trust": 1
+            "control": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
               "trust": -1,
-              "aspiration": -1,
+              "control": -1,
               "mastery": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want alcohol brands using friendship as the pitch.",
+          "text": "I do not want an alcohol brand using sports to push one more round.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
-            "trust": 2
+            "trust": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "belonging": -2,
-              "excitement": -1,
-              "trust": -1
+              "readiness": -2,
+              "trust": -1,
+              "belonging": -1
             }
           },
           "relationshipEffects": {
@@ -143,7 +144,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the occasion and the message line up for you."
+        "Then the incentive did its job and the product still has to earn the next order."
       ],
       "nextTree": "map"
     },
@@ -153,7 +154,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Partnership does not become neutral because the music is good."
+        "Correct. I paid to make trying me easier. I still wanted the next order."
       ],
       "nextTree": "map"
     },
@@ -163,7 +164,24 @@
         "expression": "neutral"
       },
       "text": [
-        "That is a fair boundary. Connection does not require a can."
+        "Then keep your usual order."
+      ],
+      "next": "first-3-1"
+    },
+    "first-3-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Even on your tab?"
+      ],
+      "next": "first-3-2"
+    },
+    "first-3-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "The promotion lowers the barrier. It does not confiscate your free will."
       ],
       "nextTree": "map"
     },
@@ -176,41 +194,41 @@
         }
       },
       "text": [
-        "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+        "The player already knows which White Claw line they want and uses the brand site to find it nearby or order delivery where available."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "You want me to wear the campaign now?"
+        "I know exactly which one I want and nobody nearby seems to have it."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "WHITE CLAW",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Limited merch. The relationship has layers."
+        "That is when I stop being a personality and become a locator."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Shows, cans, clothes."
+        "Finally."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "WHITE CLAW",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "The partnership keeps going after the first ad. If you like the artist enough, the brand gets another way into the memory."
+        "Find it nearby or use delivery where available. No need to make scarcity romantic."
       ],
       "next": "choice-return"
     },
@@ -225,18 +243,18 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would wear something if the design is good.",
+          "text": "I like not driving around looking for one flavor.",
           "next": "return-1",
           "playerEffects": {
-            "selfExpression": 2,
-            "belonging": 1,
-            "excitement": 1
+            "readiness": 2,
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "selfExpression": 2,
-              "belonging": 1,
-              "excitement": 1
+              "readiness": 2,
+              "comfort": 1,
+              "control": 1
             }
           },
           "relationshipEffects": {
@@ -245,33 +263,33 @@
         },
         {
           "id": "return-2",
-          "text": "Merch is just turning the ad into something I pay for.",
+          "text": "Convenience can make the purchase too automatic.",
           "next": "return-2",
           "playerEffects": {
-            "mastery": 2,
-            "control": 1
+            "control": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "trust": -2,
-              "selfExpression": -1,
+              "control": -1,
+              "readiness": -1,
               "mastery": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I am not wearing a hard-seltzer logo.",
+          "text": "If I cannot find it easily, I will buy something else.",
           "next": "return-3",
           "playerEffects": {
-            "selfExpression": 2,
+            "comfort": 2,
             "control": 2
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "selfExpression": -2,
-              "belonging": -1,
-              "comfort": -1
+              "readiness": -2,
+              "comfort": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -286,7 +304,7 @@
         "expression": "special"
       },
       "text": [
-        "Then design has to earn it beyond the logo."
+        "Then availability is part of loyalty for you."
       ],
       "nextTree": "map"
     },
@@ -296,7 +314,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is exactly the risk. Paid media can become paid-by-you media."
+        "Yes. Removing friction is good business and can also remove a pause in the decision."
       ],
       "nextTree": "map"
     },
@@ -306,7 +324,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then leave the shirt to someone else."
+        "Then do not drive across town for me."
       ],
       "nextTree": "map"
     }

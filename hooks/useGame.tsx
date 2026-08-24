@@ -6,7 +6,7 @@ import { HUB_TREE_ID, dateTreeList, getTree } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import type { Choice } from "@/content/schema";
 import { evalCondition } from "@/game/conditions";
-import { applyChoice, applyEvidenceUnlock, markCompleted } from "@/game/engine";
+import { applyChoice, applyEvidenceUnlock, markCompleted, resolveForward } from "@/game/engine";
 import {
   GameState,
   Navigation,
@@ -54,7 +54,15 @@ function getTreeOrNull(id: string): DateTree | null {
 /** Enter a node of a tree, applying node-entry effects (evidence unlocks). */
 function enter(store: StoreState, treeId: string, requestedNodeId?: string): StoreState {
   const tree = getTree(treeId);
-  const nodeId = requestedNodeId ?? tree.startNode;
+  // A date can expose mutually exclusive conditional entry points (for example,
+  // first meeting versus already using). On normal tree entry choose the first
+  // eligible route; explicit follow/debug jumps keep their requested node.
+  const initialNodeId = requestedNodeId ??
+    [tree.startNode, ...(tree.entryPoints ?? [])].find((id) => evalCondition(tree.nodes[id]?.conditions, store.state)) ??
+    tree.startNode;
+  // A conditional entry node is a content router, never a blank beat the player
+  // has to click through. This uses the same pass-through semantics as exits.
+  const nodeId = resolveForward(tree, initialNodeId, store.state) ?? initialNodeId;
   const node = tree.nodes[nodeId];
   if (!node) throw new Error(`Unknown node "${treeId}/${nodeId}"`);
   const state = applyEvidenceUnlock(store.state, node);

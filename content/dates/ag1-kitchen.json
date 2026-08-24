@@ -1,51 +1,97 @@
 {
   "id": "ag1-kitchen",
   "brandId": "ag1",
-  "title": "The Usual",
+  "title": "AG1 — QUIET KITCHEN",
+  "locationId": "kitchen",
   "context": {
     "location": "kitchen",
-    "occasion": "morning-routine"
+    "occasion": "kitchen"
   },
-  "music": "mus-kitchen",
-  "background": "bg-kitchen",
+  "music": null,
+  "background": null,
   "cast": [
     {
       "assetId": "char-ag1-neutral",
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "routine as devotion",
-    "the ritual is the product",
-    "proof and comfort don't always overlap"
+    "The player stops on an AG1 social ad offering a first-order kit with the powder and the tools to start the routine.",
+    "The player opens a new AG1 pouch and finds a larger scoop because the formula and serving size changed."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": false
+        }
       },
       "text": [
-        "Morning. I made space for you before the notifications started.",
-        "Same time, same glass, same quiet five minutes."
+        "The player stops on an AG1 social ad offering a first-order kit with the powder and the tools to start the routine."
+      ],
+      "next": "entry-first-1"
+    },
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "This is a lot of equipment for a green drink."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "You stopped on the ad, so I am making the first try easy."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Easy or committed?"
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Pouch, shaker, canister, scoop, travel packs. You can call it a kit. You do not have to call it a lifestyle."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "ritual",
-          "text": "Honestly, I care more about the ritual than the results.",
-          "next": "branch-ritual",
+          "id": "first-1",
+          "text": "The kit actually looks useful.",
+          "next": "first-1",
           "playerEffects": {
             "comfort": 2,
-            "reassurance": 2
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "comfort": 3,
-              "reassurance": 2,
-              "belonging": 1,
-              "excitement": -1
+              "comfort": 2,
+              "reassurance": 1
             }
           },
           "relationshipEffects": {
@@ -53,107 +99,33 @@
           }
         },
         {
-          "id": "price",
-          "text": "It's a lot of money for a glass of greens, though.",
-          "next": "branch-price",
+          "id": "first-2",
+          "text": "Every supplement ad makes the morning sound fixable.",
+          "next": "first-2",
           "playerEffects": {
             "control": 1,
-            "trust": -1
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not want a whole system for one drink.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
               "trust": -1,
-              "comfort": -2,
-              "control": 1
+              "comfort": -1
             }
-          }
-        },
-        {
-          "id": "proof",
-          "text": "What's actually proven to work in here?",
-          "next": "branch-proof",
-          "playerEffects": {
-            "trust": -1,
-            "mastery": 1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "trust": -2,
-              "mastery": -1,
-              "control": -1
-            }
-          }
-        }
-      ]
-    },
-    "branch-ritual": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "I know. That's the actual product.",
-        "Everything else is just what's in the scoop."
-      ],
-      "next": "memory"
-    },
-    "branch-price": {
-      "speaker": "AG1",
-      "text": [
-        "You're not wrong to think about it.",
-        "I'd rather you know what you're paying for than pretend it's nothing."
-      ],
-      "next": "memory"
-    },
-    "branch-proof": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "Less than you'd hope, if I'm being straight with you.",
-        "Most of what I offer isn't in a study. It's in the doing it daily."
-      ],
-      "next": "memory"
-    },
-    "memory": {
-      "speaker": "...",
-      "evidence": "ev-ag1-scoop",
-      "text": [
-        "The green scoop. The shaker bottle. The promise that one glass replaces six other pills.",
-        "You've watched that ad at 1 a.m. more than once."
-      ],
-      "next": "tension"
-    },
-    "tension": {
-      "speaker": "AG1",
-      "text": [
-        "Can I ask you something?",
-        "If I stopped feeling special tomorrow \u2014 just became routine \u2014 would you still show up?"
-      ],
-      "choices": [
-        {
-          "id": "yes",
-          "text": "Yes. That's kind of the point.",
-          "next": "wrap",
-          "playerEffects": {
-            "comfort": 2,
-            "belonging": 1,
-            "trust": 1
-          },
-          "relationshipEffects": {
-            "ag1": 2
-          }
-        },
-        {
-          "id": "no",
-          "text": "Probably not. I need to feel it's doing something.",
-          "next": "wrap",
-          "playerEffects": {
-            "mastery": 1,
-            "control": 1,
-            "comfort": -1
           },
           "relationshipEffects": {
             "ag1": -1
@@ -161,30 +133,201 @@
         }
       ]
     },
-    "wrap": {
+    "first-1": {
       "speaker": "AG1",
-      "callbacks": [
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Good. Use what helps and ignore the ceremonial feeling."
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Ceremonial is exactly what the canister was giving me."
+      ],
+      "next": "first-1-2"
+    },
+    "first-1-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "The canister has been humbled."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "I cannot fix your morning. I can make one part of it more organized."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Fair. If the kit feels like clutter before you even start, it is not helping."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": true
+        }
+      },
+      "text": [
+        "The player opens a new AG1 pouch and finds a larger scoop because the formula and serving size changed."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Before you make that, use the new scoop."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "There is a new scoop now?"
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "The serving went from twelve grams to thirteen. The old one is too small."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "I had finally stopped thinking about the scoop."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I know. The formula changed, so the ritual moved with it."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
         {
-          "if": "yes",
-          "text": [
-            "Okay.",
-            "Then tomorrow I'll be exactly this ordinary, with you."
-          ]
+          "id": "return-1",
+          "text": "I like that you are improving it.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 2,
+              "reassurance": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          }
         },
         {
-          "if": "price",
-          "text": [
-            "Fair either way.",
-            "I'll be here at the same time tomorrow, regardless. Receipts in the app."
-          ]
+          "id": "return-2",
+          "text": "Why change the thing I finally got used to?",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "A special scoop for green powder is ridiculous.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          }
         }
-      ],
+      ]
+    },
+    "return-1": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "Fair either way.",
-        "I'll be here at the same time tomorrow, regardless."
+        "Then give the new version a fair shot. I am glad the change feels worth the tiny inconvenience."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Fair. A routine only feels easy after it stops changing on you."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "It is a scoop, not a lifestyle event. But yes, you do need the bigger one for this pouch."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "kitchen"
+  }
 }

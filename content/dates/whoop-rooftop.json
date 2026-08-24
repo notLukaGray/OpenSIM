@@ -1,17 +1,17 @@
 {
-  "id": "white-claw-music-festival",
-  "brandId": "white-claw",
-  "title": "WHITE CLAW — MUSIC FESTIVAL",
-  "locationId": "music-festival",
+  "id": "whoop-rooftop",
+  "brandId": "whoop",
+  "title": "WHOOP — SUNSET ROOFTOP",
+  "locationId": "rooftop",
   "context": {
-    "location": "music-festival",
-    "occasion": "music-festival"
+    "location": "rooftop",
+    "occasion": "rooftop"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-white-claw-neutral",
+      "assetId": "char-whoop-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims.",
-    "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+    "The player first notices WHOOP through the Life tier and its WHOOP MG heart-health features rather than fitness tracking.",
+    "The player upgrades and WHOOP suggests giving the old 4.0 device to someone else, with shop credit if that person becomes a member."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "white-claw",
+          "id": "whoop",
           "met": false
         }
       },
       "text": [
-        "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims."
+        "The player first notices WHOOP through the Life tier and its WHOOP MG heart-health features rather than fitness tracking."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I came for Teddy Swims."
+        "ECG? I thought you were a workout band."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "I know. I came with him."
+        "That description is getting less complete."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So the concert does the introduction for you."
+        "How much less?"
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Live music already has the social occasion built in. I attach the brand to the night instead of explaining hard seltzer from scratch."
+        "WHOOP Life uses the MG hardware for ECG readings, AFib detection, and additional heart-health features where supported."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,88 +82,84 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "That feels like a natural place for the brand.",
+          "text": "That makes the device feel more substantial.",
           "next": "first-1",
           "playerEffects": {
-            "belonging": 2,
-            "excitement": 2,
-            "aspiration": 1
+            "trust": 1,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": 2,
-              "excitement": 2,
-              "selfExpression": 1
+            "whoop": {
+              "trust": 1,
+              "mastery": 1
             }
           },
           "relationshipEffects": {
-            "white-claw": 1
+            "whoop": 1
           }
         },
         {
           "id": "first-2",
-          "text": "The artist is still lending you his fan relationship.",
+          "text": "I would want to know exactly which features are regulated and available to me.",
           "next": "first-2",
           "playerEffects": {
-            "mastery": 2,
-            "trust": 1
+            "trust": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -1,
-              "aspiration": -1,
-              "mastery": 1
+            "whoop": {
+              "trust": 1,
+              "control": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want alcohol brands using friendship as the pitch.",
+          "text": "I do not want medical-style signals on a lifestyle wearable.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "trust": 2
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": -2,
-              "excitement": -1,
-              "trust": -1
+            "whoop": {
+              "comfort": -1,
+              "reassurance": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": -1
+            "whoop": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the occasion and the message line up for you."
+        "Good. The value is in specific capabilities, not the word advanced."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "Yes. Partnership does not become neutral because the music is good."
-      ],
-      "nextTree": "map"
-    },
-    "first-3": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "That is a fair boundary. Connection does not require a can."
+        "Correct. Region, age, and feature limitations matter. Read them before buying the tier."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Reasonable. More serious data can create more serious attention than you want."
       ],
       "nextTree": "map"
     },
@@ -171,51 +167,61 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "white-claw",
+          "id": "whoop",
           "met": true
         }
       },
       "text": [
-        "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+        "The player upgrades and WHOOP suggests giving the old 4.0 device to someone else, with shop credit if that person becomes a member."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "You want me to wear the campaign now?"
-      ],
-      "next": "entry-return-2"
-    },
-    "entry-return-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Limited merch. The relationship has layers."
+        "Do not throw the 4.0 in a drawer."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "I was absolutely going to throw the 4.0 in a drawer."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "PLAYER",
-      "text": [
-        "Shows, cans, clothes."
-      ],
-      "next": "entry-return-4"
-    },
-    "entry-return-4": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "The partnership keeps going after the first ad. If you like the artist enough, the brand gets another way into the memory."
+        "Give it to a friend. If they become a member through the upcycle path, you can get Shop credit."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "So even my old hardware can recruit."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Efficient, is it not?"
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
@@ -225,88 +231,85 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would wear something if the design is good.",
+          "text": "I like giving the old device another life.",
           "next": "return-1",
           "playerEffects": {
-            "selfExpression": 2,
-            "belonging": 1,
-            "excitement": 1
+            "readiness": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "selfExpression": 2,
+            "whoop": {
+              "readiness": 1,
               "belonging": 1,
-              "excitement": 1
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": 1
+            "whoop": 1
           }
         },
         {
           "id": "return-2",
-          "text": "Merch is just turning the ad into something I pay for.",
+          "text": "The credit makes the gift feel like a referral.",
           "next": "return-2",
           "playerEffects": {
-            "mastery": 2,
-            "control": 1
+            "control": 1,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -2,
-              "selfExpression": -1,
-              "mastery": 1
+            "whoop": {
+              "belonging": -1,
+              "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I am not wearing a hard-seltzer logo.",
+          "text": "I do not want my friends becoming part of my membership economics.",
           "next": "return-3",
           "playerEffects": {
-            "selfExpression": 2,
-            "control": 2
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "selfExpression": -2,
+            "whoop": {
               "belonging": -1,
-              "comfort": -1
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": -1
+            "whoop": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then design has to earn it beyond the logo."
+        "Then give it because it is useful and let the credit be secondary."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "That is exactly the risk. Paid media can become paid-by-you media."
+        "Yes. Giving the old band a second life can also bring me a new member. Both things are true."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "WHITE CLAW",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then leave the shirt to someone else."
+        "Then hand them the device with no pitch, or keep it. You do not owe me a recruit."
       ],
       "nextTree": "map"
     }

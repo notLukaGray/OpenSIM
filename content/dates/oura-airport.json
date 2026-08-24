@@ -1,17 +1,17 @@
 {
-  "id": "white-claw-music-festival",
-  "brandId": "white-claw",
-  "title": "WHITE CLAW — MUSIC FESTIVAL",
-  "locationId": "music-festival",
+  "id": "oura-airport",
+  "brandId": "oura",
+  "title": "OURA — NIGHT TERMINAL",
+  "locationId": "airport",
   "context": {
-    "location": "music-festival",
-    "occasion": "music-festival"
+    "location": "airport",
+    "occasion": "airport"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-white-claw-neutral",
+      "assetId": "char-oura-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims.",
-    "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+    "The player encounters Oura in a physical retailer where sizing kits can be tried or purchased before choosing a ring.",
+    "The player lands after a difficult trip and turns on Rest Mode instead of chasing a normal activity goal."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "white-claw",
+          "id": "oura",
           "met": false
         }
       },
       "text": [
-        "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims."
+        "The player encounters Oura in a physical retailer where sizing kits can be tried or purchased before choosing a ring."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I came for Teddy Swims."
+        "I can size this in a store now?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "I know. I came with him."
+        "You no longer have to begin our relationship with waiting for plastic in the mail."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So the concert does the introduction for you."
+        "Romantic."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Live music already has the social occasion built in. I attach the brand to the night instead of explaining hard seltzer from scratch."
+        "Target and Best Buy can let you try sizing in person, and a purchased sizing kit can become credit toward the ring at that retailer."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,88 +82,88 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "That feels like a natural place for the brand.",
+          "text": "Trying the size in person makes this feel less risky.",
           "next": "first-1",
           "playerEffects": {
-            "belonging": 2,
-            "excitement": 2,
-            "aspiration": 1
+            "trust": 2,
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": 2,
-              "excitement": 2,
-              "selfExpression": 1
+            "oura": {
+              "trust": 1,
+              "comfort": 1,
+              "control": 1
             }
           },
           "relationshipEffects": {
-            "white-claw": 1
+            "oura": 1
           }
         },
         {
           "id": "first-2",
-          "text": "The artist is still lending you his fan relationship.",
+          "text": "I still have to understand the membership after I buy the hardware.",
           "next": "first-2",
           "playerEffects": {
-            "mastery": 2,
+            "control": 2,
             "trust": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -1,
-              "aspiration": -1,
-              "mastery": 1
+            "oura": {
+              "trust": -2,
+              "mastery": 1,
+              "control": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want alcohol brands using friendship as the pitch.",
+          "text": "I would rather not buy a health tracker next to headphones and phone cases.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "trust": 2
+            "trust": 2,
+            "comfort": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": -2,
-              "excitement": -1,
-              "trust": -1
+            "oura": {
+              "trust": -2,
+              "comfort": -1,
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": -1
+            "oura": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the occasion and the message line up for you."
+        "Then retail solved the first trust problem: fit."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Partnership does not become neutral because the music is good."
+        "Correct. A store can simplify sizing. It does not simplify the subscription decision."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "That is a fair boundary. Connection does not require a can."
+        "Then the retail shelf is not enough to make the category feel right for you."
       ],
       "nextTree": "map"
     },
@@ -171,51 +171,51 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "white-claw",
+          "id": "oura",
           "met": true
         }
       },
       "text": [
-        "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+        "The player lands after a difficult trip and turns on Rest Mode instead of chasing a normal activity goal."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "You want me to wear the campaign now?"
+        "My Activity goal is not happening today."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Limited merch. The relationship has layers."
+        "Then stop chasing it."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Shows, cans, clothes."
+        "You are telling me to do less?"
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "The partnership keeps going after the first ad. If you like the artist enough, the brand gets another way into the memory."
+        "Jet lag is exactly the kind of reason Rest Mode exists. I can pause the activity goal and change the guidance toward recovery."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "neutral"
       },
@@ -225,88 +225,88 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would wear something if the design is good.",
+          "text": "I like that the system can stop pushing when the context changes.",
           "next": "return-1",
           "playerEffects": {
-            "selfExpression": 2,
-            "belonging": 1,
-            "excitement": 1
+            "readiness": 2,
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "selfExpression": 2,
-              "belonging": 1,
-              "excitement": 1
+            "oura": {
+              "readiness": 2,
+              "comfort": 1,
+              "control": 1
             }
           },
           "relationshipEffects": {
-            "white-claw": 1
+            "oura": 1
           }
         },
         {
           "id": "return-2",
-          "text": "Merch is just turning the ad into something I pay for.",
+          "text": "I should not need a setting to give myself permission to rest.",
           "next": "return-2",
           "playerEffects": {
-            "mastery": 2,
-            "control": 1
+            "control": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": -2,
-              "selfExpression": -1,
+            "oura": {
+              "control": -1,
+              "trust": -1,
               "mastery": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I am not wearing a hard-seltzer logo.",
+          "text": "If I am exhausted, I already know I am exhausted.",
           "next": "return-3",
           "playerEffects": {
-            "selfExpression": 2,
+            "comfort": 2,
             "control": 2
           },
           "brandPerceptionEffects": {
-            "white-claw": {
-              "selfExpression": -2,
-              "belonging": -1,
+            "oura": {
+              "readiness": -2,
+              "trust": -1,
               "comfort": -1
             }
           },
           "relationshipEffects": {
-            "white-claw": -1
+            "oura": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then design has to earn it beyond the logo."
+        "Then the feature is helping the system get out of your way."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "That is exactly the risk. Paid media can become paid-by-you media."
+        "That is fair. Permission from an app is still permission from an app."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "WHITE CLAW",
+      "speaker": "OURA",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then leave the shirt to someone else."
+        "Also fair. You do not need a score to justify sleep."
       ],
       "nextTree": "map"
     }

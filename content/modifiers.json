@@ -322,5 +322,21 @@
       "aspiration": -1
     },
     "label": "Price tags are sworn witnesses"
-  }
+  },
+  { "id": "mod-control-airport-reader", "appliesTo": ["liquid-iv"], "when": { "location": "airport", "hasFlag": "control-airport-reader" }, "effects": { "comfort": 1, "trust": 1 }, "label": "A layover can be a private hour" },
+  { "id": "mod-control-airport-prepared", "appliesTo": ["oura"], "when": { "location": "airport", "hasFlag": "control-airport-prepared" }, "effects": { "readiness": 1, "control": 1 }, "label": "You make certainty where you can" },
+  { "id": "mod-control-rooftop-private", "appliesTo": ["whoop"], "when": { "location": "rooftop", "hasFlag": "control-rooftop-private" }, "effects": { "comfort": -1 }, "label": "Not every moment wants a witness" },
+  { "id": "mod-control-rooftop-honest", "appliesTo": ["white-claw"], "when": { "location": "rooftop", "hasFlag": "control-rooftop-honest" }, "effects": { "belonging": 1 }, "label": "Connection beats the room" },
+  { "id": "mod-control-kitchen-plain", "appliesTo": ["ag1"], "when": { "location": "kitchen", "hasFlag": "control-kitchen-plain" }, "effects": { "trust": -1 }, "label": "The simple answer is already here" },
+  { "id": "mod-control-kitchen-care", "appliesTo": ["oura"], "when": { "location": "kitchen", "hasFlag": "control-kitchen-care" }, "effects": { "comfort": 1 }, "label": "Care is a practice, not a dashboard" },
+  { "id": "mod-control-office-finish", "appliesTo": ["whoop"], "when": { "location": "office", "hasFlag": "control-office-finish" }, "effects": { "mastery": 1 }, "label": "A measured sprint has its place" },
+  { "id": "mod-control-office-boundary", "appliesTo": ["prime"], "when": { "location": "office", "hasFlag": "control-office-boundary" }, "effects": { "control": -1 }, "label": "More is not always the assignment" },
+  { "id": "mod-control-beach-rest", "appliesTo": ["white-claw"], "when": { "location": "beach-day", "hasFlag": "control-beach-rest" }, "effects": { "comfort": 1 }, "label": "The day does not need optimizing" },
+  { "id": "mod-control-beach-join", "appliesTo": ["prime"], "when": { "location": "beach-day", "hasFlag": "control-beach-join" }, "effects": { "belonging": 1 }, "label": "The game is already in progress" },
+  { "id": "mod-control-festival-present", "appliesTo": ["celsius"], "when": { "location": "music-festival", "hasFlag": "control-festival-present" }, "effects": { "excitement": 1 }, "label": "The live wire is the point" },
+  { "id": "mod-control-festival-share", "appliesTo": ["white-claw"], "when": { "location": "music-festival", "hasFlag": "control-festival-share" }, "effects": { "belonging": 1 }, "label": "Joy travels farther when shared" },
+  { "id": "mod-control-cafe-focus", "appliesTo": ["ag1"], "when": { "location": "corner-cafe", "hasFlag": "control-cafe-focus" }, "effects": { "trust": -1 }, "label": "A private hour resists the pitch" },
+  { "id": "mod-control-cafe-observe", "appliesTo": ["starbucks"], "when": { "location": "corner-cafe", "hasFlag": "control-cafe-observe" }, "effects": { "belonging": 1 }, "label": "The room can be enough company" },
+  { "id": "mod-control-grocery-practical", "appliesTo": ["prime"], "when": { "location": "grocery-store", "hasFlag": "control-grocery-practical" }, "effects": { "trust": -1 }, "label": "The cart asks for proof" },
+  { "id": "mod-control-grocery-care", "appliesTo": ["ag1"], "when": { "location": "grocery-store", "hasFlag": "control-grocery-care" }, "effects": { "comfort": 1 }, "label": "Care can be ordinary" }
 ]

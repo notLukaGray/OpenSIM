@@ -1,10 +1,11 @@
 {
   "id": "starbucks-grocery-store",
   "brandId": "starbucks",
-  "title": "The Float Ledger",
+  "title": "STARBUCKS — GROCERY STORE",
+  "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
-    "occasion": "errand"
+    "occasion": "grocery-store"
   },
   "music": null,
   "background": null,
@@ -14,234 +15,310 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "loyalty as an interest-free loan",
-    "your prepaid balance is working capital",
-    "breakage is margin wearing a bow"
+    "The player encounters Starbucks Pumpkin Spice coffee, creamer, and ready-to-drink products in a grocery store before visiting a cafe that day.",
+    "The player already uses Starbucks Rewards and receives early access to select seasonal beverages or products."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": false
+        }
       },
       "text": [
-        "Checkout lane. Gift-card tower. You're already holding forty dollars of me.",
-        "We're past pretending now, so — want to see where that money actually lives?"
+        "The player encounters Starbucks Pumpkin Spice coffee, creamer, and ready-to-drink products in a grocery store before visiting a cafe that day."
       ],
-      "next": "impression"
+      "next": "entry-first-1"
     },
-    "impression": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Why are you in the grocery aisle?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "Members preload billions every quarter before a single latte exists. Eleven to thirteen billion a year, prepaid.",
-        "Until you swipe it, that balance pays my partners. Loyalty as an interest-free loan — mine, not yours."
+        "I left the coffeehouse."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "I can see that."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Coffee, creamer, ready-to-drink, seasonal cues. The shelf lets Starbucks show up before you ever walk near a barista."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "impressed",
-          "text": "That's brilliant. Cold, but genuinely brilliant.",
-          "next": "react-impressed",
+          "id": "first-1",
+          "text": "I like being able to make the flavor at home.",
+          "next": "first-1",
           "playerEffects": {
-            "mastery": 2,
-            "aspiration": 1
+            "comfort": 3,
+            "readiness": 2,
+            "excitement": 1,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "comfort": 3,
+              "readiness": 2,
+              "excitement": 1,
+              "selfExpression": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          }
+        },
+        {
+          "id": "first-2",
+          "text": "This makes Starbucks feel more like a packaged-goods brand.",
+          "next": "first-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
           },
           "brandPerceptionEffects": {
             "starbucks": {
               "mastery": 1,
               "trust": -1
             }
-          },
-          "relationshipEffects": {
-            "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-praised-float"
-          ]
+          }
         },
         {
-          "id": "microloan",
-          "text": "So every cheerful little birthday card was a micro-loan?",
-          "next": "react-microloan",
+          "id": "first-3",
+          "text": "If I am at the grocery store, I would rather buy regular coffee.",
+          "next": "first-3",
           "playerEffects": {
-            "trust": -1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "trust": -2
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-saw-breakage"
-          ]
-        },
-        {
-          "id": "yield",
-          "text": "What's my unspent balance earning me, exactly?",
-          "next": "experience",
-          "playerEffects": {
-            "mastery": 2,
-            "control": 1
+            "control": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
               "trust": -1,
-              "mastery": 1
+              "comfort": -1
             }
           },
           "relationshipEffects": {
-            "starbucks": 0
-          },
-          "setFlags": [
-            "sbux-ran-the-numbers"
-          ]
+            "starbucks": -1
+          }
         }
       ]
     },
-    "react-impressed": {
+    "first-1": {
       "speaker": "STARBUCKS",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Flattery logged. The float is my quietest engine — nobody ever tips it."
+        "Then the cafe relationship just became a pantry relationship."
       ],
-      "next": "experience"
+      "nextTree": "map"
     },
-    "react-microloan": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "Plus breakage — forgotten balances are pure margin. I did say past pretending."
-      ],
-      "next": "experience"
-    },
-    "experience": {
+    "first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Close to half my register rings through stored cards and the app now.",
-        "You prepay convenience, I bank certainty. Nobody's lying; somebody is lending."
+        "It is packaged goods. Scale changes what kind of brand I am."
       ],
-      "next": "tension",
-      "evidence": "ev-starbucks-float-ledger"
+      "nextTree": "map"
     },
-    "tension": {
+    "first-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Perfectly reasonable. Home coffee does not need my logo."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already uses Starbucks Rewards and receives early access to select seasonal beverages or products."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "You get an early look."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "At a seasonal drink?"
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Select launches can reach Rewards members before the general crowd."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is enough to make people keep the app?"
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Which brings us to the awkward aisle: knowing all this, do you still load the card?",
-        "The coffee is real. So is the float. Decide which one you're dating."
+        "For some people, getting pumpkin first is enough to keep the app installed."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "load",
-          "text": "Still loading. The convenience earns the float.",
-          "next": "closing",
+          "id": "return-1",
+          "text": "I like getting first crack at seasonal stuff.",
+          "next": "return-1",
           "playerEffects": {
-            "comfort": 1,
-            "trust": -1
+            "comfort": 2,
+            "readiness": 1,
+            "excitement": 1,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
+              "comfort": 2,
               "readiness": 1,
-              "trust": -1
+              "excitement": 1,
+              "selfExpression": 1
             }
           },
           "relationshipEffects": {
             "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-loaded-anyway"
-          ]
+          }
         },
         {
-          "id": "cash",
-          "text": "Cash from here on. My money stays my money.",
-          "next": "closing",
+          "id": "return-2",
+          "text": "Early access is mostly making me feel special for buying coffee.",
+          "next": "return-2",
           "playerEffects": {
-            "control": 2,
-            "mastery": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "trust": -2,
-              "control": -1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-paid-cash"
-          ]
-        },
-        {
-          "id": "scorekeeper",
-          "text": "I'll keep the card — and keep score.",
-          "next": "closing",
-          "playerEffects": {
-            "control": 2,
+            "control": 1,
             "mastery": 2
           },
           "brandPerceptionEffects": {
             "starbucks": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not need a launch calendar for drinks.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
               "trust": -1,
-              "mastery": 1
+              "comfort": -1
             }
           },
           "relationshipEffects": {
-            "starbucks": 0
+            "starbucks": -1
           }
         }
       ]
     },
-    "closing": {
+    "return-1": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "special"
       },
-      "callbacks": [
-        {
-          "if": "impressed",
-          "text": [
-            "You get me. That's the hazard of post-reveal dates."
-          ]
-        },
-        {
-          "if": "microloan",
-          "text": [
-            "You flinched at breakage and reached for the card anyway. We're both interesting."
-          ]
-        },
-        {
-          "if": "yield",
-          "text": [
-            "Zero percent, sentiment included. The house keeps the spread."
-          ]
-        }
-      ],
       "text": [
-        "Smart. The ledger likes you back; it simply never blinks.",
-        "Spend me like currency, date me like coffee, and never confuse the two."
+        "You said the quiet part for me. Feeling chosen is part of the perk."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Yes. The access has emotional value even when the product would arrive soon anyway."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then the calendar can pass without you. Seasonal is optional."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "grocery-store"
+  }
 }

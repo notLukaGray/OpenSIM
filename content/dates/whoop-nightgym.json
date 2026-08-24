@@ -1,164 +1,149 @@
 {
   "id": "whoop-nightgym",
   "brandId": "whoop",
-  "title": "Recovery Hours",
+  "title": "WHOOP — THE LATE GYM",
+  "locationId": "nightgym",
   "context": {
     "location": "nightgym",
-    "occasion": "late-night-workout"
+    "occasion": "nightgym"
   },
-  "music": "mus-nightgym",
-  "background": "bg-nightgym",
+  "music": null,
+  "background": null,
   "cast": [
     {
       "assetId": "char-whoop-neutral",
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "measurement as intimacy",
-    "control has a cost",
-    "care can look like surveillance"
+    "The player can try WHOOP Peak for a month with a certified pre-owned WHOOP 5.0 before choosing a paid membership.",
+    "The player finishes a workout and WHOOP relates the day's strain to recovery rather than only recording the exercise."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "WHOOP",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "whoop",
+          "met": false
+        }
       },
       "text": [
-        "You said you wanted to feel better.",
-        "I'm asking: better than what, exactly? By whose measurement?"
+        "The player can try WHOOP Peak for a month with a certified pre-owned WHOOP 5.0 before choosing a paid membership."
       ],
-      "choices": [
-        {
-          "id": "proof",
-          "text": "I want proof. Numbers, not vibes.",
-          "next": "branch-proof",
-          "playerEffects": {
-            "control": 2,
-            "mastery": 2,
-            "trust": 1
-          },
-          "brandPerceptionEffects": {
-            "whoop": {
-              "control": 2,
-              "mastery": 2,
-              "trust": 1,
-              "comfort": -3,
-              "reassurance": -2
-            }
-          }
-        },
-        {
-          "id": "sleep",
-          "text": "Mostly I just want to sleep like a person again.",
-          "next": "branch-sleep",
-          "playerEffects": {
-            "reassurance": 2,
-            "trust": 1
-          },
-          "brandPerceptionEffects": {
-            "whoop": {
-              "reassurance": 2,
-              "trust": 1,
-              "excitement": -1
-            }
-          },
-          "setFlags": [
-            "revealed-sleep"
-          ]
-        },
-        {
-          "id": "cost",
-          "text": "Depends what this is going to cost me, honestly.",
-          "next": "branch-cost",
-          "playerEffects": {
-            "trust": -1,
-            "comfort": -1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "whoop": {
-              "trust": -1,
-              "comfort": -2,
-              "aspiration": 1
-            }
-          }
-        }
-      ]
+      "next": "entry-first-1"
     },
-    "branch-proof": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Pre-owned hardware is an interesting first-date move."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Certified pre-owned 5.0. One month of Peak."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "And after a month?"
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
       "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Good. That's the only honest answer.",
-        "Every day, measured. No guessing."
+        "You decide whether Sleep, Strain, Recovery, and coaching are useful enough to keep paying for me."
       ],
-      "next": "memory"
+      "next": "entry-first-5"
     },
-    "branch-sleep": {
+    "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "So the trial includes enough surveillance to make an informed decision."
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "happy"
       },
       "text": [
-        "That's most people, actually.",
-        "I just don't advertise it that way."
+        "That is an unnecessarily accurate sentence."
       ],
-      "next": "memory"
+      "next": "choice-first"
     },
-    "branch-cost": {
+    "choice-first": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "neutral"
       },
       "text": [
-        "It never stops costing something.",
-        "I'd rather tell you now than let you find out."
-      ],
-      "next": "memory"
-    },
-    "memory": {
-      "speaker": "...",
-      "evidence": "ev-whoop-strain",
-      "text": [
-        "You know the graphs.",
-        "Someone on your feed treats their recovery score like a weather report for the soul."
-      ],
-      "next": "tension"
-    },
-    "tension": {
-      "speaker": "WHOOP",
-      "text": [
-        "Here's the part people don't like.",
-        "I'm on you every day. Even the days you don't want to know."
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "want-that",
-          "text": "That's exactly what I want. No blind spots.",
-          "next": "wrap",
+          "id": "first-1",
+          "text": "A month is enough time to see if the data helps.",
+          "next": "first-1",
           "playerEffects": {
             "control": 2,
-            "mastery": 1,
-            "comfort": -1
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "control": 1,
+              "mastery": 1,
+              "trust": 1
+            }
           },
           "relationshipEffects": {
             "whoop": 1
           }
         },
         {
-          "id": "too-much",
-          "text": "That sounds exhausting, if I'm being honest.",
-          "next": "wrap",
+          "id": "first-2",
+          "text": "I am more interested in what happens when the trial ends.",
+          "next": "first-2",
           "playerEffects": {
-            "comfort": 2,
-            "reassurance": -1,
-            "control": -1
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not want to start a fitness subscription just to test a band.",
+          "next": "first-3",
+          "playerEffects": {
+            "comfort": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "comfort": -1,
+              "control": -1
+            }
           },
           "relationshipEffects": {
             "whoop": -1
@@ -166,30 +151,216 @@
         }
       ]
     },
-    "wrap": {
+    "first-1": {
       "speaker": "WHOOP",
-      "callbacks": [
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Good. Use the month like an experiment, not a personality change."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Good. Put the end date on your calendar."
+      ],
+      "next": "first-2-1"
+    },
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You are telling me to remember when your own trial ends. Incredible."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Fair. Free hardware access does not make the relationship free."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "whoop",
+          "met": true
+        }
+      },
+      "text": [
+        "The player finishes a workout and WHOOP relates the day's strain to recovery rather than only recording the exercise."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Workout logged."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "I was there. I noticed."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I am not congratulating you. I am comparing today’s strain with today’s recovery."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "You really cannot let a workout just be a workout."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Not while you are wearing me."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
         {
-          "if": "sleep",
-          "text": [
-            "Tonight, then.",
-            "I'll be quiet about it. Mostly."
-          ]
+          "id": "return-1",
+          "text": "I like knowing whether I am pushing at the right time.",
+          "next": "return-1",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "control": 1,
+              "mastery": 1,
+              "trust": 1
+            }
+          },
+          "relationshipEffects": {
+            "whoop": 1
+          }
         },
         {
-          "if": "too-much",
-          "text": [
-            "Exhausting is a measurement too.",
-            "Sleep on it. Literally. I'll know how it went."
-          ]
+          "id": "return-2",
+          "text": "I do not want a score deciding whether a workout was good.",
+          "next": "return-2",
+          "playerEffects": {
+            "comfort": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "control": 1,
+              "reassurance": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I know how I feel. I do not need a band to grade it.",
+          "next": "return-3",
+          "playerEffects": {
+            "comfort": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "comfort": -1,
+              "control": -1
+            }
+          },
+          "relationshipEffects": {
+            "whoop": -1
+          }
         }
-      ],
+      ]
+    },
+    "return-1": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "Sleep on it.",
-        "Literally. I'll know how it went."
+        "That is my favorite relationship: data informs the decision and you still make it."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "It is not a morality score. It is a signal. Please stop making my circles emotionally responsible for you."
+      ],
+      "next": "return-2-1"
+    },
+    "return-2-1": {
+      "speaker": "WHOOP (negative)",
+      "text": [
+        "Then take the band off for the workout."
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "That sounded painful for you."
+      ],
+      "next": "return-2-3"
+    },
+    "return-2-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "I will recover."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Fair. That is a real way to see it."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "nightgym"
+  }
 }

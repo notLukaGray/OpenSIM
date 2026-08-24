@@ -1,7 +1,7 @@
 {
-  "id": "celsius-beach-day",
-  "brandId": "celsius",
-  "title": "CELSIUS — BEACH DAY",
+  "id": "liquid-iv-beach-day",
+  "brandId": "liquid-iv",
+  "title": "LIQUID I.V. — BEACH DAY",
   "locationId": "beach-day",
   "context": {
     "location": "beach-day",
@@ -11,7 +11,7 @@
   "background": null,
   "cast": [
     {
-      "assetId": "char-celsius-neutral",
+      "assetId": "char-liquid-iv-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can.",
-    "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+    "The player notices Liquid I.V. because a seasonal flavor is built around a familiar candy or frozen-treat brand.",
+    "The player already uses Liquid I.V. and buys a variety pack instead of committing to one flavor."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "celsius",
+          "id": "liquid-iv",
           "met": false
         }
       },
       "text": [
-        "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can."
+        "The player notices Liquid I.V. because a seasonal flavor is built around a familiar candy or frozen-treat brand."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I picked this up because the can looks like vacation."
+        "You made hydration taste like a childhood freezer aisle."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "happy"
+        "expression": "embarrassed"
       },
       "text": [
-        "Thank you for proving the point."
+        "When you say it like that, yes."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "The point being?"
+        "The familiar name is doing a lot of work."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Seasonal flavor and seasonal packaging get you to look again. After that, it is still a caffeinated CELSIUS."
+        "That is the point of the collaboration. Firecracker got attention because people recognized the memory before they understood the electrolyte powder."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,93 +82,92 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "The flavor sounds fun for a long day out.",
+          "text": "That sounds fun enough to try once.",
           "next": "first-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
-          },
-          "brandPerceptionEffects": {
-            "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
-            }
-          },
-          "relationshipEffects": {
-            "celsius": 1
-          }
-        },
-        {
-          "id": "first-2",
-          "text": "A beach mood does not change what 200 milligrams of caffeine does.",
-          "next": "first-2",
-          "playerEffects": {
-            "control": 1,
-            "mastery": 2,
-            "reassurance": 1,
             "excitement": 1,
             "selfExpression": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
-              "trust": -1,
-              "reassurance": -1,
-              "excitement": -1
+            "liquid-iv": {
+              "excitement": 1,
+              "selfExpression": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": 1
+          }
+        },
+        {
+          "id": "first-2",
+          "text": "Nostalgia has nothing to do with hydration.",
+          "next": "first-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "excitement": -1,
+              "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want an energy drink deciding the vibe of the day.",
+          "text": "I do not want candy logic in a wellness product.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "selfExpression": 2,
-            "excitement": 1
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "trust": -1,
-              "comfort": -1,
-              "excitement": -1
+            "liquid-iv": {
+              "selfExpression": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": -1
+            "liquid-iv": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the packaging earned the trial and the product still has to earn the repeat."
+        "Then the memory got you to taste it."
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "I resent how effective that is."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Correct. Aesthetic context does not change stimulant content."
+        "Correct. The familiar flavor gets you to look. The hydration product still has to earn the purchase."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "embarrassed"
       },
       "text": [
-        "Good news: beaches existed before me."
+        "Then the collaboration is doing the opposite of what you want. Skip it."
       ],
       "nextTree": "map"
     },
@@ -176,34 +175,51 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "celsius",
+          "id": "liquid-iv",
           "met": true
         }
       },
       "text": [
-        "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+        "The player already uses Liquid I.V. and buys a variety pack instead of committing to one flavor."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I like Arctic Vibe. Why do I need it twice?"
+        "I keep buying the variety pack and choosing the same two first."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "That still counts as variety. Technically."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Why not just sell me those two?"
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "You do not. The stick is there if you want the same flavor without the can or the fizz."
+        "You can. The pack is there if changing flavors keeps the routine from getting stale."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
@@ -213,86 +229,84 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I like keeping the flavor while changing the format.",
+          "text": "I like being able to choose based on my mood.",
           "next": "return-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
+            "comfort": 1,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
+            "liquid-iv": {
+              "comfort": 1,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
-            "celsius": 1
+            "liquid-iv": 1
           }
         },
         {
           "id": "return-2",
-          "text": "That makes it easier to have CELSIUS everywhere.",
+          "text": "This feels like a fix for getting bored with the product.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
-            "mastery": 2
+            "mastery": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
-              "trust": -1
+            "liquid-iv": {
+              "excitement": -1,
+              "readiness": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need one energy brand following me across every occasion.",
+          "text": "If I am bored enough to need four flavors, maybe I do not need the habit.",
           "next": "return-3",
           "playerEffects": {
-            "control": 2,
-            "selfExpression": 1
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "trust": -1,
-              "comfort": -1
+            "liquid-iv": {
+              "comfort": -1,
+              "readiness": -1
             }
           },
           "relationshipEffects": {
-            "celsius": -1
+            "liquid-iv": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Then keep the flavor and use the format that actually fits the day."
+        "Then the variety pack is earning its space in the cabinet."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Ubiquity is convenient until it starts feeling like pressure."
+        "It can be. Boredom is a real reason people stop repeating things."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "CELSIUS",
+      "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then choose the occasion where I actually add something and leave me out of the rest."
+        "Also fair. A routine is allowed to end."
       ],
       "nextTree": "map"
     }

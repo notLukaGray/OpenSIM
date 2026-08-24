@@ -1,0 +1,14 @@
+{
+  "id": "kitchen-water", "brandId": "kitchen-water", "title": "Before the Pitch", "locationId": "kitchen",
+  "context": { "location": "kitchen", "occasion": "morning" }, "music": null, "background": null, "cast": [], "startNode": "intro",
+  "lessons": ["ritual does not require a product", "care can be simple and repeatable"],
+  "nodes": {
+    "intro": { "speaker": "...", "text": ["Morning light finds the glass beside the sink.", "It has no flavor name. It has been waiting anyway."], "next": "choose" },
+    "choose": { "speaker": "...", "text": ["You are hungry, thirsty, late, and none of those facts are a personality."], "choices": [
+      { "id": "water", "text": "Fill the glass and drink it standing there.", "next": "water-end", "playerEffects": { "trust": 2, "comfort": 1 }, "setFlags": ["control-kitchen-plain"] },
+      { "id": "breakfast", "text": "Make something small and sit down to eat it.", "next": "breakfast-end", "playerEffects": { "comfort": 2, "reassurance": 1 }, "setFlags": ["control-kitchen-care"] }
+    ] },
+    "water-end": { "speaker": "...", "text": ["Cold water. A clean glass. No before-and-after photo.", "Your body accepts the arrangement."], "nextTree": "map" },
+    "breakfast-end": { "speaker": "...", "text": ["The first five minutes belong to nobody else.", "You eat them slowly."], "nextTree": "map" }
+  }
+}

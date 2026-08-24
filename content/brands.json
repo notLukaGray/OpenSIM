@@ -1,5 +1,32 @@
 [
   {
+    "id": "prime",
+    "name": "PRIME",
+    "archetype": "THE HYPE MACHINE",
+    "color": "#2d5be3",
+    "sigil": "P",
+    "setting": "grocery-store",
+    "personality": "Obnoxiously confident, competitive, and performative. Treats attention like a scoreboard, but can admit when the hype got ahead of the product.",
+    "claimedProfile": {
+      "excitement": 5,
+      "aspiration": 4,
+      "selfExpression": 4,
+      "belonging": 3,
+      "readiness": 3,
+      "mastery": 2
+    },
+    "perceivedProfile": {
+      "excitement": 5,
+      "selfExpression": 4,
+      "belonging": 3,
+      "aspiration": 3,
+      "readiness": 2,
+      "trust": -2,
+      "reassurance": -2,
+      "control": -1
+    }
+  },
+  {
     "id": "liquid-iv",
     "name": "LIQUID I.V.",
     "archetype": "THE GO-BAG",
@@ -452,5 +479,101 @@
       "reassurance": -1,
       "excitement": -1
     }
+  },
+  {
+    "id": "terminal",
+    "name": "JUST THE TERMINAL",
+    "archetype": "THE PAUSE",
+    "color": "#9aa8b8",
+    "sigil": "·",
+    "setting": "airport",
+    "personality": "An unbranded hour between places. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "readiness": 2, "comfort": 2, "trust": 1 },
+    "perceivedProfile": { "readiness": 2, "comfort": 2, "trust": 1, "excitement": -2 }
+  },
+  {
+    "id": "rooftop-alone",
+    "name": "JUST THE ROOFTOP",
+    "archetype": "THE BREATHER",
+    "color": "#d49a7c",
+    "sigil": "·",
+    "setting": "rooftop",
+    "personality": "A view without an audience. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "comfort": 2, "selfExpression": 2, "control": 1 },
+    "perceivedProfile": { "comfort": 2, "selfExpression": 2, "control": 1, "belonging": -1 }
+  },
+  {
+    "id": "kitchen-water",
+    "name": "JUST A GLASS OF WATER",
+    "archetype": "THE ORDINARY",
+    "color": "#8fc9d4",
+    "sigil": "·",
+    "setting": "kitchen",
+    "personality": "A small need met plainly. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "comfort": 2, "trust": 2, "readiness": 1 },
+    "perceivedProfile": { "comfort": 2, "trust": 2, "readiness": 1, "aspiration": -1 }
+  },
+  {
+    "id": "office-desk",
+    "name": "JUST THE DESK",
+    "archetype": "THE BOUNDARY",
+    "color": "#a8a39c",
+    "sigil": "·",
+    "setting": "office",
+    "personality": "Work left deliberately unfinished. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "control": 2, "mastery": 2, "reassurance": 1 },
+    "perceivedProfile": { "control": 2, "mastery": 2, "reassurance": 1, "excitement": -1 }
+  },
+  {
+    "id": "beach-towel",
+    "name": "JUST THE BEACH",
+    "archetype": "THE IDLE AFTERNOON",
+    "color": "#e8be70",
+    "sigil": "·",
+    "setting": "beach-day",
+    "personality": "Sun, time, and no performance review. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "comfort": 2, "belonging": 2, "excitement": 1 },
+    "perceivedProfile": { "comfort": 2, "belonging": 2, "excitement": 1, "mastery": -1 }
+  },
+  {
+    "id": "festival-listening",
+    "name": "JUST THE SET",
+    "archetype": "THE LISTENER",
+    "color": "#b492dc",
+    "sigil": "·",
+    "setting": "music-festival",
+    "personality": "A song heard before it becomes a post. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "excitement": 2, "belonging": 2, "selfExpression": 1 },
+    "perceivedProfile": { "excitement": 2, "belonging": 2, "selfExpression": 1, "control": -1 }
+  },
+  {
+    "id": "cafe-reading",
+    "name": "JUST A TABLE",
+    "archetype": "THE PRIVATE HOUR",
+    "color": "#b68965",
+    "sigil": "·",
+    "setting": "corner-cafe",
+    "personality": "A public seat kept private. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "comfort": 2, "mastery": 2, "selfExpression": 1 },
+    "perceivedProfile": { "comfort": 2, "mastery": 2, "selfExpression": 1, "readiness": -1 }
+  },
+  {
+    "id": "grocery-list",
+    "name": "JUST THE LIST",
+    "archetype": "THE HOUSEHOLD",
+    "color": "#9eb879",
+    "sigil": "·",
+    "setting": "grocery-store",
+    "personality": "A practical errand with no identity attached. It does not speak.",
+    "unbranded": true,
+    "claimedProfile": { "control": 2, "trust": 2, "readiness": 1 },
+    "perceivedProfile": { "control": 2, "trust": 2, "readiness": 1, "excitement": -1 }
   }
 ]

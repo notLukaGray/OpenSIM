@@ -6,7 +6,7 @@
   "context": { "location": "nightgym", "occasion": "old-school-session" },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-gym-neutral", "position": "center" }],
+  "cast": [],
   "startNode": "intro",
   "lessons": [
     "the untracked original",
@@ -19,7 +19,6 @@
         "The smart equipment sleeps in its charging dock tonight.",
         "What's left is iron, chalk, and something older watching from the squat rack."
       ],
-      "sprite": { "expression": "neutral", "effect": "enter" },
       "next": "greet"
     },
 
@@ -50,14 +49,12 @@
 
     "branch-nothing": {
       "speaker": "JUST THE GYM",
-      "sprite": { "expression": "happy" },
       "text": ["Correct answer.", "Pick a weight that respects you. Go again until it doesn't."],
       "next": "burn"
     },
 
     "branch-confess": {
       "speaker": "JUST THE GYM",
-      "sprite": { "expression": "neutral" },
       "text": [
         "Simple isn't the same as easy.",
         "I pay in soreness, and my invoices always clear."
@@ -67,7 +64,6 @@
 
     "burn": {
       "speaker": "...",
-      "sprite": { "expression": "special" },
       "text": [
         "An hour passes without producing a single data point.",
         "Just breath, iron, and the quiet arithmetic of one more rep."

@@ -314,8 +314,12 @@ export default function TravelMap() {
       <div className={styles.controlsHint}>drag to explore · esc · title</div>
 
       <AnimatePresence>
+        {/* Every direct child of AnimatePresence needs a unique explicit key:
+            keyless children all collapse to framer-motion's "" key and collide
+            whenever two overlays coexist (or one exits while another enters). */}
         {thresholdPopup && (
           <motion.div
+            key="threshold"
             className={styles.thresholdWrap}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -367,11 +371,17 @@ export default function TravelMap() {
           </motion.div>
         )}
         {debriefTree && (
-          <DateDebrief tree={debriefTree} state={state} onDismiss={() => setDebriefTree(null)} />
+          <DateDebrief
+            key="debrief"
+            tree={debriefTree}
+            state={state}
+            onDismiss={() => setDebriefTree(null)}
+          />
         )}
-        {archiveOpen && <ArchivePanel onClose={() => setArchiveOpen(false)} />}
+        {archiveOpen && <ArchivePanel key="archive" onClose={() => setArchiveOpen(false)} />}
         {openedLocation && (
           <LocationView
+            key={`loc-${openedLocation.id}`}
             location={openedLocation}
             ambientMusicId={MAP_MUSIC_ID}
             onBack={() => openLocation(null)}

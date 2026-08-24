@@ -1,11 +1,11 @@
 {
-  "id": "liquid-iv-airport",
+  "id": "liquid-iv-nightgym",
   "brandId": "liquid-iv",
-  "title": "LIQUID I.V. — NIGHT TERMINAL",
-  "locationId": "airport",
+  "title": "LIQUID I.V. — THE LATE GYM",
+  "locationId": "nightgym",
   "context": {
-    "location": "airport",
-    "occasion": "airport"
+    "location": "nightgym",
+    "occasion": "nightgym"
   },
   "music": null,
   "background": null,
@@ -20,8 +20,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player is buying water before a flight and notices that Liquid I.V. comes as single-serve powder sticks made to be mixed into a bottle.",
-    "The player already uses Liquid I.V. and gets a reminder before the next subscription shipment."
+    "The player first considers Liquid I.V. because the brand claims its hydration formulas provide more electrolytes than a leading sports drink.",
+    "The player likes the format but has switched from the original formula to a sugar-free Hydration Multiplier."
   ],
   "nodes": {
     "entry-first": {
@@ -33,41 +33,41 @@
         }
       },
       "text": [
-        "The player is buying water before a flight and notices that Liquid I.V. comes as single-serve powder sticks made to be mixed into a bottle."
+        "The player first considers Liquid I.V. because the brand claims its hydration formulas provide more electrolytes than a leading sports drink."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I already bought water."
+        "Three times the electrolytes sounds very specific."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Perfect. I brought the part that fits in your pocket."
+        "It is specific. The comparison is against the leading sports drink."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "You are assuming plain water is not enough for what I want."
+        "So that is the claim I should actually evaluate, not just more hydration in giant letters."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "I am offering electrolytes in a single-serve stick. You decide whether the extra function is useful today."
+        "Exactly. Read the comparison before you let the headline do all the work."
       ],
       "next": "choice-first"
     },
@@ -82,16 +82,15 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "That is actually useful for travel.",
+          "text": "I like knowing what the product is trying to do.",
           "next": "first-1",
           "playerEffects": {
-            "readiness": 2,
-            "reassurance": 1
+            "readiness": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
               "readiness": 1,
-              "reassurance": 1,
               "trust": 1
             }
           },
@@ -101,31 +100,31 @@
         },
         {
           "id": "first-2",
-          "text": "I can also just drink the water.",
+          "text": "I want to know what that comparison actually means.",
           "next": "first-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": 1,
-              "trust": -1
+              "mastery": 1,
+              "trust": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want another thing to pack.",
+          "text": "I do not need a performance claim after every workout.",
           "next": "first-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
               "readiness": -1,
-              "comfort": -1
+              "mastery": -1
             }
           },
           "relationshipEffects": {
@@ -140,7 +139,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. I earn my space when routine gets messy."
+        "Good. Function is the reason I get invited into the gym bag."
       ],
       "nextTree": "map"
     },
@@ -150,7 +149,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Absolutely. I am an option, not a requirement."
+        "You should read the ingredients and the comparison, especially if sodium or sugar matters to you."
       ],
       "nextTree": "map"
     },
@@ -160,7 +159,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Then leave me home. Prepared stops being useful when it becomes clutter."
+        "Fair. Plenty of workouts end successfully with water."
       ],
       "nextTree": "map"
     },
@@ -173,7 +172,7 @@
         }
       },
       "text": [
-        "The player already uses Liquid I.V. and gets a reminder before the next subscription shipment."
+        "The player likes the format but has switched from the original formula to a sugar-free Hydration Multiplier."
       ],
       "next": "entry-return-1"
     },
@@ -183,14 +182,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Your next box is coming up."
+        "You kept the stick. You changed the formula."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "How many packets do I even have left?"
+        "I liked the convenience. I did not want the sugar."
       ],
       "next": "entry-return-3"
     },
@@ -200,24 +199,24 @@
         "expression": "happy"
       },
       "text": [
-        "That is why I am reminding you before it ships."
+        "Then Sugar-Free is the cleaner answer for your preference."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "And if I have plenty?"
+        "Same little ritual, less arguing with the label."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "special"
       },
       "text": [
-        "Swap flavors, change it, pause it, or cancel. Surprise hydration is still a surprise charge."
+        "That is the kind of boring compatibility I like."
       ],
       "next": "choice-return"
     },
@@ -232,17 +231,16 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I like not having to remember to reorder.",
+          "text": "I like that I did not have to leave the brand to change that.",
           "next": "return-1",
           "playerEffects": {
-            "readiness": 2,
+            "trust": 1,
             "reassurance": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": 1,
-              "reassurance": 1,
-              "trust": 1
+              "trust": 1,
+              "reassurance": 1
             }
           },
           "relationshipEffects": {
@@ -251,11 +249,11 @@
         },
         {
           "id": "return-2",
-          "text": "I want to check whether I actually need another box.",
+          "text": "I still want to know what sweetener I am drinking.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
@@ -266,7 +264,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want hydration on auto-renew.",
+          "text": "I would rather skip flavored hydration entirely.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -274,8 +272,8 @@
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": -1,
-              "comfort": -1
+              "comfort": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -287,47 +285,30 @@
     "return-1": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "Then the subscription is doing its one useful trick."
+        "Exactly. If the sugar-free one fits you better, use that one."
       ],
       "nextTree": "map"
     },
     "return-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "Yes. If you ignore the reminder, the subscription still has a job to do."
-      ],
-      "next": "return-2-1"
-    },
-    "return-2-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "Which is charge me and ship it."
-      ],
-      "next": "return-2-2"
-    },
-    "return-2-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Correct."
+        "Then read it. Sugar-free is not the same thing as ingredient-free."
       ],
       "nextTree": "map"
     },
     "return-3": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "Then cancel it. Recurring delivery only makes sense if you want recurring delivery."
+        "That is a real option too. I do not need to win every bottle of water."
       ],
       "nextTree": "map"
     }

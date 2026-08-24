@@ -1,11 +1,11 @@
 {
   "id": "white-claw-grocery-store",
   "brandId": "white-claw",
-  "title": "$385 Million of Confidence",
+  "title": "WHITE CLAW — GROCERY STORE",
   "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
-    "occasion": "errand"
+    "occasion": "grocery-store"
   },
   "music": null,
   "background": null,
@@ -15,134 +15,85 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "capacity became the moat",
-    "winning a shrinking pond still counts — probably",
-    "extension churn taxes retail faith"
+    "The player first buys White Claw through a multipack that includes several familiar flavors rather than choosing one single flavor.",
+    "The player already drinks standard White Claw and notices that Surge is a stronger 8% ABV line."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "happy",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "white-claw",
+          "met": false
+        }
       },
       "text": [
-        "Behold: the endcap. Prime real estate, eye level, my face on everything.",
-        "Few years back I bet three hundred eighty-five million dollars this shelf stays mine. Everyone said fad. I poured foundations."
+        "The player first buys White Claw through a multipack that includes several familiar flavors rather than choosing one single flavor."
       ],
-      "choices": [
-        {
-          "id": "conviction",
-          "text": "Bet big while everyone squints — that's how moats happen.",
-          "next": "branch-conviction",
-          "playerEffects": {
-            "aspiration": 2,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "control": 2,
-              "aspiration": 1
-            }
-          },
-          "relationshipEffects": {
-            "white-claw": 1
-          }
-        },
-        {
-          "id": "reckless",
-          "text": "Or it's betting the company on a vibe with a half-life.",
-          "next": "branch-reckless",
-          "playerEffects": {
-            "mastery": 2,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "mastery": -1,
-              "trust": -1
-            }
-          }
-        },
-        {
-          "id": "numbers",
-          "text": "Show me the math before I admire the nerve.",
-          "next": "branch-numbers",
-          "playerEffects": {
-            "mastery": 1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "mastery": 1,
-              "trust": 1
-            }
-          }
-        }
-      ]
+      "next": "entry-first-1"
     },
-    "branch-conviction": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "This is the everybody-can-live-with-it pack, right?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Finally, someone fluent in confidence."
+        "That is a brutal way to describe a successful party format."
       ],
-      "next": "shelf-truth",
-      "evidence": "ev-white-claw-alcohol-is-alcohol"
+      "next": "entry-first-3"
     },
-    "branch-reckless": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "annoyed"
-      },
+    "entry-first-3": {
+      "speaker": "PLAYER",
       "text": [
-        "Half-life? Rude. ...Accurate-ish. Rude."
+        "Nobody has to pick one flavor."
       ],
-      "next": "shelf-truth"
+      "next": "entry-first-4"
     },
-    "branch-numbers": {
+    "entry-first-4": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Numbers it is. Follow the price tags."
+        "Black Cherry, Pineapple, Cranberry, Lime. One purchase, several answers."
       ],
-      "next": "shelf-truth"
+      "next": "choice-first"
     },
-    "shelf-truth": {
-      "speaker": "...",
-      "text": [
-        "Aisle five testifies: about sixty percent of the seltzer row is Claw — of a pond that shrinks every year. Discount stickers mark the ghosts beside the throne: Iced Tea, down seventy-seven percent, rest in peace."
-      ],
-      "next": "tension"
-    },
-    "tension": {
+    "choice-first": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "So which is it — the last one standing, or the curator of a museum?",
-        "Winning a game fewer people play each year still counts. I think. Ask me again in July."
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "moat",
-          "text": "Capacity is strategy. Whoever's left standing pours last.",
-          "next": "wrap",
+          "id": "first-1",
+          "text": "That makes trying the brand easier.",
+          "next": "first-1",
           "playerEffects": {
-            "control": 2,
-            "reassurance": 1
+            "mastery": 1,
+            "comfort": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "control": 2,
-              "readiness": 1
+              "mastery": 1,
+              "comfort": 1,
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -150,64 +101,211 @@
           }
         },
         {
-          "id": "museum",
-          "text": "Beautiful mausoleum of Summer '19, though.",
-          "next": "wrap",
+          "id": "first-2",
+          "text": "I will probably end up with one flavor nobody wants.",
+          "next": "first-2",
           "playerEffects": {
-            "mastery": 1,
-            "comfort": -1
+            "mastery": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "aspiration": -2,
+              "comfort": -1,
+              "control": -1,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not want twelve cans to find out whether I like this.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "control": -1,
+              "comfort": -1,
+              "belonging": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
+          }
+        }
+      ]
+    },
+    "first-1": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Then variety lowered the trial risk enough."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Every variety pack has a flavor that becomes fridge furniture for somebody."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then a single can at a bar is a better first date."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "white-claw",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already drinks standard White Claw and notices that Surge is a stronger 8% ABV line."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Eight percent?"
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Eight percent. Stronger than the standard can, and that should be the first thing you notice."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I am glad the difference is clear.",
+          "next": "return-1",
+          "playerEffects": {
+            "trust": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 1,
+              "control": 1,
+              "readiness": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "I would have to change how I pace myself.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "readiness": -2,
+              "control": -1,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not want a stronger version at all.",
+          "next": "return-3",
+          "playerEffects": {
+            "comfort": 2,
+            "control": 2
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "readiness": -2,
+              "comfort": -1,
               "excitement": -1
             }
           },
           "relationshipEffects": {
             "white-claw": -1
           }
-        },
-        {
-          "id": "pivot",
-          "text": "Then stop defending the pond. Go where thirst goes next.",
-          "next": "wrap",
-          "playerEffects": {
-            "readiness": 1,
-            "aspiration": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "aspiration": 1,
-              "mastery": -1
-            }
-          },
-          "setFlags": [
-            "claw-pivot-nod"
-          ]
         }
       ]
     },
-    "wrap": {
+    "return-1": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "special"
       },
-      "callbacks": [
-        {
-          "if": "reckless",
-          "text": [
-            "'Vibe with a half-life.' Writing that on the plant wall."
-          ]
-        },
-        {
-          "if": "moat",
-          "text": [
-            "Pours last. I'm having that engraved on a forklift."
-          ]
-        }
-      ],
       "text": [
-        "Anyway — shelf's yours to raid. The throne shares."
+        "Good. Clear information is more useful than pretending the lines are interchangeable."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Check the ABV first. Then decide whether you want it."
+      ],
+      "next": "return-2-1"
+    },
+    "return-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is the whole answer?"
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "It is the important one."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Then the standard line or Zero Proof makes more sense for you."
       ],
       "nextTree": "map"
     }

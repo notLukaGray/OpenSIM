@@ -1,17 +1,17 @@
 {
-  "id": "celsius-beach-day",
-  "brandId": "celsius",
-  "title": "CELSIUS — BEACH DAY",
-  "locationId": "beach-day",
+  "id": "prime-nightgym",
+  "brandId": "prime",
+  "title": "PRIME — THE LATE GYM",
+  "locationId": "nightgym",
   "context": {
-    "location": "beach-day",
-    "occasion": "beach-day"
+    "location": "nightgym",
+    "occasion": "nightgym"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-celsius-neutral",
+      "assetId": "char-prime-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can.",
-    "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+    "The player first recognizes PRIME from the creator machine around Logan Paul and KSI, not from a nutrition label.",
+    "The player already buys PRIME and has started keeping powdered Hydration+ sticks in a gym bag instead of carrying bottles."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "celsius",
+          "id": "prime",
           "met": false
         }
       },
       "text": [
-        "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can."
+        "The player first recognizes PRIME from the creator machine around Logan Paul and KSI, not from a nutrition label."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I picked this up because the can looks like vacation."
+        "I knew Logan and KSI before I knew what was in you."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Thank you for proving the point."
+        "Exactly. That was the launch advantage."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "The point being?"
+        "You are admitting the celebrity came before the hydration pitch."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Seasonal flavor and seasonal packaging get you to look again. After that, it is still a caffeinated CELSIUS."
+        "I was built in public through creator audiences, launches, challenges, and noise. You met the spectacle first."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,93 +82,102 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "The flavor sounds fun for a long day out.",
+          "text": "It worked. I knew exactly what PRIME was before I tried it.",
           "next": "first-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
+            "excitement": 2,
             "selfExpression": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
+            "prime": {
+              "excitement": 1,
+              "selfExpression": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": 1
+            "prime": 1
           }
         },
         {
           "id": "first-2",
-          "text": "A beach mood does not change what 200 milligrams of caffeine does.",
+          "text": "So the hype got there before the product did.",
           "next": "first-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 2,
-            "reassurance": 1,
-            "excitement": 1,
-            "selfExpression": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
-              "trust": -1,
-              "reassurance": -1,
-              "excitement": -1
+            "prime": {
+              "excitement": -1,
+              "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want an energy drink deciding the vibe of the day.",
+          "text": "I do not want my sports drink to come with a personality cult.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "selfExpression": 2,
-            "excitement": 1
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
+            "prime": {
               "trust": -1,
-              "comfort": -1,
-              "excitement": -1
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
-            "celsius": -1
+            "prime": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the packaging earned the trial and the product still has to earn the repeat."
+        "And now you are actually talking to me. Scoreboard."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Correct. Aesthetic context does not change stimulant content."
+        "Good. Separate knowing my founders from knowing my product."
+      ],
+      "next": "first-2-1"
+    },
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You are surprisingly okay with that."
+      ],
+      "next": "first-2-2"
+    },
+    "first-2-2": {
+      "speaker": "PRIME",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "I am confident enough to survive a nutrition label."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "annoyed"
       },
       "text": [
-        "Good news: beaches existed before me."
+        "Then I am probably exhausting. I have never advertised a low-volume setting."
       ],
       "nextTree": "map"
     },
@@ -176,34 +185,34 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "celsius",
+          "id": "prime",
           "met": true
         }
       },
       "text": [
-        "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+        "The player already buys PRIME and has started keeping powdered Hydration+ sticks in a gym bag instead of carrying bottles."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I like Arctic Vibe. Why do I need it twice?"
+        "You got smaller."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "neutral"
+        "expression": "annoyed"
       },
       "text": [
-        "You do not. The stick is there if you want the same flavor without the can or the fizz."
+        "Powdered. Add the Hydration+ stick to water. Same category, less bottle."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -213,86 +222,85 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I like keeping the flavor while changing the format.",
+          "text": "This is much easier to keep in my bag.",
           "next": "return-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
+            "readiness": 2,
+            "excitement": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "excitement": 3,
+            "prime": {
               "readiness": 1,
-              "selfExpression": 1
+              "excitement": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": 1
+            "prime": 1
           }
         },
         {
           "id": "return-2",
-          "text": "That makes it easier to have CELSIUS everywhere.",
+          "text": "I am still paying for flavored powder.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 2
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
+            "prime": {
+              "readiness": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need one energy brand following me across every occasion.",
+          "text": "If I already have water, I can just drink water.",
           "next": "return-3",
           "playerEffects": {
-            "control": 2,
-            "selfExpression": 1
+            "control": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "celsius": {
-              "trust": -1,
-              "comfort": -1
+            "prime": {
+              "readiness": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "celsius": -1
+            "prime": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Then keep the flavor and use the format that actually fits the day."
+        "Exactly. You kept me because I became easier to carry."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Ubiquity is convenient until it starts feeling like pressure."
+        "Yes. Convenience does not stop costing money because I fit in a packet."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "CELSIUS",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then choose the occasion where I actually add something and leave me out of the rest."
+        "You can. I am for when plain water is not what you want."
       ],
       "nextTree": "map"
     }

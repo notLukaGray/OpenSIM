@@ -12,6 +12,8 @@ export type FlagCondition = {
 
 export type Condition = {
   flags?: FlagCondition;
+  /** Whether this brand has already been met in a completed encounter. */
+  brand?: { id: string; met: boolean };
   /** Player's revealed archetype id (P7-02 A). True only after the reveal. */
   archetype?: string;
   /** True only once the consumer reveal has been seen (post-reveal content). */
@@ -71,6 +73,8 @@ export type DateContext = {
 export type CastMember = {
   assetId: string;
   position: "left" | "center" | "right";
+  /** Optional display name for a human proxy (for example, ZYN's Counsel). */
+  name?: string;
 };
 
 export type DateTree = {

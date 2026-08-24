@@ -1,0 +1,14 @@
+{
+  "id": "grocery-list", "brandId": "grocery-list", "title": "Only What You Came For", "locationId": "grocery-store",
+  "context": { "location": "grocery-store", "occasion": "weekly-errand" }, "music": null, "background": null, "cast": [], "startNode": "intro",
+  "lessons": ["a purchase can be practical rather than expressive", "price is information, not a verdict"],
+  "nodes": {
+    "intro": { "speaker": "...", "text": ["Your list fits on the back of an old receipt.", "The aisles offer thirty versions of every small need."], "next": "choose" },
+    "choose": { "speaker": "...", "text": ["No one can see the cart as clearly as you can."], "choices": [
+      { "id": "list", "text": "Buy what is on the list and leave the rest alone.", "next": "list-end", "playerEffects": { "control": 2, "trust": 1 }, "setFlags": ["control-grocery-practical"] },
+      { "id": "cook", "text": "Add one ingredient for a dinner worth making slowly.", "next": "cook-end", "playerEffects": { "comfort": 2, "aspiration": 1 }, "setFlags": ["control-grocery-care"] }
+    ] },
+    "list-end": { "speaker": "...", "text": ["The receipt is shorter than the aisle wanted it to be.", "Your evening is still yours."], "nextTree": "map" },
+    "cook-end": { "speaker": "...", "text": ["One unnecessary thing becomes dinner.", "Not an upgrade. Just a plan with a smell."], "nextTree": "map" }
+  }
+}

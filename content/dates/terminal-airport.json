@@ -1,0 +1,14 @@
+{
+  "id": "terminal-airport", "brandId": "terminal", "title": "The Hour Before Boarding", "locationId": "airport",
+  "context": { "location": "airport", "occasion": "layover" }, "music": null, "background": null, "cast": [], "startNode": "intro",
+  "lessons": ["what you reach for when no one is selling a solution", "readiness can mean preparation or permission to pause"],
+  "nodes": {
+    "intro": { "speaker": "...", "text": ["Gate 34 has delayed itself into an hour.", "The terminal offers outlets, fluorescent weather, and a view of planes leaving without you."], "next": "choose" },
+    "choose": { "speaker": "...", "text": ["Nobody asks what you need. You get to find out."], "choices": [
+      { "id": "read", "text": "Open the book you packed and read until boarding.", "next": "read-end", "playerEffects": { "comfort": 2, "mastery": 1 }, "setFlags": ["control-airport-reader"] },
+      { "id": "organize", "text": "Check the gate, charge everything, and make a small plan.", "next": "plan-end", "playerEffects": { "readiness": 2, "control": 1 }, "setFlags": ["control-airport-prepared"] }
+    ] },
+    "read-end": { "speaker": "...", "text": ["The announcement interrupts a paragraph, not a crisis.", "You close the cover with a finger holding your place."], "nextTree": "map" },
+    "plan-end": { "speaker": "...", "text": ["Your battery is full. Your route is clear.", "For a few minutes, that is enough certainty."], "nextTree": "map" }
+  }
+}

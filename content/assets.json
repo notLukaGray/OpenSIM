@@ -2,125 +2,125 @@
   {
     "id": "char-liquid-iv-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-liquid-iv-neutral.svg",
+    "src": "/assets/characters/char-liquid-iv-neutral.png",
     "alt": "Liquid I.V.",
     "preload": true
   },
   {
     "id": "char-liquid-iv-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-liquid-iv-happy.svg",
+    "src": "/assets/characters/char-liquid-iv-happy.png",
     "alt": "Liquid I.V., pleased"
   },
   {
     "id": "char-liquid-iv-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-liquid-iv-annoyed.svg",
+    "src": "/assets/characters/char-liquid-iv-annoyed.png",
     "alt": "Liquid I.V., defensive"
   },
   {
     "id": "char-liquid-iv-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-liquid-iv-embarrassed.svg",
+    "src": "/assets/characters/char-liquid-iv-embarrassed.png",
     "alt": "Liquid I.V., embarrassed"
   },
   {
     "id": "char-liquid-iv-special",
     "type": "character-special",
-    "src": "/assets/characters/char-liquid-iv-special.svg",
+    "src": "/assets/characters/char-liquid-iv-special.png",
     "alt": "Liquid I.V., affectionate"
   },
   {
     "id": "char-whoop-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-whoop-neutral.svg",
+    "src": "/assets/characters/char-whoop-neutral.png",
     "alt": "WHOOP",
     "preload": true
   },
   {
     "id": "char-whoop-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-whoop-happy.svg",
+    "src": "/assets/characters/char-whoop-happy.png",
     "alt": "WHOOP, satisfied"
   },
   {
     "id": "char-whoop-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-whoop-annoyed.svg",
+    "src": "/assets/characters/char-whoop-annoyed.png",
     "alt": "WHOOP, cold"
   },
   {
     "id": "char-whoop-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-whoop-embarrassed.svg",
+    "src": "/assets/characters/char-whoop-embarrassed.png",
     "alt": "WHOOP, caught out"
   },
   {
     "id": "char-whoop-special",
     "type": "character-special",
-    "src": "/assets/characters/char-whoop-special.svg",
+    "src": "/assets/characters/char-whoop-special.png",
     "alt": "WHOOP, unguarded"
   },
   {
     "id": "char-celsius-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-celsius-neutral.svg",
+    "src": "/assets/characters/char-celsius-neutral.png",
     "alt": "CELSIUS",
     "preload": true
   },
   {
     "id": "char-celsius-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-celsius-happy.svg",
+    "src": "/assets/characters/char-celsius-happy.png",
     "alt": "CELSIUS, electric"
   },
   {
     "id": "char-celsius-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-celsius-annoyed.svg",
+    "src": "/assets/characters/char-celsius-annoyed.png",
     "alt": "CELSIUS, bristling"
   },
   {
     "id": "char-celsius-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-celsius-embarrassed.svg",
+    "src": "/assets/characters/char-celsius-embarrassed.png",
     "alt": "CELSIUS, off-beat"
   },
   {
     "id": "char-celsius-special",
     "type": "character-special",
-    "src": "/assets/characters/char-celsius-special.svg",
+    "src": "/assets/characters/char-celsius-special.png",
     "alt": "CELSIUS, close-up energy"
   },
   {
     "id": "char-ag1-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-ag1-neutral.svg",
+    "src": "/assets/characters/char-ag1-neutral.png",
     "alt": "AG1",
     "preload": true
   },
   {
     "id": "char-ag1-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-ag1-happy.svg",
+    "src": "/assets/characters/char-ag1-happy.png",
     "alt": "AG1, warm"
   },
   {
     "id": "char-ag1-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-ag1-annoyed.svg",
+    "src": "/assets/characters/char-ag1-annoyed.png",
     "alt": "AG1, stung"
   },
   {
     "id": "char-ag1-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-ag1-embarrassed.svg",
+    "src": "/assets/characters/char-ag1-embarrassed.png",
     "alt": "AG1, flustered"
   },
   {
     "id": "char-ag1-special",
     "type": "character-special",
-    "src": "/assets/characters/char-ag1-special.svg",
+    "src": "/assets/characters/char-ag1-special.png",
     "alt": "AG1, tender"
   },
   {

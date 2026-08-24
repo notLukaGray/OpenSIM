@@ -1,11 +1,11 @@
 {
   "id": "liquid-iv-grocery-store",
   "brandId": "liquid-iv",
-  "title": "Sixty-Nine Percent",
+  "title": "LIQUID I.V. — GROCERY STORE",
   "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
-    "occasion": "errand"
+    "occasion": "grocery-store"
   },
   "music": null,
   "background": null,
@@ -15,216 +15,317 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "labels testify where marketing can't follow",
-    "a clinical lineage can host a dessert palate"
+    "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription.",
+    "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
   ],
   "nodes": {
-    "intro": {
+    "entry-first": {
       "speaker": "...",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
+      "conditions": {
+        "brand": {
+          "id": "liquid-iv",
+          "met": false
+        }
       },
       "text": [
-        "Aisle five, one fluorescent tube humming like it took an oath.",
-        "They're already there, holding their own box at eye level, reading it like a hostile witness."
+        "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription."
       ],
-      "next": "impression"
+      "next": "entry-first-1"
     },
-    "impression": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Before you say anything, I am not subscribing."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "You know what I am now, so we skip the tour — front of my box or back?"
+        "Then buy one bag."
       ],
-      "choices": [
-        {
-          "id": "front-first",
-          "text": "Front. I've never once flipped a pouch over.",
-          "next": "impression-front",
-          "playerEffects": {
-            "reassurance": 2,
-            "mastery": -1
-          },
-          "brandPerceptionEffects": {
-            "liquid-iv": {
-              "aspiration": 1
-            }
-          },
-          "relationshipEffects": {
-            "liquid-iv": 0
-          }
-        },
-        {
-          "id": "back-first",
-          "text": "Back. Ingredients first, romance later.",
-          "next": "impression-back",
-          "playerEffects": {
-            "mastery": 2,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "liquid-iv": {
-              "trust": -1,
-              "mastery": 1
-            }
-          },
-          "relationshipEffects": {
-            "liquid-iv": -1
-          },
-          "setFlags": [
-            "read-the-label"
-          ]
-        },
-        {
-          "id": "already-know",
-          "text": "\"Eleven grams.\" Relax — I did the math before you asked.",
-          "next": "impression-know",
-          "playerEffects": {
-            "mastery": 2,
-            "reassurance": -1
-          },
-          "brandPerceptionEffects": {
-            "liquid-iv": {
-              "trust": -1
-            }
-          },
-          "relationshipEffects": {
-            "liquid-iv": 1
-          },
-          "setFlags": [
-            "did-sugar-math"
-          ]
-        }
-      ]
+      "next": "entry-first-3"
     },
-    "impression-front": {
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "That easy?"
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "I know. That gloss is my best feature and my entire defense case."
+        "Try the format once. We can have the recurring-relationship conversation another day."
       ],
-      "next": "experience"
+      "next": "choice-first"
     },
-    "impression-back": {
+    "choice-first": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "neutral"
       },
       "text": [
-        "Straight to the testimony. Fine — but you're holding the exhibits now."
-      ],
-      "next": "experience"
-    },
-    "impression-know": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "You brought receipts to a brunch aisle. Terrifying. Respect."
-      ],
-      "next": "experience"
-    },
-    "experience": {
-      "speaker": "LIQUID I.V.",
-      "text": [
-        "The science is real, for the record — WHO oral rehydration, sodium-glucose cotransport, the spoon that beats cholera where no IV exists. My lineage is a hospital ward wearing a popsicle."
-      ],
-      "next": "tension",
-      "evidence": "ev-liquid-iv-nightlife-nod"
-    },
-    "tension": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "Here's the part I'd rather scroll past: eleven grams of sugar a stick, more per liter than the WHO formula cites. Palate won an argument with a clinic."
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "do-the-math",
-          "text": "Say it with me: sixty-nine percent sugar by weight.",
-          "next": "tension-math",
+          "id": "first-1",
+          "text": "I like being able to test it without signing up.",
+          "next": "first-1",
           "playerEffects": {
-            "mastery": 2,
-            "trust": 1
-          },
-          "brandPerceptionEffects": {
-            "liquid-iv": {
-              "trust": -2,
-              "mastery": -1
-            }
-          },
-          "relationshipEffects": {
-            "liquid-iv": -1
-          },
-          "setFlags": [
-            "said-sixty-nine"
-          ]
-        },
-        {
-          "id": "keep-the-gloss",
-          "text": "I don't need it to be medicine. I need it to taste like being okay.",
-          "next": "tension-gloss",
-          "playerEffects": {
-            "comfort": 2,
+            "control": 1,
             "reassurance": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "comfort": 1,
-              "trust": -1
+              "readiness": 1,
+              "trust": 1
             }
           },
           "relationshipEffects": {
             "liquid-iv": 1
+          }
+        },
+        {
+          "id": "first-2",
+          "text": "The per-stick price still adds up.",
+          "next": "first-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 1
           },
-          "setFlags": [
-            "kept-the-gloss"
-          ]
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "readiness": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I am not paying extra to improve water.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 1,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "readiness": -1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": -1
+          }
         }
       ]
     },
-    "tension-math": {
+    "first-1": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "happy"
       },
       "text": [
-        "...Sixty-nine percent. You didn't have to clap."
+        "Good. One bag. No vows."
       ],
-      "next": "closing"
+      "next": "first-1-1"
     },
-    "tension-gloss": {
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "We are keeping this casual."
+      ],
+      "next": "first-1-2"
+    },
+    "first-1-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "That's the most honest sentence ever said in aisle five — and exactly why the gloss stays glossy."
+        "Hydrated and emotionally available."
       ],
-      "next": "closing"
+      "nextTree": "map"
     },
-    "closing": {
+    "first-2": {
       "speaker": "LIQUID I.V.",
-      "callbacks": [
-        {
-          "if": "already-know",
-          "text": [
-            "Next week, same aisle — you bring the calculator, I bring the confession."
-          ]
-        }
-      ],
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
-        "Same shelf next week. Bring your skepticism; I'll pack the water."
+        "It does. Convenience is part of what you are paying for."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then water wins this aisle for you."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "liquid-iv",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Two seasonal products together, slightly lower combined price."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "You are very pleased with the word bundle."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "I like a packed bag."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "The discount only helps if I wanted both."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Correct. More product is still more product."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I would buy the bundle if I wanted both anyway.",
+          "next": "return-1",
+          "playerEffects": {
+            "readiness": 1,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "readiness": 1,
+              "comfort": 1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "A discount can make me buy more than I planned.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "excitement": -1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not need a pantry full of hydration packets.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 1,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "readiness": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": -1
+          }
+        }
+      ]
+    },
+    "return-1": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "That is the sensible bundle customer."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Exactly. Savings and overspending can be the same cart."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Then one bag, or none. Your cabinet does not need to become my warehouse."
       ],
       "nextTree": "map"
     }

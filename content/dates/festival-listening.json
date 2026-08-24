@@ -1,0 +1,14 @@
+{
+  "id": "festival-listening", "brandId": "festival-listening", "title": "Hear the Whole Song", "locationId": "music-festival",
+  "context": { "location": "music-festival", "occasion": "headliner" }, "music": null, "background": null, "cast": [], "startNode": "intro",
+  "lessons": ["excitement can be private", "belonging does not need proof"],
+  "nodes": {
+    "intro": { "speaker": "...", "text": ["The crowd moves before the beat lands.", "A stranger hands you a little room near the rail without discussing it."], "next": "choose" },
+    "choose": { "speaker": "...", "text": ["The chorus is coming. So is the urge to turn it into evidence."], "choices": [
+      { "id": "listen", "text": "Keep the phone down and listen to the whole song.", "next": "listen-end", "playerEffects": { "excitement": 2, "comfort": 1 }, "setFlags": ["control-festival-present"] },
+      { "id": "share", "text": "Send the song to someone who would know why it matters.", "next": "share-end", "playerEffects": { "belonging": 2, "selfExpression": 1 }, "setFlags": ["control-festival-share"] }
+    ] },
+    "listen-end": { "speaker": "...", "text": ["You will not have a clip of the bridge.", "You have the bridge."], "nextTree": "map" },
+    "share-end": { "speaker": "...", "text": ["Their reply arrives as the lights change.", "For once, the timing feels made rather than optimized."], "nextTree": "map" }
+  }
+}

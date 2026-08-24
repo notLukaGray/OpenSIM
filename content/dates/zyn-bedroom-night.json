@@ -1,11 +1,11 @@
 {
-  "id": "zyn-grocery-store",
+  "id": "zyn-bedroom-night",
   "brandId": "zyn",
-  "title": "COUNSEL — GROCERY STORE",
-  "locationId": "grocery-store",
+  "title": "COUNSEL — BEDROOM NIGHT",
+  "locationId": "bedroom-night",
   "context": {
-    "location": "grocery-store",
-    "occasion": "grocery-store"
+    "location": "bedroom-night",
+    "occasion": "bedroom-night"
   },
   "music": null,
   "background": null,
@@ -21,8 +21,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees Black Cherry, Peach, and Dragonberry added to the classic ZYN lineup at retail.",
-    "The player peels back the bottom label of a can and finds a Rewards code."
+    "The player opens ZYN.com to look around and is stopped by registration and age verification before reaching the product pages.",
+    "The player already uses classic ZYN and sees the newer ZYN Ultra line promoted as a higher-strength, hydro-boosted extension with a different can."
   ],
   "nodes": {
     "entry-first": {
@@ -34,14 +34,14 @@
         }
       },
       "text": [
-        "The player sees Black Cherry, Peach, and Dragonberry added to the classic ZYN lineup at retail."
+        "The player opens ZYN.com to look around and is stopped by registration and age verification before reaching the product pages."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Those are new."
+        "I just wanted to see what flavors there are."
       ],
       "next": "entry-first-2"
     },
@@ -51,14 +51,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Black Cherry, Peach, and Dragonberry are permanent additions to the classic lineup in three- and six-milligram strengths. The brand states they are available through retailers nationwide and online through Nicokick."
+        "Before product content is displayed, the site requires verification that you are at least twenty-one years old and a current nicotine consumer."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That sounded like a shelf tag filed an affidavit."
+        "You brought a lawyer to an age gate."
       ],
       "next": "entry-first-4"
     },
@@ -68,7 +68,24 @@
         "expression": "neutral"
       },
       "text": [
-        "The shelf tag was unavailable for comment."
+        "I was retained before the page loaded."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "What exactly are they verifying?"
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Identity and age through third-party verification. The company's 2026 regulatory materials state that the system may match submitted information against government databases."
       ],
       "next": "choice-first"
     },
@@ -83,18 +100,17 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "I like having something besides mint, coffee, or cinnamon.",
+          "text": "Fine. I actually like that they verify instead of using a birthday dropdown.",
           "next": "first-1",
           "playerEffects": {
-            "comfort": 1,
-            "selfExpression": 1,
-            "control": 1
+            "trust": 2,
+            "control": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "comfort": 1,
-              "selfExpression": 1,
-              "trust": -1
+              "control": 2,
+              "trust": 1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -103,15 +119,15 @@
         },
         {
           "id": "first-2",
-          "text": "Three fruit flavors feels like expansion for the sake of expansion.",
+          "text": "That is a lot of personal information just to browse a website.",
           "next": "first-2",
           "playerEffects": {
-            "mastery": 2,
-            "control": 1
+            "control": 2,
+            "trust": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "aspiration": 1,
+              "control": -2,
               "trust": -1,
               "mastery": 1
             }
@@ -119,17 +135,17 @@
         },
         {
           "id": "first-3",
-          "text": "Fruit flavors make me more uncomfortable with nicotine marketing, not less.",
+          "text": "If I need to register before I can even look, I am leaving.",
           "next": "first-3",
           "playerEffects": {
-            "trust": 2,
-            "control": 2
+            "control": 2,
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "trust": -2,
-              "comfort": -1,
-              "selfExpression": -1
+              "control": -2,
+              "comfort": -2,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -141,27 +157,44 @@
     "first-1": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Preference variety is the stated product benefit. Your response has been recorded without further embellishment."
+        "The record will reflect that you prefer a meaningful age gate over a decorative one."
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is the least romantic sentence anyone has ever said to me."
+      ],
+      "next": "first-1-2"
+    },
+    "first-1-2": {
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I am comfortable with that characterization."
       ],
       "nextTree": "map"
     },
     "first-2": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "The additions are permanent, so this is portfolio expansion rather than a limited seasonal test."
+        "The tradeoff is real. Access control requires more information than an honor-system date field."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "Thank you for making my suspicion sound more expensive."
+        "So the friction is intentional."
       ],
       "next": "first-2-2"
     },
@@ -171,17 +204,17 @@
         "expression": "neutral"
       },
       "text": [
-        "Precision is not priced separately."
+        "Correct."
       ],
       "nextTree": "map"
     },
     "first-3": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "neutral"
       },
       "text": [
-        "Your concern is noted. The products remain restricted to current nicotine consumers age twenty-one and older; that restriction does not require you to find flavored nicotine appealing."
+        "Then access terminates before the product content. No further action is required."
       ],
       "nextTree": "map"
     },
@@ -194,58 +227,51 @@
         }
       },
       "text": [
-        "The player peels back the bottom label of a can and finds a Rewards code."
+        "The player already uses classic ZYN and sees the newer ZYN Ultra line promoted as a higher-strength, hydro-boosted extension with a different can."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Why am I removing part of the label?"
+        "The word \"Ultra\" should not be construed as an emotional commitment."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "To access the unique alphanumeric code printed beneath it on specially marked cans."
+        "I was going to ask if it just means stronger."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "And then?"
+        "Not exclusively. The line uses a moister pouch, contains twenty pouches per can, includes a disposal compartment in the lid, and is offered in nine- and eleven-milligram strengths."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "Fifteen points per code. Up to sixty codes per month. Points may be redeemed for sponsor-selected merchandise, gift cards, gear, or experiences, subject to availability and program terms."
+        "There it is. Eleven."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
-      "speaker": "PLAYER",
-      "text": [
-        "So the can has homework."
-      ],
-      "next": "entry-return-6"
-    },
-    "entry-return-6": {
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Participation is optional."
+        "As of August 21, 2026, FDA marketing authorization covers eleven ZYN Ultra products, including all submitted nine-milligram variants and one eleven-milligram variant. Additional eleven-milligram variants remained under review at that time."
       ],
       "next": "choice-return"
     },
@@ -260,18 +286,17 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I already buy them. Points are points.",
+          "text": "The disposal lid and bigger can are actually useful changes.",
           "next": "return-1",
           "playerEffects": {
-            "mastery": 1,
-            "comfort": 1,
-            "control": 1
+            "control": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
               "comfort": 1,
-              "control": -1,
-              "trust": -1
+              "mastery": 1,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
@@ -280,33 +305,33 @@
         },
         {
           "id": "return-2",
-          "text": "You turned every can into a loyalty receipt.",
+          "text": "\"Ultra\" still feels like escalation dressed up as an upgrade.",
           "next": "return-2",
           "playerEffects": {
-            "mastery": 2,
-            "control": 2
+            "control": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "control": -2,
-              "trust": -2,
+              "readiness": -2,
+              "trust": -1,
               "mastery": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not want nicotine purchases gamified.",
+          "text": "Higher nicotine strength is exactly what I do not want.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
-            "trust": 2
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "control": -2,
-              "trust": -2,
-              "comfort": -1
+              "readiness": -3,
+              "comfort": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -318,27 +343,27 @@
     "return-1": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "The program is functioning as designed. I have no additional clarification."
+        "Your approval is limited to the packaging and convenience changes. I have recorded it narrowly."
       ],
       "next": "return-1-1"
     },
     "return-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "That's it?"
+        "Thank you for protecting me from accidentally liking a lid too much."
       ],
       "next": "return-1-2"
     },
     "return-1-2": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "That is the complete sentence."
+        "Scope matters."
       ],
       "nextTree": "map"
     },
@@ -348,7 +373,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is a fair description. The code converts repeat purchases into a trackable rewards relationship."
+        "Higher strength is part of the proposition. The other changes do not erase that fact."
       ],
       "nextTree": "map"
     },
@@ -358,7 +383,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then do not enter the code. The product remains usable without participation in the Rewards program."
+        "Then the higher-strength extension is inconsistent with your stated preference. Classic ZYN remains a separate line."
       ],
       "nextTree": "map"
     }

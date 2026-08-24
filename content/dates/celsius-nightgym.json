@@ -1,10 +1,11 @@
 {
   "id": "celsius-nightgym",
   "brandId": "celsius",
-  "title": "Spotter's Little Secret",
+  "title": "CELSIUS — THE LATE GYM",
+  "locationId": "nightgym",
   "context": {
     "location": "nightgym",
-    "occasion": "workout"
+    "occasion": "nightgym"
   },
   "music": null,
   "background": null,
@@ -14,36 +15,233 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "the can takes the credit",
-    "discipline does the reps",
-    "caffeine is real; the fairy tale is marketing"
+    "The player first notices CELSIUS because the can and brand site make explicit metabolism and exercise-performance claims.",
+    "The player already drinks standard CELSIUS and considers the higher-caffeine ESSENTIALS line for harder training days."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "CELSIUS",
-      "sprite": {
-        "expression": "happy",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "celsius",
+          "met": false
+        }
       },
       "text": [
-        "There you are! I saved you the squat rack AND my best angle.",
-        "Twelve weeks on me and look at her. I did that."
+        "The player first notices CELSIUS because the can and brand site make explicit metabolism and exercise-performance claims."
+      ],
+      "next": "entry-first-1"
+    },
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Why does an energy drink have studies attached to it?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Because I am not only selling you a loud can."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "That sounded defensive already."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "My brand makes metabolism and exercise-performance claims and points to published exercise studies. You are allowed to read them before you believe me."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "hype",
-          "text": "That's genuinely impressive. What's your secret?",
-          "next": "branch-hype",
+          "id": "first-1",
+          "text": "I like that there is at least research behind the pitch.",
+          "next": "first-1",
           "playerEffects": {
             "excitement": 2,
-            "belonging": 1
+            "readiness": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "excitement": 2,
-              "belonging": 1,
+              "readiness": 1,
+              "trust": 1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "first-2",
+          "text": "I want to know what the studies actually measured.",
+          "next": "first-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not need metabolism marketing in an energy drink.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": -1
+          }
+        }
+      ]
+    },
+    "first-1": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Good. Read the study, then decide whether the result matters to you."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Exactly. A study headline is not the same thing as understanding the study."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Then buy energy for energy. You do not have to adopt every claim on the can."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "celsius",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already drinks standard CELSIUS and considers the higher-caffeine ESSENTIALS line for harder training days."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "You found the louder one."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "I thought that was just packaging."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Standard is 200 milligrams of caffeine. ESSENTIALS is 270."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "Seventy more is not a cosmetic difference."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Correct. Please do not treat caffeine like a colorway."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I like being able to choose based on the day.",
+          "next": "return-1",
+          "playerEffects": {
+            "excitement": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "excitement": 2,
               "readiness": 1
             }
           },
@@ -52,148 +250,88 @@
           }
         },
         {
-          "id": "reps",
-          "text": "Pretty sure she did the twelve weeks. You just showed up.",
-          "next": "branch-reps",
+          "id": "return-2",
+          "text": "That is a lot of caffeine for one can.",
+          "next": "return-2",
           "playerEffects": {
+            "control": 1,
             "mastery": 2,
-            "trust": 1
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "mastery": 1,
-              "trust": 1,
-              "excitement": -1
+              "trust": -1,
+              "reassurance": -1
             }
           }
         },
         {
-          "id": "caffeine",
-          "text": "Isn't that just 200 milligrams of caffeine talking?",
-          "next": "branch-caffeine",
+          "id": "return-3",
+          "text": "I do not want my routine escalating to stronger energy drinks.",
+          "next": "return-3",
           "playerEffects": {
-            "mastery": 1,
-            "control": 1,
-            "trust": -1
+            "control": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
-              "mastery": 1,
-              "trust": -2,
-              "reassurance": -1
+              "trust": -1,
+              "comfort": -1
             }
+          },
+          "relationshipEffects": {
+            "celsius": -1
           }
         }
       ]
     },
-    "branch-hype": {
+    "return-1": {
       "speaker": "CELSIUS",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Flattery accepted! Zero sugar, all momentum."
+        "Then the choice is doing its job. Use the format that actually fits the day."
       ],
-      "next": "experience"
+      "nextTree": "map"
     },
-    "branch-reps": {
-      "speaker": "CELSIUS",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "...Okay, she did most of the reps. I'm more of a mood."
-      ],
-      "next": "experience"
-    },
-    "branch-caffeine": {
-      "speaker": "CELSIUS",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "Wow. Reduce me to my active ingredient, why don't you."
-      ],
-      "next": "experience"
-    },
-    "experience": {
-      "speaker": "...",
-      "text": [
-        "You know the bench-talk ritual.",
-        "Someone always swears the slim can did what the training log says discipline did."
-      ],
-      "next": "tension",
-      "evidence": "ev-celsius-paid-tribe"
-    },
-    "tension": {
+    "return-2": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Can I tell you the part I never put on a can?",
-        "The caffeine is real. The metabolism fairy tale? That one's marketing."
+        "Yes. If that amount is not right for you, do not make it a challenge."
       ],
-      "choices": [
-        {
-          "id": "worth-it",
-          "text": "Honestly? The boost alone might be worth it.",
-          "next": "wrap",
-          "playerEffects": {
-            "excitement": 2,
-            "control": -1
-          },
-          "brandPerceptionEffects": {
-            "celsius": {
-              "readiness": 2,
-              "trust": -1,
-              "reassurance": -1
-            }
-          },
-          "relationshipEffects": {
-            "celsius": 1
-          }
-        },
-        {
-          "id": "give-credit",
-          "text": "Then give her the credit, not the can.",
-          "next": "wrap",
-          "playerEffects": {
-            "reassurance": 1,
-            "mastery": 1,
-            "trust": 1
-          },
-          "brandPerceptionEffects": {
-            "celsius": {
-              "mastery": 1,
-              "trust": 1,
-              "excitement": -1
-            }
-          }
-        }
-      ]
+      "nextTree": "map"
     },
-    "wrap": {
+    "return-3": {
       "speaker": "CELSIUS",
-      "callbacks": [
-        {
-          "if": "reps",
-          "text": [
-            "And for the record — she says thanks. She heard you."
-          ]
-        },
-        {
-          "if": "caffeine",
-          "text": [
-            "Fine. Two hundred milligrams. But make them sparkle."
-          ]
-        }
-      ],
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Same rack tomorrow. Bring the hype, I'll bring the sparkle."
+        "Then stay with 200 or skip me."
+      ],
+      "next": "return-3-1"
+    },
+    "return-3-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "No challenge?"
+      ],
+      "next": "return-3-2"
+    },
+    "return-3-2": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Caffeine is not a toughness contest."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "nightgym"
+  }
 }

@@ -1,11 +1,11 @@
 {
   "id": "ag1-grocery-store",
   "brandId": "ag1",
-  "title": "Seventy-Nine Dollars",
+  "title": "AG1 — GROCERY AISLES",
   "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
-    "occasion": "errand"
+    "occasion": "grocery-store"
   },
   "music": null,
   "background": null,
@@ -15,206 +15,318 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "the premium is not the nutrients",
-    "purity has a certificate; potency stays proprietary",
-    "naming the convenience tax out loud takes nerve"
+    "The player sees AG1 on a large Target endcap instead of encountering it only through the brand's direct-to-consumer website.",
+    "The player already drinks AG1 and opens a sampler with Berry, Citrus, and Tropical after getting tired of always using Original."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
-      },
-      "text": [
-        "Don't put me back on the shelf like that. People will talk.",
-        "Yes — seventy-nine dollars a month. I heard you do the math out loud."
-      ],
-      "next": "impression"
-    },
-    "impression": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Go on, compare me. The spinach is right there and it's gorgeous this week.",
-        "The multivitamin behind you costs about three cents a day. She's very honest about what she is."
-      ],
-      "choices": [
-        {
-          "id": "receipt",
-          "text": "A month of you costs more than my entire produce drawer.",
-          "next": "branch-receipt",
-          "playerEffects": {
-            "control": 1,
-            "mastery": 1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "trust": -1,
-              "aspiration": -1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": -1
-          }
-        },
-        {
-          "id": "value",
-          "text": "It's not the ingredients I'm buying. It's not having to think.",
-          "next": "branch-value",
-          "playerEffects": {
-            "comfort": 2,
-            "readiness": 1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "comfort": 2,
-              "control": 1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": 1
-          },
-          "setFlags": [
-            "praised-the-convenience"
-          ]
-        },
-        {
-          "id": "blend",
-          "text": "Then tell me exactly what's inside the scoop.",
-          "next": "branch-blend",
-          "playerEffects": {
-            "mastery": 2,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "ag1": {
-              "trust": -2,
-              "mastery": -1
-            }
-          },
-          "relationshipEffects": {
-            "ag1": -1
-          },
-          "setFlags": [
-            "read-the-fine-print"
-          ]
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": false
         }
-      ],
-      "evidence": "ev-ag1-host-adread"
-    },
-    "branch-receipt": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "embarrassed"
       },
       "text": [
-        "Fair. For that money you could eat like a small renaissance fair.",
-        "You're not paying for spinach, though. You're paying to never think about spinach again."
+        "The player sees AG1 on a large Target endcap instead of encountering it only through the brand's direct-to-consumer website."
       ],
-      "next": "tension"
+      "next": "entry-first-1"
     },
-    "branch-value": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Huh. You look weirdly normal in Target."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "AG1",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Exactly that. One decision made well, repeated forever.",
-        "Convenience is an ingredient too. Nobody prints it on the label."
+        "Good. You can see the pouch, check the price, and buy one where you already shop."
       ],
-      "next": "tension"
+      "next": "entry-first-3"
     },
-    "branch-blend": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "embarrassed"
-      },
+    "entry-first-3": {
+      "speaker": "PLAYER",
       "text": [
-        "Nine grams of 'proprietary blend.' After those words, the label stops naming names.",
-        "Purity, I can show you certificates for. Potency is… shy."
+        "Less internet-wellness mystery."
       ],
-      "next": "tension"
+      "next": "choice-first"
     },
-    "tension": {
+    "choice-first": {
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "So ask the real question. Not 'does it absorb' — the funded trials say mostly yes.",
-        "Ask what the premium is actually for. Say it out loud, here, where the price tags testify."
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "name-it",
-          "text": "It buys the person I feel like when I drink it.",
-          "next": "wrap",
+          "id": "first-1",
+          "text": "Being able to buy one in person makes me trust you more.",
+          "next": "first-1",
           "playerEffects": {
-            "selfExpression": 2,
-            "aspiration": 1
+            "comfort": 2,
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "selfExpression": 1,
-              "aspiration": 1
+              "comfort": 2,
+              "reassurance": 1
             }
           },
           "relationshipEffects": {
             "ag1": 1
-          },
-          "setFlags": [
-            "named-the-premium"
-          ]
+          }
         },
         {
-          "id": "tax",
-          "text": "It buys convenience. About three dollars a day of it.",
-          "next": "wrap",
+          "id": "first-2",
+          "text": "I am not sure whether retail makes you more credible or just more available.",
+          "next": "first-2",
           "playerEffects": {
             "control": 1,
-            "mastery": 1
+            "mastery": 2,
+            "comfort": 1,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "comfort": 1,
+              "mastery": 1,
               "trust": -1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not need a premium supplement endcap in my grocery run.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
-            "ag1": 0
-          },
-          "setFlags": [
-            "named-the-tax"
-          ]
+            "ag1": -1
+          }
         }
       ]
     },
-    "wrap": {
+    "first-1": {
       "speaker": "AG1",
-      "callbacks": [
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Then being able to pick me up normally matters more than pretending I am some internet-only secret."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Fair. Shelf space proves I am available. It does not prove the powder is right for you."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then walk past me. At least the decision only took one aisle."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "ag1",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already drinks AG1 and opens a sampler with Berry, Citrus, and Tropical after getting tired of always using Original."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "I cheated on Original."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "With Berry?"
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Do not sound pleased. I was getting bored."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "That is one reason the other flavors exist."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "So you made new flavors because people were getting bored."
+      ],
+      "next": "entry-return-6"
+    },
+    "entry-return-6": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "That is one reason. Drinking the same thing every day can get old."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
         {
-          "if": "blend",
-          "text": [
-            "Certificates for what I'm not, honesty about what I am. That's my whole deal.",
-            "The scoop doesn't hide from you. It just won't itemize."
-          ]
+          "id": "return-1",
+          "text": "Honestly, I like switching it up.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 2,
+              "reassurance": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          }
         },
         {
-          "if": "tax",
-          "text": [
-            "Named aloud, in public, next to the spinach. Most people never manage it.",
-            "I respect a receipt more than a compliment."
-          ]
+          "id": "return-2",
+          "text": "So people really were getting bored of the original.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "Different flavor, same expensive powder.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 2,
+            "excitement": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "comfort": -1,
+              "excitement": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          }
         }
-      ],
+      ]
+    },
+    "return-1": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
-        "Put the spinach in the cart anyway. I insist.",
-        "We're not rivals. I'm just the part you do on autopilot."
+        "Then the sampler is doing something useful for you besides looking colorful."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Yes. Some people get tired of Original."
+      ],
+      "next": "return-2-1"
+    },
+    "return-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Thank you."
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "I was not fighting you on that."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "I know. A better flavor does not make the pouch cheaper."
       ],
       "nextTree": "map"
     }

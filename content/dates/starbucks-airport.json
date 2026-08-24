@@ -1,10 +1,11 @@
 {
   "id": "starbucks-airport",
   "brandId": "starbucks",
-  "title": "Same Everywhere",
+  "title": "STARBUCKS — NIGHT TERMINAL",
+  "locationId": "airport",
   "context": {
     "location": "airport",
-    "occasion": "travel"
+    "occasion": "airport"
   },
   "music": null,
   "background": null,
@@ -14,235 +15,288 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "sameness as a hug",
-    "comfort versus surrender",
-    "the secret handshake was menu-board logistics"
+    "The player chooses Starbucks in an airport because the brand is familiar in an unfamiliar travel day.",
+    "The player opens the app during a trip and sees they are Green, Gold, or Reserve under the 2026 Rewards system."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "neutral",
-        "effect": "enter"
-      },
-      "text": [
-        "Departures level, gate-side table, one green siren among forty thousand.",
-        "Wherever you land, I taste exactly like this. Go ahead — test me sometime."
-      ],
-      "next": "impression"
-    },
-    "impression": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "Delayed flight, wrong city, near midnight — and the Pike Place is identical to the one in Beijing.",
-        "People call that a hug. Some call it surrender. Which is it tonight?"
-      ],
-      "choices": [
-        {
-          "id": "hug",
-          "text": "At eleven p.m. in a dead terminal? It's a hug. Take the win.",
-          "next": "experience",
-          "playerEffects": {
-            "reassurance": 3,
-            "comfort": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "reassurance": 2,
-              "comfort": 1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": 2
-          },
-          "setFlags": [
-            "sbux-took-the-hug"
-          ]
-        },
-        {
-          "id": "surrender",
-          "text": "Comfort that predictable starts to feel like giving up.",
-          "next": "react-surrender",
-          "playerEffects": {
-            "control": 2,
-            "mastery": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "excitement": -2,
-              "aspiration": -1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-smelled-surrender"
-          ]
-        },
-        {
-          "id": "lingo",
-          "text": "Only if I can order without once saying the word \"large.\"",
-          "next": "react-lingo",
-          "playerEffects": {
-            "selfExpression": 2,
-            "mastery": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "mastery": 1,
-              "selfExpression": 1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-speaks-venti"
-          ]
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": false
         }
-      ]
-    },
-    "react-surrender": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "embarrassed"
       },
       "text": [
-        "Fair. Although you did walk straight to me in a city you've never seen."
+        "The player chooses Starbucks in an airport because the brand is familiar in an unfamiliar travel day."
       ],
-      "next": "experience"
+      "next": "entry-first-1"
     },
-    "react-lingo": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "I do not know this terminal at all."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Tall, grande, venti — twenty in Italian, chosen so a cup of joe would feel exotic. Welcome to the fluent table."
+        "You know my menu. That is why airports are such a good place for me."
       ],
-      "next": "experience"
+      "next": "choice-first"
     },
-    "experience": {
+    "choice-first": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Beijing poured me in January of ninety-nine. Eight thousand stores ago, one identical recipe.",
-        "Every airport copy ships the same promise: no surprises. Not even the pleasant kind."
-      ],
-      "next": "tension",
-      "evidence": "ev-starbucks-float-ledger"
-    },
-    "tension": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "Meanwhile a rival back in China pours faster and cheaper, and \"same everywhere\" starts reading as \"slow.\"",
-        "So — do you keep dating the familiar, or does comfort quietly become a cage?"
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "familiar",
-          "text": "Familiar. Travel is chaos enough; the cup doesn't have to be.",
-          "next": "closing",
+          "id": "first-1",
+          "text": "Familiar is exactly what I want in an airport.",
+          "next": "first-1",
           "playerEffects": {
-            "reassurance": 2,
-            "comfort": 1
+            "comfort": 3,
+            "readiness": 2
           },
           "brandPerceptionEffects": {
             "starbucks": {
-              "reassurance": 2,
-              "comfort": 1
+              "comfort": 3,
+              "readiness": 2
             }
           },
           "relationshipEffects": {
             "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-kept-familiar"
-          ]
+          }
         },
         {
-          "id": "cage",
-          "text": "A cage with nice lighting. Maybe I should want more from a cup.",
-          "next": "closing",
+          "id": "first-2",
+          "text": "The airport version is not always the same experience as my regular store.",
+          "next": "first-2",
           "playerEffects": {
-            "excitement": 1,
-            "control": 1
+            "control": 1,
+            "mastery": 2,
+            "comfort": 1,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
-              "excitement": -2,
+              "mastery": 1,
               "trust": -1
             }
-          },
-          "relationshipEffects": {
-            "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-wants-more"
-          ]
+          }
         },
         {
-          "id": "zoned",
-          "text": "You get departures. The rest of my map stays open for experiments.",
-          "next": "closing",
+          "id": "first-3",
+          "text": "I would rather try the local coffee place.",
+          "next": "first-3",
           "playerEffects": {
             "control": 2,
             "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
-              "excitement": -1,
-              "mastery": 1
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
-            "starbucks": 0
+            "starbucks": -1
           }
         }
       ]
     },
-    "closing": {
+    "first-1": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "special"
       },
-      "callbacks": [
-        {
-          "if": "hug",
-          "text": [
-            "Take the hug at face value. Departure halls run on them."
-          ]
-        },
-        {
-          "if": "lingo",
-          "text": [
-            "Venti travels better than \"large\" ever will. Fluent and loyal — dangerous combination."
-          ]
-        },
-        {
-          "if": "cage",
-          "text": [
-            "Want more, then. I'll be right here being exactly enough anyway."
-          ]
-        }
-      ],
       "text": [
-        "Boarding soon. Somewhere past security another me is steaming identical milk.",
-        "When you land, one of us will taste like home. Sleep on which word that is."
+        "Then familiarity is doing real work, not just branding work."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Correct. Licensed locations can feel different even when the siren is the same."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Do it. I am not offended by local coffee existing."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": true
+        }
+      },
+      "text": [
+        "The player opens the app during a trip and sees they are Green, Gold, or Reserve under the 2026 Rewards system."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "You have a status now."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "For coffee?"
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "For repeatedly buying coffee, yes."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "PLAYER",
+      "text": [
+        "How deep does this go?"
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Green starts earning. Gold comes after 500 Stars in twelve months. Reserve is the higher tier with stronger earning and extra benefits."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I like having clearer benefits for being a regular.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "comfort": 2,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "A coffee habit does not need a status ladder.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "mastery": 1,
+              "trust": -1,
+              "control": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I do not want to think about maintaining rank at a cafe.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          }
+        }
+      ]
+    },
+    "return-1": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Then loyalty feels acknowledged instead of invisible."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "That is fair. A status system can turn routine into a game you never asked to play."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then ignore the ladder and use the account only when the basic rewards help."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "airport"
+  }
 }

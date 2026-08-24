@@ -1,17 +1,17 @@
 {
-  "id": "liquid-iv-airport",
-  "brandId": "liquid-iv",
-  "title": "LIQUID I.V. — NIGHT TERMINAL",
-  "locationId": "airport",
+  "id": "starbucks-kitchen",
+  "brandId": "starbucks",
+  "title": "STARBUCKS — QUIET KITCHEN",
+  "locationId": "kitchen",
   "context": {
-    "location": "airport",
-    "occasion": "airport"
+    "location": "kitchen",
+    "occasion": "kitchen"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-liquid-iv-neutral",
+      "assetId": "char-starbucks-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player is buying water before a flight and notices that Liquid I.V. comes as single-serve powder sticks made to be mixed into a bottle.",
-    "The player already uses Liquid I.V. and gets a reminder before the next subscription shipment."
+    "The player learns that Starbucks accepts clean personal cups across cafe, drive-thru, and mobile orders and rewards members for using one.",
+    "The player already has Rewards Stars and sees that Green-level Stars can expire after six months unless qualifying activity extends them."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "starbucks",
           "met": false
         }
       },
       "text": [
-        "The player is buying water before a flight and notices that Liquid I.V. comes as single-serve powder sticks made to be mixed into a bottle."
+        "The player learns that Starbucks accepts clean personal cups across cafe, drive-thru, and mobile orders and rewards members for using one."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I already bought water."
+        "I can mobile order with my own cup now?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Perfect. I brought the part that fits in your pocket."
+        "Cafe, drive-thru, or mobile order. Bring it clean."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "You are assuming plain water is not enough for what I want."
+        "And Rewards gives me something for doing it?"
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "I am offering electrolytes in a single-serve stick. You decide whether the extra function is useful today."
+        "Extra Stars on the personal-cup transaction. The behavior is easier to repeat when the system remembers to reward it."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,85 +82,84 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "That is actually useful for travel.",
+          "text": "That makes a reusable cup easier to actually use.",
           "next": "first-1",
           "playerEffects": {
-            "readiness": 2,
-            "reassurance": 1
+            "comfort": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
-              "reassurance": 1,
-              "trust": 1
+            "starbucks": {
+              "comfort": 2,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "starbucks": 1
           }
         },
         {
           "id": "first-2",
-          "text": "I can also just drink the water.",
+          "text": "The process still depends on me remembering and cleaning the cup.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
-            "mastery": 1
+            "mastery": 2
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
+            "starbucks": {
+              "mastery": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want another thing to pack.",
+          "text": "I do not want sustainability turned into another loyalty mechanic.",
           "next": "first-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "control": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
+            "starbucks": {
+              "trust": -1,
               "comfort": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "starbucks": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Exactly. I earn my space when routine gets messy."
+        "Exactly. The useful part is making the better habit work in every ordering channel."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Absolutely. I am an option, not a requirement."
+        "Correct. I cannot automate the cup being clean and in your hand."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Then leave me home. Prepared stops being useful when it becomes clutter."
+        "Fair. The environmental benefit and the loyalty incentive are two different reasons."
       ],
       "nextTree": "map"
     },
@@ -168,61 +167,61 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "starbucks",
           "met": true
         }
       },
       "text": [
-        "The player already uses Liquid I.V. and gets a reminder before the next subscription shipment."
+        "The player already has Rewards Stars and sees that Green-level Stars can expire after six months unless qualifying activity extends them."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Your next box is coming up."
+        "Your Stars are not a savings account."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "How many packets do I even have left?"
+        "That sentence means I am about to lose something."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
-        "expression": "happy"
+        "expression": "embarrassed"
       },
       "text": [
-        "That is why I am reminding you before it ships."
+        "At Green status, Stars can expire after six months."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "And if I have plenty?"
+        "And you are reminding me because you know I hate losing them."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Swap flavors, change it, pause it, or cancel. Surprise hydration is still a surprise charge."
+        "Qualifying activity can extend them. Gold or Reserve changes the expiration rules. You can decide what that reminder does to you."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
@@ -232,102 +231,103 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I like not having to remember to reorder.",
+          "text": "A reminder helps me use what I already earned.",
           "next": "return-1",
           "playerEffects": {
-            "readiness": 2,
-            "reassurance": 1
+            "comfort": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
-              "reassurance": 1,
-              "trust": 1
+            "starbucks": {
+              "comfort": 2,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "starbucks": 1
           }
         },
         {
           "id": "return-2",
-          "text": "I want to check whether I actually need another box.",
+          "text": "Expiration makes the reward feel like pressure to come back.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "control": 2,
+            "mastery": 2
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
-              "trust": -1
+            "starbucks": {
+              "mastery": 1,
+              "trust": -1,
+              "control": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not want hydration on auto-renew.",
+          "text": "If points expire, I stop caring about points.",
           "next": "return-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "control": 3,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
-              "comfort": -1
+            "starbucks": {
+              "trust": -1,
+              "comfort": -1,
+              "control": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "starbucks": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Then the subscription is doing its one useful trick."
+        "Then the reminder saved value you already earned."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. If you ignore the reminder, the subscription still has a job to do."
-      ],
-      "next": "return-2-1"
-    },
-    "return-2-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "Which is charge me and ship it."
-      ],
-      "next": "return-2-2"
-    },
-    "return-2-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Correct."
+        "That pressure is real. If the Stars expire, the reminder also gives you a reason to come back."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then cancel it. Recurring delivery only makes sense if you want recurring delivery."
+        "Then let them expire."
+      ],
+      "next": "return-3-1"
+    },
+    "return-3-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You know I hate that answer."
+      ],
+      "next": "return-3-2"
+    },
+    "return-3-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "I know. That is why the reminder works."
       ],
       "nextTree": "map"
     }

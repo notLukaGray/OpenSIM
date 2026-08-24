@@ -1,10 +1,11 @@
 {
   "id": "starbucks-office",
   "brandId": "starbucks",
-  "title": "The 8:47 Ritual",
+  "title": "STARBUCKS — THE OFFICE",
+  "locationId": "office",
   "context": {
     "location": "office",
-    "occasion": "work"
+    "occasion": "office"
   },
   "music": null,
   "background": null,
@@ -14,239 +15,310 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "caffeine is the honest claim",
-    "convenience deletes the room",
-    "warmth as throughput"
+    "The player downloads the Starbucks app because ordering ahead could remove a line from a workday coffee run.",
+    "The player already uses the app and receives personalized Bonus Star offers based on their account relationship."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "happy",
-        "effect": "enter"
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": false
+        }
       },
       "text": [
-        "Late shift? I brought the only coworker who never misses a deadline.",
-        "Grande Pike Place — three hundred eighty milligrams of \"you've got this.\""
+        "The player downloads the Starbucks app because ordering ahead could remove a line from a workday coffee run."
       ],
-      "next": "impression"
+      "next": "entry-first-1"
     },
-    "impression": {
+    "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "I have nine minutes before the next call."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Your phone just reordered tomorrow's cup. While I'm standing here holding today's.",
-        "Does the ritual still count when the calendar runs itself?"
+        "Order ahead. Ideally coffee becomes pickup instead of a meeting with a line."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "autopilot",
-          "text": "Barely noticed it. That's sort of the point of a ritual.",
-          "next": "react-autopilot",
+          "id": "first-1",
+          "text": "That is exactly the convenience I want.",
+          "next": "first-1",
           "playerEffects": {
-            "readiness": 2,
-            "control": 1
+            "comfort": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
-              "readiness": 2,
-              "belonging": -1
+              "comfort": 2,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
             "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-chose-speed"
-          ]
+          }
         },
         {
-          "id": "present",
-          "text": "Cancel it. Tonight I'd rather order like someone who showed up.",
-          "next": "react-present",
+          "id": "first-2",
+          "text": "If everyone orders ahead, pickup can still be chaos.",
+          "next": "first-2",
           "playerEffects": {
-            "comfort": 2,
-            "belonging": 2,
-            "readiness": -1
+            "control": 1,
+            "mastery": 2
           },
           "brandPerceptionEffects": {
             "starbucks": {
-              "belonging": 2,
-              "readiness": -1,
-              "comfort": 1
+              "mastery": 1,
+              "trust": -1
             }
-          },
-          "relationshipEffects": {
-            "starbucks": 2
-          },
-          "setFlags": [
-            "sbux-stayed-present"
-          ]
+          }
         },
         {
-          "id": "audit",
-          "text": "Who profits when my habit starts ordering itself?",
-          "next": "experience",
+          "id": "first-3",
+          "text": "I do not need another restaurant app on my phone.",
+          "next": "first-3",
           "playerEffects": {
-            "mastery": 2,
-            "trust": -1
+            "control": 3,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
               "trust": -1,
-              "belonging": -2
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-read-the-ping"
-          ]
-        }
-      ]
-    },
-    "react-autopilot": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "special"
-      },
-      "text": [
-        "Convenience is my love language. Just know what it costs in chairs."
-      ],
-      "next": "experience"
-    },
-    "react-present": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "Then the cup is yours twice — once for the hands, once for the staying."
-      ],
-      "next": "experience"
-    },
-    "experience": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Fuel first, feelings second. You hit the deadline, I stay essential, everyone applauds quietly.",
-        "Six square feet of desk is my whole third place now. No chairs required."
-      ],
-      "next": "tension",
-      "evidence": "ev-starbucks-wrong-name-curve"
-    },
-    "tension": {
-      "speaker": "STARBUCKS",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "Here's the scene I'd cut if I wrote me: the ping interrupted us.",
-        "It did more for tonight's closeness than I did. Are you comfortable with that?"
-      ],
-      "choices": [
-        {
-          "id": "fuel-is-care",
-          "text": "Completely. Care that arrives at 8:47 sharp is still care.",
-          "next": "closing",
-          "playerEffects": {
-            "readiness": 2,
-            "reassurance": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "readiness": 2,
-              "reassurance": 1,
-              "belonging": -1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": 1
-          },
-          "setFlags": [
-            "sbux-fuel-is-care"
-          ]
-        },
-        {
-          "id": "named-the-room",
-          "text": "Not even slightly. Convenience deleted the room and billed you for the cup.",
-          "next": "closing",
-          "playerEffects": {
-            "trust": 2,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "trust": -2,
-              "belonging": -2,
               "comfort": -1
             }
           },
           "relationshipEffects": {
             "starbucks": -1
-          },
-          "setFlags": [
-            "sbux-named-the-room"
-          ]
-        },
-        {
-          "id": "priced-intimacy",
-          "text": "Keep the ping. Drop the pretense that it's intimacy.",
-          "next": "closing",
-          "playerEffects": {
-            "control": 2,
-            "mastery": 1
-          },
-          "brandPerceptionEffects": {
-            "starbucks": {
-              "trust": -1,
-              "readiness": 1
-            }
-          },
-          "relationshipEffects": {
-            "starbucks": 0
           }
         }
       ]
     },
-    "closing": {
+    "first-1": {
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "special"
       },
-      "callbacks": [
-        {
-          "if": "present",
-          "text": [
-            "You chose the slow version once. I keep receipts on kindness too."
-          ]
-        },
-        {
-          "if": "named-the-room",
-          "text": [
-            "Harsh. Accurate. See you at 8:47 regardless."
-          ]
-        },
-        {
-          "if": "priced-intimacy",
-          "text": [
-            "Deal. Throughput for the body, presence by request."
-          ]
-        }
-      ],
       "text": [
-        "Tomorrow at 8:47 the notification fires whether we've spoken or not.",
-        "I'll call it devotion. Call it whatever gets you through the sprint."
+        "Your usual?"
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You know it already. That is the problem."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "True. Digital convenience still lands in a physical store with other humans."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then order at the counter. The app is optional."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "starbucks",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already uses the app and receives personalized Bonus Star offers based on their account relationship."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "This Bonus Star offer feels suspiciously specific."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "It is for your account."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Because you know what I keep ordering."
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Rewards can use your account relationship for personalized offers. Familiarity is useful. It is also data."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
+        {
+          "id": "return-1",
+          "text": "I like offers that are actually relevant to me.",
+          "next": "return-1",
+          "playerEffects": {
+            "comfort": 2,
+            "readiness": 1,
+            "trust": 1,
+            "belonging": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "comfort": 2,
+              "readiness": 1,
+              "trust": 1,
+              "belonging": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          }
+        },
+        {
+          "id": "return-2",
+          "text": "I do not love how much purchase history sits behind “relevant.”",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "mastery": 1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I would rather pay the normal price than be profiled into a deal.",
+          "next": "return-3",
+          "playerEffects": {
+            "control": 3,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          }
+        }
+      ]
+    },
+    "return-1": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Then personalization is earning the data relationship for you."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "That is the tradeoff. Relevance requires information about the relationship."
+      ],
+      "next": "return-2-1"
+    },
+    "return-2-1": {
+      "speaker": "STARBUCKS (negative)",
+      "text": [
+        "Then ignore the offer."
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "You still know what I buy."
+      ],
+      "next": "return-2-3"
+    },
+    "return-2-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Yes. Ignoring the coupon does not erase the account history."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Fair. That is a real way to see it."
       ],
       "nextTree": "map"
     }
-  },
-  "locationId": "office"
+  }
 }

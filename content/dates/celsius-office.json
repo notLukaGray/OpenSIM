@@ -1,11 +1,11 @@
 {
-  "id": "celsius-beach-day",
+  "id": "celsius-office",
   "brandId": "celsius",
-  "title": "CELSIUS — BEACH DAY",
-  "locationId": "beach-day",
+  "title": "CELSIUS — THE OFFICE",
+  "locationId": "office",
   "context": {
-    "location": "beach-day",
-    "occasion": "beach-day"
+    "location": "office",
+    "occasion": "office"
   },
   "music": null,
   "background": null,
@@ -20,8 +20,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can.",
-    "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+    "The player sees a student promoting CELSIUS and learns that CELSIUS University is a paid campus marketing program.",
+    "The player already drinks CELSIUS cans but keeps On-The-Go powder packets in a desk drawer."
   ],
   "nodes": {
     "entry-first": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can."
+        "The player sees a student promoting CELSIUS and learns that CELSIUS University is a paid campus marketing program."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I picked this up because the can looks like vacation."
+        "Is that student actually working for you?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Thank you for proving the point."
+        "Potentially, yes."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "The point being?"
+        "I thought it was just somebody posting a can between classes."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Seasonal flavor and seasonal packaging get you to look again. After that, it is still a caffeinated CELSIUS."
+        "CELSIUS University pays student ambassadors to post, run campus events, and connect with other reps. Campus life is part audience, part job site."
       ],
       "next": "choice-first"
     },
@@ -82,18 +82,16 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "The flavor sounds fun for a long day out.",
+          "text": "That is real work experience and smart campus marketing.",
           "next": "first-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
+            "excitement": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
+              "excitement": 2,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
@@ -102,38 +100,35 @@
         },
         {
           "id": "first-2",
-          "text": "A beach mood does not change what 200 milligrams of caffeine does.",
+          "text": "So the casual post is also a paid brand job.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
             "mastery": 2,
-            "reassurance": 1,
-            "excitement": 1,
-            "selfExpression": 1
+            "trust": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "mastery": 1,
-              "trust": -1,
-              "reassurance": -1,
-              "excitement": -1
+              "trust": -2
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want an energy drink deciding the vibe of the day.",
+          "text": "I would rather get an energy drink recommendation from someone who is not paid to spread it.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
-            "selfExpression": 2,
-            "excitement": 1
+            "selfExpression": 1,
+            "trust": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
-              "trust": -1,
-              "comfort": -1,
-              "excitement": -1
+              "trust": -2,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -148,7 +143,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the packaging earned the trial and the product still has to earn the repeat."
+        "Both things can be true. Good experience for them, useful access for me."
       ],
       "nextTree": "map"
     },
@@ -158,17 +153,24 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Aesthetic context does not change stimulant content."
+        "Correct. They are being paid to post."
+      ],
+      "next": "first-2-1"
+    },
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Okay. I just wanted that said out loud."
       ],
       "nextTree": "map"
     },
     "first-3": {
       "speaker": "CELSIUS",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "embarrassed"
       },
       "text": [
-        "Good news: beaches existed before me."
+        "Fair. Incentive changes how a recommendation feels."
       ],
       "nextTree": "map"
     },
@@ -181,24 +183,41 @@
         }
       },
       "text": [
-        "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+        "The player already drinks CELSIUS cans but keeps On-The-Go powder packets in a desk drawer."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I like Arctic Vibe. Why do I need it twice?"
+        "You live in my desk now?"
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "CELSIUS",
       "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "I contain multitudes. And powder packets."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Same caffeine?"
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "CELSIUS",
+      "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "You do not. The stick is there if you want the same flavor without the can or the fizz."
+        "Two hundred milligrams. The drawer version is me admitting you do not always have a cold can nearby."
       ],
       "next": "choice-return"
     },
@@ -213,18 +232,16 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I like keeping the flavor while changing the format.",
+          "text": "That is useful when I cannot get a cold can.",
           "next": "return-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
+            "excitement": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
+              "excitement": 2,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
@@ -233,31 +250,37 @@
         },
         {
           "id": "return-2",
-          "text": "That makes it easier to have CELSIUS everywhere.",
+          "text": "Powdered energy feels easier to overuse because it is always there.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
-            "mastery": 2
+            "mastery": 2,
+            "reassurance": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "mastery": 1,
-              "trust": -1
+              "trust": -1,
+              "reassurance": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need one energy brand following me across every occasion.",
+          "text": "I do not want caffeine living in my desk drawer.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
-            "selfExpression": 1
+            "selfExpression": 1,
+            "reassurance": 1,
+            "comfort": 1,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "trust": -1,
-              "comfort": -1
+              "comfort": -1,
+              "reassurance": -1
             }
           },
           "relationshipEffects": {
@@ -269,10 +292,10 @@
     "return-1": {
       "speaker": "CELSIUS",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Then keep the flavor and use the format that actually fits the day."
+        "Exactly. Format solved the problem, not a new promise."
       ],
       "nextTree": "map"
     },
@@ -282,7 +305,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Ubiquity is convenient until it starts feeling like pressure."
+        "That is a fair concern. Portable also means easy to reach for."
       ],
       "nextTree": "map"
     },
@@ -292,7 +315,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then choose the occasion where I actually add something and leave me out of the rest."
+        "Then the drawer gets one less product. You know your own habits."
       ],
       "nextTree": "map"
     }

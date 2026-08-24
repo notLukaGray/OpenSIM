@@ -1,11 +1,11 @@
 {
   "id": "white-claw-beach-day",
   "brandId": "white-claw",
-  "title": "Summer of Claw",
+  "title": "WHITE CLAW — BEACH DAY",
   "locationId": "beach-day",
   "context": {
     "location": "beach-day",
-    "occasion": "day-drink"
+    "occasion": "beach-day"
   },
   "music": null,
   "background": null,
@@ -15,143 +15,95 @@
       "position": "center"
     }
   ],
-  "startNode": "intro",
+  "startNode": "entry-return",
+  "entryPoints": [
+    "entry-first"
+  ],
   "lessons": [
-    "fame is not the same as being known",
-    "the defining joke was never theirs",
-    "earned media cuts both ways"
+    "The player sees White Claw’s broader campaign inviting people to stop scrolling, say yes, and meet up in real life.",
+    "The player already buys White Claw and chooses a Surf variety pack built around more tropical flavor rotation."
   ],
   "nodes": {
-    "intro": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "happy",
-        "effect": "enter"
-      },
-      "text": [
-        "You made it. The ocean's been name-dropping you all week.",
-        "Cooler's right there. Pick your fighter."
-      ],
-      "choices": [
-        {
-          "id": "quote",
-          "text": "“Ain't no laws,” right? Been saving that one all summer.",
-          "next": "branch-quote",
-          "playerEffects": {
-            "excitement": 2,
-            "belonging": 1,
-            "trust": -1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "belonging": 1,
-              "selfExpression": 1,
-              "mastery": -1
-            }
-          },
-          "relationshipEffects": {
-            "white-claw": 1
-          }
-        },
-        {
-          "id": "plain",
-          "text": "Honestly? I just really like Black Cherry.",
-          "next": "branch-plain",
-          "playerEffects": {
-            "comfort": 2,
-            "reassurance": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "comfort": 1,
-              "reassurance": 1
-            }
-          },
-          "relationshipEffects": {
-            "white-claw": 1
-          }
-        },
-        {
-          "id": "origin",
-          "text": "Real question — where did any of this actually start?",
-          "next": "branch-origin",
-          "playerEffects": {
-            "mastery": 1,
-            "control": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "mastery": 1,
-              "trust": 1
-            }
-          },
-          "setFlags": [
-            "claw-asked-the-origin"
-          ]
+    "entry-first": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "white-claw",
+          "met": false
         }
-      ]
-    },
-    "branch-quote": {
-      "speaker": "WHITE CLAW",
-      "sprite": {
-        "expression": "embarrassed"
       },
       "text": [
-        "Ha! You said it better than I ever did.",
-        "Because I never did. Some comedian wrote that bit, filmed it on his phone, and I've been coasting on it since."
+        "The player sees White Claw’s broader campaign inviting people to stop scrolling, say yes, and meet up in real life."
       ],
-      "next": "memory"
+      "next": "entry-first-1"
     },
-    "branch-plain": {
+    "entry-first-1": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Black Cherry loyalty. See, this is why the beach likes you."
+        "Answer the text."
       ],
-      "next": "memory"
+      "next": "entry-first-2"
     },
-    "branch-origin": {
+    "entry-first-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is your campaign?"
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Straight answer? Not from me. Stick around."
+        "Stop scrolling. Go see your friends. The can comes with the occasion."
       ],
-      "next": "memory"
+      "next": "entry-first-4"
     },
-    "memory": {
-      "speaker": "...",
+    "entry-first-4": {
+      "speaker": "PLAYER",
       "text": [
-        "Three speaker circles down the sand are yelling the same catchphrase at the water. None of them is talking to the can in your hand."
+        "You really built a brand line around basic social behavior."
       ],
-      "next": "tension",
-      "evidence": "ev-white-claw-cut-the-ads"
+      "next": "entry-first-5"
     },
-    "tension": {
+    "entry-first-5": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Basic social behavior is underrated."
+      ],
+      "next": "choice-first"
+    },
+    "choice-first": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Everyone can finish my joke. Almost nobody knows my name.",
-        "Summer of '19 the whole coast sold out — and while fans did my marketing for free, I quietly cut my own ad spend."
+        "What do you make of that?"
       ],
       "choices": [
         {
-          "id": "blessed",
-          "text": "Free marketing is still marketing. Take the win.",
-          "next": "wrap",
+          "id": "first-1",
+          "text": "That is closer to why people actually buy this.",
+          "next": "first-1",
           "playerEffects": {
-            "reassurance": 2,
-            "control": -1
+            "belonging": 2,
+            "excitement": 1,
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "selfExpression": 2,
-              "control": -2
+              "belonging": 2,
+              "excitement": 1,
+              "comfort": 1
             }
           },
           "relationshipEffects": {
@@ -159,36 +111,35 @@
           }
         },
         {
-          "id": "credit",
-          "text": "Then say it out loud. Give the fans their pen back.",
-          "next": "wrap",
-          "playerEffects": {
-            "trust": 2,
-            "mastery": 1
-          },
-          "brandPerceptionEffects": {
-            "white-claw": {
-              "trust": 1,
-              "selfExpression": 1,
-              "control": -1
-            }
-          },
-          "setFlags": [
-            "claw-fans-get-the-pen"
-          ]
-        },
-        {
-          "id": "sting",
-          "text": "Must be weird that your best material isn't yours.",
-          "next": "wrap",
+          "id": "first-2",
+          "text": "A brand telling me to be spontaneous is still a planned campaign.",
+          "next": "first-2",
           "playerEffects": {
             "mastery": 2,
-            "excitement": -1
+            "control": 1
           },
           "brandPerceptionEffects": {
             "white-claw": {
-              "control": -2,
-              "mastery": -1
+              "trust": -1,
+              "control": -1,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "first-3",
+          "text": "I do not need alcohol attached to the idea of showing up for friends.",
+          "next": "first-3",
+          "playerEffects": {
+            "control": 2,
+            "trust": 2,
+            "belonging": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "belonging": -2,
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -197,27 +148,183 @@
         }
       ]
     },
-    "wrap": {
+    "first-1": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "special"
       },
-      "callbacks": [
+      "text": [
+        "Good. Text them back."
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You are very bossy for something breezy."
+      ],
+      "nextTree": "map"
+    },
+    "first-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Correct. Professionally produced spontaneity is still professionally produced."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "And friendship still works without me."
+      ],
+      "nextTree": "map"
+    },
+    "entry-return": {
+      "speaker": "...",
+      "conditions": {
+        "brand": {
+          "id": "white-claw",
+          "met": true
+        }
+      },
+      "text": [
+        "The player already buys White Claw and chooses a Surf variety pack built around more tropical flavor rotation."
+      ],
+      "next": "entry-return-1"
+    },
+    "entry-return-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "This whole pack looks like it wants sand in the cooler."
+      ],
+      "next": "entry-return-2"
+    },
+    "entry-return-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Surf. I was not hiding the theme."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "And the point of four flavors?"
+      ],
+      "next": "entry-return-4"
+    },
+    "entry-return-4": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "The cooler does not have to agree on one. Variety does some of the social work for you."
+      ],
+      "next": "choice-return"
+    },
+    "choice-return": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "What do you make of that?"
+      ],
+      "choices": [
         {
-          "if": "origin",
-          "text": [
-            "See? You asked where it started. Nobody ever asks."
-          ]
+          "id": "return-1",
+          "text": "I like having different options for a group.",
+          "next": "return-1",
+          "playerEffects": {
+            "belonging": 2,
+            "comfort": 1,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "belonging": 2,
+              "comfort": 1,
+              "readiness": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
         },
         {
-          "if": "sting",
-          "text": [
-            "Weird, yeah. But a good joke forgives its landlord."
-          ]
+          "id": "return-2",
+          "text": "A variety pack also makes it easier to keep drinking because the next can feels different.",
+          "next": "return-2",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "readiness": -2,
+              "control": -1,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "return-3",
+          "text": "I would rather bring one thing I actually like.",
+          "next": "return-3",
+          "playerEffects": {
+            "selfExpression": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "belonging": -1,
+              "comfort": -1,
+              "excitement": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
+          }
         }
-      ],
+      ]
+    },
+    "return-1": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "Stay as long as you like. The tide does the scheduling."
+        "Then the pack is serving the group, not just the brand."
+      ],
+      "nextTree": "map"
+    },
+    "return-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "That can be true. Novelty changes pace and attention."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then one flavor is the better purchase for you."
       ],
       "nextTree": "map"
     }

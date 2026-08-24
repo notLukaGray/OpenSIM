@@ -19,6 +19,7 @@ const EXPRESSIONS = [
 ];
 
 const BRANDS = [
+  ["prime", "#2d5be3"],
   ["sleep", "#b8b5e8"],
   ["gym", "#c97b4a"],
   ["starbucks", "#00a862"],
@@ -30,8 +31,35 @@ const BRANDS = [
   ["white-claw", "#37b6ff"],
   ["athletic-brewing", "#f0a35e"],
   ["zyn", "#baf5c0"],
+  ["zyn-counsel", "#d8dce8"],
   ["na-spirits", "#b9c99a"],
 ];
+
+// These brands have production PNG sprites supplied outside this placeholder generator.
+// Keep their registry entries pointed at the imported assets if this script is rerun.
+const PNG_BRANDS = new Set([
+  "liquid-iv",
+  "whoop",
+  "celsius",
+  "ag1",
+  "prime",
+  "starbucks",
+  "oura",
+  "red-bull",
+  "white-claw",
+  "athletic-brewing",
+  "zyn-counsel",
+]);
+
+const REGISTERED_GENERATED_BRANDS = new Set([
+  "prime",
+  "starbucks",
+  "oura",
+  "red-bull",
+  "white-claw",
+  "athletic-brewing",
+  "zyn-counsel",
+]);
 
 function sprite(brand, accent, [expr, cfg]) {
   const tilt = cfg.tilt;
@@ -58,12 +86,16 @@ ${marks}
 mkdirSync(outDir, { recursive: true });
 const manifest = [];
 for (const [brand, accent] of BRANDS) {
+  if (!REGISTERED_GENERATED_BRANDS.has(brand)) continue;
   for (const [expr, cfg] of EXPRESSIONS) {
     const id = `char-${brand}-${expr}`;
-    const file = path.join(outDir, `${id}.svg`);
-    writeFileSync(file, sprite(brand, accent, [expr, cfg]));
+    const extension = PNG_BRANDS.has(brand) ? "png" : "svg";
+    if (!PNG_BRANDS.has(brand)) {
+      const file = path.join(outDir, `${id}.svg`);
+      writeFileSync(file, sprite(brand, accent, [expr, cfg]));
+    }
     const type = `character-${expr}`;
-    manifest.push({ id, type, src: `/assets/characters/${id}.svg`, alt: `${brand} (${expr})` });
+    manifest.push({ id, type, src: `/assets/characters/${id}.${extension}`, alt: `${brand} (${expr})` });
   }
 }
 writeFileSync(manifestOut, JSON.stringify(manifest, null, 2));

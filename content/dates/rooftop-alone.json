@@ -1,0 +1,14 @@
+{
+  "id": "rooftop-alone", "brandId": "rooftop-alone", "title": "No Audience", "locationId": "rooftop",
+  "context": { "location": "rooftop", "occasion": "after-party" }, "music": null, "background": null, "cast": [], "startNode": "intro",
+  "lessons": ["the difference between being seen and looking", "stillness is an active preference"],
+  "nodes": {
+    "intro": { "speaker": "...", "text": ["The party is downstairs, performing through the ceiling.", "Up here, the city is mostly windows deciding whether to stay lit."], "next": "choose" },
+    "choose": { "speaker": "...", "text": ["Your phone is already in your hand."], "choices": [
+      { "id": "watch", "text": "Put it away and watch the light change.", "next": "watch-end", "playerEffects": { "comfort": 2, "control": 1 }, "setFlags": ["control-rooftop-private"] },
+      { "id": "send", "text": "Send one honest message to the person you meant to call.", "next": "send-end", "playerEffects": { "belonging": 2, "trust": 1 }, "setFlags": ["control-rooftop-honest"] }
+    ] },
+    "watch-end": { "speaker": "...", "text": ["Nothing is documented.", "It still happened."], "nextTree": "map" },
+    "send-end": { "speaker": "...", "text": ["The typing bubble appears, then disappears, then returns.", "You wait without making it a story."], "nextTree": "map" }
+  }
+}

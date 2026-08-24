@@ -1,11 +1,11 @@
 {
-  "id": "zyn-office",
+  "id": "zyn-rooftop",
   "brandId": "zyn",
-  "title": "COUNSEL — THE OFFICE",
-  "locationId": "office",
+  "title": "COUNSEL — SUNSET ROOFTOP",
+  "locationId": "rooftop",
   "context": {
-    "location": "office",
-    "occasion": "office"
+    "location": "rooftop",
+    "occasion": "rooftop"
   },
   "music": null,
   "background": null,
@@ -21,8 +21,8 @@
     "entry-first"
   ],
   "lessons": [
-    "An age-verified adult smoker receives ZYN marketing using the modified-risk claim FDA authorized for twenty classic ZYN products in June 2026.",
-    "The player opens the ZYN Rewards store and finds charitable donations listed beside merchandise and gift cards."
+    "The player asks whether the people they see talking about ZYN online are paid endorsers.",
+    "The player sees ZYN's current homepage featuring winning user-submitted adventure photos under the \"Find Your ZYN\" banner."
   ],
   "nodes": {
     "entry-first": {
@@ -34,51 +34,58 @@
         }
       },
       "text": [
-        "An age-verified adult smoker receives ZYN marketing using the modified-risk claim FDA authorized for twenty classic ZYN products in June 2026."
+        "The player asks whether the people they see talking about ZYN online are paid endorsers."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "I am required to read the claim as authorized: \"Using ZYN instead of cigarettes puts you at a lower risk of mouth cancer, heart disease, lung cancer, stroke, emphysema, and chronic bronchitis.\""
+        "Is that guy posting about ZYN on my feed paid by you?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "PLAYER",
-      "text": [
-        "You listed six diseases before hello."
-      ],
-      "next": "entry-first-3"
-    },
-    "entry-first-3": {
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Hello."
+        "I cannot make a representation regarding an unidentified third party. ZYN's current responsibility policy states that the company does not pay social media influencers, including athletes and celebrities, to endorse its products."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "So all the internet hype is just people doing it themselves?"
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Is this the part where you say FDA approved?"
+        "Some content may be unsponsored user speech. Branded social pages are separately restricted to platforms with age controls, and company advertising policy uses models aged thirty-five or older."
       ],
       "next": "entry-first-5"
     },
     "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "This is somehow more legal than saying \"no.\""
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "neutral"
       },
       "text": [
-        "No. FDA authorized specified products to be marketed with that claim. The agency expressly distinguishes marketing authorization from FDA approval and states that no tobacco product is safe."
+        "\"No\" would have exceeded the available evidence."
       ],
       "next": "choice-first"
     },
@@ -93,18 +100,17 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "If someone already smokes, relative-risk information is useful.",
+          "text": "I respect the fact that the brand says it will not pay influencers.",
           "next": "first-1",
           "playerEffects": {
             "trust": 2,
-            "mastery": 1,
-            "reassurance": 1
+            "control": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
               "trust": 1,
-              "reassurance": 1,
-              "readiness": 1
+              "control": 1,
+              "aspiration": -1
             }
           },
           "relationshipEffects": {
@@ -113,33 +119,33 @@
         },
         {
           "id": "first-2",
-          "text": "The words \"instead of cigarettes\" are doing a lot of work there.",
+          "text": "Organic hype still does a lot of marketing work for you.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
-            "trust": 2
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
               "trust": -1,
-              "reassurance": -1,
-              "mastery": 2
+              "belonging": 1,
+              "mastery": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want a nicotine brand using disease risk as a sales message.",
+          "text": "I do not want nicotine brands in my social feed either way.",
           "next": "first-3",
           "playerEffects": {
-            "trust": 2,
-            "control": 2
+            "control": 2,
+            "trust": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
               "trust": -2,
               "comfort": -1,
-              "reassurance": -1
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
@@ -151,27 +157,27 @@
     "first-1": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "The record will reflect that relative-risk information is material to you. For completeness, FDA states that fully quitting tobacco use provides the greatest health benefit."
+        "The distinction between paid endorsement and ordinary user speech matters to you. Noted."
       ],
       "nextTree": "map"
     },
     "first-2": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Correct. The authorized comparison is ZYN instead of cigarettes. It is not a blanket statement about every pattern of use."
+        "Correct. Absence of compensation does not mean absence of cultural benefit to the brand."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "You looked happy saying \"correct.\""
+        "Did you just concede a marketing point?"
       ],
       "next": "first-2-2"
     },
@@ -181,7 +187,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Objection. Speculation."
+        "I identified a non-exclusive possibility."
       ],
       "nextTree": "map"
     },
@@ -191,7 +197,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Authorization permits the claim. It does not compel you to find the claim persuasive or welcome in advertising."
+        "The brand's owned social presence is age-restricted. Your preference not to see it remains independently valid."
       ],
       "nextTree": "map"
     },
@@ -204,58 +210,51 @@
         }
       },
       "text": [
-        "The player opens the ZYN Rewards store and finds charitable donations listed beside merchandise and gift cards."
+        "The player sees ZYN's current homepage featuring winning user-submitted adventure photos under the \"Find Your ZYN\" banner."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Why is \"Donate to Hope For The Warriors\" in the same store as an Amazon gift card and a metal can?"
+        "The homepage currently thanks adult participants who submitted photographs and directs visitors to view winning entries."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "We Care by ZYN permits Rewards members to direct points to participating charitable organizations. The brand states that donated points are valued at four cents each for this purpose."
+        "You just told me you do not pay influencers."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "So my nicotine loyalty points become philanthropy."
+        "A customer promotion and a paid influencer endorsement are not the same category."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "In the quantities and organizations made available through the program, yes."
+        "Convenient categories."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
-      "speaker": "PLAYER",
-      "text": [
-        "And ZYN itself?"
-      ],
-      "next": "entry-return-6"
-    },
-    "entry-return-6": {
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "The company states a commitment of three million dollars annually to We Care by ZYN. Current featured organizations include groups serving veterans, active-duty service members, and their families."
+        "Categories are doing substantial work throughout this relationship."
       ],
       "next": "choice-return"
     },
@@ -270,17 +269,17 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "If the points already exist, I would rather donate them than get another branded thing.",
+          "text": "I would rather see real customers than a celebrity pretending this is their favorite thing.",
           "next": "return-1",
           "playerEffects": {
-            "reassurance": 2,
-            "control": 1
+            "trust": 1,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "reassurance": 1,
-              "trust": -1,
-              "comfort": 1
+              "selfExpression": 1,
+              "belonging": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -289,33 +288,33 @@
         },
         {
           "id": "return-2",
-          "text": "This is still cause marketing attached to a nicotine loyalty program.",
+          "text": "It still turns customers into brand content.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 2,
-            "trust": 2
+            "control": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "trust": -2,
+              "selfExpression": 1,
               "control": -1,
-              "mastery": 1
+              "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not want charity used to make the purchase relationship feel better.",
+          "text": "I do not want nicotine use becoming something I post as part of my identity.",
           "next": "return-3",
           "playerEffects": {
-            "trust": 2,
+            "selfExpression": 2,
             "control": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "trust": -2,
-              "reassurance": -2,
-              "comfort": -1
+              "selfExpression": -2,
+              "trust": -1,
+              "belonging": -1
             }
           },
           "relationshipEffects": {
@@ -327,47 +326,47 @@
     "return-1": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "Your points may be allocated accordingly. No branded hoodie is required."
+        "Your preference is for participant content over celebrity endorsement. That distinction is clear."
       ],
       "nextTree": "map"
     },
     "return-2": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "The charitable function and the brand benefit can coexist. One does not legally cancel the other."
+        "Yes. User participation can create brand material even when it is not an influencer arrangement."
       ],
       "nextTree": "map"
     },
     "return-3": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "neutral"
       },
       "text": [
-        "You are not required to convert a commercial relationship into a moral one."
+        "Then the appropriate action is not to submit. Product use does not require public brand participation."
       ],
       "next": "return-3-1"
     },
     "return-3-1": {
       "speaker": "PLAYER",
       "text": [
-        "That was almost human."
+        "Finally, a terms section I can complete by doing nothing."
       ],
       "next": "return-3-2"
     },
     "return-3-2": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "neutral"
+        "expression": "special"
       },
       "text": [
-        "Please strike \"almost\" from the record."
+        "Non-participation has been successfully processed."
       ],
       "nextTree": "map"
     }
