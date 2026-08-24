@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { getBrandOrNull } from "@/content/registry";
 import { BrandMatch, needWeights, rankAllBrands } from "@/game/compatibility";
 import { GameState, NEED_LABELS } from "@/game/types";
+import { useGame } from "@/hooks/useGame";
 import styles from "./MatchReveal.module.css";
 
 export default function MatchReveal({ state, onRestart }: { state: GameState; onRestart: () => void }) {
+  const game = useGame();
   const weights = needWeights(state);
   const ranked = rankAllBrands(state, weights, { flags: state.flags });
   const dated = ranked.filter((m) => m.dated);
@@ -83,9 +85,15 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
           <p className={styles.neverMet}>never met: {neverMet.map((m) => getBrandOrNull(m.brandId)?.name).join(" · ")}</p>
         )}
 
-        <button className={styles.restart} onClick={onRestart}>
-          MEET SOMEONE NEW
-        </button>
+        <div className={styles.actions}>
+          {/* Standing rule R2: the audit is a lens, not a wall — keep playing. */}
+          <button className={styles.explore} onClick={() => game.setPhase("map")}>
+            KEEP EXPLORING
+          </button>
+          <button className={styles.restart} onClick={onRestart}>
+            START OVER
+          </button>
+        </div>
       </motion.div>
     </div>
   );

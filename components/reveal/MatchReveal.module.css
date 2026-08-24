@@ -114,21 +114,40 @@
   color: rgba(232, 228, 240, 0.4);
 }
 
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.explore,
 .restart {
-  display: block;
-  margin: 40px auto 0;
-  padding: 14px 34px;
+  padding: 14px 30px;
   font-size: 13px;
   letter-spacing: 0.22em;
-  color: #131829;
-  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
-  border: none;
   border-radius: 999px;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.restart:hover {
+.explore {
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  border: none;
+}
+
+.explore:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(242, 184, 198, 0.35);
+}
+
+.restart {
+  color: #f4ecf2;
+  background: transparent;
+  border: 1px solid rgba(244, 236, 242, 0.3);
+}
+
+.restart:hover {
+  border-color: #f4ecf2;
 }

@@ -41,6 +41,9 @@ export default function TravelMap() {
   }, [available]);
 
   const allDone = available.length === 0;
+  // Standing rule R1: the reveal is reachable in ≤10 minutes — after any two
+  // encounters the player may audit themselves early, or keep exploring.
+  const canReveal = state.completedTrees.length >= 2;
   const bg = getAsset("bg-hub");
 
   return (
@@ -112,16 +115,20 @@ export default function TravelMap() {
         );
       })}
 
-      {allDone && (
+      {(canReveal || allDone) && (
         <motion.div
           className={styles.allDone}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <p>That&apos;s everyone. Time to think about what all this meant.</p>
+          <p>
+            {allDone
+              ? "That's everyone. Time to think about what all this meant."
+              : "Enough to start seeing the shape of you — or keep exploring."}
+          </p>
           <button className={styles.thinkItOver} onClick={() => game.setPhase("reveal")}>
-            THINK IT OVER
+            {allDone ? "THINK IT OVER" : "SEE WHO YOU'VE BEEN"}
           </button>
         </motion.div>
       )}

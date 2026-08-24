@@ -1,0 +1,906 @@
+{
+  "generatedAtEpochNote": "deterministic content only — regenerate after edits",
+  "total": 90,
+  "lines": [
+    {
+      "file": "ag1-kitchen/intro/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "intro",
+      "lineIndex": 0,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Morning. I made space for you before the notifications started."
+    },
+    {
+      "file": "ag1-kitchen/intro/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "intro",
+      "lineIndex": 1,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Same time, same glass, same quiet five minutes."
+    },
+    {
+      "file": "ag1-kitchen/branch-ritual/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "branch-ritual",
+      "lineIndex": 0,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "I know. That's the actual product."
+    },
+    {
+      "file": "ag1-kitchen/branch-ritual/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "branch-ritual",
+      "lineIndex": 1,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Everything else is just what's in the scoop."
+    },
+    {
+      "file": "ag1-kitchen/branch-price/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "branch-price",
+      "lineIndex": 0,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "You're not wrong to think about it."
+    },
+    {
+      "file": "ag1-kitchen/branch-price/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "branch-price",
+      "lineIndex": 1,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "I'd rather you know what you're paying for than pretend it's nothing."
+    },
+    {
+      "file": "ag1-kitchen/branch-proof/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "branch-proof",
+      "lineIndex": 0,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Less than you'd hope, if I'm being straight with you."
+    },
+    {
+      "file": "ag1-kitchen/branch-proof/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "branch-proof",
+      "lineIndex": 1,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Most of what I offer isn't in a study. It's in the doing it daily."
+    },
+    {
+      "file": "ag1-kitchen/memory/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "memory",
+      "lineIndex": 0,
+      "speaker": "...",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "The green scoop. The shaker bottle. The promise that one glass replaces six other pills."
+    },
+    {
+      "file": "ag1-kitchen/memory/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "memory",
+      "lineIndex": 1,
+      "speaker": "...",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "You've watched that ad at 1 a.m. more than once."
+    },
+    {
+      "file": "ag1-kitchen/tension/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "tension",
+      "lineIndex": 0,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Can I ask you something?"
+    },
+    {
+      "file": "ag1-kitchen/tension/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "tension",
+      "lineIndex": 1,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "If I stopped feeling special tomorrow — just became routine — would you still show up?"
+    },
+    {
+      "file": "ag1-kitchen/wrap/0.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "wrap",
+      "lineIndex": 0,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "Fair either way."
+    },
+    {
+      "file": "ag1-kitchen/wrap/1.mp3",
+      "treeId": "ag1-kitchen",
+      "nodeId": "wrap",
+      "lineIndex": 1,
+      "speaker": "AG1",
+      "brandId": "ag1",
+      "locationId": "kitchen",
+      "text": "I'll be here at the same time tomorrow, regardless."
+    },
+    {
+      "file": "celsius-rooftop/intro/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "intro",
+      "lineIndex": 0,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "I already did a sunrise run, but I saved you the view."
+    },
+    {
+      "file": "celsius-rooftop/intro/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "intro",
+      "lineIndex": 1,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "Come on. Everyone's already here."
+    },
+    {
+      "file": "celsius-rooftop/branch-in/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "branch-in",
+      "lineIndex": 0,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "Now you're speaking my language."
+    },
+    {
+      "file": "celsius-rooftop/branch-in/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "branch-in",
+      "lineIndex": 1,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "This is what everyone's talking about right now — you're in it."
+    },
+    {
+      "file": "celsius-rooftop/branch-taste/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "branch-taste",
+      "lineIndex": 0,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "That's fair. I take that seriously, actually."
+    },
+    {
+      "file": "celsius-rooftop/branch-taste/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "branch-taste",
+      "lineIndex": 1,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "It's not just noise if it's something you'd choose again."
+    },
+    {
+      "file": "celsius-rooftop/branch-skeptic/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "branch-skeptic",
+      "lineIndex": 0,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "...Okay, that's a real point."
+    },
+    {
+      "file": "celsius-rooftop/branch-skeptic/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "branch-skeptic",
+      "lineIndex": 1,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "Yeah, a lot of what you know about me came from someone who was paid to say it."
+    },
+    {
+      "file": "celsius-rooftop/memory/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "memory",
+      "lineIndex": 0,
+      "speaker": "...",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "You know the cooler wall."
+    },
+    {
+      "file": "celsius-rooftop/memory/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "memory",
+      "lineIndex": 1,
+      "speaker": "...",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "A whole row of slim cans at the gym, each flavor louder than the last. The branding does reps."
+    },
+    {
+      "file": "celsius-rooftop/tension/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "tension",
+      "lineIndex": 0,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "Can I be honest?"
+    },
+    {
+      "file": "celsius-rooftop/tension/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "tension",
+      "lineIndex": 1,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "There's a comedown. It's part of the deal — I don't love saying that out loud."
+    },
+    {
+      "file": "celsius-rooftop/wrap/0.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "wrap",
+      "lineIndex": 0,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "Either way, the rooftop's still here tomorrow."
+    },
+    {
+      "file": "celsius-rooftop/wrap/1.mp3",
+      "treeId": "celsius-rooftop",
+      "nodeId": "wrap",
+      "lineIndex": 1,
+      "speaker": "CELSIUS",
+      "brandId": "celsius",
+      "locationId": "rooftop",
+      "text": "You know where to find me."
+    },
+    {
+      "file": "home/intro/0.mp3",
+      "treeId": "home",
+      "nodeId": "intro",
+      "lineIndex": 0,
+      "speaker": "...",
+      "brandId": null,
+      "locationId": null,
+      "text": "The app's open again."
+    },
+    {
+      "file": "home/intro/1.mp3",
+      "treeId": "home",
+      "nodeId": "intro",
+      "lineIndex": 1,
+      "speaker": "...",
+      "brandId": null,
+      "locationId": null,
+      "text": "Someone new is always around, if you're looking."
+    },
+    {
+      "file": "liquid-iv-airport/intro/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "intro",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Hey. You made it."
+    },
+    {
+      "file": "liquid-iv-airport/intro/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "intro",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "I watched you sprint through security holding one shoe and a laptop."
+    },
+    {
+      "file": "liquid-iv-airport/intro/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "intro",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Before we do anything else — drink this."
+    },
+    {
+      "file": "liquid-iv-airport/impression/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Okay, be honest."
+    },
+    {
+      "file": "liquid-iv-airport/impression/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Did I just save you, or were you planning to raw-dog dehydration through a three-hour flight?"
+    },
+    {
+      "file": "liquid-iv-airport/impression-rescue/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-rescue",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Wow."
+    },
+    {
+      "file": "liquid-iv-airport/impression-rescue/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-rescue",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "First date and I'm already saving your life."
+    },
+    {
+      "file": "liquid-iv-airport/impression-rescue/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-rescue",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "This feels fast."
+    },
+    {
+      "file": "liquid-iv-airport/impression-handled/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-handled",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Right. Totally fine."
+    },
+    {
+      "file": "liquid-iv-airport/impression-handled/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-handled",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "That's why you're wearing one sock."
+    },
+    {
+      "file": "liquid-iv-airport/impression-relief/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-relief",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Weirdly comforting?"
+    },
+    {
+      "file": "liquid-iv-airport/impression-relief/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "impression-relief",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Honestly, I've been called worse."
+    },
+    {
+      "file": "liquid-iv-airport/memory/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "memory",
+      "lineIndex": 0,
+      "speaker": "...",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "You've seen these before."
+    },
+    {
+      "file": "liquid-iv-airport/memory/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "memory",
+      "lineIndex": 1,
+      "speaker": "...",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Little stick. Airport kiosk. Three seconds of deciding you'd rather feel human at gate 34."
+    },
+    {
+      "file": "liquid-iv-airport/experience/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Alright, we're past first impressions."
+    },
+    {
+      "file": "liquid-iv-airport/experience/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "You can tell me."
+    },
+    {
+      "file": "liquid-iv-airport/experience/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Too sweet?"
+    },
+    {
+      "file": "liquid-iv-airport/experience-too-sweet/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-too-sweet",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "There it is."
+    },
+    {
+      "file": "liquid-iv-airport/experience-too-sweet/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-too-sweet",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "The face everyone makes right before \"too sweet.\""
+    },
+    {
+      "file": "liquid-iv-airport/experience-too-sweet/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-too-sweet",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "You're not the first."
+    },
+    {
+      "file": "liquid-iv-airport/experience-like-it/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-like-it",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Oh."
+    },
+    {
+      "file": "liquid-iv-airport/experience-like-it/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-like-it",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "So you like me for my personality AND my electrolytes."
+    },
+    {
+      "file": "liquid-iv-airport/experience-like-it/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-like-it",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Good to know."
+    },
+    {
+      "file": "liquid-iv-airport/experience-dont-care/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-dont-care",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Not romantic."
+    },
+    {
+      "file": "liquid-iv-airport/experience-dont-care/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "experience-dont-care",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "But I'm not applying for that job."
+    },
+    {
+      "file": "liquid-iv-airport/tension/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "tension",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Okay, I should probably tell you something before this gets serious."
+    },
+    {
+      "file": "liquid-iv-airport/tension/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "tension",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "I'm never going to be the coolest thing in your bag."
+    },
+    {
+      "file": "liquid-iv-airport/tension/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "tension",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Like... not even close."
+    },
+    {
+      "file": "liquid-iv-airport/cg-beat/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "cg-beat",
+      "lineIndex": 0,
+      "speaker": "...",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Boarding starts, and neither of you moves for a second."
+    },
+    {
+      "file": "liquid-iv-airport/cg-beat/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "cg-beat",
+      "lineIndex": 1,
+      "speaker": "...",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "The terminal window does that thing where it holds both your reflections and every departure at once."
+    },
+    {
+      "file": "liquid-iv-airport/closing/0.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "closing",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Well..."
+    },
+    {
+      "file": "liquid-iv-airport/closing/1.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "closing",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "I had fun."
+    },
+    {
+      "file": "liquid-iv-airport/closing/2.mp3",
+      "treeId": "liquid-iv-airport",
+      "nodeId": "closing",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "airport",
+      "text": "Same terminal sometime?"
+    },
+    {
+      "file": "liquid-iv-office/intro/0.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "intro",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "...Oh. It's you. Weird seeing you past the security line."
+    },
+    {
+      "file": "liquid-iv-office/intro/1.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "intro",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Everyone else went home at six. You brought your laptop to dinner, didn't you."
+    },
+    {
+      "file": "liquid-iv-office/read/0.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "read",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "At the airport I'm adventure. Here I'm just... the thing between you and the vending machine."
+    },
+    {
+      "file": "liquid-iv-office/read/1.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "read",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Same packet. Different meaning."
+    },
+    {
+      "file": "liquid-iv-office/branch-confess/0.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "branch-confess",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Thank you. Honesty tastes better than citrus."
+    },
+    {
+      "file": "liquid-iv-office/branch-confess/1.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "branch-confess",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Here — water first. Then the packet. You'll feel like a person in ten minutes."
+    },
+    {
+      "file": "liquid-iv-office/branch-deflect/0.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "branch-deflect",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Sure. And I'm \"just hydration.\""
+    },
+    {
+      "file": "liquid-iv-office/branch-deflect/1.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "branch-deflect",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "We're both lying to ourselves tonight, huh."
+    },
+    {
+      "file": "liquid-iv-office/tension/0.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "tension",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Can I say something honest?"
+    },
+    {
+      "file": "liquid-iv-office/tension/1.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "tension",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "I like you best at airports. That's terrible, isn't it."
+    },
+    {
+      "file": "liquid-iv-office/tension/2.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "tension",
+      "lineIndex": 2,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "You're going somewhere when you drink me. Here you're just... surviving."
+    },
+    {
+      "file": "liquid-iv-office/closing/0.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "closing",
+      "lineIndex": 0,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Catch you at gate 34 sometime."
+    },
+    {
+      "file": "liquid-iv-office/closing/1.mp3",
+      "treeId": "liquid-iv-office",
+      "nodeId": "closing",
+      "lineIndex": 1,
+      "speaker": "LIQUID I.V.",
+      "brandId": "liquid-iv",
+      "locationId": "office",
+      "text": "Or... drawer 4B."
+    },
+    {
+      "file": "whoop-nightgym/intro/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "intro",
+      "lineIndex": 0,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "You said you wanted to feel better."
+    },
+    {
+      "file": "whoop-nightgym/intro/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "intro",
+      "lineIndex": 1,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "I'm asking: better than what, exactly? By whose measurement?"
+    },
+    {
+      "file": "whoop-nightgym/branch-proof/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "branch-proof",
+      "lineIndex": 0,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "Good. That's the only honest answer."
+    },
+    {
+      "file": "whoop-nightgym/branch-proof/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "branch-proof",
+      "lineIndex": 1,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "Every day, measured. No guessing."
+    },
+    {
+      "file": "whoop-nightgym/branch-sleep/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "branch-sleep",
+      "lineIndex": 0,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "That's most people, actually."
+    },
+    {
+      "file": "whoop-nightgym/branch-sleep/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "branch-sleep",
+      "lineIndex": 1,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "I just don't advertise it that way."
+    },
+    {
+      "file": "whoop-nightgym/branch-cost/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "branch-cost",
+      "lineIndex": 0,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "It never stops costing something."
+    },
+    {
+      "file": "whoop-nightgym/branch-cost/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "branch-cost",
+      "lineIndex": 1,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "I'd rather tell you now than let you find out."
+    },
+    {
+      "file": "whoop-nightgym/memory/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "memory",
+      "lineIndex": 0,
+      "speaker": "...",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "You know the graphs."
+    },
+    {
+      "file": "whoop-nightgym/memory/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "memory",
+      "lineIndex": 1,
+      "speaker": "...",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "Someone on your feed treats their recovery score like a weather report for the soul."
+    },
+    {
+      "file": "whoop-nightgym/tension/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "tension",
+      "lineIndex": 0,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "Here's the part people don't like."
+    },
+    {
+      "file": "whoop-nightgym/tension/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "tension",
+      "lineIndex": 1,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "I'm on you every day. Even the days you don't want to know."
+    },
+    {
+      "file": "whoop-nightgym/wrap/0.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "wrap",
+      "lineIndex": 0,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "Sleep on it."
+    },
+    {
+      "file": "whoop-nightgym/wrap/1.mp3",
+      "treeId": "whoop-nightgym",
+      "nodeId": "wrap",
+      "lineIndex": 1,
+      "speaker": "WHOOP",
+      "brandId": "whoop",
+      "locationId": "nightgym",
+      "text": "Literally. I'll know how it went."
+    }
+  ]
+}

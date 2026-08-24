@@ -64,13 +64,18 @@ function enter(store: StoreState, treeId: string, requestedNodeId?: string): Sto
 /** Follow a node/choice exit (`next` within a tree, `nextTree` across trees). */
 function follow(store: StoreState, next?: string, nextTree?: string): StoreState {
   if (nextTree !== undefined) {
-    if (nextTree === "reveal")
-      return { ...store, nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null } };
-    if (nextTree === "map")
-      return { ...store, nav: { ...store.nav, phase: "map", treeId: null, nodeId: null } };
-    // Completing an encounter marks the tree done and its brand met (P5-01).
+    // Completing an encounter marks the tree done + brand met BEFORE any exit
+    // hands off — including map/reveal early-returns (P5-01/P7-01 regression fix).
     const leaving = store.nav.treeId ? getTreeOrNull(store.nav.treeId) : null;
-    const state = leaving ? markCompleted(store.state, leaving.id, leaving.brandId) : store.state;
+    const state =
+      leaving?.brandId && !store.state.completedTrees.includes(leaving.id)
+        ? markCompleted(store.state, leaving.id, leaving.brandId)
+        : store.state;
+
+    if (nextTree === "reveal")
+      return { ...store, state, nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null } };
+    if (nextTree === "map")
+      return { ...store, state, nav: { ...store.nav, phase: "map", treeId: null, nodeId: null } };
     return enter({ ...store, state }, nextTree);
   }
   if (next === undefined) return store;
