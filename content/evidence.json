@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ev-liquid-iv-travel-pack",
+    "brandId": "liquid-iv",
+    "type": "product",
+    "title": "The travel pack",
+    "description": "Stick packs sized exactly for a water bottle. You've grabbed these at an airport kiosk without thinking about it.",
+    "imageRef": "evg-liquid-iv-stickpack",
+    "effects": { "readiness": 1 }
+  },
+  {
+    "id": "ev-whoop-strain",
+    "brandId": "whoop",
+    "type": "social",
+    "title": "Strain scores as mood rings",
+    "description": "Someone you follow posts their recovery graph every morning like a weather report for their body.",
+    "imageRef": "evg-whoop-strain-graph",
+    "effects": { "control": 1, "comfort": -1 }
+  },
+  {
+    "id": "ev-celsius-lineup",
+    "brandId": "celsius",
+    "type": "retail",
+    "title": "The cooler wall",
+    "description": "A full row of slim cans at the gym cooler, each flavor louder than the last. The branding is doing reps.",
+    "imageRef": "evg-celsius-can-lineup",
+    "effects": { "excitement": 1, "belonging": 1 }
+  },
+  {
+    "id": "ev-ag1-scoop",
+    "brandId": "ag1",
+    "type": "ad",
+    "title": "One scoop, whole morning",
+    "description": "The green scoop, the shaker, the promise that this one glass replaces six other pills.",
+    "imageRef": "evg-ag1-scoop",
+    "effects": { "trust": 1 }
+  }
+]

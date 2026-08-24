@@ -1,0 +1,24 @@
+.indicator {
+  position: absolute;
+  right: 26px;
+  bottom: 18px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.heart {
+  font-size: 20px;
+  color: #ff9dc9;
+  filter: drop-shadow(0 1px 2px rgba(255, 141, 195, 0.5));
+}
+
+@media (max-width: 720px) {
+  .indicator {
+    right: 16px;
+    bottom: 12px;
+  }
+  .heart {
+    font-size: 16px;
+  }
+}

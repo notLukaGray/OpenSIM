@@ -1,0 +1,131 @@
+{
+  "id": "ag1-kitchen",
+  "brandId": "ag1",
+  "title": "The Usual",
+  "context": { "location": "kitchen", "occasion": "morning-routine" },
+  "music": "mus-kitchen",
+  "background": "bg-kitchen",
+  "cast": [{ "assetId": "char-ag1-neutral", "position": "center" }],
+  "startNode": "intro",
+  "lessons": [
+    "routine as devotion",
+    "the ritual is the product",
+    "proof and comfort don't always overlap"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "AG1",
+      "sprite": { "expression": "neutral", "effect": "enter" },
+      "text": [
+        "Morning. I made space for you before the notifications started.",
+        "Same time, same glass, same quiet five minutes."
+      ],
+      "choices": [
+        {
+          "id": "ritual",
+          "text": "Honestly, I care more about the ritual than the results.",
+          "next": "branch-ritual",
+          "playerEffects": { "comfort": 2, "reassurance": 2 },
+          "brandPerceptionEffects": { "ag1": { "comfort": 3, "reassurance": 2, "belonging": 1, "excitement": -1 } },
+          "relationshipEffects": { "ag1": 1 }
+        },
+        {
+          "id": "price",
+          "text": "It's a lot of money for a glass of greens, though.",
+          "next": "branch-price",
+          "playerEffects": { "control": 1, "trust": -1 },
+          "brandPerceptionEffects": { "ag1": { "trust": -1, "comfort": -2, "control": 1 } }
+        },
+        {
+          "id": "proof",
+          "text": "What's actually proven to work in here?",
+          "next": "branch-proof",
+          "playerEffects": { "trust": -1, "mastery": 1, "control": 1 },
+          "brandPerceptionEffects": { "ag1": { "trust": -2, "mastery": -1, "control": -1 } }
+        }
+      ]
+    },
+
+    "branch-ritual": {
+      "speaker": "AG1",
+      "sprite": { "expression": "happy" },
+      "text": ["I know. That's the actual product.", "Everything else is just what's in the scoop."],
+      "next": "memory"
+    },
+
+    "branch-price": {
+      "speaker": "AG1",
+      "text": ["You're not wrong to think about it.", "I'd rather you know what you're paying for than pretend it's nothing."],
+      "next": "memory"
+    },
+
+    "branch-proof": {
+      "speaker": "AG1",
+      "sprite": { "expression": "embarrassed" },
+      "text": [
+        "Less than you'd hope, if I'm being straight with you.",
+        "Most of what I offer isn't in a study. It's in the doing it daily."
+      ],
+      "next": "memory"
+    },
+
+    "memory": {
+      "speaker": "...",
+      "evidence": "ev-ag1-scoop",
+      "text": [
+        "The green scoop. The shaker bottle. The promise that one glass replaces six other pills.",
+        "You've watched that ad at 1 a.m. more than once."
+      ],
+      "next": "tension"
+    },
+
+    "tension": {
+      "speaker": "AG1",
+      "text": [
+        "Can I ask you something?",
+        "If I stopped feeling special tomorrow — just became routine — would you still show up?"
+      ],
+      "choices": [
+        {
+          "id": "yes",
+          "text": "Yes. That's kind of the point.",
+          "next": "wrap",
+          "playerEffects": { "comfort": 2, "belonging": 1, "trust": 1 },
+          "relationshipEffects": { "ag1": 2 }
+        },
+        {
+          "id": "no",
+          "text": "Probably not. I need to feel it's doing something.",
+          "next": "wrap",
+          "playerEffects": { "mastery": 1, "control": 1, "comfort": -1 },
+          "relationshipEffects": { "ag1": -1 }
+        }
+      ]
+    },
+
+    "wrap": {
+      "speaker": "AG1",
+      "callbacks": [
+        {
+          "if": "yes",
+          "text": [
+            "Okay.",
+            "Then tomorrow I'll be exactly this ordinary, with you."
+          ]
+        },
+        {
+          "if": "price",
+          "text": [
+            "Fair either way.",
+            "I'll be here at the same time tomorrow, regardless. Receipts in the app."
+          ]
+        }
+      ],
+      "text": [
+        "Fair either way.",
+        "I'll be here at the same time tomorrow, regardless."
+      ],
+      "nextTree": "home"
+    }
+  }
+}

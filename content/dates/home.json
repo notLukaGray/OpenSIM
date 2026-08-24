@@ -1,0 +1,60 @@
+{
+  "id": "home",
+  "brandId": null,
+  "title": "Home",
+  "context": null,
+  "music": "mus-hub",
+  "background": "bg-hub",
+  "cast": [],
+  "startNode": "intro",
+  "entryPoints": ["all-done"],
+  "nodes": {
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "The app's open again.",
+        "Someone new is always around, if you're looking."
+      ],
+      "next": "menu"
+    },
+    "menu": {
+      "speaker": "...",
+      "text": ["Where to?"],
+      "choices": [
+        {
+          "id": "go-liquid-iv",
+          "text": "Airport — LIQUID I.V. is waiting at the gate.",
+          "nextTree": "liquid-iv-airport"
+        },
+        {
+          "id": "go-whoop",
+          "text": "Late-night gym — WHOOP never really leaves.",
+          "nextTree": "whoop-nightgym"
+        },
+        {
+          "id": "go-celsius",
+          "text": "Rooftop — CELSIUS is already up there.",
+          "nextTree": "celsius-rooftop"
+        },
+        {
+          "id": "go-ag1",
+          "text": "Kitchen — AG1 is making the usual.",
+          "nextTree": "ag1-kitchen"
+        }
+      ]
+    },
+    "all-done": {
+      "speaker": "...",
+      "text": [
+        "No one left to see today.",
+        "Time to think about what all this actually meant."
+      ],
+      "next": "reveal-handoff"
+    },
+    "reveal-handoff": {
+      "speaker": "...",
+      "text": ["..."],
+      "nextTree": "reveal"
+    }
+  }
+}

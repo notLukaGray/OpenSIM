@@ -1,0 +1,268 @@
+{
+  "id": "liquid-iv-airport",
+  "brandId": "liquid-iv",
+  "title": "Gate 34",
+  "context": { "location": "airport", "occasion": "travel" },
+  "music": "mus-airport",
+  "background": "bg-airport",
+  "cast": [{ "assetId": "char-liquid-iv-neutral", "position": "center" }],
+  "startNode": "intro",
+  "lessons": [
+    "portable functional support",
+    "sweetness can create tension",
+    "utility may outweigh identity"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "neutral", "effect": "enter" },
+      "text": [
+        "Hey. You made it.",
+        "I watched you sprint through security holding one shoe and a laptop.",
+        "Before we do anything else — drink this."
+      ],
+      "next": "impression"
+    },
+
+    "impression": {
+      "speaker": "LIQUID I.V.",
+      "text": [
+        "Okay, be honest.",
+        "Did I just save you, or were you planning to raw-dog dehydration through a three-hour flight?"
+      ],
+      "choices": [
+        {
+          "id": "rescue",
+          "text": "You may have actually saved me.",
+          "next": "impression-rescue",
+          "playerEffects": { "readiness": 2, "comfort": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "readiness": 1 } },
+          "relationshipEffects": { "liquid-iv": 1 },
+          "setFlags": ["sipped", "liiv-flirted"]
+        },
+        {
+          "id": "handled",
+          "text": "I was fine. But... points for preparedness.",
+          "next": "impression-handled",
+          "playerEffects": { "control": 2, "readiness": -1 },
+          "brandPerceptionEffects": { "liquid-iv": { "readiness": -1 } },
+          "relationshipEffects": { "liquid-iv": -1 }
+        },
+        {
+          "id": "relief",
+          "text": "This is weirdly comforting.",
+          "next": "impression-relief",
+          "playerEffects": { "comfort": 2, "reassurance": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "comfort": 1, "reassurance": 1 } },
+          "relationshipEffects": { "liquid-iv": 1 }
+        }
+      ]
+    },
+
+    "impression-rescue": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Wow.",
+        "First date and I'm already saving your life.",
+        "This feels fast."
+      ],
+      "next": "memory"
+    },
+
+    "impression-handled": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "annoyed" },
+      "text": [
+        "Right. Totally fine.",
+        "That's why you're wearing one sock."
+      ],
+      "next": "memory"
+    },
+
+    "impression-relief": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Weirdly comforting?",
+        "Honestly, I've been called worse."
+      ],
+      "next": "memory"
+    },
+
+    "memory": {
+      "speaker": "...",
+      "evidence": "ev-liquid-iv-travel-pack",
+      "text": [
+        "You've seen these before.",
+        "Little stick. Airport kiosk. Three seconds of deciding you'd rather feel human at gate 34."
+      ],
+      "next": "experience"
+    },
+
+    "experience": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Alright, we're past first impressions.",
+        "You can tell me.",
+        "Too sweet?"
+      ],
+      "choices": [
+        {
+          "id": "too-sweet",
+          "text": "Yeah. A little aggressively sweet.",
+          "next": "experience-too-sweet",
+          "playerEffects": { "trust": 1, "control": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "trust": -1, "comfort": -1 } },
+          "relationshipEffects": { "liquid-iv": -1 }
+        },
+        {
+          "id": "like-it",
+          "text": "No, I kind of like it.",
+          "next": "experience-like-it",
+          "playerEffects": { "comfort": 1, "excitement": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "comfort": 1, "excitement": 1 } },
+          "relationshipEffects": { "liquid-iv": 1 },
+          "setFlags": ["liiv-flirted"]
+        },
+        {
+          "id": "dont-care",
+          "text": "Honestly? I don't care. It's doing the job.",
+          "next": "experience-dont-care",
+          "playerEffects": { "trust": 1, "readiness": 1, "comfort": -1, "excitement": -1 },
+          "brandPerceptionEffects": { "liquid-iv": { "readiness": 1, "excitement": -1 } },
+          "relationshipEffects": { "liquid-iv": 0 }
+        }
+      ]
+    },
+
+    "experience-too-sweet": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "embarrassed" },
+      "text": [
+        "There it is.",
+        "The face everyone makes right before \"too sweet.\"",
+        "You're not the first."
+      ],
+      "next": "tension"
+    },
+
+    "experience-like-it": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Oh.",
+        "So you like me for my personality AND my electrolytes.",
+        "Good to know."
+      ],
+      "next": "tension"
+    },
+
+    "experience-dont-care": {
+      "speaker": "LIQUID I.V.",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Not romantic.",
+        "But I'm not applying for that job."
+      ],
+      "next": "tension"
+    },
+
+    "tension": {
+      "speaker": "LIQUID I.V.",
+      "text": [
+        "Okay, I should probably tell you something before this gets serious.",
+        "I'm never going to be the coolest thing in your bag.",
+        "Like... not even close."
+      ],
+      "choices": [
+        {
+          "id": "good",
+          "text": "Good. I don't need my electrolytes to have a personality.",
+          "next": "cg-beat",
+          "playerEffects": { "comfort": 2, "selfExpression": -2 },
+          "brandPerceptionEffects": { "liquid-iv": { "reassurance": 1 } },
+          "relationshipEffects": { "liquid-iv": 1 },
+          "setFlags": ["liiv-flirted"]
+        },
+        {
+          "id": "matters",
+          "text": "I mean... I do like my stuff to feel like me.",
+          "next": "cg-beat",
+          "playerEffects": { "selfExpression": 2, "aspiration": 1 },
+          "brandPerceptionEffects": { "liquid-iv": { "selfExpression": -1 } },
+          "relationshipEffects": { "liquid-iv": -1 }
+        },
+        {
+          "id": "depends",
+          "text": "Depends. Who's looking?",
+          "next": "cg-beat",
+          "playerEffects": { "belonging": 2, "selfExpression": 1, "control": -1 },
+          "brandPerceptionEffects": { "liquid-iv": { "belonging": -1 } },
+          "relationshipEffects": { "liquid-iv": 0 }
+        }
+      ]
+    },
+
+    "cg-beat": {
+      "speaker": "...",
+      "conditions": { "flags": { "any": ["liiv-flirted"] } },
+      "cg": "cg-airport-window",
+      "sprite": { "expression": "special" },
+      "text": [
+        "Boarding starts, and neither of you moves for a second.",
+        "The terminal window does that thing where it holds both your reflections and every departure at once."
+      ],
+      "next": "closing"
+    },
+
+    "closing": {
+      "speaker": "LIQUID I.V.",
+      "callbacks": [
+        {
+          "if": "too-sweet",
+          "text": [
+            "I'll bring water next time.",
+            "You looked personally betrayed by the lemon-lime."
+          ]
+        },
+        {
+          "if": "matters",
+          "text": [
+            "Fine.",
+            "I'll wear sunglasses next time.",
+            "Maybe a little jacket."
+          ]
+        },
+        {
+          "if": "relief",
+          "text": [
+            "That's kind of the whole pitch, actually.",
+            "Not exciting. Just not feeling like garbage by gate 34."
+          ]
+        },
+        {
+          "if": "handled",
+          "text": [
+            "Next time, you can save me.",
+            "Maybe start by wearing both socks."
+          ]
+        },
+        {
+          "if": "like-it",
+          "text": [
+            "So the sweetness wasn't a dealbreaker.",
+            "Huge day for me."
+          ]
+        }
+      ],
+      "text": [
+        "Well...",
+        "I had fun.",
+        "Same terminal sometime?"
+      ],
+      "nextTree": "home"
+    }
+  }
+}

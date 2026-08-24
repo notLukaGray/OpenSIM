@@ -1,0 +1,95 @@
+.box {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  min-height: 168px;
+  margin: 0 auto;
+  padding: 34px 42px 30px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(224, 249, 253, 0.88) 100%);
+  border: 2px solid #7fdcec;
+  box-shadow:
+    0 18px 40px rgba(9, 70, 92, 0.35),
+    0 2px 0 rgba(255, 255, 255, 0.6) inset,
+    0 0 0 5px rgba(143, 223, 239, 0.14);
+  cursor: pointer;
+}
+
+.box[role="button"]:active {
+  transform: translateY(1px);
+}
+
+.stitchBorder {
+  position: absolute;
+  inset: 8px;
+  border-radius: 19px;
+  border: 1.5px dashed rgba(82, 201, 224, 0.45);
+  pointer-events: none;
+}
+
+.deco {
+  position: absolute;
+  font-size: 15px;
+  color: #ff9dc9;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.decoTL {
+  top: 14px;
+  right: 26px;
+  color: #9be8f2;
+}
+
+.decoBR {
+  bottom: 12px;
+  left: 24px;
+  color: #ffb8d9;
+  font-size: 13px;
+}
+
+.content {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.55;
+  color: #123a44;
+}
+
+.text p {
+  margin: 0 0 4px;
+}
+
+.text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .box {
+    max-width: 92vw;
+    padding: 28px 26px 24px;
+    border-radius: 20px;
+  }
+  .text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .box {
+    padding: 24px 18px 20px;
+  }
+  .text {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+  .content {
+    min-height: 76px;
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "optimizer",
+    "name": "THE OPTIMIZER",
+    "description": "You want a system you can trust because you can see it working. Proof matters more than comfort.",
+    "weights": { "control": 25, "mastery": 25, "trust": 20, "readiness": 10 }
+  },
+  {
+    "id": "pragmatist",
+    "name": "THE PRAGMATIST",
+    "description": "You want things that fit into your life, feel credible, and don't ask much of you in return.",
+    "weights": { "readiness": 30, "reassurance": 20, "trust": 20, "comfort": 15 }
+  },
+  {
+    "id": "ritualist",
+    "name": "THE RITUALIST",
+    "description": "You want a routine that feels like yours — dependable, grounding, a small daily anchor.",
+    "weights": { "comfort": 30, "reassurance": 25, "belonging": 20 }
+  },
+  {
+    "id": "striver",
+    "name": "THE STRIVER",
+    "description": "You want to become someone. You're drawn to things that make progress feel visible.",
+    "weights": { "aspiration": 30, "mastery": 20, "excitement": 20, "selfExpression": 15 }
+  },
+  {
+    "id": "socialExplorer",
+    "name": "THE SOCIAL EXPLORER",
+    "description": "You want to feel plugged in — to what's happening, to who you're becoming, to who's watching.",
+    "weights": { "belonging": 25, "excitement": 25, "selfExpression": 25, "aspiration": 15 }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "mod-liquid-iv-airport",
+    "appliesTo": ["liquid-iv"],
+    "when": { "location": "airport" },
+    "effects": { "readiness": 1 },
+    "label": "Right place, right moment — an airport is this brand's home turf"
+  },
+  {
+    "id": "mod-whoop-nightgym",
+    "appliesTo": ["whoop"],
+    "when": { "location": "nightgym" },
+    "effects": { "control": 1, "mastery": 1 },
+    "label": "The room rewards measurement"
+  },
+  {
+    "id": "mod-whoop-sleep",
+    "appliesTo": ["whoop"],
+    "when": { "hasFlag": "revealed-sleep" },
+    "effects": { "reassurance": 1, "comfort": 1 },
+    "label": "You told it what you actually wanted"
+  },
+  {
+    "id": "mod-celsius-rooftop",
+    "appliesTo": ["celsius"],
+    "when": { "location": "rooftop" },
+    "effects": { "excitement": 1, "belonging": 1 },
+    "label": "Everyone's already here"
+  },
+  {
+    "id": "mod-ag1-kitchen",
+    "appliesTo": ["ag1"],
+    "when": { "location": "kitchen" },
+    "effects": { "comfort": 1, "trust": 1 },
+    "label": "Same counter, same quiet"
+  },
+  {
+    "id": "mod-office-desk-drawer",
+    "appliesTo": ["liquid-iv", "ag1"],
+    "when": { "location": "office" },
+    "effects": { "comfort": 1, "belonging": 1 },
+    "label": "Desk-drawer dependability (future scene)"
+  }
+]

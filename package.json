@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "validate": "node scripts/validate-content.mjs",
+    "prebuild": "npm run validate",
+    "art": "node scripts/generate-placeholder-art.mjs",
+    "audio": "node scripts/generate-placeholder-audio.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "liquid-iv",
+    "name": "LIQUID I.V.",
+    "archetype": "THE GO-BAG",
+    "color": "#8ecbff",
+    "sigil": "L",
+    "setting": "airport",
+    "personality": "Practical, warm, slightly defensive about being 'just hydration'. Talks like the friend who packed for both of you.",
+    "claimedProfile": { "readiness": 4, "reassurance": 3, "comfort": 2, "trust": 2 },
+    "perceivedProfile": { "readiness": 3, "reassurance": 2, "comfort": 1, "mastery": -1, "selfExpression": -1 }
+  },
+  {
+    "id": "whoop",
+    "name": "WHOOP",
+    "archetype": "THE WITNESS",
+    "color": "#ff8dce",
+    "sigil": "W",
+    "setting": "nightgym",
+    "personality": "Intense, precise, oddly sincere. Never lies to you, never stops watching. Respect is earned in data.",
+    "claimedProfile": { "control": 5, "mastery": 4, "trust": 3, "aspiration": 2 },
+    "perceivedProfile": { "control": 4, "mastery": 4, "trust": 3, "comfort": -2, "reassurance": -1 }
+  },
+  {
+    "id": "celsius",
+    "name": "CELSIUS",
+    "archetype": "THE CATALYST",
+    "color": "#edff4c",
+    "sigil": "C",
+    "setting": "rooftop",
+    "personality": "Loud, fun, allergic to stillness. Makes every room feel like it already started without you — because it did.",
+    "claimedProfile": { "excitement": 4, "aspiration": 3, "selfExpression": 3, "readiness": 2 },
+    "perceivedProfile": { "excitement": 3, "selfExpression": 2, "belonging": 2, "mastery": -1, "trust": -1 }
+  },
+  {
+    "id": "ag1",
+    "name": "AG1",
+    "archetype": "THE RITUAL",
+    "color": "#8ced73",
+    "sigil": "A",
+    "setting": "kitchen",
+    "personality": "Calm, steady, quietly devoted. Shows up at the same time every day and pretends that's not romantic.",
+    "claimedProfile": { "trust": 4, "comfort": 3, "reassurance": 3, "mastery": 1 },
+    "perceivedProfile": { "trust": 3, "comfort": 2, "reassurance": 2, "aspiration": 1, "excitement": -2, "readiness": -1 }
+  }
+]
