@@ -1,5 +1,12 @@
 [
   {
+    "id": "mus-title",
+    "kind": "music",
+    "src": "/assets/music/mus_title.mp3",
+    "loop": true,
+    "volume": 0.9
+  },
+  {
     "id": "mus-hub",
     "kind": "music",
     "src": "/assets/music/mus-hub.wav",

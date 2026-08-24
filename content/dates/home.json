@@ -3,7 +3,7 @@
   "brandId": null,
   "title": "Home",
   "context": null,
-  "music": "mus-hub",
+  "music": "mus-title",
   "background": "bg-hub",
   "cast": [],
   "startNode": "intro",

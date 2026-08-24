@@ -15,14 +15,19 @@ export default function GameRoot() {
   const game = useGame();
   const [validation, setValidation] = useState<string[] | null>(null);
 
-  // Audio unlock on first real gesture (autoplay policy, ADR-06).
+  // Audio unlock (autoplay policy, ADR-06). Try immediately — browsers that
+  // already trust this origin (Chrome MEI) start audio with zero interaction;
+  // otherwise the first pointer/key/touch gesture unlocks as a fallback.
   useEffect(() => {
     const unlock = () => void AudioManager.unlock();
-    window.addEventListener("pointerdown", unlock, { once: false });
-    window.addEventListener("keydown", unlock, { once: false });
+    void AudioManager.unlock();
+    window.addEventListener("pointerdown", unlock);
+    window.addEventListener("keydown", unlock);
+    window.addEventListener("touchstart", unlock, { passive: true });
     return () => {
       window.removeEventListener("pointerdown", unlock);
       window.removeEventListener("keydown", unlock);
+      window.removeEventListener("touchstart", unlock);
     };
   }, []);
 

@@ -240,6 +240,7 @@ export const contentBundle = {
   archetypes,
   modifiers,
   evidence,
+  sources,
   assets,
   audioTracks,
   locations,

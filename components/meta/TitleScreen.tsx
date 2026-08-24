@@ -20,7 +20,7 @@ export default function TitleScreen() {
   const logo = getAsset("logo-dsim");
 
   useEffect(() => {
-    void AudioManager.playMusic("mus-hub");
+    void AudioManager.playMusic("mus-title");
     setHasSave(game.hasSave());
     // P9 video convention: real footage overrides the procedural cinematic.
     fetch("/assets/video/intro.mp4", { method: "HEAD" })

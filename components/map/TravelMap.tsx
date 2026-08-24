@@ -44,7 +44,7 @@ export default function TravelMap() {
   }, []);
 
   useEffect(() => {
-    void AudioManager.playMusic("mus-hub");
+    void AudioManager.playMusic("mus-title");
     // Threshold moment fires once, the first time the map loads with enough
     // nights banked and the reveal still unseen.
     if (

@@ -23,6 +23,10 @@ class AudioManagerImpl {
 
   /** Call from a real user gesture once; safe to call repeatedly. */
   async unlock(): Promise<void> {
+    if (process.env.NODE_ENV !== "production") {
+      // Dev-only debug handle for browser-console probing; dead-code-eliminated in prod.
+      (window as unknown as Record<string, unknown>).__audioManager = this;
+    }
     if (this.unlocked && this.ctx) return;
     try {
       if (!this.ctx) {
@@ -112,17 +116,30 @@ class AudioManagerImpl {
   }
 
   /**
-   * Crossfade to `id`. If audio isn't unlocked yet, remember it and start on
-   * the first gesture instead of violating autoplay policy.
+   * True while `id` (or any track when omitted) has live music voices —
+   * callers use this to avoid restarting a track that is already playing.
+   */
+  isMusicPlaying(id?: string): boolean {
+    if (id === undefined) return this.musicVoices.length > 0;
+    return this.currentMusicId === id && this.musicVoices.length > 0;
+  }
+
+  /**
+   * Crossfade to `id`. If the same track already has live voices, this is a
+   * no-op — transitions between screens sharing a track never restart it.
+   * If audio isn't unlocked yet, remember the request and start on the first
+   * gesture instead of violating autoplay policy.
    */
   async playMusic(id: string): Promise<void> {
     if (!this.unlocked || !this.ctx) {
-      this.pendingMusicId = id === this.currentMusicId ? null : id;
-      if (id === this.currentMusicId) this.pendingMusicId = null;
-      else this.currentMusicId = id;
+      // Queue latest intent; duplicate requests for the queued track are no-ops.
+      if (this.pendingMusicId !== id || this.currentMusicId !== id) {
+        this.pendingMusicId = id;
+        this.currentMusicId = id;
+      }
       return;
     }
-    if (this.currentMusicId === id && this.musicVoices.length > 0) return;
+    if (this.isMusicPlaying(id)) return;
     this.currentMusicId = id;
     let buf: AudioBuffer;
     try {
