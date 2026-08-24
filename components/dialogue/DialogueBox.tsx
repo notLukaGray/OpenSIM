@@ -1,6 +1,6 @@
 "use client";
 // DialogueBox (P2-02): speaker tab, typewriter lines, choices, continue cue.
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Choice } from "@/content/schema";
 import SpeakerTab from "./SpeakerTab";
@@ -17,6 +17,7 @@ export default function DialogueBox({
   textSpeed,
   onAdvance,
   onSelectChoice,
+  onLineStart,
 }: {
   entryKey: string;
   speaker: string;
@@ -26,19 +27,40 @@ export default function DialogueBox({
   textSpeed: number;
   onAdvance: () => void;
   onSelectChoice: (choice: Choice) => void;
+  /** Fired when the typewriter starts a new line — used for VO (P5-03). */
+  onLineStart?: (lineIndex: number) => void;
 }) {
   const hasChoices = !!choices && choices.length > 0;
 
   // Typewriter across all lines of the current beat.
   const fullText = useMemo(() => lines.join("\n"), [lines]);
   const [shown, setShown] = useState(0);
-  const doneRef = useRef(false);
   const complete = shown >= fullText.length;
-  doneRef.current = complete;
+
+  // Which line is the caret in right now?
+  const lineStarts = useMemo(() => {
+    const starts: number[] = [];
+    let offset = 0;
+    for (const line of lines) {
+      starts.push(offset);
+      offset += line.length + 1; // +1 for the join separator
+    }
+    return starts;
+  }, [lines]);
+  const activeLine = useMemo(() => {
+    let idx = 0;
+    for (let i = 0; i < lineStarts.length; i++) if (shown >= lineStarts[i]) idx = i;
+    return idx;
+  }, [shown, lineStarts]);
 
   useEffect(() => {
     setShown(0);
   }, [entryKey]);
+
+  useEffect(() => {
+    if (onLineStart && !complete) onLineStart(activeLine);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeLine, entryKey]);
 
   useEffect(() => {
     if (complete) return;
@@ -51,7 +73,7 @@ export default function DialogueBox({
   }, [fullText, complete, textSpeed]);
 
   const click = () => {
-    if (!doneRef.current) {
+    if (!complete) {
       setShown(fullText.length);
       return;
     }

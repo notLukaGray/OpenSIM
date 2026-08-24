@@ -47,7 +47,7 @@ export const clampNeed = (n: number): number =>
   Math.max(PROFILE_MIN, Math.min(PROFILE_MAX, n));
 
 // ─── Save envelope (ADR-09) ──────────────────────────────────────────────────
-export const SAVE_VERSION = 2;
+export const SAVE_VERSION = 3;
 export const SAVE_KEY = "dsim.save.v1";
 export const SETTINGS_KEY = "dsim.settings.v1";
 
@@ -67,7 +67,9 @@ export type GameState = {
   choiceLog: Record<string, string[]>;
   flags: FlagMap;
   unlockedEvidence: string[];
-  /** Brands whose dates completed this run. */
+  /** Completed ENCOUNTERS (tree ids). One brand may appear at several locations. */
+  completedTrees: string[];
+  /** Brands met at least once (drives matching + reveal eligibility). */
   dated: string[];
   choicesMade: number;
 };
@@ -79,11 +81,12 @@ export const createGameState = (): GameState => ({
   choiceLog: {},
   flags: {},
   unlockedEvidence: [],
+  completedTrees: [],
   dated: [],
   choicesMade: 0,
 });
 
-export type Phase = "title" | "play" | "reveal" | "match";
+export type Phase = "title" | "play" | "map" | "reveal" | "match";
 
 /** Where the player is; play-phase position persists inside the save. */
 export type Navigation = {
@@ -96,6 +99,7 @@ export type Settings = {
   master: number; // 0..1
   music: number; // 0..1
   sfx: number; // 0..1
+  voice: number; // 0..1 (AI VO bus, P5-03)
   muted: boolean;
   /** Dialogue characters per second (typewriter). */
   textSpeed: number;
@@ -105,6 +109,7 @@ export const defaultSettings = (): Settings => ({
   master: 0.8,
   music: 0.7,
   sfx: 0.8,
+  voice: 0.9,
   muted: false,
   textSpeed: 45,
 });

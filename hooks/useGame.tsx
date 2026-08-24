@@ -6,7 +6,7 @@ import { HUB_TREE_ID, dateTreeList, getTree } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import type { Choice } from "@/content/schema";
 import { evalCondition } from "@/game/conditions";
-import { applyChoice, applyEvidenceUnlock, markDated } from "@/game/engine";
+import { applyChoice, applyEvidenceUnlock, markCompleted } from "@/game/engine";
 import {
   GameState,
   Navigation,
@@ -31,7 +31,8 @@ type Action =
   | { type: "SET_PHASE"; phase: Phase }
   | { type: "UPDATE_SETTINGS"; patch: Partial<Settings> }
   | { type: "DEBUG_PATCH"; patch: (s: GameState) => GameState }
-  | { type: "DEBUG_JUMP"; treeId: string; nodeId?: string };
+  | { type: "DEBUG_JUMP"; treeId: string; nodeId?: string }
+  | { type: "TRAVEL"; treeId: string };
 
 const initialNav: Navigation = { phase: "title", treeId: null, nodeId: null };
 const initialState: StoreState = {
@@ -53,11 +54,7 @@ function getTreeOrNull(id: string): DateTree | null {
 /** Enter a node of a tree, applying node-entry effects (evidence unlocks). */
 function enter(store: StoreState, treeId: string, requestedNodeId?: string): StoreState {
   const tree = getTree(treeId);
-  let nodeId = requestedNodeId ?? tree.startNode;
-  if (treeId === HUB_TREE_ID && !requestedNodeId) {
-    // Returning to the hub skips its intro; everything-dated routes to the reveal.
-    nodeId = store.state.dated.length >= dateTreeList.length ? "all-done" : "menu";
-  }
+  const nodeId = requestedNodeId ?? tree.startNode;
   const node = tree.nodes[nodeId];
   if (!node) throw new Error(`Unknown node "${treeId}/${nodeId}"`);
   const state = applyEvidenceUnlock(store.state, node);
@@ -69,9 +66,11 @@ function follow(store: StoreState, next?: string, nextTree?: string): StoreState
   if (nextTree !== undefined) {
     if (nextTree === "reveal")
       return { ...store, nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null } };
-    // Completing a brand date marks it dated (brief §6).
+    if (nextTree === "map")
+      return { ...store, nav: { ...store.nav, phase: "map", treeId: null, nodeId: null } };
+    // Completing an encounter marks the tree done and its brand met (P5-01).
     const leaving = store.nav.treeId ? getTreeOrNull(store.nav.treeId) : null;
-    const state = leaving?.brandId ? markDated(store.state, leaving.brandId) : store.state;
+    const state = leaving ? markCompleted(store.state, leaving.id, leaving.brandId) : store.state;
     return enter({ ...store, state }, nextTree);
   }
   if (next === undefined) return store;
@@ -140,6 +139,12 @@ function reducer(store: StoreState, action: Action): StoreState {
       if (!t) return store;
       return enter({ ...store, nav: { ...store.nav, phase: "play" } }, action.treeId, action.nodeId ?? t.startNode);
     }
+    case "TRAVEL": {
+      // From the map into an encounter (P5-02).
+      const t = getTreeOrNull(action.treeId);
+      if (!t || !t.brandId) return store;
+      return enter({ ...store, nav: { ...store.nav, phase: "play" } }, action.treeId, t.startNode);
+    }
     default:
       return store;
   }
@@ -158,6 +163,7 @@ export type GameStore = StoreState & {
   updateSettings: (patch: Partial<Settings>) => void;
   debugPatch: (patch: (s: GameState) => GameState) => void;
   debugJump: (treeId: string, nodeId?: string) => void;
+  travelTo: (treeId: string) => void;
 };
 
 const GameContext = createContext<GameStore | null>(null);
@@ -193,6 +199,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       updateSettings: (patch) => dispatch({ type: "UPDATE_SETTINGS", patch }),
       debugPatch: (patch) => dispatch({ type: "DEBUG_PATCH", patch }),
       debugJump: (treeId, nodeId) => dispatch({ type: "DEBUG_JUMP", treeId, nodeId }),
+      travelTo: (treeId) => dispatch({ type: "TRAVEL", treeId }),
     }),
     [store]
   );

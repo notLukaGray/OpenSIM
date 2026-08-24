@@ -13,6 +13,7 @@ import type {
   Brand,
   DateTree,
   Evidence,
+  GameLocation,
   Modifier,
 } from "./schema";
 import type { Need, NeedVector } from "@/game/types";
@@ -23,11 +24,13 @@ import modifiersJson from "./modifiers.json";
 import evidenceJson from "./evidence.json";
 import assetsJson from "./assets.json";
 import audioJson from "./audio.json";
+import locationsJson from "./locations.json";
 import homeDate from "./dates/home.json";
 import liquidIvDate from "./dates/liquid-iv-airport.json";
 import whoopDate from "./dates/whoop-nightgym.json";
 import celsiusDate from "./dates/celsius-rooftop.json";
 import ag1Date from "./dates/ag1-kitchen.json";
+import officeDate from "./dates/liquid-iv-office.json";
 
 // ── shape guards ─────────────────────────────────────────────────────────────
 
@@ -112,14 +115,38 @@ export const assets: AssetReference[] = assetsJson as AssetReference[];
 // ── audio ────────────────────────────────────────────────────────────────────
 export const audioTracks: AudioTrack[] = audioJson as AudioTrack[];
 
+// ── locations ────────────────────────────────────────────────────────────────
+const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "map"] as const;
+export const locations: GameLocation[] = (locationsJson as unknown as Record<string, unknown>[]).map(
+  (l, i) => {
+    req(l, LOCATION_FIELDS, `locations.json[${i}]`);
+    const map = l.map as { x?: unknown; y?: unknown };
+    if (typeof map?.x !== "number" || typeof map?.y !== "number")
+      throw new ContentError(`locations.json[${i}] (${String(l.id)}): map.x/map.y must be numbers`);
+    if (!assets.some((a) => a.id === l.background))
+      throw new ContentError(`locations.json[${i}]: unknown background asset "${String(l.background)}"`);
+    return {
+      id: l.id as string,
+      name: l.name as string,
+      blurb: l.blurb as string,
+      background: l.background as string,
+      music: l.music as string,
+      map: { x: map.x as number, y: map.y as number },
+    } satisfies GameLocation;
+  }
+);
+const locationIds = new Set(locations.map((l) => l.id));
+
 // ── dates ────────────────────────────────────────────────────────────────────
 // Register new dates by adding one line here.
-const dateFiles: DateTree[] = [homeDate, liquidIvDate, whoopDate, celsiusDate, ag1Date].map(
+const dateFiles: DateTree[] = [homeDate, liquidIvDate, whoopDate, celsiusDate, ag1Date, officeDate].map(
   (t) => {
     const tree = t as unknown as DateTree;
     req(tree as unknown as Record<string, unknown>, ["id", "startNode", "nodes"], "dates/*.json");
     if (!tree.nodes[tree.startNode])
       throw new ContentError(`${tree.id}: startNode "${tree.startNode}" does not exist`);
+    if (tree.locationId && !locationIds.has(tree.locationId))
+      throw new ContentError(`${tree.id}: unknown locationId "${tree.locationId}"`);
     return tree;
   }
 );
@@ -197,6 +224,7 @@ export const contentBundle = {
   evidence,
   assets,
   audioTracks,
+  locations,
   trees: dateTrees,
 };
 export type ContentBundle = typeof contentBundle;

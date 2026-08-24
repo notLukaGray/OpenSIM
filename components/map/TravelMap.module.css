@@ -1,0 +1,167 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.backdrop {
+  object-fit: cover;
+  filter: brightness(0.55) saturate(0.8);
+}
+
+.dim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(6, 8, 16, 0.9) 100%);
+}
+
+.heading {
+  position: absolute;
+  top: 7%;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(22px, 2.6vw, 34px);
+  letter-spacing: 0.4em;
+  color: #f4ecf2;
+  text-shadow: 0 0 40px rgba(242, 184, 198, 0.3);
+}
+
+.subheading {
+  position: absolute;
+  top: calc(7% + clamp(30px, 3.4vw, 46px));
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: rgba(232, 228, 240, 0.5);
+}
+
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  border-radius: 999px;
+  font-size: 16px;
+  border: 1.5px solid rgba(242, 184, 198, 0.7);
+  background: rgba(19, 24, 41, 0.85);
+  box-shadow: 0 0 26px rgba(242, 184, 198, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.active .pin:hover {
+  transform: scale(1.12);
+}
+
+.quiet .pin {
+  opacity: 0.35;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  top: 42px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 240px;
+  padding: 14px 16px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.95), rgba(11, 14, 23, 0.97));
+  border: 1px solid rgba(242, 184, 198, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+}
+
+.locName {
+  font-size: 11.5px;
+  letter-spacing: 0.3em;
+  color: #f2b8c6;
+}
+
+.blurb {
+  margin-top: 8px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: rgba(232, 228, 240, 0.65);
+}
+
+.encounter {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #f4ecf2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.encounter:hover {
+  background: rgba(242, 184, 198, 0.14);
+  border-color: #f2b8c6;
+}
+
+.sigil {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.quietLabel {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(232, 228, 240, 0.4);
+  font-style: italic;
+}
+
+.allDone {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  text-align: center;
+  color: rgba(232, 228, 240, 0.85);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.thinkItOver {
+  margin-top: 18px;
+  padding: 13px 32px;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.thinkItOver:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(242, 184, 198, 0.35);
+}
+
+.controlsHint {
+  position: absolute;
+  right: 26px;
+  bottom: 20px;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: rgba(232, 228, 240, 0.35);
+}

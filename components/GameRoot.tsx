@@ -5,6 +5,7 @@ import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
 import TitleScreen from "@/components/meta/TitleScreen";
 import GameScreen from "@/components/GameScreen";
+import TravelMap from "@/components/map/TravelMap";
 import ConsumerReveal from "@/components/reveal/ConsumerReveal";
 import MatchReveal from "@/components/reveal/MatchReveal";
 
@@ -72,6 +73,8 @@ export default function GameRoot() {
       return <TitleScreen />;
     case "play":
       return <GameScreen isDev={IS_DEV} />;
+    case "map":
+      return <TravelMap />;
     case "reveal":
       return (
         <ConsumerReveal

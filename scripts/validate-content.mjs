@@ -25,6 +25,7 @@ const modifiers = await loadJson(path.join(contentDir, "modifiers.json"));
 const evidence = await loadJson(path.join(contentDir, "evidence.json"));
 const assets = await loadJson(path.join(contentDir, "assets.json"));
 const audioTracks = await loadJson(path.join(contentDir, "audio.json"));
+const locations = await loadJson(path.join(contentDir, "locations.json"));
 
 const dateFiles = readdirSync(datesDir).filter((f) => f.endsWith(".json")).sort();
 const trees = [];
@@ -40,6 +41,7 @@ const bundle = {
   evidence: tag(evidence, "content/evidence.json"),
   assets: tag(assets, "content/assets.json"),
   audioTracks: tag(audioTracks, "content/audio.json"),
+  locations: tag(locations, "content/locations.json"),
   trees,
 };
 

@@ -2,10 +2,18 @@
   "id": "whoop-nightgym",
   "brandId": "whoop",
   "title": "Recovery Hours",
-  "context": { "location": "nightgym", "occasion": "late-night-workout" },
+  "context": {
+    "location": "nightgym",
+    "occasion": "late-night-workout"
+  },
   "music": "mus-nightgym",
   "background": "bg-nightgym",
-  "cast": [{ "assetId": "char-whoop-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-whoop-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "measurement as intimacy",
@@ -15,7 +23,10 @@
   "nodes": {
     "intro": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "neutral", "effect": "enter" },
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
       "text": [
         "You said you wanted to feel better.",
         "I'm asking: better than what, exactly? By whose measurement?"
@@ -25,51 +36,92 @@
           "id": "proof",
           "text": "I want proof. Numbers, not vibes.",
           "next": "branch-proof",
-          "playerEffects": { "control": 2, "mastery": 2, "trust": 1 },
-          "brandPerceptionEffects": { "whoop": { "control": 2, "mastery": 2, "trust": 1, "comfort": -3, "reassurance": -2 } }
+          "playerEffects": {
+            "control": 2,
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "control": 2,
+              "mastery": 2,
+              "trust": 1,
+              "comfort": -3,
+              "reassurance": -2
+            }
+          }
         },
         {
           "id": "sleep",
           "text": "Mostly I just want to sleep like a person again.",
           "next": "branch-sleep",
-          "playerEffects": { "reassurance": 2, "trust": 1 },
-          "brandPerceptionEffects": { "whoop": { "reassurance": 2, "trust": 1, "excitement": -1 } },
-          "setFlags": ["revealed-sleep"]
+          "playerEffects": {
+            "reassurance": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "reassurance": 2,
+              "trust": 1,
+              "excitement": -1
+            }
+          },
+          "setFlags": [
+            "revealed-sleep"
+          ]
         },
         {
           "id": "cost",
           "text": "Depends what this is going to cost me, honestly.",
           "next": "branch-cost",
-          "playerEffects": { "trust": -1, "comfort": -1, "control": 1 },
-          "brandPerceptionEffects": { "whoop": { "trust": -1, "comfort": -2, "aspiration": 1 } }
+          "playerEffects": {
+            "trust": -1,
+            "comfort": -1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "whoop": {
+              "trust": -1,
+              "comfort": -2,
+              "aspiration": 1
+            }
+          }
         }
       ]
     },
-
     "branch-proof": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "happy" },
-      "text": ["Good. That's the only honest answer.", "Every day, measured. No guessing."],
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Good. That's the only honest answer.",
+        "Every day, measured. No guessing."
+      ],
       "next": "memory"
     },
-
     "branch-sleep": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "That's most people, actually.",
         "I just don't advertise it that way."
       ],
       "next": "memory"
     },
-
     "branch-cost": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "annoyed" },
-      "text": ["It never stops costing something.", "I'd rather tell you now than let you find out."],
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "It never stops costing something.",
+        "I'd rather tell you now than let you find out."
+      ],
       "next": "memory"
     },
-
     "memory": {
       "speaker": "...",
       "evidence": "ev-whoop-strain",
@@ -79,7 +131,6 @@
       ],
       "next": "tension"
     },
-
     "tension": {
       "speaker": "WHOOP",
       "text": [
@@ -91,19 +142,30 @@
           "id": "want-that",
           "text": "That's exactly what I want. No blind spots.",
           "next": "wrap",
-          "playerEffects": { "control": 2, "mastery": 1, "comfort": -1 },
-          "relationshipEffects": { "whoop": 1 }
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1,
+            "comfort": -1
+          },
+          "relationshipEffects": {
+            "whoop": 1
+          }
         },
         {
           "id": "too-much",
           "text": "That sounds exhausting, if I'm being honest.",
           "next": "wrap",
-          "playerEffects": { "comfort": 2, "reassurance": -1, "control": -1 },
-          "relationshipEffects": { "whoop": -1 }
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": -1,
+            "control": -1
+          },
+          "relationshipEffects": {
+            "whoop": -1
+          }
         }
       ]
     },
-
     "wrap": {
       "speaker": "WHOOP",
       "callbacks": [
@@ -126,7 +188,8 @@
         "Sleep on it.",
         "Literally. I'll know how it went."
       ],
-      "nextTree": "home"
+      "nextTree": "map"
     }
-  }
+  },
+  "locationId": "nightgym"
 }

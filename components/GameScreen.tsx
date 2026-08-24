@@ -3,6 +3,7 @@
 // renders Stage + DialogueBox + overlays. No story knowledge beyond the
 // registries. All hooks run unconditionally (React rules of hooks).
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { getAsset, getBrandOrNull, getTree } from "@/content/registry";
@@ -17,9 +18,15 @@ import Stage from "@/components/stage/Stage";
 import DialogueBox from "@/components/dialogue/DialogueBox";
 import GameControls from "@/components/dialogue/GameControls";
 import SettingsPanel from "@/components/meta/SettingsPanel";
-import DebugPanel from "@/components/debug/DebugPanel";
 import { useGame } from "@/hooks/useGame";
 import styles from "./GameScreen.module.css";
+
+// Dev-only (ADR-11): the IS_DEV gate is inlined at build time, so production
+// builds dead-code-eliminate this branch — the debug chunk never ships.
+const IS_DEV = process.env.NODE_ENV !== "production";
+const DebugPanel = IS_DEV
+  ? dynamic(() => import("@/components/debug/DebugPanel"), { ssr: false })
+  : null;
 
 export default function GameScreen({ isDev }: { isDev: boolean }) {
   const game = useGame();
@@ -167,6 +174,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
           textSpeed={settings.textSpeed}
           onAdvance={game.advance}
           onSelectChoice={choose}
+          onLineStart={(i) => void AudioManager.speak(`${treeId}/${nodeId}/${i}`)}
         />
         <GameControls
           onOpenSettings={() => setSettingsOpen((v) => !v)}
@@ -176,7 +184,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
       </div>
 
       {settingsOpen && <SettingsPanel onClose={() => setSettingsOpen(false)} />}
-      {isDev && debugOpen && <DebugPanel onClose={() => setDebugOpen(false)} />}
+      {IS_DEV && debugOpen && DebugPanel && <DebugPanel onClose={() => setDebugOpen(false)} />}
     </div>
   );
 }

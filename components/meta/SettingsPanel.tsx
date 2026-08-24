@@ -48,6 +48,18 @@ export default function SettingsPanel({ onClose }: { onClose: () => void }) {
           />
         </label>
         <label className={styles.row}>
+          <span>voices</span>
+          <input
+            className={styles.range}
+            type="range"
+            min={0}
+            max={1}
+            step={0.05}
+            value={settings.voice}
+            onChange={(e) => updateSettings({ voice: Number(e.target.value) })}
+          />
+        </label>
+        <label className={styles.row}>
           <span>text speed</span>
           <input
             className={styles.range}

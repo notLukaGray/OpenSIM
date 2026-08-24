@@ -94,9 +94,16 @@ export function markDated(state: GameState, brandId: string): GameState {
   return { ...state, dated: [...state.dated, brandId] };
 }
 
+/** Completing an ENCOUNTER (tree). Meeting a brand anywhere marks it dated. */
+export function markCompleted(state: GameState, treeId: string, brandId: string | null): GameState {
+  if (state.completedTrees.includes(treeId)) return state;
+  const next = { ...state, completedTrees: [...state.completedTrees, treeId] };
+  return markDated(next, brandId ?? "");
+}
+
 /**
- * Hide choices leading to dates already completed this run (brief §18:
- * completed dates stay completed; re-dating would double-count evidence).
+ * Hide choices leading to encounters already completed this run. Brands may
+ * appear at multiple locations — completing one appearance never hides another.
  */
 export function filterCompletedDates(choices: Choice[] | undefined, state: GameState): Choice[] | undefined {
   if (!choices) return choices;
@@ -104,7 +111,7 @@ export function filterCompletedDates(choices: Choice[] | undefined, state: GameS
     if (!c.nextTree) return true;
     try {
       const t = getTree(c.nextTree);
-      return !(t.brandId && state.dated.includes(t.brandId));
+      return !state.completedTrees.includes(t.id);
     } catch {
       return true;
     }

@@ -67,7 +67,6 @@ Register nothing by hand — `registry.ts` globs `dates/*.json` at build time (i
   "brandPerceptionEffects": { "liquid-iv": { "readiness": 1 } },
   "relationshipEffects": { "liquid-iv": 1 },
   "setFlags": ["defended-sweetness"],
-  "modifierUnlocks": ["mod-liquid-iv-gym"],
   "conditions": { "flags": { "any": ["sipped"] } }
 }
 ```
@@ -75,8 +74,8 @@ Register nothing by hand — `registry.ts` globs `dates/*.json` at build time (i
 - `playerEffects`: signed evidence for the player reveal (keep magnitudes ≤3).
 - `brandPerceptionEffects`: discovered deltas for that brand's effective profile.
 - `relationshipEffects`: chemistry only — flavor, never scored.
-- `setFlags` / `modifierUnlocks`: strings must be declared (`flags` implicitly; modifiers must exist).
-- `nextTree`: end this tree, jump to another (`home`, `reveal`). A node with neither `next` nor
+- `setFlags`: gate later content with `conditions`, and activate flag-gated modifiers.
+- `nextTree`: end this tree, jump to another (`map`, `reveal`). A node with neither `next` nor
   `choices` must carry `nextTree`.
 - Callbacks: any later node in the same tree may callback to any earlier choice id in that tree.
 
@@ -141,6 +140,38 @@ Never reference file paths from components. Register in `content/assets.json` / 
 then use IDs. Placeholder files live in `public/assets/**`; regenerate with the scripts in
 `scripts/`. Swap real art by replacing files (same names) or updating registry entries — components
 never notice.
+
+## Add a location
+
+`content/locations.json` — places the player can travel to (P5-01):
+
+```json
+{
+  "id": "office",
+  "name": "THE OFFICE",
+  "blurb": "After hours. Desk drawers and desk-drawer decisions.",
+  "background": "bg-hub",
+  "music": "mus-hub",
+  "map": { "x": 52, "y": 76 }
+}
+```
+
+`map.x/y` are percentages of the stage. Dates join a location via `"locationId"`. **The same brand
+may appear at several locations** — each appearance is its own date tree and resolves different
+modifiers onto the same base profile. That contrast is the whole point: Liquid I.V. is readiness at
+the airport and desk-drawer comfort at the office.
+
+## AI voice-over
+
+Every dialogue LINE has a deterministic voice slot (P5-03, ADR-13):
+
+```txt
+public/assets/vo/<treeId>/<nodeId>/<lineIndex>.mp3   # lineIndex is 0-based in `text`
+```
+
+Drop generated clips at those paths; the game plays them on the line with music ducking. Missing
+files are silent no-ops — you can VO a scene line-by-line as the pipeline produces it. Content never
+stores voice paths; re-recording = replacing one file.
 
 ## Checklist before merging content
 

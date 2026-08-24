@@ -73,6 +73,8 @@ export type DateTree = {
   id: string;
   brandId: string | null; // null for the hub
   title: string;
+  /** Which place this encounter happens at (content/locations.json). */
+  locationId?: string;
   context: DateContext | null;
   music: string | null;
   background: string | null;
@@ -81,6 +83,16 @@ export type DateTree = {
   /** Nodes reached dynamically by the engine (not via static edges), e.g. hub "all-done". */
   entryPoints?: string[];
   nodes: Record<string, DialogueNode>;
+};
+
+// ─── Locations ───────────────────────────────────────────────────────────────
+export type GameLocation = {
+  id: string;
+  name: string;
+  blurb: string;
+  background: string;
+  music: string;
+  map: { x: number; y: number }; // percentages of the stage
 };
 
 // ─── Brands ──────────────────────────────────────────────────────────────────

@@ -54,6 +54,7 @@ export function loadSettings(): Settings {
       master: clamp01(parsed.master ?? d.master),
       music: clamp01(parsed.music ?? d.music),
       sfx: clamp01(parsed.sfx ?? d.sfx),
+      voice: clamp01(parsed.voice ?? d.voice),
       muted: Boolean(parsed.muted),
       textSpeed: Math.max(10, Math.min(120, parsed.textSpeed ?? d.textSpeed)),
     };

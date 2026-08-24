@@ -1,0 +1,42 @@
+[
+  {
+    "id": "airport",
+    "name": "NIGHT TERMINAL",
+    "blurb": "Gate 34, humming vents, everyone going somewhere.",
+    "background": "bg-airport",
+    "music": "mus-airport",
+    "map": { "x": 16, "y": 62 }
+  },
+  {
+    "id": "nightgym",
+    "name": "THE LATE GYM",
+    "blurb": "One light left on, and it's watching.",
+    "background": "bg-nightgym",
+    "music": "mus-nightgym",
+    "map": { "x": 36, "y": 34 }
+  },
+  {
+    "id": "rooftop",
+    "name": "SUNSET ROOFTOP",
+    "blurb": "The party went up here and never came down.",
+    "background": "bg-rooftop",
+    "music": "mus-rooftop",
+    "map": { "x": 63, "y": 26 }
+  },
+  {
+    "id": "kitchen",
+    "name": "QUIET KITCHEN",
+    "blurb": "Morning light, one glass waiting.",
+    "background": "bg-kitchen",
+    "music": "mus-kitchen",
+    "map": { "x": 84, "y": 56 }
+  },
+  {
+    "id": "office",
+    "name": "THE OFFICE",
+    "blurb": "After hours. Desk drawers and desk-drawer decisions.",
+    "background": "bg-hub",
+    "music": "mus-hub",
+    "map": { "x": 52, "y": 76 }
+  }
+]

@@ -32,17 +32,19 @@ components/
   dialogue/               DialogueBox, SpeakerTab, ChoiceList, ContinueIndicator, GameControls
   reveal/                 ConsumerReveal, MatchReveal
   meta/                   TitleScreen, SettingsPanel
-  debug/                  DebugPanel (dev-only)
+  debug/                  DebugPanel (dev-only, lazy chunk)
+  map/                    TravelMap
 content/
   needs.json?             (no — needs are code-level constants in game/types.ts)
   brands.json             brand records: claimedProfile + perceivedProfile (-5..5)
-  dates/*.json            one file per date; hub is dates/home.json
+  dates/*.json            one file per ENCOUNTER (a brand × location pairing); hub is dates/home.json
+  locations.json          travel destinations: name, blurb, background, music, map position
   archetypes.json         5 consumer archetypes as target need-weight profiles
   modifiers.json          contextual perception modifiers
   evidence.json           brand evidence cards (real-world material placeholders)
   assets.json             asset registry (id → type/src/alt/preload/fallback)
   audio.json              music/sfx registry (id → src/loop/volume/fade)
-  registry.ts             static imports, TS satisfaction checks, dev validation hook
+  registry.ts             static imports, shape guards + normalization, dev validation hook
 game/
   types.ts                Need set, vectors, Brand/Archetype/GameState types, SAVE_VERSION
   engine.ts               applyChoice, resolveLines, markDated — pure transforms
@@ -84,12 +86,13 @@ type GameState = {
   choiceLog: Record<TreeId, ChoiceId[]>;        // powers callbacks & conditions
   flags: Record<string, boolean | number | string>;
   unlockedEvidence: EvidenceId[];
-  dated: BrandId[];
+  completedTrees: TreeId[];        // finished ENCOUNTERS (a brand may span locations)
+  dated: BrandId[];                // brands met at least once — drives matching
   choicesMade: number;
 };
 
-type Navigation = { phase: "title" | "play" | "reveal"; treeId: string; nodeId: string };
-type Settings = { master: number; music: number; sfx: number; muted: boolean };
+type Navigation = { phase: "title" | "play" | "map" | "reveal" | "match"; treeId: string | null; nodeId: string | null };
+type Settings = { master: number; music: number; sfx: number; voice: number; muted: boolean; textSpeed: number };
 ```
 
 Persisted envelope (localStorage key `dsim.save.v1`): `{ version, savedAt, state, navigation }`.
@@ -135,23 +138,26 @@ Both are components driven by pure engine output — no scores recomputed inside
 
 ## Audio
 
-`AudioManager` (WebAudio, singleton): `music` and `sfx` GainNodes under master; `playMusic(id)`
-crossfades (~1.2s default) with per-track loop points; `playSfx(id)` one-shots; persisted settings;
-unlock-on-first-gesture for autoplay policy; tab-blur auto-ducking. Dates/nodes reference tracks by
-ID only. Placeholder WAVs are procedurally generated (`scripts/generate-placeholder-audio.mjs`) so
-the real pipeline is exercised end-to-end.
+`AudioManager` (WebAudio, singleton): `music`, `sfx`, and `voice` GainNodes under master;
+`playMusic(id)` crossfades (~1.2s default) with per-track loop points; `playSfx(id)` one-shots;
+`speak(key)` plays a dialogue line's VO clip from `/assets/vo/<key>.mp3` (ADR-13) with music ducking
+to ~35% while it plays; missing VO files are silent no-ops. Persisted settings; unlock-on-first-
+gesture for autoplay policy; tab-blur auto-ducking. Dates/nodes reference tracks by ID only.
+Placeholder WAVs are procedurally generated (`scripts/generate-placeholder-audio.mjs`) so the real
+pipeline is exercised end-to-end.
 
 ## Validation
 
 Single rule-set in `tools/validate-core.mjs` (dependency-free ESM, runs in Node AND browser):
 
-- every node `next`/`choices[].next` resolves within its tree; every `nextTree` exists
-- trees reachable from the hub can reach an ending (exit to hub/reveal) — no dead ends
-- all asset/music/evidence/modifier/brand/archetype IDs referenced anywhere exist
+- every node `next`/`choices[].next` resolves within its tree; every `nextTree` exists (including
+  the reserved exits `map` and `reveal`)
+- trees reachable from their start (plus declared `entryPoints`) can reach an ending — no dead ends
+- all asset/music/evidence/modifier/brand/archetype/location IDs referenced anywhere exist
 - all dimension names valid; profile values within −5..+5; player effects within ±3
 - callbacks reference choice IDs that exist earlier in their tree; conditions reference declared flags
-- balance guard: every brand has ≥2 positive and ≤... at least one negative perceived dimension and
-  no brand dominates the sum of all profiles
+- balance guard: every brand has ≥2 positive and ≥1 negative perceived dimensions and no brand
+  dominates every other brand on every dimension (ADR-08)
 
 Wired twice: `npm run validate` (also runs as `prebuild`) and a dev-only overlay that mounts the
 same core against the bundled registries. Production builds cannot ship invalid content.

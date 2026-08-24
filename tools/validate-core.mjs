@@ -20,7 +20,7 @@ const PROFILE_MAX = 5;
 const EFFECT_CAP = 3;
 
 /** Trees that exist outside content/dates/. */
-const RESERVED_TREE_IDS = ["reveal"];
+const RESERVED_TREE_IDS = ["reveal", "map"];
 
 export function validateContent(bundle) {
   const diags = [];
@@ -37,6 +37,7 @@ export function validateContent(bundle) {
     ["evidence", bundle.evidence],
     ["assets", bundle.assets],
     ["audioTracks", bundle.audioTracks],
+    ["locations", bundle.locations ?? []],
     ["trees", bundle.trees],
   ];
   for (const [name, coll] of requiredCollections) {
@@ -49,6 +50,7 @@ export function validateContent(bundle) {
   const assetIds = new Set(bundle.assets.map((a) => a.id));
   const audioIds = new Set(bundle.audioTracks.map((t) => t.id));
   const evidenceIds = new Set(bundle.evidence.map((e) => e.id));
+  const locationIds = new Set((bundle.locations ?? []).map((l) => l.id));
   const treeIds = new Set(bundle.trees.map((t) => t.id));
   const treeById = new Map(bundle.trees.map((t) => [t.id, t]));
   for (const r of RESERVED_TREE_IDS) treeIds.add(r);
@@ -126,6 +128,17 @@ export function validateContent(bundle) {
     if (!t.src || !t.src.startsWith("/assets/")) err(f, `audioTrack[${t.id}].src`, `must live under /assets/`);
   }
 
+  // ── locations ─────────────────────────────────────────────────────────────
+  for (const l of bundle.locations ?? []) {
+    const f = F(l, "locations");
+    if (!assetIds.has(l.background)) err(f, `location[${l.id}].background`, `unknown asset "${l.background}"`);
+    if (!audioIds.has(l.music)) err(f, `location[${l.id}].music`, `unknown track "${l.music}"`);
+    if (typeof l.map?.x !== "number" || typeof l.map?.y !== "number")
+      err(f, `location[${l.id}].map`, "map.x and map.y must be numbers (percentages)");
+    else if (l.map.x < 0 || l.map.x > 100 || l.map.y < 0 || l.map.y > 100)
+      err(f, `location[${l.id}].map`, "map coordinates are percentages (0..100)");
+  }
+
   // ── evidence ──────────────────────────────────────────────────────────────
   for (const e of bundle.evidence) {
     const f = F(e, "evidence");
@@ -171,6 +184,8 @@ export function validateContent(bundle) {
 
     if (t.brandId !== null && !brandIds.has(t.brandId))
       err(f, `tree[${t.id}].brandId`, `unknown brand "${t.brandId}"`);
+    if (t.locationId && !locationIds.has(t.locationId))
+      err(f, `tree[${t.id}].locationId`, `unknown location "${t.locationId}"`);
     if (!nodes[t.startNode]) err(f, `tree[${t.id}].startNode`, `start node "${t.startNode}" does not exist`);
     if (t.music && !audioIds.has(t.music)) err(f, `tree[${t.id}].music`, `unknown track "${t.music}"`);
     for (const ep of t.entryPoints ?? [])
