@@ -20,7 +20,8 @@ Deploy target: **Vercel** (Next.js + TypeScript, static-friendly, no persistent 
 
 | Works today |
 | --- |
-| Data-driven dates, hub, and dialogue (add a date without touching the engine) |
+| Data-driven encounters (a date = brand × location) — add one without touching the engine |
+| Travel map: locations as destinations, products showing up in multiple places |
 | Hidden player-evidence model → consumer archetype reveal |
 | Claimed vs. perceived brand profiles + per-playthrough discovered perception |
 | Context modifiers that stack without mutating base profiles |
@@ -28,6 +29,7 @@ Deploy target: **Vercel** (Next.js + TypeScript, static-friendly, no persistent 
 | Dating chemistry kept strictly separate from strategic compatibility |
 | Weighted product matching with why-it-works / tension breakdowns |
 | Asset + music registries (IDs everywhere), placeholder art & generated audio |
+| Per-line AI-VO slots (`/assets/vo/<tree>/<node>/<line>.mp3`) with voice bus + music ducking |
 | VN stage: sprites, expressions, positions, transitions, CG viewer, fades/wipes |
 | Save / Continue / Reset via localStorage, volume + mute settings |
 | Loud content validation (prebuild gate + dev overlay) |
