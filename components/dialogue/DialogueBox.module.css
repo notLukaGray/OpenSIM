@@ -70,6 +70,30 @@
   margin-bottom: 0;
 }
 
+/* ZYN speaks through COUNSEL: the dry, filing-room cadence is part of the joke. */
+.counsel {
+  background: linear-gradient(180deg, rgba(255, 254, 248, 0.96), rgba(239, 237, 225, 0.94));
+  border-color: #9a947f;
+  box-shadow:
+    0 18px 40px rgba(58, 53, 39, 0.28),
+    0 2px 0 rgba(255, 255, 255, 0.7) inset,
+    0 0 0 5px rgba(105, 96, 72, 0.1);
+}
+
+.counsel .stitchBorder {
+  border-style: solid;
+  border-color: rgba(94, 87, 68, 0.26);
+}
+
+.counsel .text {
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.65;
+  color: #27261f;
+}
+
 @media (max-width: 900px) {
   .box {
     max-width: 92vw;

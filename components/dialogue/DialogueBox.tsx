@@ -96,7 +96,7 @@ export default function DialogueBox({
 
   return (
     <motion.div
-      className={styles.box}
+      className={`${styles.box} ${speaker === "COUNSEL" ? styles.counsel : ""}`}
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
