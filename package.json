@@ -9,6 +9,7 @@
     "art": "node scripts/generate-placeholder-art.mjs",
     "audio": "node scripts/generate-placeholder-audio.mjs",
     "vo:manifest": "node scripts/export-vo-manifest.mjs",
+    "sync:dates": "node scripts/sync-date-registry.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -71,6 +71,8 @@ export type GameState = {
   completedTrees: string[];
   /** Brands met at least once (drives matching + reveal eligibility). */
   dated: string[];
+  /** Set once the consumer reveal has played — unlocks post-reveal content (P7-02). */
+  hasSeenReveal: boolean;
   choicesMade: number;
 };
 
@@ -83,6 +85,7 @@ export const createGameState = (): GameState => ({
   unlockedEvidence: [],
   completedTrees: [],
   dated: [],
+  hasSeenReveal: false,
   choicesMade: 0,
 });
 

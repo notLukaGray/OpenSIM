@@ -125,11 +125,20 @@ export default function TravelMap() {
           <p>
             {allDone
               ? "That's everyone. Time to think about what all this meant."
-              : "Enough to start seeing the shape of you — or keep exploring."}
+              : state.hasSeenReveal
+                ? "The audit updates with everything you learn."
+                : "Enough to start seeing the shape of you — or keep exploring."}
           </p>
-          <button className={styles.thinkItOver} onClick={() => game.setPhase("reveal")}>
-            {allDone ? "THINK IT OVER" : "SEE WHO YOU'VE BEEN"}
-          </button>
+          <div style={{ display: "flex", gap: 14, justifyContent: "center" }}>
+            {state.hasSeenReveal && (
+              <button className={styles.thinkItOver} onClick={() => game.setPhase("match")}>
+                RE-AUDIT ME
+              </button>
+            )}
+            <button className={styles.thinkItOver} onClick={() => game.setPhase("reveal")}>
+              {allDone ? "THINK IT OVER" : state.hasSeenReveal ? "RE-SEE THE REVEAL" : "SEE WHO YOU'VE BEEN"}
+            </button>
+          </div>
         </motion.div>
       )}
 

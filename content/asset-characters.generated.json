@@ -1,0 +1,302 @@
+[
+  {
+    "id": "char-starbucks-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-starbucks-neutral.svg",
+    "alt": "starbucks (neutral)"
+  },
+  {
+    "id": "char-starbucks-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-starbucks-happy.svg",
+    "alt": "starbucks (happy)"
+  },
+  {
+    "id": "char-starbucks-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-starbucks-annoyed.svg",
+    "alt": "starbucks (annoyed)"
+  },
+  {
+    "id": "char-starbucks-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-starbucks-embarrassed.svg",
+    "alt": "starbucks (embarrassed)"
+  },
+  {
+    "id": "char-starbucks-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-starbucks-special.svg",
+    "alt": "starbucks (special)"
+  },
+  {
+    "id": "char-oura-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-oura-neutral.svg",
+    "alt": "oura (neutral)"
+  },
+  {
+    "id": "char-oura-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-oura-happy.svg",
+    "alt": "oura (happy)"
+  },
+  {
+    "id": "char-oura-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-oura-annoyed.svg",
+    "alt": "oura (annoyed)"
+  },
+  {
+    "id": "char-oura-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-oura-embarrassed.svg",
+    "alt": "oura (embarrassed)"
+  },
+  {
+    "id": "char-oura-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-oura-special.svg",
+    "alt": "oura (special)"
+  },
+  {
+    "id": "char-zen-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-zen-neutral.svg",
+    "alt": "zen (neutral)"
+  },
+  {
+    "id": "char-zen-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-zen-happy.svg",
+    "alt": "zen (happy)"
+  },
+  {
+    "id": "char-zen-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-zen-annoyed.svg",
+    "alt": "zen (annoyed)"
+  },
+  {
+    "id": "char-zen-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-zen-embarrassed.svg",
+    "alt": "zen (embarrassed)"
+  },
+  {
+    "id": "char-zen-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-zen-special.svg",
+    "alt": "zen (special)"
+  },
+  {
+    "id": "char-red-bull-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-red-bull-neutral.svg",
+    "alt": "red-bull (neutral)"
+  },
+  {
+    "id": "char-red-bull-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-red-bull-happy.svg",
+    "alt": "red-bull (happy)"
+  },
+  {
+    "id": "char-red-bull-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-red-bull-annoyed.svg",
+    "alt": "red-bull (annoyed)"
+  },
+  {
+    "id": "char-red-bull-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-red-bull-embarrassed.svg",
+    "alt": "red-bull (embarrassed)"
+  },
+  {
+    "id": "char-red-bull-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-red-bull-special.svg",
+    "alt": "red-bull (special)"
+  },
+  {
+    "id": "char-eight-sleep-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-eight-sleep-neutral.svg",
+    "alt": "eight-sleep (neutral)"
+  },
+  {
+    "id": "char-eight-sleep-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-eight-sleep-happy.svg",
+    "alt": "eight-sleep (happy)"
+  },
+  {
+    "id": "char-eight-sleep-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-eight-sleep-annoyed.svg",
+    "alt": "eight-sleep (annoyed)"
+  },
+  {
+    "id": "char-eight-sleep-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-eight-sleep-embarrassed.svg",
+    "alt": "eight-sleep (embarrassed)"
+  },
+  {
+    "id": "char-eight-sleep-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-eight-sleep-special.svg",
+    "alt": "eight-sleep (special)"
+  },
+  {
+    "id": "char-liquid-death-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-liquid-death-neutral.svg",
+    "alt": "liquid-death (neutral)"
+  },
+  {
+    "id": "char-liquid-death-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-liquid-death-happy.svg",
+    "alt": "liquid-death (happy)"
+  },
+  {
+    "id": "char-liquid-death-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-liquid-death-annoyed.svg",
+    "alt": "liquid-death (annoyed)"
+  },
+  {
+    "id": "char-liquid-death-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-liquid-death-embarrassed.svg",
+    "alt": "liquid-death (embarrassed)"
+  },
+  {
+    "id": "char-liquid-death-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-liquid-death-special.svg",
+    "alt": "liquid-death (special)"
+  },
+  {
+    "id": "char-white-claw-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-white-claw-neutral.svg",
+    "alt": "white-claw (neutral)"
+  },
+  {
+    "id": "char-white-claw-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-white-claw-happy.svg",
+    "alt": "white-claw (happy)"
+  },
+  {
+    "id": "char-white-claw-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-white-claw-annoyed.svg",
+    "alt": "white-claw (annoyed)"
+  },
+  {
+    "id": "char-white-claw-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-white-claw-embarrassed.svg",
+    "alt": "white-claw (embarrassed)"
+  },
+  {
+    "id": "char-white-claw-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-white-claw-special.svg",
+    "alt": "white-claw (special)"
+  },
+  {
+    "id": "char-athletic-brewing-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-athletic-brewing-neutral.svg",
+    "alt": "athletic-brewing (neutral)"
+  },
+  {
+    "id": "char-athletic-brewing-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-athletic-brewing-happy.svg",
+    "alt": "athletic-brewing (happy)"
+  },
+  {
+    "id": "char-athletic-brewing-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-athletic-brewing-annoyed.svg",
+    "alt": "athletic-brewing (annoyed)"
+  },
+  {
+    "id": "char-athletic-brewing-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-athletic-brewing-embarrassed.svg",
+    "alt": "athletic-brewing (embarrassed)"
+  },
+  {
+    "id": "char-athletic-brewing-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-athletic-brewing-special.svg",
+    "alt": "athletic-brewing (special)"
+  },
+  {
+    "id": "char-zyn-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-zyn-neutral.svg",
+    "alt": "zyn (neutral)"
+  },
+  {
+    "id": "char-zyn-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-zyn-happy.svg",
+    "alt": "zyn (happy)"
+  },
+  {
+    "id": "char-zyn-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-zyn-annoyed.svg",
+    "alt": "zyn (annoyed)"
+  },
+  {
+    "id": "char-zyn-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-zyn-embarrassed.svg",
+    "alt": "zyn (embarrassed)"
+  },
+  {
+    "id": "char-zyn-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-zyn-special.svg",
+    "alt": "zyn (special)"
+  },
+  {
+    "id": "char-na-spirits-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-na-spirits-neutral.svg",
+    "alt": "na-spirits (neutral)"
+  },
+  {
+    "id": "char-na-spirits-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-na-spirits-happy.svg",
+    "alt": "na-spirits (happy)"
+  },
+  {
+    "id": "char-na-spirits-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-na-spirits-annoyed.svg",
+    "alt": "na-spirits (annoyed)"
+  },
+  {
+    "id": "char-na-spirits-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-na-spirits-embarrassed.svg",
+    "alt": "na-spirits (embarrassed)"
+  },
+  {
+    "id": "char-na-spirits-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-na-spirits-special.svg",
+    "alt": "na-spirits (special)"
+  }
+]

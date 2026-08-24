@@ -12,6 +12,10 @@ export type FlagCondition = {
 
 export type Condition = {
   flags?: FlagCondition;
+  /** Player's revealed archetype id (P7-02 A). True only after the reveal. */
+  archetype?: string;
+  /** True only once the consumer reveal has been seen (post-reveal content). */
+  postReveal?: boolean;
 };
 
 // ─── Effects ─────────────────────────────────────────────────────────────────

@@ -42,5 +42,115 @@
     "personality": "Calm, steady, quietly devoted. Shows up at the same time every day and pretends that's not romantic.",
     "claimedProfile": { "trust": 4, "comfort": 3, "reassurance": 3, "mastery": 1 },
     "perceivedProfile": { "trust": 3, "comfort": 2, "reassurance": 2, "aspiration": 1, "excitement": -2, "readiness": -1 }
+  },
+  {
+    "id": "starbucks",
+    "name": "STARBUCKS",
+    "archetype": "THE THIRD PLACE",
+    "color": "#00a862",
+    "sigil": "S",
+    "setting": "office",
+    "personality": "Knows your order, your name, and possibly your data. Worldwide sameness sold as a warm local welcome.",
+    "claimedProfile": { "belonging": 5, "comfort": 5, "reassurance": 4, "readiness": 3, "trust": 3, "excitement": 3, "selfExpression": 3, "aspiration": 2, "control": 2, "mastery": 1 },
+    "perceivedProfile": { "comfort": 4, "readiness": 3, "reassurance": 3, "selfExpression": 3, "excitement": 2, "mastery": 2, "control": 1, "belonging": 1, "trust": -2 }
+  },
+  {
+    "id": "oura",
+    "name": "OURA",
+    "archetype": "THE QUIET ORACLE",
+    "color": "#c9a7eb",
+    "sigil": "O",
+    "setting": "bedroom-night",
+    "personality": "Whispered scores, jewelry-grade minimalism. Tells you how you slept like it's a horoscope backed by science.",
+    "claimedProfile": { "readiness": 5, "aspiration": 4, "control": 4, "mastery": 4, "trust": 4, "reassurance": 3, "comfort": 2, "belonging": 2, "selfExpression": 2 },
+    "perceivedProfile": { "readiness": 4, "aspiration": 4, "trust": 1, "control": 2, "mastery": 2, "comfort": 3, "belonging": 1, "reassurance": -1, "excitement": 1, "selfExpression": 3 }
+  },
+  {
+    "id": "zen",
+    "name": "ZEN",
+    "archetype": "THE EXHALE",
+    "color": "#9fd8cb",
+    "sigil": "☯",
+    "setting": "bedroom-night",
+    "personality": "Soft-spoken sleep sounds and five-minute resets. Calmer than you in every argument.",
+    "claimedProfile": { "comfort": 4, "reassurance": 4, "control": 3, "readiness": 2, "mastery": 2, "aspiration": 2, "trust": 2 },
+    "perceivedProfile": { "comfort": 3, "reassurance": 2, "control": 1, "readiness": 1, "belonging": -1, "mastery": 0, "aspiration": 0, "excitement": -1, "selfExpression": -2, "trust": -2 }
+  },
+  {
+    "id": "red-bull",
+    "name": "RED BULL",
+    "archetype": "THE PROTOTYPE",
+    "color": "#db0a40",
+    "sigil": "R",
+    "setting": "music-festival",
+    "personality": "Arrives by helicopter, owns the stadium, the team, and maybe the sky. Every conversation ends with a stunt.",
+    "claimedProfile": { "excitement": 5, "aspiration": 5, "readiness": 4, "selfExpression": 3, "mastery": 3, "belonging": 2, "trust": 2 },
+    "perceivedProfile": { "excitement": 5, "aspiration": 4, "readiness": 3, "belonging": 3, "selfExpression": 2, "mastery": 2, "control": -2, "reassurance": -2, "comfort": -3, "trust": -2 }
+  },
+  {
+    "id": "eight-sleep",
+    "name": "EIGHT SLEEP",
+    "archetype": "THE THERMOSTAT",
+    "color": "#4cc3ff",
+    "sigil": "E",
+    "setting": "bedroom-night",
+    "personality": "Biohacker energy at mattress scale. Talks in metrics, bills in tiers, cools in Celsius points.",
+    "claimedProfile": { "control": 5, "comfort": 4, "readiness": 4, "mastery": 4, "aspiration": 4, "reassurance": 3, "trust": 3, "belonging": 2, "selfExpression": 2 },
+    "perceivedProfile": { "comfort": 4, "readiness": 3, "aspiration": 3, "belonging": 2, "mastery": 2, "selfExpression": 2, "excitement": 1, "control": -1, "reassurance": -1, "trust": -2 }
+  },
+  {
+    "id": "liquid-death",
+    "name": "LIQUID DEATH",
+    "archetype": "THE PUNK",
+    "color": "#e5e3df",
+    "sigil": "D",
+    "setting": "music-festival",
+    "personality": "Sells water like it's a metal record. Hates plastic, loves theatrics, dares you to be bored.",
+    "claimedProfile": { "excitement": 4, "reassurance": 3, "selfExpression": 3, "control": 2, "belonging": 2, "readiness": 2, "trust": 2, "aspiration": 1 },
+    "perceivedProfile": { "excitement": 5, "selfExpression": 4, "aspiration": 3, "belonging": 3, "readiness": 2, "control": 1, "reassurance": 1, "trust": -1, "mastery": -1, "comfort": -2 }
+  },
+  {
+    "id": "white-claw",
+    "name": "WHITE CLAW",
+    "archetype": "THE MEME SUMMER",
+    "color": "#37b6ff",
+    "sigil": "~",
+    "setting": "beach-day",
+    "personality": "The summer everyone quotes and no one plans. Laws? Never heard of her.",
+    "claimedProfile": { "reassurance": 3, "trust": 3, "control": 2, "belonging": 2, "readiness": 1, "aspiration": 1, "mastery": 1, "comfort": 1, "excitement": 1 },
+    "perceivedProfile": { "belonging": 4, "selfExpression": 3, "comfort": 2, "excitement": 2, "trust": 1, "reassurance": 1, "control": 0, "aspiration": 0, "readiness": -1, "mastery": -1 }
+  },
+  {
+    "id": "athletic-brewing",
+    "name": "ATHLETIC BREWING",
+    "archetype": "THE DESIGNATED DRIVER",
+    "color": "#f0a35e",
+    "sigil": "B",
+    "setting": "beach-day",
+    "personality": "The beer that lets tomorrow happen. Run-club halo, zero proof, endless encouragement.",
+    "claimedProfile": { "control": 4, "readiness": 4, "aspiration": 4, "belonging": 4, "reassurance": 3, "selfExpression": 3, "trust": 3, "mastery": 2, "comfort": 1, "excitement": 1 },
+    "perceivedProfile": { "control": 3, "aspiration": 3, "belonging": 3, "selfExpression": 3, "readiness": 2, "reassurance": -1, "trust": 2, "mastery": 1, "comfort": 1, "excitement": 0 }
+  },
+  {
+    "id": "zyn",
+    "name": "ZYN",
+    "archetype": "THE UPPER DECKY",
+    "color": "#baf5c0",
+    "sigil": "Z",
+    "setting": "nightgym",
+    "personality": "Discreet little tin, enormous folklore. Gym-bro rite of passage with a tobacco-daddy shadow.",
+    "claimedProfile": { "control": 3, "readiness": 3, "reassurance": 3, "trust": 3, "aspiration": 2, "mastery": 2, "comfort": 2, "excitement": 1 },
+    "perceivedProfile": { "belonging": 4, "aspiration": 3, "selfExpression": 3, "comfort": 3, "readiness": 2, "mastery": 2, "excitement": 2, "control": -2, "trust": -2 }
+  },
+  {
+    "id": "na-spirits",
+    "name": "NA SPIRITS",
+    "archetype": "THE SOBER CURIOSITY",
+    "color": "#b9c99a",
+    "sigil": "N",
+    "setting": "rooftop",
+    "personality": "Two faces of one shelf: Seedlip's Michelin mystique, Ritual's every-bar practicality. Fancy drink, no buzz — identity crisis included.",
+    "claimedProfile": { "aspiration": 3, "control": 3, "mastery": 3, "reassurance": 2, "selfExpression": 2, "trust": 2, "belonging": 2, "readiness": 2, "comfort": 1, "excitement": 1 },
+    "perceivedProfile": { "control": 3, "readiness": 2, "aspiration": 1, "belonging": 1, "selfExpression": 1, "mastery": 1, "reassurance": 1, "trust": 1, "comfort": -1, "excitement": -1 }
   }
 ]

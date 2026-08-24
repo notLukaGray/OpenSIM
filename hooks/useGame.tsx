@@ -73,7 +73,11 @@ function follow(store: StoreState, next?: string, nextTree?: string): StoreState
         : store.state;
 
     if (nextTree === "reveal")
-      return { ...store, state, nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null } };
+      return {
+        ...store,
+        state: { ...state, hasSeenReveal: true },
+        nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null },
+      };
     if (nextTree === "map")
       return { ...store, state, nav: { ...store.nav, phase: "map", treeId: null, nodeId: null } };
     return enter({ ...store, state }, nextTree);
@@ -129,6 +133,8 @@ function reducer(store: StoreState, action: Action): StoreState {
     case "SET_PHASE":
       return {
         ...store,
+        // Entering the reveal (from map gate or debug) marks it seen (P7-02).
+        state: action.phase === "reveal" ? { ...store.state, hasSeenReveal: true } : store.state,
         nav: {
           ...store.nav,
           phase: action.phase,

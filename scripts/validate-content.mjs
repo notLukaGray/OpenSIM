@@ -23,9 +23,14 @@ const brands = await loadJson(path.join(contentDir, "brands.json"));
 const archetypes = await loadJson(path.join(contentDir, "archetypes.json"));
 const modifiers = await loadJson(path.join(contentDir, "modifiers.json"));
 const evidence = await loadJson(path.join(contentDir, "evidence.json"));
-const assets = await loadJson(path.join(contentDir, "assets.json"));
+const assetsJson = await loadJson(path.join(contentDir, "assets.json"));
 const audioTracks = await loadJson(path.join(contentDir, "audio.json"));
 const locations = await loadJson(path.join(contentDir, "locations.json"));
+let charactersGenerated = [];
+try {
+  charactersGenerated = await loadJson(path.join(contentDir, "asset-characters.generated.json"));
+} catch { /* generator not yet run */ }
+const assets = [...assetsJson, ...charactersGenerated];
 
 const dateFiles = readdirSync(datesDir).filter((f) => f.endsWith(".json")).sort();
 const trees = [];

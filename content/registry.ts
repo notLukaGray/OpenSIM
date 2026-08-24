@@ -25,12 +25,7 @@ import evidenceJson from "./evidence.json";
 import assetsJson from "./assets.json";
 import audioJson from "./audio.json";
 import locationsJson from "./locations.json";
-import homeDate from "./dates/home.json";
-import liquidIvDate from "./dates/liquid-iv-airport.json";
-import whoopDate from "./dates/whoop-nightgym.json";
-import celsiusDate from "./dates/celsius-rooftop.json";
-import ag1Date from "./dates/ag1-kitchen.json";
-import officeDate from "./dates/liquid-iv-office.json";
+import { dateFiles } from "./date-registry.generated";
 
 // ── shape guards ─────────────────────────────────────────────────────────────
 
@@ -110,7 +105,11 @@ export const evidence: Evidence[] = (evidenceJson as unknown as Record<string, u
 );
 
 // ── assets ───────────────────────────────────────────────────────────────────
-export const assets: AssetReference[] = assetsJson as AssetReference[];
+import charactersGenerated from "./asset-characters.generated.json";
+export const assets: AssetReference[] = [
+  ...(assetsJson as AssetReference[]),
+  ...(charactersGenerated as unknown as AssetReference[]),
+];
 
 // ── audio ────────────────────────────────────────────────────────────────────
 export const audioTracks: AudioTrack[] = audioJson as AudioTrack[];
@@ -138,19 +137,17 @@ export const locations: GameLocation[] = (locationsJson as unknown as Record<str
 const locationIds = new Set(locations.map((l) => l.id));
 
 // ── dates ────────────────────────────────────────────────────────────────────
-// Register new dates by adding one line here.
-const dateFiles: DateTree[] = [homeDate, liquidIvDate, whoopDate, celsiusDate, ag1Date, officeDate].map(
-  (t) => {
-    const tree = t as unknown as DateTree;
-    req(tree as unknown as Record<string, unknown>, ["id", "startNode", "nodes"], "dates/*.json");
-    if (!tree.nodes[tree.startNode])
-      throw new ContentError(`${tree.id}: startNode "${tree.startNode}" does not exist`);
-    if (tree.locationId && !locationIds.has(tree.locationId))
-      throw new ContentError(`${tree.id}: unknown locationId "${tree.locationId}"`);
-    return tree;
-  }
-);
-export const dateTrees = dateFiles;
+// Files are auto-discovered; run `npm run sync:dates` after adding one.
+const dateFilesTyped: DateTree[] = dateFiles.map((t) => {
+  const tree = t as unknown as DateTree;
+  req(tree as unknown as Record<string, unknown>, ["id", "startNode", "nodes"], "dates/*.json");
+  if (!tree.nodes[tree.startNode])
+    throw new ContentError(`${tree.id}: startNode "${tree.startNode}" does not exist`);
+  if (tree.locationId && !locationIds.has(tree.locationId))
+    throw new ContentError(`${tree.id}: unknown locationId "${tree.locationId}"`);
+  return tree;
+});
+export const dateTrees = dateFilesTyped;
 
 // ── lookups ──────────────────────────────────────────────────────────────────
 
