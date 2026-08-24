@@ -9,6 +9,7 @@ import type { DateTree } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
 import DateDebrief from "./DateDebrief";
+import ArchivePanel from "./ArchivePanel";
 import styles from "./TravelMap.module.css";
 import { REVEAL_MIN_ENCOUNTERS } from "@/game/types";
 
@@ -26,6 +27,7 @@ export default function TravelMap() {
   // Threshold moment (P7-01): crossing REVEAL_MIN_ENCOUNTERS triggers a one-time
   // dramatic popup over the map — the reveal is a bigger deal than a button.
   const [thresholdPopup, setThresholdPopup] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(false);
 
   useEffect(() => {
     const done = state.completedTrees;
@@ -270,7 +272,16 @@ export default function TravelMap() {
         </motion.div>
       )}
 
-      <div className={styles.controlsHint}>esc · title</div>
+      <button
+          className={styles.archiveBtn}
+          onClick={(e) => { e.stopPropagation(); setArchiveOpen(true); }}
+        >
+          ARCHIVE
+        </button>
+        <div className={styles.controlsHint}>esc · title</div>
+        <AnimatePresence>
+          {archiveOpen && <ArchivePanel onClose={() => setArchiveOpen(false)} />}
+        </AnimatePresence>
     </div>
   );
 }
