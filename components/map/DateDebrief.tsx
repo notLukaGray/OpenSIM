@@ -2,12 +2,18 @@
 // DateDebrief (P6-02): the receipt of an encounter — what your choices revealed,
 // how perception shifted, where chemistry moved. The lesson lands per-date.
 import { motion } from "framer-motion";
+import { getEvidence } from "@/content/registry";
 import { summarizeDate } from "@/game/debrief";
 import { GameState, NEED_LABELS } from "@/game/types";
 import styles from "./DateDebrief.module.css";
 
 export default function DateDebrief({ tree, state, onDismiss }: { tree: import("@/content/schema").DateTree; state: GameState; onDismiss: () => void }) {
   const d = summarizeDate(tree, state);
+  // Marketing materials surfaced during this encounter (P6-02 + P6-01).
+  const materials = Object.values(tree.nodes)
+    .map((n) => n.evidence)
+    .filter((id): id is string => typeof id === "string" && state.unlockedEvidence.includes(id))
+    .map((id) => getEvidence(id));
   return (
     <motion.div
       className={styles.wrap}
@@ -45,6 +51,16 @@ export default function DateDebrief({ tree, state, onDismiss }: { tree: import("
             {d.perception.map((p) => (
               <div key={p.label} className={styles.row}>
                 <strong style={{ color: d.brandColor }}>{p.label}</strong> — {p.text}
+              </div>
+            ))}
+          </>
+        )}
+        {materials.length > 0 && (
+          <>
+            <div className={styles.sectionLabel}>MARKETING MATERIALS SURFACED</div>
+            {materials.map((m) => (
+              <div key={m.id} className={styles.row}>
+                <strong style={{ color: d.brandColor }}>{m.title}</strong> — {m.description}
               </div>
             ))}
           </>
