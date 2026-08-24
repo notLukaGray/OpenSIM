@@ -18,7 +18,7 @@
   "startNode": "intro",
   "lessons": [
     "capacity became the moat",
-    "winning a shrinking pond still counts \u2014 probably",
+    "winning a shrinking pond still counts — probably",
     "extension churn taxes retail faith"
   ],
   "nodes": {
@@ -35,7 +35,7 @@
       "choices": [
         {
           "id": "conviction",
-          "text": "Bet big while everyone squints \u2014 that's how moats happen.",
+          "text": "Bet big while everyone squints — that's how moats happen.",
           "next": "branch-conviction",
           "playerEffects": {
             "aspiration": 2,
@@ -91,7 +91,8 @@
       "text": [
         "Finally, someone fluent in confidence."
       ],
-      "next": "shelf-truth"
+      "next": "shelf-truth",
+      "evidence": "ev-white-claw-alcohol-is-alcohol"
     },
     "branch-reckless": {
       "speaker": "WHITE CLAW",
@@ -116,7 +117,7 @@
     "shelf-truth": {
       "speaker": "...",
       "text": [
-        "Aisle five testifies: about sixty percent of the seltzer row is Claw \u2014 of a pond that shrinks every year. Discount stickers mark the ghosts beside the throne: Iced Tea, down seventy-seven percent, rest in peace."
+        "Aisle five testifies: about sixty percent of the seltzer row is Claw — of a pond that shrinks every year. Discount stickers mark the ghosts beside the throne: Iced Tea, down seventy-seven percent, rest in peace."
       ],
       "next": "tension"
     },
@@ -126,7 +127,7 @@
         "expression": "neutral"
       },
       "text": [
-        "So which is it \u2014 the last one standing, or the curator of a museum?",
+        "So which is it — the last one standing, or the curator of a museum?",
         "Winning a game fewer people play each year still counts. I think. Ask me again in July."
       ],
       "choices": [
@@ -180,7 +181,9 @@
               "mastery": -1
             }
           },
-          "setFlags": ["claw-pivot-nod"]
+          "setFlags": [
+            "claw-pivot-nod"
+          ]
         }
       ]
     },
@@ -204,7 +207,7 @@
         }
       ],
       "text": [
-        "Anyway \u2014 shelf's yours to raid. The throne shares."
+        "Anyway — shelf's yours to raid. The throne shares."
       ],
       "nextTree": "map"
     }

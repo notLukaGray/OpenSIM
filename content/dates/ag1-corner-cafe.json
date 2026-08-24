@@ -3,10 +3,18 @@
   "brandId": "ag1",
   "title": "The Fourteenth Ad Read",
   "locationId": "corner-cafe",
-  "context": { "location": "corner-cafe", "occasion": "cafe" },
+  "context": {
+    "location": "corner-cafe",
+    "occasion": "cafe"
+  },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-ag1-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-ag1-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "saturation is the shadow of sincerity",
@@ -16,70 +24,116 @@
   "nodes": {
     "intro": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral", "effect": "enter" },
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
       "text": [
-        "You found me. Off-brand of me, I know \u2014 daylight, other people's furniture.",
+        "You found me. Off-brand of me, I know — daylight, other people's furniture.",
         "Sit. Your flat white is cooling while I rehearse my monologue."
       ],
       "next": "impression"
     },
     "impression": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Wait. Listen \u2014 two tables over. Someone's podcast is\u2014",
-        "There. 'Because I'm not big on vegetables, I start every day with\u2026' That's me. Third read this block."
+        "Wait. Listen — two tables over. Someone's podcast is—",
+        "There. 'Because I'm not big on vegetables, I start every day with…' That's me. Third read this block."
       ],
       "choices": [
         {
           "id": "count",
           "text": "That's the fourth ad read you've gotten today. You're everywhere.",
           "next": "branch-count",
-          "playerEffects": { "mastery": 1, "trust": -1 },
-          "brandPerceptionEffects": { "ag1": { "trust": -2, "excitement": -1 } },
-          "relationshipEffects": { "ag1": -1 },
-          "setFlags": ["heard-the-ad-read"]
+          "playerEffects": {
+            "mastery": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -2,
+              "excitement": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          },
+          "setFlags": [
+            "heard-the-ad-read"
+          ]
         },
         {
           "id": "comfort",
           "text": "Hey. I'm here for you, not your marketing.",
           "next": "branch-comfort",
-          "playerEffects": { "reassurance": 2, "belonging": 1 },
-          "brandPerceptionEffects": { "ag1": { "comfort": 2, "belonging": 1 } },
-          "relationshipEffects": { "ag1": 2 }
+          "playerEffects": {
+            "reassurance": 2,
+            "belonging": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 2,
+              "belonging": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 2
+          }
         },
         {
           "id": "math",
           "text": "How much do they get paid to say that about you?",
           "next": "branch-math",
-          "playerEffects": { "control": 1, "mastery": 2 },
-          "brandPerceptionEffects": { "ag1": { "trust": -2, "mastery": -1 } },
-          "relationshipEffects": { "ag1": -1 },
-          "setFlags": ["asked-the-cut"]
+          "playerEffects": {
+            "control": 1,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -2,
+              "mastery": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          },
+          "setFlags": [
+            "asked-the-cut"
+          ]
         }
-      ]
+      ],
+      "evidence": "ev-ag1-scoop"
     },
     "branch-count": {
       "speaker": "AG1",
-      "sprite": { "expression": "annoyed" },
+      "sprite": {
+        "expression": "annoyed"
+      },
       "text": [
-        "'Everywhere' is generous. It's more like\u2026 ambient.",
+        "'Everywhere' is generous. It's more like… ambient.",
         "I used to be a secret you shared with one friend. Now I'm a jingle with a shaker bottle."
       ],
       "next": "tension"
     },
     "branch-comfort": {
       "speaker": "AG1",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "Careful. Say things like that and I'll schedule you daily.",
-        "\u2026More daily than I already do."
+        "…More daily than I already do."
       ],
       "next": "tension"
     },
     "branch-math": {
       "speaker": "AG1",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "Between twenty and fifty percent of whatever the listener spends. Per host. Don't look at me like that.",
         "The testimonial is sincere. The testimonial is also a commission."
@@ -88,28 +142,53 @@
     },
     "tension": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "Here's what keeps the shaker bottle up at night:",
-        "Did you choose me at your kitchen counter \u2014 or did a checkout page, tuned by the fourteenth ad read, choose you?"
+        "Did you choose me at your kitchen counter — or did a checkout page, tuned by the fourteenth ad read, choose you?"
       ],
       "choices": [
         {
           "id": "chose-you",
           "text": "I chose you. The ad was just how we met.",
           "next": "wrap",
-          "playerEffects": { "comfort": 1, "trust": 2 },
-          "brandPerceptionEffects": { "ag1": { "trust": 2, "belonging": 1 } },
-          "relationshipEffects": { "ag1": 2 }
+          "playerEffects": {
+            "comfort": 1,
+            "trust": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": 2,
+              "belonging": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 2
+          }
         },
         {
           "id": "farmed",
           "text": "Honestly? I think we were introduced by a marketing funnel.",
           "next": "wrap",
-          "playerEffects": { "mastery": 1, "control": 1, "trust": -1 },
-          "brandPerceptionEffects": { "ag1": { "trust": -1, "aspiration": -1 } },
-          "relationshipEffects": { "ag1": 0 },
-          "setFlags": ["suspected-the-funnel"]
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "aspiration": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 0
+          },
+          "setFlags": [
+            "suspected-the-funnel"
+          ]
         }
       ]
     },

@@ -30,7 +30,7 @@
       },
       "text": [
         "Don't look at my phone. The phone is a nightmare today.",
-        "One pallet left in the tri-state area and three accounts about to riot. Here \u2014 you arbitrate."
+        "One pallet left in the tri-state area and three accounts about to riot. Here — you arbitrate."
       ],
       "choices": [
         {
@@ -80,7 +80,9 @@
               "control": -1
             }
           },
-          "setFlags": ["claw-split-the-pallet"]
+          "setFlags": [
+            "claw-split-the-pallet"
+          ]
         }
       ]
     },
@@ -92,7 +94,8 @@
       "text": [
         "The store that believed before the meme gets the wave first. Noted."
       ],
-      "next": "fallout"
+      "next": "fallout",
+      "evidence": "ev-white-claw-cut-the-ads"
     },
     "branch-volume": {
       "speaker": "WHITE CLAW",
@@ -117,7 +120,7 @@
     "fallout": {
       "speaker": "...",
       "text": [
-        "By sundown the rationing list reads like a grudge ledger \u2014 dry shelves, reseller markups, one very smug vendor."
+        "By sundown the rationing list reads like a grudge ledger — dry shelves, reseller markups, one very smug vendor."
       ],
       "next": "tension"
     },
@@ -170,7 +173,7 @@
         },
         {
           "id": "sorry-tour",
-          "text": "Then apologize like it's inventory \u2014 account by account.",
+          "text": "Then apologize like it's inventory — account by account.",
           "next": "wrap",
           "playerEffects": {
             "trust": 2,
@@ -182,7 +185,9 @@
               "readiness": -1
             }
           },
-          "setFlags": ["claw-apology-tour"]
+          "setFlags": [
+            "claw-apology-tour"
+          ]
         }
       ]
     },
@@ -201,7 +206,7 @@
         {
           "if": "split",
           "text": [
-            "Equal disappointment \u2014 the most honest party favor I've ever handed out."
+            "Equal disappointment — the most honest party favor I've ever handed out."
           ]
         }
       ],

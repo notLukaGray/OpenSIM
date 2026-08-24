@@ -239,5 +239,173 @@
     "type": "background",
     "src": "/assets/backgrounds/bg-grocery-store.svg",
     "alt": "Fluorescent honesty"
+  },
+  {
+    "id": "ev-liquid-iv-sugar-ratio",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-liquid-iv-sugar-ratio.svg",
+    "alt": "69% Sugar by Weight"
+  },
+  {
+    "id": "ev-liquid-iv-nightlife-nod",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-liquid-iv-nightlife-nod.svg",
+    "alt": "The Nightlife Nod"
+  },
+  {
+    "id": "ev-whoop-watney-save",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-whoop-watney-save.svg",
+    "alt": "The Watney Save — 2 A.M."
+  },
+  {
+    "id": "ev-whoop-runrate-ledger",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-whoop-runrate-ledger.svg",
+    "alt": "Rent Your Biometrics: $1.1B Run-Rate"
+  },
+  {
+    "id": "ev-celsius-fatburn-label",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-celsius-fatburn-label.svg",
+    "alt": "\"Burns Body Fat\" — Mind the Asterisk"
+  },
+  {
+    "id": "ev-celsius-paid-tribe",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-celsius-paid-tribe.svg",
+    "alt": "The Paid Campus Tribe"
+  },
+  {
+    "id": "ev-ag1-host-adread",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-ag1-host-adread.svg",
+    "alt": "The Fourteenth Ad Read"
+  },
+  {
+    "id": "ev-ag1-recurring-invoice",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-ag1-recurring-invoice.svg",
+    "alt": "$79 a Month, Renewing Nicely"
+  },
+  {
+    "id": "ev-starbucks-float-ledger",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-starbucks-float-ledger.svg",
+    "alt": "Your gift card is their working capital"
+  },
+  {
+    "id": "ev-starbucks-wrong-name-curve",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-starbucks-wrong-name-curve.svg",
+    "alt": "The wrong-name curve"
+  },
+  {
+    "id": "ev-oura-gucci-ring",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-oura-gucci-ring.svg",
+    "alt": "Rest has a dress code"
+  },
+  {
+    "id": "ev-oura-pre-symptom-flag",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-oura-pre-symptom-flag.svg",
+    "alt": "Three days before symptoms"
+  },
+  {
+    "id": "ev-zen-churn-trio",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-zen-churn-trio.svg",
+    "alt": "The churn trio"
+  },
+  {
+    "id": "ev-zen-entrainment-doubt",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-zen-entrainment-doubt.svg",
+    "alt": "Binaural beats on trial"
+  },
+  {
+    "id": "ev-red-bull-media-house",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-red-bull-media-house.svg",
+    "alt": "Content Is the Ad Budget"
+  },
+  {
+    "id": "ev-red-bull-wings-ledger",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-red-bull-wings-ledger.svg",
+    "alt": "$13M for Wings"
+  },
+  {
+    "id": "ev-eight-sleep-deep-sleep-stat",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-eight-sleep-deep-sleep-stat.svg",
+    "alt": "+22% Deep Sleep*"
+  },
+  {
+    "id": "ev-eight-sleep-year-five-cost",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-eight-sleep-year-five-cost.svg",
+    "alt": "Year Five: $6,900"
+  },
+  {
+    "id": "ev-liquid-death-pre-launch-ghost",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-liquid-death-pre-launch-ghost.svg",
+    "alt": "3M Views Before the First Can"
+  },
+  {
+    "id": "ev-liquid-death-can-autopsy",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-liquid-death-can-autopsy.svg",
+    "alt": "Can Autopsy: Plastic Inside"
+  },
+  {
+    "id": "ev-white-claw-cut-the-ads",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-white-claw-cut-the-ads.svg",
+    "alt": "Cut the Ads, Kept the Boom"
+  },
+  {
+    "id": "ev-white-claw-alcohol-is-alcohol",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-white-claw-alcohol-is-alcohol.svg",
+    "alt": "Alcohol Is Still Alcohol"
+  },
+  {
+    "id": "ev-athletic-brewing-half-a-percent",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-athletic-brewing-half-a-percent.svg",
+    "alt": "\"Non-Alcoholic\" Means Up to 0.5%"
+  },
+  {
+    "id": "ev-athletic-brewing-9-99-vs-13-99",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-athletic-brewing-9-99-vs-13-99.svg",
+    "alt": "$9.99 vs $13.99"
+  },
+  {
+    "id": "ev-zyn-even-when-they-ask-us",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-zyn-even-when-they-ask-us.svg",
+    "alt": "Even When They Ask Us"
+  },
+  {
+    "id": "ev-zyn-authorized-not-approved",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-zyn-authorized-not-approved.svg",
+    "alt": "Authorized ≠ Approved"
+  },
+  {
+    "id": "ev-na-spirits-who-owns-independent",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-na-spirits-who-owns-independent.svg",
+    "alt": "Who Owns \"Independent\"?"
+  },
+  {
+    "id": "ev-na-spirits-mixer-subsidy",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-na-spirits-mixer-subsidy.svg",
+    "alt": "The Mixer Subsidy"
   }
 ]

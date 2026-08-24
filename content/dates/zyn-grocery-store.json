@@ -3,10 +3,18 @@
   "brandId": "zyn",
   "title": "Shortage Pilgrimage",
   "locationId": "grocery-store",
-  "context": { "location": "grocery-store", "occasion": "errand" },
+  "context": {
+    "location": "grocery-store",
+    "occasion": "errand"
+  },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-zyn-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-zyn-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "the tin hunt was real and it was lore",
@@ -16,7 +24,10 @@
   "nodes": {
     "intro": {
       "speaker": "ZYN",
-      "sprite": { "expression": "annoyed", "effect": "enter" },
+      "sprite": {
+        "expression": "annoyed",
+        "effect": "enter"
+      },
       "text": [
         "Aisle five. Behold: the hook where I used to live.",
         "You already know me, so no pitch. Just the empty shelf and what it did to people."
@@ -26,39 +37,72 @@
           "id": "veteran",
           "text": "Summer '24. I drove to three stores for one tin.",
           "next": "branch-veteran",
-          "playerEffects": { "belonging": 2, "excitement": 1 },
-          "brandPerceptionEffects": { "zyn": { "belonging": 2, "aspiration": 1 } },
-          "relationshipEffects": { "zyn": 1 }
+          "playerEffects": {
+            "belonging": 2,
+            "excitement": 1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "belonging": 2,
+              "aspiration": 1
+            }
+          },
+          "relationshipEffects": {
+            "zyn": 1
+          }
         },
         {
           "id": "tourist",
           "text": "There was a shortage? Genuinely never noticed.",
           "next": "branch-tourist",
-          "playerEffects": { "control": 1, "mastery": -1 },
-          "brandPerceptionEffects": { "zyn": { "belonging": 1, "excitement": 1 } }
+          "playerEffects": {
+            "control": 1,
+            "mastery": -1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "belonging": 1,
+              "excitement": 1
+            }
+          }
         },
         {
           "id": "economist",
           "text": "Empty shelves usually mean somebody planned something.",
           "next": "branch-economist",
-          "playerEffects": { "mastery": 2, "trust": 1 },
-          "brandPerceptionEffects": { "zyn": { "trust": -1, "mastery": 1 } },
-          "setFlags": ["smelled-the-plan"]
+          "playerEffects": {
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "trust": -1,
+              "mastery": 1
+            }
+          },
+          "setFlags": [
+            "smelled-the-plan"
+          ]
         }
       ]
     },
     "branch-veteran": {
       "speaker": "ZYN",
-      "sprite": { "expression": "special" },
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
         "A pilgrim! Go on: parking lots, phone calls ahead, one can rationed like gold.",
         "People were paying resale for flavored gum-pillies. Incredible era."
       ],
-      "next": "hunt"
+      "next": "hunt",
+      "evidence": "ev-zyn-authorized-not-approved"
     },
     "branch-tourist": {
       "speaker": "ZYN",
-      "sprite": { "expression": "annoyed" },
+      "sprite": {
+        "expression": "annoyed"
+      },
       "text": [
         "Lucky you. Everyone else was doing store-to-store treasure hunts.",
         "Scarcity looked great on nobody. Except, statistically, on me."
@@ -67,7 +111,9 @@
     },
     "branch-economist": {
       "speaker": "ZYN",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "...We'll get there. Walk with me first.",
         "You're going to make me say the quiet part in aisle five, aren't you."
@@ -76,7 +122,9 @@
     },
     "hunt": {
       "speaker": "ZYN",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "Early '24: shipments up eighty percent in a quarter, and the shelves still went bare.",
         "That's when zynnies became folklore you couldn't buy. Want something? Tell it it's rare."
@@ -85,7 +133,9 @@
     },
     "tension": {
       "speaker": "ZYN",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "Mid-shortage we announced new plants. Six hundred million in Colorado, more in Kentucky.",
         "Demand outran supply so hard we built factories about it. The shortage did our marketing free of charge."
@@ -95,18 +145,42 @@
           "id": "impressed",
           "text": "Turning 'we ran out' into a legend. Genuinely elite.",
           "next": "wrap",
-          "playerEffects": { "excitement": 1, "aspiration": 1, "control": -1 },
-          "brandPerceptionEffects": { "zyn": { "aspiration": 2, "excitement": 1, "trust": -1 } },
-          "relationshipEffects": { "zyn": 1 },
-          "setFlags": ["tin-hunt-convert"]
+          "playerEffects": {
+            "excitement": 1,
+            "aspiration": 1,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "aspiration": 2,
+              "excitement": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "zyn": 1
+          },
+          "setFlags": [
+            "tin-hunt-convert"
+          ]
         },
         {
           "id": "skeptical",
           "text": "Or the desire was engineered, then billed as destiny.",
           "next": "wrap",
-          "playerEffects": { "mastery": 2, "control": 1 },
-          "brandPerceptionEffects": { "zyn": { "trust": -2, "control": -1 } },
-          "setFlags": ["called-the-shortage"]
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "trust": -2,
+              "control": -1
+            }
+          },
+          "setFlags": [
+            "called-the-shortage"
+          ]
         }
       ]
     },
@@ -130,7 +204,7 @@
       ],
       "text": [
         "Restock truck comes Thursday. The mythology restocks itself either way.",
-        "Take the last tin if you see one. Or leave it \u2014 scarcity needs witnesses."
+        "Take the last tin if you see one. Or leave it — scarcity needs witnesses."
       ],
       "nextTree": "map"
     }

@@ -29,7 +29,7 @@
       },
       "text": [
         "Beach day! I brought the cooler, the playlist, and 200 milligrams of sunshine.",
-        "That's two cups of coffee in a bikini of bubbles \u2014 if you're counting."
+        "That's two cups of coffee in a bikini of bubbles — if you're counting."
       ],
       "choices": [
         {
@@ -123,7 +123,8 @@
         "You know the cooler.",
         "Slim cans on ice, each one promising the day will go exactly to plan."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-celsius-fatburn-label"
     },
     "tension": {
       "speaker": "CELSIUS",

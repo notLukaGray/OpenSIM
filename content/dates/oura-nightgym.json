@@ -94,7 +94,8 @@
         "There it is — the tribe's handshake. Score for score, no names required.",
         "Two strangers, one decimal apart, and suddenly you're kin."
       ],
-      "next": "handshake"
+      "next": "handshake",
+      "evidence": "ev-oura-pre-symptom-flag"
     },
     "branch-refuse": {
       "speaker": "OURA",

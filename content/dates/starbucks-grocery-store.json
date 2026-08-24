@@ -29,7 +29,7 @@
       },
       "text": [
         "Checkout lane. Gift-card tower. You're already holding forty dollars of me.",
-        "We're past pretending now, so \u2014 want to see where that money actually lives?"
+        "We're past pretending now, so — want to see where that money actually lives?"
       ],
       "next": "impression"
     },
@@ -40,7 +40,7 @@
       },
       "text": [
         "Members preload billions every quarter before a single latte exists. Eleven to thirteen billion a year, prepaid.",
-        "Until you swipe it, that balance pays my partners. Loyalty as an interest-free loan \u2014 mine, not yours."
+        "Until you swipe it, that balance pays my partners. Loyalty as an interest-free loan — mine, not yours."
       ],
       "choices": [
         {
@@ -113,7 +113,7 @@
         "expression": "happy"
       },
       "text": [
-        "Flattery logged. The float is my quietest engine \u2014 nobody ever tips it."
+        "Flattery logged. The float is my quietest engine — nobody ever tips it."
       ],
       "next": "experience"
     },
@@ -123,7 +123,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Plus breakage \u2014 forgotten balances are pure margin. I did say past pretending."
+        "Plus breakage — forgotten balances are pure margin. I did say past pretending."
       ],
       "next": "experience"
     },
@@ -136,7 +136,8 @@
         "Close to half my register rings through stored cards and the app now.",
         "You prepay convenience, I bank certainty. Nobody's lying; somebody is lending."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-starbucks-float-ledger"
     },
     "tension": {
       "speaker": "STARBUCKS",
@@ -192,7 +193,7 @@
         },
         {
           "id": "scorekeeper",
-          "text": "I'll keep the card \u2014 and keep score.",
+          "text": "I'll keep the card — and keep score.",
           "next": "closing",
           "playerEffects": {
             "control": 2,

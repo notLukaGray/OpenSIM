@@ -29,7 +29,7 @@
       },
       "text": [
         "Late shift? I brought the only coworker who never misses a deadline.",
-        "Grande Pike Place \u2014 three hundred eighty milligrams of \"you've got this.\""
+        "Grande Pike Place — three hundred eighty milligrams of \"you've got this.\""
       ],
       "next": "impression"
     },
@@ -126,7 +126,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then the cup is yours twice \u2014 once for the hands, once for the staying."
+        "Then the cup is yours twice — once for the hands, once for the staying."
       ],
       "next": "experience"
     },
@@ -139,7 +139,8 @@
         "Fuel first, feelings second. You hit the deadline, I stay essential, everyone applauds quietly.",
         "Six square feet of desk is my whole third place now. No chairs required."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-starbucks-wrong-name-curve"
     },
     "tension": {
       "speaker": "STARBUCKS",

@@ -3,10 +3,18 @@
   "brandId": "zyn",
   "title": "Discreet By Design",
   "locationId": "office",
-  "context": { "location": "office", "occasion": "late-overtime" },
+  "context": {
+    "location": "office",
+    "occasion": "late-overtime"
+  },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-zyn-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-zyn-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "discretion is the entire feature",
@@ -16,7 +24,10 @@
   "nodes": {
     "intro": {
       "speaker": "ZYN",
-      "sprite": { "expression": "neutral", "effect": "enter" },
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
       "text": [
         "Deck's due at nine and it's just us and the janitor's vacuum. Cozy.",
         "No smoke break needed, by the way. That's kind of the whole pitch."
@@ -26,48 +37,82 @@
           "id": "accept",
           "text": "Fine. What's the discreet version of a coffee break?",
           "next": "branch-accept",
-          "playerEffects": { "comfort": 2, "readiness": 1 },
-          "brandPerceptionEffects": { "zyn": { "comfort": 2, "readiness": 1 } },
-          "relationshipEffects": { "zyn": 1 }
+          "playerEffects": {
+            "comfort": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "comfort": 2,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "zyn": 1
+          }
         },
         {
           "id": "decline",
           "text": "I'm good. Coffee is enough vice for a Tuesday.",
           "next": "branch-decline",
-          "playerEffects": { "control": 2 },
-          "brandPerceptionEffects": { "zyn": { "comfort": -1, "control": 1 } }
+          "playerEffects": {
+            "control": 2
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "comfort": -1,
+              "control": 1
+            }
+          }
         },
         {
           "id": "audit",
           "text": "Odorless, invisible... discreet for whom, exactly?",
           "next": "branch-audit",
-          "playerEffects": { "mastery": 2, "trust": 1 },
-          "brandPerceptionEffects": { "zyn": { "trust": -1, "mastery": 1 } },
-          "setFlags": ["asked-whos-it-for"]
+          "playerEffects": {
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "trust": -1,
+              "mastery": 1
+            }
+          },
+          "setFlags": [
+            "asked-whos-it-for"
+          ]
         }
       ]
     },
     "branch-accept": {
       "speaker": "ZYN",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "Tuck it top lip, keep typing. Nobody in that room will ever know.",
         "That's the feature. No flame, no fog, no HR email."
       ],
-      "next": "flow"
+      "next": "flow",
+      "evidence": "ev-zyn-even-when-they-ask-us"
     },
     "branch-decline": {
       "speaker": "ZYN",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Respect. Caffeine and hydration \u2014 the classics.",
+        "Respect. Caffeine and hydration — the classics.",
         "I'll be here being invisible. It's mostly waiting."
       ],
       "next": "flow"
     },
     "branch-audit": {
       "speaker": "ZYN",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "Sharp question for someone on their fifth revision tonight.",
         "Discreet for the room. Convenient for me. Same pocket, honestly."
@@ -76,7 +121,9 @@
     },
     "flow": {
       "speaker": "ZYN",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "Watch: three-hour review call, zero smoke breaks, zero smell, zero clues.",
         "You'll finish the deck and nobody will know how. That's the romance."
@@ -85,7 +132,9 @@
     },
     "tension": {
       "speaker": "ZYN",
-      "sprite": { "expression": "annoyed" },
+      "sprite": {
+        "expression": "annoyed"
+      },
       "text": [
         "Honest hour: when something leaves no evidence, you stop counting it.",
         "And the rewards app scans every can anyway. Points banked. Even the habit keeps score."
@@ -95,17 +144,38 @@
           "id": "comfortable",
           "text": "Invisible comfort got me through Q3. I'll take the win.",
           "next": "wrap",
-          "playerEffects": { "comfort": 2, "control": -1 },
-          "brandPerceptionEffects": { "zyn": { "comfort": 2, "readiness": 1, "control": -1 } },
-          "relationshipEffects": { "zyn": 1 },
-          "setFlags": ["desk-tin"]
+          "playerEffects": {
+            "comfort": 2,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "comfort": 2,
+              "readiness": 1,
+              "control": -1
+            }
+          },
+          "relationshipEffects": {
+            "zyn": 1
+          },
+          "setFlags": [
+            "desk-tin"
+          ]
         },
         {
           "id": "spooked",
           "text": "'Stops counting' is doing a lot of load-bearing work in that sentence.",
           "next": "wrap",
-          "playerEffects": { "control": 2, "trust": 1 },
-          "brandPerceptionEffects": { "zyn": { "control": -2, "trust": -1 } }
+          "playerEffects": {
+            "control": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "zyn": {
+              "control": -2,
+              "trust": -1
+            }
+          }
         }
       ]
     },

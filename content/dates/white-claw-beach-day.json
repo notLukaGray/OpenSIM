@@ -35,7 +35,7 @@
       "choices": [
         {
           "id": "quote",
-          "text": "\u201cAin't no laws,\u201d right? Been saving that one all summer.",
+          "text": "“Ain't no laws,” right? Been saving that one all summer.",
           "next": "branch-quote",
           "playerEffects": {
             "excitement": 2,
@@ -73,7 +73,7 @@
         },
         {
           "id": "origin",
-          "text": "Real question \u2014 where did any of this actually start?",
+          "text": "Real question — where did any of this actually start?",
           "next": "branch-origin",
           "playerEffects": {
             "mastery": 1,
@@ -85,7 +85,9 @@
               "trust": 1
             }
           },
-          "setFlags": ["claw-asked-the-origin"]
+          "setFlags": [
+            "claw-asked-the-origin"
+          ]
         }
       ]
     },
@@ -125,7 +127,8 @@
       "text": [
         "Three speaker circles down the sand are yelling the same catchphrase at the water. None of them is talking to the can in your hand."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-white-claw-cut-the-ads"
     },
     "tension": {
       "speaker": "WHITE CLAW",
@@ -134,7 +137,7 @@
       },
       "text": [
         "Everyone can finish my joke. Almost nobody knows my name.",
-        "Summer of '19 the whole coast sold out \u2014 and while fans did my marketing for free, I quietly cut my own ad spend."
+        "Summer of '19 the whole coast sold out — and while fans did my marketing for free, I quietly cut my own ad spend."
       ],
       "choices": [
         {
@@ -170,7 +173,9 @@
               "control": -1
             }
           },
-          "setFlags": ["claw-fans-get-the-pen"]
+          "setFlags": [
+            "claw-fans-get-the-pen"
+          ]
         },
         {
           "id": "sting",

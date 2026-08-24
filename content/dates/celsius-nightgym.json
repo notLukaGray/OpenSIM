@@ -122,7 +122,8 @@
         "You know the bench-talk ritual.",
         "Someone always swears the slim can did what the training log says discipline did."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-celsius-paid-tribe"
     },
     "tension": {
       "speaker": "CELSIUS",
@@ -178,7 +179,7 @@
         {
           "if": "reps",
           "text": [
-            "And for the record \u2014 she says thanks. She heard you."
+            "And for the record — she says thanks. She heard you."
           ]
         },
         {

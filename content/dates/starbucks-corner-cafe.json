@@ -39,8 +39,8 @@
         "expression": "happy"
       },
       "text": [
-        "This corner is my audition, you know. For \"third place\" \u2014 not home, not work.",
-        "So. Honest first impression, and be gentle \u2014 the whole street is watching."
+        "This corner is my audition, you know. For \"third place\" — not home, not work.",
+        "So. Honest first impression, and be gentle — the whole street is watching."
       ],
       "choices": [
         {
@@ -135,9 +135,10 @@
       },
       "text": [
         "Watch the Sharpie. Your name, spelled right, lettered while you stand there.",
-        "Tiny thing. Mandated since the great comeback tour \u2014 but tiny."
+        "Tiny thing. Mandated since the great comeback tour — but tiny."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-starbucks-float-ledger"
     },
     "tension": {
       "speaker": "STARBUCKS",
@@ -146,7 +147,7 @@
       },
       "text": [
         "Confession: miss the note twice, and a manager \"coaches\" you on warmth.",
-        "A sociologist once called me an imitation third place. Straight answer \u2014 was he wrong?"
+        "A sociologist once called me an imitation third place. Straight answer — was he wrong?"
       ],
       "choices": [
         {
@@ -241,7 +242,7 @@
       ],
       "text": [
         "Come back tomorrow and I'll perform all of it again, exactly the same.",
-        "Whether that's the sweetest thing about me or the saddest \u2014 homework."
+        "Whether that's the sweetest thing about me or the saddest — homework."
       ],
       "nextTree": "map"
     }

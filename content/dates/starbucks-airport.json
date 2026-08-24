@@ -29,7 +29,7 @@
       },
       "text": [
         "Departures level, gate-side table, one green siren among forty thousand.",
-        "Wherever you land, I taste exactly like this. Go ahead \u2014 test me sometime."
+        "Wherever you land, I taste exactly like this. Go ahead — test me sometime."
       ],
       "next": "impression"
     },
@@ -39,7 +39,7 @@
         "expression": "happy"
       },
       "text": [
-        "Delayed flight, wrong city, near midnight \u2014 and the Pike Place is identical to the one in Beijing.",
+        "Delayed flight, wrong city, near midnight — and the Pike Place is identical to the one in Beijing.",
         "People call that a hug. Some call it surrender. Which is it tonight?"
       ],
       "choices": [
@@ -124,7 +124,7 @@
         "expression": "happy"
       },
       "text": [
-        "Tall, grande, venti \u2014 twenty in Italian, chosen so a cup of joe would feel exotic. Welcome to the fluent table."
+        "Tall, grande, venti — twenty in Italian, chosen so a cup of joe would feel exotic. Welcome to the fluent table."
       ],
       "next": "experience"
     },
@@ -137,7 +137,8 @@
         "Beijing poured me in January of ninety-nine. Eight thousand stores ago, one identical recipe.",
         "Every airport copy ships the same promise: no surprises. Not even the pleasant kind."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-starbucks-float-ledger"
     },
     "tension": {
       "speaker": "STARBUCKS",
@@ -146,7 +147,7 @@
       },
       "text": [
         "Meanwhile a rival back in China pours faster and cheaper, and \"same everywhere\" starts reading as \"slow.\"",
-        "So \u2014 do you keep dating the familiar, or does comfort quietly become a cage?"
+        "So — do you keep dating the familiar, or does comfort quietly become a cage?"
       ],
       "choices": [
         {
@@ -226,7 +227,7 @@
         {
           "if": "lingo",
           "text": [
-            "Venti travels better than \"large\" ever will. Fluent and loyal \u2014 dangerous combination."
+            "Venti travels better than \"large\" ever will. Fluent and loyal — dangerous combination."
           ]
         },
         {

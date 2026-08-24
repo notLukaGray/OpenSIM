@@ -3,10 +3,18 @@
   "brandId": "ag1",
   "title": "Seventy-Nine Dollars",
   "locationId": "grocery-store",
-  "context": { "location": "grocery-store", "occasion": "errand" },
+  "context": {
+    "location": "grocery-store",
+    "occasion": "errand"
+  },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-ag1-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-ag1-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "the premium is not the nutrients",
@@ -16,16 +24,21 @@
   "nodes": {
     "intro": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral", "effect": "enter" },
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
       "text": [
         "Don't put me back on the shelf like that. People will talk.",
-        "Yes \u2014 seventy-nine dollars a month. I heard you do the math out loud."
+        "Yes — seventy-nine dollars a month. I heard you do the math out loud."
       ],
       "next": "impression"
     },
     "impression": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "Go on, compare me. The spinach is right there and it's gorgeous this week.",
         "The multivitamin behind you costs about three cents a day. She's very honest about what she is."
@@ -35,33 +48,70 @@
           "id": "receipt",
           "text": "A month of you costs more than my entire produce drawer.",
           "next": "branch-receipt",
-          "playerEffects": { "control": 1, "mastery": 1 },
-          "brandPerceptionEffects": { "ag1": { "trust": -1, "aspiration": -1 } },
-          "relationshipEffects": { "ag1": -1 }
+          "playerEffects": {
+            "control": 1,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -1,
+              "aspiration": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          }
         },
         {
           "id": "value",
           "text": "It's not the ingredients I'm buying. It's not having to think.",
           "next": "branch-value",
-          "playerEffects": { "comfort": 2, "readiness": 1 },
-          "brandPerceptionEffects": { "ag1": { "comfort": 2, "control": 1 } },
-          "relationshipEffects": { "ag1": 1 },
-          "setFlags": ["praised-the-convenience"]
+          "playerEffects": {
+            "comfort": 2,
+            "readiness": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 2,
+              "control": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          },
+          "setFlags": [
+            "praised-the-convenience"
+          ]
         },
         {
           "id": "blend",
           "text": "Then tell me exactly what's inside the scoop.",
           "next": "branch-blend",
-          "playerEffects": { "mastery": 2, "trust": -1 },
-          "brandPerceptionEffects": { "ag1": { "trust": -2, "mastery": -1 } },
-          "relationshipEffects": { "ag1": -1 },
-          "setFlags": ["read-the-fine-print"]
+          "playerEffects": {
+            "mastery": 2,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "trust": -2,
+              "mastery": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          },
+          "setFlags": [
+            "read-the-fine-print"
+          ]
         }
-      ]
+      ],
+      "evidence": "ev-ag1-host-adread"
     },
     "branch-receipt": {
       "speaker": "AG1",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "Fair. For that money you could eat like a small renaissance fair.",
         "You're not paying for spinach, though. You're paying to never think about spinach again."
@@ -70,7 +120,9 @@
     },
     "branch-value": {
       "speaker": "AG1",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "Exactly that. One decision made well, repeated forever.",
         "Convenience is an ingredient too. Nobody prints it on the label."
@@ -79,18 +131,22 @@
     },
     "branch-blend": {
       "speaker": "AG1",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "Nine grams of 'proprietary blend.' After those words, the label stops naming names.",
-        "Purity, I can show you certificates for. Potency is\u2026 shy."
+        "Purity, I can show you certificates for. Potency is… shy."
       ],
       "next": "tension"
     },
     "tension": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "So ask the real question. Not 'does it absorb' \u2014 the funded trials say mostly yes.",
+        "So ask the real question. Not 'does it absorb' — the funded trials say mostly yes.",
         "Ask what the premium is actually for. Say it out loud, here, where the price tags testify."
       ],
       "choices": [
@@ -98,19 +154,43 @@
           "id": "name-it",
           "text": "It buys the person I feel like when I drink it.",
           "next": "wrap",
-          "playerEffects": { "selfExpression": 2, "aspiration": 1 },
-          "brandPerceptionEffects": { "ag1": { "selfExpression": 1, "aspiration": 1 } },
-          "relationshipEffects": { "ag1": 1 },
-          "setFlags": ["named-the-premium"]
+          "playerEffects": {
+            "selfExpression": 2,
+            "aspiration": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "selfExpression": 1,
+              "aspiration": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          },
+          "setFlags": [
+            "named-the-premium"
+          ]
         },
         {
           "id": "tax",
           "text": "It buys convenience. About three dollars a day of it.",
           "next": "wrap",
-          "playerEffects": { "control": 1, "mastery": 1 },
-          "brandPerceptionEffects": { "ag1": { "comfort": 1, "trust": -1 } },
-          "relationshipEffects": { "ag1": 0 },
-          "setFlags": ["named-the-tax"]
+          "playerEffects": {
+            "control": 1,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 0
+          },
+          "setFlags": [
+            "named-the-tax"
+          ]
         }
       ]
     },

@@ -28,7 +28,7 @@
         "effect": "enter"
       },
       "text": [
-        "You found us! Front of the crowd \u2014 that's where the family stands.",
+        "You found us! Front of the crowd — that's where the family stands.",
         "Campus crew, baby. I know everyone here by name and by rate card."
       ],
       "choices": [
@@ -120,7 +120,8 @@
         "You know the ambassador booth.",
         "Matching lanyards, matching cans, one group photo where every smile clocks in on time."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-celsius-lineup"
     },
     "tension": {
       "speaker": "CELSIUS",

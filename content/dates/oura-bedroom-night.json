@@ -93,7 +93,8 @@
         "That's why I'm telling you before the banner does.",
         "Week six together. Your deep-sleep trends — the long view of us — became a membership feature this morning."
       ],
-      "next": "meter"
+      "next": "meter",
+      "evidence": "ev-oura-pre-symptom-flag"
     },
     "branch-invoice": {
       "speaker": "OURA",

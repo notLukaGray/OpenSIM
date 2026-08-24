@@ -124,6 +124,9 @@ SVG you place at `public/assets/evidence/<id>.svg` (swap with real imagery later
 }
 ```
 
+Fragments may write `imageRef` as the file path — `sync:evidence` normalizes it to the asset id
+and registers the SVG automatically.
+
 Attach to any node via `"evidence": "<card-id>"`. Effects nudge perception once on first unlock.
 `sourceIds` (P6-01) may cite `content/sources.json` records when that lands.
 

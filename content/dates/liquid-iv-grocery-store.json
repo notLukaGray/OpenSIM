@@ -3,10 +3,18 @@
   "brandId": "liquid-iv",
   "title": "Sixty-Nine Percent",
   "locationId": "grocery-store",
-  "context": { "location": "grocery-store", "occasion": "errand" },
+  "context": {
+    "location": "grocery-store",
+    "occasion": "errand"
+  },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-liquid-iv-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-liquid-iv-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "labels testify where marketing can't follow",
@@ -15,7 +23,10 @@
   "nodes": {
     "intro": {
       "speaker": "...",
-      "sprite": { "expression": "neutral", "effect": "enter" },
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
       "text": [
         "Aisle five, one fluorescent tube humming like it took an oath.",
         "They're already there, holding their own box at eye level, reading it like a hostile witness."
@@ -24,42 +35,78 @@
     },
     "impression": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "You know what I am now, so we skip the tour \u2014 front of my box or back?"
+        "You know what I am now, so we skip the tour — front of my box or back?"
       ],
       "choices": [
         {
           "id": "front-first",
           "text": "Front. I've never once flipped a pouch over.",
           "next": "impression-front",
-          "playerEffects": { "reassurance": 2, "mastery": -1 },
-          "brandPerceptionEffects": { "liquid-iv": { "aspiration": 1 } },
-          "relationshipEffects": { "liquid-iv": 0 }
+          "playerEffects": {
+            "reassurance": 2,
+            "mastery": -1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "aspiration": 1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": 0
+          }
         },
         {
           "id": "back-first",
           "text": "Back. Ingredients first, romance later.",
           "next": "impression-back",
-          "playerEffects": { "mastery": 2, "control": 1 },
-          "brandPerceptionEffects": { "liquid-iv": { "trust": -1, "mastery": 1 } },
-          "relationshipEffects": { "liquid-iv": -1 },
-          "setFlags": ["read-the-label"]
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "trust": -1,
+              "mastery": 1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": -1
+          },
+          "setFlags": [
+            "read-the-label"
+          ]
         },
         {
           "id": "already-know",
-          "text": "\"Eleven grams.\" Relax \u2014 I did the math before you asked.",
+          "text": "\"Eleven grams.\" Relax — I did the math before you asked.",
           "next": "impression-know",
-          "playerEffects": { "mastery": 2, "reassurance": -1 },
-          "brandPerceptionEffects": { "liquid-iv": { "trust": -1 } },
-          "relationshipEffects": { "liquid-iv": 1 },
-          "setFlags": ["did-sugar-math"]
+          "playerEffects": {
+            "mastery": 2,
+            "reassurance": -1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": 1
+          },
+          "setFlags": [
+            "did-sugar-math"
+          ]
         }
       ]
     },
     "impression-front": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "I know. That gloss is my best feature and my entire defense case."
       ],
@@ -67,15 +114,19 @@
     },
     "impression-back": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "annoyed" },
+      "sprite": {
+        "expression": "annoyed"
+      },
       "text": [
-        "Straight to the testimony. Fine \u2014 but you're holding the exhibits now."
+        "Straight to the testimony. Fine — but you're holding the exhibits now."
       ],
       "next": "experience"
     },
     "impression-know": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "You brought receipts to a brunch aisle. Terrifying. Respect."
       ],
@@ -84,13 +135,16 @@
     "experience": {
       "speaker": "LIQUID I.V.",
       "text": [
-        "The science is real, for the record \u2014 WHO oral rehydration, sodium-glucose cotransport, the spoon that beats cholera where no IV exists. My lineage is a hospital ward wearing a popsicle."
+        "The science is real, for the record — WHO oral rehydration, sodium-glucose cotransport, the spoon that beats cholera where no IV exists. My lineage is a hospital ward wearing a popsicle."
       ],
-      "next": "tension"
+      "next": "tension",
+      "evidence": "ev-liquid-iv-nightlife-nod"
     },
     "tension": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "Here's the part I'd rather scroll past: eleven grams of sugar a stick, more per liter than the WHO formula cites. Palate won an argument with a clinic."
       ],
@@ -99,25 +153,51 @@
           "id": "do-the-math",
           "text": "Say it with me: sixty-nine percent sugar by weight.",
           "next": "tension-math",
-          "playerEffects": { "mastery": 2, "trust": 1 },
-          "brandPerceptionEffects": { "liquid-iv": { "trust": -2, "mastery": -1 } },
-          "relationshipEffects": { "liquid-iv": -1 },
-          "setFlags": ["said-sixty-nine"]
+          "playerEffects": {
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "trust": -2,
+              "mastery": -1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": -1
+          },
+          "setFlags": [
+            "said-sixty-nine"
+          ]
         },
         {
           "id": "keep-the-gloss",
           "text": "I don't need it to be medicine. I need it to taste like being okay.",
           "next": "tension-gloss",
-          "playerEffects": { "comfort": 2, "reassurance": 1 },
-          "brandPerceptionEffects": { "liquid-iv": { "comfort": 1, "trust": -1 } },
-          "relationshipEffects": { "liquid-iv": 1 },
-          "setFlags": ["kept-the-gloss"]
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "liquid-iv": {
+              "comfort": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "liquid-iv": 1
+          },
+          "setFlags": [
+            "kept-the-gloss"
+          ]
         }
       ]
     },
     "tension-math": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "...Sixty-nine percent. You didn't have to clap."
       ],
@@ -125,9 +205,11 @@
     },
     "tension-gloss": {
       "speaker": "LIQUID I.V.",
-      "sprite": { "expression": "special" },
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
-        "That's the most honest sentence ever said in aisle five \u2014 and exactly why the gloss stays glossy."
+        "That's the most honest sentence ever said in aisle five — and exactly why the gloss stays glossy."
       ],
       "next": "closing"
     },
@@ -137,7 +219,7 @@
         {
           "if": "already-know",
           "text": [
-            "Next week, same aisle \u2014 you bring the calculator, I bring the confession."
+            "Next week, same aisle — you bring the calculator, I bring the confession."
           ]
         }
       ],

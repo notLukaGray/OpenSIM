@@ -3,20 +3,31 @@
   "brandId": "ag1",
   "title": "Routine, Screened",
   "locationId": "airport",
-  "context": { "location": "airport", "occasion": "travel" },
+  "context": {
+    "location": "airport",
+    "occasion": "travel"
+  },
   "music": null,
   "background": null,
-  "cast": [{ "assetId": "char-ag1-neutral", "position": "center" }],
+  "cast": [
+    {
+      "assetId": "char-ag1-neutral",
+      "position": "center"
+    }
+  ],
   "startNode": "intro",
   "lessons": [
     "the ritual travels; the question is whether you do without it",
     "NSF certification is why the pouch clears customs with athletes",
-    "devotion survives a missed day \u2014 dependency calls the front desk"
+    "devotion survives a missed day — dependency calls the front desk"
   ],
   "nodes": {
     "intro": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral", "effect": "enter" },
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
       "text": [
         "Gate 34. You again, me again, the plastic tray again.",
         "Black pouch in the bin. It always earns a second look from security."
@@ -25,7 +36,9 @@
     },
     "impression": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "Once, an agent asked why one pouch of greens needs sport certification. Drug-tested athletes, I told her.",
         "Two hundred and eighty banned substances screened, every year. The routine flies clean."
@@ -35,33 +48,71 @@
           "id": "impressive",
           "text": "Certified for sport at six a.m. That's honestly a little impressive.",
           "next": "branch-impressive",
-          "playerEffects": { "readiness": 1, "reassurance": 2 },
-          "brandPerceptionEffects": { "ag1": { "reassurance": 2, "trust": 1 } },
-          "relationshipEffects": { "ag1": 1 }
+          "playerEffects": {
+            "readiness": 1,
+            "reassurance": 2
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "reassurance": 2,
+              "trust": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          }
         },
         {
           "id": "dependency",
           "text": "Or that's just a dependency with good paperwork.",
           "next": "branch-dependency",
-          "playerEffects": { "control": 1, "mastery": 1, "trust": -1 },
-          "brandPerceptionEffects": { "ag1": { "control": -1, "trust": -1 } },
-          "relationshipEffects": { "ag1": -1 },
-          "setFlags": ["said-dependency"]
+          "playerEffects": {
+            "control": 1,
+            "mastery": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "control": -1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": -1
+          },
+          "setFlags": [
+            "said-dependency"
+          ]
         },
         {
           "id": "why-travel",
           "text": "Why does a morning routine need a passport?",
           "next": "branch-why-travel",
-          "playerEffects": { "mastery": 1, "reassurance": 1 },
-          "brandPerceptionEffects": { "ag1": { "belonging": 1, "comfort": 1 } },
-          "relationshipEffects": { "ag1": 0 },
-          "setFlags": ["asked-why-travel"]
+          "playerEffects": {
+            "mastery": 1,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "belonging": 1,
+              "comfort": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 0
+          },
+          "setFlags": [
+            "asked-why-travel"
+          ]
         }
-      ]
+      ],
+      "evidence": "ev-ag1-host-adread"
     },
     "branch-impressive": {
       "speaker": "AG1",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "It's the least chaotic thing about flying, and I'll take the compliment.",
         "Everything else at this gate is variable. I'm the constant."
@@ -70,16 +121,20 @@
     },
     "branch-dependency": {
       "speaker": "AG1",
-      "sprite": { "expression": "embarrassed" },
+      "sprite": {
+        "expression": "embarrassed"
+      },
       "text": [
         "Harsh. Accurate-adjacent. There's a difference between packing me and needing me.",
-        "\u2026Isn't there?"
+        "…Isn't there?"
       ],
       "next": "tension"
     },
     "branch-why-travel": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "Because home was never a place. It's a sequence: pouch, water, sip, breathe.",
         "I'm just the sequence, made portable."
@@ -88,7 +143,9 @@
     },
     "tension": {
       "speaker": "AG1",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "Boarding's soon, so answer honestly: if the pouch got lost in transit, would the trip break?",
         "Devotion survives a missed day. Dependency files a claim."
@@ -96,21 +153,45 @@
       "choices": [
         {
           "id": "devotion",
-          "text": "Nothing breaks. I'd miss you \u2014 not fall apart.",
+          "text": "Nothing breaks. I'd miss you — not fall apart.",
           "next": "wrap",
-          "playerEffects": { "comfort": 1, "control": 1 },
-          "brandPerceptionEffects": { "ag1": { "comfort": 1, "trust": 1 } },
-          "relationshipEffects": { "ag1": 2 },
-          "setFlags": ["devoted-not-dependent"]
+          "playerEffects": {
+            "comfort": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 1,
+              "trust": 1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 2
+          },
+          "setFlags": [
+            "devoted-not-dependent"
+          ]
         },
         {
           "id": "honest-crutch",
           "text": "Honestly? I'd feel the absence all day.",
           "next": "wrap",
-          "playerEffects": { "reassurance": 1, "control": -1 },
-          "brandPerceptionEffects": { "ag1": { "comfort": 1, "control": -1 } },
-          "relationshipEffects": { "ag1": 1 },
-          "setFlags": ["packed-the-crutch"]
+          "playerEffects": {
+            "reassurance": 1,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "ag1": {
+              "comfort": 1,
+              "control": -1
+            }
+          },
+          "relationshipEffects": {
+            "ag1": 1
+          },
+          "setFlags": [
+            "packed-the-crutch"
+          ]
         }
       ]
     },

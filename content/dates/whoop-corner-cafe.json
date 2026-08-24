@@ -3,7 +3,10 @@
   "brandId": "whoop",
   "title": "League Table",
   "locationId": "corner-cafe",
-  "context": { "location": "corner-cafe", "occasion": "café" },
+  "context": {
+    "location": "corner-cafe",
+    "occasion": "café"
+  },
   "music": null,
   "background": null,
   "cast": [
@@ -21,7 +24,10 @@
   "nodes": {
     "intro": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "annoyed", "effect": "enter" },
+      "sprite": {
+        "expression": "annoyed",
+        "effect": "enter"
+      },
       "text": [
         "Table four. Oura ring. We disagree about your night by nineteen minutes of deep sleep.",
         "It says you slept well. I say okay-plus. One of us is flattering you."
@@ -31,46 +37,74 @@
           "id": "settle",
           "text": "Settle it, then. Studies, accuracy, go.",
           "next": "branch-settle",
-          "playerEffects": { "mastery": 2, "control": 1 },
-          "brandPerceptionEffects": {
-            "whoop": { "mastery": 1 }
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
           },
-          "relationshipEffects": { "whoop": 1 }
+          "brandPerceptionEffects": {
+            "whoop": {
+              "mastery": 1
+            }
+          },
+          "relationshipEffects": {
+            "whoop": 1
+          }
         },
         {
           "id": "tribe",
           "text": "You're my wrist. I side with the strap.",
           "next": "branch-tribe",
-          "playerEffects": { "belonging": 2, "selfExpression": 1 },
-          "brandPerceptionEffects": {
-            "whoop": { "belonging": 1, "aspiration": 1 }
+          "playerEffects": {
+            "belonging": 2,
+            "selfExpression": 1
           },
-          "relationshipEffects": { "whoop": 1 },
-          "setFlags": ["cafe-sided-with-the-strap"]
+          "brandPerceptionEffects": {
+            "whoop": {
+              "belonging": 1,
+              "aspiration": 1
+            }
+          },
+          "relationshipEffects": {
+            "whoop": 1
+          },
+          "setFlags": [
+            "cafe-sided-with-the-strap"
+          ]
         },
         {
           "id": "neither",
           "text": "Or you're both grading a mystery and calling it science.",
           "next": "branch-neither",
-          "playerEffects": { "mastery": 1, "trust": -1 },
+          "playerEffects": {
+            "mastery": 1,
+            "trust": -1
+          },
           "brandPerceptionEffects": {
-            "whoop": { "mastery": -1, "trust": -1 }
+            "whoop": {
+              "mastery": -1,
+              "trust": -1
+            }
           }
         }
       ]
     },
     "branch-settle": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "neutral" },
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
         "2022: a validation study loves me — near-perfect overnight heart-rate variability. 2025: five devices graded, I land moderate, behind the ring.",
         "Both peer-reviewed. Both still standing. Welcome to measurement."
       ],
-      "next": "league"
+      "next": "league",
+      "evidence": "ev-whoop-watney-save"
     },
     "branch-tribe": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "happy" },
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
         "Loyalty noted. Logged. Graphed.",
         "Careful, though — that's not data anymore. That's fandom wearing a sensor."
@@ -79,7 +113,9 @@
     },
     "branch-neither": {
       "speaker": "WHOOP",
-      "sprite": { "expression": "special" },
+      "sprite": {
+        "expression": "special"
+      },
       "text": [
         "...I want to argue. Instead: sleep staging sits near sixty percent agreement against the lab standard. Everywhere. Mine included.",
         "Kappa 0.44. I know my own error bars. Most suitors never ask."
@@ -105,21 +141,38 @@
           "id": "trust-body",
           "text": "How I feel outranks any score.",
           "next": "wrap",
-          "playerEffects": { "comfort": 2, "reassurance": 1 },
-          "brandPerceptionEffects": {
-            "whoop": { "mastery": -1, "reassurance": 1 }
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
           },
-          "setFlags": ["cafe-trusted-the-body"]
+          "brandPerceptionEffects": {
+            "whoop": {
+              "mastery": -1,
+              "reassurance": 1
+            }
+          },
+          "setFlags": [
+            "cafe-trusted-the-body"
+          ]
         },
         {
           "id": "trust-device",
           "text": "Feelings lie. Scores don't.",
           "next": "wrap",
-          "playerEffects": { "control": 2, "comfort": -1 },
-          "brandPerceptionEffects": {
-            "whoop": { "control": 1, "mastery": 1, "comfort": -1 }
+          "playerEffects": {
+            "control": 2,
+            "comfort": -1
           },
-          "relationshipEffects": { "whoop": 1 }
+          "brandPerceptionEffects": {
+            "whoop": {
+              "control": 1,
+              "mastery": 1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "whoop": 1
+          }
         }
       ]
     },

@@ -6,7 +6,9 @@
     "title": "The travel pack",
     "description": "Stick packs sized exactly for a water bottle. You've grabbed these at an airport kiosk without thinking about it.",
     "imageRef": "evg-liquid-iv-stickpack",
-    "effects": { "readiness": 1 }
+    "effects": {
+      "readiness": 1
+    }
   },
   {
     "id": "ev-whoop-strain",
@@ -15,7 +17,10 @@
     "title": "Strain scores as mood rings",
     "description": "Someone you follow posts their recovery graph every morning like a weather report for their body.",
     "imageRef": "evg-whoop-strain-graph",
-    "effects": { "control": 1, "comfort": -1 }
+    "effects": {
+      "control": 1,
+      "comfort": -1
+    }
   },
   {
     "id": "ev-celsius-lineup",
@@ -24,7 +29,10 @@
     "title": "The cooler wall",
     "description": "A full row of slim cans at the gym cooler, each flavor louder than the last. The branding is doing reps.",
     "imageRef": "evg-celsius-can-lineup",
-    "effects": { "excitement": 1, "belonging": 1 }
+    "effects": {
+      "excitement": 1,
+      "belonging": 1
+    }
   },
   {
     "id": "ev-ag1-scoop",
@@ -33,6 +41,344 @@
     "title": "One scoop, whole morning",
     "description": "The green scoop, the shaker, the promise that this one glass replaces six other pills.",
     "imageRef": "evg-ag1-scoop",
-    "effects": { "trust": 1 }
+    "effects": {
+      "trust": 1
+    }
+  },
+  {
+    "id": "ev-liquid-iv-sugar-ratio",
+    "brandId": "liquid-iv",
+    "type": "product",
+    "title": "69% Sugar by Weight",
+    "description": "Critic math against WHO's oral-rehydration ratio finds the flagship overshoots the glucose it prescribes — sweetness is a palate decision, not a hydration requirement. Health halos rarely survive a label audit.",
+    "imageRef": "ev-liquid-iv-sugar-ratio",
+    "effects": {
+      "trust": -2,
+      "mastery": -1
+    }
+  },
+  {
+    "id": "ev-liquid-iv-nightlife-nod",
+    "brandId": "liquid-iv",
+    "type": "culture",
+    "title": "The Nightlife Nod",
+    "description": "Four marketed occasions — heat, exercise, travel, nightlife — circle the hangover use consumers actually meme about, without ever saying the word. Positioning can sell a use case by winking at it instead of claiming it.",
+    "imageRef": "ev-liquid-iv-nightlife-nod",
+    "effects": {
+      "belonging": 1,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-whoop-watney-save",
+    "brandId": "whoop",
+    "type": "campaign",
+    "title": "The Watney Save — 2 A.M.",
+    "description": "One pro golfer's overnight respiratory-rate spike flagged an infection before symptoms, and the tour handed out a thousand straps. A single true save story can carry years of guardian-brand reassurance.",
+    "imageRef": "ev-whoop-watney-save",
+    "effects": {
+      "reassurance": 2,
+      "aspiration": 1
+    }
+  },
+  {
+    "id": "ev-whoop-runrate-ledger",
+    "brandId": "whoop",
+    "type": "retail",
+    "title": "Rent Your Biometrics: $1.1B Run-Rate",
+    "description": "Tier prices sit beside doubled bookings: hardware comes \"free\" because you subscribe to your own vital signs, and new features gate old ones. The ledger shows who really owns the device on your wrist.",
+    "imageRef": "ev-whoop-runrate-ledger",
+    "effects": {
+      "control": -2,
+      "readiness": 1
+    }
+  },
+  {
+    "id": "ev-celsius-fatburn-label",
+    "brandId": "celsius",
+    "type": "product",
+    "title": "\"Burns Body Fat\" — Mind the Asterisk",
+    "description": "Accelerate metabolism, burn fat: FDA-permitted structure/function language that sounds medical yet needs no drug approval — exactly the gap plaintiffs say misleads. Wellness copy often borrows medicine's tone, not its proof.",
+    "imageRef": "ev-celsius-fatburn-label",
+    "effects": {
+      "reassurance": -2,
+      "control": 1
+    }
+  },
+  {
+    "id": "ev-celsius-paid-tribe",
+    "brandId": "celsius",
+    "type": "social",
+    "title": "The Paid Campus Tribe",
+    "description": "CELSIUS University ambassadors and NIL college athletes make the fitness tribe feel found rather than bought — until you notice the roster is salaried. Community marketing lands hardest while the W-2s stay quiet.",
+    "imageRef": "ev-celsius-paid-tribe",
+    "effects": {
+      "belonging": 2,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-ag1-host-adread",
+    "brandId": "ag1",
+    "type": "ad",
+    "title": "The Fourteenth Ad Read",
+    "description": "Verbatim host-read spots with personal promo codes expose the machine: hundreds of podcasts, 20–50% affiliate cuts, per-host landing pages. Attribution — not the scoop — was the product being perfected.",
+    "imageRef": "ev-ag1-host-adread",
+    "effects": {
+      "trust": -2,
+      "belonging": 1
+    }
+  },
+  {
+    "id": "ev-ag1-recurring-invoice",
+    "brandId": "ag1",
+    "type": "retail",
+    "title": "$79 a Month, Renewing Nicely",
+    "description": "A monthly invoice flanked by a welcome gift kit and a 90-day guarantee lays out the DTC playbook: gifts de-risk trial, discounts steer you into recurring billing. The receipt is where the relationship's terms turn honest.",
+    "imageRef": "ev-ag1-recurring-invoice",
+    "effects": {
+      "comfort": 1,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-starbucks-float-ledger",
+    "brandId": "starbucks",
+    "type": "product",
+    "title": "Your gift card is their working capital",
+    "description": "Quarterly gift-card loads run $2.6–3.6B and stored cards touch roughly 43–47% of transactions — about $11–13B a year prepaid before any latte is poured. Loyalty isn't only a program; the float is a financing engine sweetened by breakage.",
+    "imageRef": "ev-starbucks-float-ledger",
+    "effects": {
+      "mastery": 1,
+      "comfort": -1
+    }
+  },
+  {
+    "id": "ev-starbucks-wrong-name-curve",
+    "brandId": "starbucks",
+    "type": "social",
+    "title": "The wrong-name curve",
+    "description": "Studies dubbed \"the Starbucks effect\" found name-based orders beat order numbers by reducing objectification — until a wrong name crashed satisfaction below anonymous service. Personalization pays only while it feels like respect.",
+    "imageRef": "ev-starbucks-wrong-name-curve",
+    "effects": {
+      "selfExpression": 1,
+      "belonging": -1
+    }
+  },
+  {
+    "id": "ev-oura-gucci-ring",
+    "brandId": "oura",
+    "type": "ad",
+    "title": "Rest has a dress code",
+    "description": "A $950 Gucci edition sold out while base-ring waitlists stretched — proof the ring sells aspiration first, metrics second. Health tracking reframed as jewelry prices the tribe out of its own movement.",
+    "imageRef": "ev-oura-gucci-ring",
+    "effects": {
+      "aspiration": 2,
+      "belonging": -1
+    }
+  },
+  {
+    "id": "ev-oura-pre-symptom-flag",
+    "brandId": "oura",
+    "type": "campaign",
+    "title": "Three days before symptoms",
+    "description": "\"Over 90% accuracy up to three days before symptoms\" was a research platform's result, never an FDA-authorized disease-detection claim — yet the NBA ordered 2,000+ rings for its bubble. Perception can outrun regulation.",
+    "imageRef": "ev-oura-pre-symptom-flag",
+    "effects": {
+      "reassurance": 1,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-zen-churn-trio",
+    "brandId": "zen",
+    "type": "retail",
+    "title": "The churn trio",
+    "description": "Aggregated user reports flag rates \"not made clear,\" hard cancellation, and upsell fatigue running beneath the Apple-award halo. Retention friction quietly taxes a brand that promises effortlessness.",
+    "imageRef": "ev-zen-churn-trio",
+    "effects": {
+      "trust": -2,
+      "reassurance": -1
+    }
+  },
+  {
+    "id": "ev-zen-entrainment-doubt",
+    "brandId": "zen",
+    "type": "culture",
+    "title": "Binaural beats on trial",
+    "description": "A systematic review found 8 of 14 studies contradicting binaural-beat entrainment, and an audit flagged 92.5% of streaming sound-therapy tracks for deviant claims. When the feature story outruns the evidence, the brand inherits the doubt.",
+    "imageRef": "ev-zen-entrainment-doubt",
+    "effects": {
+      "mastery": 1,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-red-bull-media-house",
+    "brandId": "red-bull",
+    "type": "campaign",
+    "title": "Content Is the Ad Budget",
+    "description": "Red Bull stopped renting airtime and built its own: a media house, a magazine read by millions, hundreds of stories a year — marketing spend that ends up as sellable programming instead of vanished commercials. The most advanced ad budget is one that becomes an asset.",
+    "imageRef": "ev-red-bull-media-house",
+    "effects": {
+      "aspiration": 2,
+      "mastery": 1
+    }
+  },
+  {
+    "id": "ev-red-bull-wings-ledger",
+    "brandId": "red-bull",
+    "type": "ad",
+    "title": "$13M for Wings",
+    "description": "In 2014 Red Bull paid a $13M settlement over \"gives you wings,\" withdrawing the challenged claims while keeping the slogan that made them famous. Puffery rides a legal line — and even when the law trims the claim, the myth usually survives the fine.",
+    "imageRef": "ev-red-bull-wings-ledger",
+    "effects": {
+      "trust": -2,
+      "aspiration": -1
+    }
+  },
+  {
+    "id": "ev-eight-sleep-deep-sleep-stat",
+    "brandId": "eight-sleep",
+    "type": "product",
+    "title": "+22% Deep Sleep*",
+    "description": "\"Users gained 22% more deep sleep\" is a real published number — from one week, fifty-four people, in a study run by the company selling the bed, measuring effects its own authors call transient. A true statistic can still be marketing; read what the asterisk is holding up.",
+    "imageRef": "ev-eight-sleep-deep-sleep-stat",
+    "effects": {
+      "comfort": 2,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-eight-sleep-year-five-cost",
+    "brandId": "eight-sleep",
+    "type": "retail",
+    "title": "Year Five: $6,900",
+    "description": "A $2,599 mattress cover quietly compounds to roughly $6,900 after five years of mandatory membership — and lapse on payment, and the smart bed stops being smart. The sticker price sells the dream; the subscription is where the bill actually lives.",
+    "imageRef": "ev-eight-sleep-year-five-cost",
+    "effects": {
+      "control": -2,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-liquid-death-pre-launch-ghost",
+    "brandId": "liquid-death",
+    "type": "social",
+    "title": "3M Views Before the First Can",
+    "description": "Before Liquid Death sold a single can, a fake Facebook page and a $1,500 ad pulled three million views and eighty thousand followers. The audience came first and the product was built for people already gathered — demand can be manufactured before inventory.",
+    "imageRef": "ev-liquid-death-pre-launch-ghost",
+    "effects": {
+      "belonging": 2,
+      "selfExpression": 1
+    }
+  },
+  {
+    "id": "ev-liquid-death-can-autopsy",
+    "brandId": "liquid-death",
+    "type": "culture",
+    "title": "Can Autopsy: Plastic Inside",
+    "description": "Slice open an anti-plastic icon and every can hides a plastic liner — now the subject of a class action alleging \"Death to Plastic\" misleads. When a brand builds identity on an enemy it cannot live without, expect the materials to get audited.",
+    "imageRef": "ev-liquid-death-can-autopsy",
+    "effects": {
+      "trust": -2,
+      "control": -1
+    }
+  },
+  {
+    "id": "ev-white-claw-cut-the-ads",
+    "brandId": "white-claw",
+    "type": "ad",
+    "title": "Cut the Ads, Kept the Boom",
+    "description": "Mid-viral-summer 2019 White Claw cut ad spend roughly 30% while July sales nearly quadrupled — the internet was selling the brand better than the brand was. Earned media can out-punch paid, but fame you didn't make isn't fame you control.",
+    "imageRef": "ev-white-claw-cut-the-ads",
+    "effects": {
+      "excitement": 2,
+      "mastery": -1
+    }
+  },
+  {
+    "id": "ev-white-claw-alcohol-is-alcohol",
+    "brandId": "white-claw",
+    "type": "product",
+    "title": "Alcohol Is Still Alcohol",
+    "description": "The can's math checks out — about 100 calories, ~2g carbs — yet clinicians note 5% ABV \"goes down like water,\" topping many beers. Accurate labels wrapped in an implication: light equals healthy does the heavy lifting.",
+    "imageRef": "ev-white-claw-alcohol-is-alcohol",
+    "effects": {
+      "reassurance": -2,
+      "trust": 1
+    }
+  },
+  {
+    "id": "ev-athletic-brewing-half-a-percent",
+    "brandId": "athletic-brewing",
+    "type": "culture",
+    "title": "\"Non-Alcoholic\" Means Up to 0.5%",
+    "description": "Legally, non-alcoholic beer is a range, not chemical zero — and independent testing has caught NoLo drinks running over their labels. For most drinkers it's trivia; for someone in recovery, the fine print is the whole story.",
+    "imageRef": "ev-athletic-brewing-half-a-percent",
+    "effects": {
+      "reassurance": -1,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-athletic-brewing-9-99-vs-13-99",
+    "brandId": "athletic-brewing",
+    "type": "retail",
+    "title": "$9.99 vs $13.99",
+    "description": "Six-packs priced three or four dollars above rival NA beers — the premium funds two purpose-built breweries nobody else bothered to build. A mission can justify margin, but on the shelf it quietly gates the \"for all times\" crowd.",
+    "imageRef": "ev-athletic-brewing-9-99-vs-13-99",
+    "effects": {
+      "aspiration": 1,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-zyn-even-when-they-ask-us",
+    "brandId": "zyn",
+    "type": "social",
+    "title": "Even When They Ask Us",
+    "description": "The pledge is real — no paid influencers, ever — and nearly irrelevant: an unpaid creator army minted \"upper decky lip pillows\" and a richer mythology than any agency could buy. The most valuable media plan may be the one you don't control.",
+    "imageRef": "ev-zyn-even-when-they-ask-us",
+    "effects": {
+      "belonging": 2,
+      "control": -1
+    }
+  },
+  {
+    "id": "ev-zyn-authorized-not-approved",
+    "brandId": "zyn",
+    "type": "ad",
+    "title": "Authorized ≠ Approved",
+    "description": "A first in history: the FDA cleared 20 ZYN pouches as lower-risk for adults who smoke. But authorized isn't approved — nothing in the aisle is cleared to treat nicotine dependence. Regulator grammar becomes a health halo in passing.",
+    "imageRef": "ev-zyn-authorized-not-approved",
+    "effects": {
+      "reassurance": -1,
+      "trust": 1
+    }
+  },
+  {
+    "id": "ev-na-spirits-who-owns-independent",
+    "brandId": "na-spirits",
+    "type": "campaign",
+    "title": "Who Owns \"Independent\"?",
+    "description": "Seedlip's farm myth outlived its farmer — majority-Diageo since 2019 — and by 2024 challenger Ritual joined the same owner: both sides of the zero-proof shelf, one boardroom. Authenticity kept selling long after independence stopped being true.",
+    "imageRef": "ev-na-spirits-who-owns-independent",
+    "effects": {
+      "trust": -1,
+      "aspiration": -1
+    }
+  },
+  {
+    "id": "ev-na-spirits-mixer-subsidy",
+    "brandId": "na-spirits",
+    "type": "product",
+    "title": "The Mixer Subsidy",
+    "description": "Nearly every serve adds bubbles — tonic, soda, citrus — so part of what you taste arrives from someone else's bottle while value migrates down the shelf. Spirit-tier pricing has to argue itself forever against a five-dollar mixer doing the heavy lifting.",
+    "imageRef": "ev-na-spirits-mixer-subsidy",
+    "effects": {
+      "mastery": 1,
+      "trust": -1
+    }
   }
 ]
