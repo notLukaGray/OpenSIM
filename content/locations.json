@@ -5,7 +5,10 @@
     "blurb": "Gate 34, humming vents, everyone going somewhere.",
     "background": "bg-airport",
     "music": "mus-airport",
-    "map": { "x": 16, "y": 62 }
+    "map": {
+      "x": 16,
+      "y": 62
+    }
   },
   {
     "id": "nightgym",
@@ -13,7 +16,10 @@
     "blurb": "One light left on, and it's watching.",
     "background": "bg-nightgym",
     "music": "mus-nightgym",
-    "map": { "x": 36, "y": 34 }
+    "map": {
+      "x": 36,
+      "y": 34
+    }
   },
   {
     "id": "rooftop",
@@ -21,7 +27,10 @@
     "blurb": "The party went up here and never came down.",
     "background": "bg-rooftop",
     "music": "mus-rooftop",
-    "map": { "x": 63, "y": 26 }
+    "map": {
+      "x": 63,
+      "y": 26
+    }
   },
   {
     "id": "kitchen",
@@ -29,7 +38,10 @@
     "blurb": "Morning light, one glass waiting.",
     "background": "bg-kitchen",
     "music": "mus-kitchen",
-    "map": { "x": 84, "y": 56 }
+    "map": {
+      "x": 84,
+      "y": 56
+    }
   },
   {
     "id": "office",
@@ -37,6 +49,64 @@
     "blurb": "After hours. Desk drawers and desk-drawer decisions.",
     "background": "bg-hub",
     "music": "mus-hub",
-    "map": { "x": 52, "y": 76 }
+    "map": {
+      "x": 52,
+      "y": 76
+    }
+  },
+  {
+    "id": "beach-day",
+    "name": "BEACH DAY",
+    "blurb": "Salt, SPF, and a cooler with opinions.",
+    "background": "bg-beach-day",
+    "music": "mus-beach-day",
+    "map": {
+      "x": 8,
+      "y": 30
+    }
+  },
+  {
+    "id": "music-festival",
+    "name": "MUSIC FESTIVAL",
+    "blurb": "Twelve stages, one anthem, zero personal space.",
+    "background": "bg-music-festival",
+    "music": "mus-music-festival",
+    "map": {
+      "x": 30,
+      "y": 12
+    }
+  },
+  {
+    "id": "corner-cafe",
+    "name": "CORNER CAF\u00c9",
+    "blurb": "Everyone here is auditioning for third place.",
+    "background": "bg-corner-cafe",
+    "music": "mus-corner-cafe",
+    "map": {
+      "x": 70,
+      "y": 40
+    }
+  },
+  {
+    "id": "bedroom-night",
+    "name": "BEDROOM, LATE",
+    "blurb": "The mask is on the nightstand.",
+    "background": "bg-bedroom-night",
+    "music": "mus-bedroom-night",
+    "map": {
+      "x": 92,
+      "y": 24
+    }
+  },
+  {
+    "id": "grocery-store",
+    "name": "GROCERY AISLES",
+    "blurb": "Price tags are sworn witnesses.",
+    "background": "bg-grocery-store",
+    "music": "mus-grocery-store",
+    "map": {
+      "x": 88,
+      "y": 82
+    }
   }
 ]

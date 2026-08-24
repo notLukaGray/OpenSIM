@@ -1,44 +1,326 @@
 [
   {
     "id": "mod-liquid-iv-airport",
-    "appliesTo": ["liquid-iv"],
-    "when": { "location": "airport" },
-    "effects": { "readiness": 1 },
-    "label": "Right place, right moment — an airport is this brand's home turf"
+    "appliesTo": [
+      "liquid-iv"
+    ],
+    "when": {
+      "location": "airport"
+    },
+    "effects": {
+      "readiness": 2,
+      "reassurance": 1
+    },
+    "label": "Exactly the right place to meet"
   },
   {
     "id": "mod-whoop-nightgym",
-    "appliesTo": ["whoop"],
-    "when": { "location": "nightgym" },
-    "effects": { "control": 1, "mastery": 1 },
+    "appliesTo": [
+      "whoop"
+    ],
+    "when": {
+      "location": "nightgym"
+    },
+    "effects": {
+      "control": 1,
+      "mastery": 1
+    },
     "label": "The room rewards measurement"
   },
   {
     "id": "mod-whoop-sleep",
-    "appliesTo": ["whoop"],
-    "when": { "hasFlag": "revealed-sleep" },
-    "effects": { "reassurance": 1, "comfort": 1 },
+    "appliesTo": [
+      "whoop"
+    ],
+    "when": {
+      "hasFlag": "revealed-sleep"
+    },
+    "effects": {
+      "reassurance": 1,
+      "comfort": 1
+    },
     "label": "You told it what you actually wanted"
   },
   {
     "id": "mod-celsius-rooftop",
-    "appliesTo": ["celsius"],
-    "when": { "location": "rooftop" },
-    "effects": { "excitement": 1, "belonging": 1 },
+    "appliesTo": [
+      "celsius"
+    ],
+    "when": {
+      "location": "rooftop"
+    },
+    "effects": {
+      "excitement": 1,
+      "belonging": 1
+    },
     "label": "Everyone's already here"
   },
   {
     "id": "mod-ag1-kitchen",
-    "appliesTo": ["ag1"],
-    "when": { "location": "kitchen" },
-    "effects": { "comfort": 1, "trust": 1 },
+    "appliesTo": [
+      "ag1"
+    ],
+    "when": {
+      "location": "kitchen"
+    },
+    "effects": {
+      "comfort": 1,
+      "trust": 1
+    },
     "label": "Same counter, same quiet"
   },
   {
     "id": "mod-office-desk-drawer",
-    "appliesTo": ["liquid-iv", "ag1"],
-    "when": { "location": "office" },
-    "effects": { "comfort": 1, "belonging": 1 },
+    "appliesTo": [
+      "liquid-iv",
+      "ag1"
+    ],
+    "when": {
+      "location": "office"
+    },
+    "effects": {
+      "comfort": 1,
+      "belonging": 1
+    },
     "label": "Desk-drawer dependability (future scene)"
+  },
+  {
+    "id": "mod-liquid-iv-office",
+    "appliesTo": [
+      "liquid-iv"
+    ],
+    "when": {
+      "location": "office"
+    },
+    "effects": {
+      "readiness": 1,
+      "comfort": 2,
+      "aspiration": -1
+    },
+    "label": "Desk-drawer duty"
+  },
+  {
+    "id": "mod-red-bull-festival",
+    "appliesTo": [
+      "red-bull"
+    ],
+    "when": {
+      "location": "music-festival"
+    },
+    "effects": {
+      "excitement": 2,
+      "aspiration": 1
+    },
+    "label": "Owns the sky above this stage"
+  },
+  {
+    "id": "mod-red-bull-airport",
+    "appliesTo": [
+      "red-bull"
+    ],
+    "when": {
+      "location": "airport"
+    },
+    "effects": {
+      "readiness": 1,
+      "aspiration": 1
+    },
+    "label": "Born from jet lag"
+  },
+  {
+    "id": "mod-starbucks-office",
+    "appliesTo": [
+      "starbucks"
+    ],
+    "when": {
+      "location": "office"
+    },
+    "effects": {
+      "readiness": 2,
+      "belonging": -1
+    },
+    "label": "Fuel over presence"
+  },
+  {
+    "id": "mod-starbucks-airport",
+    "appliesTo": [
+      "starbucks"
+    ],
+    "when": {
+      "location": "airport"
+    },
+    "effects": {
+      "reassurance": 2
+    },
+    "label": "Sameness as a hug"
+  },
+  {
+    "id": "mod-ag1-corner-cafe",
+    "appliesTo": [
+      "ag1"
+    ],
+    "when": {
+      "location": "corner-cafe"
+    },
+    "effects": {
+      "trust": -2,
+      "selfExpression": 1
+    },
+    "label": "You're hearing the fourteenth ad read"
+  },
+  {
+    "id": "mod-eight-sleep-office",
+    "appliesTo": [
+      "eight-sleep"
+    ],
+    "when": {
+      "location": "office"
+    },
+    "effects": {
+      "control": -2,
+      "trust": -1
+    },
+    "label": "Your bed phones it in"
+  },
+  {
+    "id": "mod-zen-festival",
+    "appliesTo": [
+      "zen"
+    ],
+    "when": {
+      "location": "music-festival"
+    },
+    "effects": {
+      "excitement": -2,
+      "comfort": -1
+    },
+    "label": "Serenity, volume-maxed"
+  },
+  {
+    "id": "mod-zyn-nightgym",
+    "appliesTo": [
+      "zyn"
+    ],
+    "when": {
+      "location": "nightgym"
+    },
+    "effects": {
+      "aspiration": 1,
+      "trust": -1
+    },
+    "label": "Performance costume"
+  },
+  {
+    "id": "mod-whoop-bedroom-night",
+    "appliesTo": [
+      "whoop"
+    ],
+    "when": {
+      "location": "bedroom-night"
+    },
+    "effects": {
+      "control": 1,
+      "comfort": -1
+    },
+    "label": "Never off the record"
+  },
+  {
+    "id": "mod-beach-day-open-sky",
+    "appliesTo": [
+      "white-claw",
+      "athletic-brewing",
+      "liquid-death",
+      "zyn",
+      "celsius"
+    ],
+    "when": {
+      "location": "beach-day"
+    },
+    "effects": {
+      "excitement": 2,
+      "comfort": 1,
+      "readiness": -1
+    },
+    "label": "The day was already good"
+  },
+  {
+    "id": "mod-music-festival-peak",
+    "appliesTo": [
+      "red-bull",
+      "liquid-death",
+      "celsius",
+      "white-claw",
+      "liquid-iv"
+    ],
+    "when": {
+      "location": "music-festival"
+    },
+    "effects": {
+      "excitement": 3,
+      "belonging": 2,
+      "mastery": -2
+    },
+    "label": "Peak stimulus; judgment deferred"
+  },
+  {
+    "id": "mod-corner-cafe-audition",
+    "appliesTo": [
+      "starbucks",
+      "zen",
+      "ag1",
+      "na-spirits",
+      "whoop",
+      "liquid-death"
+    ],
+    "when": {
+      "location": "corner-cafe"
+    },
+    "effects": {
+      "comfort": 2,
+      "belonging": 1,
+      "excitement": -1
+    },
+    "label": "Interviewing for third place"
+  },
+  {
+    "id": "mod-bedroom-night-candor",
+    "appliesTo": [
+      "oura",
+      "eight-sleep",
+      "zen",
+      "whoop",
+      "na-spirits"
+    ],
+    "when": {
+      "location": "bedroom-night"
+    },
+    "effects": {
+      "comfort": 2,
+      "trust": 1,
+      "aspiration": -2
+    },
+    "label": "The mask is on the nightstand"
+  },
+  {
+    "id": "mod-grocery-store-shelf-truth",
+    "appliesTo": [
+      "liquid-iv",
+      "ag1",
+      "celsius",
+      "starbucks",
+      "liquid-death",
+      "white-claw",
+      "athletic-brewing",
+      "zyn"
+    ],
+    "when": {
+      "location": "grocery-store"
+    },
+    "effects": {
+      "trust": -2,
+      "mastery": 1,
+      "aspiration": -1
+    },
+    "label": "Price tags are sworn witnesses"
   }
 ]

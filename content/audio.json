@@ -1,12 +1,100 @@
 [
-  { "id": "mus-hub", "kind": "music", "src": "/assets/music/mus-hub.wav", "loop": true, "volume": 0.9 },
-  { "id": "mus-airport", "kind": "music", "src": "/assets/music/mus-airport.wav", "loop": true, "volume": 0.85 },
-  { "id": "mus-nightgym", "kind": "music", "src": "/assets/music/mus-nightgym.wav", "loop": true, "volume": 0.85 },
-  { "id": "mus-rooftop", "kind": "music", "src": "/assets/music/mus-rooftop.wav", "loop": true, "volume": 0.85 },
-  { "id": "mus-kitchen", "kind": "music", "src": "/assets/music/mus-kitchen.wav", "loop": true, "volume": 0.85 },
-  { "id": "mus-reveal", "kind": "music", "src": "/assets/music/mus-reveal.wav", "loop": true, "volume": 1 },
-
-  { "id": "sfx-click", "kind": "sfx", "src": "/assets/sfx/sfx-click.wav", "loop": false, "volume": 0.6 },
-  { "id": "evidence-chime", "kind": "sfx", "src": "/assets/sfx/evidence-chime.wav", "loop": false, "volume": 0.8 },
-  { "id": "heart-beat", "kind": "sfx", "src": "/assets/sfx/heart-beat.wav", "loop": false, "volume": 0.9 }
+  {
+    "id": "mus-hub",
+    "kind": "music",
+    "src": "/assets/music/mus-hub.wav",
+    "loop": true,
+    "volume": 0.9
+  },
+  {
+    "id": "mus-airport",
+    "kind": "music",
+    "src": "/assets/music/mus-airport.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-nightgym",
+    "kind": "music",
+    "src": "/assets/music/mus-nightgym.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-rooftop",
+    "kind": "music",
+    "src": "/assets/music/mus-rooftop.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-kitchen",
+    "kind": "music",
+    "src": "/assets/music/mus-kitchen.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-reveal",
+    "kind": "music",
+    "src": "/assets/music/mus-reveal.wav",
+    "loop": true,
+    "volume": 1
+  },
+  {
+    "id": "sfx-click",
+    "kind": "sfx",
+    "src": "/assets/sfx/sfx-click.wav",
+    "loop": false,
+    "volume": 0.6
+  },
+  {
+    "id": "evidence-chime",
+    "kind": "sfx",
+    "src": "/assets/sfx/evidence-chime.wav",
+    "loop": false,
+    "volume": 0.8
+  },
+  {
+    "id": "heart-beat",
+    "kind": "sfx",
+    "src": "/assets/sfx/heart-beat.wav",
+    "loop": false,
+    "volume": 0.9
+  },
+  {
+    "id": "mus-beach-day",
+    "kind": "music",
+    "src": "/assets/music/mus-beach-day.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-music-festival",
+    "kind": "music",
+    "src": "/assets/music/mus-music-festival.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-corner-cafe",
+    "kind": "music",
+    "src": "/assets/music/mus-corner-cafe.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-bedroom-night",
+    "kind": "music",
+    "src": "/assets/music/mus-bedroom-night.wav",
+    "loop": true,
+    "volume": 0.85
+  },
+  {
+    "id": "mus-grocery-store",
+    "kind": "music",
+    "src": "/assets/music/mus-grocery-store.wav",
+    "loop": true,
+    "volume": 0.85
+  }
 ]

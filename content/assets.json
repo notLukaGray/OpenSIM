@@ -1,44 +1,243 @@
 [
-  { "id": "char-liquid-iv-neutral", "type": "character-neutral", "src": "/assets/characters/char-liquid-iv-neutral.svg", "alt": "Liquid I.V.", "preload": true },
-  { "id": "char-liquid-iv-happy", "type": "character-happy", "src": "/assets/characters/char-liquid-iv-happy.svg", "alt": "Liquid I.V., pleased" },
-  { "id": "char-liquid-iv-annoyed", "type": "character-annoyed", "src": "/assets/characters/char-liquid-iv-annoyed.svg", "alt": "Liquid I.V., defensive" },
-  { "id": "char-liquid-iv-embarrassed", "type": "character-embarrassed", "src": "/assets/characters/char-liquid-iv-embarrassed.svg", "alt": "Liquid I.V., embarrassed" },
-  { "id": "char-liquid-iv-special", "type": "character-special", "src": "/assets/characters/char-liquid-iv-special.svg", "alt": "Liquid I.V., affectionate" },
-
-  { "id": "char-whoop-neutral", "type": "character-neutral", "src": "/assets/characters/char-whoop-neutral.svg", "alt": "WHOOP", "preload": true },
-  { "id": "char-whoop-happy", "type": "character-happy", "src": "/assets/characters/char-whoop-happy.svg", "alt": "WHOOP, satisfied" },
-  { "id": "char-whoop-annoyed", "type": "character-annoyed", "src": "/assets/characters/char-whoop-annoyed.svg", "alt": "WHOOP, cold" },
-  { "id": "char-whoop-embarrassed", "type": "character-embarrassed", "src": "/assets/characters/char-whoop-embarrassed.svg", "alt": "WHOOP, caught out" },
-  { "id": "char-whoop-special", "type": "character-special", "src": "/assets/characters/char-whoop-special.svg", "alt": "WHOOP, unguarded" },
-
-  { "id": "char-celsius-neutral", "type": "character-neutral", "src": "/assets/characters/char-celsius-neutral.svg", "alt": "CELSIUS", "preload": true },
-  { "id": "char-celsius-happy", "type": "character-happy", "src": "/assets/characters/char-celsius-happy.svg", "alt": "CELSIUS, electric" },
-  { "id": "char-celsius-annoyed", "type": "character-annoyed", "src": "/assets/characters/char-celsius-annoyed.svg", "alt": "CELSIUS, bristling" },
-  { "id": "char-celsius-embarrassed", "type": "character-embarrassed", "src": "/assets/characters/char-celsius-embarrassed.svg", "alt": "CELSIUS, off-beat" },
-  { "id": "char-celsius-special", "type": "character-special", "src": "/assets/characters/char-celsius-special.svg", "alt": "CELSIUS, close-up energy" },
-
-  { "id": "char-ag1-neutral", "type": "character-neutral", "src": "/assets/characters/char-ag1-neutral.svg", "alt": "AG1", "preload": true },
-  { "id": "char-ag1-happy", "type": "character-happy", "src": "/assets/characters/char-ag1-happy.svg", "alt": "AG1, warm" },
-  { "id": "char-ag1-annoyed", "type": "character-annoyed", "src": "/assets/characters/char-ag1-annoyed.svg", "alt": "AG1, stung" },
-  { "id": "char-ag1-embarrassed", "type": "character-embarrassed", "src": "/assets/characters/char-ag1-embarrassed.svg", "alt": "AG1, flustered" },
-  { "id": "char-ag1-special", "type": "character-special", "src": "/assets/characters/char-ag1-special.svg", "alt": "AG1, tender" },
-
-  { "id": "bg-hub", "type": "background", "src": "/assets/backgrounds/bg-hub.svg", "alt": "A city of glowing windows at night", "preload": true },
-  { "id": "bg-airport", "type": "background", "src": "/assets/backgrounds/bg-airport.svg", "alt": "Night terminal with runway lights" },
-  { "id": "bg-nightgym", "type": "background", "src": "/assets/backgrounds/bg-nightgym.svg", "alt": "Dark gym under a single light pool" },
-  { "id": "bg-rooftop", "type": "background", "src": "/assets/backgrounds/bg-rooftop.svg", "alt": "City skyline at dusk" },
-  { "id": "bg-kitchen", "type": "background", "src": "/assets/backgrounds/bg-kitchen.svg", "alt": "Warm kitchen in morning light" },
-  { "id": "bg-reveal", "type": "background", "src": "/assets/backgrounds/bg-reveal.svg", "alt": "A soft glow in the void" },
-
-  { "id": "cg-airport-window", "type": "cg", "src": "/assets/cg/cg-airport-window.svg", "alt": "Two figures against a huge terminal window" },
-
-  { "id": "evg-liquid-iv-stickpack", "type": "evidence-imagery", "src": "/assets/evidence/evg-liquid-iv-stickpack.svg", "alt": "Powder stick packets in a fan" },
-  { "id": "evg-whoop-strain-graph", "type": "evidence-imagery", "src": "/assets/evidence/evg-whoop-strain-graph.svg", "alt": "A rising strain graph on a dark screen" },
-  { "id": "evg-celsius-can-lineup", "type": "evidence-imagery", "src": "/assets/evidence/evg-celsius-can-lineup.svg", "alt": "Three slim cans in a lineup" },
-  { "id": "evg-ag1-scoop", "type": "evidence-imagery", "src": "/assets/evidence/evg-ag1-scoop.svg", "alt": "A scoop of green powder over a glass" },
-
-  { "id": "ui-vignette", "type": "ui", "src": "/assets/ui/ui-vignette.svg", "alt": "", "preload": true },
-  { "id": "logo-dsim", "type": "logo", "src": "/assets/ui/logo-dsim.svg", "alt": "DSIM mark", "preload": true },
-
-  { "id": "reveal-silhouette", "type": "silhouette", "src": "/assets/reveal/reveal-silhouette.svg", "alt": "Your silhouette" }
+  {
+    "id": "char-liquid-iv-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-liquid-iv-neutral.svg",
+    "alt": "Liquid I.V.",
+    "preload": true
+  },
+  {
+    "id": "char-liquid-iv-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-liquid-iv-happy.svg",
+    "alt": "Liquid I.V., pleased"
+  },
+  {
+    "id": "char-liquid-iv-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-liquid-iv-annoyed.svg",
+    "alt": "Liquid I.V., defensive"
+  },
+  {
+    "id": "char-liquid-iv-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-liquid-iv-embarrassed.svg",
+    "alt": "Liquid I.V., embarrassed"
+  },
+  {
+    "id": "char-liquid-iv-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-liquid-iv-special.svg",
+    "alt": "Liquid I.V., affectionate"
+  },
+  {
+    "id": "char-whoop-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-whoop-neutral.svg",
+    "alt": "WHOOP",
+    "preload": true
+  },
+  {
+    "id": "char-whoop-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-whoop-happy.svg",
+    "alt": "WHOOP, satisfied"
+  },
+  {
+    "id": "char-whoop-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-whoop-annoyed.svg",
+    "alt": "WHOOP, cold"
+  },
+  {
+    "id": "char-whoop-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-whoop-embarrassed.svg",
+    "alt": "WHOOP, caught out"
+  },
+  {
+    "id": "char-whoop-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-whoop-special.svg",
+    "alt": "WHOOP, unguarded"
+  },
+  {
+    "id": "char-celsius-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-celsius-neutral.svg",
+    "alt": "CELSIUS",
+    "preload": true
+  },
+  {
+    "id": "char-celsius-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-celsius-happy.svg",
+    "alt": "CELSIUS, electric"
+  },
+  {
+    "id": "char-celsius-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-celsius-annoyed.svg",
+    "alt": "CELSIUS, bristling"
+  },
+  {
+    "id": "char-celsius-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-celsius-embarrassed.svg",
+    "alt": "CELSIUS, off-beat"
+  },
+  {
+    "id": "char-celsius-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-celsius-special.svg",
+    "alt": "CELSIUS, close-up energy"
+  },
+  {
+    "id": "char-ag1-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-ag1-neutral.svg",
+    "alt": "AG1",
+    "preload": true
+  },
+  {
+    "id": "char-ag1-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-ag1-happy.svg",
+    "alt": "AG1, warm"
+  },
+  {
+    "id": "char-ag1-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-ag1-annoyed.svg",
+    "alt": "AG1, stung"
+  },
+  {
+    "id": "char-ag1-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-ag1-embarrassed.svg",
+    "alt": "AG1, flustered"
+  },
+  {
+    "id": "char-ag1-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-ag1-special.svg",
+    "alt": "AG1, tender"
+  },
+  {
+    "id": "bg-hub",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-hub.svg",
+    "alt": "A city of glowing windows at night",
+    "preload": true
+  },
+  {
+    "id": "bg-airport",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-airport.svg",
+    "alt": "Night terminal with runway lights"
+  },
+  {
+    "id": "bg-nightgym",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-nightgym.svg",
+    "alt": "Dark gym under a single light pool"
+  },
+  {
+    "id": "bg-rooftop",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-rooftop.svg",
+    "alt": "City skyline at dusk"
+  },
+  {
+    "id": "bg-kitchen",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-kitchen.svg",
+    "alt": "Warm kitchen in morning light"
+  },
+  {
+    "id": "bg-reveal",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-reveal.svg",
+    "alt": "A soft glow in the void"
+  },
+  {
+    "id": "cg-airport-window",
+    "type": "cg",
+    "src": "/assets/cg/cg-airport-window.svg",
+    "alt": "Two figures against a huge terminal window"
+  },
+  {
+    "id": "evg-liquid-iv-stickpack",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/evg-liquid-iv-stickpack.svg",
+    "alt": "Powder stick packets in a fan"
+  },
+  {
+    "id": "evg-whoop-strain-graph",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/evg-whoop-strain-graph.svg",
+    "alt": "A rising strain graph on a dark screen"
+  },
+  {
+    "id": "evg-celsius-can-lineup",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/evg-celsius-can-lineup.svg",
+    "alt": "Three slim cans in a lineup"
+  },
+  {
+    "id": "evg-ag1-scoop",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/evg-ag1-scoop.svg",
+    "alt": "A scoop of green powder over a glass"
+  },
+  {
+    "id": "ui-vignette",
+    "type": "ui",
+    "src": "/assets/ui/ui-vignette.svg",
+    "alt": "",
+    "preload": true
+  },
+  {
+    "id": "logo-dsim",
+    "type": "logo",
+    "src": "/assets/ui/logo-dsim.svg",
+    "alt": "DSIM mark",
+    "preload": true
+  },
+  {
+    "id": "reveal-silhouette",
+    "type": "silhouette",
+    "src": "/assets/reveal/reveal-silhouette.svg",
+    "alt": "Your silhouette"
+  },
+  {
+    "id": "bg-beach-day",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-beach-day.svg",
+    "alt": "Salt and a cooler with opinions"
+  },
+  {
+    "id": "bg-music-festival",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-music-festival.svg",
+    "alt": "Stages, lights, no personal space"
+  },
+  {
+    "id": "bg-corner-cafe",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-corner-cafe.svg",
+    "alt": "Third-place audition room"
+  },
+  {
+    "id": "bg-bedroom-night",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-bedroom-night.svg",
+    "alt": "Moonlight through one window"
+  },
+  {
+    "id": "bg-grocery-store",
+    "type": "background",
+    "src": "/assets/backgrounds/bg-grocery-store.svg",
+    "alt": "Fluorescent honesty"
+  }
 ]
