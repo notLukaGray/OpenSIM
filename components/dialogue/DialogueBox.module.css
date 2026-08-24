@@ -86,11 +86,11 @@
 }
 
 .counsel .text {
-  font-family: var(--font-mono);
-  font-size: 19px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.65;
+  font-family: var(--font-legal);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.7;
   color: #27261f;
 }
 

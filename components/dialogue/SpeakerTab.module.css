@@ -40,6 +40,24 @@
   transform: translateY(-6px);
 }
 
+.counsel {
+  border-radius: 4px 4px 0 0;
+  background: #efede3;
+  border-color: #9a947f;
+}
+
+.counsel .icon,
+.counsel .sparkle {
+  display: none;
+}
+
+.counsel .name {
+  font-family: var(--font-legal);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: #413d31;
+}
+
 @media (max-width: 720px) {
   .tab {
     left: 18px;

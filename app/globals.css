@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Nunito", system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-legal: "Libre Baskerville", "Times New Roman", serif;
   --bg-void: #0b0e17;
   --ink: #f4ecf2;
   --accent: #f2b8c6;
