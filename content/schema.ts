@@ -156,7 +156,9 @@ export type Evidence = {
   type: EvidenceType;
   title: string;
   description: string;
-  imageRef: string;
+  /** Optional — cards render as designed typography when absent (P6-01 path). */
+  imageRef?: string;
+  sourceIds?: string[];
   /** Reinforces or challenges perception; applied once on first unlock. */
   effects: Partial<NeedVector>;
 };

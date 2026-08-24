@@ -175,3 +175,95 @@
   letter-spacing: 0.28em;
   color: rgba(232, 228, 240, 0.35);
 }
+
+.thresholdWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 16, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.thresholdCard {
+  position: relative;
+  width: min(640px, 88%);
+  padding: 52px 56px 44px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.97), rgba(11, 14, 23, 0.99));
+  border: 1px solid rgba(242, 184, 198, 0.45);
+  border-radius: 24px;
+  box-shadow: 0 0 90px rgba(242, 184, 198, 0.18), 0 50px 140px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+
+.thresholdGlow {
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 50% 42%, rgba(242, 184, 198, 0.14), transparent 55%);
+  pointer-events: none;
+}
+
+.thresholdKicker {
+  font-size: 10.5px;
+  letter-spacing: 0.46em;
+  color: rgba(242, 184, 198, 0.75);
+}
+
+.thresholdTitle {
+  margin-top: 20px;
+  font-size: clamp(28px, 3.4vw, 44px);
+  letter-spacing: 0.22em;
+  color: #f4ecf2;
+  text-shadow: 0 0 60px rgba(242, 184, 198, 0.35);
+  position: relative;
+}
+
+.thresholdBody {
+  margin-top: 20px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: rgba(232, 228, 240, 0.85);
+  position: relative;
+}
+
+.thresholdActions {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.thresholdCta {
+  padding: 15px 38px;
+  font-size: 13.5px;
+  letter-spacing: 0.26em;
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.thresholdCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 46px rgba(242, 184, 198, 0.4);
+}
+
+.thresholdSkip {
+  background: none;
+  border: none;
+  color: rgba(232, 228, 240, 0.5);
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+}
+
+.thresholdSkip:hover {
+  color: rgba(232, 228, 240, 0.85);
+}

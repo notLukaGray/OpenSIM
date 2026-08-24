@@ -10,9 +10,12 @@ import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
 import DateDebrief from "./DateDebrief";
 import styles from "./TravelMap.module.css";
+import { REVEAL_MIN_ENCOUNTERS } from "@/game/types";
 
 // Session-level marker so each completed encounter's debrief shows exactly once.
 const lastDebriefShown = { id: null as string | null };
+// The threshold-crossing popup announces itself once per run (P7-01 moment).
+const thresholdAnnouncedAt = { count: -1 };
 
 export default function TravelMap() {
   const game = useGame();
@@ -20,6 +23,9 @@ export default function TravelMap() {
   const [hovered, setHovered] = useState<string | null>(null);
   // Debrief for the encounter completed most recently (shown once per arrival).
   const [debriefTree, setDebriefTree] = useState<DateTree | null>(null);
+  // Threshold moment (P7-01): crossing REVEAL_MIN_ENCOUNTERS triggers a one-time
+  // dramatic popup over the map — the reveal is a bigger deal than a button.
+  const [thresholdPopup, setThresholdPopup] = useState(false);
 
   useEffect(() => {
     const done = state.completedTrees;
@@ -37,6 +43,17 @@ export default function TravelMap() {
 
   useEffect(() => {
     void AudioManager.playMusic("mus-hub");
+    // Threshold moment fires once, the first time the map loads with enough
+    // nights banked and the reveal still unseen.
+    if (
+      state.completedTrees.length >= REVEAL_MIN_ENCOUNTERS &&
+      !state.hasSeenReveal &&
+      thresholdAnnouncedAt.count < REVEAL_MIN_ENCOUNTERS
+    ) {
+      thresholdAnnouncedAt.count = state.completedTrees.length;
+      void AudioManager.playSfx("heart-beat");
+      setThresholdPopup(true);
+    }
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") game.toTitle();
     };
@@ -80,7 +97,7 @@ export default function TravelMap() {
   const allDone = available.length === 0;
   // Standing rule R1: the reveal is reachable in ≤10 minutes — after any two
   // encounters the player may audit themselves early, or keep exploring.
-  const canReveal = state.completedTrees.length >= 2;
+  const canReveal = state.completedTrees.length >= REVEAL_MIN_ENCOUNTERS;
   const bg = getAsset("bg-hub");
 
   return (
@@ -169,6 +186,58 @@ export default function TravelMap() {
       })}
 
       <AnimatePresence>
+        {thresholdPopup && (
+          <motion.div
+            className={styles.thresholdWrap}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            role="dialog"
+            aria-label="the shape of you"
+          >
+            <motion.div
+              className={styles.thresholdCard}
+              initial={{ scale: 0.85, y: 30 }}
+              animate={{ scale: [0.85, 1.04, 1], y: [30, 12, 0] }}
+              transition={{ duration: 0.9, times: [0, 0.7, 1], ease: "easeOut" }}
+            >
+              <motion.div
+                className={styles.thresholdGlow}
+                animate={{ opacity: [0.25, 0.6, 0.25] }}
+                transition={{ duration: 2.4, repeat: Infinity }}
+              />
+              <div className={styles.thresholdKicker}>[ THREE NIGHTS IN ]</div>
+              <h2 className={styles.thresholdTitle}>SOMETHING IS TAKING SHAPE.</h2>
+              <p className={styles.thresholdBody}>
+                The brands think they&apos;ve been sizing you up.
+                <br />
+                They&apos;re wrong. The shape getting clearer is yours.
+              </p>
+              <div className={styles.thresholdActions}>
+                <button
+                  className={styles.thresholdCta}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setThresholdPopup(false);
+                    void AudioManager.playSfx("heart-beat");
+                    game.setPhase("reveal");
+                  }}
+                >
+                  SEE WHO YOU&apos;VE BEEN
+                </button>
+                <button
+                  className={styles.thresholdSkip}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setThresholdPopup(false);
+                  }}
+                >
+                  keep exploring for now
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
         {debriefTree && (
           <DateDebrief tree={debriefTree} state={state} onDismiss={() => setDebriefTree(null)} />
         )}

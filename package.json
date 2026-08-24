@@ -12,7 +12,8 @@
     "sync:dates": "node scripts/sync-date-registry.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync:evidence": "node scripts/sync-evidence.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.1.1",

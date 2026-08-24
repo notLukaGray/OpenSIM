@@ -143,7 +143,12 @@ export function validateContent(bundle) {
   for (const e of bundle.evidence) {
     const f = F(e, "evidence");
     if (!brandIds.has(e.brandId)) err(f, `evidence[${e.id}].brandId`, `unknown brand "${e.brandId}"`);
-    if (!assetIds.has(e.imageRef)) err(f, `evidence[${e.id}].imageRef`, `unknown asset "${e.imageRef}"`);
+    if (e.imageRef && !assetIds.has(e.imageRef)) err(f, `evidence[${e.id}].imageRef`, `unknown asset "${e.imageRef}"`);
+    for (const sid of e.sourceIds ?? []) {
+      // sources registry (P6-01) may not exist yet; validate shape only
+      if (typeof sid !== "string" || !sid.startsWith("src-"))
+        warn(f, `evidence[${e.id}].sourceIds`, `citation ids should look like "src-…" got "${sid}"`);
+    }
     checkVector(e.effects, f, `evidence[${e.id}].effects`, { cap: EFFECT_CAP });
   }
 

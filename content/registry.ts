@@ -92,14 +92,14 @@ export const modifiers: Modifier[] = (modifiersJson as unknown as Record<string,
 // ── evidence ─────────────────────────────────────────────────────────────────
 export const evidence: Evidence[] = (evidenceJson as unknown as Record<string, unknown>[]).map(
   (e, i) => {
-    req(e, ["id", "brandId", "type", "title", "description", "imageRef"], `evidence.json[${i}]`);
+    req(e, ["id", "brandId", "type", "title", "description"], `evidence.json[${i}]`);
     return {
       id: e.id as string,
       brandId: e.brandId as string,
       type: e.type as Evidence["type"],
       title: e.title as string,
       description: e.description as string,
-      imageRef: e.imageRef as string,
+      ...(e.imageRef ? { imageRef: e.imageRef as string } : {}),
       effects: fullVector(e.effects as Record<string, unknown>, "evidence.json", e.id as string),
     } satisfies Evidence;
   }

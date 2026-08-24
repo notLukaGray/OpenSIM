@@ -59,3 +59,31 @@
   letter-spacing: 0.28em;
   color: rgba(242, 184, 198, 0.55);
 }
+
+.typoFrame {
+  margin: 18px auto 14px;
+  padding: 34px 26px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.04), transparent 60%),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.025) 0 10px, transparent 10px 20px);
+}
+
+.typeBadge {
+  display: inline-block;
+  padding: 4px 14px;
+  font-size: 9.5px;
+  letter-spacing: 0.3em;
+  color: #0b0e17;
+  background: rgba(242, 184, 198, 0.85);
+  border-radius: 999px;
+}
+
+.typoQuote {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.25;
+  color: rgba(244, 236, 242, 0.95);
+}
