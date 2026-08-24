@@ -2,18 +2,38 @@
 // TravelMap (P5-02): the world is where context lives. Locations are nodes;
 // encounters are (brand × location) pairs; the map updates live as you complete them.
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { dateTreeList, getAsset, getBrandOrNull, locations } from "@/content/registry";
+import { dateTreeList, getAsset, getBrandOrNull, getTree, locations } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
+import DateDebrief from "./DateDebrief";
 import styles from "./TravelMap.module.css";
+
+// Session-level marker so each completed encounter's debrief shows exactly once.
+const lastDebriefShown = { id: null as string | null };
 
 export default function TravelMap() {
   const game = useGame();
   const { state } = game;
   const [hovered, setHovered] = useState<string | null>(null);
+  // Debrief for the encounter completed most recently (shown once per arrival).
+  const [debriefTree, setDebriefTree] = useState<DateTree | null>(null);
+
+  useEffect(() => {
+    const done = state.completedTrees;
+    const newest = done.length > 0 ? done[done.length - 1] : null;
+    if (newest && newest !== lastDebriefShown.id) {
+      try {
+        setDebriefTree(getTree(newest));
+        lastDebriefShown.id = newest;
+      } catch {
+        /* tree vanished from registry — skip debrief */
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     void AudioManager.playMusic("mus-hub");
@@ -114,6 +134,12 @@ export default function TravelMap() {
           </motion.div>
         );
       })}
+
+      <AnimatePresence>
+        {debriefTree && (
+          <DateDebrief tree={debriefTree} state={state} onDismiss={() => setDebriefTree(null)} />
+        )}
+      </AnimatePresence>
 
       {(canReveal || allDone) && (
         <motion.div

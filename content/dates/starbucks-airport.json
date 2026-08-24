@@ -1,0 +1,247 @@
+{
+  "id": "starbucks-airport",
+  "brandId": "starbucks",
+  "title": "Same Everywhere",
+  "context": {
+    "location": "airport",
+    "occasion": "travel"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-starbucks-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "sameness as a hug",
+    "comfort versus surrender",
+    "the secret handshake was menu-board logistics"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
+      "text": [
+        "Departures level, gate-side table, one green siren among forty thousand.",
+        "Wherever you land, I taste exactly like this. Go ahead \u2014 test me sometime."
+      ],
+      "next": "impression"
+    },
+    "impression": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Delayed flight, wrong city, near midnight \u2014 and the Pike Place is identical to the one in Beijing.",
+        "People call that a hug. Some call it surrender. Which is it tonight?"
+      ],
+      "choices": [
+        {
+          "id": "hug",
+          "text": "At eleven p.m. in a dead terminal? It's a hug. Take the win.",
+          "next": "experience",
+          "playerEffects": {
+            "reassurance": 3,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "reassurance": 2,
+              "comfort": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 2
+          },
+          "setFlags": [
+            "sbux-took-the-hug"
+          ]
+        },
+        {
+          "id": "surrender",
+          "text": "Comfort that predictable starts to feel like giving up.",
+          "next": "react-surrender",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "excitement": -2,
+              "aspiration": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          },
+          "setFlags": [
+            "sbux-smelled-surrender"
+          ]
+        },
+        {
+          "id": "lingo",
+          "text": "Only if I can order without once saying the word \"large.\"",
+          "next": "react-lingo",
+          "playerEffects": {
+            "selfExpression": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "mastery": 1,
+              "selfExpression": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          },
+          "setFlags": [
+            "sbux-speaks-venti"
+          ]
+        }
+      ]
+    },
+    "react-surrender": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Fair. Although you did walk straight to me in a city you've never seen."
+      ],
+      "next": "experience"
+    },
+    "react-lingo": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Tall, grande, venti \u2014 twenty in Italian, chosen so a cup of joe would feel exotic. Welcome to the fluent table."
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Beijing poured me in January of ninety-nine. Eight thousand stores ago, one identical recipe.",
+        "Every airport copy ships the same promise: no surprises. Not even the pleasant kind."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Meanwhile a rival back in China pours faster and cheaper, and \"same everywhere\" starts reading as \"slow.\"",
+        "So \u2014 do you keep dating the familiar, or does comfort quietly become a cage?"
+      ],
+      "choices": [
+        {
+          "id": "familiar",
+          "text": "Familiar. Travel is chaos enough; the cup doesn't have to be.",
+          "next": "closing",
+          "playerEffects": {
+            "reassurance": 2,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "reassurance": 2,
+              "comfort": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          },
+          "setFlags": [
+            "sbux-kept-familiar"
+          ]
+        },
+        {
+          "id": "cage",
+          "text": "A cage with nice lighting. Maybe I should want more from a cup.",
+          "next": "closing",
+          "playerEffects": {
+            "excitement": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "excitement": -2,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          },
+          "setFlags": [
+            "sbux-wants-more"
+          ]
+        },
+        {
+          "id": "zoned",
+          "text": "You get departures. The rest of my map stays open for experiments.",
+          "next": "closing",
+          "playerEffects": {
+            "control": 2,
+            "selfExpression": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "excitement": -1,
+              "mastery": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 0
+          }
+        }
+      ]
+    },
+    "closing": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "hug",
+          "text": [
+            "Take the hug at face value. Departure halls run on them."
+          ]
+        },
+        {
+          "if": "lingo",
+          "text": [
+            "Venti travels better than \"large\" ever will. Fluent and loyal \u2014 dangerous combination."
+          ]
+        },
+        {
+          "if": "cage",
+          "text": [
+            "Want more, then. I'll be right here being exactly enough anyway."
+          ]
+        }
+      ],
+      "text": [
+        "Boarding soon. Somewhere past security another me is steaming identical milk.",
+        "When you land, one of us will taste like home. Sleep on which word that is."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "airport"
+}

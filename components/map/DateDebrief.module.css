@@ -1,0 +1,83 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 16, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.card {
+  width: min(520px, 86%);
+  padding: 30px 36px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.97), rgba(11, 14, 23, 0.98));
+  border: 1px solid rgba(242, 184, 198, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+}
+
+.kicker {
+  font-size: 10.5px;
+  letter-spacing: 0.42em;
+  color: rgba(242, 184, 198, 0.7);
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #f4ecf2;
+}
+
+.sectionLabel {
+  margin-top: 22px;
+  font-size: 10px;
+  letter-spacing: 0.34em;
+  color: rgba(232, 228, 240, 0.5);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.up { color: #9fe8b9; border: 1px solid rgba(159, 232, 185, 0.4); }
+.down { color: #f2938f; border: 1px solid rgba(242, 147, 143, 0.4); }
+
+.row {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: rgba(232, 228, 240, 0.85);
+}
+
+.chemRow {
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: rgba(242, 184, 198, 0.75);
+}
+
+.done {
+  margin-top: 26px;
+  padding: 11px 28px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}

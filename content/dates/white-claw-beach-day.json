@@ -1,0 +1,220 @@
+{
+  "id": "white-claw-beach-day",
+  "brandId": "white-claw",
+  "title": "Summer of Claw",
+  "locationId": "beach-day",
+  "context": {
+    "location": "beach-day",
+    "occasion": "day-drink"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-white-claw-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "fame is not the same as being known",
+    "the defining joke was never theirs",
+    "earned media cuts both ways"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy",
+        "effect": "enter"
+      },
+      "text": [
+        "You made it. The ocean's been name-dropping you all week.",
+        "Cooler's right there. Pick your fighter."
+      ],
+      "choices": [
+        {
+          "id": "quote",
+          "text": "\u201cAin't no laws,\u201d right? Been saving that one all summer.",
+          "next": "branch-quote",
+          "playerEffects": {
+            "excitement": 2,
+            "belonging": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "belonging": 1,
+              "selfExpression": 1,
+              "mastery": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "plain",
+          "text": "Honestly? I just really like Black Cherry.",
+          "next": "branch-plain",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "comfort": 1,
+              "reassurance": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "origin",
+          "text": "Real question \u2014 where did any of this actually start?",
+          "next": "branch-origin",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "mastery": 1,
+              "trust": 1
+            }
+          },
+          "setFlags": ["claw-asked-the-origin"]
+        }
+      ]
+    },
+    "branch-quote": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Ha! You said it better than I ever did.",
+        "Because I never did. Some comedian wrote that bit, filmed it on his phone, and I've been coasting on it since."
+      ],
+      "next": "memory"
+    },
+    "branch-plain": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Black Cherry loyalty. See, this is why the beach likes you."
+      ],
+      "next": "memory"
+    },
+    "branch-origin": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Straight answer? Not from me. Stick around."
+      ],
+      "next": "memory"
+    },
+    "memory": {
+      "speaker": "...",
+      "text": [
+        "Three speaker circles down the sand are yelling the same catchphrase at the water. None of them is talking to the can in your hand."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Everyone can finish my joke. Almost nobody knows my name.",
+        "Summer of '19 the whole coast sold out \u2014 and while fans did my marketing for free, I quietly cut my own ad spend."
+      ],
+      "choices": [
+        {
+          "id": "blessed",
+          "text": "Free marketing is still marketing. Take the win.",
+          "next": "wrap",
+          "playerEffects": {
+            "reassurance": 2,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "selfExpression": 2,
+              "control": -2
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "credit",
+          "text": "Then say it out loud. Give the fans their pen back.",
+          "next": "wrap",
+          "playerEffects": {
+            "trust": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 1,
+              "selfExpression": 1,
+              "control": -1
+            }
+          },
+          "setFlags": ["claw-fans-get-the-pen"]
+        },
+        {
+          "id": "sting",
+          "text": "Must be weird that your best material isn't yours.",
+          "next": "wrap",
+          "playerEffects": {
+            "mastery": 2,
+            "excitement": -1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "control": -2,
+              "mastery": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
+          }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "origin",
+          "text": [
+            "See? You asked where it started. Nobody ever asks."
+          ]
+        },
+        {
+          "if": "sting",
+          "text": [
+            "Weird, yeah. But a good joke forgives its landlord."
+          ]
+        }
+      ],
+      "text": [
+        "Stay as long as you like. The tide does the scheduling."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "id": "zyn-office",
+  "brandId": "zyn",
+  "title": "Discreet By Design",
+  "locationId": "office",
+  "context": { "location": "office", "occasion": "late-overtime" },
+  "music": null,
+  "background": null,
+  "cast": [{ "assetId": "char-zyn-neutral", "position": "center" }],
+  "startNode": "intro",
+  "lessons": [
+    "discretion is the entire feature",
+    "invisible habits stop getting counted",
+    "even the loyalty program keeps score"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "ZYN",
+      "sprite": { "expression": "neutral", "effect": "enter" },
+      "text": [
+        "Deck's due at nine and it's just us and the janitor's vacuum. Cozy.",
+        "No smoke break needed, by the way. That's kind of the whole pitch."
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "text": "Fine. What's the discreet version of a coffee break?",
+          "next": "branch-accept",
+          "playerEffects": { "comfort": 2, "readiness": 1 },
+          "brandPerceptionEffects": { "zyn": { "comfort": 2, "readiness": 1 } },
+          "relationshipEffects": { "zyn": 1 }
+        },
+        {
+          "id": "decline",
+          "text": "I'm good. Coffee is enough vice for a Tuesday.",
+          "next": "branch-decline",
+          "playerEffects": { "control": 2 },
+          "brandPerceptionEffects": { "zyn": { "comfort": -1, "control": 1 } }
+        },
+        {
+          "id": "audit",
+          "text": "Odorless, invisible... discreet for whom, exactly?",
+          "next": "branch-audit",
+          "playerEffects": { "mastery": 2, "trust": 1 },
+          "brandPerceptionEffects": { "zyn": { "trust": -1, "mastery": 1 } },
+          "setFlags": ["asked-whos-it-for"]
+        }
+      ]
+    },
+    "branch-accept": {
+      "speaker": "ZYN",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Tuck it top lip, keep typing. Nobody in that room will ever know.",
+        "That's the feature. No flame, no fog, no HR email."
+      ],
+      "next": "flow"
+    },
+    "branch-decline": {
+      "speaker": "ZYN",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Respect. Caffeine and hydration \u2014 the classics.",
+        "I'll be here being invisible. It's mostly waiting."
+      ],
+      "next": "flow"
+    },
+    "branch-audit": {
+      "speaker": "ZYN",
+      "sprite": { "expression": "embarrassed" },
+      "text": [
+        "Sharp question for someone on their fifth revision tonight.",
+        "Discreet for the room. Convenient for me. Same pocket, honestly."
+      ],
+      "next": "flow"
+    },
+    "flow": {
+      "speaker": "ZYN",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Watch: three-hour review call, zero smoke breaks, zero smell, zero clues.",
+        "You'll finish the deck and nobody will know how. That's the romance."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "ZYN",
+      "sprite": { "expression": "annoyed" },
+      "text": [
+        "Honest hour: when something leaves no evidence, you stop counting it.",
+        "And the rewards app scans every can anyway. Points banked. Even the habit keeps score."
+      ],
+      "choices": [
+        {
+          "id": "comfortable",
+          "text": "Invisible comfort got me through Q3. I'll take the win.",
+          "next": "wrap",
+          "playerEffects": { "comfort": 2, "control": -1 },
+          "brandPerceptionEffects": { "zyn": { "comfort": 2, "readiness": 1, "control": -1 } },
+          "relationshipEffects": { "zyn": 1 },
+          "setFlags": ["desk-tin"]
+        },
+        {
+          "id": "spooked",
+          "text": "'Stops counting' is doing a lot of load-bearing work in that sentence.",
+          "next": "wrap",
+          "playerEffects": { "control": 2, "trust": 1 },
+          "brandPerceptionEffects": { "zyn": { "control": -2, "trust": -1 } }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "ZYN",
+      "callbacks": [
+        {
+          "if": "audit",
+          "text": [
+            "You asked who discretion serves. Most people never do. Ferda, detective.",
+            "Answer was always 'both of us.' That's the uncomfortable part."
+          ]
+        },
+        {
+          "if": "comfortable",
+          "text": [
+            "Desk drawer, left side. Your secret's safe.",
+            "Safe-keeping is literally the product."
+          ]
+        }
+      ],
+      "text": [
+        "Finish strong. I'll be under the desk, quietly.",
+        "Nine a.m. deadline. You've got the deck; I've got discretion."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

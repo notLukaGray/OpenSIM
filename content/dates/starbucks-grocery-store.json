@@ -1,0 +1,246 @@
+{
+  "id": "starbucks-grocery-store",
+  "brandId": "starbucks",
+  "title": "The Float Ledger",
+  "context": {
+    "location": "grocery-store",
+    "occasion": "errand"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-starbucks-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "loyalty as an interest-free loan",
+    "your prepaid balance is working capital",
+    "breakage is margin wearing a bow"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
+      "text": [
+        "Checkout lane. Gift-card tower. You're already holding forty dollars of me.",
+        "We're past pretending now, so \u2014 want to see where that money actually lives?"
+      ],
+      "next": "impression"
+    },
+    "impression": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "text": [
+        "Members preload billions every quarter before a single latte exists. Eleven to thirteen billion a year, prepaid.",
+        "Until you swipe it, that balance pays my partners. Loyalty as an interest-free loan \u2014 mine, not yours."
+      ],
+      "choices": [
+        {
+          "id": "impressed",
+          "text": "That's brilliant. Cold, but genuinely brilliant.",
+          "next": "react-impressed",
+          "playerEffects": {
+            "mastery": 2,
+            "aspiration": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "mastery": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          },
+          "setFlags": [
+            "sbux-praised-float"
+          ]
+        },
+        {
+          "id": "microloan",
+          "text": "So every cheerful little birthday card was a micro-loan?",
+          "next": "react-microloan",
+          "playerEffects": {
+            "trust": -1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -2
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          },
+          "setFlags": [
+            "sbux-saw-breakage"
+          ]
+        },
+        {
+          "id": "yield",
+          "text": "What's my unspent balance earning me, exactly?",
+          "next": "experience",
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "mastery": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 0
+          },
+          "setFlags": [
+            "sbux-ran-the-numbers"
+          ]
+        }
+      ]
+    },
+    "react-impressed": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Flattery logged. The float is my quietest engine \u2014 nobody ever tips it."
+      ],
+      "next": "experience"
+    },
+    "react-microloan": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Plus breakage \u2014 forgotten balances are pure margin. I did say past pretending."
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Close to half my register rings through stored cards and the app now.",
+        "You prepay convenience, I bank certainty. Nobody's lying; somebody is lending."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Which brings us to the awkward aisle: knowing all this, do you still load the card?",
+        "The coffee is real. So is the float. Decide which one you're dating."
+      ],
+      "choices": [
+        {
+          "id": "load",
+          "text": "Still loading. The convenience earns the float.",
+          "next": "closing",
+          "playerEffects": {
+            "comfort": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "readiness": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 1
+          },
+          "setFlags": [
+            "sbux-loaded-anyway"
+          ]
+        },
+        {
+          "id": "cash",
+          "text": "Cash from here on. My money stays my money.",
+          "next": "closing",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 1
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -2,
+              "control": -1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": -1
+          },
+          "setFlags": [
+            "sbux-paid-cash"
+          ]
+        },
+        {
+          "id": "scorekeeper",
+          "text": "I'll keep the card \u2014 and keep score.",
+          "next": "closing",
+          "playerEffects": {
+            "control": 2,
+            "mastery": 2
+          },
+          "brandPerceptionEffects": {
+            "starbucks": {
+              "trust": -1,
+              "mastery": 1
+            }
+          },
+          "relationshipEffects": {
+            "starbucks": 0
+          }
+        }
+      ]
+    },
+    "closing": {
+      "speaker": "STARBUCKS",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "impressed",
+          "text": [
+            "You get me. That's the hazard of post-reveal dates."
+          ]
+        },
+        {
+          "if": "microloan",
+          "text": [
+            "You flinched at breakage and reached for the card anyway. We're both interesting."
+          ]
+        },
+        {
+          "if": "yield",
+          "text": [
+            "Zero percent, sentiment included. The house keeps the spread."
+          ]
+        }
+      ],
+      "text": [
+        "Smart. The ledger likes you back; it simply never blinks.",
+        "Spend me like currency, date me like coffee, and never confuse the two."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "grocery-store"
+}

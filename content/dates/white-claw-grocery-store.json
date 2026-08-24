@@ -1,0 +1,212 @@
+{
+  "id": "white-claw-grocery-store",
+  "brandId": "white-claw",
+  "title": "$385 Million of Confidence",
+  "locationId": "grocery-store",
+  "context": {
+    "location": "grocery-store",
+    "occasion": "errand"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-white-claw-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "capacity became the moat",
+    "winning a shrinking pond still counts \u2014 probably",
+    "extension churn taxes retail faith"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy",
+        "effect": "enter"
+      },
+      "text": [
+        "Behold: the endcap. Prime real estate, eye level, my face on everything.",
+        "Few years back I bet three hundred eighty-five million dollars this shelf stays mine. Everyone said fad. I poured foundations."
+      ],
+      "choices": [
+        {
+          "id": "conviction",
+          "text": "Bet big while everyone squints \u2014 that's how moats happen.",
+          "next": "branch-conviction",
+          "playerEffects": {
+            "aspiration": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "control": 2,
+              "aspiration": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "reckless",
+          "text": "Or it's betting the company on a vibe with a half-life.",
+          "next": "branch-reckless",
+          "playerEffects": {
+            "mastery": 2,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "mastery": -1,
+              "trust": -1
+            }
+          }
+        },
+        {
+          "id": "numbers",
+          "text": "Show me the math before I admire the nerve.",
+          "next": "branch-numbers",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "mastery": 1,
+              "trust": 1
+            }
+          }
+        }
+      ]
+    },
+    "branch-conviction": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Finally, someone fluent in confidence."
+      ],
+      "next": "shelf-truth"
+    },
+    "branch-reckless": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Half-life? Rude. ...Accurate-ish. Rude."
+      ],
+      "next": "shelf-truth"
+    },
+    "branch-numbers": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Numbers it is. Follow the price tags."
+      ],
+      "next": "shelf-truth"
+    },
+    "shelf-truth": {
+      "speaker": "...",
+      "text": [
+        "Aisle five testifies: about sixty percent of the seltzer row is Claw \u2014 of a pond that shrinks every year. Discount stickers mark the ghosts beside the throne: Iced Tea, down seventy-seven percent, rest in peace."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "So which is it \u2014 the last one standing, or the curator of a museum?",
+        "Winning a game fewer people play each year still counts. I think. Ask me again in July."
+      ],
+      "choices": [
+        {
+          "id": "moat",
+          "text": "Capacity is strategy. Whoever's left standing pours last.",
+          "next": "wrap",
+          "playerEffects": {
+            "control": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "control": 2,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "museum",
+          "text": "Beautiful mausoleum of Summer '19, though.",
+          "next": "wrap",
+          "playerEffects": {
+            "mastery": 1,
+            "comfort": -1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "aspiration": -2,
+              "excitement": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
+          }
+        },
+        {
+          "id": "pivot",
+          "text": "Then stop defending the pond. Go where thirst goes next.",
+          "next": "wrap",
+          "playerEffects": {
+            "readiness": 1,
+            "aspiration": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "aspiration": 1,
+              "mastery": -1
+            }
+          },
+          "setFlags": ["claw-pivot-nod"]
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "reckless",
+          "text": [
+            "'Vibe with a half-life.' Writing that on the plant wall."
+          ]
+        },
+        {
+          "if": "moat",
+          "text": [
+            "Pours last. I'm having that engraved on a forklift."
+          ]
+        }
+      ],
+      "text": [
+        "Anyway \u2014 shelf's yours to raid. The throne shares."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

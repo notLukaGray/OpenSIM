@@ -1,0 +1,220 @@
+{
+  "id": "white-claw-rooftop",
+  "brandId": "white-claw",
+  "title": "Cooler Takeover",
+  "locationId": "rooftop",
+  "context": {
+    "location": "rooftop",
+    "occasion": "party"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-white-claw-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "success can erase the fans who built it",
+    "post-gender was real, and messy",
+    "the default guest is not the first guest"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral",
+        "effect": "enter"
+      },
+      "text": [
+        "There you are. I read your file, by the way \u2014 apparently I'm a 'nostalgia artifact.' Rude. Accurate.",
+        "Also don't look now: my original crew just left the rail, and that cooler by the DJ is one hundred percent me and zero percent them."
+      ],
+      "choices": [
+        {
+          "id": "og",
+          "text": "I was drinking you before the meme made you a personality test.",
+          "next": "branch-og",
+          "playerEffects": {
+            "selfExpression": 2,
+            "belonging": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "belonging": 1,
+              "selfExpression": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "new",
+          "text": "Guilty \u2014 I found you last summer, with everyone else.",
+          "next": "branch-new",
+          "playerEffects": {
+            "excitement": 1,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "excitement": 1,
+              "belonging": 1
+            }
+          }
+        },
+        {
+          "id": "observer",
+          "text": "I'm mostly here to watch the ecosystem, not join it.",
+          "next": "branch-observer",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "mastery": 1,
+              "belonging": -1
+            }
+          }
+        }
+      ]
+    },
+    "branch-og": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "An original. The rail misses you \u2014 those two by the door were saving cans back when saving cans meant something."
+      ],
+      "next": "memory"
+    },
+    "branch-new": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Honest. Half this roof met me the exact same way."
+      ],
+      "next": "memory"
+    },
+    "branch-observer": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Ouch. But fair \u2014 some nights even I people-watch myself."
+      ],
+      "next": "memory"
+    },
+    "memory": {
+      "speaker": "...",
+      "text": [
+        "By the speakers, two early fans watch a fraternity cooler swallow the whole railing \u2014 their quiet lime cans now a uniform they never signed up for."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "I promised a party for everybody. Then my marketing went courting the bros, and suddenly they're the default guest.",
+        "The women who built this crowd can't get a word in over guys yelling laws at each other."
+      ],
+      "choices": [
+        {
+          "id": "name-it",
+          "text": "Your own courtship campaign picked them. Say so out loud.",
+          "next": "wrap",
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": -1,
+              "control": -1,
+              "mastery": -1
+            }
+          }
+        },
+        {
+          "id": "defend",
+          "text": "A wider door still lets the originals stand wherever they want.",
+          "next": "wrap",
+          "playerEffects": {
+            "belonging": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "belonging": 2,
+              "selfExpression": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "listen",
+          "text": "Move the conversation over. Hand them the aux and the narrative.",
+          "next": "wrap",
+          "playerEffects": {
+            "comfort": 1,
+            "trust": 2
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 1,
+              "comfort": 1,
+              "selfExpression": 1
+            }
+          },
+          "setFlags": ["claw-gave-them-the-aux"],
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "og",
+          "text": [
+            "Originals get the unfiltered tour. You already knew that."
+          ]
+        },
+        {
+          "if": "defend",
+          "text": [
+            "Spoken like someone the door was always wide enough for."
+          ]
+        },
+        {
+          "if": "observer",
+          "text": [
+            "Ecosystem note: the loudest species isn't always the native one."
+          ]
+        }
+      ],
+      "text": [
+        "Either way \u2014 the roof stays open, and so do I."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

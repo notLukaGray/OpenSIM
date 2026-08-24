@@ -1,0 +1,214 @@
+{
+  "id": "white-claw-music-festival",
+  "brandId": "white-claw",
+  "title": "The Allocation Call",
+  "locationId": "music-festival",
+  "context": {
+    "location": "music-festival",
+    "occasion": "event"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-white-claw-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "growth can outrun integrity",
+    "scarcity turns fans into litigants",
+    "someone has to decide who runs dry"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "annoyed",
+        "effect": "enter"
+      },
+      "text": [
+        "Don't look at my phone. The phone is a nightmare today.",
+        "One pallet left in the tri-state area and three accounts about to riot. Here \u2014 you arbitrate."
+      ],
+      "choices": [
+        {
+          "id": "loyal",
+          "text": "The corner store. They stocked you before anyone knew your name.",
+          "next": "branch-loyal",
+          "playerEffects": {
+            "belonging": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 2,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "volume",
+          "text": "The festival vendor. Move it all tonight, maximum cans.",
+          "next": "branch-volume",
+          "playerEffects": {
+            "control": 2,
+            "aspiration": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "control": 2,
+              "mastery": 1
+            }
+          }
+        },
+        {
+          "id": "split",
+          "text": "Split it three ways. Everybody's equally disappointed.",
+          "next": "branch-split",
+          "playerEffects": {
+            "reassurance": 2,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 1,
+              "control": -1
+            }
+          },
+          "setFlags": ["claw-split-the-pallet"]
+        }
+      ]
+    },
+    "branch-loyal": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "The store that believed before the meme gets the wave first. Noted."
+      ],
+      "next": "fallout"
+    },
+    "branch-volume": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Cold math. Honest math. Tonight this festival runs on Claw."
+      ],
+      "next": "fallout"
+    },
+    "branch-split": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Fair-ish. Everyone gets some, nobody gets enough."
+      ],
+      "next": "fallout"
+    },
+    "fallout": {
+      "speaker": "...",
+      "text": [
+        "By sundown the rationing list reads like a grudge ledger \u2014 dry shelves, reseller markups, one very smug vendor."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I hate this part. Demand outran the promise, and somebody always finds out first.",
+        "There's a line from upstairs I can't shake: we could ship twenty million cases today that we don't have."
+      ],
+      "choices": [
+        {
+          "id": "own-it",
+          "text": "Own it. Tell the truth before the empty shelf does.",
+          "next": "wrap",
+          "playerEffects": {
+            "trust": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 1,
+              "control": 1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": 1
+          }
+        },
+        {
+          "id": "growth",
+          "text": "Grow into it. Shelves forgive whoever wins.",
+          "next": "wrap",
+          "playerEffects": {
+            "aspiration": 2,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "aspiration": 1,
+              "readiness": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "white-claw": -1
+          }
+        },
+        {
+          "id": "sorry-tour",
+          "text": "Then apologize like it's inventory \u2014 account by account.",
+          "next": "wrap",
+          "playerEffects": {
+            "trust": 2,
+            "comfort": 1
+          },
+          "brandPerceptionEffects": {
+            "white-claw": {
+              "trust": 1,
+              "readiness": -1
+            }
+          },
+          "setFlags": ["claw-apology-tour"]
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "loyal",
+          "text": [
+            "You picked the believer over the billboard. That decision's going on my fridge."
+          ]
+        },
+        {
+          "if": "split",
+          "text": [
+            "Equal disappointment \u2014 the most honest party favor I've ever handed out."
+          ]
+        }
+      ],
+      "text": [
+        "Next summer there'll be more cans than problems. That's the plan, anyway."
+      ],
+      "nextTree": "map"
+    }
+  }
+}
