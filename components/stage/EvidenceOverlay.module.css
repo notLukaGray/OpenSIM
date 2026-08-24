@@ -97,3 +97,19 @@
   color: rgba(232, 228, 240, 0.55);
   padding: 3px 0;
 }
+
+/* P9-01 (additive, phones/short viewports): the memory card fits a portrait
+   phone but can outgrow a landscape or short viewport, where the centered
+   veil would clip both ends with no way to reach them. overflow-y + margin
+   auto keeps the exact desktop centering when it fits and makes every edge
+   reachable when it doesn't; slightly slimmer side padding buys text room
+   at 320–430px widths. Desktop declarations untouched. */
+@media (max-width: 620px), (max-height: 720px) {
+  .veil {
+    overflow-y: auto;
+  }
+  .card {
+    margin: auto;
+    padding: 22px 20px 18px;
+  }
+}

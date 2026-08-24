@@ -29,3 +29,10 @@
   z-index: 60;
   background: linear-gradient(90deg, #131829, #0b0e17);
 }
+
+/* P9-01 (additive): clear the iOS home-indicator zone. env() resolves to 0px
+   on desktop browsers, so the computed padding is identical to the 3vh above
+   everywhere except notched/home-indicator devices. */
+.dialogueLayer {
+  padding-bottom: calc(3vh + env(safe-area-inset-bottom, 0px));
+}

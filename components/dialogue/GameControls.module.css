@@ -37,12 +37,19 @@
   box-shadow: 0 3px 0 #ff9dc9, 0 5px 10px rgba(255, 141, 195, 0.25);
 }
 
+/* P9-01: inverted from the old shrink-to-10px rule — thumbs need bigger
+   targets, not smaller buttons. Buttons grow/hold at small widths and hold a
+   >=44px effective hit area. Desktop (>620px) declarations untouched. */
 @media (max-width: 620px) {
   .controls {
-    gap: 8px;
+    gap: 10px;
   }
   .button {
-    padding: 7px 10px;
-    font-size: 10px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    min-height: 44px;
+  }
+  .icon {
+    font-size: 14px;
   }
 }

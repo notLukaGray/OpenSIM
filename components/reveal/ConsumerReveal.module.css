@@ -147,3 +147,28 @@
   0%, 100% { opacity: 0.35; }
   50% { opacity: 0.9; }
 }
+
+/* P9-01 (additive, phones/short viewports). Two fixes:
+   1. The silhouette <Image> is authored at 720px wide and no global reset
+      constrains imgs, so on phones it rendered at full size inside the
+      overflow:hidden wrap — clipped to its middle ~half. Constrain it to the
+      viewport (height:auto keeps the intrinsic ratio).
+   2. The step cards fit portrait phones but can outgrow landscape ones; let
+      .wrap scroll vertically in that case — margin:auto keeps the card
+      visually centered exactly like the desktop rule whenever it fits.
+   Desktop declarations untouched. */
+@media (max-width: 720px), (max-height: 720px) {
+  .silhouette img {
+    max-width: min(86vw, 420px);
+    height: auto;
+  }
+}
+
+@media (max-width: 620px), (max-height: 620px) {
+  .wrap {
+    overflow-y: auto;
+  }
+  .card {
+    margin: auto;
+  }
+}

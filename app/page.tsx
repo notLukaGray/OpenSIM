@@ -1,41 +1,19 @@
 "use client";
-// 16:9 letterboxed stage (desktop-first, brief §16).
-import { useEffect, useState } from "react";
+// Full-bleed stage at any aspect ratio — no letterboxing, ever (P9-01).
+// The old JS-computed 16:9 frame (brief §16) was removed by user decision:
+// the stage covers the viewport and crops via object-fit instead.
 import { GameProvider } from "@/hooks/useGame";
 import GameRoot from "@/components/GameRoot";
 import styles from "./page.module.css";
 
-const ASPECT = 16 / 9;
-
-function Stage() {
-  const [box, setBox] = useState({ width: 1280, height: 720 });
-
-  useEffect(() => {
-    const fit = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      const width = Math.min(w, h * ASPECT);
-      const height = width / ASPECT;
-      setBox({ width, height });
-    };
-    fit();
-    window.addEventListener("resize", fit);
-    return () => window.removeEventListener("resize", fit);
-  }, []);
-
-  return (
-    <main className={styles.shell}>
-      <div className={styles.stage} style={{ width: box.width, height: box.height }}>
-        <GameRoot />
-      </div>
-    </main>
-  );
-}
-
 export default function Page() {
   return (
     <GameProvider>
-      <Stage />
+      <main className={styles.shell}>
+        <div className={styles.stage}>
+          <GameRoot />
+        </div>
+      </main>
     </GameProvider>
   );
 }

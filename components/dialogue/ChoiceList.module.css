@@ -41,9 +41,12 @@
   flex-shrink: 0;
 }
 
+/* P9-01: hold a >=44px touch target on phones (base 10px vertical padding
+   computed to ~39px tall). Mobile-only block; desktop untouched. */
 @media (max-width: 720px) {
   .choice {
     font-size: 14px;
-    padding: 10px 14px;
+    padding: 12px 16px;
+    min-height: 44px;
   }
 }

@@ -160,3 +160,14 @@
 .restart:hover {
   border-color: #f4ecf2;
 }
+
+/* P9-01 (additive): at phone widths the two action pills (~200px + ~180px +
+   gap) exceed the space beside the wrapper's 24px gutters and would force a
+   horizontal scroll inside .wrap; let them wrap onto two rows instead. Each
+   pill is already >=44px tall. Desktop (>560px) untouched. */
+@media (max-width: 560px) {
+  .actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

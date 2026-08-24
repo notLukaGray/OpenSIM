@@ -81,3 +81,24 @@
   border-radius: 999px;
   cursor: pointer;
 }
+
+/* P9-01 (additive, phones/short viewports): a fully-loaded debrief (deltas +
+   perception rows + surfaced materials) approaches full screen height; on
+   landscape/short phones the centered veil would clip it with no scroll.
+   overflow-y + margin auto preserves the desktop centering when the card
+   fits and keeps every edge (incl. the dismiss button) reachable when it
+   doesn't. Slimmer side padding frees text width at phone sizes and the
+   dismiss button gets a >=44px hit area. Desktop declarations untouched;
+   rest of components/map/ is out of scope for this brief. */
+@media (max-width: 620px), (max-height: 720px) {
+  .wrap {
+    overflow-y: auto;
+  }
+  .card {
+    margin: auto;
+    padding: 24px 20px;
+  }
+  .done {
+    min-height: 44px;
+  }
+}

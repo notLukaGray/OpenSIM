@@ -17,6 +17,21 @@
   pointer-events: none;
 }
 
+/* P9-01 sprite policy (narrow viewports): below 720px the 300px desktop floor
+   makes side-by-side cast members overlap (left/right slots sit at 6% insets,
+   so two actors stay clear only while width <= ~0.44 * viewport). We scale
+   with the viewport instead: 40vw keeps a left+right pair inside its half of
+   the stage at any width, and the lowered 132px floor keeps solo scenes
+   legible down to small phones. The non-speaking cast member is already
+   dimmed via framer-motion brightness in CharacterSprite.tsx, so no TSX
+   change is needed — with vw sizing two actors never cross bounds, so the
+   dim-or-drop fallback never triggers. Desktop (>720px) is untouched. */
+@media (max-width: 720px) {
+  .actor {
+    width: clamp(132px, 40vw, 480px);
+  }
+}
+
 .img {
   width: 100%;
   height: auto;

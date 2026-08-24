@@ -5,16 +5,11 @@
 }
 
 .bg {
-  object-fit: cover;
-  filter: saturate(0.85) brightness(0.8);
-}
-
-.vignette {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(6, 8, 16, 0.85) 100%),
-    linear-gradient(180deg, rgba(11, 14, 23, 0.4), rgba(11, 14, 23, 0.9));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .menu {
@@ -28,7 +23,7 @@
 }
 
 .logo {
-  width: min(300px, 60vw);
+  width: min(380px, 70vw);
   opacity: 0.95;
   filter: drop-shadow(0 0 40px rgba(242, 184, 198, 0.25));
 }
@@ -87,14 +82,14 @@
   margin-top: 20px;
   background: none;
   border: none;
-  color: rgba(232, 228, 240, 0.45);
-  font-size: 12.5px;
-  letter-spacing: 0.2em;
+  color: rgba(11, 14, 23, 0.8);
+  font-size: 14.5px;
+  letter-spacing: 0.18em;
   cursor: pointer;
 }
 
 .settingsLink:hover {
-  color: #f2b8c6;
+  color: #d4507e;
 }
 
 .video {
@@ -104,4 +99,14 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.85;
+}
+
+/* P9-01 (additive): the settings link is plain inline text on desktop; on
+   phones give it a real touch target. Desktop (>620px) untouched. */
+@media (max-width: 620px) {
+  .settingsLink {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 22px;
+  }
 }

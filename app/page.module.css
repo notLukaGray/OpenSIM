@@ -1,15 +1,11 @@
 .shell {
   position: fixed;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #05070d;
 }
 
 .stage {
-  position: relative;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  border-radius: clamp(0px, 0.6vw, 10px);
-  box-shadow: 0 0 120px rgba(242, 184, 198, 0.07), 0 30px 90px rgba(0, 0, 0, 0.8);
 }

@@ -77,3 +77,22 @@
   border-radius: 999px;
   cursor: pointer;
 }
+
+/* P9-01 (additive): phones only. The mute/done buttons were ~36px tall —
+   under thumb size; give them a >=44px hit area. Also let the fixed veil
+   scroll if the five-slider panel is taller than the viewport (landscape
+   phones) — `margin: auto` on the panel keeps it visually centered when it
+   fits, exactly like the desktop rule, but remains fully reachable when it
+   doesn't. Desktop declarations above are untouched. */
+@media (max-width: 620px), (max-height: 520px) {
+  .veil {
+    overflow-y: auto;
+  }
+  .panel {
+    margin: auto;
+  }
+  .toggle,
+  .done {
+    min-height: 44px;
+  }
+}
