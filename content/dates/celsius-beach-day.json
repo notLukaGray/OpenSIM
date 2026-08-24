@@ -1,0 +1,203 @@
+{
+  "id": "celsius-beach-day",
+  "brandId": "celsius",
+  "title": "200 Milligrams of Sunshine",
+  "context": {
+    "location": "beach-day",
+    "occasion": "day-drink"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-celsius-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "stimulants keep receipts",
+    "the day was already good",
+    "acidity is a long-term question"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy",
+        "effect": "enter"
+      },
+      "text": [
+        "Beach day! I brought the cooler, the playlist, and 200 milligrams of sunshine.",
+        "That's two cups of coffee in a bikini of bubbles \u2014 if you're counting."
+      ],
+      "choices": [
+        {
+          "id": "counting",
+          "text": "I'm counting. Two cups is a lot before noon.",
+          "next": "branch-counting",
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": 1,
+              "excitement": -1
+            }
+          }
+        },
+        {
+          "id": "pour",
+          "text": "Less arithmetic, more ocean. Pour it.",
+          "next": "branch-pour",
+          "playerEffects": {
+            "excitement": 2,
+            "comfort": 1,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "excitement": 2,
+              "readiness": 1,
+              "control": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "enamel",
+          "text": "Doesn't all that citric acid go after your teeth?",
+          "next": "branch-enamel",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1,
+            "comfort": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "trust": -1,
+              "mastery": 1,
+              "comfort": -1
+            }
+          }
+        }
+      ]
+    },
+    "branch-counting": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Counting is my love language. Two hundred, exactly, forever."
+      ],
+      "next": "experience"
+    },
+    "branch-pour": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "NOW you're on vacation. Crack!"
+      ],
+      "next": "experience"
+    },
+    "branch-enamel": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Enamel's a long-term relationship question. Sip fast, chase water."
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "...",
+      "text": [
+        "You know the cooler.",
+        "Slim cans on ice, each one promising the day will go exactly to plan."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Time for the part of the day I never post.",
+        "Every can writes a little invoice. Mine comes due around three p.m., with jitters."
+      ],
+      "choices": [
+        {
+          "id": "worth-invoice",
+          "text": "I'll take the invoice. This afternoon was worth it.",
+          "next": "wrap",
+          "playerEffects": {
+            "excitement": 2,
+            "control": -1,
+            "reassurance": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "excitement": 2,
+              "readiness": 1,
+              "trust": -1,
+              "comfort": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "hydrate",
+          "text": "Or we drink water and let the sun do the stimulating.",
+          "next": "wrap",
+          "playerEffects": {
+            "comfort": 2,
+            "control": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "comfort": 2,
+              "control": 1,
+              "excitement": -2
+            }
+          }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "enamel",
+          "text": [
+            "Rinsed with seawater. Dentist-approved, probably."
+          ]
+        },
+        {
+          "if": "pour",
+          "text": [
+            "See? The ocean plus me is undefeated."
+          ]
+        }
+      ],
+      "text": [
+        "Sunset's free. The sparkle costs 200 milligrams."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "beach-day"
+}

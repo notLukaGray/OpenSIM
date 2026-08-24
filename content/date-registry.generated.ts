@@ -2,13 +2,17 @@
 // Add/remove a file in content/dates/ then run `npm run sync:dates`.
 import type { DateTree } from './schema';
 import d0 from "./dates/ag1-kitchen.json";
-import d1 from "./dates/celsius-rooftop.json";
-import d2 from "./dates/home.json";
-import d3 from "./dates/liquid-iv-airport.json";
-import d4 from "./dates/liquid-iv-office.json";
-import d5 from "./dates/whoop-nightgym.json";
+import d1 from "./dates/celsius-beach-day.json";
+import d2 from "./dates/celsius-grocery-store.json";
+import d3 from "./dates/celsius-music-festival.json";
+import d4 from "./dates/celsius-nightgym.json";
+import d5 from "./dates/celsius-rooftop.json";
+import d6 from "./dates/home.json";
+import d7 from "./dates/liquid-iv-airport.json";
+import d8 from "./dates/liquid-iv-office.json";
+import d9 from "./dates/whoop-nightgym.json";
 
 // eslint-disable-next-line
 // JSON literals widen string unions; runtime shape is guarded in registry.ts
 // and semantics by tools/validate-core.mjs.
-export const dateFiles = [d0 as unknown as DateTree, d1 as unknown as DateTree, d2 as unknown as DateTree, d3 as unknown as DateTree, d4 as unknown as DateTree, d5 as unknown as DateTree];
+export const dateFiles = [d0 as unknown as DateTree, d1 as unknown as DateTree, d2 as unknown as DateTree, d3 as unknown as DateTree, d4 as unknown as DateTree, d5 as unknown as DateTree, d6 as unknown as DateTree, d7 as unknown as DateTree, d8 as unknown as DateTree, d9 as unknown as DateTree];

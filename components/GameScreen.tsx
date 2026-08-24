@@ -6,7 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { getAsset, getBrandOrNull, getTree } from "@/content/registry";
+import { getAsset, getBrandOrNull, getLocationOrNull, getTree } from "@/content/registry";
 import type { Choice, DialogueNode } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { evalCondition } from "@/game/conditions";
@@ -86,9 +86,9 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
     setSprites(next);
   }, [tree, node]);
 
-  // ── music follows node/date direction (ADR-06) ────────────────────────────
+  // ── music follows node/date/location direction (ADR-06) ───────────────────
   useEffect(() => {
-    const id = node?.music ?? tree?.music ?? "mus-hub";
+    const id = node?.music ?? tree?.music ?? location?.music ?? "mus-hub";
     void AudioManager.playMusic(id);
   }, [node, tree]);
 
@@ -125,10 +125,11 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
 
   if (!tree || !node) return null;
 
-  const backgroundId = node.background ?? tree.background ?? "bg-hub";
-  const lines = resolveLines(node.text, node.callbacks, state.choiceLog[tree.id] ?? []);
+  const location = tree?.locationId ? getLocationOrNull(tree.locationId) : null;
+  const backgroundId = node?.background ?? tree?.background ?? location?.background ?? "bg-hub";
+  const lines = node ? resolveLines(node.text, node.callbacks, state.choiceLog[tree.id] ?? []) : [];
   const availableChoices: Choice[] | undefined = filterCompletedDates(
-    node.choices?.filter((c) => evalCondition(c.conditions, state)),
+    node?.choices?.filter((c) => evalCondition(c.conditions, state)),
     state
   );
 

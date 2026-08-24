@@ -1,0 +1,199 @@
+{
+  "id": "celsius-music-festival",
+  "brandId": "celsius",
+  "title": "Campus Crew",
+  "context": {
+    "location": "music-festival",
+    "occasion": "event"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-celsius-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "belonging can be salaried",
+    "the crew is real and so is the W-2",
+    "disclosure is the new intimacy"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy",
+        "effect": "enter"
+      },
+      "text": [
+        "You found us! Front of the crowd \u2014 that's where the family stands.",
+        "Campus crew, baby. I know everyone here by name and by rate card."
+      ],
+      "choices": [
+        {
+          "id": "family",
+          "text": "Family sounds nice. I could use one.",
+          "next": "branch-family",
+          "playerEffects": {
+            "belonging": 2,
+            "reassurance": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "belonging": 2,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "payroll",
+          "text": "Aren't they all... paid to stand here?",
+          "next": "branch-payroll",
+          "playerEffects": {
+            "mastery": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "trust": -2,
+              "mastery": 1,
+              "belonging": -1
+            }
+          }
+        },
+        {
+          "id": "disclosure",
+          "text": "Does the FTC know you call them family?",
+          "next": "branch-disclosure",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "trust": -2,
+              "selfExpression": 1
+            }
+          }
+        }
+      ]
+    },
+    "branch-family": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Chosen family! With merch. And direct deposit."
+      ],
+      "next": "experience"
+    },
+    "branch-payroll": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Okay, CELSIUS University has been on payroll since 2022. It's still real!"
+      ],
+      "next": "experience"
+    },
+    "branch-disclosure": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "There's a hashtag now. A hashtag is intimacy, right?"
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "...",
+      "text": [
+        "You know the ambassador booth.",
+        "Matching lanyards, matching cans, one group photo where every smile clocks in on time."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Real question, since you already know what I am.",
+        "If the belonging is invoiced... does it still count when you feel it?"
+      ],
+      "choices": [
+        {
+          "id": "counts",
+          "text": "If it feels real, it counts. Paperwork doesn't change that.",
+          "next": "wrap",
+          "playerEffects": {
+            "belonging": 2,
+            "reassurance": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "belonging": 2,
+              "reassurance": 1,
+              "trust": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "invoice",
+          "text": "Then I'm glad I know the price up front. You told me yourself.",
+          "next": "wrap",
+          "playerEffects": {
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": 1,
+              "belonging": -1
+            }
+          }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "special"
+      },
+      "callbacks": [
+        {
+          "if": "payroll",
+          "text": [
+            "See? You did my math for me. That's why you're invited."
+          ]
+        },
+        {
+          "if": "family",
+          "text": [
+            "Family means I show you the rate card next time. Growth!"
+          ]
+        }
+      ],
+      "text": [
+        "Stay for the encore. The family's buying."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "music-festival"
+}

@@ -213,6 +213,14 @@ export function getEvidence(id: string): Evidence {
   return e;
 }
 
+export function getLocationOrNull(id: string | null): GameLocation | null {
+  return id ? (locationIdsGet(id) ?? null) : null;
+}
+
+function locationIdsGet(id: string): GameLocation | undefined {
+  return locations.find((l) => l.id === id);
+}
+
 /** Everything the validator needs, in one bundle. */
 export const contentBundle = {
   brands,

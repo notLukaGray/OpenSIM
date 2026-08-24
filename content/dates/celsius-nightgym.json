@@ -1,0 +1,198 @@
+{
+  "id": "celsius-nightgym",
+  "brandId": "celsius",
+  "title": "Spotter's Little Secret",
+  "context": {
+    "location": "nightgym",
+    "occasion": "workout"
+  },
+  "music": null,
+  "background": null,
+  "cast": [
+    {
+      "assetId": "char-celsius-neutral",
+      "position": "center"
+    }
+  ],
+  "startNode": "intro",
+  "lessons": [
+    "the can takes the credit",
+    "discipline does the reps",
+    "caffeine is real; the fairy tale is marketing"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy",
+        "effect": "enter"
+      },
+      "text": [
+        "There you are! I saved you the squat rack AND my best angle.",
+        "Twelve weeks on me and look at her. I did that."
+      ],
+      "choices": [
+        {
+          "id": "hype",
+          "text": "That's genuinely impressive. What's your secret?",
+          "next": "branch-hype",
+          "playerEffects": {
+            "excitement": 2,
+            "belonging": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "excitement": 2,
+              "belonging": 1,
+              "readiness": 1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "reps",
+          "text": "Pretty sure she did the twelve weeks. You just showed up.",
+          "next": "branch-reps",
+          "playerEffects": {
+            "mastery": 2,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": 1,
+              "excitement": -1
+            }
+          }
+        },
+        {
+          "id": "caffeine",
+          "text": "Isn't that just 200 milligrams of caffeine talking?",
+          "next": "branch-caffeine",
+          "playerEffects": {
+            "mastery": 1,
+            "control": 1,
+            "trust": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": -2,
+              "reassurance": -1
+            }
+          }
+        }
+      ]
+    },
+    "branch-hype": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "Flattery accepted! Zero sugar, all momentum."
+      ],
+      "next": "experience"
+    },
+    "branch-reps": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "...Okay, she did most of the reps. I'm more of a mood."
+      ],
+      "next": "experience"
+    },
+    "branch-caffeine": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Wow. Reduce me to my active ingredient, why don't you."
+      ],
+      "next": "experience"
+    },
+    "experience": {
+      "speaker": "...",
+      "text": [
+        "You know the bench-talk ritual.",
+        "Someone always swears the slim can did what the training log says discipline did."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Can I tell you the part I never put on a can?",
+        "The caffeine is real. The metabolism fairy tale? That one's marketing."
+      ],
+      "choices": [
+        {
+          "id": "worth-it",
+          "text": "Honestly? The boost alone might be worth it.",
+          "next": "wrap",
+          "playerEffects": {
+            "excitement": 2,
+            "control": -1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "readiness": 2,
+              "trust": -1,
+              "reassurance": -1
+            }
+          },
+          "relationshipEffects": {
+            "celsius": 1
+          }
+        },
+        {
+          "id": "give-credit",
+          "text": "Then give her the credit, not the can.",
+          "next": "wrap",
+          "playerEffects": {
+            "reassurance": 1,
+            "mastery": 1,
+            "trust": 1
+          },
+          "brandPerceptionEffects": {
+            "celsius": {
+              "mastery": 1,
+              "trust": 1,
+              "excitement": -1
+            }
+          }
+        }
+      ]
+    },
+    "wrap": {
+      "speaker": "CELSIUS",
+      "callbacks": [
+        {
+          "if": "reps",
+          "text": [
+            "And for the record \u2014 she says thanks. She heard you."
+          ]
+        },
+        {
+          "if": "caffeine",
+          "text": [
+            "Fine. Two hundred milligrams. But make them sparkle."
+          ]
+        }
+      ],
+      "text": [
+        "Same rack tomorrow. Bring the hype, I'll bring the sparkle."
+      ],
+      "nextTree": "map"
+    }
+  },
+  "locationId": "nightgym"
+}
