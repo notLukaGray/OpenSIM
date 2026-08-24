@@ -1,0 +1,20 @@
+.stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg-void, #0b0e17);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+}
+
+.cast {
+  position: absolute;
+  inset: 0;
+}

@@ -1,0 +1,24 @@
+.slot {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+
+.slot.left { left: 6%; }
+.slot.center { left: 50%; transform: translateX(-50%); }
+.slot.right { right: 6%; }
+
+.actor {
+  position: relative;
+  width: clamp(300px, 30vw, 480px);
+  pointer-events: none;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 40px rgba(4, 8, 18, 0.55));
+}

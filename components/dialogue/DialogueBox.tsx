@@ -1,0 +1,109 @@
+"use client";
+// DialogueBox (P2-02): speaker tab, typewriter lines, choices, continue cue.
+import { useEffect, useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import type { Choice } from "@/content/schema";
+import SpeakerTab from "./SpeakerTab";
+import ChoiceList from "./ChoiceList";
+import ContinueIndicator from "./ContinueIndicator";
+import styles from "./DialogueBox.module.css";
+
+export default function DialogueBox({
+  entryKey,
+  speaker,
+  lines,
+  choices,
+  selectedChoiceId,
+  textSpeed,
+  onAdvance,
+  onSelectChoice,
+}: {
+  entryKey: string;
+  speaker: string;
+  lines: string[];
+  choices?: Choice[];
+  selectedChoiceId: string | null;
+  textSpeed: number;
+  onAdvance: () => void;
+  onSelectChoice: (choice: Choice) => void;
+}) {
+  const hasChoices = !!choices && choices.length > 0;
+
+  // Typewriter across all lines of the current beat.
+  const fullText = useMemo(() => lines.join("\n"), [lines]);
+  const [shown, setShown] = useState(0);
+  const doneRef = useRef(false);
+  const complete = shown >= fullText.length;
+  doneRef.current = complete;
+
+  useEffect(() => {
+    setShown(0);
+  }, [entryKey]);
+
+  useEffect(() => {
+    if (complete) return;
+    const step = Math.max(1, Math.round(textSpeed / 30));
+    const interval = Math.max(8, 1000 / textSpeed);
+    const t = window.setInterval(() => {
+      setShown((s) => Math.min(fullText.length, s + step));
+    }, interval);
+    return () => window.clearInterval(t);
+  }, [fullText, complete, textSpeed]);
+
+  const click = () => {
+    if (!doneRef.current) {
+      setShown(fullText.length);
+      return;
+    }
+    if (!hasChoices) onAdvance();
+  };
+
+  const renderedLines = fullText.slice(0, shown).split("\n");
+
+  return (
+    <motion.div
+      className={styles.box}
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      onClick={click}
+      role={hasChoices ? undefined : "button"}
+      aria-label={hasChoices ? "make a choice" : "continue"}
+    >
+      <div className={styles.stitchBorder} />
+      <span className={`${styles.deco} ${styles.decoTL}`}>✦</span>
+      <span className={`${styles.deco} ${styles.decoBR}`}>❀</span>
+
+      <SpeakerTab name={speaker} />
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={entryKey}
+          className={styles.content}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+        >
+          {!hasChoices ? (
+            <div className={styles.text}>
+              {renderedLines.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </div>
+          ) : complete ? (
+            <ChoiceList choices={choices} selectedId={selectedChoiceId} onSelect={onSelectChoice} />
+          ) : (
+            <div className={styles.text} aria-hidden>
+              {renderedLines.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {!hasChoices && complete && <ContinueIndicator />}
+    </motion.div>
+  );
+}

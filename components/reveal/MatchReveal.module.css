@@ -1,0 +1,134 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 30%, #171d31 0%, #0b0e17 75%);
+  overflow-y: auto;
+}
+
+.wrap > div {
+  padding: 60px 24px;
+}
+
+.kicker {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  color: rgba(232, 228, 240, 0.45);
+}
+
+.header {
+  margin-top: 14px;
+  text-align: center;
+  font-size: clamp(30px, 4.4vw, 54px);
+  font-weight: 300;
+  letter-spacing: 0.32em;
+  color: #f4ecf2;
+}
+
+.matchCard {
+  width: min(560px, 90%);
+  margin: 34px auto 0;
+  padding: 36px 42px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.94), rgba(11, 14, 23, 0.97));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+}
+
+.matchName {
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: 0.16em;
+}
+
+.matchScore {
+  margin-top: 6px;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 200;
+  color: #f4ecf2;
+}
+
+.section {
+  margin-top: 26px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: rgba(232, 228, 240, 0.5);
+}
+
+.listPlus,
+.listMinus {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.listPlus li { color: #9fe8b9; }
+.listMinus li { color: #f2938f; }
+
+.faint {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: rgba(232, 228, 240, 0.55);
+  font-style: italic;
+}
+
+.runners {
+  width: min(560px, 90%);
+  margin: 18px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.runner {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(19, 24, 41, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.runnerScore {
+  color: rgba(232, 228, 240, 0.7);
+}
+
+.neverMet {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: rgba(232, 228, 240, 0.4);
+}
+
+.restart {
+  display: block;
+  margin: 40px auto 0;
+  padding: 14px 34px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.restart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(242, 184, 198, 0.35);
+}

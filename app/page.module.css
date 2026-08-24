@@ -1,28 +1,15 @@
-.stage {
-  height: 100dvh;
-  width: 100vw;
-  background: #000;
-  overflow: hidden;
+.shell {
+  position: fixed;
+  inset: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  background: #05070d;
 }
 
-.vnLayer {
-  width: 100%;
-  padding: 0 28px calc(4vh + 8px);
-  padding-top: 42px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 28vh;
-  max-height: 32vh;
-}
-
-@media (max-width: 720px) {
-  .vnLayer {
-    padding: 0 12px 3vh;
-    min-height: 34vh;
-    max-height: 40vh;
-  }
+.stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(0px, 0.6vw, 10px);
+  box-shadow: 0 0 120px rgba(242, 184, 198, 0.07), 0 30px 90px rgba(0, 0, 0, 0.8);
 }

@@ -1,0 +1,98 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.bg {
+  object-fit: cover;
+  filter: saturate(0.85) brightness(0.8);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(6, 8, 16, 0.85) 100%),
+    linear-gradient(180deg, rgba(11, 14, 23, 0.4), rgba(11, 14, 23, 0.9));
+}
+
+.menu {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.logo {
+  width: min(300px, 60vw);
+  opacity: 0.95;
+  filter: drop-shadow(0 0 40px rgba(242, 184, 198, 0.25));
+}
+
+.tagline {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: rgba(232, 228, 240, 0.55);
+  margin-bottom: 26px;
+}
+
+.button {
+  width: 260px;
+  padding: 15px 0;
+  font-size: 13.5px;
+  letter-spacing: 0.3em;
+  color: #f4ecf2;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.85), rgba(11, 14, 23, 0.9));
+  border: 1px solid rgba(242, 184, 198, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #f2b8c6;
+  box-shadow: 0 10px 34px rgba(242, 184, 198, 0.22);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.disabled {
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.danger {
+  border-color: #f2938f;
+  color: #ffd7d5;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(232, 228, 240, 0.8);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.settingsLink {
+  margin-top: 20px;
+  background: none;
+  border: none;
+  color: rgba(232, 228, 240, 0.45);
+  font-size: 12.5px;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.settingsLink:hover {
+  color: #f2b8c6;
+}

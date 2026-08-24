@@ -1,0 +1,149 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 40%, #171d31 0%, #0b0e17 70%);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.question {
+  font-size: clamp(28px, 4.2vw, 56px);
+  font-weight: 300;
+  color: #f4ecf2;
+  text-align: center;
+  text-shadow: 0 0 60px rgba(242, 184, 198, 0.35);
+}
+
+.silhouette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.silhouette img {
+  filter: drop-shadow(0 0 80px rgba(242, 184, 198, 0.25));
+}
+
+.silhouetteCaption {
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: rgba(244, 236, 242, 0.5);
+  animation: fadePulse 3s ease-in-out infinite;
+}
+
+.card {
+  width: min(640px, 86%);
+  padding: 44px 48px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.92), rgba(11, 14, 23, 0.96));
+  border: 1px solid rgba(242, 184, 198, 0.25);
+  border-radius: 22px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.65);
+}
+
+.cardLabel {
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  color: rgba(242, 184, 198, 0.7);
+}
+
+.archetypeName {
+  margin-top: 18px;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: 0.14em;
+  color: #f4ecf2;
+  text-shadow: 0 0 50px rgba(242, 184, 198, 0.35);
+}
+
+.archetypeDescription {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(232, 228, 240, 0.85);
+}
+
+.bars {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.barLabel {
+  font-size: 12.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 240, 0.75);
+  text-align: right;
+}
+
+.barTrack {
+  height: 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #8ecbff, #f2b8c6);
+  box-shadow: 0 0 18px rgba(242, 184, 198, 0.5);
+}
+
+.explanation {
+  font-size: 19px;
+  line-height: 1.9;
+  color: rgba(232, 228, 240, 0.92);
+}
+
+.explanation strong {
+  color: #f2b8c6;
+  font-weight: 600;
+}
+
+.cta {
+  margin-top: 34px;
+  padding: 14px 30px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(242, 184, 198, 0.35);
+}
+
+.clickHint {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@keyframes fadePulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
