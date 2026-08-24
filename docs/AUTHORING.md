@@ -100,22 +100,32 @@ internally). Keep descriptions second-person, specific, a little devastating.
 
 ## Add evidence
 
-`content/evidence.json`:
+`content/evidence.json` — the [MEMORY UNLOCKED] cards that surface real marketing material inside
+dates. `imageRef` is OPTIONAL: with it, the card shows your image; without it, the card renders as
+designed typography (title-as-quote over type badge). Bulk workflow:
+
+```bash
+# agents/writers drop fragment files, then merge in one command:
+npm run sync:evidence
+```
+
+Fragments live in `content/evidence-fragments/*.json` and must include an `imageRef` pointing to an
+SVG you place at `public/assets/evidence/<id>.svg` (swap with real imagery later — same path).
 
 ```json
 {
   "id": "ev-liquid-iv-travel-pack",
   "brandId": "liquid-iv",
-  "type": "ad",
+  "type": "product",
   "title": "The travel pack",
   "description": "Stick packs sized exactly for a water bottle.",
-  "imageRef": "evg-liquid-iv-stickpack",
-  "effects": { "readiness": 1, "trust": 0 }
+  "imageRef": "/assets/evidence/ev-liquid-iv-travel-pack.svg",
+  "effects": { "readiness": 1 }
 }
 ```
 
-Reference it from any node via `"evidence": "ev-..."`. Effects reinforce or challenge perception;
-they are presentation + optional perception nudges, surfaced in the debug panel.
+Attach to any node via `"evidence": "<card-id>"`. Effects nudge perception once on first unlock.
+`sourceIds` (P6-01) may cite `content/sources.json` records when that lands.
 
 ## Add a modifier
 
