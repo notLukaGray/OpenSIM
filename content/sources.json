@@ -1,1 +1,347 @@
-[]
+[
+  {
+    "id": "src-liquid-iv-unilever-acquisition",
+    "title": "Unilever to acquire Liquid I.V.",
+    "publisher": "Unilever press release",
+    "year": 2020,
+    "url": "https://www.unilever.com/news/press-and-media/press-releases/2020/unilever-to-acquire-liquid-iv/"
+  },
+  {
+    "id": "src-liquid-iv-ceo-interview-wwd",
+    "title": "Liquid I.V. CEO interview",
+    "publisher": "WWD",
+    "year": 2024,
+    "url": "https://wwd.com/beauty-industry-news/wellness/liquid-iv-ceo-interview-1236553319/"
+  },
+  {
+    "id": "src-liquid-iv-evident-health-review",
+    "title": "Liquid IV review",
+    "publisher": "Evident Health",
+    "year": 2026,
+    "url": "https://www.getevident.co/supplements/electrolytes/liquid-iv-review"
+  },
+  {
+    "id": "src-liquid-iv-drruscio-hydration",
+    "title": "Is Liquid I.V. really the best way to hydrate?",
+    "publisher": "drruscio.com",
+    "url": "https://drruscio.com/liquid-iv/"
+  },
+  {
+    "id": "src-liquid-iv-billboard-celebrity-investors",
+    "title": "Bieber, Braun, Lovato invest in hydration brand",
+    "publisher": "Billboard",
+    "year": 2019,
+    "url": "https://www.billboard.com/music/music-news/justin-bieber-scooter-braun-demi-lovato-investors-liquid-iv-8523569/"
+  },
+  {
+    "id": "src-whoop-series-g-announcement",
+    "title": "WHOOP Announces Series G Funding",
+    "publisher": "WHOOP Press Center",
+    "year": 2026,
+    "url": "https://www.whoop.com/us/en/press-center/whoop-announces-series-g-funding/"
+  },
+  {
+    "id": "src-whoop-membership-options",
+    "title": "WHOOP Membership Options",
+    "publisher": "whoop.com",
+    "url": "https://www.whoop.com/us/en/membership/"
+  },
+  {
+    "id": "src-whoop-pga-tour-covid-measures",
+    "title": "TOUR refining safety measures in COVID-19 world",
+    "publisher": "PGATour.com",
+    "year": 2020,
+    "url": "https://www.pgatour.com/article/news/latest/2020/06/24/pga-tour-testing-adjustments-covid-19-coronavirus"
+  },
+  {
+    "id": "src-whoop-sbj-covid-detection",
+    "title": "The PGA Tour Leans on Whoop for Early COVID-19 Detection",
+    "publisher": "Sports Business Journal",
+    "year": 2020,
+    "url": "https://www.sportsbusinessjournal.com/Daily/Issues/2020/06/25/Technology/pga-tour-whoop-covid-19-detection/"
+  },
+  {
+    "id": "src-celsius-guardian-red-bull-for-women",
+    "title": "'A troubling halo of health': how Celsius became Red Bull for women",
+    "publisher": "The Guardian",
+    "year": 2024,
+    "url": "https://www.theguardian.com/business/2024/sep/19/celsius-energy-drink"
+  },
+  {
+    "id": "src-celsius-starks-class-action",
+    "title": "Class Action Alleges Celsius Live Fit Drinks Are Misbranded, Lack FDA Approval (Starks v. Celsius)",
+    "publisher": "ClassAction.org",
+    "year": 2024,
+    "url": "https://www.classaction.org/news/class-action-alleges-celsius-live-fit-drinks-are-misbranded-lack-fda-approval"
+  },
+  {
+    "id": "src-celsius-college-football-nil-campaign",
+    "title": "Celsius centers campaign on college football to further Gen Z marketing",
+    "publisher": "Marketing Dive",
+    "year": 2024,
+    "url": "https://www.marketingdive.com/news/celsius-college-football-NIL-campaign-gen-z-marketing/725187/"
+  },
+  {
+    "id": "src-celsius-university-page",
+    "title": "CELSIUS University",
+    "publisher": "celsius.com (brand page)",
+    "year": 2026,
+    "url": "https://www.celsius.com/celsius-university/"
+  },
+  {
+    "id": "src-celsius-bevnet-flavor-innovation",
+    "title": "CELSIUS CEO: Brand is 'Going Bold' with Flavor Innovation",
+    "publisher": "BevNET",
+    "year": 2024,
+    "url": "https://www.bevnet.com/news/2024/celsius-ceo-brand-is-going-bold-with-flavor-innovation-foodservice-expands/"
+  },
+  {
+    "id": "src-ag1-mediapost-narrow-branding",
+    "title": "Athletic Greens takes the narrow-branding path",
+    "publisher": "MediaPost",
+    "year": 2023
+  },
+  {
+    "id": "src-ag1-athletech-ceo",
+    "title": "AG1 more than a greens powder, CEO says",
+    "publisher": "Athletech News",
+    "year": 2024
+  },
+  {
+    "id": "src-ag1-wharton-podcast-marketing",
+    "title": "AG1 trust via podcast marketing",
+    "publisher": "Knowledge at Wharton",
+    "year": 2024
+  },
+  {
+    "id": "src-ag1-behind-the-brand-case-study",
+    "title": "Case study: AG1 & IM8",
+    "publisher": "Behind the Brand News",
+    "year": 2025
+  },
+  {
+    "id": "src-ag1-pricing-page",
+    "title": "Product detail and pricing",
+    "publisher": "drinkag1.com",
+    "year": 2026
+  },
+  {
+    "id": "src-starbucks-q4-fy25-ir-dashboard",
+    "title": "Q4 FY25 Digital IR Dashboard",
+    "publisher": "Starbucks Investor Relations",
+    "year": 2025
+  },
+  {
+    "id": "src-starbucks-effect-journal-of-retailing",
+    "title": "The Starbucks Effect: When name-based order identification increases customers' store preference and service satisfaction (Lim et al.)",
+    "publisher": "Journal of Retailing",
+    "year": 2024
+  },
+  {
+    "id": "src-starbucks-names-physorg",
+    "title": "Using customer names pays off – unless you get it wrong",
+    "publisher": "Phys.org, summarizing Journal of Consumer Psychology study",
+    "year": 2017
+  },
+  {
+    "id": "src-oura-nba-cbs-news",
+    "title": "NBA players could wear Oura smart rings to catch COVID-19 symptoms early",
+    "publisher": "CBS News",
+    "year": 2020
+  },
+  {
+    "id": "src-oura-nba-sports-illustrated",
+    "title": "The Ring Key to the NBA's Restart",
+    "publisher": "Sports Illustrated",
+    "year": 2020
+  },
+  {
+    "id": "src-oura-gucci-nyt",
+    "title": "Gucci Adds Luxury to a Body Monitoring Ring",
+    "publisher": "New York Times",
+    "year": 2022
+  },
+  {
+    "id": "src-zen-appstore-listing",
+    "title": "Zen: Guided Meditation & Sleep",
+    "publisher": "Apple App Store",
+    "year": 2026,
+    "url": "https://apps.apple.com/us/app/zen-guided-meditation-sleep/id1089982285"
+  },
+  {
+    "id": "src-zen-justuseapp-problems",
+    "title": "Zen app not working? crashes or has problems?",
+    "publisher": "JustUseApp",
+    "year": 2026,
+    "url": "https://justuseapp.com/en/app/1089982285/zen-guided-meditation-sleep/problems"
+  },
+  {
+    "id": "src-zen-binaural-systematic-review",
+    "title": "Binaural beats to entrain the brain? A systematic review",
+    "publisher": "peer-reviewed (PubMed Central)",
+    "year": 2023,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/"
+  },
+  {
+    "id": "src-zen-deceptive-sound-therapy",
+    "title": "Deceptive Sound Therapy on Online Platforms",
+    "publisher": "AAAI ICWSM proceedings",
+    "url": "https://ojs.aaai.org/index.php/ICWSM/article/view/35806"
+  },
+  {
+    "id": "src-red-bull-mashable-content-marketing",
+    "title": "How Red Bull Takes Content Marketing to the Extreme",
+    "publisher": "Mashable",
+    "year": 2013,
+    "url": "https://mashable.com/archive/red-bull-content-marketing"
+  },
+  {
+    "id": "src-red-bull-mediashift-media-house",
+    "title": "When a Brand Becomes a Publisher: Inside Red Bull's Media House",
+    "publisher": "MediaShift",
+    "year": 2014,
+    "url": "http://mediashift.org/2014/11/when-a-brand-becomes-a-publisher-inside-red-bulls-media-house/"
+  },
+  {
+    "id": "src-red-bull-fipp-stories-global",
+    "title": "How the Red Bull Media House takes extraordinary stories global",
+    "publisher": "FIPP",
+    "year": 2018,
+    "url": "https://www.fipp.com/news/how-red-bull-media-house-takes-extraordinary-stories-global/"
+  },
+  {
+    "id": "src-red-bull-nbc-wings-settlement",
+    "title": "Red Bull Drinkers Can Claim $10 Over 'Gives You Wings' Lawsuit",
+    "publisher": "NBC News",
+    "year": 2014,
+    "url": "https://www.nbcnews.com/business/consumer/red-bull-drinkers-can-claim-10-over-gives-you-wings-n221901"
+  },
+  {
+    "id": "src-red-bull-snopes-wings",
+    "title": "Red Bull Does (Not) Give You Wings",
+    "publisher": "Snopes",
+    "year": 2014,
+    "url": "https://www.snopes.com/fact-check/red-bulls-wings/"
+  },
+  {
+    "id": "src-eight-sleep-mdpi-sleep-study",
+    "title": "Sleeping for One Week on a Temperature-Controlled Mattress Cover…",
+    "publisher": "Bioengineering (MDPI)",
+    "year": 2024,
+    "url": "https://www.mdpi.com/2306-5354/11/4/352"
+  },
+  {
+    "id": "src-eight-sleep-wired-best-trackers",
+    "title": "Best Sleep Trackers of 2026",
+    "publisher": "WIRED",
+    "year": 2026,
+    "url": "https://www.wired.com/story/best-sleep-trackers/"
+  },
+  {
+    "id": "src-liquid-death-cnbc-make-it-name",
+    "title": "Liquid Death CEO: we chose 'the dumbest possible name' for water",
+    "publisher": "CNBC Make It",
+    "year": 2022
+  },
+  {
+    "id": "src-liquid-death-plastics-today-liner",
+    "title": "Liquid Death may murder your thirst, but it won't kill plastic",
+    "publisher": "PlasticsToday"
+  },
+  {
+    "id": "src-liquid-death-washington-times-class-action",
+    "title": "Aluminum not the green substitute you think",
+    "publisher": "The Washington Times (op-ed on class action)",
+    "year": 2025
+  },
+  {
+    "id": "src-white-claw-cut-ad-spend",
+    "title": "White Claw cut ad spend amid surge",
+    "publisher": "Marketing Dive",
+    "year": 2019
+  },
+  {
+    "id": "src-white-claw-houston-methodist-health",
+    "title": "Is spiked seltzer healthier than beer?",
+    "publisher": "Houston Methodist",
+    "year": 2020
+  },
+  {
+    "id": "src-athletic-brewing-fast-company-rise",
+    "title": "How Athletic Brewing rose to become a core American beer",
+    "publisher": "Fast Company",
+    "year": 2025,
+    "url": "https://www.fastcompany.com/91270872/athletic-brewing-most-innovative-companies-2025"
+  },
+  {
+    "id": "src-athletic-brewing-general-faq",
+    "title": "General FAQ",
+    "publisher": "Athletic Brewing Company",
+    "url": "https://athleticbrewing.com/pages/faqs/general-faq"
+  },
+  {
+    "id": "src-athletic-brewing-harm-reduction-journal",
+    "title": "Zero tolerance for 0%? How should clinicians respond to alcohol-free and low-alcohol products in higher-risk groups",
+    "publisher": "Harm Reduction Journal (PMC)",
+    "year": 2025,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13088919/"
+  },
+  {
+    "id": "src-athletic-brewing-nutrition-insider-review",
+    "title": "Athletic Brewing Review",
+    "publisher": "The Nutrition Insider",
+    "url": "https://thenutritioninsider.com/brands/athletic-brewing-company-review/"
+  },
+  {
+    "id": "src-zyn-pmc-cessation-critique",
+    "title": "ZYN 10 Challenge cessation-marketing critique",
+    "publisher": "PubMed Central",
+    "year": 2025
+  },
+  {
+    "id": "src-zyn-pmi-responsible-marketing",
+    "title": "Responsible Marketing",
+    "publisher": "PMI U.S.",
+    "year": 2025
+  },
+  {
+    "id": "src-zyn-reuters-fda-authorization",
+    "title": "First nicotine-pouch authorizations (Zyn)",
+    "publisher": "Reuters",
+    "year": 2025
+  },
+  {
+    "id": "src-zyn-bloomberg-zynfluencers",
+    "title": "Zynfluencer economy feature",
+    "publisher": "Bloomberg",
+    "year": 2025
+  },
+  {
+    "id": "src-na-spirits-branson-interview",
+    "title": "A drink with… Ben Branson",
+    "publisher": "The Spirits Business",
+    "year": 2024
+  },
+  {
+    "id": "src-na-spirits-diageo-seedlip-majority",
+    "title": "Diageo acquires majority shareholding in Seedlip",
+    "publisher": "Diageo",
+    "year": 2019
+  },
+  {
+    "id": "src-na-spirits-diageo-ritual-acquisition",
+    "title": "Diageo acquires Ritual Zero Proof",
+    "publisher": "Diageo",
+    "year": 2024
+  },
+  {
+    "id": "src-na-spirits-drinks-international-pricing",
+    "title": "Why non-alcoholic pricing is right",
+    "publisher": "Drinks International"
+  },
+  {
+    "id": "src-na-spirits-double-dutch-mixer-market",
+    "title": "Double Dutch & UK Premium Mixer Market",
+    "publisher": "In Practise"
+  }
+]
