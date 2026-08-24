@@ -119,8 +119,62 @@ export const assets: AssetReference[] = [
 export const audioTracks: AudioTrack[] = audioJson as AudioTrack[];
 
 // ── locations ────────────────────────────────────────────────────────────────
-const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "map"] as const;
-export const locations: GameLocation[] = (locationsJson as unknown as Record<string, unknown>[]).map(
+const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "map", "hitZone", "zoneArt"] as const;
+
+// Map hit zones (P10-01): the drawn, tappable geometry of a location on the
+// world map, authored in normalized 0–100 space (percentages of the map
+// canvas, same convention as `map.x`/`map.y`). Geometry is CONTENT —
+// components resolve it through this registry and never carry coordinates.
+export type MapHitZone =
+  | { shape: "circle"; cx: number; cy: number; r: number }
+  | { shape: "rect"; x: number; y: number; w: number; h: number }
+  | { shape: "poly"; points: [number, number][] };
+
+/** A location plus its drawn map presence — the tappable hit-zone geometry and
+ *  its replaceable marker-art asset (svg or png under public/assets/map/zones/,
+ *  swapped by file replacement, never code). */
+export type MappedGameLocation = GameLocation & { hitZone: MapHitZone; zoneArt: string };
+
+function hitZoneNumber(v: unknown, owner: string, field: string): number {
+  if (typeof v !== "number" || Number.isNaN(v))
+    throw new ContentError(`${owner}: hitZone.${field} must be a number`);
+  return v;
+}
+
+function parseHitZone(raw: unknown, owner: string): MapHitZone {
+  const hz = raw as Record<string, unknown> | null | undefined;
+  if (!hz || typeof hz !== "object")
+    throw new ContentError(`${owner}: missing hitZone — every location needs drawn map geometry`);
+  const num = (field: string) => hitZoneNumber(hz[field], owner, field);
+  switch (hz.shape) {
+    case "circle":
+      return { shape: "circle", cx: num("cx"), cy: num("cy"), r: num("r") };
+    case "rect":
+      return { shape: "rect", x: num("x"), y: num("y"), w: num("w"), h: num("h") };
+    case "poly": {
+      const pts = hz.points;
+      if (!Array.isArray(pts) || pts.length < 3)
+        throw new ContentError(`${owner}: hitZone.poly needs at least 3 points`);
+      return {
+        shape: "poly",
+        points: pts.map((pt, i) => {
+          if (!Array.isArray(pt) || pt.length !== 2)
+            throw new ContentError(`${owner}: hitZone.points[${i}] must be an [x, y] pair`);
+          return [
+            hitZoneNumber(pt[0], owner, `points[${i}].x`),
+            hitZoneNumber(pt[1], owner, `points[${i}].y`),
+          ] as [number, number];
+        }),
+      };
+    }
+    default:
+      throw new ContentError(
+        `${owner}: hitZone.shape must be "circle" | "rect" | "poly", got "${String(hz.shape)}"`
+      );
+  }
+}
+
+export const locations: MappedGameLocation[] = (locationsJson as unknown as Record<string, unknown>[]).map(
   (l, i) => {
     req(l, LOCATION_FIELDS, `locations.json[${i}]`);
     const map = l.map as { x?: unknown; y?: unknown };
@@ -128,7 +182,12 @@ export const locations: GameLocation[] = (locationsJson as unknown as Record<str
       throw new ContentError(`locations.json[${i}] (${String(l.id)}): map.x/map.y must be numbers`);
     if (!assets.some((a) => a.id === l.background))
       throw new ContentError(`locations.json[${i}]: unknown background asset "${String(l.background)}"`);
-    return {
+    if (!assets.some((a) => a.id === l.zoneArt))
+      throw new ContentError(
+        `locations.json[${i}] (${String(l.id)}): unknown zoneArt asset "${String(l.zoneArt)}" — ` +
+          `register the marker file in assets.json (generate placeholders with: npm run art)`
+      );
+    const base = {
       id: l.id as string,
       name: l.name as string,
       blurb: l.blurb as string,
@@ -136,6 +195,11 @@ export const locations: GameLocation[] = (locationsJson as unknown as Record<str
       music: l.music as string,
       map: { x: map.x as number, y: map.y as number },
     } satisfies GameLocation;
+    return {
+      ...base,
+      zoneArt: l.zoneArt as string,
+      hitZone: parseHitZone(l.hitZone, `locations.json[${i}] (${l.id})`),
+    };
   }
 );
 const locationIds = new Set(locations.map((l) => l.id));

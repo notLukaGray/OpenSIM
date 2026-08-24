@@ -1,0 +1,210 @@
+/* LocationView (P10-01): one place, its atmosphere, and who you can meet here. */
+
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 45; /* above map chrome, below DateDebrief (50) / ArchivePanel (65) / threshold popup (70) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden auto;
+  padding: 24px;
+}
+
+.backdrop {
+  object-fit: cover;
+  filter: brightness(0.4) saturate(0.75);
+}
+
+.dim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, transparent 30%, rgba(6, 8, 16, 0.88) 100%),
+    linear-gradient(180deg, rgba(6, 8, 16, 0.55), rgba(6, 8, 16, 0.8));
+}
+
+.panel {
+  position: relative;
+  width: min(680px, 100%);
+  padding: 40px 44px 36px;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.94), rgba(11, 14, 23, 0.97));
+  border: 1px solid rgba(242, 184, 198, 0.3);
+  border-radius: 22px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+}
+
+.backBtn {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  min-height: 44px; /* touch rule */
+  padding: 8px 16px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: rgba(232, 228, 240, 0.75);
+  background: none;
+  border: 1px solid rgba(242, 184, 198, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.backBtn:hover {
+  color: #f2b8c6;
+  border-color: #f2b8c6;
+}
+
+.kicker {
+  margin-top: 14px;
+  font-size: 10.5px;
+  letter-spacing: 0.46em;
+  text-align: center;
+  color: rgba(242, 184, 198, 0.7);
+}
+
+.name {
+  margin-top: 12px;
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #f4ecf2;
+  text-shadow: 0 0 46px rgba(242, 184, 198, 0.3);
+}
+
+.blurb {
+  margin-top: 12px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  text-align: center;
+  color: rgba(232, 228, 240, 0.68);
+}
+
+.count {
+  margin-top: 10px;
+  font-size: 10.5px;
+  letter-spacing: 0.26em;
+  text-align: center;
+  color: rgba(232, 228, 240, 0.42);
+}
+
+.section {
+  margin-top: 28px;
+  margin-bottom: 4px;
+  font-size: 10px;
+  letter-spacing: 0.34em;
+  color: rgba(242, 184, 198, 0.55);
+}
+
+.roster {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.encounter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px; /* ≥44px effective touch target */
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: #f4ecf2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.encounter:hover {
+  background: rgba(242, 184, 198, 0.14);
+  border-color: #f2b8c6;
+}
+
+.encounterDone {
+  opacity: 0.72;
+  border-style: dashed;
+}
+
+.encounterMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.encounterTitle {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sigil {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.statusChip {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.statusMet {
+  color: rgba(232, 228, 240, 0.62);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.statusDone {
+  color: #131829;
+  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+}
+
+.emptyNote {
+  margin-top: 26px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  font-style: italic;
+  text-align: center;
+  color: rgba(232, 228, 240, 0.45);
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    padding: 16px;
+    align-items: stretch;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 64px 20px 28px;
+    border-radius: 18px;
+  }
+
+  .backBtn {
+    top: 12px;
+    left: 12px;
+  }
+
+  .name {
+    letter-spacing: 0.2em;
+  }
+
+  .encounterTitle {
+    white-space: normal; /* long brand titles wrap instead of clipping on 390px */
+  }
+
+  .statusChip {
+    font-size: 8.5px;
+    padding: 4px 8px;
+  }
+}

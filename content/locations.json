@@ -8,7 +8,14 @@
     "map": {
       "x": 16,
       "y": 62
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 16,
+      "cy": 62,
+      "r": 8
+    },
+    "zoneArt": "zone-art-airport"
   },
   {
     "id": "nightgym",
@@ -19,7 +26,14 @@
     "map": {
       "x": 36,
       "y": 34
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 36,
+      "cy": 34,
+      "r": 8
+    },
+    "zoneArt": "zone-art-nightgym"
   },
   {
     "id": "rooftop",
@@ -30,7 +44,14 @@
     "map": {
       "x": 63,
       "y": 26
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 63,
+      "cy": 26,
+      "r": 7
+    },
+    "zoneArt": "zone-art-rooftop"
   },
   {
     "id": "kitchen",
@@ -41,7 +62,14 @@
     "map": {
       "x": 84,
       "y": 56
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 84,
+      "cy": 56,
+      "r": 7
+    },
+    "zoneArt": "zone-art-kitchen"
   },
   {
     "id": "office",
@@ -52,7 +80,15 @@
     "map": {
       "x": 52,
       "y": 76
-    }
+    },
+    "hitZone": {
+      "shape": "rect",
+      "x": 44,
+      "y": 68,
+      "w": 16,
+      "h": 15
+    },
+    "zoneArt": "zone-art-office"
   },
   {
     "id": "beach-day",
@@ -63,7 +99,14 @@
     "map": {
       "x": 8,
       "y": 30
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 8,
+      "cy": 30,
+      "r": 7
+    },
+    "zoneArt": "zone-art-beach-day"
   },
   {
     "id": "music-festival",
@@ -74,18 +117,47 @@
     "map": {
       "x": 30,
       "y": 12
-    }
+    },
+    "hitZone": {
+      "shape": "poly",
+      "points": [
+        [
+          22,
+          12
+        ],
+        [
+          30,
+          5
+        ],
+        [
+          38,
+          12
+        ],
+        [
+          30,
+          19
+        ]
+      ]
+    },
+    "zoneArt": "zone-art-music-festival"
   },
   {
     "id": "corner-cafe",
-    "name": "CORNER CAF\u00c9",
+    "name": "CORNER CAFÉ",
     "blurb": "Everyone here is auditioning for third place.",
     "background": "bg-corner-cafe",
     "music": "mus-corner-cafe",
     "map": {
       "x": 70,
       "y": 40
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 70,
+      "cy": 40,
+      "r": 6
+    },
+    "zoneArt": "zone-art-corner-cafe"
   },
   {
     "id": "bedroom-night",
@@ -96,7 +168,14 @@
     "map": {
       "x": 92,
       "y": 24
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 92,
+      "cy": 24,
+      "r": 7
+    },
+    "zoneArt": "zone-art-bedroom-night"
   },
   {
     "id": "grocery-store",
@@ -107,6 +186,13 @@
     "map": {
       "x": 88,
       "y": 82
-    }
+    },
+    "hitZone": {
+      "shape": "circle",
+      "cx": 88,
+      "cy": 82,
+      "r": 7
+    },
+    "zoneArt": "zone-art-grocery-store"
   }
 ]

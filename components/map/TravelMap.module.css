@@ -1,7 +1,34 @@
+/* TravelMap (P10-01): a pannable world larger than the viewport, locations as
+   drawn hit zones. The old pins/card-list UI is fully retired — every selector
+   here maps to live markup in TravelMap.tsx / LocationView.tsx. */
+
 .wrap {
   position: absolute;
   inset: 0;
   overflow: hidden;
+}
+
+/* ── pan surface ─────────────────────────────────────────────────────────── */
+.viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none; /* the map owns its gestures; the page never scrolls */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.panning {
+  cursor: grabbing;
+}
+
+.world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
 }
 
 .backdrop {
@@ -15,11 +42,16 @@
   background: radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(6, 8, 16, 0.9) 100%);
 }
 
-.heading {
+.headingWrap {
   position: absolute;
-  top: 7%;
+  top: 5%;
   width: 100%;
+  z-index: 2;
   text-align: center;
+  pointer-events: none; /* never intercept a gesture — it's scenery that pans away */
+}
+
+.heading {
   font-size: clamp(22px, 2.6vw, 34px);
   letter-spacing: 0.4em;
   color: #f4ecf2;
@@ -27,130 +59,147 @@
 }
 
 .subheading {
-  position: absolute;
-  top: calc(7% + clamp(30px, 3.4vw, 46px));
-  width: 100%;
-  text-align: center;
+  margin-top: clamp(8px, 1vw, 12px);
   font-size: 12px;
   letter-spacing: 0.24em;
   color: rgba(232, 228, 240, 0.5);
 }
 
-.node {
+/* ── hit zones ───────────────────────────────────────────────────────────── */
+.zones {
   position: absolute;
-  transform: translate(-50%, -50%);
-  z-index: 5;
+  top: 0;
+  left: 0;
 }
 
-.pin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  margin: 0 auto;
-  border-radius: 999px;
-  font-size: 16px;
-  border: 1.5px solid rgba(242, 184, 198, 0.7);
-  background: rgba(19, 24, 41, 0.85);
-  box-shadow: 0 0 26px rgba(242, 184, 198, 0.25);
-  transition: transform 0.15s ease;
-}
-
-.active .pin:hover {
-  transform: scale(1.12);
-}
-
-.quiet .pin {
-  opacity: 0.35;
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: none;
-}
-
-.card {
-  position: absolute;
-  left: 50%;
-  top: 42px;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: 240px;
-  padding: 14px 16px;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(19, 24, 41, 0.95), rgba(11, 14, 23, 0.97));
-  border: 1px solid rgba(242, 184, 198, 0.3);
-  border-radius: 14px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
-}
-
-.locName {
-  font-size: 11.5px;
-  letter-spacing: 0.3em;
-  color: #f2b8c6;
-}
-
-.blurb {
-  margin-top: 8px;
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: rgba(232, 228, 240, 0.65);
-}
-
-.encounter {
-  display: block;
-  width: 100%;
-  margin-top: 10px;
-  padding: 8px 10px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: #f4ecf2;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 10px;
+.zone {
   cursor: pointer;
-  transition: all 0.15s ease;
+  outline: none;
 }
 
-.encounter:hover {
-  background: rgba(242, 184, 198, 0.14);
-  border-color: #f2b8c6;
+.zonePad {
+  fill: transparent;
+  pointer-events: all; /* ≥44px effective target even when the drawn shape is small */
 }
 
-.wild {
-  border-style: dashed;
-  color: rgba(232, 228, 240, 0.85);
+.zoneArt {
+  transition: filter 0.15s ease, opacity 0.15s ease;
 }
 
-.wild:hover {
-  background: rgba(184, 181, 232, 0.14);
-  border-color: #b8b5e8;
+.zoneQuiet .zoneArt {
+  opacity: 0.35;
+  filter: saturate(0.4) brightness(0.8);
 }
 
-.sigil {
-  display: inline-block;
-  margin-right: 8px;
-  font-weight: 700;
+.zoneMet .zoneArt {
+  animation: breathe 3s ease-in-out infinite; /* subtle resting pulse */
 }
 
-.quietLabel {
-  margin-top: 8px;
+.zoneDone .zoneArt {
+  opacity: 0.55;
+  filter: saturate(0.5);
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.zone:hover .zoneArt,
+.zone:focus-visible .zoneArt {
+  filter: drop-shadow(0 0 14px rgba(242, 184, 198, 0.65)) brightness(1.1);
+}
+
+.marker {
+  pointer-events: none;
+}
+
+.markerBg {
+  fill: rgba(19, 24, 41, 0.9);
+  stroke: rgba(242, 184, 198, 0.7);
+  stroke-width: 1.5;
+}
+
+.zoneQuiet .markerBg {
+  stroke: rgba(255, 255, 255, 0.3);
+  opacity: 0.6;
+}
+
+.zoneDone .markerBg {
+  stroke: rgba(184, 181, 232, 0.8);
+}
+
+.markerGlyph {
+  font-size: 13px;
+  fill: #f4ecf2;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.zoneLabel {
   font-size: 11px;
-  letter-spacing: 0.18em;
-  color: rgba(232, 228, 240, 0.4);
-  font-style: italic;
+  letter-spacing: 0.3em;
+  fill: #f4ecf2;
+  paint-order: stroke;
+  stroke: rgba(6, 8, 16, 0.85);
+  stroke-width: 4px;
+  text-anchor: middle;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
 }
 
-.allDone {
+.zone:hover .zoneLabel,
+.zone:focus-visible .zoneLabel {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  /* Touch has no hover — names surface inside the LocationView instead. */
+  .zoneLabel {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoneMet .zoneArt {
+    animation: none;
+  }
+}
+
+/* ── map-level global controls ───────────────────────────────────────────── */
+.globalActions {
   position: absolute;
   bottom: 12%;
   width: 100%;
+  z-index: 20;
   text-align: center;
-  color: rgba(232, 228, 240, 0.85);
+  pointer-events: none; /* drags pass between the buttons */
+}
+
+.actionsNote {
+  padding: 0 20px;
   font-size: 15px;
   letter-spacing: 0.06em;
+  color: rgba(232, 228, 240, 0.85);
+}
+
+.actionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .thinkItOver {
-  margin-top: 18px;
+  pointer-events: auto;
+  min-height: 44px; /* touch rule */
   padding: 13px 32px;
   font-size: 13px;
   letter-spacing: 0.24em;
@@ -167,15 +216,39 @@
   box-shadow: 0 12px 40px rgba(242, 184, 198, 0.35);
 }
 
+.archiveBtn {
+  position: absolute;
+  left: 26px;
+  bottom: 20px;
+  z-index: 20;
+  min-height: 44px; /* touch rule */
+  background: none;
+  border: 1px solid rgba(242, 184, 198, 0.35);
+  border-radius: 999px;
+  color: rgba(232, 228, 240, 0.7);
+  font-size: 10.5px;
+  letter-spacing: 0.3em;
+  padding: 7px 18px;
+  cursor: pointer;
+}
+
+.archiveBtn:hover {
+  border-color: #f2b8c6;
+  color: #f2b8c6;
+}
+
 .controlsHint {
   position: absolute;
   right: 26px;
-  bottom: 20px;
+  bottom: 30px;
+  z-index: 20;
   font-size: 10.5px;
   letter-spacing: 0.28em;
   color: rgba(232, 228, 240, 0.35);
+  pointer-events: none;
 }
 
+/* ── threshold popup (P7-01 moment, unchanged) ───────────────────────────── */
 .thresholdWrap {
   position: absolute;
   inset: 0;
@@ -268,22 +341,35 @@
   color: rgba(232, 228, 240, 0.85);
 }
 
-.archiveBtn {
-  position: absolute;
-  left: 26px;
-  bottom: 20px;
-  z-index: 10;
-  background: none;
-  border: 1px solid rgba(242, 184, 198, 0.35);
-  border-radius: 999px;
-  color: rgba(232, 228, 240, 0.7);
-  font-size: 10.5px;
-  letter-spacing: 0.3em;
-  padding: 7px 18px;
-  cursor: pointer;
-}
+/* ── 390×844-class phones ────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .heading {
+    letter-spacing: 0.28em;
+  }
 
-.archiveBtn:hover {
-  border-color: #f2b8c6;
-  color: #f2b8c6;
+  .globalActions {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px)); /* clears ARCHIVE/hint row */
+  }
+
+  .actionsRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .actionsNote {
+    font-size: 13.5px;
+  }
+
+  .archiveBtn {
+    left: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .controlsHint {
+    right: 16px;
+    bottom: calc(26px + env(safe-area-inset-bottom, 0px));
+    max-width: 150px;
+    text-align: right;
+  }
 }
