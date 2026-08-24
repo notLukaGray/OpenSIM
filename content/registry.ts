@@ -102,6 +102,7 @@ export const evidence: Evidence[] = (evidenceJson as unknown as Record<string, u
       title: e.title as string,
       description: e.description as string,
       ...(e.imageRef ? { imageRef: e.imageRef as string } : {}),
+      ...(Array.isArray(e.sourceIds) && e.sourceIds.length ? { sourceIds: e.sourceIds as string[] } : {}),
       effects: fullVector(e.effects as Record<string, unknown>, "evidence.json", e.id as string),
     } satisfies Evidence;
   }
