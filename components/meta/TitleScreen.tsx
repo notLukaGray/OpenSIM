@@ -18,6 +18,7 @@ export default function TitleScreen() {
   const [hasSave, setHasSave] = useState(false);
   const [hasVideo, setHasVideo] = useState(false);
   const logo = getAsset("logo-dsim");
+  const hero = getAsset("title-screen");
 
   useEffect(() => {
     void AudioManager.playMusic("mus-title");
@@ -34,14 +35,17 @@ export default function TitleScreen() {
       {hasVideo ? (
         <video autoPlay muted loop playsInline src="/assets/video/intro.mp4" className={styles.video} />
       ) : (
-        <StartCinematic />
+        <>
+          {/* P9 interim: Figma title art stands in until intro.mp4 exists;
+              StartCinematic keeps only its drifting particles above it. */}
+          <img src={hero.src} alt={hero.alt} className={styles.bg} />
+          <StartCinematic />
+        </>
       )}
-      <div className={styles.vignette} />
 
       <motion.div className={styles.menu} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={logo.src} alt="Love, Loyalty & Brand Preference" className={styles.logo} />
-        <div className={styles.tagline}>a dating sim about what brands mean — and what you keep reaching for</div>
 
         {confirmNew ? (
           <div className={styles.confirm}>

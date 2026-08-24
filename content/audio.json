@@ -16,7 +16,7 @@
   {
     "id": "mus-airport",
     "kind": "music",
-    "src": "/assets/music/mus-airport.wav",
+    "src": "/assets/music/mus_airport.mp3",
     "loop": true,
     "volume": 0.85
   },
@@ -72,7 +72,7 @@
   {
     "id": "mus-beach-day",
     "kind": "music",
-    "src": "/assets/music/mus-beach-day.wav",
+    "src": "/assets/music/mus_beach_day.mp3",
     "loop": true,
     "volume": 0.85
   },
@@ -93,7 +93,7 @@
   {
     "id": "mus-bedroom-night",
     "kind": "music",
-    "src": "/assets/music/mus-bedroom-night.wav",
+    "src": "/assets/music/mus_bedroom_night.mp3",
     "loop": true,
     "volume": 0.85
   },

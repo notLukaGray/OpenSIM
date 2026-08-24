@@ -1,7 +1,9 @@
 "use client";
-// StartCinematic (P9): procedural attract-mode animation for the title screen.
-// If /assets/video/intro.mp4 is ever dropped in, TitleScreen swaps this for
-// real footage (ADR-13-style convention). Respects prefers-reduced-motion.
+// StartCinematic (P9): drifting heart-light particles over the title backdrop.
+// The procedural sky/skyline was replaced by the Figma title art (title-screen
+// asset); only the particle layer remains. If /assets/video/intro.mp4 is ever
+// dropped in, TitleScreen swaps both out for real footage. Respects
+// prefers-reduced-motion.
 import { useEffect, useRef } from "react";
 import styles from "./StartCinematic.module.css";
 
@@ -41,49 +43,13 @@ export default function StartCinematic() {
       alpha: 0.25 + rnd() * 0.5,
     }));
 
-    const skylines = [0.82, 0.7, 0.58].map((base, li) =>
-      Array.from({ length: 26 }, (_, i) => {
-        const bw = w / 18;
-        return { x: i * bw + li * bw * 0.35, w: bw * (0.55 + ((i * 7 + li * 13) % 10) / 22), h: h * base * (0.12 + (((i * 11 + li * 5) % 17) / 40)) };
-      })
-    );
-
     let raf = 0;
     let t = 0;
     const draw = () => {
       t += reduced ? 0 : 1 / 60;
-      // sky
-      const sky = ctx.createLinearGradient(0, 0, 0, h);
-      sky.addColorStop(0, "#0b0e17");
-      sky.addColorStop(0.65, "#131a30");
-      sky.addColorStop(1, "#0b0e17");
-      ctx.fillStyle = sky;
-      ctx.fillRect(0, 0, w, h);
-
-      // moon glow
-      const mg = ctx.createRadialGradient(w * 0.72, h * 0.24, 0, w * 0.72, h * 0.24, h * 0.3);
-      mg.addColorStop(0, "rgba(242,184,198,0.20)");
-      mg.addColorStop(1, "rgba(242,184,198,0)");
-      ctx.fillStyle = mg;
-      ctx.fillRect(0, 0, w, h);
-
-      // parallax skylines with lit windows
-      const winPeriod = reduced ? Infinity : 2.2;
-      skylines.forEach((layer, li) => {
-        ctx.fillStyle = ["#11162a", "#151c33", "#1a2240"][li];
-        for (const b of layer) {
-          const y = h - b.h - li * h * 0.04;
-          ctx.fillRect(b.x - li * 14 * devicePixelRatio * Math.sin(t * 0.05 + li), y, b.w, b.h + li * h * 0.04);
-          if (((i => (i * 13 + li * 29) % 7)(b.x | 0)) < 3 && !reduced) {
-            const flicker = (Math.sin(t * winPeriod + b.x) + 1) / 2;
-            ctx.fillStyle = `rgba(242,216,150,${0.05 + flicker * 0.08})`;
-            ctx.fillRect(b.x - li * 14 * devicePixelRatio * Math.sin(t * 0.05 + li), y + b.w * 0.4, b.w, b.h);
-            ctx.fillStyle = ["#11162a", "#151c33", "#1a2240"][li];
-          }
-        }
-      });
 
       // drifting heart-light particles
+      ctx.clearRect(0, 0, w, h);
       for (const p of particles) {
         p.y -= p.vy / 60;
         if (p.y < -10) p.y = h + 10;
@@ -95,11 +61,6 @@ export default function StartCinematic() {
         ctx.fill();
       }
       ctx.globalAlpha = 1;
-
-      // heartbeat glow (matches mus loops' calm pulse)
-      const beat = 0.5 + 0.5 * Math.sin(t * (Math.PI * 2) / 3.2);
-      ctx.fillStyle = `rgba(242,184,198,${0.03 + beat * 0.04})`;
-      ctx.fillRect(0, 0, w, h);
 
       raf = requestAnimationFrame(draw);
     };

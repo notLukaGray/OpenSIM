@@ -37,6 +37,13 @@ export default function DialogueBox({
   const [shown, setShown] = useState(0);
   const complete = shown >= fullText.length;
 
+  // Choices never pop in on their own: once the last line finishes typing the
+  // player gets the normal continue cue, and the NEXT click reveals them —
+  // otherwise fast typewriters outrun slow readers.
+  const [choicesRevealed, setChoicesRevealed] = useState(false);
+  const showChoices = hasChoices && complete && choicesRevealed;
+  const waitingToReveal = hasChoices && complete && !choicesRevealed;
+
   // Which line is the caret in right now?
   const lineStarts = useMemo(() => {
     const starts: number[] = [];
@@ -55,6 +62,7 @@ export default function DialogueBox({
 
   useEffect(() => {
     setShown(0);
+    setChoicesRevealed(false);
   }, [entryKey]);
 
   useEffect(() => {
@@ -77,6 +85,10 @@ export default function DialogueBox({
       setShown(fullText.length);
       return;
     }
+    if (waitingToReveal) {
+      setChoicesRevealed(true);
+      return;
+    }
     if (!hasChoices) onAdvance();
   };
 
@@ -89,8 +101,8 @@ export default function DialogueBox({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
       onClick={click}
-      role={hasChoices ? undefined : "button"}
-      aria-label={hasChoices ? "make a choice" : "continue"}
+      role={showChoices ? undefined : "button"}
+      aria-label={showChoices ? "make a choice" : "continue"}
     >
       <div className={styles.stitchBorder} />
       <span className={`${styles.deco} ${styles.decoTL}`}>✦</span>
@@ -107,16 +119,10 @@ export default function DialogueBox({
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
         >
-          {!hasChoices ? (
-            <div className={styles.text}>
-              {renderedLines.map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-            </div>
-          ) : complete ? (
+          {showChoices ? (
             <ChoiceList choices={choices} selectedId={selectedChoiceId} onSelect={onSelectChoice} />
           ) : (
-            <div className={styles.text} aria-hidden>
+            <div className={styles.text} aria-hidden={hasChoices || undefined}>
               {renderedLines.map((line, i) => (
                 <p key={i}>{line}</p>
               ))}
@@ -125,7 +131,7 @@ export default function DialogueBox({
         </motion.div>
       </AnimatePresence>
 
-      {!hasChoices && complete && <ContinueIndicator />}
+      {complete && !showChoices && <ContinueIndicator />}
     </motion.div>
   );
 }

@@ -205,6 +205,13 @@
     "preload": true
   },
   {
+    "id": "title-screen",
+    "type": "ui",
+    "src": "/assets/ui/title-screen.jpg",
+    "alt": "Brand mascots gathered under cherry blossoms",
+    "preload": true
+  },
+  {
     "id": "reveal-silhouette",
     "type": "silhouette",
     "src": "/assets/reveal/reveal-silhouette.svg",
@@ -407,5 +414,65 @@
     "type": "evidence-imagery",
     "src": "/assets/evidence/ev-na-spirits-mixer-subsidy.svg",
     "alt": "The Mixer Subsidy"
+  },
+  {
+    "id": "zone-art-airport",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-airport.svg",
+    "alt": "NIGHT TERMINAL map marker"
+  },
+  {
+    "id": "zone-art-nightgym",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-nightgym.svg",
+    "alt": "THE LATE GYM map marker"
+  },
+  {
+    "id": "zone-art-rooftop",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-rooftop.svg",
+    "alt": "SUNSET ROOFTOP map marker"
+  },
+  {
+    "id": "zone-art-kitchen",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-kitchen.svg",
+    "alt": "QUIET KITCHEN map marker"
+  },
+  {
+    "id": "zone-art-office",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-office.svg",
+    "alt": "THE OFFICE map marker"
+  },
+  {
+    "id": "zone-art-beach-day",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-beach-day.svg",
+    "alt": "BEACH DAY map marker"
+  },
+  {
+    "id": "zone-art-music-festival",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-music-festival.svg",
+    "alt": "MUSIC FESTIVAL map marker"
+  },
+  {
+    "id": "zone-art-corner-cafe",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-corner-cafe.svg",
+    "alt": "CORNER CAFÉ map marker"
+  },
+  {
+    "id": "zone-art-bedroom-night",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-bedroom-night.svg",
+    "alt": "BEDROOM, LATE map marker"
+  },
+  {
+    "id": "zone-art-grocery-store",
+    "type": "map-zone",
+    "src": "/assets/map/zones/zone-art-grocery-store.svg",
+    "alt": "GROCERY AISLES map marker"
   }
 ]
