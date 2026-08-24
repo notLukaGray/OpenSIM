@@ -20,7 +20,19 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
     <div className={styles.wrap}>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
         <div className={styles.kicker}>THE AUDIT</div>
-        {top ? (
+        {dated.length === 0 && state.dated.length > 0 ? (
+          // Only wilds were met: they don't keep score, but they count as nights (P8-01).
+          <>
+            <h1 className={styles.header}>THE WILDS DON'T KEEP SCORE</h1>
+            <p className={styles.faint} style={{ maxWidth: 560, margin: "18px auto" }}>
+              You spent your nights with the originals — no labels, no receipts.
+              Beautiful. Inconclusive. Date a brand or two, then ask the audit again.
+            </p>
+            <button className={styles.explore} onClick={() => { game.setPhase("map"); }}>
+              BACK TO THE MAP
+            </button>
+          </>
+        ) : top ? (
           <>
             <h1 className={styles.header}>YOUR MATCH</h1>
             <motion.div
@@ -83,6 +95,12 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
 
         {neverMet.length > 0 && (
           <p className={styles.neverMet}>never met: {neverMet.map((m) => getBrandOrNull(m.brandId)?.name).join(" · ")}</p>
+        )}
+
+        {(state.dated.includes("sleep") || state.dated.includes("gym")) && (
+          <p className={styles.baselineNote}>
+            you also spent a night with the originals — just sleep · just the gym — no subscription required
+          </p>
         )}
 
         <div className={styles.actions}>

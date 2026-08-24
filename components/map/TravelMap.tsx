@@ -50,12 +50,29 @@ export default function TravelMap() {
     [state.completedTrees]
   );
 
+  // Unbranded wilds ("just sleep" / "just the gym") render as their own option.
+  const wildsHere = useMemo(
+    () => available.filter((t) => getBrandOrNull(t.brandId)?.unbranded),
+    [available]
+  );
+
   const byLocation = useMemo(() => {
     const map = new Map<string, DateTree[]>();
     for (const t of available) {
+      const brand = getBrandOrNull(t.brandId);
+      if (brand?.unbranded) continue; // wilds render separately below
       const key = t.locationId ?? "";
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(t);
+    }
+    return map;
+  }, [available]);
+
+  const wildByLocation = useMemo(() => {
+    const map = new Map<string, DateTree>();
+    for (const t of available) {
+      const brand = getBrandOrNull(t.brandId);
+      if (brand?.unbranded && t.locationId) map.set(t.locationId, t);
     }
     return map;
   }, [available]);
@@ -128,6 +145,22 @@ export default function TravelMap() {
                   ) : (
                     <div className={styles.quietLabel}>no one here tonight</div>
                   )}
+                  {wildByLocation.has(loc.id) && (() => {
+                    const w = wildByLocation.get(loc.id)!;
+                    const brand = getBrandOrNull(w.brandId);
+                    return (
+                      <button
+                        className={`${styles.encounter} ${styles.wild}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          void AudioManager.playSfx("sfx-click");
+                          game.travelTo(w.id);
+                        }}
+                      >
+                        ✦ {brand?.name} — no brands tonight
+                      </button>
+                    );
+                  })()}
                 </motion.div>
               )}
             </AnimatePresence>

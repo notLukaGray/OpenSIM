@@ -58,6 +58,7 @@ export const brands: Brand[] = (brandsJson as Record<string, unknown>[]).map((b,
     sigil: (b.sigil as string) ?? "?",
     setting: (b.setting as string) ?? "",
     personality: (b.personality as string) ?? "",
+    unbranded: Boolean(b.unbranded),
     claimedProfile: fullVector(b.claimedProfile as Record<string, unknown>, "brands.json", `${b.id}.claimed`),
     perceivedProfile: fullVector(b.perceivedProfile as Record<string, unknown>, "brands.json", `${b.id}.perceived`),
   } satisfies Brand;

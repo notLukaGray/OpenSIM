@@ -110,7 +110,12 @@ export type Brand = {
   personality: string;
   claimedProfile: NeedVector;
   perceivedProfile: NeedVector;
+  /** True for non-brand encounters (Sleep, the Gym) — excluded from ranked matching (P8-01). */
+  unbranded?: boolean;
 };
+
+/** Convenience: is this roster entry one of the unbranded wilds? */
+export const isUnbranded = (b: Brand): boolean => Boolean(b.unbranded);
 
 // ─── Archetypes ──────────────────────────────────────────────────────────────
 export type Archetype = {

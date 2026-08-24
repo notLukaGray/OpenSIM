@@ -19,6 +19,8 @@ const EXPRESSIONS = [
 ];
 
 const BRANDS = [
+  ["sleep", "#b8b5e8"],
+  ["gym", "#c97b4a"],
   ["starbucks", "#00a862"],
   ["oura", "#c9a7eb"],
   ["zen", "#9fd8cb"],

@@ -1,0 +1,124 @@
+{
+  "id": "gym-nightgym",
+  "brandId": "gym",
+  "title": "No App Required",
+  "locationId": "nightgym",
+  "context": { "location": "nightgym", "occasion": "old-school-session" },
+  "music": null,
+  "background": null,
+  "cast": [{ "assetId": "char-gym-neutral", "position": "center" }],
+  "startNode": "intro",
+  "lessons": [
+    "the untracked original",
+    "soreness is the honest invoice"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "The smart equipment sleeps in its charging dock tonight.",
+        "What's left is iron, chalk, and something older watching from the squat rack."
+      ],
+      "sprite": { "expression": "neutral", "effect": "enter" },
+      "next": "greet"
+    },
+
+    "greet": {
+      "speaker": "JUST THE GYM",
+      "text": [
+        "Evening.",
+        "No strap? No tin? Bold. What are we measuring tonight?"
+      ],
+      "choices": [
+        {
+          "id": "nothing",
+          "text": "Nothing. I just want to move things and put them back.",
+          "next": "branch-nothing",
+          "playerEffects": { "mastery": 2, "control": 1 },
+          "relationshipEffects": { "gym": 2 },
+          "setFlags": ["lifted-untracked"]
+        },
+        {
+          "id": "confess",
+          "text": "Honestly? Everything else made me feel behind. You look simple.",
+          "next": "branch-confess",
+          "playerEffects": { "comfort": -1, "reassurance": 1, "trust": 1 },
+          "relationshipEffects": { "gym": 1 }
+        }
+      ]
+    },
+
+    "branch-nothing": {
+      "speaker": "JUST THE GYM",
+      "sprite": { "expression": "happy" },
+      "text": ["Correct answer.", "Pick a weight that respects you. Go again until it doesn't."],
+      "next": "burn"
+    },
+
+    "branch-confess": {
+      "speaker": "JUST THE GYM",
+      "sprite": { "expression": "neutral" },
+      "text": [
+        "Simple isn't the same as easy.",
+        "I pay in soreness, and my invoices always clear."
+      ],
+      "next": "burn"
+    },
+
+    "burn": {
+      "speaker": "...",
+      "sprite": { "expression": "special" },
+      "text": [
+        "An hour passes without producing a single data point.",
+        "Just breath, iron, and the quiet arithmetic of one more rep."
+      ],
+      "next": "tension"
+    },
+
+    "tension": {
+      "speaker": "JUST THE GYM",
+      "text": [
+        "Tomorrow morning, your legs will send you the bill.",
+        "Everything you've been dating would translate that into points for you.",
+        "I just call it Tuesday."
+      ],
+      "choices": [
+        {
+          "id": "worth-it",
+          "text": "Some things should cost what they cost.",
+          "next": "closing",
+          "playerEffects": { "mastery": 1, "comfort": -1 },
+          "brandPerceptionEffects": { "gym": { "trust": 1 } },
+          "relationshipEffects": { "gym": 1 },
+          "setFlags": ["accepted-invoice"]
+        },
+        {
+          "id": "still-nice",
+          "text": "And yet I'll still glance at my recovery score on the way out.",
+          "next": "closing",
+          "playerEffects": { "readiness": 1, "control": -1 },
+          "relationshipEffects": { "gym": -1 }
+        }
+      ]
+    },
+
+    "closing": {
+      "speaker": "JUST THE GYM",
+      "callbacks": [
+        {
+          "if": "confess",
+          "text": ["Simple's still here when the dashboards bore you.", "They always do."]
+        },
+        {
+          "if": "worth-it",
+          "text": ["Tuesday it is.", "Bring water. Bring patience. That's the whole app."]
+        }
+      ],
+      "text": [
+        "Same rack tomorrow?",
+        "I'll be the one not syncing."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

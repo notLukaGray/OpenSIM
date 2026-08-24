@@ -115,6 +115,16 @@
   border-color: #f2b8c6;
 }
 
+.wild {
+  border-style: dashed;
+  color: rgba(232, 228, 240, 0.85);
+}
+
+.wild:hover {
+  background: rgba(184, 181, 232, 0.14);
+  border-color: #b8b5e8;
+}
+
 .sigil {
   display: inline-block;
   margin-right: 8px;

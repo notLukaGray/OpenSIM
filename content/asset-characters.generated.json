@@ -1,5 +1,65 @@
 [
   {
+    "id": "char-sleep-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-sleep-neutral.svg",
+    "alt": "sleep (neutral)"
+  },
+  {
+    "id": "char-sleep-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-sleep-happy.svg",
+    "alt": "sleep (happy)"
+  },
+  {
+    "id": "char-sleep-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-sleep-annoyed.svg",
+    "alt": "sleep (annoyed)"
+  },
+  {
+    "id": "char-sleep-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-sleep-embarrassed.svg",
+    "alt": "sleep (embarrassed)"
+  },
+  {
+    "id": "char-sleep-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-sleep-special.svg",
+    "alt": "sleep (special)"
+  },
+  {
+    "id": "char-gym-neutral",
+    "type": "character-neutral",
+    "src": "/assets/characters/char-gym-neutral.svg",
+    "alt": "gym (neutral)"
+  },
+  {
+    "id": "char-gym-happy",
+    "type": "character-happy",
+    "src": "/assets/characters/char-gym-happy.svg",
+    "alt": "gym (happy)"
+  },
+  {
+    "id": "char-gym-annoyed",
+    "type": "character-annoyed",
+    "src": "/assets/characters/char-gym-annoyed.svg",
+    "alt": "gym (annoyed)"
+  },
+  {
+    "id": "char-gym-embarrassed",
+    "type": "character-embarrassed",
+    "src": "/assets/characters/char-gym-embarrassed.svg",
+    "alt": "gym (embarrassed)"
+  },
+  {
+    "id": "char-gym-special",
+    "type": "character-special",
+    "src": "/assets/characters/char-gym-special.svg",
+    "alt": "gym (special)"
+  },
+  {
     "id": "char-starbucks-neutral",
     "type": "character-neutral",
     "src": "/assets/characters/char-starbucks-neutral.svg",

@@ -102,12 +102,12 @@ export type BrandMatch = {
 } & MatchBreakdown;
 
 /**
- * Every brand ranked best-first. Dated brands rank on their own merit; undated
- * ones are included but flagged `dated:false` so UI can show them as "never
- * met" without pretending they were scored by experience.
+ * Every ranked brand best-first (P8-01: unbranded wilds are baseline — they
+ * arm comparison lines, never compete). Undated ones flagged `dated:false`.
  */
 export function rankAllBrands(state: GameState, weights: NeedVector, ctx?: ModifierContext): BrandMatch[] {
   return brands
+    .filter((b) => !b.unbranded)
     .map((brand) => ({
       brandId: brand.id,
       dated: state.dated.includes(brand.id),

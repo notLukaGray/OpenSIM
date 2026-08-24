@@ -1,11 +1,13 @@
 "use client";
-// TitleScreen (P3-01): NEW GAME / CONTINUE / RESET with menu music.
-import Image from "next/image";
+// TitleScreen (P3-01/P9): cinematic attract layer + NEW GAME / CONTINUE / RESET,
+// menu music, settings. If /assets/video/intro.mp4 exists it replaces the
+// procedural cinematic (P9 convention).
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getAsset } from "@/content/registry";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
+import StartCinematic from "./StartCinematic";
 import SettingsPanel from "./SettingsPanel";
 import styles from "./TitleScreen.module.css";
 
@@ -14,18 +16,26 @@ export default function TitleScreen() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [confirmNew, setConfirmNew] = useState(false);
   const [hasSave, setHasSave] = useState(false);
+  const [hasVideo, setHasVideo] = useState(false);
   const logo = getAsset("logo-dsim");
-  const bg = getAsset("bg-hub");
 
   useEffect(() => {
     void AudioManager.playMusic("mus-hub");
     setHasSave(game.hasSave());
+    // P9 video convention: real footage overrides the procedural cinematic.
+    fetch("/assets/video/intro.mp4", { method: "HEAD" })
+      .then((r) => setHasVideo(r.ok))
+      .catch(() => setHasVideo(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className={styles.wrap}>
-      <Image src={bg.src} alt="" fill priority className={styles.bg} />
+      {hasVideo ? (
+        <video autoPlay muted loop playsInline src="/assets/video/intro.mp4" className={styles.video} />
+      ) : (
+        <StartCinematic />
+      )}
       <div className={styles.vignette} />
 
       <motion.div className={styles.menu} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>

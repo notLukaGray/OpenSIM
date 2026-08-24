@@ -1,0 +1,143 @@
+{
+  "id": "sleep-bedroom-night",
+  "brandId": "sleep",
+  "title": "The Original Manufacturer",
+  "locationId": "bedroom-night",
+  "context": { "location": "bedroom-night", "occasion": "lights-out" },
+  "music": null,
+  "background": null,
+  "cast": [{ "assetId": "char-sleep-neutral", "position": "center" }],
+  "startNode": "intro",
+  "lessons": [
+    "the baseline every product prices against",
+    "nothing to cancel, nothing to unlock"
+  ],
+  "nodes": {
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "You put the phone face-down on the nightstand.",
+        "That's the whole invitation."
+      ],
+      "sprite": { "expression": "neutral", "effect": "enter" },
+      "next": "greet"
+    },
+
+    "greet": {
+      "speaker": "SLEEP",
+      "text": [
+        "Hey.",
+        "I was already here."
+      ],
+      "choices": [
+        {
+          "id": "owe",
+          "text": "I owe you about six years.",
+          "next": "branch-owe",
+          "playerEffects": { "reassurance": 2, "control": -1 },
+          "relationshipEffects": { "sleep": 2 },
+          "setFlags": ["slept-honest"]
+        },
+        {
+          "id": "only-one",
+          "text": "You're the only one who never asks me for anything.",
+          "next": "branch-only",
+          "playerEffects": { "comfort": 2, "trust": 1 },
+          "brandPerceptionEffects": { "sleep": { "trust": 1 } },
+          "relationshipEffects": { "sleep": 2 }
+        },
+        {
+          "id": "cheating",
+          "text": "Full disclosure: I've been seeing your phone at midnight.",
+          "next": "branch-cheating",
+          "playerEffects": { "control": 1, "comfort": -1 },
+          "relationshipEffects": { "sleep": -1 }
+        }
+      ]
+    },
+
+    "branch-owe": {
+      "speaker": "SLEEP",
+      "sprite": { "expression": "embarrassed" },
+      "text": ["Six years, give or take.", "I don't do interest. Just show up and we're even."],
+      "next": "fall"
+    },
+
+    "branch-only": {
+      "speaker": "SLEEP",
+      "sprite": { "expression": "happy" },
+      "text": [
+        "Don't romanticize it.",
+        "I'm just really, really old."
+      ],
+      "next": "fall"
+    },
+
+    "branch-cheating": {
+      "speaker": "SLEEP",
+      "sprite": { "expression": "annoyed" },
+      "text": ["I know. It has a nice glow.", "So did the sun, once."],
+      "next": "fall"
+    },
+
+    "fall": {
+      "speaker": "...",
+      "sprite": { "expression": "special" },
+      "text": [
+        "No score to check. No streak to protect.",
+        "Just the long dark, doing what it has always done, free of charge, no account required."
+      ],
+      "next": "tension"
+    },
+
+    "tension": {
+      "speaker": "SLEEP",
+      "text": [
+        "One honest thing before you drift.",
+        "Everything in that app drawer is priced against me. Every single one.",
+        "And most nights, you still choose them."
+      ],
+      "choices": [
+        {
+          "id": "fair",
+          "text": "Fair. They make you feel like progress.",
+          "next": "closing",
+          "playerEffects": { "aspiration": 1, "comfort": 1 },
+          "relationshipEffects": { "sleep": 0 }
+        },
+        {
+          "id": "wrong",
+          "text": "Not tonight. Tonight I pick the original.",
+          "next": "closing",
+          "playerEffects": { "comfort": 2, "control": 1 },
+          "brandPerceptionEffects": { "sleep": { "trust": 1 } },
+          "relationshipEffects": { "sleep": 2 },
+          "setFlags": ["picked-original"]
+        }
+      ]
+    },
+
+    "closing": {
+      "speaker": "SLEEP",
+      "callbacks": [
+        {
+          "if": "cheating",
+          "text": ["Face-down next time.", "I'll take partial payment."]
+        },
+        {
+          "if": "wrong",
+          "text": ["Good.", "I was your first brand, you know.", "You just didn't have a word for it yet."]
+        },
+        {
+          "if": "owe",
+          "text": ["Six years forgiven.", "See you around ten thirty?"]
+        }
+      ],
+      "text": [
+        "See you tonight.",
+        "Same nothing, no subscription."
+      ],
+      "nextTree": "map"
+    }
+  }
+}

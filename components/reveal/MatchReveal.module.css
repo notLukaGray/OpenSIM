@@ -114,6 +114,15 @@
   color: rgba(232, 228, 240, 0.4);
 }
 
+.baselineNote {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(184, 181, 232, 0.75);
+  font-style: italic;
+}
+
 .actions {
   display: flex;
   justify-content: center;
