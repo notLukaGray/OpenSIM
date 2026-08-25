@@ -19,9 +19,14 @@ export default function TitleScreen() {
   const [hasVideo, setHasVideo] = useState(false);
   const logo = getAsset("logo-dsim");
   const hero = getAsset("title-screen");
+  const map = getAsset("map-location");
 
   useEffect(() => {
     void AudioManager.playMusic("mus-title");
+    // The map is the first large visual requested after the title. Begin its
+    // fetch alongside the title track so the map screen can render from cache.
+    const mapPreload = new window.Image();
+    mapPreload.src = map.src;
     setHasSave(game.hasSave());
     // P9 video convention: real footage overrides the procedural cinematic.
     fetch("/assets/video/intro.mp4", { method: "HEAD" })
