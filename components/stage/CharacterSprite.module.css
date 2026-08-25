@@ -17,23 +17,47 @@
   pointer-events: none;
 }
 
-/* P9-01 sprite policy (narrow viewports): below 720px the 300px desktop floor
-   makes side-by-side cast members overlap (left/right slots sit at 6% insets,
-   so two actors stay clear only while width <= ~0.44 * viewport). We scale
-   with the viewport instead: 40vw keeps a left+right pair inside its half of
-   the stage at any width, and the lowered 132px floor keeps solo scenes
-   legible down to small phones. The non-speaking cast member is already
-   dimmed via framer-motion brightness in CharacterSprite.tsx, so no TSX
-   change is needed — with vw sizing two actors never cross bounds, so the
-   dim-or-drop fallback never triggers. Desktop (>720px) is untouched. */
-@media (max-width: 720px) {
-  .actor {
-    width: clamp(132px, 40vw, 480px);
-  }
-}
-
 .img {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 18px 40px rgba(4, 8, 18, 0.55));
+}
+
+/* P9-01 sprite policy (compact viewports): the compact block below applies to
+   narrow OR short stages — portrait phones and tablets (≤768px wide, which
+   includes iPad portrait at 768) and landscape phones (≤540px tall). Desktop
+   (>768px wide and >540px tall) is untouched.
+
+   Compact re-anchor (P9-01 follow-up): the old 40vw width sizing read as tiny
+   on tall portrait phones (≈156px wide on a 390px screen), and the floor
+   anchor parked the whole sprite behind the dialogue layer. We anchor the slot
+   to the stage's vertical CENTER and size the actor by stage height, so the
+   sprite scales with the screen and its face stays in the visible middle band
+   above the text box (feet tucking behind the box is normal VN layering).
+
+   70% (not 58%): on portrait phones the img max-width cap saturates first, so
+   the rendered visual is identical at either value; on landscape phones the
+   extra height is what lifts the face above the dialogue box, which covers
+   ~60% of a 390px-tall stage. Every current date tree stages a solo cast
+   member, so the max-width is a pure horizontal-overflow guard, not a
+   pair-overlap constraint.
+
+   NOTE: this block must stay after the base rules above — it relaxes .img's
+   width/height and loses the cascade if it precedes them. */
+@media (max-width: 768px), (max-height: 540px) {
+  .slot {
+    align-items: center;
+  }
+
+  .actor {
+    width: auto;
+    height: 70%;
+  }
+
+  .img {
+    width: auto;
+    height: 100%;
+    max-width: 92vw;
+    object-fit: contain;
+  }
 }

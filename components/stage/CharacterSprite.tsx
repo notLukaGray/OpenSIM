@@ -45,7 +45,6 @@ export default function CharacterSprite({ sprite }: { sprite: SpriteState }) {
             priority
             draggable={false}
             className={styles.img}
-            style={{ width: "100%", height: "auto" }}
           />
         </motion.div>
       </AnimatePresence>
