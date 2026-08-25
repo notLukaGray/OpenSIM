@@ -45,7 +45,6 @@
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "evidence": "ev-ag1-nsf-mark",
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
@@ -100,6 +99,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-ag1-nsf-mark",
           "text": "I like that someone outside the brand is checking the product.",
           "next": "first-1",
           "playerEffects": {
@@ -118,6 +118,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-ag1-nsf-mark",
           "text": "I care about proof, but I want to know which question each proof actually answers.",
           "next": "first-2",
           "playerEffects": {
@@ -134,6 +135,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-ag1-nsf-mark",
           "text": "I am not an athlete, so this certification does not change much for me.",
           "next": "first-3",
           "playerEffects": {

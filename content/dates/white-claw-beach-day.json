@@ -55,7 +55,6 @@
       "next": "entry-first-3"
     },
     "entry-first-3": {
-      "evidence": "ev-white-claw-cut-the-ads",
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"
@@ -93,6 +92,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-white-claw-cut-the-ads",
           "text": "That is closer to why people actually buy this.",
           "next": "first-1",
           "playerEffects": {
@@ -113,6 +113,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-white-claw-cut-the-ads",
           "text": "A brand telling me to be spontaneous is still a planned campaign.",
           "next": "first-2",
           "playerEffects": {
@@ -129,6 +130,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-white-claw-cut-the-ads",
           "text": "I do not need alcohol attached to the idea of showing up for friends.",
           "next": "first-3",
           "playerEffects": {

@@ -191,7 +191,6 @@
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "evidence": "ev-starbucks-personalized-offer",
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"
@@ -212,6 +211,7 @@
       "choices": [
         {
           "id": "return-1",
+          "evidence": "ev-starbucks-personalized-offer",
           "text": "I like offers that are actually relevant to me.",
           "next": "return-1",
           "playerEffects": {
@@ -234,6 +234,7 @@
         },
         {
           "id": "return-2",
+          "evidence": "ev-starbucks-personalized-offer",
           "text": "I do not love how much purchase history sits behind “relevant.”",
           "next": "return-2",
           "playerEffects": {
@@ -249,6 +250,7 @@
         },
         {
           "id": "return-3",
+          "evidence": "ev-starbucks-personalized-offer",
           "text": "I would rather pay the normal price than be profiled into a deal.",
           "next": "return-3",
           "playerEffects": {

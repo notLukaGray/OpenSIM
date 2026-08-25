@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-celsius-paid-tribe",
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-celsius-paid-tribe",
           "text": "That is real work experience and smart campus marketing.",
           "next": "first-1",
           "playerEffects": {
@@ -101,6 +101,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-celsius-paid-tribe",
           "text": "So the casual post is also a paid brand job.",
           "next": "first-2",
           "playerEffects": {
@@ -118,6 +119,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-celsius-paid-tribe",
           "text": "I would rather get an energy drink recommendation from someone who is not paid to spread it.",
           "next": "first-3",
           "playerEffects": {

@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-oura-gucci-ring",
       "speaker": "OURA",
       "sprite": {
         "expression": "happy"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-oura-gucci-ring",
           "text": "I like testing the fit before committing.",
           "next": "first-1",
           "playerEffects": {
@@ -103,6 +103,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-oura-gucci-ring",
           "text": "It is strange that buying a ring starts with a fake ring.",
           "next": "first-2",
           "playerEffects": {
@@ -119,6 +120,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-oura-gucci-ring",
           "text": "This is already more process than I want from jewelry.",
           "next": "first-3",
           "playerEffects": {

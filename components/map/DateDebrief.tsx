@@ -11,7 +11,7 @@ export default function DateDebrief({ tree, state, onDismiss }: { tree: import("
   const d = summarizeDate(tree, state);
   // Marketing materials surfaced during this encounter (P6-02 + P6-01).
   const materials = Object.values(tree.nodes)
-    .map((n) => n.evidence)
+    .flatMap((n) => [n.evidence, ...(n.choices ?? []).map((choice) => choice.evidence)])
     .filter((id): id is string => typeof id === "string" && state.unlockedEvidence.includes(id))
     .map((id) => getEvidence(id));
   return (

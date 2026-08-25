@@ -46,7 +46,6 @@
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "evidence": "ev-zyn-even-when-they-ask-us",
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
@@ -101,6 +100,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-zyn-even-when-they-ask-us",
           "text": "I respect the fact that the brand says it will not pay influencers.",
           "next": "first-1",
           "playerEffects": {
@@ -120,6 +120,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-zyn-even-when-they-ask-us",
           "text": "Organic hype still does a lot of marketing work for you.",
           "next": "first-2",
           "playerEffects": {
@@ -136,6 +137,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-zyn-even-when-they-ask-us",
           "text": "I do not want nicotine brands in my social feed either way.",
           "next": "first-3",
           "playerEffects": {

@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-whoop-membership-tiers",
       "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-whoop-membership-tiers",
           "text": "I like being able to choose the depth.",
           "next": "first-1",
           "playerEffects": {
@@ -102,6 +102,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-whoop-membership-tiers",
           "text": "This makes a wearable feel like software pricing.",
           "next": "first-2",
           "playerEffects": {
@@ -117,6 +118,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-whoop-membership-tiers",
           "text": "I want to buy a device once and own the features.",
           "next": "first-3",
           "playerEffects": {

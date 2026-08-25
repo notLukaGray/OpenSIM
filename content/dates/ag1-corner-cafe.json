@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-ag1-host-adread",
       "speaker": "AG1",
       "sprite": {
         "expression": "neutral"
@@ -100,6 +99,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-ag1-host-adread",
           "text": "I trust the host enough to listen.",
           "next": "first-1",
           "playerEffects": {
@@ -118,6 +118,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-ag1-host-adread",
           "text": "I want to know where the recommendation ends and the sponsorship starts.",
           "next": "first-2",
           "playerEffects": {
@@ -135,6 +136,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-ag1-host-adread",
           "text": "I do not want breakfast advice from a podcast ad.",
           "next": "first-3",
           "playerEffects": {

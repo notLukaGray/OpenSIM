@@ -202,7 +202,6 @@
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "evidence": "ev-prime-verify-bottle",
       "speaker": "PRIME",
       "sprite": {
         "expression": "embarrassed"
@@ -223,6 +222,7 @@
       "choices": [
         {
           "id": "return-1",
+          "evidence": "ev-prime-verify-bottle",
           "text": "I like that I can verify it myself.",
           "next": "return-1",
           "playerEffects": {
@@ -241,6 +241,7 @@
         },
         {
           "id": "return-2",
+          "evidence": "ev-prime-verify-bottle",
           "text": "The fact that I need to verify a sports drink is wild.",
           "next": "return-2",
           "playerEffects": {
@@ -256,6 +257,7 @@
         },
         {
           "id": "return-3",
+          "evidence": "ev-prime-verify-bottle",
           "text": "If I have to investigate a bottle, I am buying something else.",
           "next": "return-3",
           "playerEffects": {

@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-celsius-fatburn-label",
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-celsius-fatburn-label",
           "text": "I like that there is at least research behind the pitch.",
           "next": "first-1",
           "playerEffects": {
@@ -103,6 +103,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-celsius-fatburn-label",
           "text": "I want to know what the studies actually measured.",
           "next": "first-2",
           "playerEffects": {
@@ -118,6 +119,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-celsius-fatburn-label",
           "text": "I do not need metabolism marketing in an energy drink.",
           "next": "first-3",
           "playerEffects": {

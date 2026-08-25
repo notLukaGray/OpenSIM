@@ -73,7 +73,6 @@
       "next": "entry-first-5"
     },
     "entry-first-5": {
-      "evidence": "ev-zyn-authorized-not-approved",
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "annoyed"
@@ -94,6 +93,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-zyn-authorized-not-approved",
           "text": "If someone already smokes, relative-risk information is useful.",
           "next": "first-1",
           "playerEffects": {
@@ -114,6 +114,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-zyn-authorized-not-approved",
           "text": "The words \"instead of cigarettes\" are doing a lot of work there.",
           "next": "first-2",
           "playerEffects": {
@@ -130,6 +131,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-zyn-authorized-not-approved",
           "text": "I do not want a nicotine brand using disease risk as a sales message.",
           "next": "first-3",
           "playerEffects": {

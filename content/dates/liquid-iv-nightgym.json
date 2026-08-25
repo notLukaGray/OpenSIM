@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-liquid-iv-sugar-ratio",
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "happy"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-liquid-iv-sugar-ratio",
           "text": "I like knowing what the product is trying to do.",
           "next": "first-1",
           "playerEffects": {
@@ -101,6 +101,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-liquid-iv-sugar-ratio",
           "text": "I want to know what that comparison actually means.",
           "next": "first-2",
           "playerEffects": {
@@ -116,6 +117,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-liquid-iv-sugar-ratio",
           "text": "I do not need a performance claim after every workout.",
           "next": "first-3",
           "playerEffects": {

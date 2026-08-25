@@ -34,7 +34,7 @@ export function applyChoice(state: GameState, treeId: string, choice: Choice): G
     [treeId]: [...(state.choiceLog[treeId] ?? []), choice.id],
   };
 
-  return {
+  const next = {
     ...state,
     evidence,
     brandPerception,
@@ -43,6 +43,7 @@ export function applyChoice(state: GameState, treeId: string, choice: Choice): G
     choiceLog,
     choicesMade: state.choicesMade + 1,
   };
+  return applyEvidenceById(next, choice.evidence);
 }
 
 /**
@@ -51,13 +52,18 @@ export function applyChoice(state: GameState, treeId: string, choice: Choice): G
  * brief §4). Returns unchanged state if already unlocked / no evidence.
  */
 export function applyEvidenceUnlock(state: GameState, node: DialogueNode): GameState {
-  if (!node.evidence || state.unlockedEvidence.includes(node.evidence)) return state;
-  const ev = getEvidence(node.evidence); // throws loudly on unknown id
+  return applyEvidenceById(state, node.evidence);
+}
+
+/** First-time evidence application shared by node and choice material beats. */
+function applyEvidenceById(state: GameState, evidenceId?: string): GameState {
+  if (!evidenceId || state.unlockedEvidence.includes(evidenceId)) return state;
+  const ev = getEvidence(evidenceId); // throws loudly on unknown id
   const brandPerception = { ...state.brandPerception };
   const current = { ...(brandPerception[ev.brandId] ?? zeroNeeds()) };
   addInto(current, ev.effects);
   brandPerception[ev.brandId] = current;
-  return { ...state, brandPerception, unlockedEvidence: [...state.unlockedEvidence, node.evidence] };
+  return { ...state, brandPerception, unlockedEvidence: [...state.unlockedEvidence, evidenceId] };
 }
 
 /**

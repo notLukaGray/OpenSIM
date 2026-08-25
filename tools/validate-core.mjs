@@ -343,9 +343,11 @@ export function validateContent(bundle) {
     if (brand?.unbranded) continue;
     const brandTrees = bundle.trees.filter((t) => t.brandId === brandId);
     if (brandTrees.length === 0) continue; // roster/history entry, not playable this build
-    const hasEvidence = brandTrees.some((t) => Object.values(t.nodes ?? {}).some((node) => Boolean(node.evidence)));
+    const hasEvidence = brandTrees.some((t) => Object.values(t.nodes ?? {}).some(
+      (node) => Boolean(node.evidence) || (node.choices ?? []).some((choice) => Boolean(choice.evidence))
+    ));
     if (!hasEvidence)
-      err(F(brand, "brands"), `brand[${brandId}]`, "playable brand needs at least one node evidence moment");
+      err(F(brand, "brands"), `brand[${brandId}]`, "playable brand needs at least one evidence moment");
   }
 
   // ── balance guard (ADR-08): weaknesses mandatory, no total dominance ──────

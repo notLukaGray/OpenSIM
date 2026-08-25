@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-prime-founder-machine",
       "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-prime-founder-machine",
           "text": "It worked. I knew exactly what PRIME was before I tried it.",
           "next": "first-1",
           "playerEffects": {
@@ -102,6 +102,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-prime-founder-machine",
           "text": "So the hype got there before the product did.",
           "next": "first-2",
           "playerEffects": {
@@ -117,6 +118,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-prime-founder-machine",
           "text": "I do not want my sports drink to come with a personality cult.",
           "next": "first-3",
           "playerEffects": {

@@ -215,7 +215,6 @@
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "evidence": "ev-oura-stress-hub",
       "speaker": "OURA",
       "sprite": {
         "expression": "happy"
@@ -253,6 +252,7 @@
       "choices": [
         {
           "id": "return-1",
+          "evidence": "ev-oura-stress-hub",
           "text": "I like seeing whether this week is actually wearing me down.",
           "next": "return-1",
           "playerEffects": {
@@ -272,6 +272,7 @@
         },
         {
           "id": "return-2",
+          "evidence": "ev-oura-stress-hub",
           "text": "A chart can make me more stressed about being stressed.",
           "next": "return-2",
           "playerEffects": {
@@ -288,6 +289,7 @@
         },
         {
           "id": "return-3",
+          "evidence": "ev-oura-stress-hub",
           "text": "I do not want my workday turned into another health dashboard.",
           "next": "return-3",
           "playerEffects": {

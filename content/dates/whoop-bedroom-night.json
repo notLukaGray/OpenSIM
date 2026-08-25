@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-whoop-healthspan-model",
       "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-whoop-healthspan-model",
           "text": "That is more useful to me than counting steps.",
           "next": "first-1",
           "playerEffects": {
@@ -101,6 +101,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-whoop-healthspan-model",
           "text": "I worry I would start obsessing over sleep scores.",
           "next": "first-2",
           "playerEffects": {
@@ -116,6 +117,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-whoop-healthspan-model",
           "text": "I do not want to wear a tracker to bed.",
           "next": "first-3",
           "playerEffects": {

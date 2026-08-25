@@ -62,7 +62,6 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "evidence": "ev-liquid-iv-firecracker-collab",
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"
@@ -83,6 +82,7 @@
       "choices": [
         {
           "id": "first-1",
+          "evidence": "ev-liquid-iv-firecracker-collab",
           "text": "That sounds fun enough to try once.",
           "next": "first-1",
           "playerEffects": {
@@ -102,6 +102,7 @@
         },
         {
           "id": "first-2",
+          "evidence": "ev-liquid-iv-firecracker-collab",
           "text": "Nostalgia has nothing to do with hydration.",
           "next": "first-2",
           "playerEffects": {
@@ -117,6 +118,7 @@
         },
         {
           "id": "first-3",
+          "evidence": "ev-liquid-iv-firecracker-collab",
           "text": "I do not want candy logic in a wellness product.",
           "next": "first-3",
           "playerEffects": {

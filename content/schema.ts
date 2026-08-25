@@ -40,6 +40,8 @@ export type SpriteDirection = {
 export type Choice = {
   id: string;
   text: string;
+  /** Material revealed only after this answer is selected. */
+  evidence?: string;
   next?: string;
   nextTree?: string;
   playerEffects?: PlayerEffects;

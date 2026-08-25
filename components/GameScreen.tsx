@@ -38,6 +38,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
   const [debugOpen, setDebugOpen] = useState(false);
   const [sprites, setSprites] = useState<SpriteState[]>([]);
   const [overlay, setOverlay] = useState<{ kind: "cg" | "evidence"; id: string } | null>(null);
+  const [pendingEvidenceChoice, setPendingEvidenceChoice] = useState<Choice | null>(null);
   const overlayShownFor = useRef<string | null>(null);
   const enteredTree = useRef<string | null>(null);
 
@@ -138,7 +139,20 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
   const choose = (choice: Choice) => {
     setSelectedChoiceId(choice.id);
     void AudioManager.playSfx("sfx-click");
+    if (choice.evidence) {
+      setPendingEvidenceChoice(choice);
+      setOverlay({ kind: "evidence", id: choice.evidence });
+      void AudioManager.playSfx("evidence-chime");
+      return;
+    }
     window.setTimeout(() => game.choose(choice), 380);
+  };
+
+  const dismissEvidence = () => {
+    setOverlay(null);
+    const choice = pendingEvidenceChoice;
+    setPendingEvidenceChoice(null);
+    if (choice) window.setTimeout(() => game.choose(choice), 180);
   };
 
   return (
@@ -150,7 +164,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
           <CGViewer key={`cg-${overlay.id}`} cgId={overlay.id} onDismiss={() => setOverlay(null)} />
         )}
         {overlay?.kind === "evidence" && (
-          <EvidenceOverlay key={`ev-${overlay.id}`} evidenceId={overlay.id} onDismiss={() => setOverlay(null)} />
+          <EvidenceOverlay key={`ev-${overlay.id}`} evidenceId={overlay.id} onDismiss={dismissEvidence} />
         )}
       </AnimatePresence>
 
