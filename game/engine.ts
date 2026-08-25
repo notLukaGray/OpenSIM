@@ -56,7 +56,7 @@ export function applyEvidenceUnlock(state: GameState, node: DialogueNode): GameS
 }
 
 /** First-time evidence application shared by node and choice material beats. */
-function applyEvidenceById(state: GameState, evidenceId?: string): GameState {
+export function applyEvidenceById(state: GameState, evidenceId?: string): GameState {
   if (!evidenceId || state.unlockedEvidence.includes(evidenceId)) return state;
   const ev = getEvidence(evidenceId); // throws loudly on unknown id
   const brandPerception = { ...state.brandPerception };

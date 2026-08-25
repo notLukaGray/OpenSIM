@@ -6,7 +6,7 @@ import { HUB_TREE_ID, dateTreeList, getTree } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import type { Choice } from "@/content/schema";
 import { evalCondition } from "@/game/conditions";
-import { applyChoice, applyEvidenceUnlock, markCompleted, resolveForward } from "@/game/engine";
+import { applyChoice, applyEvidenceById, applyEvidenceUnlock, markCompleted, resolveForward } from "@/game/engine";
 import {
   GameState,
   Navigation,
@@ -26,7 +26,7 @@ type Action =
   | { type: "HYDRATE"; state: GameState; navigation: Navigation }
   | { type: "TO_TITLE" }
   | { type: "RESET_ALL" }
-  | { type: "ADVANCE" }
+  | { type: "ADVANCE"; evidenceId?: string }
   | { type: "CHOOSE"; choice: Choice }
   | { type: "SET_PHASE"; phase: Phase }
   | { type: "UPDATE_SETTINGS"; patch: Partial<Settings> }
@@ -131,7 +131,7 @@ function reducer(store: StoreState, action: Action): StoreState {
       const tree = getTree(store.nav.treeId!);
       const node = tree.nodes[store.nav.nodeId!];
       if (node.choices?.length) return store; // a choice owns the interaction
-      return follow(store, node.next, node.nextTree);
+      return follow({ ...store, state: applyEvidenceById(store.state, action.evidenceId) }, node.next, node.nextTree);
     }
     case "CHOOSE": {
       if (store.nav.phase !== "play") return store;
@@ -176,7 +176,7 @@ export type GameStore = StoreState & {
   continueGame: () => boolean;
   toTitle: () => void;
   resetAll: () => void;
-  advance: () => void;
+  advance: (evidenceId?: string) => void;
   choose: (choice: Choice) => void;
   setPhase: (p: Phase) => void;
   updateSettings: (patch: Partial<Settings>) => void;
@@ -212,7 +212,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       },
       toTitle: () => dispatch({ type: "TO_TITLE" }),
       resetAll: () => dispatch({ type: "RESET_ALL" }),
-      advance: () => dispatch({ type: "ADVANCE" }),
+      advance: (evidenceId) => dispatch({ type: "ADVANCE", evidenceId }),
       choose: (choice) => dispatch({ type: "CHOOSE", choice }),
       setPhase: (p) => dispatch({ type: "SET_PHASE", phase: p }),
       updateSettings: (patch) => dispatch({ type: "UPDATE_SETTINGS", patch }),

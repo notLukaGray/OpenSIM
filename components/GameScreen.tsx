@@ -6,7 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { getAsset, getBrandOrNull, getLocationOrNull, getTree } from "@/content/registry";
+import { getAsset, getBrandOrNull, getEvidenceForBrand, getLocationOrNull, getTree } from "@/content/registry";
 import type { Choice, DialogueNode } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { evalCondition } from "@/game/conditions";
@@ -38,7 +38,11 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
   const [debugOpen, setDebugOpen] = useState(false);
   const [sprites, setSprites] = useState<SpriteState[]>([]);
   const [overlay, setOverlay] = useState<{ kind: "cg" | "evidence"; id: string } | null>(null);
-  const [pendingEvidenceChoice, setPendingEvidenceChoice] = useState<Choice | null>(null);
+  // A map exit is deferred until the evidence modal is explicitly acknowledged.
+  // This keeps terminal dialogue from navigating away beneath an evidence beat.
+  const [pendingEvidenceAction, setPendingEvidenceAction] = useState<
+    { kind: "choice"; choice: Choice } | { kind: "advance"; evidenceId: string } | null
+  >(null);
   const overlayShownFor = useRef<string | null>(null);
   const enteredTree = useRef<string | null>(null);
 
@@ -136,13 +140,31 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
     state
   );
 
+  const fallbackEvidenceId = () => {
+    if (!tree?.brandId) return undefined;
+    return getEvidenceForBrand(tree.brandId).find((item) => !state.unlockedEvidence.includes(item.id))?.id;
+  };
+
+  const presentEvidence = (
+    evidenceId: string,
+    action: { kind: "choice"; choice: Choice } | { kind: "advance"; evidenceId: string }
+  ) => {
+    setPendingEvidenceAction(action);
+    setOverlay({ kind: "evidence", id: evidenceId });
+    void AudioManager.playSfx("evidence-chime");
+  };
+
   const choose = (choice: Choice) => {
     setSelectedChoiceId(choice.id);
     void AudioManager.playSfx("sfx-click");
     if (choice.evidence) {
-      setPendingEvidenceChoice(choice);
-      setOverlay({ kind: "evidence", id: choice.evidence });
-      void AudioManager.playSfx("evidence-chime");
+      presentEvidence(choice.evidence, { kind: "choice", choice });
+      return;
+    }
+    const exitEvidence = choice.nextTree === "map" ? fallbackEvidenceId() : undefined;
+    if (exitEvidence) {
+      // Apply the same evidence in the engine when the player continues.
+      presentEvidence(exitEvidence, { kind: "choice", choice: { ...choice, evidence: exitEvidence } });
       return;
     }
     window.setTimeout(() => game.choose(choice), 380);
@@ -150,9 +172,19 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
 
   const dismissEvidence = () => {
     setOverlay(null);
-    const choice = pendingEvidenceChoice;
-    setPendingEvidenceChoice(null);
-    if (choice) window.setTimeout(() => game.choose(choice), 180);
+    const action = pendingEvidenceAction;
+    setPendingEvidenceAction(null);
+    if (action?.kind === "choice") window.setTimeout(() => game.choose(action.choice), 180);
+    if (action?.kind === "advance") window.setTimeout(() => game.advance(action.evidenceId), 180);
+  };
+
+  const advance = () => {
+    const exitEvidence = node.nextTree === "map" ? fallbackEvidenceId() : undefined;
+    if (exitEvidence) {
+      presentEvidence(exitEvidence, { kind: "advance", evidenceId: exitEvidence });
+      return;
+    }
+    game.advance();
   };
 
   return (
@@ -192,7 +224,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
           textSpeed={settings.textSpeed}
           // An evidence/CG beat is modal: it must be acknowledged before the
           // player can type through or choose past the node beneath it.
-          onAdvance={() => { if (!overlay) game.advance(); }}
+          onAdvance={() => { if (!overlay) advance(); }}
           onSelectChoice={(choice) => { if (!overlay) choose(choice); }}
           onLineStart={(i) => void AudioManager.speak(`${treeId}/${nodeId}/${i}`)}
         />

@@ -294,6 +294,12 @@ export function getEvidence(id: string): Evidence {
   return e;
 }
 
+/** Content-owned material available for a product. Presentation code can use
+ * this generic lookup without knowing any product or evidence IDs. */
+export function getEvidenceForBrand(brandId: string): Evidence[] {
+  return evidence.filter((item) => item.brandId === brandId);
+}
+
 export function getLocationOrNull(id: string | null): GameLocation | null {
   return id ? (locationIdsGet(id) ?? null) : null;
 }
