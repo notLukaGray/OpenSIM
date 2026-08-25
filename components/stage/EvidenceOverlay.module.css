@@ -60,6 +60,24 @@
   color: rgba(242, 184, 198, 0.55);
 }
 
+.continue {
+  margin-top: 18px;
+  padding: 10px 22px;
+  border: 1px solid rgba(242, 184, 198, 0.7);
+  border-radius: 999px;
+  color: #131829;
+  background: #f2b8c6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.continue:disabled {
+  cursor: wait;
+  opacity: 0.45;
+}
+
 .typoFrame {
   margin: 18px auto 14px;
   padding: 34px 26px 30px;

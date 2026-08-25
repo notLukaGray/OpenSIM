@@ -1,6 +1,7 @@
 [
   {
     "id": "prime",
+    "recommendationEligible": true,
     "name": "PRIME",
     "archetype": "THE HYPE MACHINE",
     "color": "#2d5be3",
@@ -28,6 +29,7 @@
   },
   {
     "id": "liquid-iv",
+    "recommendationEligible": true,
     "name": "LIQUID I.V.",
     "archetype": "THE GO-BAG",
     "color": "#8ecbff",
@@ -50,6 +52,7 @@
   },
   {
     "id": "whoop",
+    "recommendationEligible": true,
     "name": "WHOOP",
     "archetype": "THE WITNESS",
     "color": "#ff8dce",
@@ -72,6 +75,7 @@
   },
   {
     "id": "celsius",
+    "recommendationEligible": true,
     "name": "CELSIUS",
     "archetype": "THE CATALYST",
     "color": "#edff4c",
@@ -94,6 +98,7 @@
   },
   {
     "id": "ag1",
+    "recommendationEligible": true,
     "name": "AG1",
     "archetype": "THE RITUAL",
     "color": "#8ced73",
@@ -117,6 +122,7 @@
   },
   {
     "id": "starbucks",
+    "recommendationEligible": true,
     "name": "STARBUCKS",
     "archetype": "THE THIRD PLACE",
     "color": "#00a862",
@@ -149,6 +155,7 @@
   },
   {
     "id": "oura",
+    "recommendationEligible": true,
     "name": "OURA",
     "archetype": "THE QUIET ORACLE",
     "color": "#c9a7eb",
@@ -304,6 +311,7 @@
   },
   {
     "id": "white-claw",
+    "recommendationEligible": true,
     "name": "WHITE CLAW",
     "archetype": "THE MEME SUMMER",
     "color": "#37b6ff",
@@ -369,6 +377,7 @@
   },
   {
     "id": "zyn",
+    "recommendationEligible": true,
     "name": "ZYN",
     "archetype": "THE UPPER DECKY",
     "color": "#baf5c0",

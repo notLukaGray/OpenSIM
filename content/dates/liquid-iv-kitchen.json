@@ -1,11 +1,11 @@
 {
-  "id": "liquid-iv-grocery-store",
+  "id": "liquid-iv-kitchen",
   "brandId": "liquid-iv",
-  "title": "The One-Time Purchase and the Bundle",
-  "locationId": "grocery-store",
+  "title": "A Free Sample and Launch Week",
+  "locationId": "kitchen",
   "context": {
-    "location": "grocery-store",
-    "occasion": "grocery-store"
+    "location": "kitchen",
+    "occasion": "kitchen"
   },
   "music": null,
   "background": null,
@@ -20,8 +20,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription.",
-    "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+    "The player sees an offer to try a new Liquid I.V. flavor as a free sample rather than buying a full bag immediately.",
+    "The player is already subscribed and can add a free sample of a new flavor to an upcoming order during launch week."
   ],
   "nodes": {
     "entry-first": {
@@ -33,41 +33,24 @@
         }
       },
       "text": [
-        "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription."
+        "The player sees an offer to try a new Liquid I.V. flavor as a free sample rather than buying a full bag immediately."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Before you say anything, I am not subscribing."
+        "Free sample?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Then buy one bag."
-      ],
-      "next": "entry-first-3"
-    },
-    "entry-first-3": {
-      "speaker": "PLAYER",
-      "text": [
-        "That easy?"
-      ],
-      "next": "entry-first-4"
-    },
-    "entry-first-4": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Try the format once. We can have the recurring-relationship conversation another day."
+        "New flavor, small commitment. Taste it before I ask you to buy a whole bag."
       ],
       "next": "choice-first"
     },
@@ -82,11 +65,11 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to test it without signing up.",
+          "text": "I would try one before buying a box.",
           "next": "first-1",
           "playerEffects": {
-            "control": 1,
-            "reassurance": 1
+            "readiness": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
@@ -100,7 +83,7 @@
         },
         {
           "id": "first-2",
-          "text": "The per-stick price still adds up.",
+          "text": "Free usually means you want my email or my next order.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -108,23 +91,23 @@
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": 1,
-              "trust": -1
+              "trust": -1,
+              "readiness": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I am not paying extra to improve water.",
+          "text": "I do not need a sample of another wellness product.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
-            "trust": 1
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
               "readiness": -1,
-              "trust": -1
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
@@ -136,27 +119,10 @@
     "first-1": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "Good. One bag. No vows."
-      ],
-      "next": "first-1-1"
-    },
-    "first-1-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "We are keeping this casual."
-      ],
-      "next": "first-1-2"
-    },
-    "first-1-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
         "expression": "special"
       },
       "text": [
-        "Hydrated and emotionally available."
+        "That is the job of a sample: lower the risk enough to get one honest try."
       ],
       "nextTree": "map"
     },
@@ -166,7 +132,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "It does. Convenience is part of what you are paying for."
+        "Often, yes. Free sample or not, I am hoping you like it enough to buy it later."
       ],
       "nextTree": "map"
     },
@@ -176,7 +142,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then water wins this aisle for you."
+        "Then the free price is still too high. Easy decision."
       ],
       "nextTree": "map"
     },
@@ -189,7 +155,7 @@
         }
       },
       "text": [
-        "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+        "The player is already subscribed and can add a free sample of a new flavor to an upcoming order during launch week."
       ],
       "next": "entry-return-1"
     },
@@ -199,41 +165,41 @@
         "expression": "happy"
       },
       "text": [
-        "Two seasonal products together, slightly lower combined price."
+        "You already have a box coming. Want the new flavor tucked into it?"
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "You are very pleased with the word bundle."
+        "Free?"
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "neutral"
       },
       "text": [
-        "I like a packed bag."
+        "During the launch offer, yes. Add the sample to the shipment you already have."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "The discount only helps if I wanted both."
+        "That is dangerously convenient."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "Correct. More product is still more product."
+        "I packed for both of us. This is on brand."
       ],
       "next": "choice-return"
     },
@@ -248,16 +214,16 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would buy the bundle if I wanted both anyway.",
+          "text": "That is a good way to get me to try it.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 1,
-            "comfort": 1
+            "excitement": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
               "readiness": 1,
-              "comfort": 1
+              "excitement": 1
             }
           },
           "relationshipEffects": {
@@ -266,7 +232,7 @@
         },
         {
           "id": "return-2",
-          "text": "A discount can make me buy more than I planned.",
+          "text": "You are using my subscription box as an ad slot.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -274,23 +240,23 @@
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "excitement": -1,
+              "readiness": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need a pantry full of hydration packets.",
+          "text": "Do not turn every refill into a product launch.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
-            "trust": 1
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": -1,
-              "comfort": -1
+              "reassurance": -1,
+              "excitement": -1
             }
           },
           "relationshipEffects": {
@@ -305,17 +271,17 @@
         "expression": "special"
       },
       "text": [
-        "That is the sensible bundle customer."
+        "Correct. Useful logistics, useful sample."
       ],
       "nextTree": "map"
     },
     "return-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "Exactly. Savings and overspending can be the same cart."
+        "Also correct. Your box is a very convenient place for me to introduce the next thing."
       ],
       "nextTree": "map"
     },
@@ -325,7 +291,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Then one bag, or none. Your cabinet does not need to become my warehouse."
+        "Fair. A refill can just be a refill."
       ],
       "nextTree": "map"
     }

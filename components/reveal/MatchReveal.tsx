@@ -3,7 +3,7 @@
 // the tension is. No product appears perfect (ADR-08).
 import { motion } from "framer-motion";
 import { getBrandOrNull } from "@/content/registry";
-import { BrandMatch, needWeights, rankAllBrands } from "@/game/compatibility";
+import { BrandMatch, auditReadiness, needWeights, rankAllBrands } from "@/game/compatibility";
 import { GameState, NEED_LABELS } from "@/game/types";
 import { useGame } from "@/hooks/useGame";
 import styles from "./MatchReveal.module.css";
@@ -13,8 +13,12 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
   const weights = needWeights(state);
   const ranked = rankAllBrands(state, weights, { flags: state.flags });
   const dated = ranked.filter((m) => m.dated);
-  const top: BrandMatch | undefined = dated[0];
+  // The recommendation answers "what fits you?" rather than "who did you
+  // spend most time with?" A dated leader remains useful lived evidence below.
+  const top: BrandMatch | undefined = ranked[0];
+  const strongestLived: BrandMatch | undefined = dated[0];
   const neverMet = ranked.filter((m) => !m.dated);
+  const audit = auditReadiness(state);
 
   return (
     <div className={styles.wrap}>
@@ -34,7 +38,7 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
           </>
         ) : top ? (
           <>
-            <h1 className={styles.header}>YOUR MATCH</h1>
+            <h1 className={styles.header}>YOUR BEST FIT</h1>
             <motion.div
               className={styles.matchCard}
               initial={{ opacity: 0, y: 30 }}
@@ -45,6 +49,14 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
                 {getBrandOrNull(top.brandId)?.name}
               </div>
               <div className={styles.matchScore}>{top.score}%</div>
+              {!top.dated && (
+                <p className={styles.undatedCallout}>
+                  You never met. The audit still sees the fit.
+                </p>
+              )}
+              {!audit.confident && (
+                <p className={styles.provisional}>best current read — more nights could change it</p>
+              )}
 
               <div className={styles.section}>
                 <div className={styles.sectionTitle}>WHY IT WORKS</div>
@@ -73,14 +85,21 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
               </div>
             </motion.div>
 
-            {dated.length > 1 && (
+            {strongestLived && (
               <motion.div
                 className={styles.runners}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
               >
-                {dated.slice(1).map((m) => (
+                <div className={styles.livedLabel}>STRONGEST LIVED EVIDENCE</div>
+                <div className={styles.runner}>
+                  <span style={{ color: getBrandOrNull(strongestLived.brandId)?.color }}>
+                    {getBrandOrNull(strongestLived.brandId)?.name}
+                  </span>
+                  <span className={styles.runnerScore}>{strongestLived.score}%</span>
+                </div>
+                {dated.filter((m) => m.brandId !== strongestLived.brandId).map((m) => (
                   <div key={m.brandId} className={styles.runner}>
                     <span style={{ color: getBrandOrNull(m.brandId)?.color }}>{getBrandOrNull(m.brandId)?.name}</span>
                     <span className={styles.runnerScore}>{m.score}%</span>
@@ -94,7 +113,7 @@ export default function MatchReveal({ state, onRestart }: { state: GameState; on
         )}
 
         {neverMet.length > 0 && (
-          <p className={styles.neverMet}>never met: {neverMet.map((m) => getBrandOrNull(m.brandId)?.name).join(" · ")}</p>
+          <p className={styles.neverMet}>unmet possibilities: {neverMet.map((m) => getBrandOrNull(m.brandId)?.name).join(" · ")}</p>
         )}
 
         {(state.dated.includes("sleep") || state.dated.includes("gym")) && (

@@ -1,7 +1,7 @@
 {
   "id": "celsius-nightgym",
   "brandId": "celsius",
-  "title": "CELSIUS — THE LATE GYM",
+  "title": "Metabolism Claims and the ESSENTIALS Line",
   "locationId": "nightgym",
   "context": {
     "location": "nightgym",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-celsius-fatburn-label",
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"

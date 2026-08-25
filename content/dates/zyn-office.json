@@ -1,7 +1,7 @@
 {
   "id": "zyn-office",
   "brandId": "zyn",
-  "title": "COUNSEL — THE OFFICE",
+  "title": "The Modified-Risk Claim and Charitable Rewards",
   "locationId": "office",
   "context": {
     "location": "office",
@@ -73,6 +73,7 @@
       "next": "entry-first-5"
     },
     "entry-first-5": {
+      "evidence": "ev-zyn-authorized-not-approved",
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "annoyed"

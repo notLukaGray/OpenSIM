@@ -1,17 +1,17 @@
 {
-  "id": "liquid-iv-grocery-store",
-  "brandId": "liquid-iv",
-  "title": "The One-Time Purchase and the Bundle",
-  "locationId": "grocery-store",
+  "id": "whoop-beach-day",
+  "brandId": "whoop",
+  "title": "Two-Week Battery and the PowerPack",
+  "locationId": "beach-day",
   "context": {
-    "location": "grocery-store",
-    "occasion": "grocery-store"
+    "location": "beach-day",
+    "occasion": "beach-day"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-liquid-iv-neutral",
+      "assetId": "char-whoop-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription.",
-    "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+    "The player is heading into a long beach day and notices that current WHOOP hardware advertises more than two weeks of battery life.",
+    "The player already wears WHOOP and uses the PowerPack to charge it without taking it off during a beach day."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "whoop",
           "met": false
         }
       },
       "text": [
-        "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription."
+        "The player is heading into a long beach day and notices that current WHOOP hardware advertises more than two weeks of battery life."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Before you say anything, I am not subscribing."
+        "I left every charger at home on purpose."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then buy one bag."
+        "Good. You do not need one for me today."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That easy?"
+        "That is the first relaxing thing you have ever said."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Try the format once. We can have the recurring-relationship conversation another day."
+        "Current hardware is rated for 14-plus days. Today, battery life gets to be the whole pitch."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,32 +82,32 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to test it without signing up.",
+          "text": "That actually matters to me on days like this.",
           "next": "first-1",
           "playerEffects": {
-            "control": 1,
-            "reassurance": 1
+            "readiness": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
+            "whoop": {
               "readiness": 1,
-              "trust": 1
+              "control": 1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "whoop": 1
           }
         },
         {
           "id": "first-2",
-          "text": "The per-stick price still adds up.",
+          "text": "Battery claims depend on how the thing is used.",
           "next": "first-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
+            "whoop": {
               "readiness": 1,
               "trust": -1
             }
@@ -115,68 +115,68 @@
         },
         {
           "id": "first-3",
-          "text": "I am not paying extra to improve water.",
+          "text": "I do not want another wearable charger in my bag at all.",
           "next": "first-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
-              "trust": -1
+            "whoop": {
+              "comfort": -1,
+              "readiness": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "whoop": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
-        "expression": "happy"
+        "expression": "special"
       },
       "text": [
-        "Good. One bag. No vows."
+        "Finally, a metric you find emotionally soothing."
       ],
       "next": "first-1-1"
     },
     "first-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "We are keeping this casual."
+        "Battery life is the healthiest thing about us."
       ],
       "next": "first-1-2"
     },
     "first-1-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "Hydrated and emotionally available."
+        "I will log that as progress."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "It does. Convenience is part of what you are paying for."
-      ],
-      "nextTree": "map"
-    },
-    "first-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then water wins this aisle for you."
+        "Correct. Rated battery life is still rated battery life, not a personal guarantee."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Then the longest battery is still one charger too many."
       ],
       "nextTree": "map"
     },
@@ -184,61 +184,41 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "whoop",
           "met": true
         }
       },
       "text": [
-        "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+        "The player already wears WHOOP and uses the PowerPack to charge it without taking it off during a beach day."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "happy"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "Two seasonal products together, slightly lower combined price."
+        "Do I have to take you off to charge you?"
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "PLAYER",
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "happy"
+      },
       "text": [
-        "You are very pleased with the word bundle."
+        "No. The PowerPack charges me while you wear me."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "I like a packed bag."
-      ],
-      "next": "entry-return-4"
-    },
-    "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "The discount only helps if I wanted both."
-      ],
-      "next": "entry-return-5"
-    },
-    "entry-return-5": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Correct. More product is still more product."
+        "You really hate missing data."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
@@ -248,84 +228,84 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would buy the bundle if I wanted both anyway.",
+          "text": "That is exactly the kind of tiny convenience I notice.",
           "next": "return-1",
           "playerEffects": {
-            "readiness": 1,
-            "comfort": 1
+            "readiness": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
+            "whoop": {
               "readiness": 1,
-              "comfort": 1
+              "control": 1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "whoop": 1
           }
         },
         {
           "id": "return-2",
-          "text": "A discount can make me buy more than I planned.",
+          "text": "I am still carrying a proprietary charger.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "excitement": -1,
+            "whoop": {
+              "readiness": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need a pantry full of hydration packets.",
+          "text": "If a tracker cannot survive being removed for charging, I do not need continuous data.",
           "next": "return-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
+            "whoop": {
+              "mastery": -1,
               "comfort": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "whoop": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "That is the sensible bundle customer."
+        "Tiny friction is where habits usually die. I take the win."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Exactly. Savings and overspending can be the same cart."
-      ],
-      "nextTree": "map"
-    },
-    "return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Then one bag, or none. Your cabinet does not need to become my warehouse."
+        "Yes. Convenient proprietary hardware is still proprietary hardware."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Then missing a few hours may matter less to you than maintaining the streak matters to me."
       ],
       "nextTree": "map"
     }

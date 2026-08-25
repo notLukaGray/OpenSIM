@@ -1,7 +1,7 @@
 {
   "id": "whoop-bedroom-night",
   "brandId": "whoop",
-  "title": "WHOOP — BEDROOM NIGHT",
+  "title": "Sleep, Recovery, and Healthspan",
   "locationId": "bedroom-night",
   "context": {
     "location": "bedroom-night",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-whoop-healthspan-model",
       "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"

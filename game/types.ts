@@ -50,12 +50,12 @@ export const clampNeed = (n: number): number =>
 export const SAVE_VERSION = 3;
 
 /**
- * Encounters required before the early-reveal gate opens (P7-01).
- * Three is the minimum for archetype separation: one date is noise, two are
- * coin-flippy, three across different brand families produce a real pattern
- * — while staying inside the ≤10-minute rule.
+ * The audit never resolves before this many encounters. From this point it may
+ * resolve early when the counterfactual confidence check is stable.
  */
-export const REVEAL_MIN_ENCOUNTERS = 3;
+export const REVEAL_MIN_ENCOUNTERS = 4;
+/** At this many encounters, show the audit even when the player stays mixed. */
+export const REVEAL_TARGET_ENCOUNTERS = 7;
 export const SAVE_KEY = "dsim.save.v1";
 export const SETTINGS_KEY = "dsim.settings.v1";
 

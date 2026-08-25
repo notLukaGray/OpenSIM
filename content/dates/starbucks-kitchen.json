@@ -1,7 +1,7 @@
 {
   "id": "starbucks-kitchen",
   "brandId": "starbucks",
-  "title": "STARBUCKS — QUIET KITCHEN",
+  "title": "Personal Cups and Expiring Stars",
   "locationId": "kitchen",
   "context": {
     "location": "kitchen",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-starbucks-personal-cup-stars",
       "speaker": "STARBUCKS",
       "sprite": {
         "expression": "neutral"

@@ -1,7 +1,7 @@
 {
   "id": "oura-office",
   "brandId": "oura",
-  "title": "OURA — THE OFFICE",
+  "title": "The First Month and the Paid Membership",
   "locationId": "office",
   "context": {
     "location": "office",
@@ -215,6 +215,7 @@
       "next": "entry-return-3"
     },
     "entry-return-3": {
+      "evidence": "ev-oura-stress-hub",
       "speaker": "OURA",
       "sprite": {
         "expression": "happy"

@@ -222,6 +222,8 @@ function hitZoneDiagnostics(locations) {
 
   const parsed = new Map();
   for (const l of locations) {
+    if (typeof l.color !== "string" || !/^#[0-9a-f]{6}$/i.test(l.color))
+      err(`location[${l.id}].color`, "must be a six-digit hex color");
     const zone = parseZone(l);
     if (zone) parsed.set(l.id, zone);
     // The status marker sits at map.x/map.y — it should land on the zone it marks.

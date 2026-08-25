@@ -411,5 +411,83 @@
       "mastery": 1,
       "trust": -1
     }
+  },
+  {
+    "id": "ev-prime-founder-machine",
+    "brandId": "prime",
+    "type": "campaign",
+    "title": "The Founder Machine",
+    "description": "ON SCREEN: a rapid PRIME launch reel cuts between creator posts, challenge clips, sell-out announcements, and founder faces. The product arrives after the audience already knows the spectacle.",
+    "effects": {
+      "excitement": 2,
+      "trust": -1
+    }
+  },
+  {
+    "id": "ev-prime-verify-bottle",
+    "brandId": "prime",
+    "type": "product",
+    "title": "Verify Your PRIME",
+    "description": "ON SCREEN: a product-verification page asks the player to compare country, bottle size, label, formula, and flavor against an official list. Scale made the logo familiar; it also made authenticity a chore.",
+    "effects": {
+      "trust": 1,
+      "comfort": -1
+    }
+  },
+  {
+    "id": "ev-ag1-nsf-mark",
+    "brandId": "ag1",
+    "type": "product",
+    "title": "NSF Certified for Sport",
+    "description": "ON SCREEN: a close crop of the NSF Certified for Sport seal beside the AG1 pouch, with the note that it screens for banned substances rather than proving every wellness claim.",
+    "effects": { "trust": 1, "mastery": 1 }
+  },
+  {
+    "id": "ev-liquid-iv-firecracker-collab",
+    "brandId": "liquid-iv",
+    "type": "campaign",
+    "title": "Firecracker, Rehydrated",
+    "description": "ON SCREEN: a bright seasonal Liquid I.V. flavor collaboration borrows the typography and color memory of a freezer-aisle treat. Nostalgia opens the product page before hydration gets a word in.",
+    "effects": { "excitement": 1, "trust": -1 }
+  },
+  {
+    "id": "ev-whoop-healthspan-model",
+    "brandId": "whoop",
+    "type": "product",
+    "title": "Pace of Aging",
+    "description": "ON SCREEN: a WHOOP Healthspan dashboard turns sleep, recovery, and long-term habits into a Pace of Aging estimate, with model language in the fine print instead of a promise of prophecy.",
+    "effects": { "mastery": 1, "reassurance": -1 }
+  },
+  {
+    "id": "ev-whoop-membership-tiers",
+    "brandId": "whoop",
+    "type": "retail",
+    "title": "One / Peak / Life",
+    "description": "ON SCREEN: a comparison table stacks WHOOP One, Peak, and Life. Hardware is the doorway; the increasingly intimate insights are organized as membership levels.",
+    "effects": { "control": 1, "trust": -1 }
+  },
+  {
+    "id": "ev-starbucks-personal-cup-stars",
+    "brandId": "starbucks",
+    "type": "campaign",
+    "title": "Bring Your Cup. Earn Your Stars.",
+    "description": "ON SCREEN: a Starbucks mobile-order panel confirms a clean personal cup and adds Stars to the transaction. A sustainable habit is also a loyalty-loop behavior.",
+    "effects": { "readiness": 1, "trust": -1 }
+  },
+  {
+    "id": "ev-starbucks-personalized-offer",
+    "brandId": "starbucks",
+    "type": "social",
+    "title": "Just for You: Bonus Stars",
+    "description": "ON SCREEN: a personalized Bonus Star offer names the player’s usual order and expiration window. Convenience is made from account memory; account memory is the price of relevance.",
+    "effects": { "reassurance": 1, "trust": -1 }
+  },
+  {
+    "id": "ev-oura-stress-hub",
+    "brandId": "oura",
+    "type": "product",
+    "title": "Stress Has a Dashboard",
+    "description": "ON SCREEN: Daytime Stress, Resilience, and Cumulative Stress sit in one Oura panel. The graph can name a pattern, but it cannot identify the boss, the deadline, or the cause.",
+    "effects": { "mastery": 1, "comfort": -1 }
   }
 ]

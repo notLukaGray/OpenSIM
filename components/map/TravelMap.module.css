@@ -1,5 +1,5 @@
 /* TravelMap (P10-01): a pannable world larger than the viewport, locations as
-   drawn hit zones. The old pins/card-list UI is fully retired — every selector
+   colored content-defined buttons. The old pins/card-list UI is fully retired — every selector
    here maps to live markup in TravelMap.tsx / LocationView.tsx. */
 
 .wrap {
@@ -33,142 +33,148 @@
 
 .backdrop {
   object-fit: cover;
-  filter: brightness(0.55) saturate(0.8);
 }
 
-.dim {
+.mapTitle {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(6, 8, 16, 0.9) 100%);
-}
-
-.headingWrap {
-  position: absolute;
-  top: 5%;
-  width: 100%;
+  top: 35%;
+  left: 30%;
   z-index: 2;
-  text-align: center;
+  width: min(42%, 760px);
+  transform: translate(-50%, -50%);
   pointer-events: none; /* never intercept a gesture — it's scenery that pans away */
 }
 
-.heading {
-  font-size: clamp(22px, 2.6vw, 34px);
-  letter-spacing: 0.4em;
+.mapTitle h1 {
+  margin: 0;
   color: #f4ecf2;
-  text-shadow: 0 0 40px rgba(242, 184, 198, 0.3);
+  font-family: var(--font-body);
+  font-size: clamp(64px, 9vw, 170px);
+  font-weight: 800;
+  letter-spacing: 0em;
+  line-height: 0.84;
+  text-shadow: 0 3px 10px rgba(8, 12, 28, 0.28);
 }
 
-.subheading {
-  margin-top: clamp(8px, 1vw, 12px);
-  font-size: 12px;
-  letter-spacing: 0.24em;
-  color: rgba(232, 228, 240, 0.5);
+.mapTitle h1 span {
+  display: block;
 }
 
-/* ── hit zones ───────────────────────────────────────────────────────────── */
-.zones {
+@media (max-width: 700px) {
+  .mapTitle {
+    top: 35%;
+    left: 29%;
+    width: 48%;
+  }
+
+  .mapTitle h1 {
+    font-size: clamp(34px, 10vw, 70px);
+  }
+}
+
+/* ── location buttons ────────────────────────────────────────────────────── */
+.locations {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.zone {
+.locationButton {
+  --location-color: #2554a6;
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: clamp(150px, 16vw, 230px);
+  min-height: 44px;
+  padding: 10px 16px;
+  transform: translate(-50%, -50%);
+  color: #f4ecf2;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--location-color) 28%, #131829), rgba(11, 14, 23, 0.94));
+  border: 1px solid color-mix(in srgb, var(--location-color) 78%, white);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(8, 12, 28, 0.42), 0 0 0 4px color-mix(in srgb, var(--location-color) 12%, transparent);
+  font-size: clamp(10px, 0.9vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
   cursor: pointer;
   outline: none;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
 
-.zonePad {
-  fill: transparent;
-  pointer-events: all; /* ≥44px effective target even when the drawn shape is small */
+.locationButton:hover,
+.locationButton:focus-visible {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--location-color) 42%, #131829), rgba(11, 14, 23, 0.94));
+  box-shadow: 0 14px 30px rgba(8, 12, 28, 0.5), 0 0 0 5px color-mix(in srgb, var(--location-color) 18%, transparent);
 }
 
-.zoneArt {
-  transition: filter 0.15s ease, opacity 0.15s ease;
+.locationButton:active {
+  transform: translate(-50%, calc(-50% + 2px));
 }
 
-.zoneQuiet .zoneArt {
-  opacity: 0.35;
-  filter: saturate(0.4) brightness(0.8);
+.locationName {
+  text-align: center;
 }
 
-.zoneMet .zoneArt {
-  animation: breathe 3s ease-in-out infinite; /* subtle resting pulse */
+.zoneQuiet {
+  filter: saturate(0.75);
 }
 
-.zoneDone .zoneArt {
-  opacity: 0.55;
-  filter: saturate(0.5);
+.zoneMet {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.zoneDone {
+  opacity: 0.64;
 }
 
 @keyframes breathe {
-  0%,
-  100% {
-    opacity: 0.72;
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.08); }
+}
+
+@media (max-width: 700px) {
+  .locationButton {
+    width: clamp(118px, 29vw, 180px);
+    padding: 9px 10px;
+    font-size: clamp(8px, 2vw, 12px);
+    border-width: 1px;
+    letter-spacing: 0.1em;
   }
-  50% {
-    opacity: 1;
-  }
-}
 
-.zone:hover .zoneArt,
-.zone:focus-visible .zoneArt {
-  filter: drop-shadow(0 0 14px rgba(242, 184, 198, 0.65)) brightness(1.1);
-}
-
-.marker {
-  pointer-events: none;
-}
-
-.markerBg {
-  fill: rgba(19, 24, 41, 0.9);
-  stroke: rgba(242, 184, 198, 0.7);
-  stroke-width: 1.5;
-}
-
-.zoneQuiet .markerBg {
-  stroke: rgba(255, 255, 255, 0.3);
-  opacity: 0.6;
-}
-
-.zoneDone .markerBg {
-  stroke: rgba(184, 181, 232, 0.8);
-}
-
-.markerGlyph {
-  font-size: 13px;
-  fill: #f4ecf2;
-  text-anchor: middle;
-  dominant-baseline: central;
-}
-
-.zoneLabel {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  fill: #f4ecf2;
-  paint-order: stroke;
-  stroke: rgba(6, 8, 16, 0.85);
-  stroke-width: 4px;
-  text-anchor: middle;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-
-.zone:hover .zoneLabel,
-.zone:focus-visible .zoneLabel {
-  opacity: 1;
-}
-
-@media (hover: none) {
-  /* Touch has no hover — names surface inside the LocationView instead. */
-  .zoneLabel {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .zoneMet .zoneArt {
+  .zoneMet {
     animation: none;
+  }
+}
+
+/* The home tree is presented directly over the map. Its dialogue owns the
+   lower interaction band until it exits to the real map phase. */
+.mapUi {
+  position: absolute;
+  right: 0;
+  bottom: 3vh;
+  left: 0;
+  z-index: 35;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  .mapUi {
+    padding: 0 12px;
   }
 }
 
@@ -214,27 +220,6 @@
 .thinkItOver:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(242, 184, 198, 0.35);
-}
-
-.archiveBtn {
-  position: absolute;
-  left: 26px;
-  bottom: 20px;
-  z-index: 20;
-  min-height: 44px; /* touch rule */
-  background: none;
-  border: 1px solid rgba(242, 184, 198, 0.35);
-  border-radius: 999px;
-  color: rgba(232, 228, 240, 0.7);
-  font-size: 10.5px;
-  letter-spacing: 0.3em;
-  padding: 7px 18px;
-  cursor: pointer;
-}
-
-.archiveBtn:hover {
-  border-color: #f2b8c6;
-  color: #f2b8c6;
 }
 
 .controlsHint {
@@ -359,11 +344,6 @@
 
   .actionsNote {
     font-size: 13.5px;
-  }
-
-  .archiveBtn {
-    left: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   }
 
   .controlsHint {

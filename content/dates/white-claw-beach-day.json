@@ -1,7 +1,7 @@
 {
   "id": "white-claw-beach-day",
   "brandId": "white-claw",
-  "title": "WHITE CLAW — BEACH DAY",
+  "title": "Stop Scrolling and Choose the Surf Pack",
   "locationId": "beach-day",
   "context": {
     "location": "beach-day",
@@ -55,6 +55,7 @@
       "next": "entry-first-3"
     },
     "entry-first-3": {
+      "evidence": "ev-white-claw-cut-the-ads",
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"

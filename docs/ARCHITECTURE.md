@@ -121,7 +121,8 @@ stack (each modifier applies at most once per evaluation, deterministic order = 
 3. Compatibility — weighted dot product of weights × effective profile with **asymmetric tension**:
    negative contributions are multiplied by `TENSION_WEIGHT` (>1), because a strong brand negative
    colliding with an important player need should hurt more than the equivalent positive helps.
-   Mapped to 0–100. Every dated brand is listed; top match shown with why/tension breakdowns.
+   Mapped to 0–100. The content-owned recommendation portfolio is ranked; best fit may be a product
+   the player has not dated. The highest dated product is shown separately as lived evidence.
 4. Chemistry — running total per brand; thresholds gate flirtier lines, sprite affection variants,
    and date-closing tone. Never enters scoring.
 
@@ -132,7 +133,19 @@ stack (each modifier applies at most once per evaluation, deterministic order = 
 1. WHO HAVE YOU BEEN PLAYING? → silhouette (asset id `reveal-silhouette`)
 2. archetype card + short personalized explanation
 3. top emotional needs (normalized weight bars)
-4. MatchReveal: ranked dated brands, YOUR MATCH header, why-it-works (+needs), tension (−needs)
+4. MatchReveal: portfolio-ranked best fit, strongest lived evidence, why-it-works (+needs), tension
+   (−needs), and a provisional label when the audit has not stabilized.
+
+## Audit readiness
+
+The audit has a four-encounter floor and a seven-encounter target. Between them, it opens only when
+the conclusion survives removing any one completed encounter and the player has made at least six
+choices across three locations. This is derived from `choiceLog`; no new save fields are required.
+When unresolved, the map names the need most disputed by the leading two archetypes.
+
+The main recommendation is intentionally context-free. It uses perceived profiles, discovered
+deltas, and flag-gated modifiers, but no location/occasion modifier; a future “for tonight” feature
+must collect and pass its own context.
 
 Both are components driven by pure engine output — no scores recomputed inside JSX.
 

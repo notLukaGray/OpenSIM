@@ -51,6 +51,19 @@
   color: #f4ecf2;
 }
 
+.undatedCallout,
+.provisional {
+  margin: 12px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #f2b8c6;
+}
+
+.provisional {
+  color: rgba(232, 228, 240, 0.58);
+  font-style: italic;
+}
+
 .section {
   margin-top: 26px;
 }
@@ -104,6 +117,14 @@
 
 .runnerScore {
   color: rgba(232, 228, 240, 0.7);
+}
+
+.livedLabel {
+  margin: 10px 0 2px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: rgba(232, 228, 240, 0.46);
 }
 
 .neverMet {

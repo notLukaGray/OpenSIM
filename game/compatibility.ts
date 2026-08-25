@@ -1,8 +1,8 @@
 // Compatibility & reveal math (P1-06, ADR-08). Pure functions over state.
-import { archetypes, brands, getBrandOrNull } from "@/content/registry";
+import { archetypes, brands, getBrandOrNull, getTree } from "@/content/registry";
 import type { Archetype } from "@/content/schema";
 import { activeModifiers, applyModifierStack, ModifierContext } from "./modifiers";
-import { GameState, Need, NeedVector, TENSION_WEIGHT } from "./types";
+import { GameState, Need, NeedVector, REVEAL_MIN_ENCOUNTERS, REVEAL_TARGET_ENCOUNTERS, TENSION_WEIGHT, clampNeed, needs, zeroNeeds } from "./types";
 
 /**
  * Normalizes accumulated |evidence| into weights summing to 1 — how much the
@@ -58,7 +58,7 @@ export function effectiveProfile(brandId: string, state: GameState, ctx?: Modifi
   const deltas = state.brandPerception[brandId];
   const withDeltas = { ...base };
   if (deltas)
-    for (const n of Object.keys(deltas) as Need[]) withDeltas[n] += deltas[n];
+    for (const n of Object.keys(deltas) as Need[]) withDeltas[n] = clampNeed(withDeltas[n] + deltas[n]);
   if (!ctx) return withDeltas;
   return applyModifierStack(withDeltas, activeModifiers(brandId, ctx));
 }
@@ -107,7 +107,9 @@ export type BrandMatch = {
  */
 export function rankAllBrands(state: GameState, weights: NeedVector, ctx?: ModifierContext): BrandMatch[] {
   return brands
-    .filter((b) => !b.unbranded)
+    // The recommendation portfolio is content-owned. A historical or
+    // unbranded roster record cannot leak into the consumer-facing answer.
+    .filter((b) => !b.unbranded && b.recommendationEligible)
     .map((brand) => ({
       brandId: brand.id,
       dated: state.dated.includes(brand.id),
@@ -115,4 +117,104 @@ export function rankAllBrands(state: GameState, weights: NeedVector, ctx?: Modif
       ...matchBreakdown(weights, effectiveProfile(brand.id, state, ctx)),
     }))
     .sort((a, b) => b.score - a.score);
+}
+
+type RankedArchetype = { archetype: Archetype; fit: number };
+
+function rankArchetypes(weights: NeedVector): RankedArchetype[] {
+  const normalized = normalizeWeights(weights);
+  return archetypes
+    .map((archetype) => {
+      const target = normalizeWeights(archetype.weights);
+      return {
+        archetype,
+        fit: (Object.keys(normalized) as Need[]).reduce((sum, need) => sum + normalized[need] * target[need], 0),
+      };
+    })
+    .sort((a, b) => b.fit - a.fit);
+}
+
+/** Rebuild a subset of player evidence from the persisted choice log. */
+function evidenceForTrees(state: GameState, excludedTreeId?: string): NeedVector {
+  const evidence = zeroNeeds();
+  for (const [treeId, choiceIds] of Object.entries(state.choiceLog)) {
+    if (treeId === excludedTreeId) continue;
+    try {
+      const tree = getTree(treeId);
+      for (const node of Object.values(tree.nodes))
+        for (const choice of node.choices ?? [])
+          if (choiceIds.includes(choice.id))
+            for (const [need, amount] of Object.entries(choice.playerEffects ?? {}))
+              evidence[need as Need] += amount ?? 0;
+    } catch {
+      // A removed tree should not make an old save unrevealable.
+    }
+  }
+  return evidence;
+}
+
+function mostDisputedNeed(first: Archetype, second: Archetype): Need {
+  return [...needs]
+    .sort((a, b) => Math.abs(second.weights[b] - first.weights[b]) - Math.abs(second.weights[a] - first.weights[a]))[0];
+}
+
+export type AuditReadiness = {
+  encounters: number;
+  choices: number;
+  locations: number;
+  archetypeMargin: number;
+  recommendationMargin: number;
+  stableArchetype: boolean;
+  stableRecommendation: boolean;
+  canReveal: boolean;
+  confident: boolean;
+  disputedNeed: Need | null;
+};
+
+/**
+ * The reveal is a confidence decision, not a fixed-date counter. It checks
+ * whether removing any one completed encounter changes either conclusion.
+ * This stays pure and derives its history from choiceLog, so saves keep their
+ * existing shape.
+ */
+export function auditReadiness(state: GameState): AuditReadiness {
+  const completed = state.completedTrees;
+  const choices = completed.reduce((total, id) => total + (state.choiceLog[id]?.length ?? 0), 0);
+  const locations = new Set(completed.map((id) => {
+    try { return getTree(id).locationId; } catch { return undefined; }
+  }).filter(Boolean)).size;
+  const evidence = evidenceForTrees(state);
+  const weights = needWeights({ ...state, evidence });
+  const archetypesRanked = rankArchetypes(weights);
+  const recommendationContext = { flags: state.flags };
+  const brandRanked = rankAllBrands({ ...state, evidence }, weights, recommendationContext);
+  const topArchetype = archetypesRanked[0];
+  const topBrand = brandRanked[0];
+  const archetypeMargin = topArchetype ? topArchetype.fit - (archetypesRanked[1]?.fit ?? 0) : 0;
+  const recommendationMargin = topBrand ? topBrand.score - (brandRanked[1]?.score ?? 0) : 0;
+  let stableArchetype = Boolean(topArchetype);
+  let stableRecommendation = Boolean(topBrand);
+
+  for (const treeId of completed) {
+    const leaveOneOutEvidence = evidenceForTrees(state, treeId);
+    const leaveOneOutWeights = needWeights({ ...state, evidence: leaveOneOutEvidence });
+    if (rankArchetypes(leaveOneOutWeights)[0]?.archetype.id !== topArchetype?.archetype.id) stableArchetype = false;
+    if (rankAllBrands({ ...state, evidence: leaveOneOutEvidence }, leaveOneOutWeights, recommendationContext)[0]?.brandId !== topBrand?.brandId)
+      stableRecommendation = false;
+  }
+
+  const enoughBreadth = choices >= 6 && locations >= 3;
+  const confident = completed.length >= REVEAL_MIN_ENCOUNTERS && enoughBreadth && stableArchetype && stableRecommendation;
+  return {
+    encounters: completed.length,
+    choices,
+    locations,
+    archetypeMargin,
+    recommendationMargin,
+    stableArchetype,
+    stableRecommendation,
+    canReveal: confident || completed.length >= REVEAL_TARGET_ENCOUNTERS,
+    confident,
+    disputedNeed: archetypesRanked.length > 1 ? mostDisputedNeed(archetypesRanked[0].archetype, archetypesRanked[1].archetype) : null,
+  };
 }

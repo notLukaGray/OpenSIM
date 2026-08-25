@@ -83,6 +83,8 @@ export function validateContent(bundle) {
     if (!checkVector(b.claimedProfile, f, `brand[${b.id}].claimedProfile`))
       continue;
     checkVector(b.perceivedProfile, f, `brand[${b.id}].perceivedProfile`);
+    if (b.recommendationEligible !== undefined && typeof b.recommendationEligible !== "boolean")
+      err(f, `brand[${b.id}].recommendationEligible`, "must be boolean when present");
   }
 
   for (const a of bundle.archetypes) {
@@ -131,6 +133,8 @@ export function validateContent(bundle) {
   // ── locations ─────────────────────────────────────────────────────────────
   for (const l of bundle.locations ?? []) {
     const f = F(l, "locations");
+    if (typeof l.color !== "string" || !/^#[0-9a-f]{6}$/i.test(l.color))
+      err(f, `location[${l.id}].color`, "must be a six-digit hex color");
     if (!assetIds.has(l.background)) err(f, `location[${l.id}].background`, `unknown asset "${l.background}"`);
     if (!audioIds.has(l.music)) err(f, `location[${l.id}].music`, `unknown track "${l.music}"`);
     if (typeof l.map?.x !== "number" || typeof l.map?.y !== "number")
@@ -332,6 +336,18 @@ export function validateContent(bundle) {
   // hub presence
   if (!treeById.has("home")) err("bundle", "trees", `no hub tree with id "home"`);
 
+  // Every playable branded character needs at least one material moment. The
+  // evidence system is a story beat, not an optional archive decoration.
+  for (const brandId of brandIds) {
+    const brand = bundle.brands.find((b) => b.id === brandId);
+    if (brand?.unbranded) continue;
+    const brandTrees = bundle.trees.filter((t) => t.brandId === brandId);
+    if (brandTrees.length === 0) continue; // roster/history entry, not playable this build
+    const hasEvidence = brandTrees.some((t) => Object.values(t.nodes ?? {}).some((node) => Boolean(node.evidence)));
+    if (!hasEvidence)
+      err(F(brand, "brands"), `brand[${brandId}]`, "playable brand needs at least one node evidence moment");
+  }
+
   // ── balance guard (ADR-08): weaknesses mandatory, no total dominance ──────
   for (const b of bundle.brands) {
     const vals = Object.values(b.perceivedProfile ?? {});
@@ -340,6 +356,9 @@ export function validateContent(bundle) {
     if (pos < 2) err(F(b, "brands"), `brand[${b.id}].perceivedProfile`, `needs ≥2 positive dimensions, has ${pos}`);
     if (neg < 1) err(F(b, "brands"), `brand[${b.id}].perceivedProfile`, `needs ≥1 negative dimension, has ${neg}`);
   }
+  const recommended = bundle.brands.filter((b) => b.recommendationEligible && !b.unbranded);
+  if (recommended.length < 2)
+    err("content/brands.json", "brands", "needs at least two recommendation-eligible branded products");
   for (const dom of bundle.brands) {
     const dominatesAll = bundle.brands.every((other) => {
       if (other.id === dom.id) return true;

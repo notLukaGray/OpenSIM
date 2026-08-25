@@ -5,15 +5,16 @@
     "blurb": "Gate 34, humming vents, everyone going somewhere.",
     "background": "bg-airport",
     "music": "mus-airport",
+    "color": "#2554a6",
     "map": {
-      "x": 16,
-      "y": 62
+      "x": 18,
+      "y": 20
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 16,
-      "cy": 62,
-      "r": 8
+      "cx": 18,
+      "cy": 20,
+      "r": 7
     },
     "zoneArt": "zone-art-airport"
   },
@@ -23,15 +24,16 @@
     "blurb": "One light left on, and it's watching.",
     "background": "bg-nightgym",
     "music": "mus-nightgym",
+    "color": "#7650aa",
     "map": {
-      "x": 36,
-      "y": 34
+      "x": 48,
+      "y": 20
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 36,
-      "cy": 34,
-      "r": 8
+      "cx": 48,
+      "cy": 20,
+      "r": 7
     },
     "zoneArt": "zone-art-nightgym"
   },
@@ -41,15 +43,16 @@
     "blurb": "The party went up here and never came down.",
     "background": "bg-rooftop",
     "music": "mus-rooftop",
+    "color": "#e9781b",
     "map": {
       "x": 63,
-      "y": 26
+      "y": 31
     },
     "hitZone": {
       "shape": "circle",
       "cx": 63,
-      "cy": 26,
-      "r": 7
+      "cy": 31,
+      "r": 6
     },
     "zoneArt": "zone-art-rooftop"
   },
@@ -59,15 +62,16 @@
     "blurb": "Morning light, one glass waiting.",
     "background": "bg-kitchen",
     "music": "mus-kitchen",
+    "color": "#c96575",
     "map": {
-      "x": 84,
-      "y": 56
+      "x": 86,
+      "y": 21
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 84,
-      "cy": 56,
-      "r": 7
+      "cx": 86,
+      "cy": 21,
+      "r": 6
     },
     "zoneArt": "zone-art-kitchen"
   },
@@ -77,16 +81,17 @@
     "blurb": "After hours. Desk drawers and desk-drawer decisions.",
     "background": "bg-hub",
     "music": "mus-hub",
+    "color": "#3f68aa",
     "map": {
-      "x": 52,
-      "y": 76
+      "x": 43,
+      "y": 51
     },
     "hitZone": {
       "shape": "rect",
-      "x": 44,
-      "y": 68,
+      "x": 35,
+      "y": 44,
       "w": 16,
-      "h": 15
+      "h": 16
     },
     "zoneArt": "zone-art-office"
   },
@@ -96,14 +101,15 @@
     "blurb": "Salt, SPF, and a cooler with opinions.",
     "background": "bg-beach-day",
     "music": "mus-beach-day",
+    "color": "#298ca8",
     "map": {
-      "x": 8,
-      "y": 30
+      "x": 86,
+      "y": 51
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 8,
-      "cy": 30,
+      "cx": 86,
+      "cy": 51,
       "r": 7
     },
     "zoneArt": "zone-art-beach-day"
@@ -114,28 +120,29 @@
     "blurb": "Twelve stages, one anthem, zero personal space.",
     "background": "bg-music-festival",
     "music": "mus-music-festival",
+    "color": "#7543a4",
     "map": {
-      "x": 30,
-      "y": 12
+      "x": 18,
+      "y": 68
     },
     "hitZone": {
       "shape": "poly",
       "points": [
         [
-          22,
-          12
+          10,
+          68
         ],
         [
-          30,
-          5
+          18,
+          61
         ],
         [
-          38,
-          12
+          26,
+          68
         ],
         [
-          30,
-          19
+          18,
+          75
         ]
       ]
     },
@@ -143,55 +150,58 @@
   },
   {
     "id": "corner-cafe",
-    "name": "CORNER CAFÉ",
+    "name": "CORNER CAFE",
     "blurb": "Everyone here is auditioning for third place.",
     "background": "bg-corner-cafe",
     "music": "mus-corner-cafe",
+    "color": "#57994e",
     "map": {
-      "x": 70,
-      "y": 40
+      "x": 39,
+      "y": 84
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 70,
-      "cy": 40,
+      "cx": 39,
+      "cy": 84,
       "r": 6
     },
     "zoneArt": "zone-art-corner-cafe"
   },
   {
     "id": "bedroom-night",
-    "name": "BEDROOM, LATE",
+    "name": "BEDROOM NIGHT",
     "blurb": "The mask is on the nightstand.",
     "background": "bg-bedroom-night",
     "music": "mus-bedroom-night",
+    "color": "#70419d",
     "map": {
-      "x": 92,
-      "y": 24
+      "x": 64,
+      "y": 69
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 92,
-      "cy": 24,
+      "cx": 64,
+      "cy": 69,
       "r": 7
     },
     "zoneArt": "zone-art-bedroom-night"
   },
   {
     "id": "grocery-store",
-    "name": "GROCERY AISLES",
+    "name": "GROCERY STORE",
     "blurb": "Price tags are sworn witnesses.",
     "background": "bg-grocery-store",
     "music": "mus-grocery-store",
+    "color": "#4b9950",
     "map": {
-      "x": 88,
-      "y": 82
+      "x": 82,
+      "y": 84
     },
     "hitZone": {
       "shape": "circle",
-      "cx": 88,
-      "cy": 82,
-      "r": 7
+      "cx": 82,
+      "cy": 84,
+      "r": 4
     },
     "zoneArt": "zone-art-grocery-store"
   }

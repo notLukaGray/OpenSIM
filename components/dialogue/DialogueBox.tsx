@@ -1,6 +1,7 @@
 "use client";
 // DialogueBox (P2-02): speaker tab, typewriter lines, choices, continue cue.
 import { useEffect, useMemo, useState } from "react";
+import type { CSSProperties } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Choice } from "@/content/schema";
 import SpeakerTab from "./SpeakerTab";
@@ -14,6 +15,7 @@ export default function DialogueBox({
   lines,
   choices,
   selectedChoiceId,
+  locationColor,
   textSpeed,
   onAdvance,
   onSelectChoice,
@@ -24,6 +26,8 @@ export default function DialogueBox({
   lines: string[];
   choices?: Choice[];
   selectedChoiceId: string | null;
+  /** Presentation-only color inherited from the date's selected location. */
+  locationColor?: string;
   textSpeed: number;
   onAdvance: () => void;
   onSelectChoice: (choice: Choice) => void;
@@ -97,6 +101,7 @@ export default function DialogueBox({
   return (
     <motion.div
       className={`${styles.box} ${speaker === "COUNSEL" ? styles.counsel : ""}`}
+      style={{ "--location-color": locationColor ?? "#2d9fba" } as CSSProperties}
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}

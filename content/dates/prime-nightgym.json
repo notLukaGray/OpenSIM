@@ -1,7 +1,7 @@
 {
   "id": "prime-nightgym",
   "brandId": "prime",
-  "title": "PRIME — THE LATE GYM",
+  "title": "The Creator Machine and Hydration+ Sticks",
   "locationId": "nightgym",
   "context": {
     "location": "nightgym",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-prime-founder-machine",
       "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"

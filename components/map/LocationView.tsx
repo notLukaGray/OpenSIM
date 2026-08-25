@@ -4,10 +4,9 @@
 // this locationId, grouped from existing date data exactly as the old hub list
 // grouped them (branded encounters + unbranded wilds separately). Picking one
 // dispatches the exact same start-date path the hub has always used.
-import Image from "next/image";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, type CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { dateTreeList, getAsset, getBrandOrNull } from "@/content/registry";
+import { dateTreeList, getBrandOrNull } from "@/content/registry";
 import type { MappedGameLocation } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
@@ -26,8 +25,6 @@ export default function LocationView({
 }) {
   const game = useGame();
   const { state } = game;
-  const bg = getAsset(location.background);
-
   // The place sets the tone while you're here (P10-01 user direction):
   // crossfade to the location's own track, back to the map's theme on exit.
   // Entering a date overrides both via GameScreen's music direction.
@@ -90,12 +87,14 @@ export default function LocationView({
   return (
     <motion.div
       className={styles.wrap}
+      style={{ "--location-color": location.color } as CSSProperties}
+      onPointerDown={(e) => e.stopPropagation()}
+      onClick={(e) => e.stopPropagation()}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35 }}
     >
-      <Image src={bg.src} alt="" fill priority draggable={false} className={styles.backdrop} />
       <div className={styles.dim} />
 
       <motion.div

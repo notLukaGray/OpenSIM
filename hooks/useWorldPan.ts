@@ -37,10 +37,13 @@ export function useWorldPan<T extends HTMLElement>({ spanX = 1.6, spanY = 1.3, o
   const [offset, setOffset] = useState<Vec2>({ x: 0, y: 0 });
   const [isPanning, setIsPanning] = useState(false);
 
-  // The world canvas is larger than the viewport on both axes (1.6× wide,
-  // 1.3× tall) so there is always something to explore by panning.
+  // The map art is square. Keep the world square while making it larger than
+  // the viewport on both axes so the full illustration stays undistorted.
   const world = useMemo(
-    () => ({ w: Math.ceil(vpSize.x * spanX), h: Math.ceil(vpSize.y * spanY) }),
+    () => {
+      const side = Math.max(vpSize.x * spanX, vpSize.y * spanY);
+      return { w: Math.ceil(side), h: Math.ceil(side) };
+    },
     [vpSize, spanX, spanY]
   );
 

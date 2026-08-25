@@ -1,11 +1,11 @@
 {
-  "id": "zyn-bedroom-night",
+  "id": "zyn-music-festival",
   "brandId": "zyn",
-  "title": "Scrolling Through ZYN.com",
-  "locationId": "bedroom-night",
+  "title": "The Go For It Giveaway and the Reorder",
+  "locationId": "music-festival",
   "context": {
-    "location": "bedroom-night",
-    "occasion": "bedroom-night"
+    "location": "music-festival",
+    "occasion": "music-festival"
   },
   "music": null,
   "background": null,
@@ -21,8 +21,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player opens ZYN.com to look around and is stopped by registration and age verification before reaching the product pages.",
-    "The player already uses classic ZYN and sees the newer ZYN Ultra line promoted as a higher-strength, hydro-boosted extension with a different can."
+    "The player encounters ZYN's 2026 Go For It Giveaway, which asked eligible adult nicotine consumers to submit a short video describing a dream adventure.",
+    "The player tries to reorder ZYN from ZYN.com and discovers the brand no longer sells product directly through its own online store."
   ],
   "nodes": {
     "entry-first": {
@@ -34,14 +34,14 @@
         }
       },
       "text": [
-        "The player opens ZYN.com to look around and is stopped by registration and age verification before reaching the product pages."
+        "The player encounters ZYN's 2026 Go For It Giveaway, which asked eligible adult nicotine consumers to submit a short video describing a dream adventure."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I just wanted to see what flavors there are."
+        "Wait. ZYN was offering people dream trips?"
       ],
       "next": "entry-first-2"
     },
@@ -51,14 +51,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Before product content is displayed, the site requires verification that you are at least twenty-one years old and a current nicotine consumer."
+        "During the 2026 contest period, eligible entrants could submit one portrait-format video, no longer than one minute, describing a desired adventure and how it would help them break from their everyday routine."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "You brought a lawyer to an age gate."
+        "And the prize?"
       ],
       "next": "entry-first-4"
     },
@@ -68,14 +68,14 @@
         "expression": "neutral"
       },
       "text": [
-        "I was retained before the page loaded."
+        "Ten grand prizes, each with a maximum approximate retail value of fifteen thousand dollars, with the sponsor retaining discretion to interpret and fulfill the proposed adventure within the rules."
       ],
       "next": "entry-first-5"
     },
     "entry-first-5": {
       "speaker": "PLAYER",
       "text": [
-        "What exactly are they verifying?"
+        "You made \"dream trip\" sound like procurement."
       ],
       "next": "entry-first-6"
     },
@@ -85,7 +85,24 @@
         "expression": "neutral"
       },
       "text": [
-        "Identity and age through third-party verification. The company's 2026 regulatory materials state that the system may match submitted information against government databases."
+        "There was also no purchase necessary, exclusions applied in Massachusetts, Michigan, and Virginia, and eligibility required legal-age nicotine-consumer status."
+      ],
+      "next": "entry-first-7"
+    },
+    "entry-first-7": {
+      "speaker": "PLAYER",
+      "text": [
+        "Of course there was more."
+      ],
+      "next": "entry-first-8"
+    },
+    "entry-first-8": {
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "There is always more."
       ],
       "next": "choice-first"
     },
@@ -100,17 +117,18 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "Fine. I actually like that they verify instead of using a birthday dropdown.",
+          "text": "Honestly, a brand funding someone's ridiculous dream trip is fun.",
           "next": "first-1",
           "playerEffects": {
-            "trust": 2,
-            "control": 2
+            "excitement": 2,
+            "aspiration": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "control": 2,
-              "trust": 1,
-              "comfort": -1
+              "excitement": 2,
+              "aspiration": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -119,33 +137,33 @@
         },
         {
           "id": "first-2",
-          "text": "That is a lot of personal information just to browse a website.",
+          "text": "I would read the rights section before uploading my face and story.",
           "next": "first-2",
           "playerEffects": {
-            "control": 2,
-            "trust": 2
+            "mastery": 2,
+            "control": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "control": -2,
-              "trust": -1,
+              "control": -1,
+              "trust": -2,
               "mastery": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "If I need to register before I can even look, I am leaving.",
+          "text": "I do not want my idea of adventure attached to a nicotine promotion.",
           "next": "first-3",
           "playerEffects": {
-            "control": 2,
-            "comfort": 1
+            "selfExpression": 2,
+            "trust": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "control": -2,
-              "comfort": -2,
-              "trust": -1
+              "aspiration": -2,
+              "trust": -2,
+              "selfExpression": -1
             }
           },
           "relationshipEffects": {
@@ -157,44 +175,27 @@
     "first-1": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "special"
+        "expression": "happy"
       },
       "text": [
-        "The record will reflect that you prefer a meaningful age gate over a decorative one."
-      ],
-      "next": "first-1-1"
-    },
-    "first-1-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "That is the least romantic sentence anyone has ever said to me."
-      ],
-      "next": "first-1-2"
-    },
-    "first-1-2": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "I am comfortable with that characterization."
+        "The promotion was explicitly designed around that appeal, subject to eligibility, verification, and prize limitations."
       ],
       "nextTree": "map"
     },
     "first-2": {
       "speaker": "COUNSEL",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "special"
       },
       "text": [
-        "The tradeoff is real. Access control requires more information than an honor-system date field."
+        "Appropriate. The rules grant the sponsor broad rights to use, reproduce, edit, publish, and promote submitted entries."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "So the friction is intentional."
+        "There is the lawyer I was expecting."
       ],
       "next": "first-2-2"
     },
@@ -204,7 +205,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct."
+        "I have been present continuously."
       ],
       "nextTree": "map"
     },
@@ -214,7 +215,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then access terminates before the product content. No further action is required."
+        "No purchase was required, and no participation was required. Your adventure may remain non-sponsored."
       ],
       "nextTree": "map"
     },
@@ -227,51 +228,41 @@
         }
       },
       "text": [
-        "The player already uses classic ZYN and sees the newer ZYN Ultra line promoted as a higher-strength, hydro-boosted extension with a different can."
+        "The player tries to reorder ZYN from ZYN.com and discovers the brand no longer sells product directly through its own online store."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "The word \"Ultra\" should not be construed as an emotional commitment."
+        "I am already logged in. Why can I not just buy it here?"
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "I was going to ask if it just means stronger."
+        "Direct ZYN Store operations have been suspended. The site currently directs adult consumers to independent online retailers including Nicokick and Northerner, or to local retail distribution."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "Not exclusively. The line uses a moister pouch, contains twenty pouches per can, includes a disposal compartment in the lid, and is offered in nine- and eleven-milligram strengths."
+        "So the official website tells me to leave the official website."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "PLAYER",
-      "text": [
-        "There it is. Eleven."
-      ],
-      "next": "entry-return-5"
-    },
-    "entry-return-5": {
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "As of August 21, 2026, FDA marketing authorization covers eleven ZYN Ultra products, including all submitted nine-milligram variants and one eleven-milligram variant. Additional eleven-milligram variants remained under review at that time."
+        "For purposes of product purchase, yes."
       ],
       "next": "choice-return"
     },
@@ -286,17 +277,17 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "The disposal lid and bigger can are actually useful changes.",
+          "text": "Fine. Just tell me where it is available.",
           "next": "return-1",
           "playerEffects": {
-            "control": 2,
-            "mastery": 1
+            "readiness": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
+              "readiness": 1,
               "comfort": 1,
-              "mastery": 1,
-              "readiness": 1
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -305,15 +296,15 @@
         },
         {
           "id": "return-2",
-          "text": "\"Ultra\" still feels like escalation dressed up as an upgrade.",
+          "text": "That is a strange amount of friction for a brand this big.",
           "next": "return-2",
           "playerEffects": {
-            "control": 2,
-            "trust": 1
+            "mastery": 2,
+            "control": 2
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "readiness": -2,
+              "control": -2,
               "trust": -1,
               "mastery": 1
             }
@@ -321,17 +312,17 @@
         },
         {
           "id": "return-3",
-          "text": "Higher nicotine strength is exactly what I do not want.",
+          "text": "If I have to chase it through another retailer, I will skip it.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
-            "reassurance": 1
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "readiness": -3,
-              "comfort": -1,
-              "trust": -1
+              "readiness": -2,
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -346,14 +337,14 @@
         "expression": "happy"
       },
       "text": [
-        "Your approval is limited to the packaging and convenience changes. I have recorded it narrowly."
+        "The current site is functioning as a routing layer rather than the seller of record."
       ],
       "next": "return-1-1"
     },
     "return-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "Thank you for protecting me from accidentally liking a lid too much."
+        "You found a way to make \"store locator\" sound litigious."
       ],
       "next": "return-1-2"
     },
@@ -363,7 +354,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Scope matters."
+        "Seller-of-record status is not decorative."
       ],
       "nextTree": "map"
     },
@@ -373,7 +364,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Higher strength is part of the proposition. The other changes do not erase that fact."
+        "The friction exists. Brand ownership does not guarantee direct-to-consumer fulfillment."
       ],
       "nextTree": "map"
     },
@@ -383,7 +374,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the higher-strength extension is inconsistent with your stated preference. Classic ZYN remains a separate line."
+        "Then the purchase does not occur. There is no contractual obligation to continue looking."
       ],
       "nextTree": "map"
     }

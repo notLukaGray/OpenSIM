@@ -1,21 +1,24 @@
 "use client";
-// GameControls: settings, title, and (dev) debug toggles.
+// GameControls: the shared lower-row controls for play and map screens.
 import { motion } from "framer-motion";
 import styles from "./GameControls.module.css";
 
 export default function GameControls({
   onOpenSettings,
+  onOpenArchive,
   onToTitle,
   onToggleDebug,
 }: {
   onOpenSettings: () => void;
+  onOpenArchive: () => void;
   onToTitle: () => void;
   onToggleDebug?: () => void;
 }) {
   const CONTROLS = [
-    ...(onToggleDebug ? [{ id: "debug", label: "DEBUG", icon: "⚙" }] : []),
-    { id: "settings", label: "SETTINGS", icon: "♪" },
-    { id: "title", label: "TITLE", icon: "☺" },
+    ...(onToggleDebug ? [{ id: "debug", label: "debug", icon: "⚙" }] : []),
+    { id: "archive", label: "archive", icon: "▣" },
+    { id: "settings", label: "settings", icon: "♪" },
+    { id: "title", label: "home", icon: "☺" },
   ];
 
   return (
@@ -32,6 +35,7 @@ export default function GameControls({
           onClick={(e) => {
             e.stopPropagation();
             if (control.id === "settings") onOpenSettings();
+            if (control.id === "archive") onOpenArchive();
             if (control.id === "title") onToTitle();
             if (control.id === "debug") onToggleDebug?.();
           }}

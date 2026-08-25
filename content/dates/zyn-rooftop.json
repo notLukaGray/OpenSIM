@@ -1,7 +1,7 @@
 {
   "id": "zyn-rooftop",
   "brandId": "zyn",
-  "title": "COUNSEL — SUNSET ROOFTOP",
+  "title": "Paid Endorsers and Find Your ZYN",
   "locationId": "rooftop",
   "context": {
     "location": "rooftop",
@@ -46,6 +46,7 @@
       "next": "entry-first-2"
     },
     "entry-first-2": {
+      "evidence": "ev-zyn-even-when-they-ask-us",
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"

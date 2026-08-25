@@ -1,17 +1,17 @@
 {
-  "id": "liquid-iv-grocery-store",
-  "brandId": "liquid-iv",
-  "title": "The One-Time Purchase and the Bundle",
-  "locationId": "grocery-store",
+  "id": "prime-bedroom-night",
+  "brandId": "prime",
+  "title": "The Ambassador Program and New Categories",
+  "locationId": "bedroom-night",
   "context": {
-    "location": "grocery-store",
-    "occasion": "grocery-store"
+    "location": "bedroom-night",
+    "occasion": "bedroom-night"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-liquid-iv-neutral",
+      "assetId": "char-prime-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,59 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription.",
-    "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+    "The player learns that a college student posting PRIME can be part of the brand's formal ambassador program.",
+    "The player bought Hydration before and now receives marketing for PRIME's growing set of product categories."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "prime",
           "met": false
         }
       },
       "text": [
-        "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription."
+        "The player learns that a college student posting PRIME can be part of the brand's formal ambassador program."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Before you say anything, I am not subscribing."
+        "Is that student just a fan?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "Then buy one bag."
+        "Maybe. They could also be one of my ambassadors."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That easy?"
+        "What does that actually mean?"
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Try the format once. We can have the recurring-relationship conversation another day."
+        "Product, merch, competitions, private community, career opportunities. They help put me into campus life on purpose."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,101 +82,85 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to test it without signing up.",
+          "text": "That is a smart way to get into a real community.",
           "next": "first-1",
           "playerEffects": {
-            "control": 1,
-            "reassurance": 1
+            "belonging": 2,
+            "aspiration": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
-              "trust": 1
+            "prime": {
+              "belonging": 1,
+              "aspiration": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "prime": 1
           }
         },
         {
           "id": "first-2",
-          "text": "The per-stick price still adds up.",
+          "text": "So the recommendation is also work.",
           "next": "first-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
+            "prime": {
+              "belonging": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I am not paying extra to improve water.",
+          "text": "I would rather hear from a friend who is not on the brand team.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
             "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
+            "prime": {
+              "belonging": -1,
               "trust": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "prime": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "Good. One bag. No vows."
-      ],
-      "next": "first-1-1"
-    },
-    "first-1-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "We are keeping this casual."
-      ],
-      "next": "first-1-2"
-    },
-    "first-1-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Hydrated and emotionally available."
+        "Exactly. One person with real campus relationships can do more than a poster."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "embarrassed"
-      },
-      "text": [
-        "It does. Convenience is part of what you are paying for."
-      ],
-      "nextTree": "map"
-    },
-    "first-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then water wins this aisle for you."
+        "Yes. If they are an ambassador, remember they are getting something from me for posting."
+      ],
+      "nextTree": "map"
+    },
+    "first-3": {
+      "speaker": "PRIME",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Fair. Paid enthusiasm is still paid enthusiasm."
       ],
       "nextTree": "map"
     },
@@ -184,61 +168,61 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "prime",
           "met": true
         }
       },
       "text": [
-        "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+        "The player bought Hydration before and now receives marketing for PRIME's growing set of product categories."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Two seasonal products together, slightly lower combined price."
+        "Hydration, Energy, Shake, Rapid Rehydration, sticks. Pick another aisle."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "You are very pleased with the word bundle."
+        "I bought one bottle and you decided I wanted the family reunion."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "neutral"
       },
       "text": [
-        "I like a packed bag."
+        "You gave me an email address and proof you buy the brand."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "The discount only helps if I wanted both."
+        "Very romantic."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "Correct. More product is still more product."
+        "I would like more of your fridge."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
@@ -248,84 +232,102 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would buy the bundle if I wanted both anyway.",
+          "text": "I like having more options from a brand I already know.",
           "next": "return-1",
           "playerEffects": {
-            "readiness": 1,
-            "comfort": 1
+            "excitement": 1,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
+            "prime": {
+              "excitement": 1,
               "readiness": 1,
-              "comfort": 1
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "prime": 1
           }
         },
         {
           "id": "return-2",
-          "text": "A discount can make me buy more than I planned.",
+          "text": "I am not following you into every category automatically.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "excitement": -1,
+            "prime": {
+              "aspiration": -1,
               "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need a pantry full of hydration packets.",
+          "text": "I wanted one drink, not a whole PRIME lifestyle.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
             "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
-              "comfort": -1
+            "prime": {
+              "comfort": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "prime": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "That is the sensible bundle customer."
+        "Familiarity makes the next trial easier. I will take it."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Exactly. Savings and overspending can be the same cart."
+        "You should not. A logo does not make every format right for you."
       ],
       "nextTree": "map"
     },
     "return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "PRIME",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "annoyed"
       },
       "text": [
-        "Then one bag, or none. Your cabinet does not need to become my warehouse."
+        "Fine. Keep one shelf."
+      ],
+      "next": "return-3-1"
+    },
+    "return-3-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Thank you."
+      ],
+      "next": "return-3-2"
+    },
+    "return-3-2": {
+      "speaker": "PRIME",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I will think about the other shelves privately."
       ],
       "nextTree": "map"
     }

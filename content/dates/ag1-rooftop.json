@@ -1,11 +1,11 @@
 {
-  "id": "ag1-grocery-store",
+  "id": "ag1-rooftop",
   "brandId": "ag1",
-  "title": "The Target Endcap and the Sampler",
-  "locationId": "grocery-store",
+  "title": "The Scientist Endorsement and the Referral Link",
+  "locationId": "rooftop",
   "context": {
-    "location": "grocery-store",
-    "occasion": "grocery-store"
+    "location": "rooftop",
+    "occasion": "rooftop"
   },
   "music": null,
   "background": null,
@@ -20,8 +20,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees AG1 on a large Target endcap instead of encountering it only through the brand's direct-to-consumer website.",
-    "The player already drinks AG1 and opens a sampler with Berry, Citrus, and Tropical after getting tired of always using Original."
+    "The player sees AG1 promoting early-career scientists through NIL endorsement deals, a sponsorship model more commonly associated with athletes.",
+    "The player already buys AG1 and receives a personal referral link that rewards both the friend and the existing member if the friend makes a first purchase."
   ],
   "nodes": {
     "entry-first": {
@@ -33,31 +33,51 @@
         }
       },
       "text": [
-        "The player sees AG1 on a large Target endcap instead of encountering it only through the brand's direct-to-consumer website."
+        "The player sees AG1 promoting early-career scientists through NIL endorsement deals, a sponsorship model more commonly associated with athletes."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
-      "speaker": "PLAYER",
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "Huh. You look weirdly normal in Target."
+        "I gave NIL endorsement deals to three early-career scientists."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
+      "speaker": "PLAYER",
+      "text": [
+        "You say that like I am supposed to know what to do with it."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
       "speaker": "AG1",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Good. You can see the pouch, check the price, and buy one where you already shop."
+        "Think college-athlete sponsorship model, except the people I partnered with study sleep, nutrition, and the microbiome."
       ],
-      "next": "entry-first-3"
+      "next": "entry-first-4"
     },
-    "entry-first-3": {
+    "entry-first-4": {
       "speaker": "PLAYER",
       "text": [
-        "Less internet-wellness mystery."
+        "And the supplement brand is paying the scientists talking about science."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "Yes. That is the tension. They are endorsement deals, so you should know they are sponsored before you decide how persuasive they are."
       ],
       "next": "choice-first"
     },
@@ -72,16 +92,20 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "Being able to buy one in person makes me trust you more.",
+          "text": "I like seeing sponsorship money go to scientists.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
-            "reassurance": 1
+            "reassurance": 1,
+            "trust": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
               "comfort": 2,
-              "reassurance": 1
+              "reassurance": 1,
+              "trust": 1,
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -90,13 +114,12 @@
         },
         {
           "id": "first-2",
-          "text": "I am not sure whether retail makes you more credible or just more available.",
+          "text": "I still want to separate their research from your endorsement deal.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
             "mastery": 2,
-            "comfort": 1,
-            "readiness": 1
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
@@ -107,15 +130,17 @@
         },
         {
           "id": "first-3",
-          "text": "I do not need a premium supplement endcap in my grocery run.",
+          "text": "I do not want sponsored experts selling me supplements.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
-            "selfExpression": 1
+            "selfExpression": 1,
+            "trust": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
-              "trust": -1,
+              "trust": -2,
               "comfort": -1
             }
           },
@@ -131,7 +156,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then being able to pick me up normally matters more than pretending I am some internet-only secret."
+        "Good. Support the work, read what they actually study, and do not stop at my caption."
       ],
       "nextTree": "map"
     },
@@ -141,7 +166,24 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair. Shelf space proves I am available. It does not prove the powder is right for you."
+        "Good. Sponsorship should change how you read the post."
+      ],
+      "next": "first-2-1"
+    },
+    "first-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is a strange thing for the sponsor to say."
+      ],
+      "next": "first-2-2"
+    },
+    "first-2-2": {
+      "speaker": "AG1",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "It would be stranger to pretend the money is invisible."
       ],
       "nextTree": "map"
     },
@@ -151,7 +193,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then walk past me. At least the decision only took one aisle."
+        "Then do not use the partnership as evidence for the product. That is a reasonable line."
       ],
       "nextTree": "map"
     },
@@ -164,58 +206,58 @@
         }
       },
       "text": [
-        "The player already drinks AG1 and opens a sampler with Berry, Citrus, and Tropical after getting tired of always using Original."
+        "The player already buys AG1 and receives a personal referral link that rewards both the friend and the existing member if the friend makes a first purchase."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I cheated on Original."
+        "My sister asked me for your link."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "AG1",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "With Berry?"
+        "I have one for that."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Do not sound pleased. I was getting bored."
+        "Of course you do."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "AG1",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "neutral"
       },
       "text": [
-        "That is one reason the other flavors exist."
+        "She can get fifteen dollars off plus the referral offer, and you get fifteen dollars after she buys."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "PLAYER",
       "text": [
-        "So you made new flavors because people were getting bored."
+        "So my recommendation comes with store credit."
       ],
       "next": "entry-return-6"
     },
     "entry-return-6": {
       "speaker": "AG1",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "embarrassed"
       },
       "text": [
-        "That is one reason. Drinking the same thing every day can get old."
+        "Yes. If that makes it feel weird, send her the normal link."
       ],
       "next": "choice-return"
     },
@@ -230,16 +272,20 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "Honestly, I like switching it up.",
+          "text": "My sister already asked what I use. I could send it to her.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
-            "reassurance": 1
+            "reassurance": 1,
+            "trust": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
               "comfort": 2,
-              "reassurance": 1
+              "reassurance": 1,
+              "trust": 1,
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -248,7 +294,7 @@
         },
         {
           "id": "return-2",
-          "text": "So people really were getting bored of the original.",
+          "text": "I do not love getting rewarded for a friend's purchase.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -263,18 +309,18 @@
         },
         {
           "id": "return-3",
-          "text": "Different flavor, same expensive powder.",
+          "text": "I do not want to turn my friends into customers for you.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
-            "selfExpression": 2,
-            "excitement": 1
+            "selfExpression": 1,
+            "trust": 1,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
               "trust": -1,
-              "comfort": -1,
-              "excitement": -1
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -289,44 +335,27 @@
         "expression": "happy"
       },
       "text": [
-        "Then the sampler is doing something useful for you besides looking colorful."
+        "Then send it without a sales speech. She can decide whether the offer is useful."
       ],
       "nextTree": "map"
     },
     "return-2": {
       "speaker": "AG1",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "Yes. Some people get tired of Original."
-      ],
-      "next": "return-2-1"
-    },
-    "return-2-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "Thank you."
-      ],
-      "next": "return-2-2"
-    },
-    "return-2-2": {
-      "speaker": "AG1",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "I was not fighting you on that."
+        "Fair. The credit changes the recommendation, even if you already liked the product."
       ],
       "nextTree": "map"
     },
     "return-3": {
       "speaker": "AG1",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "neutral"
       },
       "text": [
-        "I know. A better flavor does not make the pouch cheaper."
+        "Then do not use the referral link. You do not owe me a sales network."
       ],
       "nextTree": "map"
     }

@@ -1,7 +1,7 @@
 {
   "id": "oura-bedroom-night",
   "brandId": "oura",
-  "title": "OURA — BEDROOM NIGHT",
+  "title": "Size Later and the Bedtime Window",
   "locationId": "bedroom-night",
   "context": {
     "location": "bedroom-night",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-oura-gucci-ring",
       "speaker": "OURA",
       "sprite": {
         "expression": "happy"

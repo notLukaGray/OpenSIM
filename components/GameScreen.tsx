@@ -18,6 +18,7 @@ import Stage from "@/components/stage/Stage";
 import DialogueBox from "@/components/dialogue/DialogueBox";
 import GameControls from "@/components/dialogue/GameControls";
 import SettingsPanel from "@/components/meta/SettingsPanel";
+import ArchivePanel from "@/components/map/ArchivePanel";
 import { useGame } from "@/hooks/useGame";
 import styles from "./GameScreen.module.css";
 
@@ -33,6 +34,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
   const { state, nav, settings } = game;
   const [selectedChoiceId, setSelectedChoiceId] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(false);
   const [debugOpen, setDebugOpen] = useState(false);
   const [sprites, setSprites] = useState<SpriteState[]>([]);
   const [overlay, setOverlay] = useState<{ kind: "cg" | "evidence"; id: string } | null>(null);
@@ -172,19 +174,24 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
           lines={lines}
           choices={availableChoices}
           selectedChoiceId={selectedChoiceId}
+          locationColor={location?.color}
           textSpeed={settings.textSpeed}
-          onAdvance={game.advance}
-          onSelectChoice={choose}
+          // An evidence/CG beat is modal: it must be acknowledged before the
+          // player can type through or choose past the node beneath it.
+          onAdvance={() => { if (!overlay) game.advance(); }}
+          onSelectChoice={(choice) => { if (!overlay) choose(choice); }}
           onLineStart={(i) => void AudioManager.speak(`${treeId}/${nodeId}/${i}`)}
         />
         <GameControls
           onOpenSettings={() => setSettingsOpen((v) => !v)}
+          onOpenArchive={() => setArchiveOpen(true)}
           onToTitle={() => game.toTitle()}
           onToggleDebug={isDev ? () => setDebugOpen((v) => !v) : undefined}
         />
       </div>
 
       {settingsOpen && <SettingsPanel onClose={() => setSettingsOpen(false)} />}
+      {archiveOpen && <ArchivePanel onClose={() => setArchiveOpen(false)} />}
       {IS_DEV && debugOpen && DebugPanel && <DebugPanel onClose={() => setDebugOpen(false)} />}
     </div>
   );

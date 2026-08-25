@@ -1,7 +1,7 @@
 {
   "id": "liquid-iv-beach-day",
   "brandId": "liquid-iv",
-  "title": "LIQUID I.V. — BEACH DAY",
+  "title": "Seasonal Flavors and the Variety Pack",
   "locationId": "beach-day",
   "context": {
     "location": "beach-day",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-liquid-iv-firecracker-collab",
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "neutral"

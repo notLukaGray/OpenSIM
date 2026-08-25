@@ -61,6 +61,7 @@ export const brands: Brand[] = (brandsJson as Record<string, unknown>[]).map((b,
     setting: (b.setting as string) ?? "",
     personality: (b.personality as string) ?? "",
     unbranded: Boolean(b.unbranded),
+    recommendationEligible: Boolean(b.recommendationEligible),
     claimedProfile: fullVector(b.claimedProfile as Record<string, unknown>, "brands.json", `${b.id}.claimed`),
     perceivedProfile: fullVector(b.perceivedProfile as Record<string, unknown>, "brands.json", `${b.id}.perceived`),
   } satisfies Brand;
@@ -119,7 +120,7 @@ export const assets: AssetReference[] = [
 export const audioTracks: AudioTrack[] = audioJson as AudioTrack[];
 
 // ── locations ────────────────────────────────────────────────────────────────
-const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "map", "hitZone", "zoneArt"] as const;
+const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "color", "map", "hitZone", "zoneArt"] as const;
 
 // Map hit zones (P10-01): the drawn, tappable geometry of a location on the
 // world map, authored in normalized 0–100 space (percentages of the map
@@ -180,6 +181,8 @@ export const locations: MappedGameLocation[] = (locationsJson as unknown as Reco
     const map = l.map as { x?: unknown; y?: unknown };
     if (typeof map?.x !== "number" || typeof map?.y !== "number")
       throw new ContentError(`locations.json[${i}] (${String(l.id)}): map.x/map.y must be numbers`);
+    if (typeof l.color !== "string" || !/^#[0-9a-f]{6}$/i.test(l.color))
+      throw new ContentError(`locations.json[${i}] (${String(l.id)}): color must be a six-digit hex color`);
     if (!assets.some((a) => a.id === l.background))
       throw new ContentError(`locations.json[${i}]: unknown background asset "${String(l.background)}"`);
     if (!assets.some((a) => a.id === l.zoneArt))
@@ -193,6 +196,7 @@ export const locations: MappedGameLocation[] = (locationsJson as unknown as Reco
       blurb: l.blurb as string,
       background: l.background as string,
       music: l.music as string,
+      color: l.color as string,
       map: { x: map.x as number, y: map.y as number },
     } satisfies GameLocation;
     return {

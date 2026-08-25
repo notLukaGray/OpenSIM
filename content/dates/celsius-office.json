@@ -1,7 +1,7 @@
 {
   "id": "celsius-office",
   "brandId": "celsius",
-  "title": "CELSIUS — THE OFFICE",
+  "title": "The Paid Campus Program and Desk Packets",
   "locationId": "office",
   "context": {
     "location": "office",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-celsius-paid-tribe",
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"

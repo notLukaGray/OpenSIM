@@ -1,7 +1,7 @@
 {
   "id": "liquid-iv-nightgym",
   "brandId": "liquid-iv",
-  "title": "LIQUID I.V. — THE LATE GYM",
+  "title": "Electrolytes, Sports Drinks, and Sugar-Free Hydration",
   "locationId": "nightgym",
   "context": {
     "location": "nightgym",
@@ -62,6 +62,7 @@
       "next": "entry-first-4"
     },
     "entry-first-4": {
+      "evidence": "ev-liquid-iv-sugar-ratio",
       "speaker": "LIQUID I.V.",
       "sprite": {
         "expression": "happy"

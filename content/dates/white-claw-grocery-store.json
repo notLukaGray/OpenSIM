@@ -1,7 +1,7 @@
 {
   "id": "white-claw-grocery-store",
   "brandId": "white-claw",
-  "title": "WHITE CLAW — GROCERY STORE",
+  "title": "The Multipack and the Stronger Surge Line",
   "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
@@ -188,6 +188,7 @@
       "next": "entry-return-2"
     },
     "entry-return-2": {
+      "evidence": "ev-white-claw-alcohol-is-alcohol",
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"

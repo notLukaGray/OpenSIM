@@ -8,6 +8,7 @@ import GameScreen from "@/components/GameScreen";
 import TravelMap from "@/components/map/TravelMap";
 import ConsumerReveal from "@/components/reveal/ConsumerReveal";
 import MatchReveal from "@/components/reveal/MatchReveal";
+import { HUB_TREE_ID } from "@/content/registry";
 
 const IS_DEV = process.env.NODE_ENV !== "production";
 
@@ -77,7 +78,7 @@ export default function GameRoot() {
     case "title":
       return <TitleScreen />;
     case "play":
-      return <GameScreen isDev={IS_DEV} />;
+      return game.nav.treeId === HUB_TREE_ID ? <TravelMap /> : <GameScreen isDev={IS_DEV} />;
     case "map":
       return <TravelMap />;
     case "reveal":

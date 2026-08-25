@@ -1,5 +1,11 @@
 [
   {
+    "id": "map-location",
+    "type": "map",
+    "src": "/assets/map/location_map.png",
+    "alt": "A stylized city map with a train terminal, gym, rooftop, kitchen, office, beach, festival, cafe, bedroom, and grocery store"
+  },
+  {
     "id": "char-liquid-iv-neutral",
     "type": "character-neutral",
     "src": "/assets/characters/char-liquid-iv-neutral.png",

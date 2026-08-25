@@ -3,21 +3,30 @@
 // surfacing inside the date, never a slide.
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { getAsset, getEvidence, getSourceOrNull } from "@/content/registry";
 import styles from "./EvidenceOverlay.module.css";
 
 export default function EvidenceOverlay({ evidenceId, onDismiss }: { evidenceId: string; onDismiss: () => void }) {
   const ev = getEvidence(evidenceId);
   const img = ev.imageRef ? getAsset(ev.imageRef) : null;
+  // A short arm delay prevents the input that entered this node from being
+  // interpreted as the acknowledgement click. The veil/card are deliberately
+  // inert: only this explicit control can release the dialogue underneath.
+  const [armed, setArmed] = useState(false);
+  useEffect(() => {
+    const timer = window.setTimeout(() => setArmed(true), 180);
+    return () => window.clearTimeout(timer);
+  }, []);
   return (
     <motion.div
       className={styles.veil}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      onClick={onDismiss}
-      role="button"
-      aria-label="dismiss memory"
+      role="dialog"
+      aria-modal="true"
+      aria-label="evidence unlocked"
     >
       <motion.div
         className={styles.card}
@@ -52,7 +61,9 @@ export default function EvidenceOverlay({ evidenceId, onDismiss }: { evidenceId:
             })}
           </div>
         )}
-        <div className={styles.hint}>[ YOU&apos;VE SEEN THIS BEFORE... ]</div>
+        <button className={styles.continue} type="button" disabled={!armed} onClick={onDismiss}>
+          CONTINUE
+        </button>
       </motion.div>
     </motion.div>
   );

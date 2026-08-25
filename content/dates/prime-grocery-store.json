@@ -1,7 +1,7 @@
 {
   "id": "prime-grocery-store",
   "brandId": "prime",
-  "title": "PRIME — GROCERY STORE",
+  "title": "The Retailer-Exclusive Shake and the Real Bottle",
   "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
@@ -202,6 +202,7 @@
       "next": "entry-return-4"
     },
     "entry-return-4": {
+      "evidence": "ev-prime-verify-bottle",
       "speaker": "PRIME",
       "sprite": {
         "expression": "embarrassed"

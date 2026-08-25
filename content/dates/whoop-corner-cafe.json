@@ -1,17 +1,17 @@
 {
-  "id": "liquid-iv-grocery-store",
-  "brandId": "liquid-iv",
-  "title": "The One-Time Purchase and the Bundle",
-  "locationId": "grocery-store",
+  "id": "whoop-corner-cafe",
+  "brandId": "whoop",
+  "title": "One, Peak, Life, and the Upgrade",
+  "locationId": "corner-cafe",
   "context": {
-    "location": "grocery-store",
-    "occasion": "grocery-store"
+    "location": "corner-cafe",
+    "occasion": "corner-cafe"
   },
   "music": null,
   "background": null,
   "cast": [
     {
-      "assetId": "char-liquid-iv-neutral",
+      "assetId": "char-whoop-neutral",
       "position": "center"
     }
   ],
@@ -20,59 +20,60 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription.",
-    "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+    "The player reaches WHOOP through a comparison of One, Peak, and Life rather than a simple hardware price.",
+    "The player already owns older WHOOP hardware and is offered a newer device by extending membership or paying an upgrade fee."
   ],
   "nodes": {
     "entry-first": {
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "whoop",
           "met": false
         }
       },
       "text": [
-        "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription."
+        "The player reaches WHOOP through a comparison of One, Peak, and Life rather than a simple hardware price."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Before you say anything, I am not subscribing."
+        "Why are there three relationship levels before I even put the band on?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then buy one bag."
+        "Because you are buying access to different parts of the system, not just hardware."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That easy?"
+        "Give me the short version."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
-      "speaker": "LIQUID I.V.",
+      "evidence": "ev-whoop-membership-tiers",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Try the format once. We can have the recurring-relationship conversation another day."
+        "One is core fitness insights. Peak adds things like Stress and Healthspan. Life adds MG hardware and heart-health features."
       ],
       "next": "choice-first"
     },
     "choice-first": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
@@ -82,101 +83,85 @@
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to test it without signing up.",
+          "text": "I like being able to choose the depth.",
           "next": "first-1",
           "playerEffects": {
-            "control": 1,
-            "reassurance": 1
+            "control": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
+            "whoop": {
+              "control": 1,
+              "mastery": 1,
               "trust": 1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "whoop": 1
           }
         },
         {
           "id": "first-2",
-          "text": "The per-stick price still adds up.",
+          "text": "This makes a wearable feel like software pricing.",
           "next": "first-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": 1,
+            "whoop": {
+              "control": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I am not paying extra to improve water.",
+          "text": "I want to buy a device once and own the features.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
             "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
-              "trust": -1
+            "whoop": {
+              "trust": -1,
+              "reassurance": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "whoop": -1
           }
         }
       ]
     },
     "first-1": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "Good. One bag. No vows."
-      ],
-      "next": "first-1-1"
-    },
-    "first-1-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "We are keeping this casual."
-      ],
-      "next": "first-1-2"
-    },
-    "first-1-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "Hydrated and emotionally available."
+        "Then pick the smallest tier that answers the questions you actually have."
       ],
       "nextTree": "map"
     },
     "first-2": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "It does. Convenience is part of what you are paying for."
+        "It is software pricing. The hardware and membership are tied together."
       ],
       "nextTree": "map"
     },
     "first-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Then water wins this aisle for you."
+        "Then I am structurally not your favorite product model."
       ],
       "nextTree": "map"
     },
@@ -184,61 +169,61 @@
       "speaker": "...",
       "conditions": {
         "brand": {
-          "id": "liquid-iv",
+          "id": "whoop",
           "met": true
         }
       },
       "text": [
-        "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+        "The player already owns older WHOOP hardware and is offered a newer device by extending membership or paying an upgrade fee."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Two seasonal products together, slightly lower combined price."
+        "New hardware. Two paths."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "You are very pleased with the word bundle."
+        "You practiced that."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "annoyed"
       },
       "text": [
-        "I like a packed bag."
+        "I value compression."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "The discount only helps if I wanted both."
+        "Fine. Two paths?"
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Correct. More product is still more product."
+        "Extend the membership and qualify for the upgrade, or pay the one-time hardware upgrade fee and keep your current membership timing."
       ],
       "next": "choice-return"
     },
     "choice-return": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
@@ -248,84 +233,85 @@
       "choices": [
         {
           "id": "return-1",
-          "text": "I would buy the bundle if I wanted both anyway.",
+          "text": "I like having a way to upgrade without throwing away the membership time.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 1,
-            "comfort": 1
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
+            "whoop": {
               "readiness": 1,
-              "comfort": 1
+              "control": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": 1
+            "whoop": 1
           }
         },
         {
           "id": "return-2",
-          "text": "A discount can make me buy more than I planned.",
+          "text": "You are still asking me to spend more to stay current.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "mastery": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "excitement": -1,
+            "whoop": {
+              "aspiration": -1,
               "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not need a pantry full of hydration packets.",
+          "text": "I do not want hardware upgrades tied to membership decisions.",
           "next": "return-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "comfort": 1,
+            "control": 1
           },
           "brandPerceptionEffects": {
-            "liquid-iv": {
-              "readiness": -1,
+            "whoop": {
+              "trust": -1,
               "comfort": -1
             }
           },
           "relationshipEffects": {
-            "liquid-iv": -1
+            "whoop": -1
           }
         }
       ]
     },
     "return-1": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "special"
       },
       "text": [
-        "That is the sensible bundle customer."
+        "Exactly. The goal is to move the hardware without erasing the time you already paid for."
       ],
       "nextTree": "map"
     },
     "return-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
-        "expression": "neutral"
-      },
-      "text": [
-        "Exactly. Savings and overspending can be the same cart."
-      ],
-      "nextTree": "map"
-    },
-    "return-3": {
-      "speaker": "LIQUID I.V.",
+      "speaker": "WHOOP",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "Then one bag, or none. Your cabinet does not need to become my warehouse."
+        "Yes. New hardware is still an upsell."
+      ],
+      "nextTree": "map"
+    },
+    "return-3": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "That is the model. I can explain it more clearly, but I cannot make it a one-time purchase model."
       ],
       "nextTree": "map"
     }

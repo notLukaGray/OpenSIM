@@ -1,6 +1,7 @@
 /* LocationView (P10-01): one place, its atmosphere, and who you can meet here. */
 
 .wrap {
+  --location-color: #2554a6;
   position: absolute;
   inset: 0;
   z-index: 45; /* above map chrome, below DateDebrief (50) / ArchivePanel (65) / threshold popup (70) */
@@ -9,29 +10,32 @@
   justify-content: center;
   overflow: hidden auto;
   padding: 24px;
-}
-
-.backdrop {
-  object-fit: cover;
-  filter: brightness(0.4) saturate(0.75);
+  background: rgba(6, 8, 16, 0.2);
+  backdrop-filter: blur(2px);
 }
 
 .dim {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 30%, transparent 30%, rgba(6, 8, 16, 0.88) 100%),
-    linear-gradient(180deg, rgba(6, 8, 16, 0.55), rgba(6, 8, 16, 0.8));
+  background: radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(6, 8, 16, 0.22) 100%);
+  pointer-events: none;
 }
 
 .panel {
   position: relative;
   width: min(680px, 100%);
   padding: 40px 44px 36px;
-  background: linear-gradient(180deg, rgba(19, 24, 41, 0.94), rgba(11, 14, 23, 0.97));
-  border: 1px solid rgba(242, 184, 198, 0.3);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--location-color) 14%, white),
+    color-mix(in srgb, var(--location-color) 7%, #f4f3ec)
+  );
+  border: 2px solid color-mix(in srgb, var(--location-color) 68%, white);
   border-radius: 22px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+  box-shadow:
+    0 24px 70px rgba(8, 12, 28, 0.36),
+    0 2px 0 rgba(255, 255, 255, 0.72) inset,
+    0 0 0 5px color-mix(in srgb, var(--location-color) 14%, transparent);
 }
 
 .backBtn {
@@ -42,17 +46,17 @@
   padding: 8px 16px;
   font-size: 11px;
   letter-spacing: 0.28em;
-  color: rgba(232, 228, 240, 0.75);
-  background: none;
-  border: 1px solid rgba(242, 184, 198, 0.35);
+  color: #123a44;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid color-mix(in srgb, var(--location-color) 70%, white);
   border-radius: 999px;
   cursor: pointer;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .backBtn:hover {
-  color: #f2b8c6;
-  border-color: #f2b8c6;
+  color: color-mix(in srgb, var(--location-color) 72%, #123a44);
+  border-color: var(--location-color);
 }
 
 .kicker {
@@ -60,7 +64,7 @@
   font-size: 10.5px;
   letter-spacing: 0.46em;
   text-align: center;
-  color: rgba(242, 184, 198, 0.7);
+  color: var(--location-color);
 }
 
 .name {
@@ -68,8 +72,8 @@
   font-size: clamp(22px, 3vw, 32px);
   letter-spacing: 0.3em;
   text-align: center;
-  color: #f4ecf2;
-  text-shadow: 0 0 46px rgba(242, 184, 198, 0.3);
+  color: #123a44;
+  text-shadow: 0 2px 12px color-mix(in srgb, var(--location-color) 24%, transparent);
 }
 
 .blurb {
@@ -77,7 +81,7 @@
   font-size: 13.5px;
   line-height: 1.7;
   text-align: center;
-  color: rgba(232, 228, 240, 0.68);
+  color: rgba(18, 58, 68, 0.78);
 }
 
 .count {
@@ -85,7 +89,7 @@
   font-size: 10.5px;
   letter-spacing: 0.26em;
   text-align: center;
-  color: rgba(232, 228, 240, 0.42);
+  color: rgba(18, 58, 68, 0.58);
 }
 
 .section {
@@ -93,7 +97,7 @@
   margin-bottom: 4px;
   font-size: 10px;
   letter-spacing: 0.34em;
-  color: rgba(242, 184, 198, 0.55);
+  color: var(--location-color);
 }
 
 .roster {
@@ -113,17 +117,17 @@
   text-align: left;
   font-size: 12.5px;
   letter-spacing: 0.06em;
-  color: #f4ecf2;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #123a44;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid color-mix(in srgb, var(--location-color) 28%, #b6c8cc);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .encounter:hover {
-  background: rgba(242, 184, 198, 0.14);
-  border-color: #f2b8c6;
+  background: color-mix(in srgb, var(--location-color) 16%, white);
+  border-color: var(--location-color);
 }
 
 .encounterDone {
@@ -158,13 +162,13 @@
 }
 
 .statusMet {
-  color: rgba(232, 228, 240, 0.62);
-  background: rgba(255, 255, 255, 0.07);
+  color: rgba(18, 58, 68, 0.7);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .statusDone {
-  color: #131829;
-  background: linear-gradient(180deg, #ffd9e4, #f2b8c6);
+  color: #fff;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--location-color) 78%, white), var(--location-color));
 }
 
 .emptyNote {
@@ -173,7 +177,7 @@
   letter-spacing: 0.16em;
   font-style: italic;
   text-align: center;
-  color: rgba(232, 228, 240, 0.45);
+  color: rgba(18, 58, 68, 0.58);
 }
 
 @media (max-width: 520px) {
