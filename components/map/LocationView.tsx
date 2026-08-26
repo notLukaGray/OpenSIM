@@ -4,7 +4,7 @@
 // this locationId, grouped from existing date data exactly as the old hub list
 // grouped them (branded encounters + unbranded wilds separately). Picking one
 // dispatches the exact same start-date path the hub has always used.
-import { useEffect, useMemo, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { dateTreeList, getAsset, getBrandOrNull } from "@/content/registry";
 import type { MappedGameLocation } from "@/content/registry";
@@ -12,6 +12,7 @@ import type { DateTree } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
 import styles from "./LocationView.module.css";
+import LoadingOverlay from "@/components/ui/LoadingOverlay";
 
 export default function LocationView({
   location,
@@ -25,6 +26,7 @@ export default function LocationView({
 }) {
   const game = useGame();
   const { state } = game;
+  const [loadingEncounter, setLoadingEncounter] = useState<string | null>(null);
   // The place sets the tone while you're here (P10-01 user direction):
   // crossfade to the location's own track, back to the map's theme on exit.
   // Entering a date overrides both via GameScreen's music direction.
@@ -50,19 +52,24 @@ export default function LocationView({
 
   // Esc is owned by the parent map (single listener decides view-vs-title).
 
-  const startEncounter = (tree: DateTree) => {
+  const startEncounter = async (tree: DateTree) => {
     void AudioManager.playSfx("sfx-click");
-    // Keep the map painted while the destination scene loads. Stage also
-    // gates in-date swaps, so no route can expose an empty frame.
-    const image = new window.Image();
-    const travel = () => game.travelTo(tree.id);
-    image.onload = () => {
-      const decoded = image.decode?.();
-      if (decoded) void decoded.catch(() => undefined).finally(travel);
-      else travel();
-    };
-    image.onerror = travel;
-    image.src = getAsset(location.background).src;
+    setLoadingEncounter(tree.id);
+    // Keep this roster screen painted while every image the next scene needs
+    // is fetched and decoded. A failed optional image must never strand play.
+    const assetIds = [location.background, ...(tree.background ? [tree.background] : []), ...tree.cast.map((member) => member.assetId)];
+    const sources = [...new Set(assetIds)].map((id) => getAsset(id).src);
+    await Promise.all(sources.map((src) => new Promise<void>((resolve) => {
+      const image = new window.Image();
+      image.onload = () => {
+        const decoded = image.decode?.();
+        if (decoded) void decoded.catch(() => undefined).finally(resolve);
+        else resolve();
+      };
+      image.onerror = () => resolve();
+      image.src = src;
+    })));
+    game.travelTo(tree.id);
   };
 
   const row = (t: DateTree) => {
@@ -104,6 +111,7 @@ export default function LocationView({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35 }}
     >
+      {loadingEncounter && <LoadingOverlay />}
       <div className={styles.dim} />
 
       <motion.div

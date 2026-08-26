@@ -23,6 +23,7 @@
 
 .panel {
   position: relative;
+  flex: 0 0 auto;
   width: min(680px, 100%);
   padding: 40px 44px 36px;
   background: linear-gradient(
@@ -183,13 +184,17 @@
 @media (max-width: 520px) {
   .wrap {
     padding: 16px;
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .panel {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
     padding: 64px 20px 28px;
     border-radius: 18px;
   }

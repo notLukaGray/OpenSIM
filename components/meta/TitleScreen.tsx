@@ -11,6 +11,7 @@ import { useGame } from "@/hooks/useGame";
 import StartCinematic from "./StartCinematic";
 import SettingsPanel from "./SettingsPanel";
 import styles from "./TitleScreen.module.css";
+import LoadingOverlay from "@/components/ui/LoadingOverlay";
 
 export default function TitleScreen() {
   const game = useGame();
@@ -18,16 +19,23 @@ export default function TitleScreen() {
   const [confirmNew, setConfirmNew] = useState(false);
   const [hasSave, setHasSave] = useState(false);
   const [hasVideo, setHasVideo] = useState(false);
+  const [mapReady, setMapReady] = useState(false);
+  const [starting, setStarting] = useState(false);
   const logo = getAsset("logo-dsim");
   const hero = getAsset("title-screen");
   const map = getAsset("map-location");
 
+  const startNewGame = () => {
+    if (starting) return;
+    setStarting(true);
+  };
+
+  useEffect(() => {
+    if (starting && mapReady) game.newGame();
+  }, [starting, mapReady, game]);
+
   useEffect(() => {
     void AudioManager.playMusic("mus-title");
-    // The map is the first large visual requested after the title. Begin its
-    // fetch alongside the title track so the map screen can render from cache.
-    const mapPreload = new window.Image();
-    mapPreload.src = map.src;
     setHasSave(game.hasSave());
     // P9 video convention: real footage overrides the procedural cinematic.
     fetch("/assets/video/intro.mp4", { method: "HEAD" })
@@ -38,6 +46,20 @@ export default function TitleScreen() {
 
   return (
     <div className={styles.wrap}>
+      {/* Warm the same Next-optimized map variant the next screen will use;
+          avoid a raw 2.7 MB source fetch that cannot satisfy that request. */}
+      <Image
+        src={map.src}
+        alt=""
+        width={1600}
+        height={900}
+        sizes="100vw"
+        loading="eager"
+        aria-hidden="true"
+        style={{ position: "fixed", width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
+        onLoad={() => setMapReady(true)}
+        onError={() => setMapReady(true)}
+      />
       {hasVideo ? (
         <video autoPlay muted loop playsInline src="/assets/video/intro.mp4" className={styles.video} />
       ) : (
@@ -60,7 +82,7 @@ export default function TitleScreen() {
               className={`${styles.button} ${styles.danger}`}
               onClick={() => {
                 game.resetAll();
-                game.newGame();
+                startNewGame();
               }}
             >
               YES — START OVER
@@ -73,7 +95,7 @@ export default function TitleScreen() {
           <>
             <button
               className={styles.button}
-              onClick={() => (hasSave ? setConfirmNew(true) : game.newGame())}
+              onClick={() => (hasSave ? setConfirmNew(true) : startNewGame())}
             >
               NEW GAME
             </button>
@@ -105,6 +127,7 @@ export default function TitleScreen() {
       </motion.div>
 
       {settingsOpen && <SettingsPanel onClose={() => setSettingsOpen(false)} />}
+      {starting && !mapReady && <LoadingOverlay label="loading map" />}
     </div>
   );
 }

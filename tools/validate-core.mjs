@@ -88,14 +88,27 @@ export function validateContent(bundle) {
   }
 
   for (const a of bundle.archetypes) {
+    const f = F(a, "archetypes");
     // Archetype weights are RELATIVE importance (any positive magnitudes,
     // normalized at runtime) — deliberately not the ±5 profile scale.
-    checkVector(a.weights, F(a, "archetypes"), `archetype[${a.id}].weights`, {
+    checkVector(a.weights, f, `archetype[${a.id}].weights`, {
       min: 0,
       max: Number.POSITIVE_INFINITY,
     });
     if (Object.values(a.weights ?? {}).every((w) => !w || w <= 0))
-      err(F(a, "archetypes"), `archetype[${a.id}]`, "weights must have at least one positive entry");
+      err(f, `archetype[${a.id}]`, "weights must have at least one positive entry");
+    for (const presentation of ["feminine", "masculine"]) {
+      const persona = a.personas?.[presentation];
+      const path = `archetype[${a.id}].personas.${presentation}`;
+      if (!persona || typeof persona !== "object") {
+        err(f, path, "must define a reveal persona");
+        continue;
+      }
+      if (!persona.id || typeof persona.id !== "string") err(f, `${path}.id`, "must be a string");
+      if (!persona.name || typeof persona.name !== "string") err(f, `${path}.name`, "must be a string");
+      if (!assetIds.has(persona.assetId))
+        err(f, `${path}.assetId`, `unknown asset "${String(persona.assetId)}"`);
+    }
   }
 
   // duplicate id checks

@@ -69,12 +69,28 @@ export const brands: Brand[] = (brandsJson as Record<string, unknown>[]).map((b,
 
 // ── archetypes ───────────────────────────────────────────────────────────────
 export const archetypes: Archetype[] = (archetypesJson as Record<string, unknown>[]).map((a, i) => {
-  req(a, ["id", "name", "description", "weights"], `archetypes.json[${i}]`);
+  req(a, ["id", "name", "description", "weights", "personas"], `archetypes.json[${i}]`);
+  const personas = a.personas as Record<string, Record<string, unknown>>;
+  const parsePersona = (presentation: "feminine" | "masculine") => {
+    const persona = personas?.[presentation];
+    if (!persona)
+      throw new ContentError(`archetypes.json[${i}] (${String(a.id)}): missing ${presentation} persona`);
+    req(persona, ["id", "name", "assetId"], `archetypes.json[${i}].personas.${presentation}`);
+    return {
+      id: persona.id as string,
+      name: persona.name as string,
+      assetId: persona.assetId as string,
+    };
+  };
   return {
     id: a.id as string,
     name: a.name as string,
     description: a.description as string,
     weights: fullVector(a.weights as Record<string, unknown>, "archetypes.json", a.id as string),
+    personas: {
+      feminine: parsePersona("feminine"),
+      masculine: parsePersona("masculine"),
+    },
   } satisfies Archetype;
 });
 

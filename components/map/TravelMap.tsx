@@ -19,6 +19,7 @@ import LocationView from "./LocationView";
 import DialogueBox from "@/components/dialogue/DialogueBox";
 import GameControls from "@/components/dialogue/GameControls";
 import SettingsPanel from "@/components/meta/SettingsPanel";
+import RevealAssetWarmup from "@/components/reveal/RevealAssetWarmup";
 import styles from "./TravelMap.module.css";
 import { REVEAL_MIN_ENCOUNTERS } from "@/game/types";
 import { auditReadiness } from "@/game/compatibility";
@@ -143,6 +144,7 @@ export default function TravelMap() {
 
   return (
     <div className={styles.wrap}>
+      <RevealAssetWarmup state={state} enabled={state.completedTrees.length >= REVEAL_MIN_ENCOUNTERS - 1} />
       <div
         ref={pan.viewportRef}
         className={`${styles.viewport} ${pan.isPanning ? styles.panning : ""}`}

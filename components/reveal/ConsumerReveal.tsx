@@ -1,104 +1,73 @@
 "use client";
-// ConsumerReveal (P3-02): the game stops pretending you were judging brands.
+// Consumer reveal: a content-owned persona comes into focus before the audit explains why.
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { getAsset } from "@/content/registry";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { closestArchetype, needWeights, topNeeds } from "@/game/compatibility";
-import { GameState, NEED_LABELS, Need } from "@/game/types";
+import { GameState, NEED_LABELS } from "@/game/types";
 import styles from "./ConsumerReveal.module.css";
 
-const STEPS = 5;
+const STEPS = 3;
 
 export default function ConsumerReveal({ state, onDone }: { state: GameState; onDone: () => void }) {
   const [step, setStep] = useState(0);
   const weights = needWeights(state);
   const { archetype } = closestArchetype(weights);
   const needs = topNeeds(weights, 4);
-  const silhouette = getAsset("reveal-silhouette");
+  const persona = Object.values(archetype.personas).find((candidate) => candidate.id === state.revealedPersonaId)
+    ?? archetype.personas.feminine;
+  const personAsset = getAsset(persona.assetId);
+  const revealBackground = getAsset("bg-reveal");
 
   useEffect(() => {
-    if (step === 1) void AudioManager.playSfx("heart-beat");
+    if (step === 0) void AudioManager.playSfx("heart-beat");
   }, [step]);
 
-  const next = () => setStep((s) => Math.min(STEPS - 1, s + 1));
+  const next = () => setStep((current) => Math.min(STEPS - 1, current + 1));
 
   return (
     <div className={styles.wrap} onClick={next}>
+      <Image className={styles.background} src={revealBackground.src} alt="" fill priority sizes="100vw" />
+      <div className={styles.scrim} />
+
       <AnimatePresence mode="wait">
         {step === 0 && (
-          <motion.h1
-            key="who"
-            className={styles.question}
-            initial={{ opacity: 0, letterSpacing: "0.2em" }}
-            animate={{ opacity: 1, letterSpacing: "0.5em" }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.6, ease: "easeOut" }}
-          >
-            WHO HAVE YOU BEEN PLAYING?
-          </motion.h1>
+          <motion.div key="silhouette" className={styles.silhouetteStage} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.04 }} transition={{ duration: 0.9, ease: "easeOut" }}>
+            <Image className={styles.silhouette} src={personAsset.src} alt="" width={640} height={960} priority />
+            <p className={styles.silhouetteCaption}>SOMEONE HAS BEEN TAKING SHAPE</p>
+          </motion.div>
         )}
 
         {step === 1 && (
-          <motion.div key="silhouette" className={styles.silhouette} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, scale: 1.06 }} transition={{ duration: 1.2 }}>
-            <Image src={silhouette.src} alt="" width={720} height={405} priority />
-            <div className={styles.silhouetteCaption}>someone was forming this whole time</div>
-          </motion.div>
-        )}
-
-        {step === 2 && (
-          <motion.div key="archetype" className={styles.card} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -30 }} transition={{ duration: 0.9 }}>
-            <div className={styles.cardLabel}>THE CONSUMER YOU WERE</div>
-            <h2 className={styles.archetypeName}>{archetype.name}</h2>
-            <p className={styles.archetypeDescription}>{archetype.description}</p>
-          </motion.div>
-        )}
-
-        {step === 3 && (
-          <motion.div key="needs" className={styles.card} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <div className={styles.cardLabel}>WHAT YOU KEPT REACHING FOR</div>
-            <div className={styles.bars}>
-              {needs.map((n: Need, i) => (
-                <div key={n} className={styles.barRow}>
-                  <span className={styles.barLabel}>{NEED_LABELS[n]}</span>
-                  <div className={styles.barTrack}>
-                    <motion.div
-                      className={styles.barFill}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${Math.max(8, weights[n] * 100)}%` }}
-                      transition={{ delay: 0.15 + i * 0.18, duration: 0.8, ease: "easeOut" }}
-                    />
-                  </div>
-                </div>
-              ))}
+          <motion.div key="persona" className={styles.personaStage} initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+            <Image className={styles.persona} src={personAsset.src} alt={personAsset.alt ?? `${persona.name}, ${archetype.name}`} width={640} height={960} priority />
+            <div className={styles.nameplate}>
+              <div className={styles.cardLabel}>YOU WERE PLAYING AS</div>
+              <h1>{persona.name.toUpperCase()}, {archetype.name}</h1>
             </div>
           </motion.div>
         )}
 
-        {step === 4 && (
-          <motion.div key="explain" className={styles.card} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+        {step === 2 && (
+          <motion.div key="meaning" className={styles.card} initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+            <div className={styles.cardLabel}>WHAT THAT MEANT</div>
+            <h2 className={styles.archetypeName}>{archetype.name}</h2>
+            <p className={styles.archetypeDescription}>{archetype.description}</p>
             <p className={styles.explanation}>
-              Every choice you made was an answer about yourself.
-              <br />
-              You kept circling <strong>{needs.map((n) => NEED_LABELS[n]).join(", ")}</strong>.
+              You kept circling <strong>{needs.map((need) => NEED_LABELS[need]).join(", ")}</strong>.
               <br />
               That wasn&apos;t taste. That was you.
             </p>
-            <button
-              className={styles.cta}
-              onClick={(e) => {
-                e.stopPropagation();
-                onDone();
-              }}
-            >
+            <button className={styles.cta} onClick={(event) => { event.stopPropagation(); onDone(); }}>
               NOW — WHO WAS RIGHT FOR YOU?
             </button>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {step > 0 && step < STEPS - 1 && <div className={styles.clickHint}>click</div>}
+      {step < STEPS - 1 && <div className={styles.clickHint}>CLICK TO CONTINUE</div>}
     </div>
   );
 }

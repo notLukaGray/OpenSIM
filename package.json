@@ -8,6 +8,9 @@
     "prebuild": "npm run validate",
     "art": "node scripts/generate-placeholder-art.mjs",
     "audio": "node scripts/generate-placeholder-audio.mjs",
+    "images:optimize": "node scripts/optimize-image-assets.mjs",
+    "svg:optimize": "node scripts/optimize-svg-assets.mjs",
+    "assets:optimize": "npm run images:optimize && npm run svg:optimize",
     "vo:manifest": "node scripts/export-vo-manifest.mjs",
     "vo:generate": "npm run vo:manifest && node scripts/generate-elevenlabs-vo.mjs",
     "sync:dates": "node scripts/sync-date-registry.mjs",
@@ -26,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "svgo": "^4.1.0",
     "typescript": "^5"
   }
 }

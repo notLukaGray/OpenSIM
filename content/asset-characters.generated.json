@@ -2,211 +2,211 @@
   {
     "id": "char-prime-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-prime-neutral.png",
+    "src": "/assets/characters/char-prime-neutral.webp",
     "alt": "prime (neutral)"
   },
   {
     "id": "char-prime-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-prime-happy.png",
+    "src": "/assets/characters/char-prime-happy.webp",
     "alt": "prime (happy)"
   },
   {
     "id": "char-prime-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-prime-annoyed.png",
+    "src": "/assets/characters/char-prime-annoyed.webp",
     "alt": "prime (annoyed)"
   },
   {
     "id": "char-prime-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-prime-embarrassed.png",
+    "src": "/assets/characters/char-prime-embarrassed.webp",
     "alt": "prime (embarrassed)"
   },
   {
     "id": "char-prime-special",
     "type": "character-special",
-    "src": "/assets/characters/char-prime-special.png",
+    "src": "/assets/characters/char-prime-special.webp",
     "alt": "prime (special)"
   },
   {
     "id": "char-starbucks-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-starbucks-neutral.png",
+    "src": "/assets/characters/char-starbucks-neutral.webp",
     "alt": "starbucks (neutral)"
   },
   {
     "id": "char-starbucks-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-starbucks-happy.png",
+    "src": "/assets/characters/char-starbucks-happy.webp",
     "alt": "starbucks (happy)"
   },
   {
     "id": "char-starbucks-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-starbucks-annoyed.png",
+    "src": "/assets/characters/char-starbucks-annoyed.webp",
     "alt": "starbucks (annoyed)"
   },
   {
     "id": "char-starbucks-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-starbucks-embarrassed.png",
+    "src": "/assets/characters/char-starbucks-embarrassed.webp",
     "alt": "starbucks (embarrassed)"
   },
   {
     "id": "char-starbucks-special",
     "type": "character-special",
-    "src": "/assets/characters/char-starbucks-special.png",
+    "src": "/assets/characters/char-starbucks-special.webp",
     "alt": "starbucks (special)"
   },
   {
     "id": "char-oura-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-oura-neutral.png",
+    "src": "/assets/characters/char-oura-neutral.webp",
     "alt": "oura (neutral)"
   },
   {
     "id": "char-oura-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-oura-happy.png",
+    "src": "/assets/characters/char-oura-happy.webp",
     "alt": "oura (happy)"
   },
   {
     "id": "char-oura-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-oura-annoyed.png",
+    "src": "/assets/characters/char-oura-annoyed.webp",
     "alt": "oura (annoyed)"
   },
   {
     "id": "char-oura-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-oura-embarrassed.png",
+    "src": "/assets/characters/char-oura-embarrassed.webp",
     "alt": "oura (embarrassed)"
   },
   {
     "id": "char-oura-special",
     "type": "character-special",
-    "src": "/assets/characters/char-oura-special.png",
+    "src": "/assets/characters/char-oura-special.webp",
     "alt": "oura (special)"
   },
   {
     "id": "char-red-bull-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-red-bull-neutral.png",
+    "src": "/assets/characters/char-red-bull-neutral.webp",
     "alt": "red-bull (neutral)"
   },
   {
     "id": "char-red-bull-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-red-bull-happy.png",
+    "src": "/assets/characters/char-red-bull-happy.webp",
     "alt": "red-bull (happy)"
   },
   {
     "id": "char-red-bull-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-red-bull-annoyed.png",
+    "src": "/assets/characters/char-red-bull-annoyed.webp",
     "alt": "red-bull (annoyed)"
   },
   {
     "id": "char-red-bull-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-red-bull-embarrassed.png",
+    "src": "/assets/characters/char-red-bull-embarrassed.webp",
     "alt": "red-bull (embarrassed)"
   },
   {
     "id": "char-red-bull-special",
     "type": "character-special",
-    "src": "/assets/characters/char-red-bull-special.png",
+    "src": "/assets/characters/char-red-bull-special.webp",
     "alt": "red-bull (special)"
   },
   {
     "id": "char-white-claw-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-white-claw-neutral.png",
+    "src": "/assets/characters/char-white-claw-neutral.webp",
     "alt": "white-claw (neutral)"
   },
   {
     "id": "char-white-claw-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-white-claw-happy.png",
+    "src": "/assets/characters/char-white-claw-happy.webp",
     "alt": "white-claw (happy)"
   },
   {
     "id": "char-white-claw-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-white-claw-annoyed.png",
+    "src": "/assets/characters/char-white-claw-annoyed.webp",
     "alt": "white-claw (annoyed)"
   },
   {
     "id": "char-white-claw-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-white-claw-embarrassed.png",
+    "src": "/assets/characters/char-white-claw-embarrassed.webp",
     "alt": "white-claw (embarrassed)"
   },
   {
     "id": "char-white-claw-special",
     "type": "character-special",
-    "src": "/assets/characters/char-white-claw-special.png",
+    "src": "/assets/characters/char-white-claw-special.webp",
     "alt": "white-claw (special)"
   },
   {
     "id": "char-athletic-brewing-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-athletic-brewing-neutral.png",
+    "src": "/assets/characters/char-athletic-brewing-neutral.webp",
     "alt": "athletic-brewing (neutral)"
   },
   {
     "id": "char-athletic-brewing-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-athletic-brewing-happy.png",
+    "src": "/assets/characters/char-athletic-brewing-happy.webp",
     "alt": "athletic-brewing (happy)"
   },
   {
     "id": "char-athletic-brewing-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-athletic-brewing-annoyed.png",
+    "src": "/assets/characters/char-athletic-brewing-annoyed.webp",
     "alt": "athletic-brewing (annoyed)"
   },
   {
     "id": "char-athletic-brewing-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-athletic-brewing-embarrassed.png",
+    "src": "/assets/characters/char-athletic-brewing-embarrassed.webp",
     "alt": "athletic-brewing (embarrassed)"
   },
   {
     "id": "char-athletic-brewing-special",
     "type": "character-special",
-    "src": "/assets/characters/char-athletic-brewing-special.png",
+    "src": "/assets/characters/char-athletic-brewing-special.webp",
     "alt": "athletic-brewing (special)"
   },
   {
     "id": "char-zyn-counsel-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-zyn-counsel-neutral.png",
+    "src": "/assets/characters/char-zyn-counsel-neutral.webp",
     "alt": "zyn-counsel (neutral)"
   },
   {
     "id": "char-zyn-counsel-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-zyn-counsel-happy.png",
+    "src": "/assets/characters/char-zyn-counsel-happy.webp",
     "alt": "zyn-counsel (happy)"
   },
   {
     "id": "char-zyn-counsel-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-zyn-counsel-annoyed.png",
+    "src": "/assets/characters/char-zyn-counsel-annoyed.webp",
     "alt": "zyn-counsel (annoyed)"
   },
   {
     "id": "char-zyn-counsel-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-zyn-counsel-embarrassed.png",
+    "src": "/assets/characters/char-zyn-counsel-embarrassed.webp",
     "alt": "zyn-counsel (embarrassed)"
   },
   {
     "id": "char-zyn-counsel-special",
     "type": "character-special",
-    "src": "/assets/characters/char-zyn-counsel-special.png",
+    "src": "/assets/characters/char-zyn-counsel-special.webp",
     "alt": "zyn-counsel (special)"
   }
 ]

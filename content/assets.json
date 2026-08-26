@@ -2,168 +2,168 @@
   {
     "id": "map-location",
     "type": "map",
-    "src": "/assets/map/location_map.jpg",
+    "src": "/assets/map/location_map.webp",
     "alt": "A stylized city map with a train terminal, gym, rooftop, kitchen, office, beach, festival, cafe, bedroom, and grocery store"
   },
   {
     "id": "char-liquid-iv-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-liquid-iv-neutral.png",
+    "src": "/assets/characters/char-liquid-iv-neutral.webp",
     "alt": "Liquid I.V.",
     "preload": true
   },
   {
     "id": "char-liquid-iv-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-liquid-iv-happy.png",
+    "src": "/assets/characters/char-liquid-iv-happy.webp",
     "alt": "Liquid I.V., pleased"
   },
   {
     "id": "char-liquid-iv-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-liquid-iv-annoyed.png",
+    "src": "/assets/characters/char-liquid-iv-annoyed.webp",
     "alt": "Liquid I.V., defensive"
   },
   {
     "id": "char-liquid-iv-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-liquid-iv-embarrassed.png",
+    "src": "/assets/characters/char-liquid-iv-embarrassed.webp",
     "alt": "Liquid I.V., embarrassed"
   },
   {
     "id": "char-liquid-iv-special",
     "type": "character-special",
-    "src": "/assets/characters/char-liquid-iv-special.png",
+    "src": "/assets/characters/char-liquid-iv-special.webp",
     "alt": "Liquid I.V., affectionate"
   },
   {
     "id": "char-whoop-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-whoop-neutral.png",
+    "src": "/assets/characters/char-whoop-neutral.webp",
     "alt": "WHOOP",
     "preload": true
   },
   {
     "id": "char-whoop-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-whoop-happy.png",
+    "src": "/assets/characters/char-whoop-happy.webp",
     "alt": "WHOOP, satisfied"
   },
   {
     "id": "char-whoop-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-whoop-annoyed.png",
+    "src": "/assets/characters/char-whoop-annoyed.webp",
     "alt": "WHOOP, cold"
   },
   {
     "id": "char-whoop-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-whoop-embarrassed.png",
+    "src": "/assets/characters/char-whoop-embarrassed.webp",
     "alt": "WHOOP, caught out"
   },
   {
     "id": "char-whoop-special",
     "type": "character-special",
-    "src": "/assets/characters/char-whoop-special.png",
+    "src": "/assets/characters/char-whoop-special.webp",
     "alt": "WHOOP, unguarded"
   },
   {
     "id": "char-celsius-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-celsius-neutral.png",
+    "src": "/assets/characters/char-celsius-neutral.webp",
     "alt": "CELSIUS",
     "preload": true
   },
   {
     "id": "char-celsius-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-celsius-happy.png",
+    "src": "/assets/characters/char-celsius-happy.webp",
     "alt": "CELSIUS, electric"
   },
   {
     "id": "char-celsius-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-celsius-annoyed.png",
+    "src": "/assets/characters/char-celsius-annoyed.webp",
     "alt": "CELSIUS, bristling"
   },
   {
     "id": "char-celsius-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-celsius-embarrassed.png",
+    "src": "/assets/characters/char-celsius-embarrassed.webp",
     "alt": "CELSIUS, off-beat"
   },
   {
     "id": "char-celsius-special",
     "type": "character-special",
-    "src": "/assets/characters/char-celsius-special.png",
+    "src": "/assets/characters/char-celsius-special.webp",
     "alt": "CELSIUS, close-up energy"
   },
   {
     "id": "char-ag1-neutral",
     "type": "character-neutral",
-    "src": "/assets/characters/char-ag1-neutral.png",
+    "src": "/assets/characters/char-ag1-neutral.webp",
     "alt": "AG1",
     "preload": true
   },
   {
     "id": "char-ag1-happy",
     "type": "character-happy",
-    "src": "/assets/characters/char-ag1-happy.png",
+    "src": "/assets/characters/char-ag1-happy.webp",
     "alt": "AG1, warm"
   },
   {
     "id": "char-ag1-annoyed",
     "type": "character-annoyed",
-    "src": "/assets/characters/char-ag1-annoyed.png",
+    "src": "/assets/characters/char-ag1-annoyed.webp",
     "alt": "AG1, stung"
   },
   {
     "id": "char-ag1-embarrassed",
     "type": "character-embarrassed",
-    "src": "/assets/characters/char-ag1-embarrassed.png",
+    "src": "/assets/characters/char-ag1-embarrassed.webp",
     "alt": "AG1, flustered"
   },
   {
     "id": "char-ag1-special",
     "type": "character-special",
-    "src": "/assets/characters/char-ag1-special.png",
+    "src": "/assets/characters/char-ag1-special.webp",
     "alt": "AG1, tender"
   },
   {
     "id": "bg-hub",
     "type": "background",
-    "src": "/assets/backgrounds/bg-hub.jpg",
+    "src": "/assets/backgrounds/bg-hub.webp",
     "alt": "A city of glowing windows at night",
     "preload": true
   },
   {
     "id": "bg-airport",
     "type": "background",
-    "src": "/assets/backgrounds/bg-airport.jpg",
+    "src": "/assets/backgrounds/bg-airport.webp",
     "alt": "Night terminal with runway lights"
   },
   {
     "id": "bg-nightgym",
     "type": "background",
-    "src": "/assets/backgrounds/bg-nightgym.jpg",
+    "src": "/assets/backgrounds/bg-nightgym.webp",
     "alt": "Dark gym under a single light pool"
   },
   {
     "id": "bg-rooftop",
     "type": "background",
-    "src": "/assets/backgrounds/bg-rooftop.jpg",
+    "src": "/assets/backgrounds/bg-rooftop.webp",
     "alt": "City skyline at dusk"
   },
   {
     "id": "bg-kitchen",
     "type": "background",
-    "src": "/assets/backgrounds/bg-kitchen.jpg",
+    "src": "/assets/backgrounds/bg-kitchen.webp",
     "alt": "Warm kitchen in morning light"
   },
   {
     "id": "bg-reveal",
     "type": "background",
-    "src": "/assets/backgrounds/bg-reveal.jpg",
+    "src": "/assets/backgrounds/bg-reveal.webp",
     "alt": "A soft glow in the void"
   },
   {
@@ -206,14 +206,14 @@
   {
     "id": "logo-dsim",
     "type": "logo",
-    "src": "/assets/ui/logo-dsim.svg",
+    "src": "/assets/ui/logo-dsim.min.svg",
     "alt": "DSIM mark",
     "preload": true
   },
   {
     "id": "title-screen",
     "type": "ui",
-    "src": "/assets/ui/title-screen.jpg",
+    "src": "/assets/ui/title-screen.webp",
     "alt": "Brand mascots gathered under cherry blossoms",
     "preload": true
   },
@@ -226,31 +226,31 @@
   {
     "id": "bg-beach-day",
     "type": "background",
-    "src": "/assets/backgrounds/bg-beach-day.jpg",
+    "src": "/assets/backgrounds/bg-beach-day.webp",
     "alt": "Salt and a cooler with opinions"
   },
   {
     "id": "bg-music-festival",
     "type": "background",
-    "src": "/assets/backgrounds/bg-music-festival.jpg",
+    "src": "/assets/backgrounds/bg-music-festival.webp",
     "alt": "Stages, lights, no personal space"
   },
   {
     "id": "bg-corner-cafe",
     "type": "background",
-    "src": "/assets/backgrounds/bg-corner-cafe.jpg",
+    "src": "/assets/backgrounds/bg-corner-cafe.webp",
     "alt": "Third-place audition room"
   },
   {
     "id": "bg-bedroom-night",
     "type": "background",
-    "src": "/assets/backgrounds/bg-bedroom-night.jpg",
+    "src": "/assets/backgrounds/bg-bedroom-night.webp",
     "alt": "Moonlight through one window"
   },
   {
     "id": "bg-grocery-store",
     "type": "background",
-    "src": "/assets/backgrounds/bg-grocery-store.jpg",
+    "src": "/assets/backgrounds/bg-grocery-store.webp",
     "alt": "Fluorescent honesty"
   },
   {
@@ -480,5 +480,65 @@
     "type": "map-zone",
     "src": "/assets/map/zones/zone-art-grocery-store.svg",
     "alt": "GROCERY AISLES map marker"
+  },
+  {
+    "id": "reveal-persona-tess",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/tess-optimizer-feminine.webp",
+    "alt": "Tess, the Optimizer"
+  },
+  {
+    "id": "reveal-persona-elias",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/elias-optimizer-masculine.webp",
+    "alt": "Elias, the Optimizer"
+  },
+  {
+    "id": "reveal-persona-nora",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/nora-pragmatist-feminine.webp",
+    "alt": "Nora, the Pragmatist"
+  },
+  {
+    "id": "reveal-persona-miles",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/miles-pragmatist-masculine.webp",
+    "alt": "Miles, the Pragmatist"
+  },
+  {
+    "id": "reveal-persona-mara",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/mara-ritualist-feminine.webp",
+    "alt": "Mara, the Ritualist"
+  },
+  {
+    "id": "reveal-persona-theo",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/theo-ritualist-masculine.webp",
+    "alt": "Theo, the Ritualist"
+  },
+  {
+    "id": "reveal-persona-sloane",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/sloane-striver-feminine.webp",
+    "alt": "Sloane, the Striver"
+  },
+  {
+    "id": "reveal-persona-jace",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/jace-striver-masculine.webp",
+    "alt": "Jace, the Striver"
+  },
+  {
+    "id": "reveal-persona-remy",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/remy-social-explorer-feminine.webp",
+    "alt": "Remy, the Social Explorer"
+  },
+  {
+    "id": "reveal-persona-nico",
+    "type": "silhouette",
+    "src": "/assets/reveal/personas/nico-social-explorer-masculine.webp",
+    "alt": "Nico, the Social Explorer"
   }
 ]

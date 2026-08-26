@@ -47,7 +47,7 @@ export const clampNeed = (n: number): number =>
   Math.max(PROFILE_MIN, Math.min(PROFILE_MAX, n));
 
 // ─── Save envelope (ADR-09) ──────────────────────────────────────────────────
-export const SAVE_VERSION = 3;
+export const SAVE_VERSION = 4;
 
 /**
  * The audit never resolves before this many encounters. From this point it may
@@ -81,6 +81,8 @@ export type GameState = {
   dated: string[];
   /** Set once the consumer reveal has played — unlocks post-reveal content (P7-02). */
   hasSeenReveal: boolean;
+  /** The content-owned person selected when the consumer reveal first begins. */
+  revealedPersonaId: string | null;
   choicesMade: number;
 };
 
@@ -94,6 +96,7 @@ export const createGameState = (): GameState => ({
   completedTrees: [],
   dated: [],
   hasSeenReveal: false,
+  revealedPersonaId: null,
   choicesMade: 0,
 });
 

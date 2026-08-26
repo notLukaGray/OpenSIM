@@ -140,6 +140,17 @@ export type Archetype = {
   name: string;
   description: string;
   weights: NeedVector;
+  personas: {
+    feminine: RevealPersona;
+    masculine: RevealPersona;
+  };
+};
+
+/** A named player-facing avatar for the consumer reveal. */
+export type RevealPersona = {
+  id: string;
+  name: string;
+  assetId: string;
 };
 
 // ─── Modifiers ───────────────────────────────────────────────────────────────

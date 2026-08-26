@@ -1,7 +1,7 @@
 "use client";
 // DebugPanel (P3-04): dev-only x-ray. Never ships to production (ADR-11).
 import { useMemo, useState } from "react";
-import { dateTreeList, getBrand, getTree } from "@/content/registry";
+import { archetypes, dateTreeList, getBrand, getTree } from "@/content/registry";
 import { AudioManager } from "@/game/audio/AudioManager";
 import {
   BrandMatch,
@@ -10,7 +10,7 @@ import {
   rankAllBrands,
 } from "@/game/compatibility";
 import { activeModifiers } from "@/game/modifiers";
-import { GameState, NEED_LABELS, Need, needs } from "@/game/types";
+import { GameState, NEED_LABELS, Need, needs, zeroNeeds } from "@/game/types";
 import { useGame } from "@/hooks/useGame";
 import styles from "./DebugPanel.module.css";
 
@@ -20,6 +20,10 @@ export default function DebugPanel({ onClose }: { onClose: () => void }) {
   const game = useGame();
   const { state, nav } = game;
   const [jumpTarget, setJumpTarget] = useState("");
+  const revealPersonas = archetypes.flatMap((archetype) =>
+    Object.values(archetype.personas).map((persona) => ({ ...persona, archetype }))
+  );
+  const [revealPersonaId, setRevealPersonaId] = useState(revealPersonas[0]?.id ?? "");
 
   const ctx = useMemo(() => contextFor(nav.treeId, state), [nav.treeId, state]);
   const weights = needWeights(state);
@@ -157,6 +161,26 @@ export default function DebugPanel({ onClose }: { onClose: () => void }) {
             <button className={styles.action} onClick={() => game.setPhase("match")}>force ending</button>
             <button className={styles.action} onClick={() => game.resetAll()}>reset all state</button>
           </div>
+        </section>
+
+        <section className={styles.block}>
+          <h3 className={styles.title3}>reveal preview</h3>
+          <div className={styles.dim}>Sets the matching evidence and the exact saved persona, then opens the three-beat reveal.</div>
+          <select className={styles.select} value={revealPersonaId} onChange={(event) => setRevealPersonaId(event.target.value)}>
+            {revealPersonas.map(({ id, name, archetype }) => (
+              <option key={id} value={id}>{name} — {archetype.name}</option>
+            ))}
+          </select>
+          <button
+            className={styles.action}
+            onClick={() => {
+              const selected = revealPersonas.find((persona) => persona.id === revealPersonaId);
+              if (!selected) return;
+              game.debugReveal(selected.id, { ...zeroNeeds(), ...selected.archetype.weights });
+            }}
+          >
+            preview selected reveal
+          </button>
         </section>
       </div>
     </aside>

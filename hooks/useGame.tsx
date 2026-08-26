@@ -2,13 +2,14 @@
 // The game store (P1-03): one reducer over GameState + Navigation + Settings.
 // Pure reducer; persistence and audio application are effects at this layer.
 import React, { createContext, useContext, useEffect, useMemo, useReducer, useRef } from "react";
-import { HUB_TREE_ID, dateTreeList, getTree } from "@/content/registry";
+import { HUB_TREE_ID, getTree } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import type { Choice } from "@/content/schema";
 import { evalCondition } from "@/game/conditions";
 import { applyChoice, applyEvidenceById, applyEvidenceUnlock, markCompleted, resolveForward } from "@/game/engine";
 import {
   GameState,
+  NeedVector,
   Navigation,
   Phase,
   SAVE_VERSION,
@@ -17,6 +18,7 @@ import {
   defaultSettings,
 } from "@/game/types";
 import { clearSave, loadSave, loadSettings, persistSave, persistSettings } from "@/game/save";
+import { closestArchetype, needWeights } from "@/game/compatibility";
 
 type StoreState = { state: GameState; nav: Navigation; settings: Settings };
 
@@ -28,9 +30,10 @@ type Action =
   | { type: "RESET_ALL" }
   | { type: "ADVANCE"; evidenceId?: string }
   | { type: "CHOOSE"; choice: Choice }
-  | { type: "SET_PHASE"; phase: Phase }
+  | { type: "SET_PHASE"; phase: Phase; revealedPersonaId?: string }
   | { type: "UPDATE_SETTINGS"; patch: Partial<Settings> }
   | { type: "DEBUG_PATCH"; patch: (s: GameState) => GameState }
+  | { type: "DEBUG_REVEAL"; personaId: string; evidence: NeedVector }
   | { type: "DEBUG_JUMP"; treeId: string; nodeId?: string }
   | { type: "TRAVEL"; treeId: string };
 
@@ -49,6 +52,13 @@ function getTreeOrNull(id: string): DateTree | null {
   } catch {
     return null;
   }
+}
+
+/** Randomness belongs at the React boundary; the reducer only persists the chosen ID. */
+function pickRevealPersonaId(state: GameState): string {
+  const { archetype } = closestArchetype(needWeights(state));
+  const presentation = Math.random() < 0.5 ? "feminine" : "masculine";
+  return archetype.personas[presentation].id;
 }
 
 /** Enter a node of a tree, applying node-entry effects (evidence unlocks). */
@@ -83,7 +93,11 @@ function follow(store: StoreState, next?: string, nextTree?: string): StoreState
     if (nextTree === "reveal")
       return {
         ...store,
-        state: { ...state, hasSeenReveal: true },
+        state: {
+          ...state,
+          hasSeenReveal: true,
+          revealedPersonaId: state.revealedPersonaId ?? pickRevealPersonaId(state),
+        },
         nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null },
       };
     if (nextTree === "map")
@@ -142,7 +156,13 @@ function reducer(store: StoreState, action: Action): StoreState {
       return {
         ...store,
         // Entering the reveal (from map gate or debug) marks it seen (P7-02).
-        state: action.phase === "reveal" ? { ...store.state, hasSeenReveal: true } : store.state,
+        state: action.phase === "reveal"
+          ? {
+              ...store.state,
+              hasSeenReveal: true,
+              revealedPersonaId: store.state.revealedPersonaId ?? action.revealedPersonaId ?? null,
+            }
+          : store.state,
         nav: {
           ...store.nav,
           phase: action.phase,
@@ -153,6 +173,17 @@ function reducer(store: StoreState, action: Action): StoreState {
       return { ...store, settings: { ...store.settings, ...action.patch } };
     case "DEBUG_PATCH":
       return { ...store, state: action.patch(store.state) };
+    case "DEBUG_REVEAL":
+      return {
+        ...store,
+        state: {
+          ...store.state,
+          evidence: action.evidence,
+          hasSeenReveal: true,
+          revealedPersonaId: action.personaId,
+        },
+        nav: { ...store.nav, phase: "reveal", treeId: null, nodeId: null },
+      };
     case "DEBUG_JUMP": {
       const t = getTreeOrNull(action.treeId);
       if (!t) return store;
@@ -181,6 +212,7 @@ export type GameStore = StoreState & {
   setPhase: (p: Phase) => void;
   updateSettings: (patch: Partial<Settings>) => void;
   debugPatch: (patch: (s: GameState) => GameState) => void;
+  debugReveal: (personaId: string, evidence: NeedVector) => void;
   debugJump: (treeId: string, nodeId?: string) => void;
   travelTo: (treeId: string) => void;
 };
@@ -214,9 +246,16 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       resetAll: () => dispatch({ type: "RESET_ALL" }),
       advance: (evidenceId) => dispatch({ type: "ADVANCE", evidenceId }),
       choose: (choice) => dispatch({ type: "CHOOSE", choice }),
-      setPhase: (p) => dispatch({ type: "SET_PHASE", phase: p }),
+      setPhase: (p) => {
+        const revealedPersonaId =
+          p === "reveal" && !store.state.revealedPersonaId
+            ? pickRevealPersonaId(store.state)
+            : undefined;
+        dispatch({ type: "SET_PHASE", phase: p, revealedPersonaId });
+      },
       updateSettings: (patch) => dispatch({ type: "UPDATE_SETTINGS", patch }),
       debugPatch: (patch) => dispatch({ type: "DEBUG_PATCH", patch }),
+      debugReveal: (personaId, evidence) => dispatch({ type: "DEBUG_REVEAL", personaId, evidence }),
       debugJump: (treeId, nodeId) => dispatch({ type: "DEBUG_JUMP", treeId, nodeId }),
       travelTo: (treeId) => dispatch({ type: "TRAVEL", treeId }),
     }),
