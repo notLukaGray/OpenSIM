@@ -6,6 +6,8 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  /* Never expose the page's dark shell while the first map image decodes. */
+  background: #c4e9f5;
 }
 
 /* ── pan surface ─────────────────────────────────────────────────────────── */

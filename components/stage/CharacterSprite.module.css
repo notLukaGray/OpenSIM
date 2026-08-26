@@ -2,7 +2,8 @@
   position: absolute;
   bottom: 0;
   display: flex;
-  align-items: flex-end;
+  /* Desktop sprites sit in the visual middle rather than behind the dialogue. */
+  align-items: center;
   justify-content: center;
   height: 100%;
 }

@@ -6,7 +6,7 @@
 // dispatches the exact same start-date path the hub has always used.
 import { useEffect, useMemo, type CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { dateTreeList, getBrandOrNull } from "@/content/registry";
+import { dateTreeList, getAsset, getBrandOrNull } from "@/content/registry";
 import type { MappedGameLocation } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
@@ -52,8 +52,17 @@ export default function LocationView({
 
   const startEncounter = (tree: DateTree) => {
     void AudioManager.playSfx("sfx-click");
-    // Same start-date path as always (P5-02 TRAVEL action) — no new plumbing.
-    game.travelTo(tree.id);
+    // Keep the map painted while the destination scene loads. Stage also
+    // gates in-date swaps, so no route can expose an empty frame.
+    const image = new window.Image();
+    const travel = () => game.travelTo(tree.id);
+    image.onload = () => {
+      const decoded = image.decode?.();
+      if (decoded) void decoded.catch(() => undefined).finally(travel);
+      else travel();
+    };
+    image.onerror = travel;
+    image.src = getAsset(location.background).src;
   };
 
   const row = (t: DateTree) => {

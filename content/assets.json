@@ -2,7 +2,7 @@
   {
     "id": "map-location",
     "type": "map",
-    "src": "/assets/map/location_map.png",
+    "src": "/assets/map/location_map.jpg",
     "alt": "A stylized city map with a train terminal, gym, rooftop, kitchen, office, beach, festival, cafe, bedroom, and grocery store"
   },
   {
@@ -132,38 +132,38 @@
   {
     "id": "bg-hub",
     "type": "background",
-    "src": "/assets/backgrounds/bg-hub.svg",
+    "src": "/assets/backgrounds/bg-hub.jpg",
     "alt": "A city of glowing windows at night",
     "preload": true
   },
   {
     "id": "bg-airport",
     "type": "background",
-    "src": "/assets/backgrounds/bg-airport.svg",
+    "src": "/assets/backgrounds/bg-airport.jpg",
     "alt": "Night terminal with runway lights"
   },
   {
     "id": "bg-nightgym",
     "type": "background",
-    "src": "/assets/backgrounds/bg-nightgym.svg",
+    "src": "/assets/backgrounds/bg-nightgym.jpg",
     "alt": "Dark gym under a single light pool"
   },
   {
     "id": "bg-rooftop",
     "type": "background",
-    "src": "/assets/backgrounds/bg-rooftop.svg",
+    "src": "/assets/backgrounds/bg-rooftop.jpg",
     "alt": "City skyline at dusk"
   },
   {
     "id": "bg-kitchen",
     "type": "background",
-    "src": "/assets/backgrounds/bg-kitchen.svg",
+    "src": "/assets/backgrounds/bg-kitchen.jpg",
     "alt": "Warm kitchen in morning light"
   },
   {
     "id": "bg-reveal",
     "type": "background",
-    "src": "/assets/backgrounds/bg-reveal.svg",
+    "src": "/assets/backgrounds/bg-reveal.jpg",
     "alt": "A soft glow in the void"
   },
   {
@@ -226,31 +226,31 @@
   {
     "id": "bg-beach-day",
     "type": "background",
-    "src": "/assets/backgrounds/bg-beach-day.svg",
+    "src": "/assets/backgrounds/bg-beach-day.jpg",
     "alt": "Salt and a cooler with opinions"
   },
   {
     "id": "bg-music-festival",
     "type": "background",
-    "src": "/assets/backgrounds/bg-music-festival.svg",
+    "src": "/assets/backgrounds/bg-music-festival.jpg",
     "alt": "Stages, lights, no personal space"
   },
   {
     "id": "bg-corner-cafe",
     "type": "background",
-    "src": "/assets/backgrounds/bg-corner-cafe.svg",
+    "src": "/assets/backgrounds/bg-corner-cafe.jpg",
     "alt": "Third-place audition room"
   },
   {
     "id": "bg-bedroom-night",
     "type": "background",
-    "src": "/assets/backgrounds/bg-bedroom-night.svg",
+    "src": "/assets/backgrounds/bg-bedroom-night.jpg",
     "alt": "Moonlight through one window"
   },
   {
     "id": "bg-grocery-store",
     "type": "background",
-    "src": "/assets/backgrounds/bg-grocery-store.svg",
+    "src": "/assets/backgrounds/bg-grocery-store.jpg",
     "alt": "Fluorescent honesty"
   },
   {

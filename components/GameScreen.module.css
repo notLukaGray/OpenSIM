@@ -16,18 +16,11 @@
   padding-bottom: 3vh;
 }
 
-.vignette {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.8;
-}
-
 .wipe {
   position: absolute;
   inset: 0;
   z-index: 60;
-  background: linear-gradient(90deg, #131829, #0b0e17);
+  background: #0b0e17;
 }
 
 /* P9-01 (additive): clear the iOS home-indicator zone. env() resolves to 0px

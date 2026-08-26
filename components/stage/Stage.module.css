@@ -2,7 +2,8 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: var(--bg-void, #0b0e17);
+  /* A light fallback is visible only during the very first image decode. */
+  background: #c4e9f5;
 }
 
 .bg {
@@ -12,6 +13,14 @@
 
 .bgImg {
   object-fit: cover;
+}
+
+.preload {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .cast {

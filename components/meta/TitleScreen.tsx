@@ -3,6 +3,7 @@
 // menu music, settings. If /assets/video/intro.mp4 exists it replaces the
 // procedural cinematic (P9 convention).
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { getAsset } from "@/content/registry";
 import { AudioManager } from "@/game/audio/AudioManager";
@@ -43,7 +44,7 @@ export default function TitleScreen() {
         <>
           {/* P9 interim: Figma title art stands in until intro.mp4 exists;
               StartCinematic keeps only its drifting particles above it. */}
-          <img src={hero.src} alt={hero.alt} className={styles.bg} />
+          <Image src={hero.src} alt={hero.alt ?? ""} fill priority sizes="100vw" className={styles.bg} />
           <StartCinematic />
         </>
       )}

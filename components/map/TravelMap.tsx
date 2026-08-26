@@ -156,7 +156,7 @@ export default function TravelMap() {
             transform: `translate3d(${-offset.x}px, ${-offset.y}px, 0)`,
           }}
         >
-          <Image src={bg.src} alt="" fill priority draggable={false} className={styles.backdrop} />
+          <Image src={bg.src} alt="" fill priority sizes="100vw" draggable={false} className={styles.backdrop} />
 
           <motion.div
             className={styles.mapTitle}

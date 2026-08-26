@@ -2,7 +2,6 @@
 // GameScreen: the play phase. Consumes node scene-directions (P2-05) and
 // renders Stage + DialogueBox + overlays. No story knowledge beyond the
 // registries. All hooks run unconditionally (React rules of hooks).
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -216,9 +215,6 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
       />
 
       <div className={styles.dialogueLayer}>
-        <div className={styles.vignette}>
-          <Image src={getAsset("ui-vignette").src} alt="" fill draggable={false} />
-        </div>
         <DialogueBox
           entryKey={`${treeId}/${nodeId}`}
           speaker={node.speaker}
