@@ -7,13 +7,26 @@
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { dateTreeList, getAsset, getBrandOrNull } from "@/content/registry";
+import { assets, dateTreeList, getAsset, getBrandOrNull, hasAsset } from "@/content/registry";
 import type { MappedGameLocation } from "@/content/registry";
 import type { DateTree } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
 import styles from "./LocationView.module.css";
 import LoadingOverlay from "@/components/ui/LoadingOverlay";
+
+/**
+ * A date's cast is not just the neutral image shown on entry. Every registered
+ * expression for each cast member must be decoded before navigation so the
+ * dialogue can switch emotes without introducing a fetch/decode hitch.
+ */
+function spriteVariantIds(assetId: string): string[] {
+  const match = assetId.match(/^char-(.+)-[^-]+$/);
+  if (!match) return [assetId];
+  const prefix = `char-${match[1]}-`;
+  const variants = assets.filter((asset) => asset.id.startsWith(prefix)).map((asset) => asset.id);
+  return variants.length ? variants : [assetId];
+}
 
 export default function LocationView({
   location,
@@ -56,12 +69,17 @@ export default function LocationView({
 
   const preloadAssets = useMemo(() => {
     if (!pendingEncounter) return [];
-    const assetIds = [
+    const backgroundIds = new Set([
       location.background,
       ...(pendingEncounter.background ? [pendingEncounter.background] : []),
-      ...pendingEncounter.cast.map((member) => member.assetId),
+    ]);
+    const assetIds = [
+      ...backgroundIds,
+      ...pendingEncounter.cast.flatMap((member) => spriteVariantIds(member.assetId)),
     ];
-    return [...new Set(assetIds)].map((id) => ({ id, src: getAsset(id).src }));
+    return [...new Set(assetIds)]
+      .filter(hasAsset)
+      .map((id) => ({ id, src: getAsset(id).src, kind: backgroundIds.has(id) ? "background" : "sprite" as const }));
   }, [location.background, pendingEncounter]);
 
   useEffect(() => {
@@ -129,10 +147,10 @@ export default function LocationView({
       {pendingEncounter && (
         <div className={styles.preload} aria-hidden="true">
           {preloadAssets.map((asset) => (
-            asset.id === location.background || asset.id === pendingEncounter.background ? (
-              <Image key={asset.id} src={asset.src} alt="" fill sizes="100vw" loading="eager" onLoad={() => markAssetLoaded(asset.id)} onError={() => markAssetLoaded(asset.id)} />
+            asset.kind === "background" ? (
+              <Image key={asset.id} src={asset.src} alt="" fill sizes="100vw" loading="eager" priority onLoad={() => markAssetLoaded(asset.id)} onError={() => markAssetLoaded(asset.id)} />
             ) : (
-              <Image key={asset.id} src={asset.src} alt="" width={480} height={586} loading="eager" onLoad={() => markAssetLoaded(asset.id)} onError={() => markAssetLoaded(asset.id)} />
+              <Image key={asset.id} src={asset.src} alt="" width={480} height={586} loading="eager" priority onLoad={() => markAssetLoaded(asset.id)} onError={() => markAssetLoaded(asset.id)} />
             )
           ))}
         </div>
