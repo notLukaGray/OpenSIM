@@ -15,6 +15,9 @@ class AudioManagerImpl {
   private voiceBus: GainNode | null = null;
   private buffers = new Map<string, AudioBuffer>();
   private loading = new Map<string, Promise<AudioBuffer>>();
+  /** A monotonically increasing token invalidates superseded VO fetches. */
+  private voiceRequest = 0;
+  private currentVoice: AudioBufferSourceNode | null = null;
   private musicVoices: Voice[] = [];
   private currentMusicId: string | null = null;
   private settings: Settings = { master: 0.8, music: 0.7, sfx: 0.8, muted: false, textSpeed: 45, voice: 0.9 };
@@ -192,6 +195,23 @@ class AudioManagerImpl {
     src.start();
   }
 
+  /** Stop the current line and invalidate any VO clip still loading. */
+  stopVoice(): void {
+    this.voiceRequest++;
+    if (this.currentVoice) {
+      this.currentVoice.onended = null;
+      try {
+        this.currentVoice.stop();
+      } catch {
+        /* already stopped */
+      }
+      this.currentVoice = null;
+    }
+    if (this.ctx && this.musicBus) {
+      this.musicBus.gain.setTargetAtTime(this.settings.music, this.ctx.currentTime, 0.12);
+    }
+  }
+
   /**
    * Voice-over (P5-03 / ADR-13): play one dialogue line's clip from the
    * convention path `/assets/vo/<key>.mp3` while ducking music. Missing files
@@ -200,14 +220,21 @@ class AudioManagerImpl {
   async speak(key: string): Promise<void> {
     const ctx = this.unlocked ? this.ctx : null;
     if (!ctx || !this.voiceBus || !this.musicBus) return;
+    // Dialogue is a single-voice channel. This also invalidates an older clip
+    // still decoding, so rushing forward cannot make it start late.
+    this.stopVoice();
+    const request = this.voiceRequest;
     let buf: AudioBuffer;
     try {
       const res = await fetch(`/assets/vo/${key}.mp3`);
-      if (!res.ok) return; // no VO recorded for this line yet
+      if (!res.ok) {
+        return; // no VO recorded for this line yet
+      }
       buf = await ctx.decodeAudioData(await res.arrayBuffer());
     } catch {
       return; // absent/undecodable clip — never disturb gameplay
     }
+    if (request !== this.voiceRequest) return; // superseded while loading
     const now = ctx.currentTime;
 
     // duck music under speech, restore when the clip ends
@@ -217,7 +244,10 @@ class AudioManagerImpl {
     const source = ctx.createBufferSource();
     source.buffer = buf;
     source.connect(this.voiceBus);
+    this.currentVoice = source;
     source.onended = () => {
+      if (request !== this.voiceRequest) return;
+      this.currentVoice = null;
       if (!ctx || !this.musicBus) return;
       this.musicBus.gain.setTargetAtTime(this.settings.music, ctx.currentTime, 0.4);
     };

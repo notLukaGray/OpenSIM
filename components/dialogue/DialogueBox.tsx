@@ -72,7 +72,7 @@ export default function DialogueBox({
   useEffect(() => {
     if (onLineStart && !complete) onLineStart(activeLine);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeLine, entryKey]);
+  }, [activeLine, entryKey, complete]);
 
   useEffect(() => {
     if (complete) return;

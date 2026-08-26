@@ -14,11 +14,13 @@ const outPath = path.join(root, "public", "assets", "vo", "manifest.json");
 const files = readdirSync(datesDir).filter((f) => f.endsWith(".json")).sort();
 const records = [];
 const perTree = [];
+const textOnlySpeakers = new Set(["PLAYER", "...", "NARRATOR", "JUST THE GYM", "SLEEP"]);
 
 for (const f of files) {
   const tree = JSON.parse(await readFile(path.join(datesDir, f), "utf8"));
   let count = 0;
   for (const [nodeId, node] of Object.entries(tree.nodes)) {
+    if (textOnlySpeakers.has(node.speaker)) continue;
     (node.text ?? []).forEach((text, lineIndex) => {
       records.push({
         file: `${tree.id}/${nodeId}/${lineIndex}.mp3`,
@@ -26,6 +28,7 @@ for (const f of files) {
         nodeId,
         lineIndex,
         speaker: node.speaker,
+        expression: node.sprite?.expression ?? "neutral",
         brandId: tree.brandId,
         locationId: tree.locationId ?? null,
         text,

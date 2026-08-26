@@ -10,10 +10,12 @@ import styles from "./DateDebrief.module.css";
 export default function DateDebrief({ tree, state, onDismiss }: { tree: import("@/content/schema").DateTree; state: GameState; onDismiss: () => void }) {
   const d = summarizeDate(tree, state);
   // Marketing materials surfaced during this encounter (P6-02 + P6-01).
-  const materials = Object.values(tree.nodes)
-    .flatMap((n) => [n.evidence, ...(n.choices ?? []).map((choice) => choice.evidence)])
-    .filter((id): id is string => typeof id === "string" && state.unlockedEvidence.includes(id))
-    .map((id) => getEvidence(id));
+  const materialIds = new Set(
+    Object.values(tree.nodes)
+      .flatMap((n) => [n.evidence, ...(n.choices ?? []).map((choice) => choice.evidence)])
+      .filter((id): id is string => typeof id === "string" && state.unlockedEvidence.includes(id)),
+  );
+  const materials = [...materialIds].map((id) => getEvidence(id));
   return (
     <motion.div
       className={styles.wrap}

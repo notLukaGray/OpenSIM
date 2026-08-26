@@ -130,6 +130,10 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [isDev]);
 
+  // The final line may navigate directly back to the map, where no subsequent
+  // dialogue entry exists to supersede it.
+  useEffect(() => () => AudioManager.stopVoice(), []);
+
   if (!tree || !node) return null;
 
   const location = tree?.locationId ? getLocationOrNull(tree.locationId) : null;
@@ -139,6 +143,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
     node?.choices?.filter((c) => evalCondition(c.conditions, state)),
     state
   );
+  const isTextOnlySpeaker = ["PLAYER", "...", "NARRATOR", "JUST THE GYM", "SLEEP"].includes(node.speaker);
 
   const fallbackEvidenceId = () => {
     if (!tree?.brandId) return undefined;
@@ -226,7 +231,10 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
           // player can type through or choose past the node beneath it.
           onAdvance={() => { if (!overlay) advance(); }}
           onSelectChoice={(choice) => { if (!overlay) choose(choice); }}
-          onLineStart={(i) => void AudioManager.speak(`${treeId}/${nodeId}/${i}`)}
+          onLineStart={(i) => {
+            if (isTextOnlySpeaker) AudioManager.stopVoice();
+            else void AudioManager.speak(`${treeId}/${nodeId}/${i}`);
+          }}
         />
         <GameControls
           onOpenSettings={() => setSettingsOpen((v) => !v)}
