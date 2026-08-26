@@ -5,6 +5,7 @@
 // grouped them (branded encounters + unbranded wilds separately). Picking one
 // dispatches the exact same start-date path the hub has always used.
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { dateTreeList, getAsset, getBrandOrNull } from "@/content/registry";
 import type { MappedGameLocation } from "@/content/registry";
@@ -26,7 +27,8 @@ export default function LocationView({
 }) {
   const game = useGame();
   const { state } = game;
-  const [loadingEncounter, setLoadingEncounter] = useState<string | null>(null);
+  const [pendingEncounter, setPendingEncounter] = useState<DateTree | null>(null);
+  const [loadedAssetIds, setLoadedAssetIds] = useState<Set<string>>(() => new Set());
   // The place sets the tone while you're here (P10-01 user direction):
   // crossfade to the location's own track, back to the map's theme on exit.
   // Entering a date overrides both via GameScreen's music direction.
@@ -52,24 +54,36 @@ export default function LocationView({
 
   // Esc is owned by the parent map (single listener decides view-vs-title).
 
-  const startEncounter = async (tree: DateTree) => {
+  const preloadAssets = useMemo(() => {
+    if (!pendingEncounter) return [];
+    const assetIds = [
+      location.background,
+      ...(pendingEncounter.background ? [pendingEncounter.background] : []),
+      ...pendingEncounter.cast.map((member) => member.assetId),
+    ];
+    return [...new Set(assetIds)].map((id) => ({ id, src: getAsset(id).src }));
+  }, [location.background, pendingEncounter]);
+
+  useEffect(() => {
+    if (!pendingEncounter || !preloadAssets.length || loadedAssetIds.size < preloadAssets.length) return;
+    const treeId = pendingEncounter.id;
+    setPendingEncounter(null);
+    game.travelTo(treeId);
+  }, [game, loadedAssetIds.size, pendingEncounter, preloadAssets.length]);
+
+  const markAssetLoaded = (assetId: string) => {
+    setLoadedAssetIds((loaded) => {
+      if (loaded.has(assetId)) return loaded;
+      const next = new Set(loaded);
+      next.add(assetId);
+      return next;
+    });
+  };
+
+  const startEncounter = (tree: DateTree) => {
     void AudioManager.playSfx("sfx-click");
-    setLoadingEncounter(tree.id);
-    // Keep this roster screen painted while every image the next scene needs
-    // is fetched and decoded. A failed optional image must never strand play.
-    const assetIds = [location.background, ...(tree.background ? [tree.background] : []), ...tree.cast.map((member) => member.assetId)];
-    const sources = [...new Set(assetIds)].map((id) => getAsset(id).src);
-    await Promise.all(sources.map((src) => new Promise<void>((resolve) => {
-      const image = new window.Image();
-      image.onload = () => {
-        const decoded = image.decode?.();
-        if (decoded) void decoded.catch(() => undefined).finally(resolve);
-        else resolve();
-      };
-      image.onerror = () => resolve();
-      image.src = src;
-    })));
-    game.travelTo(tree.id);
+    setLoadedAssetIds(new Set());
+    setPendingEncounter(tree);
   };
 
   const row = (t: DateTree) => {
@@ -111,7 +125,18 @@ export default function LocationView({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35 }}
     >
-      {loadingEncounter && <LoadingOverlay />}
+      {pendingEncounter && <LoadingOverlay label="loading scene" />}
+      {pendingEncounter && (
+        <div className={styles.preload} aria-hidden="true">
+          {preloadAssets.map((asset) => (
+            asset.id === location.background || asset.id === pendingEncounter.background ? (
+              <Image key={asset.id} src={asset.src} alt="" fill sizes="100vw" loading="eager" onLoad={() => markAssetLoaded(asset.id)} onError={() => markAssetLoaded(asset.id)} />
+            ) : (
+              <Image key={asset.id} src={asset.src} alt="" width={480} height={586} loading="eager" onLoad={() => markAssetLoaded(asset.id)} onError={() => markAssetLoaded(asset.id)} />
+            )
+          ))}
+        </div>
+      )}
       <div className={styles.dim} />
 
       <motion.div

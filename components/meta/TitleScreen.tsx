@@ -48,18 +48,17 @@ export default function TitleScreen() {
     <div className={styles.wrap}>
       {/* Warm the same Next-optimized map variant the next screen will use;
           avoid a raw 2.7 MB source fetch that cannot satisfy that request. */}
-      <Image
-        src={map.src}
-        alt=""
-        width={1600}
-        height={900}
-        sizes="100vw"
-        loading="eager"
-        aria-hidden="true"
-        style={{ position: "fixed", width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
-        onLoad={() => setMapReady(true)}
-        onError={() => setMapReady(true)}
-      />
+      <div className={styles.mapPreload} aria-hidden="true">
+        <Image
+          src={map.src}
+          alt=""
+          fill
+          sizes="100vw"
+          loading="eager"
+          onLoad={() => setMapReady(true)}
+          onError={() => setMapReady(true)}
+        />
+      </div>
       {hasVideo ? (
         <video autoPlay muted loop playsInline src="/assets/video/intro.mp4" className={styles.video} />
       ) : (
