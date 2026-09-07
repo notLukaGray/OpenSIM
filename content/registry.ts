@@ -255,6 +255,19 @@ const assetMap = new Map(assets.map((a) => [a.id, a]));
 const audioMap = new Map(audioTracks.map((t) => [t.id, t]));
 const evidenceMap = new Map(evidence.map((e) => [e.id, e]));
 
+// Evidence cards don't carry their own date — the date tree that unlocks a
+// card (via node.evidence / choice.evidence) is the source of truth. Derive
+// the reverse link once here so presentation code never has to rescan trees.
+for (const tree of dateTrees) {
+  for (const node of Object.values(tree.nodes)) {
+    for (const evidenceId of [node.evidence, ...(node.choices ?? []).map((c) => c.evidence)]) {
+      if (!evidenceId) continue;
+      const ev = evidenceMap.get(evidenceId);
+      if (ev) ev.dateId = tree.id;
+    }
+  }
+}
+
 export const HUB_TREE_ID = "home";
 
 /** Trees the hub menu offers as dates (any tree with a brand). */
@@ -314,6 +327,11 @@ export function getEvidence(id: string): Evidence {
  * this generic lookup without knowing any product or evidence IDs. */
 export function getEvidenceForBrand(brandId: string): Evidence[] {
   return evidence.filter((item) => item.brandId === brandId);
+}
+
+/** Material unlocked by a specific date tree (derived from node/choice `evidence` refs). */
+export function getEvidenceForDate(dateId: string): Evidence[] {
+  return evidence.filter((item) => item.dateId === dateId);
 }
 
 export function getLocationOrNull(id: string | null): GameLocation | null {

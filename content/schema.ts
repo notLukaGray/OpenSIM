@@ -189,6 +189,8 @@ export type Evidence = {
   sourceIds?: string[];
   /** Reinforces or challenges perception; applied once on first unlock. */
   effects: Partial<NeedVector>;
+  /** The date tree whose node/choice unlocks this card (derived from dates/*.json — never authored). */
+  dateId?: string;
 };
 
 // ─── Assets ──────────────────────────────────────────────────────────────────

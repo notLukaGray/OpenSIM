@@ -2,9 +2,17 @@
 // ArchivePanel (P6-03): review every met brand and the marketing materials
 // you've surfaced. For the marketing friends.
 import { useMemo } from "react";
-import { getBrandOrNull, getEvidence } from "@/content/registry";
+import { getBrandOrNull, getEvidence, getTree } from "@/content/registry";
 import { useGame } from "@/hooks/useGame";
 import styles from "./ArchivePanel.module.css";
+
+function getTreeTitleOrNull(dateId: string): string | null {
+  try {
+    return getTree(dateId).title;
+  } catch {
+    return null;
+  }
+}
 
 export default function ArchivePanel({ onClose }: { onClose: () => void }) {
   const { state } = useGame();
@@ -23,7 +31,16 @@ export default function ArchivePanel({ onClose }: { onClose: () => void }) {
               }
             })
             .filter((e) => e && e.brandId === brandId);
-          return { brand, cards };
+
+          const byDate = new Map<string, { dateTitle: string; cards: typeof cards }>();
+          for (const c of cards) {
+            const key = c!.dateId ?? "";
+            const dateTitle = c!.dateId ? (getTreeTitleOrNull(c!.dateId) ?? "unknown date") : "unsorted";
+            if (!byDate.has(key)) byDate.set(key, { dateTitle, cards: [] });
+            byDate.get(key)!.cards.push(c);
+          }
+
+          return { brand, cards, dateGroups: [...byDate.values()] };
         })
         .filter((e) => e.brand),
     [state.dated, state.unlockedEvidence]
@@ -40,17 +57,22 @@ export default function ArchivePanel({ onClose }: { onClose: () => void }) {
           {entries.length === 0 && (
             <div className={styles.empty}>Date a brand first — materials surface as you go.</div>
           )}
-          {entries.map(({ brand, cards }) => (
+          {entries.map(({ brand, cards, dateGroups }) => (
             <section key={brand!.id} className={styles.section}>
               <h3 style={{ color: brand!.color }}>{brand!.name}</h3>
               {cards.length === 0 ? (
                 <div className={styles.emptySmall}>no materials surfaced yet</div>
               ) : (
-                cards.map((c) => (
-                  <div key={c!.id} className={styles.card}>
-                    <span className={styles.type}>{c!.type}</span>
-                    <strong>{c!.title}</strong>
-                    <p>{c!.description}</p>
+                dateGroups.map(({ dateTitle, cards: groupCards }) => (
+                  <div key={dateTitle}>
+                    <div className={styles.dateLabel}>{dateTitle}</div>
+                    {groupCards.map((c) => (
+                      <div key={c!.id} className={styles.card}>
+                        <span className={styles.type}>{c!.type}</span>
+                        <strong>{c!.title}</strong>
+                        <p>{c!.description}</p>
+                      </div>
+                    ))}
                   </div>
                 ))
               )}
