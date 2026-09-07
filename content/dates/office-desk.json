@@ -1,14 +1,76 @@
 {
-  "id": "office-desk", "brandId": "office-desk", "title": "The Work That Can Wait", "locationId": "office",
-  "context": { "location": "office", "occasion": "after-hours" }, "music": null, "background": null, "cast": [], "startNode": "intro",
-  "lessons": ["productivity is not the same as worth", "a boundary is a form of control"],
+  "id": "office-desk",
+  "brandId": "office-desk",
+  "title": "The Work That Can Wait",
+  "locationId": "office",
+  "context": {
+    "location": "office",
+    "occasion": "after-hours"
+  },
+  "music": null,
+  "background": null,
+  "cast": [],
+  "startNode": "intro",
+  "lessons": [
+    "productivity is not the same as worth",
+    "a boundary is a form of control"
+  ],
   "nodes": {
-    "intro": { "speaker": "...", "text": ["The office has thinned to vents and monitor glow.", "One unfinished task keeps its cursor blinking like a small accusation."], "next": "choose" },
-    "choose": { "speaker": "...", "text": ["You could make the evening productive. You could also end it."], "choices": [
-      { "id": "finish", "text": "Do twenty focused minutes, then close the file.", "next": "finish-end", "playerEffects": { "mastery": 2, "control": 1 }, "setFlags": ["control-office-finish"] },
-      { "id": "leave", "text": "Write tomorrow's first step and leave now.", "next": "leave-end", "playerEffects": { "reassurance": 2, "comfort": 1 }, "setFlags": ["control-office-boundary"] }
-    ] },
-    "finish-end": { "speaker": "...", "text": ["Twenty minutes becomes exactly twenty.", "The file is smaller. You are not."], "nextTree": "map" },
-    "leave-end": { "speaker": "...", "text": ["Tomorrow has instructions waiting for it.", "Tonight gets the elevator."], "nextTree": "map" }
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "The office has thinned down to vents and monitor glow.",
+        "One unfinished task, cursor blinking at me like it knows something."
+      ],
+      "next": "choose"
+    },
+    "choose": {
+      "speaker": "...",
+      "text": [
+        "I could make tonight productive. I could also just end it."
+      ],
+      "choices": [
+        {
+          "id": "finish",
+          "text": "Twenty focused minutes, then close the file.",
+          "next": "finish-end",
+          "playerEffects": {
+            "mastery": 2,
+            "control": 1
+          },
+          "setFlags": [
+            "control-office-finish"
+          ]
+        },
+        {
+          "id": "leave",
+          "text": "Write down tomorrow's first step and leave now.",
+          "next": "leave-end",
+          "playerEffects": {
+            "reassurance": 2,
+            "comfort": 1
+          },
+          "setFlags": [
+            "control-office-boundary"
+          ]
+        }
+      ]
+    },
+    "finish-end": {
+      "speaker": "...",
+      "text": [
+        "Twenty minutes is twenty minutes. I stop when the timer does.",
+        "The file's smaller. I'm not."
+      ],
+      "nextTree": "map"
+    },
+    "leave-end": {
+      "speaker": "...",
+      "text": [
+        "Tomorrow-me has instructions waiting.",
+        "Tonight-me gets the elevator."
+      ],
+      "nextTree": "map"
+    }
   }
 }

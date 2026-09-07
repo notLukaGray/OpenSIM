@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ev-oura-harry-kane",
+    "brandId": "oura",
+    "type": "campaign",
+    "locationId": "airport",
+    "title": "Ready?",
+    "description": "Oura signed England footballers Harry Kane and Declan Rice as global ambassadors for an integrated campaign teasing their World Cup readiness — splashed across Piccadilly Circus and Canary Wharf digital OOH, plus primetime TV around match windows. First time Oura has fronted a campaign with elite male athletes instead of wellness-influencer types.",
+    "sourceIds": [
+      "src-oura-harry-kane-ambassadors"
+    ],
+    "effects": {
+      "aspiration": 1,
+      "readiness": 1
+    },
+    "imageRef": "ev-oura-harry-kane",
+    "notes": "Sidebar only (kept for future use; removed from active evidence deck on 2026-09-07 by user request.",
+    "addedAt": "2026-09-07"
+  }
+]

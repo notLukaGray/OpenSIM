@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player first buys White Claw through a multipack that includes several familiar flavors rather than choosing one single flavor."
+        "First time buying it. You're not picking a flavor. You're picking the twelve-pack with four of them in it, because that's what everyone else at the party did."
       ],
       "next": "entry-first-1"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "That is a brutal way to describe a successful party format."
+        "That's a brutal way to describe a genuinely successful party format, but sure, yes."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "Nobody has to pick one flavor."
+        "Nobody has to pick one flavor and defend it."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Black Cherry, Pineapple, Cranberry, Lime. One purchase, several answers."
+        "Black Cherry, Pineapple, Cranberry, Lime. One box, four answers, no group chat about whose turn it is to pick."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Cart or shelf? Line's short right now."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "That makes trying the brand easier.",
+          "text": "That makes trying you easier.",
           "next": "first-1",
           "playerEffects": {
             "mastery": 1,
@@ -102,7 +102,7 @@
         },
         {
           "id": "first-2",
-          "text": "I will probably end up with one flavor nobody wants.",
+          "text": "I'm going to end up with one flavor nobody wants.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -118,7 +118,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want twelve cans to find out whether I like this.",
+          "text": "I don't want twelve cans just to find out if I like this.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -143,7 +143,7 @@
         "expression": "special"
       },
       "text": [
-        "Then variety lowered the trial risk enough."
+        "Good. That's the whole reason it exists. Nobody wants to bet twelve cans on one flavor they've never had."
       ],
       "nextTree": "map"
     },
@@ -153,7 +153,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Every variety pack has a flavor that becomes fridge furniture for somebody."
+        "Every variety pack has a flavor that becomes fridge furniture for somebody. That's the deal, honestly."
       ],
       "nextTree": "map"
     },
@@ -163,7 +163,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then a single can at a bar is a better first date."
+        "Then a single can at a bar is a better first date. Fair. I don't need to sell you a case tonight."
       ],
       "nextTree": "map"
     },
@@ -176,7 +176,7 @@
         }
       },
       "text": [
-        "The player already drinks standard White Claw and notices that Surge is a stronger 8% ABV line."
+        "Same aisle, same cans, and a new one next to them that says Surge. Eight percent."
       ],
       "next": "entry-return-1"
     },
@@ -193,7 +193,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Eight percent. Stronger than the standard can, and that should be the first thing you notice."
+        "Eight percent. Stronger than the regular one. I'm not doing a bit about this. That number should be the first thing you notice, before the flavor."
       ],
       "next": "choice-return"
     },
@@ -203,13 +203,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So. Regular or Surge? It matters more than usual."
       ],
       "choices": [
         {
           "id": "return-1",
-          "evidence": "ev-white-claw-alcohol-is-alcohol",
-          "text": "I am glad the difference is clear.",
+          "text": "I'm glad the difference is right there on the can.",
           "next": "return-1",
           "playerEffects": {
             "trust": 2,
@@ -228,8 +227,7 @@
         },
         {
           "id": "return-2",
-          "evidence": "ev-white-claw-alcohol-is-alcohol",
-          "text": "I would have to change how I pace myself.",
+          "text": "I'd have to change how I pace myself with this one.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -245,8 +243,7 @@
         },
         {
           "id": "return-3",
-          "evidence": "ev-white-claw-alcohol-is-alcohol",
-          "text": "I do not want a stronger version at all.",
+          "text": "I don't want a stronger version sitting next to the one I actually drink.",
           "next": "return-3",
           "playerEffects": {
             "comfort": 2,
@@ -271,7 +268,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. Clear information is more useful than pretending the lines are interchangeable."
+        "Good. It's on the can in big type because the can looks like every other can. I wanted the number to be louder than the flavor."
       ],
       "nextTree": "map"
     },
@@ -281,14 +278,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Check the ABV first. Then decide whether you want it."
+        "Check the number first. Then decide whether tonight's the night for it."
       ],
       "next": "return-2-1"
     },
     "return-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "That is the whole answer?"
+        "That's the whole answer?"
       ],
       "next": "return-2-2"
     },
@@ -298,7 +295,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "It is the important one."
+        "It's the important one. I'm not going to make this funnier than it needs to be."
       ],
       "nextTree": "map"
     },
@@ -308,7 +305,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then the standard line or Zero Proof makes more sense for you."
+        "Then the regular one, or Zero Proof, the one with no alcohol. Both are right there. Neither needs an explanation at checkout."
       ],
       "nextTree": "map"
     }

@@ -1,7 +1,7 @@
 {
   "id": "oura-kitchen",
   "brandId": "oura",
-  "title": "The Referral Link and Edited Sleep",
+  "title": "Editorial, Not Athletic",
   "locationId": "kitchen",
   "context": {
     "location": "kitchen",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "A friend sends the player an Oura referral link that discounts a ring purchase.",
+    "The player scrolls past the Gucci x Oura campaign on their phone while something's on the stove: velvet bow ties, silk blazers, no gym or sleep-lab imagery anywhere in frame.",
     "The player notices Oura marked quiet wakefulness as sleep and edits the bedtime or wake-up time."
   ],
   "nodes": {
@@ -33,31 +33,31 @@
         }
       },
       "text": [
-        "A friend sends the player an Oura referral link that discounts a ring purchase."
+        "Something's on the stove. You scroll past the Gucci x Oura campaign one-handed: velvet bow ties, silk blazers, not a treadmill in sight."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "My friend sent me your link with a suspicious amount of enthusiasm."
+        "Since when do you get styled like a cocktail party?"
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "OURA",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "happy"
       },
       "text": [
-        "There may also be a referral discount attached."
+        "Since Gucci. Velvet, silk, painted nails. Not a sleep lab or a gym anywhere in the shoot. I looked good. I'm allowed to notice."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "For me or for them?"
+        "There's no data in these photos at all."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The eligible ring discount is for you. Your friend gets to recommend me; I get another possible customer. Very intimate."
+        "No. In that photo I'm an object on a hand. I wanted you to want the hand before you ever saw a score. That's the honest version."
       ],
       "next": "choice-first"
     },
@@ -77,22 +77,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Your onions are about to burn. Quick."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I would trust a friend before an ad.",
+          "text": "The ring can be beautiful and still be honest with me later.",
           "next": "first-1",
           "playerEffects": {
-            "trust": 2,
-            "belonging": 1
+            "aspiration": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": 1,
-              "belonging": 1,
-              "readiness": 1
+              "aspiration": 1,
+              "selfExpression": 1,
+              "trust": 1
             }
           },
           "relationshipEffects": {
@@ -101,33 +101,32 @@
         },
         {
           "id": "first-2",
-          "text": "A discount makes the recommendation feel less neutral.",
+          "text": "Show me it works before you show me it's chic.",
           "next": "first-2",
           "playerEffects": {
-            "trust": 2,
-            "mastery": 1
+            "mastery": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": -2,
-              "belonging": -1,
+              "trust": -1,
               "mastery": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want health tech entering the friend group through referral links.",
+          "text": "If the ads look like fashion, I want the fashion price, not the health-tech one.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
-            "belonging": 1
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": -2,
-              "belonging": -2,
-              "comfort": -1
+              "trust": -1,
+              "comfort": -1,
+              "aspiration": -1
             }
           },
           "relationshipEffects": {
@@ -142,7 +141,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the person did the credibility work the ad could not."
+        "Then the photo did what it was for. The score can introduce itself later, once you've stopped looking at the velvet."
       ],
       "nextTree": "map"
     },
@@ -152,7 +151,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. A tracked incentive changes the texture of a recommendation."
+        "That's a reasonable order. It's not the order the campaign was built in. I'd rather admit that than argue with you over a stove."
       ],
       "nextTree": "map"
     },
@@ -162,7 +161,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then keep the conversation personal and leave the link out of it."
+        "That's a fair complaint about the sticker on the box. The velvet is not a discount."
       ],
       "nextTree": "map"
     },
@@ -175,7 +174,7 @@
         }
       },
       "text": [
-        "The player notices Oura marked quiet wakefulness as sleep and edits the bedtime or wake-up time."
+        "Morning. The app says you slept from eleven to seven. You were awake from two to three, staring at the ceiling. There's an edit button."
       ],
       "next": "entry-return-1"
     },
@@ -219,7 +218,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "You correct the bedtime or wake-up time. I prefer accurate data to pretending I never miss."
+        "You move the bedtime or the wake-up time. I'd rather be corrected than pretend I never miss. I miss."
       ],
       "next": "choice-return"
     },
@@ -229,7 +228,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The edit's right there. Do you want it to be right, or do you want to be done with me for the morning?"
       ],
       "choices": [
         {
@@ -269,7 +268,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want to audit my own sleep tracker.",
+          "text": "I don't want to audit my own sleep tracker.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -301,7 +300,7 @@
     "return-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "You are welcome, tiny sleep bureaucrat."
+        "You're welcome, tiny sleep bureaucrat."
       ],
       "next": "return-1-2"
     },
@@ -321,7 +320,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is reasonable. A correction tool is also an admission that measurement has limits."
+        "That's reasonable. If I need you to fix the record, the record was never as sure as the number made it look. I know that."
       ],
       "nextTree": "map"
     },
@@ -331,7 +330,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the maintenance cost is too high for the value you get back."
+        "Then it costs you more to keep me right than I give back. Some mornings that's true."
       ],
       "nextTree": "map"
     }

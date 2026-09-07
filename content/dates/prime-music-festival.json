@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player discovers a musician-branded PRIME bottle and realizes the collaboration is part of the product launch."
+        "Festival merch tent. Among the shirts, a PRIME bottle with the headliner's face on it. It's part of the launch, not just a sticker."
       ],
       "next": "entry-first-1"
     },
@@ -43,14 +43,14 @@
         "expression": "happy"
       },
       "text": [
-        "Limited artist bottle."
+        "Limited artist bottle. Try to act surprised."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "PLAYER",
       "text": [
-        "I noticed the artist before I noticed the flavor."
+        "I clocked the artist before I clocked the flavor."
       ],
       "next": "entry-first-3"
     },
@@ -60,14 +60,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the collaboration did its job."
+        "Then it did exactly what I paid for."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
       "speaker": "PLAYER",
       "text": [
-        "Does the artist change anything about the drink?"
+        "Does the artist change anything about what's actually inside?"
       ],
       "next": "entry-first-5"
     },
@@ -77,7 +77,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "The drop and the bottle. Not the laws of electrolytes."
+        "The art on the outside changes. Electrolytes don't negotiate."
       ],
       "next": "choice-first"
     },
@@ -87,12 +87,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You want it. Just say it."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I kind of want it because it feels collectible.",
+          "text": "I want it because it feels collectible.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -111,7 +111,7 @@
         },
         {
           "id": "first-2",
-          "text": "Does the artist make the drink any better?",
+          "text": "Does the artist actually make the drink any better?",
           "next": "first-2",
           "playerEffects": {
             "mastery": 1,
@@ -126,7 +126,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not buy beverages because a celebrity is on them.",
+          "text": "I don't buy drinks because a celebrity is on the label.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -157,7 +157,7 @@
     "first-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "I did not say I was proud of it."
+        "I never said I was proud of it."
       ],
       "nextTree": "map"
     },
@@ -167,7 +167,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "No. The collaboration changes the reason you notice me, not the chemistry."
+        "No. The face changes why you looked. It doesn't touch the chemistry. I'd tell you if it did, I'd never shut up about it."
       ],
       "nextTree": "map"
     },
@@ -177,7 +177,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then judge the regular bottle. The collab is optional."
+        "Then judge the regular bottle. The collab was never mandatory. It was just louder."
       ],
       "nextTree": "map"
     },
@@ -190,14 +190,14 @@
         }
       },
       "text": [
-        "The player has bought a Collector Series bottle and learns that the cap code was part of a completed collectible promotion."
+        "You bought a Collector Series bottle a while back. Under the cap there's a code, and when you type it in, the page says the promotion has ended."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "There is a code under the cap?"
+        "There's a code under this cap?"
       ],
       "next": "entry-return-2"
     },
@@ -207,7 +207,7 @@
         "expression": "happy"
       },
       "text": [
-        "There was. Collector Series turned the bottle into a game piece."
+        "Was. Collector Series turned every bottle into a game piece."
       ],
       "next": "entry-return-3"
     },
@@ -224,7 +224,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The promotion ended. Codes unlocked digital trophies and merch, and collecting the set connected to the bigger prize mechanic."
+        "The drop ran, then it closed. While it was live, codes unlocked digital trophies and merch, and the full set fed into a bigger prize. You missed it. Sorry. Kind of."
       ],
       "next": "choice-return"
     },
@@ -234,12 +234,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Don't look at me like that. You'd have played."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "That is ridiculous enough that I would have played.",
+          "text": "That's ridiculous enough that I would have played.",
           "next": "return-1",
           "playerEffects": {
             "excitement": 2,
@@ -258,7 +258,7 @@
         },
         {
           "id": "return-2",
-          "text": "So the point was to make people keep buying bottles to complete a set.",
+          "text": "So the game existed to keep people buying bottles.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -273,7 +273,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want hydration to become a loot hunt.",
+          "text": "I don't want hydration turned into a loot hunt.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -297,7 +297,7 @@
         "expression": "special"
       },
       "text": [
-        "Correct attitude. If I am doing a promotion, I am doing the whole promotion."
+        "I know you would have. I'd have run it just for you. When I do a promo, I do the whole promo."
       ],
       "nextTree": "map"
     },
@@ -307,7 +307,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Collecting only works if the next bottle matters."
+        "Yes. Collecting only works if the next bottle matters more than the last one. That's the design. I'm not hiding it under the cap."
       ],
       "nextTree": "map"
     },
@@ -317,7 +317,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then drink it and ignore the game. That was always allowed."
+        "Then drink it and skip the game. That was always allowed. Fewer people picked it than you'd think."
       ],
       "nextTree": "map"
     }

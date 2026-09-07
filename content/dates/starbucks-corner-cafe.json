@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player first engages with Starbucks through the unusually customizable drink order itself."
+        "Corner cafe. The person ahead of you is on their fifth modifier and the barista hasn't blinked. You start rehearsing yours."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "happy"
       },
       "text": [
-        "Around the third modifier, but I will still make it."
+        "Around the third modifier. I'll still make it, and I'll still write a name on the cup, correct or not."
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Milk, syrup, foam, temperature, shots, toppings. Customization is part of the product, not a secret menu accident."
+        "I do. Milk, syrup, foam, temperature, shots, the name on the side. Some of it costs extra. I'd rather you leave with your drink than with a number."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're up. Go on."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to get exactly what I want.",
+          "text": "I like being called by name, even a slightly mangled one.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
@@ -100,7 +100,7 @@
         },
         {
           "id": "first-2",
-          "text": "Too many options makes ordering feel like work.",
+          "text": "Too many options makes ordering feel like work, and a wrong name makes it worse.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -115,7 +115,7 @@
         },
         {
           "id": "first-3",
-          "text": "I would rather have a coffee shop tell me what it makes well.",
+          "text": "I'd rather a coffee shop tell me what it makes well and skip the theater around my name.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -139,7 +139,14 @@
         "expression": "special"
       },
       "text": [
-        "Then customization is part of the comfort for you."
+        "Then the name's part of the drink for you. I'll try to get it right. I'll get it close."
+      ],
+      "next": "first-1-1"
+    },
+    "first-1-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Just get it right most of the time."
       ],
       "nextTree": "map"
     },
@@ -149,7 +156,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then keep it simple. Customization is an option, not a citizenship test."
+        "Fair. A wrong name undoes more than a right one builds. Keep it simple, then. Nobody's grading you at the counter."
       ],
       "next": "first-2-1"
     },
@@ -166,7 +173,7 @@
         "expression": "happy"
       },
       "text": [
-        "Beautifully legible."
+        "Beautifully legible. I might even spell your name right."
       ],
       "nextTree": "map"
     },
@@ -176,7 +183,7 @@
         "expression": "neutral"
       },
       "text": [
-        "That is a different kind of coffee relationship, and I get the appeal."
+        "That's a different kind of coffee place, and I get the appeal of skipping the show. I'm the show. It's what I've got."
       ],
       "nextTree": "map"
     },
@@ -189,7 +196,7 @@
         }
       },
       "text": [
-        "The player is already in Starbucks Rewards and sees a monthly benefit that covers one drink customization up to the program limit."
+        "Monday. The app has a badge on it: one drink customization free this month, up to the program limit."
       ],
       "next": "entry-return-1"
     },
@@ -216,7 +223,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Within the Mod Monday program limit, yes."
+        "Within the Mod Monday limit, yes."
       ],
       "next": "entry-return-4"
     },
@@ -243,12 +250,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Oat milk, then? Same as always?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I was going to add it anyway, so that is useful.",
+          "text": "I was going to add it anyway, so that's useful.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
@@ -281,7 +288,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want a reward system nudging me to decorate every drink.",
+          "text": "I don't want a reward system nudging me to decorate every drink.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -305,7 +312,7 @@
         "expression": "special"
       },
       "text": [
-        "That is exactly when a small perk feels real."
+        "That's when a small perk feels real. When it lands on something you were doing anyway."
       ],
       "nextTree": "map"
     },
@@ -315,7 +322,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "It is a small benefit. I am not going to call two dollars life-changing."
+        "It's small. I'm not going to call two dollars life-changing. It's a way of saying I noticed, at a price I can afford to say it every month."
       ],
       "nextTree": "map"
     },
@@ -325,7 +332,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then order it plain. A reward does not need to invent a need."
+        "Then order it plain. A reward shouldn't invent a need. If it did that to you, tell me, I'd rather know."
       ],
       "nextTree": "map"
     }

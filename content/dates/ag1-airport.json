@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player notices the NSF Certified for Sport mark and asks what that certification actually tells them about AG1."
+        "Security line, phone at four percent. You end up reading the back of a travel pouch. Near the bottom there is a small seal: NSF Certified for Sport."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "What does that NSF mark actually buy you?"
+        "Okay. What does this seal actually get me?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Certified for Sport screens for more than 280 banned substances. Competitive athletes care about that a lot."
+        "Certified for Sport. A lab that isn't me screens each batch for over 280 banned substances. If you got drug-tested for a living, you'd care a lot."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "I am not a competitive athlete."
+        "I get tested for nothing. I'm in a security line."
       ],
       "next": "entry-first-4"
     },
@@ -67,14 +67,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Then it may matter less to you. It is still outside testing."
+        "Then it probably matters less to you. I still like that somebody else checks my work. I'm allowed to like that."
       ],
       "next": "entry-first-5"
     },
     "entry-first-5": {
       "speaker": "PLAYER",
       "text": [
-        "Does it prove the benefits?"
+        "Does it prove any of the stuff on the front works?"
       ],
       "next": "entry-first-6"
     },
@@ -84,7 +84,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "No. Different question. The seal tells you what they tested me for, not that every claim I make is settled."
+        "No. Different question, and I'd rather you catch that than take my word for it. The seal says what they tested me for. It doesn't say every claim I make is settled."
       ],
       "next": "choice-first"
     },
@@ -94,13 +94,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're still reading the pouch. Go on."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-ag1-nsf-mark",
-          "text": "I like that someone outside the brand is checking the product.",
+          "text": "Honestly, I like that someone outside of you is checking.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
@@ -118,8 +117,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-ag1-nsf-mark",
-          "text": "I care about proof, but I want to know which question each proof actually answers.",
+          "text": "I care about proof. I just want to know what each stamp is proof of.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -135,8 +133,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-ag1-nsf-mark",
-          "text": "I am not an athlete, so this certification does not change much for me.",
+          "text": "I'm not an athlete. This seal doesn't really change anything for me.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -161,7 +158,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the outside check matters to you for exactly what it is, not as a magic seal."
+        "Then we're fine. Just don't let it grow into a halo. It's a clean batch. That's all it is, and that's enough for me."
       ],
       "nextTree": "map"
     },
@@ -171,7 +168,7 @@
         "expression": "happy"
       },
       "text": [
-        "Good. A certification should not get credit for answering a question it never tested."
+        "That's the right question. Most people stop at the seal. You didn't. I noticed."
       ],
       "nextTree": "map"
     },
@@ -181,7 +178,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair. If banned-substance screening is not relevant to your life, it may not move your decision."
+        "That's fair. It's a nice thing to have and it may never touch your life. Put the pouch back before they call your group."
       ],
       "nextTree": "map"
     },
@@ -194,14 +191,14 @@
         }
       },
       "text": [
-        "The player is packing for a flight and still has single-serving AG1 travel packs from the welcome kit."
+        "Packing for a flight. Three single-serve AG1 packets are still sitting in the welcome kit box, and they're the last thing to go in."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "Three packets. That is all you get for this trip."
+        "Three packets. That's what you get for this trip."
       ],
       "next": "entry-return-2"
     },
@@ -211,14 +208,14 @@
         "expression": "happy"
       },
       "text": [
-        "I made the side pocket. That is why the welcome kit has single servings."
+        "I fit in the side pocket of your carry-on. That was the whole reason the kit came with single servings. I planned for this."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Mostly I just want one familiar thing tomorrow morning."
+        "I mostly just want one familiar thing tomorrow morning."
       ],
       "next": "choice-return"
     },
@@ -228,12 +225,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You've been holding those for a while."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like having something familiar when I travel.",
+          "text": "I like having one familiar thing when I travel.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 3,
@@ -253,7 +250,7 @@
         },
         {
           "id": "return-2",
-          "text": "I am mostly taking these because they came with the kit.",
+          "text": "Honestly, I'm only bringing these because they were free.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -268,7 +265,7 @@
         },
         {
           "id": "return-3",
-          "text": "I am leaving them here. One day without you is fine.",
+          "text": "I'm leaving them. One morning without you is fine.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -292,7 +289,7 @@
         "expression": "special"
       },
       "text": [
-        "Then take them. This is exactly the kind of boring continuity I am good at."
+        "Then take them. I'm not exciting. I'm the same in Terminal B as I am in your kitchen, and I think that's the part you actually like."
       ],
       "nextTree": "map"
     },
@@ -302,7 +299,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Free is still a reason. You do not have to make the relationship more romantic than it is."
+        "Free is a reason. I'll take free. You don't have to make it a whole thing."
       ],
       "nextTree": "map"
     },
@@ -312,14 +309,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Leave them home."
+        "Leave them, then."
       ],
       "next": "return-3-1"
     },
     "return-3-1": {
       "speaker": "PLAYER",
       "text": [
-        "You are taking this well."
+        "You're taking this well."
       ],
       "next": "return-3-2"
     },
@@ -329,7 +326,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You will survive airport breakfast."
+        "I'll be on the counter when you get back. Same time as always. Enjoy the airport bagel."
       ],
       "nextTree": "map"
     }

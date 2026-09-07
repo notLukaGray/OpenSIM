@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription.",
+    "The player notices the packaging looks different on the shelf and learns it is Liquid I.V.'s first redesign since Unilever bought the company.",
     "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
   ],
   "nodes": {
@@ -33,41 +33,58 @@
         }
       },
       "text": [
-        "The player sees Liquid I.V. as a one-time bag purchase instead of being forced into a subscription."
+        "Same aisle as always. The Liquid I.V. bag looks different, and you walked past it once before you noticed."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Before you say anything, I am not subscribing."
+        "New bag? I barely spotted you."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "Then buy one bag."
+        "Same spot, new bag. New logo, bigger type, and the fruit finally gets to be on the front instead of hiding behind the nutrition panel. I've been waiting a decade to look like this."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That easy?"
+        "So you got prettier."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "happy"
+        "expression": "embarrassed"
       },
       "text": [
-        "Try the format once. We can have the recurring-relationship conversation another day."
+        "I got noticed. You walked past me once. It's the first time I've changed anything about how I look since Unilever bought me, and it's because of that half second right there."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "That's a lot of pressure for one glance at an endcap."
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
+      "speaker": "LIQUID I.V.",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "It's the whole job on this aisle. What's inside the bag hasn't moved an inch."
       ],
       "next": "choice-first"
     },
@@ -77,21 +94,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Okay, you've circled back. Grab me or don't."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to test it without signing up.",
+          "evidence": "ev-liquid-iv-2024-refresh",
+          "text": "It does catch the eye. I'll grab one.",
           "next": "first-1",
           "playerEffects": {
-            "control": 1,
-            "reassurance": 1
+            "aspiration": 1,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": 1,
-              "trust": 1
+              "aspiration": 1,
+              "readiness": 1
             }
           },
           "relationshipEffects": {
@@ -100,7 +118,8 @@
         },
         {
           "id": "first-2",
-          "text": "The per-stick price still adds up.",
+          "evidence": "ev-liquid-iv-2024-refresh",
+          "text": "A new logo doesn't change what's in the packet.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -108,14 +127,15 @@
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": 1,
+              "mastery": 1,
               "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I am not paying extra to improve water.",
+          "evidence": "ev-liquid-iv-2024-refresh",
+          "text": "A corporate parent redesigning you a decade in makes me trust you less, not more.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -123,8 +143,8 @@
           },
           "brandPerceptionEffects": {
             "liquid-iv": {
-              "readiness": -1,
-              "trust": -1
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -136,47 +156,30 @@
     "first-1": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "happy"
-      },
-      "text": [
-        "Good. One bag. No vows."
-      ],
-      "next": "first-1-1"
-    },
-    "first-1-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "We are keeping this casual."
-      ],
-      "next": "first-1-2"
-    },
-    "first-1-2": {
-      "speaker": "LIQUID I.V.",
-      "sprite": {
         "expression": "special"
       },
       "text": [
-        "Hydrated and emotionally available."
+        "Good. Get me past the shelf and I'll do the part that actually matters."
       ],
       "nextTree": "map"
     },
     "first-2": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "neutral"
       },
       "text": [
-        "It does. Convenience is part of what you are paying for."
+        "You're right. It doesn't. The formula didn't need a new bag. Your attention did. That's on me, not you."
       ],
       "nextTree": "map"
     },
     "first-3": {
       "speaker": "LIQUID I.V.",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "Then water wins this aisle for you."
+        "Fair. If somebody I knew changed everything about how they looked after getting bought, I'd want to check it was still them too. Read the back. It's the same back."
       ],
       "nextTree": "map"
     },
@@ -189,7 +192,7 @@
         }
       },
       "text": [
-        "The player already knows which formulas they like and sees a discounted bundle combining two seasonal products."
+        "You know which two formulas you like. There's a sticker on the shelf: both seasonal flavors, together, a few dollars less than buying them separately."
       ],
       "next": "entry-return-1"
     },
@@ -199,14 +202,14 @@
         "expression": "happy"
       },
       "text": [
-        "Two seasonal products together, slightly lower combined price."
+        "Two seasonal flavors, one price, slightly less than both."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "You are very pleased with the word bundle."
+        "You're very pleased with the word bundle."
       ],
       "next": "entry-return-3"
     },
@@ -233,7 +236,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. More product is still more product."
+        "Yep. Cheaper is still more. I'm not going to argue that one."
       ],
       "next": "choice-return"
     },
@@ -243,12 +246,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So did you want both, or did the sticker want you to want both?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I would buy the bundle if I wanted both anyway.",
+          "text": "I'd buy the bundle if I wanted both anyway.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 1,
@@ -266,7 +269,7 @@
         },
         {
           "id": "return-2",
-          "text": "A discount can make me buy more than I planned.",
+          "text": "A discount can get me to buy more than I planned.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -281,7 +284,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not need a pantry full of hydration packets.",
+          "text": "I don't need a pantry full of hydration packets.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -305,7 +308,7 @@
         "expression": "special"
       },
       "text": [
-        "That is the sensible bundle customer."
+        "Then it's a good deal, and it's only a good deal because of that. Grab it."
       ],
       "nextTree": "map"
     },
@@ -315,7 +318,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Exactly. Savings and overspending can be the same cart."
+        "It can. Saving money and spending more can be the same cart. I've watched it happen from the shelf."
       ],
       "nextTree": "map"
     },
@@ -325,7 +328,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Then one bag, or none. Your cabinet does not need to become my warehouse."
+        "Then one bag. Or none. Your cabinet doesn't need to become my back room."
       ],
       "nextTree": "map"
     }

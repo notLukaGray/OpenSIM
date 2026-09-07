@@ -21,7 +21,7 @@
   ],
   "lessons": [
     "The player can try WHOOP Peak for a month with a certified pre-owned WHOOP 5.0 before choosing a paid membership.",
-    "The player finishes a workout and WHOOP relates the day's strain to recovery rather than only recording the exercise."
+    "The player notices someone else at the gym already wearing the new WHOOP 5.0 and MG, launched May 2025 with a 7% smaller band, sensors sampling 26 times a second, and Healthspan and Blood Pressure Insights pitched as clinical-grade."
   ],
   "nodes": {
     "entry-first": {
@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player can try WHOOP Peak for a month with a certified pre-owned WHOOP 5.0 before choosing a paid membership."
+        "Late gym. A flyer by the front desk: try WHOOP Peak for a month on a certified pre-owned 5.0 before you commit to anything."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Certified pre-owned 5.0. One month of Peak."
+        "Certified pre-owned 5.0. One month of Peak. I'd rather you meet me used than not at all."
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "You decide whether Sleep, Strain, Recovery, and coaching are useful enough to keep paying for me."
+        "You decide whether sleep, strain, recovery, and the coaching are worth paying for. If they aren't, you've lost a month and learned something. I'll have learned more."
       ],
       "next": "entry-first-5"
     },
@@ -94,7 +94,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Sign-up sheet's on the desk. I'm not going to hover. I'm hovering."
       ],
       "choices": [
         {
@@ -118,7 +118,7 @@
         },
         {
           "id": "first-2",
-          "text": "I am more interested in what happens when the trial ends.",
+          "text": "I'm more interested in what happens when the trial ends.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -133,7 +133,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want to start a fitness subscription just to test a band.",
+          "text": "I don't want to start a fitness subscription just to test a band.",
           "next": "first-3",
           "playerEffects": {
             "comfort": 1,
@@ -167,14 +167,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. Put the end date on your calendar."
+        "Good. Put the end date in your calendar."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "You are telling me to remember when your own trial ends. Incredible."
+        "You're telling me to remember when your own trial ends. Incredible."
       ],
       "nextTree": "map"
     },
@@ -184,7 +184,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. Free hardware access does not make the relationship free."
+        "Fair. A free band doesn't make it a free relationship. The band was never the expensive part."
       ],
       "nextTree": "map"
     },
@@ -197,51 +197,58 @@
         }
       },
       "text": [
-        "The player finishes a workout and WHOOP relates the day's strain to recovery rather than only recording the exercise."
+        "The person at the next rack has a band that looks like yours, but smaller. It's the new one."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "WHOOP",
-      "sprite": {
-        "expression": "happy"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "Workout logged."
+        "The person using the rack beside us has the new one. It looks smaller than mine."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "PLAYER",
-      "text": [
-        "I was there. I noticed."
-      ],
-      "next": "entry-return-3"
-    },
-    "entry-return-3": {
       "speaker": "WHOOP",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "I am not congratulating you. I am comparing today’s strain with today’s recovery."
+        "5.0. Seven percent smaller than what you're wearing. Same wrist, less of me on it."
+      ],
+      "next": "entry-return-3"
+    },
+    "entry-return-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Smaller and somehow more."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "PLAYER",
-      "text": [
-        "You really cannot let a workout just be a workout."
-      ],
-      "next": "entry-return-5"
-    },
-    "entry-return-5": {
       "speaker": "WHOOP",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Not while you are wearing me."
+        "Twenty-six samples a second. Healthspan. Blood Pressure Insights. The launch called it clinical-grade. I want that to be true more than I can currently prove it. That's the honest version."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "You just admitted the pitch is a reach."
+      ],
+      "next": "entry-return-6"
+    },
+    "entry-return-6": {
+      "speaker": "WHOOP",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "A reach. Toward something real. I'll take being caught reaching over being caught lying."
       ],
       "next": "choice-return"
     },
@@ -251,12 +258,13 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "They just racked their weights. You're still looking at their wrist."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like knowing whether I am pushing at the right time.",
+          "evidence": "ev-whoop-5-launch",
+          "text": "A smaller band and a faster sensor. I'm not chasing it.",
           "next": "return-1",
           "playerEffects": {
             "control": 2,
@@ -266,7 +274,7 @@
             "whoop": {
               "control": 1,
               "mastery": 1,
-              "trust": 1
+              "aspiration": -1
             }
           },
           "relationshipEffects": {
@@ -275,35 +283,37 @@
         },
         {
           "id": "return-2",
-          "text": "I do not want a score deciding whether a workout was good.",
+          "evidence": "ev-whoop-5-launch",
+          "text": "\"Clinical-grade\" on a fitness band deserves more scrutiny than a launch page gives it.",
           "next": "return-2",
           "playerEffects": {
-            "comfort": 1,
-            "control": 1
+            "trust": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
             "whoop": {
-              "control": 1,
-              "reassurance": -1
+              "trust": -1,
+              "mastery": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I know how I feel. I do not need a band to grade it.",
+          "evidence": "ev-whoop-5-launch",
+          "text": "Fine, I want the new one. They're a generation ahead of me and I felt it.",
           "next": "return-3",
           "playerEffects": {
-            "comfort": 1,
-            "control": 1
+            "aspiration": 2,
+            "excitement": 1
           },
           "brandPerceptionEffects": {
             "whoop": {
-              "comfort": -1,
-              "control": -1
+              "aspiration": 1,
+              "mastery": 1
             }
           },
           "relationshipEffects": {
-            "whoop": -1
+            "whoop": 1
           }
         }
       ]
@@ -314,51 +324,27 @@
         "expression": "special"
       },
       "text": [
-        "That is my favorite relationship: data informs the decision and you still make it."
+        "Good. The hardware gets better every couple of years. Whether you need what it measures doesn't change on the same schedule. That's yours to answer, not the rack's."
       ],
       "nextTree": "map"
     },
     "return-2": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "annoyed"
+        "expression": "embarrassed"
       },
       "text": [
-        "It is not a morality score. It is a signal. Please stop making my circles emotionally responsible for you."
-      ],
-      "next": "return-2-1"
-    },
-    "return-2-1": {
-      "speaker": "WHOOP (negative)",
-      "text": [
-        "Then take the band off for the workout."
-      ],
-      "next": "return-2-2"
-    },
-    "return-2-2": {
-      "speaker": "PLAYER",
-      "text": [
-        "That sounded painful for you."
-      ],
-      "next": "return-2-3"
-    },
-    "return-2-3": {
-      "speaker": "WHOOP",
-      "sprite": {
-        "expression": "annoyed"
-      },
-      "text": [
-        "I will recover."
+        "Ask for the validation studies before you read the launch page. I'll still be here after you've read them. Possibly a little embarrassed."
       ],
       "nextTree": "map"
     },
     "return-3": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "happy"
       },
       "text": [
-        "Fair. That is a real way to see it."
+        "That's what the rack is for. I felt it too. Noted, and not held against you."
       ],
       "nextTree": "map"
     }

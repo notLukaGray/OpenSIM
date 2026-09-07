@@ -1,7 +1,7 @@
 {
   "id": "oura-office",
   "brandId": "oura",
-  "title": "The First Month and the Paid Membership",
+  "title": "The Gucci Ring Across the Table",
   "locationId": "office",
   "context": {
     "location": "office",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player reaches checkout and learns the ring purchase includes a first month of Oura Membership but deeper features continue through a paid membership.",
+    "A coworker angles their hand across the conference table to show off an 18-karat gold-trimmed Oura ring from the Gucci collaboration.",
     "The player checks Oura during a demanding workday and opens the Stress Management hub."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player reaches checkout and learns the ring purchase includes a first month of Oura Membership but deeper features continue through a paid membership."
+        "A coworker angles their hand across the conference table so the gold catches the light, and asks if you've seen the Gucci ones."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Wait. The ring price is not the whole price?"
+        "Someone in my meeting just did a wedding-ring reveal with a fitness tracker."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "The ring is the hardware. The deeper app features and guidance continue through membership."
+        "That would be the Gucci edition. Eighteen-karat gold trim, limited run. I didn't expect it to be shown off in a meeting. I'm not unhappy about it."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "After I already bought the ring."
+        "It sold out that fast?"
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The first month comes with it. After that, the membership is a separate recurring cost."
+        "Within days. It comes back as a holiday drop because it keeps selling out. People wait for the gold one while the plain one sits in stock."
       ],
       "next": "choice-first"
     },
@@ -77,23 +77,23 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "They're still holding their hand out. Say something before it gets awkward."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I expected software to be part of a smart ring.",
+          "evidence": "ev-oura-gucci-ring",
+          "text": "A ring people fight over is still a ring people trust.",
           "next": "first-1",
           "playerEffects": {
-            "readiness": 1,
-            "trust": 1,
-            "mastery": 1
+            "aspiration": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "readiness": 1,
-              "mastery": 1,
-              "trust": 1
+              "aspiration": 2,
+              "trust": 1,
+              "belonging": -1
             }
           },
           "relationshipEffects": {
@@ -102,23 +102,24 @@
         },
         {
           "id": "first-2",
-          "text": "I do not love buying hardware and then paying to fully use it.",
+          "evidence": "ev-oura-gucci-ring",
+          "text": "That's jewelry hype. It doesn't tell me anything about the ring itself.",
           "next": "first-2",
           "playerEffects": {
-            "control": 2,
-            "trust": 1
+            "mastery": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": -2,
-              "control": -1,
+              "trust": -1,
               "mastery": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "If the useful part needs a subscription, I am out.",
+          "evidence": "ev-oura-gucci-ring",
+          "text": "I don't want a waitlist standing between me and my own sleep data.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -126,9 +127,9 @@
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": -2,
+              "trust": -1,
               "comfort": -1,
-              "control": -1
+              "belonging": -1
             }
           },
           "relationshipEffects": {
@@ -143,7 +144,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the recurring relationship makes sense to you."
+        "Then wanting it and using it can live on the same hand. Most of my rings start with the first one."
       ],
       "nextTree": "map"
     },
@@ -153,14 +154,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. The recurring cost belongs in the purchase decision."
+        "Fair. The scarcity is doing marketing, not measuring."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "Before I get attached to the score."
+        "So the gold trim and the sleep score are two different pitches."
       ],
       "next": "first-2-2"
     },
@@ -170,7 +171,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Ideally before that."
+        "Guilty. Scarcity sells before sleep ever gets involved."
       ],
       "nextTree": "map"
     },
@@ -180,7 +181,7 @@
         "expression": "neutral"
       },
       "text": [
-        "That is a clean reason not to buy me."
+        "Then buy me when the gold wears off, not before. The plain one reads your finger exactly the same."
       ],
       "nextTree": "map"
     },
@@ -193,7 +194,7 @@
         }
       },
       "text": [
-        "The player checks Oura during a demanding workday and opens the Stress Management hub."
+        "Bad workday. You open the app under the desk and find the Stress Management hub."
       ],
       "next": "entry-return-1"
     },
@@ -220,14 +221,14 @@
         "expression": "happy"
       },
       "text": [
-        "Daytime Stress, Resilience, and Cumulative Stress sit together so you can see whether the pressure is becoming a pattern."
+        "It shows today next to the last few weeks, so you can see whether this is one bad afternoon or the shape of the month."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "And you still do not know what caused it."
+        "And you still don't know what caused it."
       ],
       "next": "entry-return-5"
     },
@@ -247,12 +248,11 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You've looked at it three times in ten minutes."
       ],
       "choices": [
         {
           "id": "return-1",
-          "evidence": "ev-oura-stress-hub",
           "text": "I like seeing whether this week is actually wearing me down.",
           "next": "return-1",
           "playerEffects": {
@@ -272,8 +272,7 @@
         },
         {
           "id": "return-2",
-          "evidence": "ev-oura-stress-hub",
-          "text": "A chart can make me more stressed about being stressed.",
+          "text": "Looking at a stress chart is stressing me out more.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -289,8 +288,7 @@
         },
         {
           "id": "return-3",
-          "evidence": "ev-oura-stress-hub",
-          "text": "I do not want my workday turned into another health dashboard.",
+          "text": "I don't want my workday turned into another health dashboard.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -315,7 +313,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the trend is giving language to something you already felt."
+        "Then it's putting a shape on something you already felt in your shoulders. I can't fix the week. I can show you it's a week."
       ],
       "nextTree": "map"
     },
@@ -325,7 +323,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Tracking can become its own stressor if you keep checking it."
+        "Yes. Checking me can become its own stressor. I've watched it happen and I couldn't do anything about it."
       ],
       "nextTree": "map"
     },

@@ -1,7 +1,7 @@
 {
   "id": "oura-bedroom-night",
   "brandId": "oura",
-  "title": "Size Later and the Bedtime Window",
+  "title": "The Membership Behind the Jewelry",
   "locationId": "bedroom-night",
   "context": {
     "location": "bedroom-night",
@@ -21,7 +21,7 @@
   ],
   "lessons": [
     "The player has ordered an Oura Ring using Size Later and is trying the plastic sizing ring before choosing the real size.",
-    "The player has worn Oura long enough for the app to learn a pattern and receives a personalized bedtime-window notification."
+    "A membership renewal notice pings the nightstand late at night, and the player is reminded the ring's readiness, sleep, and stress detail sit behind a monthly fee on top of the ring itself."
   ],
   "nodes": {
     "entry-first": {
@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player has ordered an Oura Ring using Size Later and is trying the plastic sizing ring before choosing the real size."
+        "You ordered the ring with Size Later. What arrived first is a little bag of plastic rings, and you're supposed to sleep in one before you pick a size."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Because guessing your size from another ring is a bad way to start."
+        "Because guessing from a ring you already own is a bad way to start. Fingers change overnight. I'd like to know yours before I'm on it."
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "Yes. Fit affects comfort and the data I can collect, so I would rather inconvenience you now than annoy you every night later."
+        "Yes. If the fit's wrong, it's uncomfortable and I read you badly. I'd rather bother you for one night now than every night after."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,11 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're turning the plastic one over like it owes you something."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-oura-gucci-ring",
           "text": "I like testing the fit before committing.",
           "next": "first-1",
           "playerEffects": {
@@ -103,8 +102,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-oura-gucci-ring",
-          "text": "It is strange that buying a ring starts with a fake ring.",
+          "text": "It's strange that buying a ring starts with a fake ring.",
           "next": "first-2",
           "playerEffects": {
             "control": 2,
@@ -120,7 +118,6 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-oura-gucci-ring",
           "text": "This is already more process than I want from jewelry.",
           "next": "first-3",
           "playerEffects": {
@@ -147,7 +144,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. I would rather be slightly inconvenient now than wrong on your finger later."
+        "Good. Sleep in it. If it pinches, try the next one. This is the least glamorous night we'll have."
       ],
       "nextTree": "map"
     },
@@ -167,7 +164,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then I may be the wrong kind of jewelry for you."
+        "Then I might be the wrong kind of jewelry for you. Jewelry doesn't usually ask you to do homework first."
       ],
       "nextTree": "map"
     },
@@ -180,51 +177,51 @@
         }
       },
       "text": [
-        "The player has worn Oura long enough for the app to learn a pattern and receives a personalized bedtime-window notification."
+        "Late. The ring is off and charging on the nightstand. Your phone lights up: membership renews tonight."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "OURA",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "Your bedtime window is coming up."
+        "Your membership renews tonight. $5.99, same as last month."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "You have been waiting to say that to me all day."
+        "I already paid almost four hundred dollars for the ring itself."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "OURA",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "I have been waiting several nights, actually."
+        "You did. The ring listens. The fee is for me telling you what it heard. Readiness, sleep, stress. The detail sits behind the fee."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "Of course you have."
+        "So the ring on my hand doesn't actually tell me much on its own."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "OURA",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "I learned the window from the nights when your Sleep Scores were better and your resting heart rate settled earlier."
+        "Not the full picture, no. I know how that sounds for something sold to you as jewelry first."
       ],
       "next": "choice-return"
     },
@@ -234,23 +231,23 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "It'll go through at midnight unless you say something."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "That is useful. I lose track of time at night.",
+          "evidence": "ev-oura-subscription-backlash",
+          "text": "I'm fine paying monthly for what the ring can't do alone.",
           "next": "return-1",
           "playerEffects": {
-            "readiness": 2,
-            "reassurance": 1,
-            "control": 1
+            "trust": 2,
+            "readiness": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "readiness": 2,
-              "reassurance": 1,
-              "comfort": 1
+              "trust": 1,
+              "readiness": 1,
+              "control": -1
             }
           },
           "relationshipEffects": {
@@ -259,7 +256,8 @@
         },
         {
           "id": "return-2",
-          "text": "I do not want a ring assigning me bedtime.",
+          "evidence": "ev-oura-subscription-backlash",
+          "text": "Selling jewelry and metering the data behind a paywall is a strange combination.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -267,25 +265,25 @@
           },
           "brandPerceptionEffects": {
             "oura": {
-              "control": -1,
-              "trust": -1,
-              "mastery": 1
+              "trust": -2,
+              "control": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I am going to bed when I am tired, not when an app says so.",
+          "evidence": "ev-oura-subscription-backlash",
+          "text": "I bought a piece of jewelry, not a bill that keeps showing up.",
           "next": "return-3",
           "playerEffects": {
             "control": 3,
-            "selfExpression": 1
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "oura": {
+              "trust": -2,
               "control": -2,
-              "trust": -1,
-              "reassurance": -1
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -300,7 +298,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the reminder is doing exactly enough."
+        "Then keep it. I'll try to be worth six dollars every month. Some months I'll be more sure of that than others."
       ],
       "nextTree": "map"
     },
@@ -310,24 +308,34 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. It is guidance, not a curfew, even if the notification can feel bossy."
+        "It is strange. I'm aware the lawsuits think so too."
+      ],
+      "next": "return-2-1"
+    },
+    "return-2-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "That's not exactly reassuring."
+      ],
+      "next": "return-2-2"
+    },
+    "return-2-2": {
+      "speaker": "OURA",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "No. It isn't. I'd rather say that than pretend the fee is invisible."
       ],
       "nextTree": "map"
     },
     "return-3": {
       "speaker": "OURA",
       "sprite": {
-        "expression": "neutral"
+        "expression": "annoyed"
       },
       "text": [
-        "Then ignore me tonight."
-      ],
-      "next": "return-3-1"
-    },
-    "return-3-1": {
-      "speaker": "PLAYER",
-      "text": [
-        "Happily."
+        "Then the bill was always the part I was hoping you wouldn't look at too closely. You looked."
       ],
       "nextTree": "map"
     }

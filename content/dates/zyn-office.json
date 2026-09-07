@@ -34,7 +34,7 @@
         }
       },
       "text": [
-        "An age-verified adult smoker receives ZYN marketing using the modified-risk claim FDA authorized for twenty classic ZYN products in June 2026."
+        "Age-verified, adult, a smoker. An email arrives at your desk. It uses a claim the FDA authorized for twenty ZYN products in June 2026. Counsel insists on reading it exactly."
       ],
       "next": "entry-first-1"
     },
@@ -78,7 +78,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "No. FDA authorized specified products to be marketed with that claim. The agency expressly distinguishes marketing authorization from FDA approval and states that no tobacco product is safe."
+        "No. FDA authorized those products to be marketed with that claim. The agency is careful to say authorized is not approved, and that no tobacco product is safe. I am careful because they are."
       ],
       "next": "choice-first"
     },
@@ -88,13 +88,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You have read the email twice. Your position?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-zyn-authorized-not-approved",
-          "text": "If someone already smokes, relative-risk information is useful.",
+          "text": "If someone already smokes, that's useful information.",
           "next": "first-1",
           "playerEffects": {
             "trust": 2,
@@ -114,8 +113,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-zyn-authorized-not-approved",
-          "text": "The words \"instead of cigarettes\" are doing a lot of work there.",
+          "text": "\"Instead of cigarettes\" is doing a lot of work in that sentence.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -131,8 +129,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-zyn-authorized-not-approved",
-          "text": "I do not want a nicotine brand using disease risk as a sales message.",
+          "text": "I don't want a nicotine brand using disease risk as a sales message.",
           "next": "first-3",
           "playerEffects": {
             "trust": 2,
@@ -157,7 +154,7 @@
         "expression": "special"
       },
       "text": [
-        "The record will reflect that relative-risk information is material to you. For completeness, FDA states that fully quitting tobacco use provides the greatest health benefit."
+        "The record will reflect that relative-risk information is material to you. For completeness, FDA says quitting entirely does more than any switch. I am obligated to say that. I would say it anyway."
       ],
       "nextTree": "map"
     },
@@ -167,7 +164,7 @@
         "expression": "happy"
       },
       "text": [
-        "Correct. The authorized comparison is ZYN instead of cigarettes. It is not a blanket statement about every pattern of use."
+        "Correct. The authorized comparison is ZYN instead of cigarettes. Not ZYN in general. Not ZYN as well as. Instead of."
       ],
       "next": "first-2-1"
     },
@@ -194,7 +191,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Authorization permits the claim. It does not compel you to find the claim persuasive or welcome in advertising."
+        "Authorization permits the claim. It does not require you to like seeing it in your inbox. Those are separate questions and I only argue the first one."
       ],
       "nextTree": "map"
     },
@@ -207,7 +204,7 @@
         }
       },
       "text": [
-        "The player opens the ZYN Rewards store and finds charitable donations listed beside merchandise and gift cards."
+        "You open the ZYN Rewards store. Between an Amazon gift card and a metal can, there is a line: Donate to Hope For The Warriors."
       ],
       "next": "entry-return-1"
     },
@@ -224,7 +221,7 @@
         "expression": "neutral"
       },
       "text": [
-        "We Care by ZYN permits Rewards members to direct points to participating charitable organizations. The brand states that donated points are valued at four cents each for this purpose."
+        "We Care by ZYN. Members can send points to the listed charities. The brand values a donated point at four cents. I did not choose the number."
       ],
       "next": "entry-return-3"
     },
@@ -241,7 +238,7 @@
         "expression": "neutral"
       },
       "text": [
-        "In the quantities and organizations made available through the program, yes."
+        "In the amounts, and to the organizations, the program allows. Yes."
       ],
       "next": "entry-return-5"
     },
@@ -258,7 +255,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The company states a commitment of three million dollars annually to We Care by ZYN. Current featured organizations include groups serving veterans, active-duty service members, and their families."
+        "The company says it puts three million dollars a year into the program. The featured organizations currently serve veterans, active-duty service members, and their families."
       ],
       "next": "choice-return"
     },
@@ -268,12 +265,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Your cursor is between the hoodie and the donation. I am not going to move it for you."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "If the points already exist, I would rather donate them than get another branded thing.",
+          "text": "If the points already exist, I'd rather donate them than get another branded thing.",
           "next": "return-1",
           "playerEffects": {
             "reassurance": 2,
@@ -308,7 +305,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want charity used to make the purchase relationship feel better.",
+          "text": "I don't want charity used to make the purchase feel better.",
           "next": "return-3",
           "playerEffects": {
             "trust": 2,
@@ -343,7 +340,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The charitable function and the brand benefit can coexist. One does not legally cancel the other."
+        "It is both. The charity is real and the brand benefits from it. Neither cancels the other. I have looked for the clause that would, and it does not exist."
       ],
       "nextTree": "map"
     },

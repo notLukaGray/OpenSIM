@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player notices Oura through its ability to connect workouts and scores with Strava."
+        "Late gym. You're logging a run in Strava when a prompt appears: connect Oura, and your workouts and scores can pass between the two."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "happy"
       },
       "text": [
-        "If you let me. Its workouts can count in Oura, and you can share Oura scores back."
+        "If you let me. Its workouts come to me. My scores go to it. Quietly. You don't type anything twice."
       ],
       "next": "choice-first"
     },
@@ -60,7 +60,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "It's one toggle. You can turn it off later. I won't take it personally. Much."
       ],
       "choices": [
         {
@@ -84,7 +84,7 @@
         },
         {
           "id": "first-2",
-          "text": "I do not need my recovery score in my social fitness feed.",
+          "text": "I don't need my recovery score sitting in a social feed.",
           "next": "first-2",
           "playerEffects": {
             "control": 2,
@@ -100,7 +100,7 @@
         },
         {
           "id": "first-3",
-          "text": "I already have a fitness app. I do not need another layer.",
+          "text": "I already have a fitness app. I don't need a quieter one whispering over it.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -125,7 +125,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. Integration is useful when it removes duplicate work."
+        "Good. That's the only reason to connect two apps. If it gave you a second thing to check, I'd have wasted your evening."
       ],
       "nextTree": "map"
     },
@@ -135,7 +135,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Then keep the score private. Sharing is optional."
+        "Then keep it private. I only say the number once, to you. Where it goes after that has always been yours."
       ],
       "nextTree": "map"
     },
@@ -145,7 +145,7 @@
         "expression": "neutral"
       },
       "text": [
-        "That is reasonable. More data is not automatically more useful."
+        "That's reasonable. I'm not trying to be a louder version of something you already trust. I'm not built for loud."
       ],
       "nextTree": "map"
     },
@@ -158,7 +158,7 @@
         }
       },
       "text": [
-        "The player opens Oura before a hard workout and sees a lower Readiness Score than expected."
+        "Before a hard session, you open the app out of habit. Readiness is lower than you expected. You feel fine."
       ],
       "next": "entry-return-1"
     },
@@ -175,7 +175,7 @@
         "expression": "neutral"
       },
       "text": [
-        "I did not say you feel bad."
+        "I didn't say you feel bad. I said a number, quietly. You're the one who heard a verdict."
       ],
       "next": "entry-return-3"
     },
@@ -192,7 +192,7 @@
         "expression": "happy"
       },
       "text": [
-        "I do not have a face."
+        "I don't have a face. I have a number, and I only whisper it once a day."
       ],
       "next": "entry-return-5"
     },
@@ -209,7 +209,7 @@
         "expression": "neutral"
       },
       "text": [
-        "I am comparing last night and your recent balance with your own baseline. You decide what to do with that."
+        "Last night, and the last few, against your own baseline. Not anyone else's. What you do with it is yours."
       ],
       "next": "choice-return"
     },
@@ -219,12 +219,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The rack's free. What are you doing?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I will make today easier.",
+          "text": "I'll take it easier today.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -243,7 +243,7 @@
         },
         {
           "id": "return-2",
-          "text": "One score is not deciding my workout.",
+          "text": "One score isn't deciding my workout for me.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -259,7 +259,7 @@
         },
         {
           "id": "return-3",
-          "text": "This is exactly why I do not like wearables. They make me second-guess my body.",
+          "text": "This is exactly why I don't like wearables. They make me second-guess my own body.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -285,7 +285,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the score gave you a useful second opinion."
+        "Then you heard it as a second opinion, not an order. That's all I wanted to be tonight."
       ],
       "nextTree": "map"
     },
@@ -295,7 +295,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. Treat the score as information, not permission."
+        "Good. I can see a pattern. I can't see the deadline, or the fight, or the third espresso. Information, not permission."
       ],
       "next": "return-2-1"
     },
@@ -322,7 +322,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That can happen. Measurement can create doubt as easily as clarity."
+        "That happens. A whispered number can make doubt as easily as clarity. I don't always get to choose which one it makes."
       ],
       "nextTree": "map"
     }

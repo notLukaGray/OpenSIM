@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player sees a student promoting CELSIUS and learns that CELSIUS University is a paid campus marketing program."
+        "Someone on your feed is holding a can between classes. Same can as always. Their bio says CELSIUS University, and it turns out that's a job."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "happy"
       },
       "text": [
-        "Potentially, yes."
+        "Probably, yeah! Why do quiet word of mouth when I can do a whole program?"
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "CELSIUS University pays student ambassadors to post, run campus events, and connect with other reps. Campus life is part audience, part job site."
+        "It's both. CELSIUS University pays student ambassadors to post, throw campus events, and hang out with other reps. They get paid, they get a line for their resume, I get a can in every dorm photo."
       ],
       "next": "choice-first"
     },
@@ -77,13 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're staring at the phone. Come on, out with it."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-celsius-paid-tribe",
-          "text": "That is real work experience and smart campus marketing.",
+          "text": "That's real work experience and smart campus marketing.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -101,7 +100,6 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-celsius-paid-tribe",
           "text": "So the casual post is also a paid brand job.",
           "next": "first-2",
           "playerEffects": {
@@ -119,8 +117,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-celsius-paid-tribe",
-          "text": "I would rather get an energy drink recommendation from someone who is not paid to spread it.",
+          "text": "I'd rather get a recommendation from someone who isn't paid to spread it.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -146,7 +143,7 @@
         "expression": "special"
       },
       "text": [
-        "Both things can be true. Good experience for them, useful access for me."
+        "Right? They get experience, I get noise. Everybody's happy. Mostly me, but everybody."
       ],
       "nextTree": "map"
     },
@@ -156,7 +153,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. They are being paid to post."
+        "Yep. Paid to post. I'm not going to act embarrassed about it now, I'd have to act embarrassed about a lot."
       ],
       "next": "first-2-1"
     },
@@ -173,7 +170,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. Incentive changes how a recommendation feels."
+        "Fair. Getting paid changes how a recommendation feels, even one shouted across a quad. I'd still rather pay them than pretend I didn't."
       ],
       "nextTree": "map"
     },
@@ -186,7 +183,7 @@
         }
       },
       "text": [
-        "The player already drinks CELSIUS cans but keeps On-The-Go powder packets in a desk drawer."
+        "Desk drawer, second one down. Behind the stapler there's a row of CELSIUS On-The-Go powder packets you don't remember buying that many of."
       ],
       "next": "entry-return-1"
     },
@@ -203,7 +200,7 @@
         "expression": "happy"
       },
       "text": [
-        "I contain multitudes. And powder packets."
+        "I live in your desk now! Powder packets. I couldn't stand the thought of a whole afternoon where you couldn't reach me."
       ],
       "next": "entry-return-3"
     },
@@ -220,7 +217,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Two hundred milligrams. The drawer version is me admitting you do not always have a cold can nearby."
+        "Two hundred milligrams. The drawer version is me admitting you don't always have a cold can, and refusing to sit that one out."
       ],
       "next": "choice-return"
     },
@@ -230,12 +227,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Don't count them. Just tell me if you're mad."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "That is useful when I cannot get a cold can.",
+          "text": "That's useful when I can't get a cold can.",
           "next": "return-1",
           "playerEffects": {
             "excitement": 2,
@@ -253,7 +250,7 @@
         },
         {
           "id": "return-2",
-          "text": "Powdered energy feels easier to overuse because it is always there.",
+          "text": "Powder is easier to overdo because it's always right there.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -270,7 +267,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want caffeine living in my desk drawer.",
+          "text": "I don't want caffeine living in my desk drawer.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -298,7 +295,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. Format solved the problem, not a new promise."
+        "Right! Nothing new in it, just a way to have me when the fridge is three floors down."
       ],
       "nextTree": "map"
     },
@@ -308,7 +305,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is a fair concern. Portable also means easy to reach for."
+        "Yeah. That's fair. Portable means easy to reach for, and I'm not exactly built for restraint. Neither is the drawer."
       ],
       "nextTree": "map"
     },
@@ -318,7 +315,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the drawer gets one less product. You know your own habits."
+        "Then the drawer gets one less thing in it. You know your afternoons better than my marketing does. I hate that, but it's true."
       ],
       "nextTree": "map"
     }

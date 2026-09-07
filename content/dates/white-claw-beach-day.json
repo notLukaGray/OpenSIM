@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees White Claw’s broader campaign inviting people to stop scrolling, say yes, and meet up in real life.",
+    "The player hears Teddy Swims's \"Grab Life By the Claw\" song playing down the beach and half the group already knows the words.",
     "The player already buys White Claw and chooses a Surf variety pack built around more tropical flavor rotation."
   ],
   "nodes": {
@@ -33,45 +33,52 @@
         }
       },
       "text": [
-        "The player sees White Claw’s broader campaign inviting people to stop scrolling, say yes, and meet up in real life."
+        "Somebody down the beach has a speaker going, and half the group is already singing along before you even ask what song it is."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Everyone just knows this one?"
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "Answer the text."
-      ],
-      "next": "entry-first-2"
-    },
-    "entry-first-2": {
-      "speaker": "PLAYER",
-      "text": [
-        "That is your campaign?"
+        "Teddy Swims. It's the song from my thing, second year now. I sponsored his tour, there's an acoustic set, there's a spot where his band turns an empty villa into a house party. I'm not going to pretend I didn't do all that."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "So the song is doing your marketing for you."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Stop scrolling. Go see your friends. The can comes with the occasion."
-      ],
-      "next": "entry-first-4"
-    },
-    "entry-first-4": {
-      "speaker": "PLAYER",
-      "text": [
-        "You really built a brand line around basic social behavior."
+        "The song was going to be stuck in your head anyway. I just made sure I was in the room when it happened."
       ],
       "next": "entry-first-5"
     },
     "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "You really built a whole campaign around basic social behavior."
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
       "speaker": "WHITE CLAW",
       "sprite": {
         "expression": "happy"
@@ -87,13 +94,13 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Okay, the chorus is coming back around. You in or out?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-white-claw-cut-the-ads",
-          "text": "That is closer to why people actually buy this.",
+          "evidence": "ev-white-claw-teddy-swims",
+          "text": "Honestly, that's closer to why people actually buy this.",
           "next": "first-1",
           "playerEffects": {
             "belonging": 2,
@@ -113,8 +120,8 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-white-claw-cut-the-ads",
-          "text": "A brand telling me to be spontaneous is still a planned campaign.",
+          "evidence": "ev-white-claw-teddy-swims",
+          "text": "The song was going to be stuck in my head either way. That's the whole trick.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -130,8 +137,8 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-white-claw-cut-the-ads",
-          "text": "I do not need alcohol attached to the idea of showing up for friends.",
+          "evidence": "ev-white-claw-teddy-swims",
+          "text": "I don't need a hard-seltzer name folded into a song I already like.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -157,14 +164,14 @@
         "expression": "special"
       },
       "text": [
-        "Good. Text them back."
+        "Good. Sing the chorus, I'll take the credit."
       ],
       "next": "first-1-1"
     },
     "first-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "You are very bossy for something breezy."
+        "You're very bossy for something breezy."
       ],
       "nextTree": "map"
     },
@@ -174,7 +181,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Correct. Professionally produced spontaneity is still professionally produced."
+        "Yeah. It is. It's a good song and I paid to stand next to it. Both of those are true and I'm only responsible for one."
       ],
       "nextTree": "map"
     },
@@ -184,7 +191,7 @@
         "expression": "neutral"
       },
       "text": [
-        "And friendship still works without me."
+        "Fair. The song still works without me. Honestly, I'd like it even if I hadn't paid for it, which is sort of the problem."
       ],
       "nextTree": "map"
     },
@@ -197,7 +204,7 @@
         }
       },
       "text": [
-        "The player already buys White Claw and chooses a Surf variety pack built around more tropical flavor rotation."
+        "You buy White Claw already. This time the cooler's got the Surf pack in it. Tropical everything."
       ],
       "next": "entry-return-1"
     },
@@ -214,7 +221,7 @@
         "expression": "happy"
       },
       "text": [
-        "Surf. I was not hiding the theme."
+        "Surf. I wasn't hiding the theme."
       ],
       "next": "entry-return-3"
     },
@@ -231,7 +238,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The cooler does not have to agree on one. Variety does some of the social work for you."
+        "So the cooler doesn't have to agree on one. Somebody always wants the weird one. Now there's a weird one."
       ],
       "next": "choice-return"
     },
@@ -241,7 +248,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Grab whichever. Nobody's watching. Well, I am."
       ],
       "choices": [
         {
@@ -266,7 +273,7 @@
         },
         {
           "id": "return-2",
-          "text": "A variety pack also makes it easier to keep drinking because the next can feels different.",
+          "text": "A variety pack also makes the next can feel new, which makes it easier to keep going.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -282,7 +289,7 @@
         },
         {
           "id": "return-3",
-          "text": "I would rather bring one thing I actually like.",
+          "text": "I'd rather bring one thing I actually like.",
           "next": "return-3",
           "playerEffects": {
             "selfExpression": 2,
@@ -307,7 +314,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the pack is serving the group, not just the brand."
+        "Good. That's what it's for. A group, a cooler, four answers, no argument."
       ],
       "nextTree": "map"
     },
@@ -317,7 +324,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That can be true. Novelty changes pace and attention."
+        "Yeah, that happens. A new flavor feels like a new decision, even if it's the same can. I know that's not nothing."
       ],
       "nextTree": "map"
     },
@@ -327,7 +334,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then one flavor is the better purchase for you."
+        "Then bring the one you like. The four-pack's not a test. I just like a full cooler."
       ],
       "nextTree": "map"
     }

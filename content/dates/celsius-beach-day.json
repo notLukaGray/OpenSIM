@@ -1,7 +1,7 @@
 {
   "id": "celsius-beach-day",
   "brandId": "celsius",
-  "title": "The Seasonal Vibe Flavor and the Powder Stick",
+  "title": "LIVE.FIT.GO. at the Shoreline",
   "locationId": "beach-day",
   "context": {
     "location": "beach-day",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can.",
+    "The player meets CELSIUS at the beach and learns it is running the exact same LIVE.FIT.GO. campaign that plays at the gym.",
     "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player discovers CELSIUS through a seasonal beach-coded Vibe flavor rather than the core orange can."
+        "Beach. Someone's speaker is playing the same CELSIUS spot you heard at the gym on Tuesday. LIVE. FIT. GO. is printed on a towel two umbrellas down."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I picked this up because the can looks like vacation."
+        "LIVE. FIT. GO. On a beach towel. That's a lot of instructions for someone trying to lie down."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Thank you for proving the point."
+        "It's not instructions, it's a promise! Biggest thing I've ever done. Real agency, real budget, and it says the exact same thing here as it does at the gym. I'm not shy about it."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "The point being?"
+        "I came here to stop moving."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,24 @@
         "expression": "neutral"
       },
       "text": [
-        "Seasonal flavor and seasonal packaging get you to look again. After that, it is still a caffeinated CELSIUS."
+        "Sure. Lie down. I'll wait. I'm very bad at waiting, but I'll do it for you."
+      ],
+      "next": "entry-first-5"
+    },
+    "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "So this isn't a beach thing. It's the same pitch everywhere, just with sand on it."
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
+      "speaker": "CELSIUS",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Yeah. I don't have a beach voice and a gym voice. I've got one voice, and it's this one, and today it's got sand on it."
       ],
       "next": "choice-first"
     },
@@ -77,23 +94,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Okay, be honest, is the towel too much?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "The flavor sounds fun for a long day out.",
+          "evidence": "ev-celsius-livefitgo",
+          "text": "Honestly, a brand that sounds the same everywhere is easier to trust.",
           "next": "first-1",
           "playerEffects": {
-            "excitement": 3,
-            "readiness": 1,
-            "selfExpression": 1
+            "excitement": 2,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
-              "excitement": 3,
-              "readiness": 1,
-              "selfExpression": 1
+              "excitement": 2,
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -102,38 +118,33 @@
         },
         {
           "id": "first-2",
-          "text": "A beach mood does not change what 200 milligrams of caffeine does.",
+          "evidence": "ev-celsius-livefitgo",
+          "text": "One slogan can't fit a gym, an office, and a beach the same way.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
-            "mastery": 2,
-            "reassurance": 1,
-            "excitement": 1,
-            "selfExpression": 1
+            "mastery": 2
           },
           "brandPerceptionEffects": {
             "celsius": {
               "mastery": 1,
-              "trust": -1,
-              "reassurance": -1,
-              "excitement": -1
+              "trust": -1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I do not want an energy drink deciding the vibe of the day.",
+          "evidence": "ev-celsius-livefitgo",
+          "text": "I don't want the same pitch chasing me into every part of my day.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
-            "selfExpression": 2,
-            "excitement": 1
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "trust": -1,
-              "comfort": -1,
-              "excitement": -1
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -148,7 +159,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the packaging earned the trial and the product still has to earn the repeat."
+        "See? That's what I keep telling people. Same me at the gym, same me here. I'm a lot, but I'm the same lot."
       ],
       "nextTree": "map"
     },
@@ -158,7 +169,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Aesthetic context does not change stimulant content."
+        "Ugh, fine. GO is doing more work here than LIE DOWN ever would. I picked the one that fits me, not the one that fits your afternoon."
       ],
       "nextTree": "map"
     },
@@ -168,7 +179,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Good news: beaches existed before me."
+        "Then leave it on the towel. I'll be yelling it somewhere else in about ten minutes."
       ],
       "nextTree": "map"
     },
@@ -181,7 +192,7 @@
         }
       },
       "text": [
-        "The player already likes a Vibe flavor and learns the same flavor is available as a non-carbonated powder stick."
+        "You already like Arctic Vibe. Somebody in the group chat sends a photo of it as a powder stick, no can, no fizz."
       ],
       "next": "entry-return-1"
     },
@@ -198,7 +209,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You do not. The stick is there if you want the same flavor without the can or the fizz."
+        "You don't! It's the same flavor without the can and without the fizz. For when you want me but you don't want to carry me."
       ],
       "next": "choice-return"
     },
@@ -208,12 +219,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Don't look at me like that. It's a stick. It fits in a pocket."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like keeping the flavor while changing the format.",
+          "text": "I like keeping the flavor and losing the can.",
           "next": "return-1",
           "playerEffects": {
             "excitement": 3,
@@ -233,7 +244,7 @@
         },
         {
           "id": "return-2",
-          "text": "That makes it easier to have CELSIUS everywhere.",
+          "text": "So now you fit in a pocket. That makes it easier to have you everywhere.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -248,7 +259,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not need one energy brand following me across every occasion.",
+          "text": "I don't need one energy brand following me to every occasion.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -272,7 +283,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then keep the flavor and use the format that actually fits the day."
+        "Yes! Keep the flavor, ditch the can. Pocket me. I'll be fine in there."
       ],
       "nextTree": "map"
     },
@@ -282,7 +293,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Ubiquity is convenient until it starts feeling like pressure."
+        "Yeah. That's the idea. It's convenient right up until it starts feeling like I'm everywhere, and I know I'm everywhere."
       ],
       "nextTree": "map"
     },
@@ -292,7 +303,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then choose the occasion where I actually add something and leave me out of the rest."
+        "Then pick the one place I actually help and leave me out of the rest. I'll hate it. I'll do it."
       ],
       "nextTree": "map"
     }

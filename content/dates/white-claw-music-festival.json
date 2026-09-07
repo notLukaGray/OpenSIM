@@ -20,8 +20,8 @@
     "entry-first"
   ],
   "lessons": [
-    "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims.",
-    "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+    "The player notices a sculptural wave-shaped display, built entirely from White Claw case art, planted near the festival entrance.",
+    "The player already knows the wave display from the grocery store and sees a later limited merchandise collection tied to the brand's live-music partnership."
   ],
   "nodes": {
     "entry-first": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player first notices White Claw through its 2026 year-long live-music partnership with Teddy Swims."
+        "Walking up to the festival entrance, you see a wave taller than the gate, built entirely out of White Claw cases."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I came for Teddy Swims."
+        "That's not an entrance. That's a sculpture."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "I know. I came with him."
+        "It's the grocery-store display, but huge. I hauled it out here and let it loom over the gate instead."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So the concert does the introduction for you."
+        "You moved the shelf display to the front of a music festival."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Live music already has the social occasion built in. I attach the brand to the night instead of explaining hard seltzer from scratch."
+        "Yeah. In the store it's an endcap. Out here nobody's buying a case. It's just the thing you take a photo in front of so people know you got in."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,13 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Everybody's stopping for a photo. You going to?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "That feels like a natural place for the brand.",
+          "evidence": "ev-white-claw-wave-endcap",
+          "text": "That feels like a natural place for you to be.",
           "next": "first-1",
           "playerEffects": {
             "belonging": 2,
@@ -102,7 +103,8 @@
         },
         {
           "id": "first-2",
-          "text": "The artist is still lending you his fan relationship.",
+          "evidence": "ev-white-claw-wave-endcap",
+          "text": "It's the same store display. You just gave it a bigger stage.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -118,7 +120,8 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want alcohol brands using friendship as the pitch.",
+          "evidence": "ev-white-claw-wave-endcap",
+          "text": "I don't need a can sculpture telling me I've arrived somewhere.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -143,7 +146,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the occasion and the message line up for you."
+        "Good. This is the one place I don't have to explain myself."
       ],
       "nextTree": "map"
     },
@@ -153,7 +156,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Partnership does not become neutral because the music is good."
+        "Yep. Same cardboard, taller stack. A landmark is still an endcap. I'm fine with that. Cardboard's cheap."
       ],
       "nextTree": "map"
     },
@@ -163,7 +166,7 @@
         "expression": "neutral"
       },
       "text": [
-        "That is a fair boundary. Connection does not require a can."
+        "That's fair. The festival was here before me. I just got here early and stood by the door."
       ],
       "nextTree": "map"
     },
@@ -176,7 +179,7 @@
         }
       },
       "text": [
-        "The player already knows the White Claw and Teddy Swims partnership and sees a later limited merchandise collection tied to it."
+        "Merch tent. Next to the artist shirts, there's a small rack with the White Claw logo on it, tied to the Teddy Swims tour."
       ],
       "next": "entry-return-1"
     },
@@ -193,7 +196,7 @@
         "expression": "happy"
       },
       "text": [
-        "Limited merch. The relationship has layers."
+        "Limited merch. I know. I know how it sounds."
       ],
       "next": "entry-return-3"
     },
@@ -210,7 +213,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The partnership keeps going after the first ad. If you like the artist enough, the brand gets another way into the memory."
+        "The tour thing doesn't stop at the ad. If you like him enough, I get to be in the photo again. On your shirt this time."
       ],
       "next": "choice-return"
     },
@@ -220,12 +223,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You picked it up. That's further than most people get."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I would wear something if the design is good.",
+          "text": "I'd wear it if the design is good.",
           "next": "return-1",
           "playerEffects": {
             "selfExpression": 2,
@@ -261,7 +264,7 @@
         },
         {
           "id": "return-3",
-          "text": "I am not wearing a hard-seltzer logo.",
+          "text": "I'm not wearing a hard-seltzer logo.",
           "next": "return-3",
           "playerEffects": {
             "selfExpression": 2,
@@ -286,7 +289,7 @@
         "expression": "special"
       },
       "text": [
-        "Then design has to earn it beyond the logo."
+        "Then it's got to be a good shirt first and a logo second. If it's the other way around, put it back."
       ],
       "nextTree": "map"
     },
@@ -296,7 +299,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is exactly the risk. Paid media can become paid-by-you media."
+        "That's exactly the risk. I paid for the ad, and now I'm asking you to pay for the ad. I don't have a comeback for that."
       ],
       "nextTree": "map"
     },
@@ -306,7 +309,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then leave the shirt to someone else."
+        "Then leave the shirt to someone else. Plenty of people will."
       ],
       "nextTree": "map"
     }

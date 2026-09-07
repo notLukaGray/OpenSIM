@@ -173,30 +173,6 @@
     "alt": "Two figures against a huge terminal window"
   },
   {
-    "id": "evg-liquid-iv-stickpack",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/evg-liquid-iv-stickpack.svg",
-    "alt": "Powder stick packets in a fan"
-  },
-  {
-    "id": "evg-whoop-strain-graph",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/evg-whoop-strain-graph.svg",
-    "alt": "A rising strain graph on a dark screen"
-  },
-  {
-    "id": "evg-celsius-can-lineup",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/evg-celsius-can-lineup.svg",
-    "alt": "Three slim cans in a lineup"
-  },
-  {
-    "id": "evg-ag1-scoop",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/evg-ag1-scoop.svg",
-    "alt": "A scoop of green powder over a glass"
-  },
-  {
     "id": "ui-vignette",
     "type": "ui",
     "src": "/assets/ui/ui-vignette.svg",
@@ -254,172 +230,16 @@
     "alt": "Fluorescent honesty"
   },
   {
-    "id": "ev-liquid-iv-sugar-ratio",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-liquid-iv-sugar-ratio.svg",
-    "alt": "69% Sugar by Weight"
-  },
-  {
-    "id": "ev-liquid-iv-nightlife-nod",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-liquid-iv-nightlife-nod.svg",
-    "alt": "The Nightlife Nod"
-  },
-  {
-    "id": "ev-whoop-watney-save",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-whoop-watney-save.svg",
-    "alt": "The Watney Save — 2 A.M."
-  },
-  {
-    "id": "ev-whoop-runrate-ledger",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-whoop-runrate-ledger.svg",
-    "alt": "Rent Your Biometrics: $1.1B Run-Rate"
-  },
-  {
-    "id": "ev-celsius-fatburn-label",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-celsius-fatburn-label.svg",
-    "alt": "\"Burns Body Fat\" — Mind the Asterisk"
-  },
-  {
-    "id": "ev-celsius-paid-tribe",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-celsius-paid-tribe.svg",
-    "alt": "The Paid Campus Tribe"
-  },
-  {
     "id": "ev-ag1-host-adread",
     "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-ag1-host-adread.svg",
+    "src": "/assets/evidence/ev-ag1-host-adread.png",
     "alt": "The Fourteenth Ad Read"
-  },
-  {
-    "id": "ev-ag1-recurring-invoice",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-ag1-recurring-invoice.svg",
-    "alt": "$79 a Month, Renewing Nicely"
-  },
-  {
-    "id": "ev-starbucks-float-ledger",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-starbucks-float-ledger.svg",
-    "alt": "Your gift card is their working capital"
-  },
-  {
-    "id": "ev-starbucks-wrong-name-curve",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-starbucks-wrong-name-curve.svg",
-    "alt": "The wrong-name curve"
   },
   {
     "id": "ev-oura-gucci-ring",
     "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-oura-gucci-ring.svg",
-    "alt": "Rest has a dress code"
-  },
-  {
-    "id": "ev-oura-pre-symptom-flag",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-oura-pre-symptom-flag.svg",
-    "alt": "Three days before symptoms"
-  },
-  {
-    "id": "ev-zen-churn-trio",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-zen-churn-trio.svg",
-    "alt": "The churn trio"
-  },
-  {
-    "id": "ev-zen-entrainment-doubt",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-zen-entrainment-doubt.svg",
-    "alt": "Binaural beats on trial"
-  },
-  {
-    "id": "ev-red-bull-media-house",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-red-bull-media-house.svg",
-    "alt": "Content Is the Ad Budget"
-  },
-  {
-    "id": "ev-red-bull-wings-ledger",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-red-bull-wings-ledger.svg",
-    "alt": "$13M for Wings"
-  },
-  {
-    "id": "ev-eight-sleep-deep-sleep-stat",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-eight-sleep-deep-sleep-stat.svg",
-    "alt": "+22% Deep Sleep*"
-  },
-  {
-    "id": "ev-eight-sleep-year-five-cost",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-eight-sleep-year-five-cost.svg",
-    "alt": "Year Five: $6,900"
-  },
-  {
-    "id": "ev-liquid-death-pre-launch-ghost",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-liquid-death-pre-launch-ghost.svg",
-    "alt": "3M Views Before the First Can"
-  },
-  {
-    "id": "ev-liquid-death-can-autopsy",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-liquid-death-can-autopsy.svg",
-    "alt": "Can Autopsy: Plastic Inside"
-  },
-  {
-    "id": "ev-white-claw-cut-the-ads",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-white-claw-cut-the-ads.svg",
-    "alt": "Cut the Ads, Kept the Boom"
-  },
-  {
-    "id": "ev-white-claw-alcohol-is-alcohol",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-white-claw-alcohol-is-alcohol.svg",
-    "alt": "Alcohol Is Still Alcohol"
-  },
-  {
-    "id": "ev-athletic-brewing-half-a-percent",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-athletic-brewing-half-a-percent.svg",
-    "alt": "\"Non-Alcoholic\" Means Up to 0.5%"
-  },
-  {
-    "id": "ev-athletic-brewing-9-99-vs-13-99",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-athletic-brewing-9-99-vs-13-99.svg",
-    "alt": "$9.99 vs $13.99"
-  },
-  {
-    "id": "ev-zyn-even-when-they-ask-us",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-zyn-even-when-they-ask-us.svg",
-    "alt": "Even When They Ask Us"
-  },
-  {
-    "id": "ev-zyn-authorized-not-approved",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-zyn-authorized-not-approved.svg",
-    "alt": "Authorized ≠ Approved"
-  },
-  {
-    "id": "ev-na-spirits-who-owns-independent",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-na-spirits-who-owns-independent.svg",
-    "alt": "Who Owns \"Independent\"?"
-  },
-  {
-    "id": "ev-na-spirits-mixer-subsidy",
-    "type": "evidence-imagery",
-    "src": "/assets/evidence/ev-na-spirits-mixer-subsidy.svg",
-    "alt": "The Mixer Subsidy"
+    "src": "/assets/evidence/ev-oura-gucci-ring.png",
+    "alt": "A premium close-up of a Gucci-designed Oura ring emphasizing luxury styling."
   },
   {
     "id": "zone-art-airport",
@@ -540,5 +360,101 @@
     "type": "silhouette",
     "src": "/assets/reveal/personas/nico-social-explorer-masculine.webp",
     "alt": "Nico, the Social Explorer"
+  },
+  {
+    "id": "ev-ag1-pro-delivery",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-ag1-pro-delivery.png",
+    "alt": "A minimalist AG1 subscription package box shown in an airy product stack."
+  },
+  {
+    "id": "ev-celsius-livefitgo",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-celsius-livefitgo.png",
+    "alt": "A set of orange CELSIUS cans in a LIVE.FIT.GO campaign layout."
+  },
+  {
+    "id": "ev-liquid-iv-2024-refresh",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-liquid-iv-2024-refresh.png",
+    "alt": "Liquid I.V. 2024 refresh pack visuals with updated branding and clean labels."
+  },
+  {
+    "id": "ev-liquid-iv-fuel-your-play",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-liquid-iv-fuel-your-play.png",
+    "alt": "A Liquid I.V. \"Fuel Your Play\" out-of-home advertisement featuring the new bottle format."
+  },
+  {
+    "id": "ev-prime-poptarts-shake",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-prime-poptarts-shake.png",
+    "alt": "A grocery shelf featuring Prime protein shake packaging with Pop-Tarts flavor references."
+  },
+  {
+    "id": "ev-prime-wrestlemania-mat",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-prime-wrestlemania-mat.png",
+    "alt": "Prime branding centered on a wrestling ring during a WWE-themed campaign scene."
+  },
+  {
+    "id": "ev-starbucks-psl-season",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-starbucks-psl-season.png",
+    "alt": "Pumpkin Spice Latte presentation from Starbucks seasonal launch, including signature cup styling."
+  },
+  {
+    "id": "ev-starbucks-stanley-cup-grocery-cafe",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-starbucks-stanley-cup-grocery-cafe.png",
+    "alt": "A grocery-store Starbucks set with Stanley tumblers and branded café inserts."
+  },
+  {
+    "id": "ev-white-claw-teddy-swims",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-white-claw-teddy-swims.png",
+    "alt": "Teddy Swims posed beside White Claw packaging in a campaign still for a pop-culture moment."
+  },
+  {
+    "id": "ev-white-claw-wave-endcap",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-white-claw-wave-endcap.png",
+    "alt": "A wave-shaped endcap display stacked with White Claw cans and bright summer graphics."
+  },
+  {
+    "id": "ev-whoop-5-launch",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-whoop-5-launch.png",
+    "alt": "A close shot of a wrist wearing the WHOOP 5.0 strap in a launch imagery frame."
+  },
+  {
+    "id": "ev-whoop-best-obsess",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-whoop-best-obsess.png",
+    "alt": "Poster art from WHOOP’s \"The Best Obsess\" campaign using sleek fitness-focused composition."
+  },
+  {
+    "id": "ev-zyn-tin-flashing-meme",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-zyn-tin-flashing.png",
+    "alt": "A meme-style image with a humorous figure dramatically holding a Zyn tin."
+  },
+  {
+    "id": "ev-zyn-tin-collection-decor",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-zyn-tin-collection-decor.png",
+    "alt": "A tabletop arrangement turning multiple Zyn tins into playful decorative pieces."
+  },
+  {
+    "id": "ev-celsius-breakaway-festival",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-celsius-breakaway-festival.png",
+    "alt": "The Breakaway Sponsorship"
+  },
+  {
+    "id": "ev-oura-subscription-backlash",
+    "type": "evidence-imagery",
+    "src": "/assets/evidence/ev-oura-subscription-backlash.png",
+    "alt": "The Membership Behind the Jewelry"
   }
 ]

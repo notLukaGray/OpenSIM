@@ -33,7 +33,48 @@
         }
       },
       "text": [
-        "The player sees White Claw Zero Proof and realizes the brand now offers a 0% alcohol product with familiar social styling."
+        "Rooftop bar. Someone hands you a can. It looks exactly like a White Claw. It says Zero Proof on it."
+      ],
+      "next": "entry-first-screen"
+    },
+    "entry-first-screen": {
+      "speaker": "...",
+      "text": [
+        "A shared screen bolted to the rooftop bar loops a highlight reel: a logo dead center of the WrestleMania mat, both corners of an octagon rebranded into recovery zones."
+      ],
+      "next": "entry-first-screen-1"
+    },
+    "entry-first-screen-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Is that PRIME? On the wrestling mat?"
+      ],
+      "next": "entry-first-screen-2"
+    },
+    "entry-first-screen-2": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "annoyed"
+      },
+      "text": [
+        "Someone bought the middle of the ring and called it hydration. I bought a wave-shaped cardboard display. We are not the same kind of desperate."
+      ],
+      "next": "entry-first-screen-3"
+    },
+    "entry-first-screen-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "You're just jealous you didn't think of it first."
+      ],
+      "next": "entry-first-screen-4"
+    },
+    "entry-first-screen-4": {
+      "speaker": "WHITE CLAW",
+      "sprite": {
+        "expression": "embarrassed"
+      },
+      "text": [
+        "Absolutely not. Anyway. Look what I actually brought you up here for."
       ],
       "next": "entry-first-1"
     },
@@ -57,7 +98,7 @@
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "But the entire point used to be hard seltzer."
+        "But I thought you were the fizzy alcohol one."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +108,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Zero Proof is 0% alc./vol. The social shorthand can stay even when alcohol is not the job."
+        "Zero Proof. Zero percent. Same can, same fizz, none of the other thing. Some nights the can's the point and the alcohol isn't. I finally noticed."
       ],
       "next": "choice-first"
     },
@@ -77,7 +118,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You've been holding it for a minute. Open it or hand it back, no judgment."
       ],
       "choices": [
         {
@@ -102,7 +143,7 @@
         },
         {
           "id": "first-2",
-          "text": "I am not sure I need White Claw branding if there is no alcohol.",
+          "text": "I'm not sure I need White Claw branding if there's no alcohol.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -118,7 +159,7 @@
         },
         {
           "id": "first-3",
-          "text": "I would rather drink sparkling water.",
+          "text": "I'd rather drink sparkling water.",
           "next": "first-3",
           "playerEffects": {
             "comfort": 2,
@@ -143,7 +184,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the name still means something to you even without the alcohol."
+        "Then the can still means something without the alcohol. I wasn't sure it would. That's a relief, honestly."
       ],
       "nextTree": "map"
     },
@@ -153,7 +194,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair. You are mostly deciding whether you still want the White Claw part when the alcohol is gone."
+        "Fair. Without the alcohol, you're deciding if you still want me. Just me. That's a weird thing to find out on a roof."
       ],
       "next": "first-2-1"
     },
@@ -193,7 +234,7 @@
         }
       },
       "text": [
-        "The player already knows White Claw and sees ClawTails, a line built around recognizable cocktail flavor names."
+        "Same rooftop, different night. The cooler has cans you haven't seen before. The names on them belong to cocktails."
       ],
       "next": "entry-return-1"
     },
@@ -237,7 +278,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Cocktail-inspired flavors. Familiar cue, different product."
+        "Cocktail-inspired. You know what a margarita is, so you know roughly what the can is. That's all the name's doing. It's doing a lot."
       ],
       "next": "choice-return"
     },
@@ -247,7 +288,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Pick one. I'll tell you which one's actually good after."
       ],
       "choices": [
         {
@@ -272,7 +313,7 @@
         },
         {
           "id": "return-2",
-          "text": "Cocktail names are doing a lot of expectation-setting.",
+          "text": "Cocktail names are setting a lot of expectations.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 2,
@@ -288,7 +329,7 @@
         },
         {
           "id": "return-3",
-          "text": "I would rather have the actual cocktail or the regular seltzer.",
+          "text": "I'd rather have the actual cocktail or the regular seltzer.",
           "next": "return-3",
           "playerEffects": {
             "mastery": 1,
@@ -313,7 +354,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the borrowed ritual makes the new line easy to understand."
+        "Good. That's the whole idea. You already know how to want a margarita. I just put it in a can and skipped the blender."
       ],
       "nextTree": "map"
     },
@@ -323,7 +364,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Exactly. Familiar names do some of the selling before taste does."
+        "Yeah. The name sells it before you taste it. Sometimes the taste keeps up. Sometimes you get a mojito that tastes like a very confident lime."
       ],
       "nextTree": "map"
     },
@@ -333,7 +374,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the extension did not solve a problem for you."
+        "Then this one didn't fix anything for you. That's fine. The regular cans are under it."
       ],
       "nextTree": "map"
     }

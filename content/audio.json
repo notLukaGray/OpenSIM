@@ -9,7 +9,7 @@
   {
     "id": "mus-hub",
     "kind": "music",
-    "src": "/assets/music/mus-hub.wav",
+    "src": "/assets/music/mus_hub.mp3",
     "loop": true,
     "volume": 0.9
   },
@@ -23,28 +23,28 @@
   {
     "id": "mus-nightgym",
     "kind": "music",
-    "src": "/assets/music/mus-nightgym.wav",
+    "src": "/assets/music/mus_nightgym.mp3",
     "loop": true,
     "volume": 0.85
   },
   {
     "id": "mus-rooftop",
     "kind": "music",
-    "src": "/assets/music/mus-rooftop.wav",
+    "src": "/assets/music/mus_rooftop.mp3",
     "loop": true,
     "volume": 0.85
   },
   {
     "id": "mus-kitchen",
     "kind": "music",
-    "src": "/assets/music/mus-kitchen.wav",
+    "src": "/assets/music/mus_kitchen.mp3",
     "loop": true,
     "volume": 0.85
   },
   {
     "id": "mus-reveal",
     "kind": "music",
-    "src": "/assets/music/mus-reveal.wav",
+    "src": "/assets/music/mus_reveal.mp3",
     "loop": true,
     "volume": 1
   },
@@ -79,14 +79,14 @@
   {
     "id": "mus-music-festival",
     "kind": "music",
-    "src": "/assets/music/mus-music-festival.wav",
+    "src": "/assets/music/mus_festival.mp3",
     "loop": true,
     "volume": 0.85
   },
   {
     "id": "mus-corner-cafe",
     "kind": "music",
-    "src": "/assets/music/mus-corner-cafe.wav",
+    "src": "/assets/music/mus_cafe.mp3",
     "loop": true,
     "volume": 0.85
   },
@@ -100,7 +100,7 @@
   {
     "id": "mus-grocery-store",
     "kind": "music",
-    "src": "/assets/music/mus-grocery-store.wav",
+    "src": "/assets/music/mus_grocery.mp3",
     "loop": true,
     "volume": 0.85
   }

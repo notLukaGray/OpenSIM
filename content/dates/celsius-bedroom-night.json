@@ -1,7 +1,7 @@
 {
   "id": "celsius-bedroom-night",
   "brandId": "celsius",
-  "title": "NSF Testing and Caffeine-Free Hydration",
+  "title": "The Cooler Wall and Caffeine-Free Hydration",
   "locationId": "bedroom-night",
   "context": {
     "location": "bedroom-night",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player notices that select CELSIUS products carry NSF Certified for Sport testing.",
+    "The player remembers the wall of CELSIUS cans at the gym cooler, every flavor louder than the last, and notices a small NSF mark buried in the noise.",
     "The player already buys CELSIUS but chooses the caffeine-free Hydration line for situations where energy is not wanted."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player notices that select CELSIUS products carry NSF Certified for Sport testing."
+        "Lights off. For some reason you're thinking about the gym cooler: a whole wall of CELSIUS cans, every flavor louder than the last, and a tiny NSF mark you only noticed on the way out."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "That little NSF mark feels unusually serious for this can."
+        "Your whole cooler wall is a shouting match. Every flavor is fighting the one next to it."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Select products go through NSF Certified for Sport screening for substances prohibited by major athletic organizations."
+        "Good! A full shelf is just doing reps."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So if I am not getting drug tested for sport?"
+        "Then I found this tiny NSF mark hiding in all that noise."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then it may not be your main reason to care. For competitive athletes, it can matter a lot."
+        "You found that? Nobody finds that. Some of my flavors get screened by NSF Certified for Sport, so a lab checks them for stuff that's banned in pro sports. Quiet detail. Loud can. I don't know why I whisper that part."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Anyway. You're in bed thinking about my cooler. Something's going on."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "Third-party testing makes me more comfortable.",
+          "text": "The noise got me to look. The seal made me stay.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -102,7 +102,7 @@
         },
         {
           "id": "first-2",
-          "text": "I would still check whether this exact flavor is on the certified list.",
+          "text": "I'd still check whether this exact flavor made the certified list.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -121,7 +121,7 @@
         },
         {
           "id": "first-3",
-          "text": "I am not a tested athlete, so that seal does not decide the purchase for me.",
+          "text": "I'm not a tested athlete. The seal isn't what decides this for me.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -145,7 +145,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. Outside verification should matter most when the risk matters to you."
+        "Okay, that's kind of my whole thing and I didn't even plan it. Loud gets you over. The little seal is what's left when I stop yelling."
       ],
       "nextTree": "map"
     },
@@ -155,7 +155,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Certification is product-specific. Check the current list."
+        "Yeah, do that. It's per flavor, not the whole wall. Check the list, not your memory of the list. I'd hate to be wrong about one and have you find out."
       ],
       "nextTree": "map"
     },
@@ -165,7 +165,7 @@
         "expression": "happy"
       },
       "text": [
-        "That is fair. A quality signal can be real without being personally important."
+        "Fair. It's real, it's just not for you. I'd still rather it be there than not."
       ],
       "nextTree": "map"
     },
@@ -178,7 +178,7 @@
         }
       },
       "text": [
-        "The player already buys CELSIUS but chooses the caffeine-free Hydration line for situations where energy is not wanted."
+        "Eleven at night. You want something in a can, and for once you don't want it to wake you up. The CELSIUS Hydration line is in the fridge, and it has no caffeine in it."
       ],
       "next": "entry-return-1"
     },
@@ -188,7 +188,7 @@
         "expression": "happy"
       },
       "text": [
-        "Surprise. No caffeine."
+        "Surprise. No caffeine. I know, sit down."
       ],
       "next": "entry-return-2"
     },
@@ -205,14 +205,14 @@
         "expression": "annoyed"
       },
       "text": [
-        "Very funny."
+        "Very funny. I can be in the room without turning the volume up."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "What is the job then?"
+        "What's the job then, if it isn't energy?"
       ],
       "next": "entry-return-5"
     },
@@ -222,7 +222,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Electrolytes and hydration. Same brand, different reason to reach for it."
+        "Electrolytes. Hydration. Same name on the can, different reason to grab me at eleven at night."
       ],
       "next": "choice-return"
     },
@@ -232,12 +232,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So? Am I allowed to be quiet?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like that every can does not have to be an energy drink.",
+          "text": "I like that not every can has to be an energy drink.",
           "next": "return-1",
           "playerEffects": {
             "excitement": 2,
@@ -255,7 +255,7 @@
         },
         {
           "id": "return-2",
-          "text": "The brand name still makes me expect stimulation.",
+          "text": "The name still makes me expect a jolt.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -270,7 +270,7 @@
         },
         {
           "id": "return-3",
-          "text": "If I want hydration, I would rather buy a hydration brand.",
+          "text": "If I want hydration at night, I'd rather buy a hydration brand.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -294,7 +294,7 @@
         "expression": "special"
       },
       "text": [
-        "Growth. Beautiful."
+        "Growth. Beautiful. I still feel like I should be shouting about it. I'm not going to. I'm not!"
       ],
       "nextTree": "map"
     },
@@ -304,7 +304,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "I know the branding makes it sound like I forgot my own personality."
+        "I know the name makes it sound like I forgot who I am."
       ],
       "next": "return-2-1"
     },
@@ -321,7 +321,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The label still has to tell you the job changed."
+        "Read the can. It says Hydration right on it. I can't change my name at midnight, but I can label the quiet one."
       ],
       "nextTree": "map"
     },
@@ -331,7 +331,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Reasonable. Putting my name on hydration does not mean you have to trust me for hydration."
+        "Okay. That's fair. Putting my name on hydration doesn't mean you owe me hydration. Somebody else has been doing it longer."
       ],
       "nextTree": "map"
     }

@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player first notices CELSIUS because the can and brand site make explicit metabolism and exercise-performance claims."
+        "Late gym. The can in the cooler says it can help your metabolism and exercise performance, and the website has studies to go with it."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "happy"
       },
       "text": [
-        "Because I am not only selling you a loud can."
+        "Because I refuse to just be a loud can. I need everyone to know I'm a loud can with homework done."
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "My brand makes metabolism and exercise-performance claims and points to published exercise studies. You are allowed to read them before you believe me."
+        "It was! I say metabolism, I say exercise performance, and I point at published studies so you can go read them instead of taking my word. I move fast. I don't hide the receipts."
       ],
       "next": "choice-first"
     },
@@ -77,13 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're between sets. You've got ninety seconds. Go."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-celsius-fatburn-label",
-          "text": "I like that there is at least research behind the pitch.",
+          "text": "I like that there's at least research behind the pitch.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -103,7 +102,6 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-celsius-fatburn-label",
           "text": "I want to know what the studies actually measured.",
           "next": "first-2",
           "playerEffects": {
@@ -119,8 +117,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-celsius-fatburn-label",
-          "text": "I do not need metabolism marketing in an energy drink.",
+          "text": "I don't need metabolism marketing in an energy drink.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -144,7 +141,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. Read the study, then decide whether the result matters to you."
+        "Good. Read one, then decide if the result even matters to you. I'll be loud about it either way, that's not going to change."
       ],
       "nextTree": "map"
     },
@@ -154,7 +151,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Exactly. A study headline is not the same thing as understanding the study."
+        "Yes! Please! A headline about a study is not the study. Go find out what they measured, then come yell at me if it's smaller than it sounded."
       ],
       "nextTree": "map"
     },
@@ -164,7 +161,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Then buy energy for energy. You do not have to adopt every claim on the can."
+        "Then buy energy for energy. You don't have to adopt every word on the can to drink what's in it."
       ],
       "nextTree": "map"
     },
@@ -177,7 +174,7 @@
         }
       },
       "text": [
-        "The player already drinks standard CELSIUS and considers the higher-caffeine ESSENTIALS line for harder training days."
+        "You already drink the standard can. Tonight there's a different one in the cooler with ESSENTIALS on it, and you have a hard session ahead."
       ],
       "next": "entry-return-1"
     },
@@ -187,7 +184,7 @@
         "expression": "happy"
       },
       "text": [
-        "You found the louder one."
+        "You found the louder one. I was hoping you would."
       ],
       "next": "entry-return-2"
     },
@@ -211,7 +208,7 @@
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "Seventy more is not a cosmetic difference."
+        "Seventy more isn't a cosmetic difference."
       ],
       "next": "entry-return-5"
     },
@@ -221,7 +218,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Correct. Please do not treat caffeine like a colorway."
+        "Correct. Please don't treat caffeine like a colorway. I want you fired up, not just louder."
       ],
       "next": "choice-return"
     },
@@ -231,7 +228,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So which one's coming with you tonight?"
       ],
       "choices": [
         {
@@ -254,7 +251,7 @@
         },
         {
           "id": "return-2",
-          "text": "That is a lot of caffeine for one can.",
+          "text": "That's a lot of caffeine for one can.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -271,7 +268,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want my routine escalating to stronger energy drinks.",
+          "text": "I don't want my routine escalating to stronger energy drinks.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -295,7 +292,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the choice is doing its job. Use the format that actually fits the day."
+        "Good. Hard day, hard can. Easy day, regular can. Some days, no can. I can say that. I can say it once."
       ],
       "nextTree": "map"
     },
@@ -305,7 +302,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Yes. If that amount is not right for you, do not make it a challenge."
+        "Yes. It is. If 270 isn't right for you, don't turn it into a dare. I'm the last one who should say that, so listen when I do."
       ],
       "nextTree": "map"
     },
@@ -332,7 +329,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Caffeine is not a toughness contest."
+        "Caffeine isn't a toughness contest, even for me."
       ],
       "nextTree": "map"
     }

@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player encounters a retailer-exclusive PRIME Shake collaboration rather than the original hydration bottle.",
+    "The player encounters PRIME's Target-exclusive, Pop-Tarts-flavored Ultra-Filtered Shake instead of the original hydration bottle.",
     "The player already knows PRIME but sees unfamiliar packaging and checks the brand site to make sure the bottle is legitimate."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player encounters a retailer-exclusive PRIME Shake collaboration rather than the original hydration bottle."
+        "You find a shake carton wedged into the cooler where the hydration bottles usually are."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Protein shake?"
+        "\"Frosted Strawberry.\" A protein shake tastes like a Pop-Tart now?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Surprise. I wanted another refrigerator shelf."
+        "32 grams of protein wearing a toaster pastry's face. Frosted Chocolate Fudge too, if strawberry's not your thing."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "Hydration was not enough territory?"
+        "And I can only get it here?"
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Target got an exclusive PRIME Shake collaboration. Hydration got you into the brand. Shake asks whether you will follow me into another category."
+        "Target only. My name and Pop-Tarts' on the same carton, nowhere else on earth. You came in for a bottle. I'm seeing if you'll follow me to the dairy case."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,13 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're still holding it. Cold hand yet?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I respect how absurdly committed you are to expanding.",
+          "evidence": "ev-prime-poptarts-shake",
+          "text": "A breakfast pastry as a protein shake flavor is unhinged, in a good way.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -101,7 +102,8 @@
         },
         {
           "id": "first-2",
-          "text": "This feels like you are trying to become the whole aisle.",
+          "evidence": "ev-prime-poptarts-shake",
+          "text": "Locking it to one retailer feels like a stunt more than a shake.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 1,
@@ -116,7 +118,8 @@
         },
         {
           "id": "first-3",
-          "text": "I wanted a drink, not a brand crossover universe.",
+          "evidence": "ev-prime-poptarts-shake",
+          "text": "I wanted a drink, not a Pop-Tarts crossover event.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -150,7 +153,7 @@
         "expression": "happy"
       },
       "text": [
-        "Correct. I am expanding on purpose."
+        "It's a stunt. It's also a shake. Half the comments said genius, half said gross, and both halves showed up at Target. I checked."
       ],
       "nextTree": "map"
     },
@@ -160,7 +163,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Then buy the one thing you came for. I can handle a smaller cart."
+        "Then buy the one thing you came for. I can handle a smaller cart. I'll be annoyed about it, but I can handle it."
       ],
       "nextTree": "map"
     },
@@ -173,7 +176,7 @@
         }
       },
       "text": [
-        "The player already knows PRIME but sees unfamiliar packaging and checks the brand site to make sure the bottle is legitimate."
+        "You know PRIME. This bottle's label looks slightly off. There's a page on the brand site for exactly this."
       ],
       "next": "entry-return-1"
     },
@@ -190,7 +193,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Check it before you drink it."
+        "Don't drink it yet. Check it."
       ],
       "next": "entry-return-3"
     },
@@ -207,7 +210,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Country, size, label, formula, flavors. The hype got big enough that fake or unauthorized product became a real problem."
+        "Country, size, label, formula, flavors. When you get this big, fakes show up. I'd rather you find out from my page than from your stomach."
       ],
       "next": "choice-return"
     },
@@ -217,13 +220,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Well? Real or not?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "evidence": "ev-prime-verify-bottle",
-          "text": "I like that I can verify it myself.",
+          "text": "I like that I can check it myself.",
           "next": "return-1",
           "playerEffects": {
             "control": 1,
@@ -241,7 +243,6 @@
         },
         {
           "id": "return-2",
-          "evidence": "ev-prime-verify-bottle",
           "text": "The fact that I need to verify a sports drink is wild.",
           "next": "return-2",
           "playerEffects": {
@@ -257,8 +258,7 @@
         },
         {
           "id": "return-3",
-          "evidence": "ev-prime-verify-bottle",
-          "text": "If I have to investigate a bottle, I am buying something else.",
+          "text": "If I have to investigate a bottle, I'm buying something else.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -282,7 +282,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. Trust the list and trusted retailers, not a random bottle with my logo."
+        "Good. Trust the list and the stores on it. A random bottle with my logo isn't me until the page says so."
       ],
       "nextTree": "map"
     },
@@ -319,7 +319,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Reasonable. A sports drink should not require detective work."
+        "Reasonable. A sports drink shouldn't need detective work. Mine does, sometimes. That's the cost of being copied."
       ],
       "nextTree": "map"
     }

@@ -22,7 +22,7 @@
   ],
   "lessons": [
     "The player opens ZYN.com to look around and is stopped by registration and age verification before reaching the product pages.",
-    "The player already uses classic ZYN and sees the newer ZYN Ultra line promoted as a higher-strength, hydro-boosted extension with a different can."
+    "The player scrolls past the most-recirculated ZYN meme format before sleep: someone holding a tin aloft, camera-forward, like it is being presented rather than just opened."
   ],
   "nodes": {
     "entry-first": {
@@ -34,7 +34,7 @@
         }
       },
       "text": [
-        "The player opens ZYN.com to look around and is stopped by registration and age verification before reaching the product pages."
+        "In bed, you type ZYN.com into your phone to see what flavors exist. You do not get to the flavors. You get a form."
       ],
       "next": "entry-first-1"
     },
@@ -51,7 +51,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Before product content is displayed, the site requires verification that you are at least twenty-one years old and a current nicotine consumer."
+        "Before any product is shown, the site requires proof that you are at least twenty-one and already use nicotine. I am aware you were expecting a picture of a tin."
       ],
       "next": "entry-first-3"
     },
@@ -85,7 +85,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Identity and age through third-party verification. The company's 2026 regulatory materials state that the system may match submitted information against government databases."
+        "Identity and age, through a third party. The company's own filings say the check may compare what you type against government records. I would not describe it as a birthday dropdown."
       ],
       "next": "choice-first"
     },
@@ -95,12 +95,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You have been holding the phone above your face for some time. Your position, for the record?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "Fine. I actually like that they verify instead of using a birthday dropdown.",
+          "text": "Fine. I actually like that they check instead of using a birthday dropdown.",
           "next": "first-1",
           "playerEffects": {
             "trust": 2,
@@ -119,7 +119,7 @@
         },
         {
           "id": "first-2",
-          "text": "That is a lot of personal information just to browse a website.",
+          "text": "That's a lot of personal information just to browse a website.",
           "next": "first-2",
           "playerEffects": {
             "control": 2,
@@ -135,7 +135,7 @@
         },
         {
           "id": "first-3",
-          "text": "If I need to register before I can even look, I am leaving.",
+          "text": "If I have to register before I can even look, I'm leaving.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -187,7 +187,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "The tradeoff is real. Access control requires more information than an honor-system date field."
+        "It is. Keeping people out requires knowing who they are. An honor-system date field keeps nobody out. I do not enjoy either sentence."
       ],
       "next": "first-2-1"
     },
@@ -214,7 +214,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then access terminates before the product content. No further action is required."
+        "Then you never reach the product page. No further action is required. Goodnight."
       ],
       "nextTree": "map"
     },
@@ -227,51 +227,58 @@
         }
       },
       "text": [
-        "The player already uses classic ZYN and sees the newer ZYN Ultra line promoted as a higher-strength, hydro-boosted extension with a different can."
+        "You scroll past the same clip a third time before sleep: someone holding a tin aloft, camera-forward, like it is being presented rather than just opened."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "The word \"Ultra\" should not be construed as an emotional commitment."
+        "Why does everyone film themselves holding the tin up like that? Like it's being elevated."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "I was going to ask if it just means stronger."
+        "People did that before anyone filmed it. Showing the tin to the room, to the camera, to the group chat, before the pouch is in. The video did not invent the gesture. It found it."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "Not exclusively. The line uses a moister pouch, contains twenty pouches per can, includes a disposal compartment in the lid, and is offered in nine- and eleven-milligram strengths."
+        "So the company did not storyboard the version where people treat the tin like a holy relic."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "PLAYER",
-      "text": [
-        "There it is. Eleven."
-      ],
-      "next": "entry-return-5"
-    },
-    "entry-return-5": {
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "As of August 21, 2026, FDA marketing authorization covers eleven ZYN Ultra products, including all submitted nine-milligram variants and one eleven-milligram variant. Additional eleven-milligram variants remained under review at that time."
+        "No. There is no brand asset in that clip. Users made it, users spread it, and no one at the company approved it because no one at the company was asked."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "It is midnight and I have watched it three times."
+      ],
+      "next": "entry-return-6"
+    },
+    "entry-return-6": {
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "That outcome required no advertising spend. I note it without satisfaction."
       ],
       "next": "choice-return"
     },
@@ -281,22 +288,23 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You are about to watch it a fourth time. Before you do."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "The disposal lid and bigger can are actually useful changes.",
+          "evidence": "ev-zyn-tin-flashing-meme",
+          "text": "It's funny because the gesture is real. People actually hold it up like that.",
           "next": "return-1",
           "playerEffects": {
-            "control": 2,
-            "mastery": 1
+            "belonging": 2,
+            "selfExpression": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "comfort": 1,
-              "mastery": 1,
-              "readiness": 1
+              "belonging": 1,
+              "selfExpression": 1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -305,33 +313,34 @@
         },
         {
           "id": "return-2",
-          "text": "\"Ultra\" still feels like escalation dressed up as an upgrade.",
+          "evidence": "ev-zyn-tin-flashing-meme",
+          "text": "Free reverence from a meme you didn't make is still free reverence.",
           "next": "return-2",
           "playerEffects": {
-            "control": 2,
-            "trust": 1
+            "mastery": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "readiness": -2,
-              "trust": -1,
-              "mastery": 1
+              "belonging": 1,
+              "trust": -1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "Higher nicotine strength is exactly what I do not want.",
+          "evidence": "ev-zyn-tin-flashing-meme",
+          "text": "I don't want a nicotine tin to be the thing my group chat treats as sacred.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
-            "reassurance": 1
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "readiness": -3,
-              "comfort": -1,
-              "trust": -1
+              "belonging": -2,
+              "trust": -1,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -346,14 +355,14 @@
         "expression": "happy"
       },
       "text": [
-        "Your approval is limited to the packaging and convenience changes. I have recorded it narrowly."
+        "Recognition of the bit noted. Put the phone down before the fifth viewing."
       ],
       "next": "return-1-1"
     },
     "return-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "Thank you for protecting me from accidentally liking a lid too much."
+        "You are the worst person to be told to put my phone down by."
       ],
       "next": "return-1-2"
     },
@@ -363,7 +372,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Scope matters."
+        "The advice does not require me to be the ideal messenger."
       ],
       "nextTree": "map"
     },
@@ -373,7 +382,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Higher strength is part of the proposition. The other changes do not erase that fact."
+        "Correct. Nobody paid for it, and it is still working. I would prefer that were not true. It is true."
       ],
       "nextTree": "map"
     },
@@ -383,7 +392,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the higher-strength extension is inconsistent with your stated preference. Classic ZYN remains a separate line."
+        "That reaction is available to you regardless of what the format finds funny. Scroll past it. Sleep."
       ],
       "nextTree": "map"
     }

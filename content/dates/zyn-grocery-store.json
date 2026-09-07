@@ -34,7 +34,7 @@
         }
       },
       "text": [
-        "The player sees Black Cherry, Peach, and Dragonberry added to the classic ZYN lineup at retail."
+        "Behind the counter, next to the mint and coffee tins you know, there are three new ones. Black Cherry. Peach. Dragonberry."
       ],
       "next": "entry-first-1"
     },
@@ -51,7 +51,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Black Cherry, Peach, and Dragonberry are permanent additions to the classic lineup in three- and six-milligram strengths. The brand states they are available through retailers nationwide and online through Nicokick."
+        "Black Cherry, Peach, and Dragonberry. Permanent additions, three and six milligrams. Sold at retail nationwide and online through Nicokick. That is the entire announcement. I did not shorten it."
       ],
       "next": "entry-first-3"
     },
@@ -78,7 +78,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The cashier is waiting. So am I, in a professional capacity."
       ],
       "choices": [
         {
@@ -144,7 +144,7 @@
         "expression": "happy"
       },
       "text": [
-        "Preference variety is the stated product benefit. Your response has been recorded without further embellishment."
+        "Noted. Variety is the stated benefit. I have nothing to add, which is unusual for me."
       ],
       "nextTree": "map"
     },
@@ -154,7 +154,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The additions are permanent, so this is portfolio expansion rather than a limited seasonal test."
+        "They are permanent, not seasonal. So this is the lineup getting bigger, not a test. You may draw your own conclusion about why."
       ],
       "next": "first-2-1"
     },
@@ -181,7 +181,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Your concern is noted. The products remain restricted to current nicotine consumers age twenty-one and older; that restriction does not require you to find flavored nicotine appealing."
+        "Your concern is noted. The products are restricted to current nicotine users twenty-one and over. That restriction does not require you to like the flavors. I would not ask you to."
       ],
       "nextTree": "map"
     },
@@ -194,7 +194,7 @@
         }
       },
       "text": [
-        "The player peels back the bottom label of a can and finds a Rewards code."
+        "At home, you notice the bottom label on the tin peels back. There is a code under it."
       ],
       "next": "entry-return-1"
     },
@@ -211,7 +211,7 @@
         "expression": "neutral"
       },
       "text": [
-        "To access the unique alphanumeric code printed beneath it on specially marked cans."
+        "There is a code printed under it, on marked cans. You were not meant to find it by accident, but you were meant to find it."
       ],
       "next": "entry-return-3"
     },
@@ -228,7 +228,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fifteen points per code. Up to sixty codes per month. Points may be redeemed for sponsor-selected merchandise, gift cards, gear, or experiences, subject to availability and program terms."
+        "Fifteen points per code, up to sixty codes a month. Points buy merchandise, gift cards, gear, or experiences, while supplies last, subject to the program terms. I have read the program terms."
       ],
       "next": "entry-return-5"
     },
@@ -255,7 +255,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The code is eight characters. You are still looking at it."
       ],
       "choices": [
         {
@@ -296,7 +296,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want nicotine purchases gamified.",
+          "text": "I don't want nicotine purchases gamified.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -348,7 +348,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is a fair description. The code converts repeat purchases into a trackable rewards relationship."
+        "That is a fair description. Every code you type in tells the company you bought another one. That is what the points are for. I would rather you hear that from me."
       ],
       "nextTree": "map"
     },
@@ -358,7 +358,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then do not enter the code. The product remains usable without participation in the Rewards program."
+        "Then do not enter the code. The tin works the same without it. Fewer things do, these days."
       ],
       "nextTree": "map"
     }

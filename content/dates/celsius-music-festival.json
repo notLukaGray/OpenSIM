@@ -1,7 +1,7 @@
 {
   "id": "celsius-music-festival",
   "brandId": "celsius",
-  "title": "Ambassadors, Content, and the Vibe Lineup",
+  "title": "The Essential Vibes Tour",
   "locationId": "music-festival",
   "context": {
     "location": "music-festival",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees a CELSIUS ambassador post and learns ambassadors are expected to create recurring social content for product rewards.",
+    "The player realizes CELSIUS is presenting sponsor of the whole festival, part of a multi-year deal covering every Breakaway stop.",
     "The player already knows CELSIUS and now recognizes new Vibe cans as flavor-led reasons to keep browsing the lineup."
   ],
   "nodes": {
@@ -33,51 +33,58 @@
         }
       },
       "text": [
-        "The player sees a CELSIUS ambassador post and learns ambassadors are expected to create recurring social content for product rewards."
+        "The main stage has a sponsor banner. So do the wristbands. So does the water refill station. It's the same name every time."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "Your name is on the main stage, the wristbands, and I think the porta-potties."
+      ],
+      "next": "entry-first-2"
+    },
+    "entry-first-2": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "happy"
       },
       "text": [
-        "One feed post, two stories, tags, submission."
-      ],
-      "next": "entry-first-2"
-    },
-    "entry-first-2": {
-      "speaker": "PLAYER",
-      "text": [
-        "You just assigned homework."
+        "Presenting sponsor! Every Breakaway stop, all ten, more than one year. They even named the whole run after me: the Essential Vibes Tour."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "So you didn't just buy an ad. You bought the night."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "That is the ambassador challenge. Complete the content requirements and product can follow next month."
-      ],
-      "next": "entry-first-4"
-    },
-    "entry-first-4": {
-      "speaker": "PLAYER",
-      "text": [
-        "So enthusiasm comes with deliverables."
+        "I bought the night. Look around. Everybody here is up way past when they meant to be. That's my crowd. I didn't have to convince anyone."
       ],
       "next": "entry-first-5"
     },
     "entry-first-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "That's a very long-term commitment for one crowd."
+      ],
+      "next": "entry-first-6"
+    },
+    "entry-first-6": {
       "speaker": "CELSIUS",
       "sprite": {
         "expression": "embarrassed"
       },
       "text": [
-        "In this program? Very much."
+        "Multi-year, ten cities. I didn't want to be a booth. Booths get walked past. I wanted my name on the thing you say when you tell people where you were."
       ],
       "next": "choice-first"
     },
@@ -87,21 +94,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You've got that look. Say it before the next set starts."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "At least the relationship is pretty explicit.",
+          "evidence": "ev-celsius-breakaway-festival",
+          "text": "Honestly, this is exactly the room you belong in.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
-            "readiness": 1
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "celsius": {
               "excitement": 2,
-              "readiness": 1
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -110,7 +118,8 @@
         },
         {
           "id": "first-2",
-          "text": "A free case can still shape what someone says.",
+          "evidence": "ev-celsius-breakaway-festival",
+          "text": "Buying the whole tour name is a big spend to look this effortless.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -125,7 +134,8 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want my feed full of contracted enthusiasm.",
+          "evidence": "ev-celsius-breakaway-festival",
+          "text": "I'd rather the festival exist without a sponsor's name stapled to it.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -149,7 +159,7 @@
         "expression": "special"
       },
       "text": [
-        "Transparency helps. You can enjoy the post without pretending the incentive is invisible."
+        "Told you. This isn't me crashing the party. This is the party."
       ],
       "nextTree": "map"
     },
@@ -159,7 +169,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Product compensation is still compensation."
+        "Yeah, it's a lot of money. Ten stops, a name on everything. None of it's an accident and I'm not going to pretend it was cheap."
       ],
       "nextTree": "map"
     },
@@ -169,7 +179,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Then scroll. I am loud enough without forcing a follow."
+        "Somebody's paying for the stage either way. At least you know it's me. I'm the only sponsor here who'll admit it to your face."
       ],
       "nextTree": "map"
     },
@@ -182,7 +192,7 @@
         }
       },
       "text": [
-        "The player already knows CELSIUS and now recognizes new Vibe cans as flavor-led reasons to keep browsing the lineup."
+        "The cooler by the side stage has four cans you haven't seen before: Galaxy, Arctic, Tropical, Retro. All Vibe. All CELSIUS."
       ],
       "next": "entry-return-1"
     },
@@ -216,7 +226,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The energy function stays familiar. The Vibe names keep the cooler from feeling finished."
+        "The energy part doesn't change. The names are so the cooler never feels finished. If it looks finished, you stop looking."
       ],
       "next": "choice-return"
     },
@@ -226,7 +236,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Pick one. Don't think. Go."
       ],
       "choices": [
         {
@@ -251,7 +261,7 @@
         },
         {
           "id": "return-2",
-          "text": "The names are doing more work than the product difference.",
+          "text": "The names are doing more work than whatever's different inside.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -266,7 +276,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not need twenty-nine ways to buy the same energy habit.",
+          "text": "I don't need twenty-nine ways to buy the same energy habit.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -317,7 +327,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Often, yes. Flavor and packaging are carrying the novelty."
+        "Yeah. Most of the time it's the name and the can. The stuff inside is basically me in a different outfit. I'm not sorry, the outfits are good."
       ],
       "nextTree": "map"
     },
@@ -327,7 +337,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then pick one, or stop browsing. Variety is only useful if you want it."
+        "Then grab one or stop browsing. Twenty-nine is only fun if you're having fun."
       ],
       "nextTree": "map"
     }

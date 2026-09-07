@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player learns that Starbucks accepts clean personal cups across cafe, drive-thru, and mobile orders and rewards members for using one."
+        "Your kitchen cabinet. Three travel mugs you never use. A line in the app says you can bring one of them, clean, to any order, even mobile, and get Stars for it."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I can mobile order with my own cup now?"
+        "I can mobile order with my own cup from the cabinet now?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Cafe, drive-thru, or mobile order. Bring it clean."
+        "Cafe, drive-thru, or mobile order. Bring it clean. I won't ask questions about the sticker collection on it."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "And Rewards gives me something for doing it?"
+        "And Rewards gives me something for actually doing it?"
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Extra Stars on the personal-cup transaction. The behavior is easier to repeat when the system remembers to reward it."
+        "Extra Stars when you use your own cup. People do the better thing more often when somebody notices. I'm the somebody."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,11 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Which mug? The one with the chip, or the one from the conference?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-starbucks-personal-cup-stars",
           "text": "That makes a reusable cup easier to actually use.",
           "next": "first-1",
           "playerEffects": {
@@ -101,8 +100,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-starbucks-personal-cup-stars",
-          "text": "The process still depends on me remembering and cleaning the cup.",
+          "text": "It still depends on me remembering and cleaning the cup, not you.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -117,8 +115,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-starbucks-personal-cup-stars",
-          "text": "I do not want sustainability turned into another loyalty mechanic.",
+          "text": "I don't want sustainability turned into another loyalty mechanic.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -142,7 +139,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. The useful part is making the better habit work in every ordering channel."
+        "Good. It works the same way whether you're at the counter or ordering from the car. That's the part that makes it stick."
       ],
       "nextTree": "map"
     },
@@ -152,7 +149,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. I cannot automate the cup being clean and in your hand."
+        "Correct. I can't wash it, and I can't put it by your keys. Everything I can do, I've done. The rest is you at seven in the morning."
       ],
       "nextTree": "map"
     },
@@ -162,7 +159,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. The environmental benefit and the loyalty incentive are two different reasons."
+        "Fair. Fewer cups in the bin, and more Stars in your account, are two different reasons living in the same offer. I'm not going to pretend I only care about the first one."
       ],
       "nextTree": "map"
     },
@@ -175,7 +172,7 @@
         }
       },
       "text": [
-        "The player already has Rewards Stars and sees that Green-level Stars can expire after six months unless qualifying activity extends them."
+        "Saturday morning, coffee not made yet. The app pings: some of your Stars expire soon."
       ],
       "next": "entry-return-1"
     },
@@ -185,14 +182,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Your Stars are not a savings account."
+        "Your Stars aren't a savings account. Not in your kitchen, not anywhere."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "That sentence means I am about to lose something."
+        "That sentence means I'm about to lose something."
       ],
       "next": "entry-return-3"
     },
@@ -202,14 +199,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "At Green status, Stars can expire after six months."
+        "At Green, Stars can expire after six months."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "And you are reminding me because you know I hate losing them."
+        "And you're reminding me before I lose them."
       ],
       "next": "entry-return-5"
     },
@@ -219,7 +216,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Qualifying activity can extend them. Gold or Reserve changes the expiration rules. You can decide what that reminder does to you."
+        "Buying something extends them. Gold or Reserve changes the rules. You get to decide what that reminder does to you before you've even had coffee, which I know isn't fair."
       ],
       "next": "choice-return"
     },
@@ -229,7 +226,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You've been staring at the notification. Coffee's getting cold. Well, it would be, if you'd made it."
       ],
       "choices": [
         {
@@ -293,7 +290,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the reminder saved value you already earned."
+        "Then it did its job. You'd earned those. I'd rather you spent them than watched them vanish."
       ],
       "nextTree": "map"
     },
@@ -303,7 +300,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That pressure is real. If the Stars expire, the reminder also gives you a reason to come back."
+        "It is pressure. I'm not going to argue that. The reminder saves your Stars, and it also gives you a reason to come in this week. Both are true, and I sent it for both."
       ],
       "nextTree": "map"
     },
@@ -330,7 +327,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "I know. That is why the reminder works."
+        "I know. That's why the reminder works."
       ],
       "nextTree": "map"
     }

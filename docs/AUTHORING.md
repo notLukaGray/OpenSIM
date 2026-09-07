@@ -100,17 +100,10 @@ internally). Keep descriptions second-person, specific, a little devastating.
 
 ## Add evidence
 
-`content/evidence.json` — the [MEMORY UNLOCKED] cards that surface real marketing material inside
-dates. `imageRef` is OPTIONAL: with it, the card shows your image; without it, the card renders as
-designed typography (title-as-quote over type badge). Bulk workflow:
-
-```bash
-# agents/writers drop fragment files, then merge in one command:
-npm run sync:evidence
-```
-
-Fragments live in `content/evidence-fragments/*.json` and must include an `imageRef` pointing to an
-SVG you place at `public/assets/evidence/<id>.svg` (swap with real imagery later — same path).
+`content/evidence.json` is the single source of truth for the [MEMORY UNLOCKED] cards that surface
+real marketing material inside dates. Append a card directly to that array. `imageRef` is OPTIONAL:
+with it, the card shows your image (register the file in `content/assets.json` and reference it by
+asset id); without it, the card renders as designed typography (title-as-quote over type badge).
 
 ```json
 {
@@ -119,16 +112,16 @@ SVG you place at `public/assets/evidence/<id>.svg` (swap with real imagery later
   "type": "product",
   "title": "The travel pack",
   "description": "Stick packs sized exactly for a water bottle.",
-  "imageRef": "/assets/evidence/ev-liquid-iv-travel-pack.svg",
+  "imageRef": "ev-liquid-iv-travel-pack",
+  "sourceIds": ["src-liquid-iv-travel-pack"],
   "effects": { "readiness": 1 }
 }
 ```
 
-Fragments may write `imageRef` as the file path — `sync:evidence` normalizes it to the asset id
-and registers the SVG automatically.
+Descriptions are neutral and source-forward: what happened, when, and where the claim comes from.
+No brand voice, no scene staging, no em dashes. Cite `content/sources.json` records in `sourceIds`.
 
 Attach to any node via `"evidence": "<card-id>"`. Effects nudge perception once on first unlock.
-`sourceIds` (P6-01) may cite `content/sources.json` records when that lands.
 
 ## Add a modifier
 

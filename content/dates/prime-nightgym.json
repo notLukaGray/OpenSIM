@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player first recognizes PRIME from the creator machine around Logan Paul and KSI, not from a nutrition label.",
+    "The player first recognizes PRIME from the creator machine around Logan Paul and KSI, not from a nutrition label, and spots the machine's loudest move on the gym TV: PRIME's logo dead center of the WrestleMania mat and both corners of the UFC Octagon rebranded into recovery zones.",
     "The player already buys PRIME and has started keeping powdered Hydration+ sticks in a gym bag instead of carrying bottles."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player first recognizes PRIME from the creator machine around Logan Paul and KSI, not from a nutrition label."
+        "Late gym. You know the two names on the bottle, Logan Paul and KSI, from a decade of videos. You couldn't say what's in the bottle."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I knew Logan and KSI before I knew what was in you."
+        "I knew those creators, Logan and KSI, before I knew what was even in you."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Exactly. That was the launch advantage."
+        "That was the launch. That was the whole launch. Worked, didn't it?"
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "You are admitting the celebrity came before the hydration pitch."
+        "You're admitting the hype got here before I knew what you sold."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,48 @@
         "expression": "neutral"
       },
       "text": [
-        "I was built in public through creator audiences, launches, challenges, and noise. You met the spectacle first."
+        "I was built in public. Creator drops, sellouts, noise, repeat. You met the show first. Everybody did."
+      ],
+      "next": "entry-first-reel"
+    },
+    "entry-first-reel": {
+      "speaker": "...",
+      "text": [
+        "On the gym TV, a highlight reel loops: PRIME's logo dead center of the WrestleMania mat, the first brand ever allowed there, and both corners of the UFC Octagon renamed \"PRIME Hydration Recovery Zones.\""
+      ],
+      "next": "entry-first-reel-1"
+    },
+    "entry-first-reel-1": {
+      "speaker": "PLAYER",
+      "text": [
+        "You bought the middle of the ring and called it hydration."
+      ],
+      "next": "entry-first-reel-2"
+    },
+    "entry-first-reel-2": {
+      "speaker": "PRIME",
+      "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "First brand ever on that mat. Both corners of the Octagon. Look at it. Look at it!"
+      ],
+      "next": "entry-first-reel-3"
+    },
+    "entry-first-reel-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "It's still a drink standing in a spotlight."
+      ],
+      "next": "entry-first-reel-4"
+    },
+    "entry-first-reel-4": {
+      "speaker": "PRIME",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "The spotlight's the point. Logan and KSI got me in front of you before any label could. The mat's just the biggest thing I could put my name on next."
       ],
       "next": "choice-first"
     },
@@ -77,13 +118,13 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Reel's about to loop again. Say what you're going to say."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-prime-founder-machine",
-          "text": "It worked. I knew exactly what PRIME was before I tried it.",
+          "evidence": "ev-prime-wrestlemania-mat",
+          "text": "It worked. I knew exactly what PRIME was before I ever tried it.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -102,8 +143,8 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-prime-founder-machine",
-          "text": "So the hype got there before the product did.",
+          "evidence": "ev-prime-wrestlemania-mat",
+          "text": "So the hype outran the product.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 1,
@@ -118,8 +159,8 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-prime-founder-machine",
-          "text": "I do not want my sports drink to come with a personality cult.",
+          "evidence": "ev-prime-wrestlemania-mat",
+          "text": "I don't want a personality cult attached to my sports drink.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -143,7 +184,7 @@
         "expression": "special"
       },
       "text": [
-        "And now you are actually talking to me. Scoreboard."
+        "And now you're actually talking to me. Scoreboard."
       ],
       "nextTree": "map"
     },
@@ -153,14 +194,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. Separate knowing my founders from knowing my product."
+        "Guilty. Separate my founders from my formula. They're not the same review."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "You are surprisingly okay with that."
+        "You're weirdly okay admitting that."
       ],
       "next": "first-2-2"
     },
@@ -170,7 +211,7 @@
         "expression": "happy"
       },
       "text": [
-        "I am confident enough to survive a nutrition label."
+        "I'm confident enough to survive a nutrition label."
       ],
       "nextTree": "map"
     },
@@ -180,7 +221,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Then I am probably exhausting. I have never advertised a low-volume setting."
+        "Then I'm probably exhausting. I've never once advertised a low-volume setting. Don't think I have one."
       ],
       "nextTree": "map"
     },
@@ -193,14 +234,14 @@
         }
       },
       "text": [
-        "The player already buys PRIME and has started keeping powdered Hydration+ sticks in a gym bag instead of carrying bottles."
+        "Gym bag. Where the bottle used to roll around, there's a row of Hydration+ powder sticks."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "You got smaller."
+        "The bottle turned into a little powder packet."
       ],
       "next": "entry-return-2"
     },
@@ -210,7 +251,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Powdered. Add the Hydration+ stick to water. Same category, less bottle."
+        "Powder. Dump it in water. Same thing you already buy, minus the bottle taking up half your bag."
       ],
       "next": "choice-return"
     },
@@ -220,12 +261,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Well? Bag's lighter, isn't it?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "This is much easier to keep in my bag.",
+          "text": "This is a lot easier to keep in my bag.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -244,7 +285,7 @@
         },
         {
           "id": "return-2",
-          "text": "I am still paying for flavored powder.",
+          "text": "I'm still paying bottle money for flavored powder.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -283,7 +324,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. You kept me because I became easier to carry."
+        "Right. I didn't get better. I got easier to carry. Sometimes that's all it takes to stay."
       ],
       "nextTree": "map"
     },
@@ -293,7 +334,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Convenience does not stop costing money because I fit in a packet."
+        "Yeah. It got smaller. It didn't get cheaper. I'm not going to act like the packet's a discount."
       ],
       "nextTree": "map"
     },
@@ -303,7 +344,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You can. I am for when plain water is not what you want."
+        "You can. I'm for the nights when plain water isn't what you actually want. Those nights exist. I've built a lot on them."
       ],
       "nextTree": "map"
     }

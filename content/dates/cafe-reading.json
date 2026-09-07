@@ -1,14 +1,76 @@
 {
-  "id": "cafe-reading", "brandId": "cafe-reading", "title": "A Table, Unclaimed", "locationId": "corner-cafe",
-  "context": { "location": "corner-cafe", "occasion": "slow-hour" }, "music": null, "background": null, "cast": [], "startNode": "intro",
-  "lessons": ["a third place can be yours without a transaction", "attention is a choice"],
+  "id": "cafe-reading",
+  "brandId": "cafe-reading",
+  "title": "A Table, Unclaimed",
+  "locationId": "corner-cafe",
+  "context": {
+    "location": "corner-cafe",
+    "occasion": "slow-hour"
+  },
+  "music": null,
+  "background": null,
+  "cast": [],
+  "startNode": "intro",
+  "lessons": [
+    "a third place can be yours without a transaction",
+    "attention is a choice"
+  ],
   "nodes": {
-    "intro": { "speaker": "...", "text": ["The corner table is empty because everyone assumes it belongs to someone else.", "You sit down with your book and an hour that has not been assigned."], "next": "choose" },
-    "choose": { "speaker": "...", "text": ["Around you, people rehearse their busyness."], "choices": [
-      { "id": "read", "text": "Read until the room disappears around the page.", "next": "read-end", "playerEffects": { "mastery": 2, "comfort": 1 }, "setFlags": ["control-cafe-focus"] },
-      { "id": "notice", "text": "Close the book and people-watch without inventing their lives.", "next": "notice-end", "playerEffects": { "selfExpression": 1, "belonging": 1 }, "setFlags": ["control-cafe-observe"] }
-    ] },
-    "read-end": { "speaker": "...", "text": ["A chapter ends. Nothing pings to congratulate you.", "You turn the page anyway."], "nextTree": "map" },
-    "notice-end": { "speaker": "...", "text": ["The room becomes a room again: cups, coats, bad posture, weather.", "That is plenty."], "nextTree": "map" }
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "The corner table's empty. Everyone else assumes it's somebody's.",
+        "Fine. It's mine now. Me, a book, and an hour nobody's asked me for."
+      ],
+      "next": "choose"
+    },
+    "choose": {
+      "speaker": "...",
+      "text": [
+        "Around me, everyone's very busy looking busy. I could do that too."
+      ],
+      "choices": [
+        {
+          "id": "read",
+          "text": "Read until the room goes away.",
+          "next": "read-end",
+          "playerEffects": {
+            "mastery": 2,
+            "comfort": 1
+          },
+          "setFlags": [
+            "control-cafe-focus"
+          ]
+        },
+        {
+          "id": "notice",
+          "text": "Close the book. Watch people without making up their lives.",
+          "next": "notice-end",
+          "playerEffects": {
+            "selfExpression": 1,
+            "belonging": 1
+          },
+          "setFlags": [
+            "control-cafe-observe"
+          ]
+        }
+      ]
+    },
+    "read-end": {
+      "speaker": "...",
+      "text": [
+        "Chapter ends. Nothing buzzes to tell me good job.",
+        "I turn the page anyway."
+      ],
+      "nextTree": "map"
+    },
+    "notice-end": {
+      "speaker": "...",
+      "text": [
+        "Cups. Coats. Someone's terrible posture. Rain starting on the window.",
+        "That's the whole room. It's enough."
+      ],
+      "nextTree": "map"
+    }
   }
 }

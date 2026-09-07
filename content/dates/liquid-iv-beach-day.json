@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player notices Liquid I.V. because a seasonal flavor is built around a familiar candy or frozen-treat brand."
+        "Cooler, sand, someone's phone speaker. A Liquid I.V. packet in the bag has a candy brand's logo on it. Firecracker. You know that one from a freezer aisle when you were nine."
       ],
       "next": "entry-first-1"
     },
@@ -50,14 +50,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "When you say it like that, yes."
+        "When you say it like that, yes. I'm not going to defend it. I wanted to see if it worked, and it worked on you."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "The familiar name is doing a lot of work."
+        "The familiar name is doing a lot of the work you should be doing."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "That is the point of the collaboration. Firecracker got attention because people recognized the memory before they understood the electrolyte powder."
+        "That's the whole reason to do a collaboration. People picked Firecracker off the shelf because they knew the name before they read one electrolyte number. I'd like it to be me, but it was the popsicle."
       ],
       "next": "choice-first"
     },
@@ -77,13 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're holding it and squinting at it. Are we doing this?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-liquid-iv-firecracker-collab",
-          "text": "That sounds fun enough to try once.",
+          "text": "That sounds fun enough to throw in the cooler.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 1,
@@ -102,8 +101,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-liquid-iv-firecracker-collab",
-          "text": "Nostalgia has nothing to do with hydration.",
+          "text": "Nostalgia has nothing to do with staying hydrated.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -118,8 +116,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-liquid-iv-firecracker-collab",
-          "text": "I do not want candy logic in a wellness product.",
+          "text": "I don't want candy logic in the bag I actually rely on.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -143,7 +140,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the memory got you to taste it."
+        "Then the memory got you to taste it. What's inside is the same as always, and it's going to be doing more than the popsicle did today."
       ],
       "next": "first-1-1"
     },
@@ -160,7 +157,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. The familiar flavor gets you to look. The hydration product still has to earn the purchase."
+        "Nope. Nothing. Hold me to that. The flavor gets you to look. The stuff inside still has to earn the bag, same as any other packet."
       ],
       "nextTree": "map"
     },
@@ -170,7 +167,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Then the collaboration is doing the opposite of what you want. Skip it."
+        "Then skip it and grab the flavor you already trust. It's in the same bag. I'm not going to talk you into the fun one."
       ],
       "nextTree": "map"
     },
@@ -183,14 +180,14 @@
         }
       },
       "text": [
-        "The player already uses Liquid I.V. and buys a variety pack instead of committing to one flavor."
+        "You bought the variety pack again. You're already digging past two flavors to get to the same two you always drink."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I keep buying the variety pack and choosing the same two first."
+        "I keep buying the variety pack and grabbing the same two packets first."
       ],
       "next": "entry-return-2"
     },
@@ -200,14 +197,14 @@
         "expression": "happy"
       },
       "text": [
-        "That still counts as variety. Technically."
+        "That still counts as variety. Technically. The other two are in there for the day you wake up bored."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Why not just sell me those two?"
+        "Why not just sell me those two and stop tempting me with the rest?"
       ],
       "next": "entry-return-4"
     },
@@ -217,7 +214,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You can. The pack is there if changing flavors keeps the routine from getting stale."
+        "You can buy just those two. I'll say that once. The pack exists for the week the routine starts feeling like a chore and a new flavor is the cheapest way out of that."
       ],
       "next": "choice-return"
     },
@@ -227,7 +224,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "What's it going to be, the usual or one of the ones you keep skipping?"
       ],
       "choices": [
         {
@@ -250,7 +247,7 @@
         },
         {
           "id": "return-2",
-          "text": "This feels like a fix for getting bored with the product.",
+          "text": "This feels like a fix for me getting bored of you.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -265,7 +262,7 @@
         },
         {
           "id": "return-3",
-          "text": "If I am bored enough to need four flavors, maybe I do not need the habit.",
+          "text": "If I need four flavors to stay interested, maybe I don't need the habit.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -289,7 +286,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then the variety pack is earning its space in the cabinet."
+        "Good. Then the other two aren't dead weight. That's all I wanted from the pack."
       ],
       "nextTree": "map"
     },
@@ -299,7 +296,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "It can be. Boredom is a real reason people stop repeating things."
+        "It is. I'll own that. People don't quit things loudly. They get bored, and then one day the bag's empty and they don't refill it."
       ],
       "nextTree": "map"
     },
@@ -309,7 +306,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Also fair. A routine is allowed to end."
+        "Also fair. A routine's allowed to end. Four flavors shouldn't get a vote in that."
       ],
       "nextTree": "map"
     }

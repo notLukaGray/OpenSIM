@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player first considers Liquid I.V. because the brand claims its hydration formulas provide more electrolytes than a leading sports drink."
+        "Late gym, your water bottle, a packet someone left on the bench. The front says it has three times the electrolytes of the leading sports drink."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Three times the electrolytes sounds very specific."
+        "Three times the electrolytes sounds like a number built for a shelf label."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "neutral"
       },
       "text": [
-        "It is specific. The comparison is against the leading sports drink."
+        "It's specific on purpose. It's three times a particular sports drink. Not three times water. Not three times nothing. I'd rather be checked on the real number than trusted on the big one."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So that is the claim I should actually evaluate, not just more hydration in giant letters."
+        "So the comparison is the actual claim, not the big hydration promise doing all the talking."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "Exactly. Read the comparison before you let the headline do all the work."
+        "Yes. The headline's mine, but the comparison's the part you can go check. Go check it."
       ],
       "next": "choice-first"
     },
@@ -77,13 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're going to tear the packet open or put it back. Which?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-liquid-iv-sugar-ratio",
-          "text": "I like knowing what the product is trying to do.",
+          "text": "I like knowing what you're actually trying to do.",
           "next": "first-1",
           "playerEffects": {
             "readiness": 1,
@@ -101,8 +100,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-liquid-iv-sugar-ratio",
-          "text": "I want to know what that comparison actually means.",
+          "text": "I want to know what that electrolyte number costs me in sugar.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -117,8 +115,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-liquid-iv-sugar-ratio",
-          "text": "I do not need a performance claim after every workout.",
+          "text": "I don't need a performance claim shouted at me after every workout.",
           "next": "first-3",
           "playerEffects": {
             "comfort": 1,
@@ -142,7 +139,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. Function is the reason I get invited into the gym bag."
+        "Good. Practical is why I get invited into the gym bag. I'd like to be liked for other reasons, but I'll start there."
       ],
       "nextTree": "map"
     },
@@ -152,7 +149,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You should read the ingredients and the comparison, especially if sodium or sugar matters to you."
+        "Keep reading down the label, then. Past the comparison line. If sodium or sugar is your worry, that's where it lives, and it's in bigger numbers than you'd guess."
       ],
       "nextTree": "map"
     },
@@ -162,7 +159,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. Plenty of workouts end successfully with water."
+        "Fair. A lot of workouts end perfectly fine with tap water and nothing else. I'd be lying if I said otherwise."
       ],
       "nextTree": "map"
     },
@@ -175,7 +172,7 @@
         }
       },
       "text": [
-        "The player likes the format but has switched from the original formula to a sugar-free Hydration Multiplier."
+        "You still keep a packet in your gym bag. It's the sugar-free one now."
       ],
       "next": "entry-return-1"
     },
@@ -185,14 +182,14 @@
         "expression": "neutral"
       },
       "text": [
-        "You kept the stick. You changed the formula."
+        "You kept a packet in your bag. You changed what's in it."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "I liked the convenience. I did not want the sugar."
+        "I liked the convenience. I didn't want the sugar every night I trained."
       ],
       "next": "entry-return-3"
     },
@@ -202,14 +199,14 @@
         "expression": "happy"
       },
       "text": [
-        "Then Sugar-Free is the cleaner answer for your preference."
+        "Then Sugar-Free is the one you actually wanted. Same packet, same little pour into the bottle, one less thing to argue with."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "Same little ritual, less arguing with the label."
+        "Same little routine, less arguing with the label at ten at night."
       ],
       "next": "entry-return-5"
     },
@@ -219,7 +216,7 @@
         "expression": "special"
       },
       "text": [
-        "That is the kind of boring compatibility I like."
+        "That's the kind of boring compatibility I actually want to be known for."
       ],
       "next": "choice-return"
     },
@@ -229,12 +226,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So are we good, or is the label still on trial?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like that I did not have to leave the brand to change that.",
+          "text": "I like that I didn't have to leave you to fix that.",
           "next": "return-1",
           "playerEffects": {
             "trust": 1,
@@ -252,7 +249,7 @@
         },
         {
           "id": "return-2",
-          "text": "I still want to know what sweetener I am drinking.",
+          "text": "I still want to know exactly what sweetener replaced the sugar.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 2,
@@ -267,7 +264,7 @@
         },
         {
           "id": "return-3",
-          "text": "I would rather skip flavored hydration entirely.",
+          "text": "I'd rather skip flavored hydration after a workout entirely.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -291,7 +288,7 @@
         "expression": "happy"
       },
       "text": [
-        "Exactly. If the sugar-free one fits you better, use that one."
+        "Good. Then use that one and stop thinking about it. That's the nicest thing you can do for me."
       ],
       "nextTree": "map"
     },
@@ -301,7 +298,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then read it. Sugar-free is not the same thing as ingredient-free."
+        "Then read it. Sugar-free means no sugar. It doesn't mean nothing. You should know what's in there."
       ],
       "nextTree": "map"
     },
@@ -311,7 +308,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is a real option too. I do not need to win every bottle of water."
+        "That's a real option too. I don't need to win every bottle of water in this gym. Some of them, sure."
       ],
       "nextTree": "map"
     }

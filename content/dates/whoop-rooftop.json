@@ -21,7 +21,7 @@
   ],
   "lessons": [
     "The player first notices WHOOP through the Life tier and its WHOOP MG heart-health features rather than fitness tracking.",
-    "The player upgrades and WHOOP suggests giving the old 4.0 device to someone else, with shop credit if that person becomes a member."
+    "The player watches WHOOP's \"The Best Obsess\" campaign, where Michael Phelps, Alex Honnold, and Virgil van Dijk admit on camera that they're obsessed, and WHOOP reframes obsession as the price of being elite."
   ],
   "nodes": {
     "entry-first": {
@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player first notices WHOOP through the Life tier and its WHOOP MG heart-health features rather than fitness tracking."
+        "Rooftop. Someone shows you an ECG they took on their wrist, on a band you'd assumed was for workouts. It's the WHOOP Life tier."
       ],
       "next": "entry-first-1"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "WHOOP Life uses the MG hardware for ECG readings, AFib detection, and additional heart-health features where supported."
+        "On Life, I'm the MG band. ECG on your wrist. It can flag AFib. There's more heart stuff coming, where it's allowed. I'm being careful with how I say that, because I have to be."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're looking at your own wrist now. Go on."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "That makes the device feel more substantial.",
+          "text": "That makes the band feel more substantial.",
           "next": "first-1",
           "playerEffects": {
             "trust": 1,
@@ -100,7 +100,7 @@
         },
         {
           "id": "first-2",
-          "text": "I would want to know exactly which features are regulated and available to me.",
+          "text": "I'd want to know exactly which features are cleared and available to me.",
           "next": "first-2",
           "playerEffects": {
             "trust": 2,
@@ -115,7 +115,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want medical-style signals on a lifestyle wearable.",
+          "text": "I don't want medical-style signals on a lifestyle wearable.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -139,7 +139,7 @@
         "expression": "special"
       },
       "text": [
-        "Good. The value is in specific capabilities, not the word advanced."
+        "Good. Just hold me to the specific things. ECG, AFib. Not the word advanced. Advanced isn't a feature."
       ],
       "nextTree": "map"
     },
@@ -149,7 +149,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Region, age, and feature limitations matter. Read them before buying the tier."
+        "Yes. Region, age, and which features are actually cleared where you live. Read that page before you buy the tier. I'd rather lose the sale than have you expect something I can't do at your address."
       ],
       "nextTree": "map"
     },
@@ -159,7 +159,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Reasonable. More serious data can create more serious attention than you want."
+        "Reasonable. Serious data pulls serious attention, and you didn't come to a roof for that. I understand it. I don't love it."
       ],
       "nextTree": "map"
     },
@@ -172,51 +172,51 @@
         }
       },
       "text": [
-        "The player upgrades and WHOOP suggests giving the old 4.0 device to someone else, with shop credit if that person becomes a member."
+        "A screen above the rooftop bar plays WHOOP's \"The Best Obsess\" campaign: Michael Phelps, Alex Honnold, and Virgil van Dijk admit on camera that they're obsessed."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Do not throw the 4.0 in a drawer."
+        "Phelps says it on camera. Honnold says it. Van Dijk says it. Obsessed. Not driven, not dedicated. Obsessed."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "I was absolutely going to throw the 4.0 in a drawer."
+        "That's usually the word people use as a warning, not a resume line."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "neutral"
+        "expression": "happy"
       },
       "text": [
-        "Give it to a friend. If they become a member through the upcycle path, you can get Shop credit."
+        "Not up there. Up there it's the thing that got them to the top. Phelps was wearing me before there was any deal. I didn't have to buy that part."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "So even my old hardware can recruit."
+        "So the campaign is selling the word you were already true to."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "WHOOP",
       "sprite": {
-        "expression": "embarrassed"
+        "expression": "neutral"
       },
       "text": [
-        "Efficient, is it not?"
+        "That's the difference between a tagline and a credential. I've been waiting a long time to get to say that."
       ],
       "next": "choice-return"
     },
@@ -226,22 +226,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The ad's on its third loop. You haven't looked away."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like giving the old device another life.",
+          "evidence": "ev-whoop-best-obsess",
+          "text": "Obsession got them to the top. I want a version of that I can live with.",
           "next": "return-1",
           "playerEffects": {
-            "readiness": 1,
-            "belonging": 1
+            "aspiration": 2,
+            "mastery": 1
           },
           "brandPerceptionEffects": {
             "whoop": {
-              "readiness": 1,
-              "belonging": 1,
-              "trust": -1
+              "aspiration": 2,
+              "comfort": -1
             }
           },
           "relationshipEffects": {
@@ -250,31 +250,33 @@
         },
         {
           "id": "return-2",
-          "text": "The credit makes the gift feel like a referral.",
+          "evidence": "ev-whoop-best-obsess",
+          "text": "Three elite athletes finding obsession sustainable isn't proof I would.",
           "next": "return-2",
           "playerEffects": {
-            "control": 1,
-            "mastery": 1
+            "control": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "whoop": {
-              "belonging": -1,
-              "trust": -1
+              "aspiration": -1,
+              "trust": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not want my friends becoming part of my membership economics.",
+          "evidence": "ev-whoop-best-obsess",
+          "text": "I don't want obsession sold as a feature. It cost those men things too.",
           "next": "return-3",
           "playerEffects": {
-            "control": 1,
-            "trust": 1
+            "comfort": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "whoop": {
-              "belonging": -1,
-              "trust": -1
+              "comfort": -2,
+              "aspiration": -1
             }
           },
           "relationshipEffects": {
@@ -289,7 +291,7 @@
         "expression": "special"
       },
       "text": [
-        "Then give it because it is useful and let the credit be secondary."
+        "Then take the discipline and leave the extremes on the podium where they belong to them. I can't measure the difference for you. I can show you where your baseline is."
       ],
       "nextTree": "map"
     },
@@ -299,7 +301,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Giving the old band a second life can also bring me a new member. Both things are true."
+        "Correct. Three data points is not a sample. Watch the film, keep your own baseline."
       ],
       "nextTree": "map"
     },
@@ -309,7 +311,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then hand them the device with no pitch, or keep it. You do not owe me a recruit."
+        "Fair. The ad never says what it cost them. It's a ninety-second spot. You're allowed to say the part it leaves out."
       ],
       "nextTree": "map"
     }

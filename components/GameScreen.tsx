@@ -142,7 +142,9 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
     node?.choices?.filter((c) => evalCondition(c.conditions, state)),
     state
   );
-  const isTextOnlySpeaker = ["PLAYER", "...", "NARRATOR", "JUST THE GYM", "SLEEP"].includes(node.speaker);
+  // Text-only speakers have no voice line and no speaker portrait. Wild/unbranded
+  // encounters all narrate as "..." — no encounter speaks under a brand-style name.
+  const isTextOnlySpeaker = ["PLAYER", "...", "NARRATOR"].includes(node.speaker);
 
   const fallbackEvidenceId = () => {
     if (!tree?.brandId) return undefined;

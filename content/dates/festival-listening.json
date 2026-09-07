@@ -1,14 +1,76 @@
 {
-  "id": "festival-listening", "brandId": "festival-listening", "title": "Hear the Whole Song", "locationId": "music-festival",
-  "context": { "location": "music-festival", "occasion": "headliner" }, "music": null, "background": null, "cast": [], "startNode": "intro",
-  "lessons": ["excitement can be private", "belonging does not need proof"],
+  "id": "festival-listening",
+  "brandId": "festival-listening",
+  "title": "Hear the Whole Song",
+  "locationId": "music-festival",
+  "context": {
+    "location": "music-festival",
+    "occasion": "headliner"
+  },
+  "music": null,
+  "background": null,
+  "cast": [],
+  "startNode": "intro",
+  "lessons": [
+    "excitement can be private",
+    "belonging does not need proof"
+  ],
   "nodes": {
-    "intro": { "speaker": "...", "text": ["The crowd moves before the beat lands.", "A stranger hands you a little room near the rail without discussing it."], "next": "choose" },
-    "choose": { "speaker": "...", "text": ["The chorus is coming. So is the urge to turn it into evidence."], "choices": [
-      { "id": "listen", "text": "Keep the phone down and listen to the whole song.", "next": "listen-end", "playerEffects": { "excitement": 2, "comfort": 1 }, "setFlags": ["control-festival-present"] },
-      { "id": "share", "text": "Send the song to someone who would know why it matters.", "next": "share-end", "playerEffects": { "belonging": 2, "selfExpression": 1 }, "setFlags": ["control-festival-share"] }
-    ] },
-    "listen-end": { "speaker": "...", "text": ["You will not have a clip of the bridge.", "You have the bridge."], "nextTree": "map" },
-    "share-end": { "speaker": "...", "text": ["Their reply arrives as the lights change.", "For once, the timing feels made rather than optimized."], "nextTree": "map" }
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "The crowd moves a half-second before the beat does.",
+        "Someone near the rail shifts over and makes room for me. No words. Just room."
+      ],
+      "next": "choose"
+    },
+    "choose": {
+      "speaker": "...",
+      "text": [
+        "Here comes the chorus. My hand's already going for my phone. It doesn't have to."
+      ],
+      "choices": [
+        {
+          "id": "listen",
+          "text": "Leave the phone in my pocket. Hear the whole thing.",
+          "next": "listen-end",
+          "playerEffects": {
+            "excitement": 2,
+            "comfort": 1
+          },
+          "setFlags": [
+            "control-festival-present"
+          ]
+        },
+        {
+          "id": "share",
+          "text": "Send it to the one person who'd get why this matters.",
+          "next": "share-end",
+          "playerEffects": {
+            "belonging": 2,
+            "selfExpression": 1
+          },
+          "setFlags": [
+            "control-festival-share"
+          ]
+        }
+      ]
+    },
+    "listen-end": {
+      "speaker": "...",
+      "text": [
+        "I won't have a clip of the bridge.",
+        "I was there for the bridge. That's the trade."
+      ],
+      "nextTree": "map"
+    },
+    "share-end": {
+      "speaker": "...",
+      "text": [
+        "Their reply lands right as the lights change.",
+        "For once, it feels like the timing happened instead of getting scheduled."
+      ],
+      "nextTree": "map"
+    }
   }
 }

@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player reaches WHOOP through a comparison of One, Peak, and Life rather than a simple hardware price."
+        "Cafe, laptop, the WHOOP page. There's no price for the band. There's a table: One, Peak, Life."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Because you are buying access to different parts of the system, not just hardware."
+        "Because you're not buying the band. You're buying how much of me you get to hear from."
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "One is core fitness insights. Peak adds things like Stress and Healthspan. Life adds MG hardware and heart-health features."
+        "One: the basics. Sleep, strain, recovery. Peak: stress, Healthspan, the deeper reads. Life: the medical-grade band, ECG, heart stuff. Three doors, same house."
       ],
       "next": "choice-first"
     },
@@ -77,13 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Your coffee's getting cold and you're still on the table. Which door?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-whoop-membership-tiers",
-          "text": "I like being able to choose the depth.",
+          "text": "I like being able to choose how deep this goes.",
           "next": "first-1",
           "playerEffects": {
             "control": 2,
@@ -102,7 +101,6 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-whoop-membership-tiers",
           "text": "This makes a wearable feel like software pricing.",
           "next": "first-2",
           "playerEffects": {
@@ -118,7 +116,6 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-whoop-membership-tiers",
           "text": "I want to buy a device once and own the features.",
           "next": "first-3",
           "playerEffects": {
@@ -143,7 +140,7 @@
         "expression": "special"
       },
       "text": [
-        "Then pick the smallest tier that answers the questions you actually have."
+        "Then pick the smallest one that answers a question you actually have. Don't buy Life because it sounds serious. Buy it because your heart is the question."
       ],
       "nextTree": "map"
     },
@@ -153,7 +150,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "It is software pricing. The hardware and membership are tied together."
+        "It is software pricing. The band and the membership are one thing. I'd rather you see that on the page than find it on the invoice."
       ],
       "nextTree": "map"
     },
@@ -163,7 +160,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then I am structurally not your favorite product model."
+        "Then I'm structurally not your favorite product model."
       ],
       "nextTree": "map"
     },
@@ -176,7 +173,7 @@
         }
       },
       "text": [
-        "The player already owns older WHOOP hardware and is offered a newer device by extending membership or paying an upgrade fee."
+        "An email: your band is a generation old. There's a newer one, and two ways to get it."
       ],
       "next": "entry-return-1"
     },
@@ -220,7 +217,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Extend the membership and qualify for the upgrade, or pay the one-time hardware upgrade fee and keep your current membership timing."
+        "Extend your membership and the new band comes with it. Or pay a one-time fee for the band and keep your membership dates where they are."
       ],
       "next": "choice-return"
     },
@@ -230,12 +227,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Neither is free. I'd rather you know that before you pick."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like having a way to upgrade without throwing away the membership time.",
+          "text": "I like a way to upgrade without throwing away the membership time.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 1,
@@ -254,7 +251,7 @@
         },
         {
           "id": "return-2",
-          "text": "You are still asking me to spend more to stay current.",
+          "text": "You're still asking me to spend more to stay current.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -269,7 +266,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want hardware upgrades tied to membership decisions.",
+          "text": "I don't want hardware upgrades tied to membership decisions.",
           "next": "return-3",
           "playerEffects": {
             "comfort": 1,
@@ -293,7 +290,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. The goal is to move the hardware without erasing the time you already paid for."
+        "Good. I didn't want the time you already paid for to disappear because a sensor got better."
       ],
       "nextTree": "map"
     },
@@ -303,7 +300,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. New hardware is still an upsell."
+        "Yes. New hardware is an upsell. It's a good upsell. It's still an upsell, and you're right to say it to my face."
       ],
       "nextTree": "map"
     },
@@ -313,7 +310,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "That is the model. I can explain it more clearly, but I cannot make it a one-time purchase model."
+        "That's the model. I can explain it more clearly. I can't make it something you buy once. I've tried to imagine it. It isn't me."
       ],
       "nextTree": "map"
     }

@@ -34,7 +34,7 @@
         }
       },
       "text": [
-        "The player encounters ZYN's 2026 Go For It Giveaway, which asked eligible adult nicotine consumers to submit a short video describing a dream adventure."
+        "Between sets, someone in the group mentions ZYN was giving away dream trips. You did not know that was a thing. Counsel did."
       ],
       "next": "entry-first-1"
     },
@@ -51,7 +51,7 @@
         "expression": "neutral"
       },
       "text": [
-        "During the 2026 contest period, eligible entrants could submit one portrait-format video, no longer than one minute, describing a desired adventure and how it would help them break from their everyday routine."
+        "During the 2026 contest window, yes. Eligible adults could submit one video, under a minute, vertical, describing the adventure they wanted and why. That is the pitch. I am about to ruin it."
       ],
       "next": "entry-first-3"
     },
@@ -68,7 +68,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Ten grand prizes, each with a maximum approximate retail value of fifteen thousand dollars, with the sponsor retaining discretion to interpret and fulfill the proposed adventure within the rules."
+        "Ten winners. Up to fifteen thousand dollars each. The sponsor decides how your adventure gets interpreted and fulfilled, within the rules."
       ],
       "next": "entry-first-5"
     },
@@ -85,7 +85,7 @@
         "expression": "neutral"
       },
       "text": [
-        "There was also no purchase necessary, exclusions applied in Massachusetts, Michigan, and Virginia, and eligibility required legal-age nicotine-consumer status."
+        "No purchase necessary. Not open in Massachusetts, Michigan, or Virginia. Adult nicotine users only."
       ],
       "next": "entry-first-7"
     },
@@ -112,12 +112,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The next act is walking on. You have roughly ninety seconds to react before I lose you to bass."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "Honestly, a brand funding someone's ridiculous dream trip is fun.",
+          "text": "Honestly, a brand paying for someone's ridiculous dream trip is fun.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -137,7 +137,7 @@
         },
         {
           "id": "first-2",
-          "text": "I would read the rights section before uploading my face and story.",
+          "text": "I'd read the fine print before uploading my face and my story.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -153,7 +153,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want my idea of adventure attached to a nicotine promotion.",
+          "text": "I don't want my idea of adventure attached to a nicotine promotion.",
           "next": "first-3",
           "playerEffects": {
             "selfExpression": 2,
@@ -178,7 +178,7 @@
         "expression": "happy"
       },
       "text": [
-        "The promotion was explicitly designed around that appeal, subject to eligibility, verification, and prize limitations."
+        "Yes. That was the idea. The rules were written by people who knew it was fun. I was one of them. I found it less fun."
       ],
       "nextTree": "map"
     },
@@ -188,7 +188,7 @@
         "expression": "special"
       },
       "text": [
-        "Appropriate. The rules grant the sponsor broad rights to use, reproduce, edit, publish, and promote submitted entries."
+        "Appropriate. The rules give the sponsor broad rights to use, edit, publish, and promote whatever you submit. Your face included."
       ],
       "next": "first-2-1"
     },
@@ -215,7 +215,7 @@
         "expression": "neutral"
       },
       "text": [
-        "No purchase was required, and no participation was required. Your adventure may remain non-sponsored."
+        "No purchase, no entry, no obligation. Your adventure may remain unsponsored. Most do."
       ],
       "nextTree": "map"
     },
@@ -228,14 +228,14 @@
         }
       },
       "text": [
-        "The player tries to reorder ZYN from ZYN.com and discovers the brand no longer sells product directly through its own online store."
+        "Later, you try to reorder from ZYN.com. You are logged in. There is nothing to buy."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I am already logged in. Why can I not just buy it here?"
+        "I'm already logged in. Why can't I just buy it here?"
       ],
       "next": "entry-return-2"
     },
@@ -245,7 +245,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Direct ZYN Store operations have been suspended. The site currently directs adult consumers to independent online retailers including Nicokick and Northerner, or to local retail distribution."
+        "The ZYN Store is suspended. The site now sends adults to independent retailers, Nicokick and Northerner, or to a store near them. It does not sell."
       ],
       "next": "entry-return-3"
     },
@@ -262,7 +262,7 @@
         "expression": "neutral"
       },
       "text": [
-        "For purposes of product purchase, yes."
+        "For purposes of buying anything, yes."
       ],
       "next": "choice-return"
     },
@@ -272,12 +272,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You are frowning at a sign-in page you no longer need. Say something."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "Fine. Just tell me where it is available.",
+          "text": "Fine. Just tell me where it's available.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -296,7 +296,7 @@
         },
         {
           "id": "return-2",
-          "text": "That is a strange amount of friction for a brand this big.",
+          "text": "That's a strange amount of friction for a brand this big.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 2,
@@ -312,7 +312,7 @@
         },
         {
           "id": "return-3",
-          "text": "If I have to chase it through another retailer, I will skip it.",
+          "text": "If I have to chase it through another retailer, I'll skip it.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -364,7 +364,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "The friction exists. Brand ownership does not guarantee direct-to-consumer fulfillment."
+        "It is. Owning the brand does not mean owning the checkout. I cannot explain why in a sentence you would enjoy."
       ],
       "nextTree": "map"
     },
@@ -374,7 +374,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the purchase does not occur. There is no contractual obligation to continue looking."
+        "Then the purchase does not occur. Nothing obligates you to keep looking. I mean that as a comfort, in my way."
       ],
       "nextTree": "map"
     }

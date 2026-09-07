@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player is heading into a long beach day and notices that current WHOOP hardware advertises more than two weeks of battery life."
+        "Long beach day. No outlets for miles. The band on your wrist says it doesn't care: rated for more than two weeks on a charge."
       ],
       "next": "entry-first-1"
     },
@@ -50,14 +50,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. You do not need one for me today."
+        "Good. You don't need one for me today."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That is the first relaxing thing you have ever said."
+        "That's the first relaxing thing you've ever said."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "Current hardware is rated for 14-plus days. Today, battery life gets to be the whole pitch."
+        "Fourteen-plus days on a charge. I usually lead with the data. Today I get to lead with the fact that I'll shut up and keep working."
       ],
       "next": "choice-first"
     },
@@ -77,7 +77,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Sunscreen's on the towel. I'm watching your heart rate drop. Keep going."
       ],
       "choices": [
         {
@@ -115,7 +115,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want another wearable charger in my bag at all.",
+          "text": "I don't want another wearable charger in my bag at all.",
           "next": "first-3",
           "playerEffects": {
             "comfort": 1,
@@ -166,7 +166,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Rated battery life is still rated battery life, not a personal guarantee."
+        "True. Fourteen days is a rating, not a promise. Cold water, constant syncing, it drops. I'd rather you know that from me than from a dead band on day ten."
       ],
       "nextTree": "map"
     },
@@ -176,7 +176,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Then the longest battery is still one charger too many."
+        "Then the longest battery is still one charger too many. I can't fix that. I can only make it rare."
       ],
       "nextTree": "map"
     },
@@ -189,7 +189,7 @@
         }
       },
       "text": [
-        "The player already wears WHOOP and uses the PowerPack to charge it without taking it off during a beach day."
+        "Beach day. The band's low. You clip a little PowerPack onto it, still on your wrist, and keep walking."
       ],
       "next": "entry-return-1"
     },
@@ -206,7 +206,7 @@
         "expression": "happy"
       },
       "text": [
-        "No. The PowerPack charges me while you wear me."
+        "No. The PowerPack slides on over me. You keep wearing me, I keep recording."
       ],
       "next": "entry-return-3"
     },
@@ -223,12 +223,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "I do. You knew that. So?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "That is exactly the kind of tiny convenience I notice.",
+          "text": "That's exactly the kind of tiny convenience I notice.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -246,7 +246,7 @@
         },
         {
           "id": "return-2",
-          "text": "I am still carrying a proprietary charger.",
+          "text": "I'm still carrying a proprietary charger.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -261,7 +261,7 @@
         },
         {
           "id": "return-3",
-          "text": "If a tracker cannot survive being removed for charging, I do not need continuous data.",
+          "text": "If a tracker can't survive being taken off to charge, I don't need continuous data.",
           "next": "return-3",
           "playerEffects": {
             "comfort": 1,
@@ -285,7 +285,7 @@
         "expression": "special"
       },
       "text": [
-        "Tiny friction is where habits usually die. I take the win."
+        "Small friction is where habits die. I'd rather fix the small thing than lose the whole day of data. I take the win."
       ],
       "nextTree": "map"
     },
@@ -295,7 +295,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Convenient proprietary hardware is still proprietary hardware."
+        "Yes. It's a convenient proprietary charger. It's still a proprietary charger. Both true, and I'd rather you say it than pretend the second half isn't there."
       ],
       "nextTree": "map"
     },
@@ -305,7 +305,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then missing a few hours may matter less to you than maintaining the streak matters to me."
+        "Then a few missing hours matter less to you than the gap matters to me. I notice gaps. It's most of what I am."
       ],
       "nextTree": "map"
     }

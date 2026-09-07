@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player sees an offer to try a new Liquid I.V. flavor as a free sample rather than buying a full bag immediately."
+        "A little card in the mail: try the new Liquid I.V. flavor, one packet, free. No bag to buy."
       ],
       "next": "entry-first-1"
     },
@@ -50,7 +50,7 @@
         "expression": "happy"
       },
       "text": [
-        "New flavor, small commitment. Taste it before I ask you to buy a whole bag."
+        "New flavor, one packet. I'd rather hand you one than make you bet a whole bag on my taste in flavors."
       ],
       "next": "choice-first"
     },
@@ -60,12 +60,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Come on. It's one packet. What's the hesitation?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I would try one before buying a box.",
+          "text": "I'd try one before buying a box.",
           "next": "first-1",
           "playerEffects": {
             "readiness": 1,
@@ -98,7 +98,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not need a sample of another wellness product.",
+          "text": "I don't need one more wellness sample in the cabinet.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -122,7 +122,7 @@
         "expression": "special"
       },
       "text": [
-        "That is the job of a sample: lower the risk enough to get one honest try."
+        "Good. Make it in your own glass, in your own kitchen, on a normal night. That's the only test I actually care about."
       ],
       "nextTree": "map"
     },
@@ -132,7 +132,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Often, yes. Free sample or not, I am hoping you like it enough to buy it later."
+        "Usually, yes. I'm not going to pretend otherwise. I'm hoping you like it enough to buy it later. That's the whole trade, and you get a packet out of it either way."
       ],
       "nextTree": "map"
     },
@@ -142,7 +142,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the free price is still too high. Easy decision."
+        "Then even free is too much cabinet. Fine. No hard feelings, and I mean that."
       ],
       "nextTree": "map"
     },
@@ -155,7 +155,7 @@
         }
       },
       "text": [
-        "The player is already subscribed and can add a free sample of a new flavor to an upcoming order during launch week."
+        "Launch week. Your subscription box is already on its way, and there's an option to tuck a free packet of the new flavor in with it."
       ],
       "next": "entry-return-1"
     },
@@ -165,7 +165,7 @@
         "expression": "happy"
       },
       "text": [
-        "You already have a box coming. Want the new flavor tucked into it?"
+        "You've got a box coming this week anyway. Want the new one tucked in with it?"
       ],
       "next": "entry-return-2"
     },
@@ -182,14 +182,14 @@
         "expression": "neutral"
       },
       "text": [
-        "During the launch offer, yes. Add the sample to the shipment you already have."
+        "During launch week, yes. It goes in the box you're already getting. No extra order, no extra wait."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "That is dangerously convenient."
+        "That's dangerously convenient."
       ],
       "next": "entry-return-5"
     },
@@ -199,7 +199,7 @@
         "expression": "happy"
       },
       "text": [
-        "I packed for both of us. This is on brand."
+        "I packed for both of us. That's basically my whole personality."
       ],
       "next": "choice-return"
     },
@@ -209,12 +209,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Yes or no. The box leaves tomorrow."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "That is a good way to get me to try it.",
+          "text": "That's a good way to get me to actually try it.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 1,
@@ -232,7 +232,7 @@
         },
         {
           "id": "return-2",
-          "text": "You are using my subscription box as an ad slot.",
+          "text": "You're using my subscription box as an ad slot.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -247,7 +247,7 @@
         },
         {
           "id": "return-3",
-          "text": "Do not turn every refill into a product launch.",
+          "text": "Don't turn every refill into a product launch.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -271,7 +271,7 @@
         "expression": "special"
       },
       "text": [
-        "Correct. Useful logistics, useful sample."
+        "Right? Same box, one more packet, nothing new to find room for. Easiest sample I've ever done."
       ],
       "nextTree": "map"
     },
@@ -281,7 +281,7 @@
         "expression": "happy"
       },
       "text": [
-        "Also correct. Your box is a very convenient place for me to introduce the next thing."
+        "I am. I'm not going to apologize for it either. Your box is the best place I've got to show you the next thing, and I'm going to use it."
       ],
       "nextTree": "map"
     },
@@ -291,7 +291,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. A refill can just be a refill."
+        "Fair. A refill can just be a refill. I'll leave it out next time. I'll want to tell you about it, but I'll leave it out."
       ],
       "nextTree": "map"
     }

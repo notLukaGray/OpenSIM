@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player chooses Starbucks in an airport because the brand is familiar in an unfamiliar travel day."
+        "Wrong terminal, wrong time zone, and you don't know where anything is. Then, past the escalator, a green sign you'd recognize from a mile away."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I do not know this terminal at all."
+        "I don't know this terminal at all."
       ],
       "next": "entry-first-2"
     },
@@ -50,7 +50,7 @@
         "expression": "happy"
       },
       "text": [
-        "You know my menu. That is why airports are such a good place for me."
+        "You know my menu, though. Same order, same cup, same name written on the side wherever the gate ends up being. Come here."
       ],
       "next": "choice-first"
     },
@@ -60,7 +60,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You've got twenty minutes and a face that says you've slept in a chair. What'll it be?"
       ],
       "choices": [
         {
@@ -83,7 +83,7 @@
         },
         {
           "id": "first-2",
-          "text": "The airport version is not always the same experience as my regular store.",
+          "text": "The airport version isn't always the same as my regular store.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -100,7 +100,7 @@
         },
         {
           "id": "first-3",
-          "text": "I would rather try the local coffee place.",
+          "text": "I'd rather try the local coffee place past security.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -124,7 +124,7 @@
         "expression": "special"
       },
       "text": [
-        "Then familiarity is doing real work, not just branding work."
+        "Then that's what I'm for today. Not the coffee, exactly. The not-having-to-think."
       ],
       "nextTree": "map"
     },
@@ -134,7 +134,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. Licensed locations can feel different even when the siren is the same."
+        "You're right. This one's licensed, so it's someone else's staff under my sign. Some days it's me. Some days it's a very good impression of me."
       ],
       "nextTree": "map"
     },
@@ -144,7 +144,7 @@
         "expression": "happy"
       },
       "text": [
-        "Do it. I am not offended by local coffee existing."
+        "Do it. I'm not offended by local coffee existing, even in my own terminal. I'll still be here when the local place has a line."
       ],
       "nextTree": "map"
     },
@@ -157,7 +157,7 @@
         }
       },
       "text": [
-        "The player opens the app during a trip and sees they are Green, Gold, or Reserve under the 2026 Rewards system."
+        "Mid-trip, you open the app for your usual order. Before the menu, a status you didn't know you had: Green, Gold, or Reserve."
       ],
       "next": "entry-return-1"
     },
@@ -167,7 +167,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You have a status now."
+        "You've got a status now. I put it at the top of the app so you'd see it before your usual."
       ],
       "next": "entry-return-2"
     },
@@ -184,7 +184,7 @@
         "expression": "happy"
       },
       "text": [
-        "For repeatedly buying coffee, yes."
+        "For repeatedly buying coffee, yes. There's a difference and I take it seriously."
       ],
       "next": "entry-return-4"
     },
@@ -201,7 +201,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Green starts earning. Gold comes after 500 Stars in twelve months. Reserve is the higher tier with stronger earning and extra benefits."
+        "Green just earns. 500 Stars in a year and you're Gold. Reserve is above that, better earning, a few extras. And I know your order well enough to build an offer around it, which is the part you're really asking about."
       ],
       "next": "choice-return"
     },
@@ -211,12 +211,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're scrolling past the status to get to the order. I noticed."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like having clearer benefits for being a regular.",
+          "text": "I like getting something for being a regular.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
@@ -234,7 +234,7 @@
         },
         {
           "id": "return-2",
-          "text": "A coffee habit does not need a status ladder.",
+          "text": "A coffee habit doesn't need a status ladder built from my own order history.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -250,7 +250,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want to think about maintaining rank at a cafe.",
+          "text": "I don't want to think about maintaining rank at a cafe.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -274,7 +274,7 @@
         "expression": "special"
       },
       "text": [
-        "Then loyalty feels acknowledged instead of invisible."
+        "Good. I'd rather you feel like a regular than a receipt. The offer's built from your order, so at least it'll be something you actually drink."
       ],
       "nextTree": "map"
     },
@@ -284,7 +284,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is fair. A status system can turn routine into a game you never asked to play."
+        "That's fair. Remembering your order is one thing. Turning it into a game you never signed up for is another. I do both, at the same time, and I know it."
       ],
       "nextTree": "map"
     },
@@ -294,7 +294,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then ignore the ladder and use the account only when the basic rewards help."
+        "Then don't. Use the account when the basic rewards help and ignore the rest of it. The ladder will keep counting anyway. I can't turn that off."
       ],
       "nextTree": "map"
     }

@@ -444,9 +444,9 @@
     "name": "JUST SLEEP",
     "archetype": "THE BASELINE",
     "color": "#b8b5e8",
-    "sigil": "\u263e",
+    "sigil": "·",
     "setting": "bedroom-night",
-    "personality": "Patient beyond reason, wry without trying. Was here before the apps and will be after. Never upsells; occasionally devastates.",
+    "personality": "The baseline every product prices against. It does not speak.",
     "unbranded": true,
     "claimedProfile": {
       "comfort": 4,
@@ -469,9 +469,9 @@
     "name": "JUST THE GYM",
     "archetype": "THE INVOICE",
     "color": "#c97b4a",
-    "sigil": "G",
+    "sigil": "·",
     "setting": "nightgym",
-    "personality": "Gruff old iron. No dashboard, no tin, no opinion about your goals \u2014 just weight, reps, and a receipt for soreness.",
+    "personality": "Iron, chalk, and a receipt for soreness. It does not speak.",
     "unbranded": true,
     "claimedProfile": {
       "mastery": 4,

@@ -139,7 +139,7 @@
   },
   {
     "id": "src-starbucks-names-physorg",
-    "title": "Using customer names pays off – unless you get it wrong",
+    "title": "Using customer names pays off \u2013 unless you get it wrong",
     "publisher": "Phys.org, summarizing Journal of Consumer Psychology study",
     "year": 2017
   },
@@ -225,7 +225,7 @@
   },
   {
     "id": "src-eight-sleep-mdpi-sleep-study",
-    "title": "Sleeping for One Week on a Temperature-Controlled Mattress Cover…",
+    "title": "Sleeping for One Week on a Temperature-Controlled Mattress Cover\u2026",
     "publisher": "Bioengineering (MDPI)",
     "year": 2024,
     "url": "https://www.mdpi.com/2306-5354/11/4/352"
@@ -318,7 +318,7 @@
   },
   {
     "id": "src-na-spirits-branson-interview",
-    "title": "A drink with… Ben Branson",
+    "title": "A drink with\u2026 Ben Branson",
     "publisher": "The Spirits Business",
     "year": 2024
   },
@@ -343,5 +343,157 @@
     "id": "src-na-spirits-double-dutch-mixer-market",
     "title": "Double Dutch & UK Premium Mixer Market",
     "publisher": "In Practise"
+  },
+  {
+    "id": "src-prime-wwe-wrestlemania-mat",
+    "title": "WWE, PRIME Hydration Strike Record-Setting Global Partnership Featuring First-Ever Ring Mat",
+    "publisher": "WWE.com",
+    "year": 2024,
+    "url": "https://www.wwe.com/article/wwe-prime-hydration-strike-record-setting-global-partnership-featuring-first-ever-ring-mat"
+  },
+  {
+    "id": "src-prime-ufc-octagon",
+    "title": "UFC Announces Global Marketing Partnership With Logan Paul and KSI's PRIME Beverage Brand",
+    "publisher": "UFC.com",
+    "url": "https://www.ufc.com/news/ufc-announces-global-marketing-partnership-logan-paul-and-ksi-their-prime-beverage-brand"
+  },
+  {
+    "id": "src-prime-poptarts-shake",
+    "title": "Pop-Tarts and PRIME team up on protein shakes",
+    "publisher": "Yahoo Lifestyle",
+    "url": "https://www.yahoo.com/lifestyle/articles/pop-tarts-prime-protein-shakes-181931893.html"
+  },
+  {
+    "id": "src-prime-poptarts-stack3d",
+    "title": "PRIME Protein Shake x Pop-Tarts",
+    "publisher": "Stack3d",
+    "year": 2026,
+    "url": "https://www.stack3d.com/2026/01/prime-protein-shake/"
+  },
+  {
+    "id": "src-liquid-iv-2024-refresh-prnewswire",
+    "title": "Liquid I.V. Debuts New Brand Identity, Marking Its First Refresh in Over a Decade",
+    "publisher": "PR Newswire",
+    "year": 2024,
+    "url": "https://www.prnewswire.com/news-releases/liquid-iv-debuts-new-brand-identity-marking-its-first-refresh-in-over-a-decade-302132411.html"
+  },
+  {
+    "id": "src-liquid-iv-foodnav-refresh",
+    "title": "Liquid I.V.'s brand refresh captures hydration through new packaging, summer ad campaign",
+    "publisher": "FoodNavigator-USA",
+    "year": 2024,
+    "url": "https://www.foodnavigator-usa.com/Article/2024/05/10/liquid-i.v.-s-brand-refresh-captures-hydration-through-new-packaging-summer-ad-campaign/"
+  },
+  {
+    "id": "src-liquid-iv-fuel-your-play",
+    "title": "Campaign Trail: Liquid I.V. fuels play, hydration",
+    "publisher": "Marketing Dive",
+    "url": "https://www.marketingdive.com/news/campaign-trail-liquid-iv-fuels-play-hydration/629461/"
+  },
+  {
+    "id": "src-celsius-livefitgo",
+    "title": "Celsius Redefines How to Fuel Everyday Life with Launch of the LIVE.FIT.GO. Campaign",
+    "publisher": "Celsius Holdings IR",
+    "year": 2025,
+    "url": "https://ir.celsiusholdingsinc.com/news/news-details/2025/Celsius-Redefines-How-to-Fuel-Everyday-Life-with-Launch-of-the-LIVE--FIT--GO--Campaign/default.aspx"
+  },
+  {
+    "id": "src-celsius-breakaway",
+    "title": "Celsius Announces Presenting Sponsorship With Breakaway Music Festival for All 10 Tour Stops",
+    "publisher": "BevNET",
+    "year": 2024,
+    "url": "https://www.bevnet.com/news/2024/celsius-announces-presenting-sponsorship-with-breakaway-music-festival-for-all-10-tour-stops/"
+  },
+  {
+    "id": "src-ag1-pro-launch",
+    "title": "AG1 Releases Latest Upgrade of Its Daily Health Drink Alongside Results From Four Placebo-Controlled Randomized Clinical Trials",
+    "publisher": "PR Newswire",
+    "year": 2025,
+    "url": "https://www.prnewswire.com/news-releases/ag1-releases-latest-upgrade-of-its-daily-health-drink-alongside-results-from-four-placebo-controlled-randomized-clinical-trials-302443590.html"
+  },
+  {
+    "id": "src-ag1-huberman-sponsors",
+    "title": "Huberman Lab Sponsors",
+    "publisher": "hubermanlab.com",
+    "url": "https://www.hubermanlab.com/sponsors"
+  },
+  {
+    "id": "src-starbucks-psl-season",
+    "title": "Starbucks Fall Menu 2026: PSL season",
+    "publisher": "TheStreet",
+    "year": 2026,
+    "url": "https://www.thestreet.com/restaurants/starbucks-fall-menu-2026-psl"
+  },
+  {
+    "id": "src-starbucks-stanley-cup-today",
+    "title": "Starbucks' pink Stanley cup sells out in minutes at Target",
+    "publisher": "TODAY.com",
+    "year": 2024,
+    "url": "https://www.today.com/food/news/starbucks-pink-stanley-cup-target-rcna132157"
+  },
+  {
+    "id": "src-starbucks-stanley-cup-nbc",
+    "title": "Pink Stanley Target Starbucks limited edition sells out",
+    "publisher": "NBC News",
+    "year": 2024,
+    "url": "https://www.nbcnews.com/business/consumer/pink-stanley-target-starbucks-limited-edition-valentines-day-rcna132240"
+  },
+  {
+    "id": "src-oura-gucci-blog",
+    "title": "Introducing Gucci x Oura",
+    "publisher": "ouraring.com",
+    "url": "https://ouraring.com/blog/introducing-gucci-x-oura/"
+  },
+  {
+    "id": "src-oura-harry-kane-ambassadors",
+    "title": "Harry Kane and Declan Rice, Global Brand Ambassadors",
+    "publisher": "ouraring.com",
+    "year": 2026,
+    "url": "https://ouraring.com/blog/harry-kane-and-declan-rice-global-brand-ambassadors/"
+  },
+  {
+    "id": "src-oura-subscription-backlash",
+    "title": "Oura CEO explains the $11 billion ring's membership model",
+    "publisher": "Yahoo Finance",
+    "url": "https://finance.yahoo.com/news/ceo-11-billion-oura-explains-171720178.html"
+  },
+  {
+    "id": "src-whoop-5-launch",
+    "title": "WHOOP 5.0 and WHOOP MG just announced: here's everything you need to know",
+    "publisher": "Tom's Guide",
+    "year": 2025,
+    "url": "https://www.tomsguide.com/wellness/fitness-trackers/whoop-5-0-and-whoop-mg-just-announced-heres-everything-you-need-to-know"
+  },
+  {
+    "id": "src-whoop-best-obsess",
+    "title": "WHOOP enlists Michael Phelps for campaign",
+    "publisher": "AthleTech News",
+    "url": "https://athletechnews.com/whoop-enlists-michael-phelps-for-campaign/"
+  },
+  {
+    "id": "src-white-claw-teddy-swims",
+    "title": "White Claw and Teddy Swims Partner to Bring Friends Together Year-Round",
+    "publisher": "PR Newswire",
+    "year": 2026,
+    "url": "https://www.prnewswire.com/news-releases/white-claw-and-teddy-swims-partner-to-bring-friends-together-year-round-302750975.html"
+  },
+  {
+    "id": "src-white-claw-wave-endcap",
+    "title": "Surf's Up for White Claw Stacker Display",
+    "publisher": "POPIN",
+    "url": "https://www.popin.net/surfs-up-for-white-claw-stacker-display/"
+  },
+  {
+    "id": "src-zyn-tin-flashing-meme",
+    "title": "Nicotine Pouch ZYN Memes",
+    "publisher": "Nic Pouch Can",
+    "url": "https://nicpouchcan.com/blogs/news/nicotine-pouch-zyn-memes"
+  },
+  {
+    "id": "src-zyn-tin-collection-wikimedia",
+    "title": "Zyn_christmas_tree.jpg",
+    "publisher": "Wikimedia Commons (CC0)",
+    "year": 2024,
+    "url": "https://commons.wikimedia.org/wiki/File:Zyn_christmas_tree.jpg"
   }
 ]

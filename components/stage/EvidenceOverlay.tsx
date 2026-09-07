@@ -54,7 +54,15 @@ export default function EvidenceOverlay({ evidenceId, onDismiss }: { evidenceId:
               const s = getSourceOrNull(sid);
               return s ? (
                 <div key={sid} className={styles.sourceLine}>
-                  Source: {s.title} — {s.publisher}
+                  Source:
+                  {s.url ? (
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className={styles.sourceLink}>
+                      {` ${s.title}`}
+                    </a>
+                  ) : (
+                    ` ${s.title}`
+                  )}
+                  {` — ${s.publisher}`}
                   {s.year ? ` · ${s.year}` : ""}
                 </div>
               ) : null;

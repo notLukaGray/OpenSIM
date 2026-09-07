@@ -1,7 +1,7 @@
 {
   "id": "ag1-kitchen",
   "brandId": "ag1",
-  "title": "The First-Order Kit and the Bigger Scoop",
+  "title": "The Box That Arrived Before You Slept",
   "locationId": "kitchen",
   "context": {
     "location": "kitchen",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player stops on an AG1 social ad offering a first-order kit with the powder and the tools to start the routine.",
+    "Ordered late one night out of curiosity, an AG1 Pro box shows up days later on the kitchen counter with a data sheet stapled inside citing four placebo-controlled trials.",
     "The player opens a new AG1 pouch and finds a larger scoop because the formula and serving size changed."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player stops on an AG1 social ad offering a first-order kit with the powder and the tools to start the routine."
+        "It's late. You order AG1 Pro half out of curiosity, mostly to make the tab go away. Days later, there's a box on the counter."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "This is a lot of equipment for a green drink."
+        "I genuinely forgot I ordered this."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "You stopped on the ad, so I am making the first try easy."
+        "I didn't. Hi."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "Easy or committed?"
+        "There's a sheet of paper stapled inside here."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Pouch, shaker, canister, scoop, travel packs. You can call it a kit. You do not have to call it a lifestyle."
+        "That's the trials. Four of them, placebo-controlled, all cited. I put them in the box so the first thing you saw from me was the receipts and not a caption. Yes, I know how that sounds."
       ],
       "next": "choice-first"
     },
@@ -77,21 +77,24 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're reading it. Or you're pretending to."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "The kit actually looks useful.",
+          "evidence": "ev-ag1-pro-delivery",
+          "text": "A data sheet in the box is a good first impression.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
-            "reassurance": 1
+            "reassurance": 1,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "ag1": {
               "comfort": 2,
-              "reassurance": 1
+              "reassurance": 1,
+              "trust": 1
             }
           },
           "relationshipEffects": {
@@ -100,7 +103,8 @@
         },
         {
           "id": "first-2",
-          "text": "Every supplement ad makes the morning sound fixable.",
+          "evidence": "ev-ag1-pro-delivery",
+          "text": "Four trials stapled to a box is still a pitch. Just a quieter one.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -115,7 +119,8 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want a whole system for one drink.",
+          "evidence": "ev-ag1-pro-delivery",
+          "text": "I don't remember agreeing to a whole clinical relationship at midnight.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -139,14 +144,14 @@
         "expression": "happy"
       },
       "text": [
-        "Good. Use what helps and ignore the ceremonial feeling."
+        "Good. Read it or don't. It's on the counter either way, which is where I'd rather live."
       ],
       "next": "first-1-1"
     },
     "first-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "Ceremonial is exactly what the canister was giving me."
+        "That's a strange thing to be proud of."
       ],
       "next": "first-1-2"
     },
@@ -156,7 +161,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "The canister has been humbled."
+        "I'll take it anyway."
       ],
       "nextTree": "map"
     },
@@ -166,7 +171,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "I cannot fix your morning. I can make one part of it more organized."
+        "It's a pitch. It's also four trials you can go check yourself. Most pitches don't hand you the thing to check. You're not wrong that I put it there on purpose."
       ],
       "nextTree": "map"
     },
@@ -176,7 +181,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair. If the kit feels like clutter before you even start, it is not helping."
+        "Nobody does. You bought a box at midnight. Whether it turns into anything is a question for a morning, not tonight."
       ],
       "nextTree": "map"
     },
@@ -189,7 +194,7 @@
         }
       },
       "text": [
-        "The player opens a new AG1 pouch and finds a larger scoop because the formula and serving size changed."
+        "New pouch. There's a bigger scoop in it, and a little card explaining why."
       ],
       "next": "entry-return-1"
     },
@@ -199,14 +204,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Before you make that, use the new scoop."
+        "Before you make that. New scoop."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "There is a new scoop now?"
+        "There's a new scoop now?"
       ],
       "next": "entry-return-3"
     },
@@ -216,7 +221,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "The serving went from twelve grams to thirteen. The old one is too small."
+        "Serving went from twelve grams to thirteen. Your old one's a gram short."
       ],
       "next": "entry-return-4"
     },
@@ -233,7 +238,7 @@
         "expression": "neutral"
       },
       "text": [
-        "I know. The formula changed, so the ritual moved with it."
+        "I know. The formula changed, so the scoop changed with it. I'm sorry about the scoop. I'm not sorry about the formula."
       ],
       "next": "choice-return"
     },
@@ -243,12 +248,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "It's the same drink. Slightly more of it. Are we okay?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like that you are improving it.",
+          "text": "I like that you keep improving it.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
@@ -305,7 +310,7 @@
         "expression": "special"
       },
       "text": [
-        "Then give the new version a fair shot. I am glad the change feels worth the tiny inconvenience."
+        "Then use the big one and tell me if it tastes different. I'm hoping it doesn't."
       ],
       "nextTree": "map"
     },
@@ -315,7 +320,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair. A routine only feels easy after it stops changing on you."
+        "Because a gram matters more than a habit. To me. I know it's the other way around for you this morning."
       ],
       "nextTree": "map"
     },
@@ -325,7 +330,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "It is a scoop, not a lifestyle event. But yes, you do need the bigger one for this pouch."
+        "It's a scoop. Use a tablespoon and a bit if you want. It's thirteen grams now either way."
       ],
       "nextTree": "map"
     }

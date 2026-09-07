@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player sees AG1 on a large Target endcap instead of encountering it only through the brand's direct-to-consumer website.",
+    "The player sees AG1 on a large Target endcap, scoop and shaker propped in front, instead of encountering it only through the brand's website.",
     "The player already drinks AG1 and opens a sampler with Berry, Citrus, and Tropical after getting tired of always using Original."
   ],
   "nodes": {
@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player sees AG1 on a large Target endcap instead of encountering it only through the brand's direct-to-consumer website."
+        "Target. End of the household aisle. AG1 has a whole endcap, scoop and shaker propped up in front like a display kitchen."
       ],
       "next": "entry-first-1"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Good. You can see the pouch, check the price, and buy one where you already shop."
+        "I've been working on normal. Same shelf, same aisle, whenever you happen to walk by."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "Less internet-wellness mystery."
+        "The scoop and the shaker are doing a lot of talking for you."
       ],
       "next": "choice-first"
     },
@@ -67,12 +67,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "They're less pushy than the podcast ads. What's the shelf telling you?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "Being able to buy one in person makes me trust you more.",
+          "text": "One glass instead of a handful of pills. Okay, that got me.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
@@ -90,7 +90,7 @@
         },
         {
           "id": "first-2",
-          "text": "I am not sure whether retail makes you more credible or just more available.",
+          "text": "Does it actually replace the pills, or does it just feel like it does?",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -107,7 +107,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not need a premium supplement endcap in my grocery run.",
+          "text": "I don't need a whole supplement ritual on top of a grocery run.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -131,7 +131,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then being able to pick me up normally matters more than pretending I am some internet-only secret."
+        "Then let it be one glass. I'm not going to ask for more than that today."
       ],
       "nextTree": "map"
     },
@@ -141,7 +141,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair. Shelf space proves I am available. It does not prove the powder is right for you."
+        "Depends on the pills. If a doctor put you on something, I'm not that. I'm the stuff you'd probably skip otherwise, in one scoop. Ask them, not the endcap."
       ],
       "nextTree": "map"
     },
@@ -151,7 +151,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then walk past me. At least the decision only took one aisle."
+        "Then keep walking. At least I only cost you one aisle."
       ],
       "nextTree": "map"
     },
@@ -164,7 +164,7 @@
         }
       },
       "text": [
-        "The player already drinks AG1 and opens a sampler with Berry, Citrus, and Tropical after getting tired of always using Original."
+        "Your kitchen, but you bought the sampler at Target: Berry, Citrus, Tropical. Original is still open on the counter."
       ],
       "next": "entry-return-1"
     },
@@ -188,7 +188,7 @@
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Do not sound pleased. I was getting bored."
+        "Don't sound pleased. I was bored."
       ],
       "next": "entry-return-4"
     },
@@ -198,14 +198,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is one reason the other flavors exist."
+        "That's why the other three exist. Same scoop, same everything, different fruit."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "PLAYER",
       "text": [
-        "So you made new flavors because people were getting bored."
+        "So you made new flavors because people were getting bored of you."
       ],
       "next": "entry-return-6"
     },
@@ -215,7 +215,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "That is one reason. Drinking the same thing every day can get old."
+        "Some people. The same green glass at the same time every morning wears on some people. I'm told."
       ],
       "next": "choice-return"
     },
@@ -225,7 +225,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Well?"
       ],
       "choices": [
         {
@@ -248,7 +248,7 @@
         },
         {
           "id": "return-2",
-          "text": "So people really were getting bored of the original.",
+          "text": "So people really were getting sick of Original.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -263,7 +263,7 @@
         },
         {
           "id": "return-3",
-          "text": "Different flavor, same expensive powder.",
+          "text": "Different flavor. Same expensive powder.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -289,7 +289,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then the sampler is doing something useful for you besides looking colorful."
+        "Good. Then rotate. Just don't tell Original."
       ],
       "nextTree": "map"
     },
@@ -299,7 +299,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Yes. Some people get tired of Original."
+        "Some. Yes."
       ],
       "next": "return-2-1"
     },
@@ -316,7 +316,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "I was not fighting you on that."
+        "I wasn't fighting you on it."
       ],
       "nextTree": "map"
     },
@@ -326,7 +326,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "I know. A better flavor does not make the pouch cheaper."
+        "I know. Berry doesn't make the pouch cheaper. I wasn't going to say it did."
       ],
       "nextTree": "map"
     }

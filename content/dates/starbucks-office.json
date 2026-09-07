@@ -1,7 +1,7 @@
 {
   "id": "starbucks-office",
   "brandId": "starbucks",
-  "title": "Order Ahead and Personalized Bonus Stars",
+  "title": "Pumpkin Spice Latte Season",
   "locationId": "office",
   "context": {
     "location": "office",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player downloads the Starbucks app because ordering ahead could remove a line from a workday coffee run.",
+    "Someone on the team walks into the office holding a Pumpkin Spice Latte before anyone has agreed it's fall.",
     "The player already uses the app and receives personalized Bonus Star offers based on their account relationship."
   ],
   "nodes": {
@@ -33,24 +33,41 @@
         }
       },
       "text": [
-        "The player downloads the Starbucks app because ordering ahead could remove a line from a workday coffee run."
+        "It's the last week of August. A coworker walks past your desk holding a cup with the orange sleeve, and the whole floor seems to notice at once."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I have nine minutes before the next call."
+        "It's ninety-one degrees outside."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
+        "expression": "happy"
+      },
+      "text": [
+        "It is. It's also pumpkin spice season, and has been since 2003."
+      ],
+      "next": "entry-first-3"
+    },
+    "entry-first-3": {
+      "speaker": "PLAYER",
+      "text": [
+        "Season implies the weather agreed to this."
+      ],
+      "next": "entry-first-4"
+    },
+    "entry-first-4": {
+      "speaker": "STARBUCKS",
+      "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Order ahead. Ideally coffee becomes pickup instead of a meeting with a line."
+        "The weather is not invited to this decision. I put it in someone's hand before the office has agreed it's fall, and then it's fall. That's how it's worked every year."
       ],
       "next": "choice-first"
     },
@@ -60,21 +77,24 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Your coworker's already back at their desk. You're still looking at the cup."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "That is exactly the convenience I want.",
+          "evidence": "ev-starbucks-psl-season",
+          "text": "Honestly, that cup made my whole afternoon better.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
-            "readiness": 1
+            "excitement": 2,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
               "comfort": 2,
-              "readiness": 1
+              "excitement": 2,
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -83,7 +103,8 @@
         },
         {
           "id": "first-2",
-          "text": "If everyone orders ahead, pickup can still be chaos.",
+          "evidence": "ev-starbucks-psl-season",
+          "text": "You're timing this to the feed, not the weather.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -98,7 +119,8 @@
         },
         {
           "id": "first-3",
-          "text": "I do not need another restaurant app on my phone.",
+          "evidence": "ev-starbucks-psl-season",
+          "text": "I'm not letting a cup tell me what season it is.",
           "next": "first-3",
           "playerEffects": {
             "control": 3,
@@ -122,14 +144,14 @@
         "expression": "special"
       },
       "text": [
-        "Your usual?"
+        "That's the plan working on schedule. I'm not going to pretend I'm surprised, but I am pleased."
       ],
       "next": "first-1-1"
     },
     "first-1-1": {
       "speaker": "PLAYER",
       "text": [
-        "You know it already. That is the problem."
+        "I'm aware and I still want one."
       ],
       "nextTree": "map"
     },
@@ -139,7 +161,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "True. Digital convenience still lands in a physical store with other humans."
+        "Guilty. Late August is when the feed wants fall, so that's when fall shows up. The leaves can catch up."
       ],
       "nextTree": "map"
     },
@@ -149,7 +171,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then order at the counter. The app is optional."
+        "Fine. It'll still be here in October, once summer agrees to leave. So will I."
       ],
       "nextTree": "map"
     },
@@ -162,7 +184,7 @@
         }
       },
       "text": [
-        "The player already uses the app and receives personalized Bonus Star offers based on their account relationship."
+        "A Bonus Star offer lands mid-afternoon. It's for the exact drink you ordered the last four Tuesdays."
       ],
       "next": "entry-return-1"
     },
@@ -179,7 +201,7 @@
         "expression": "happy"
       },
       "text": [
-        "It is for your account."
+        "It's for your account. Just yours."
       ],
       "next": "entry-return-3"
     },
@@ -196,7 +218,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Rewards can use your account relationship for personalized offers. Familiarity is useful. It is also data."
+        "Because I know what you keep ordering. That's what the account is. It's how I remember you, and it's also a record. I can't have one without the other."
       ],
       "next": "choice-return"
     },
@@ -206,13 +228,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The offer expires Friday. I'm just saying."
       ],
       "choices": [
         {
           "id": "return-1",
-          "evidence": "ev-starbucks-personalized-offer",
-          "text": "I like offers that are actually relevant to me.",
+          "text": "I like offers that are actually about me.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
@@ -234,8 +255,7 @@
         },
         {
           "id": "return-2",
-          "evidence": "ev-starbucks-personalized-offer",
-          "text": "I do not love how much purchase history sits behind “relevant.”",
+          "text": "I don't love how much purchase history sits behind \"relevant.\"",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -250,8 +270,7 @@
         },
         {
           "id": "return-3",
-          "evidence": "ev-starbucks-personalized-offer",
-          "text": "I would rather pay the normal price than be profiled into a deal.",
+          "text": "I'd rather pay full price than be profiled into a deal.",
           "next": "return-3",
           "playerEffects": {
             "control": 3,
@@ -275,7 +294,7 @@
         "expression": "special"
       },
       "text": [
-        "Then personalization is earning the data relationship for you."
+        "Good. Then the remembering is worth something to you, and not just to me."
       ],
       "nextTree": "map"
     },
@@ -285,12 +304,12 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is the tradeoff. Relevance requires information about the relationship."
+        "It is a lot. I can't make you an offer this good without knowing this much. I'd like to say there's a version with less of you in it. There isn't."
       ],
       "next": "return-2-1"
     },
     "return-2-1": {
-      "speaker": "STARBUCKS (negative)",
+      "speaker": "STARBUCKS",
       "text": [
         "Then ignore the offer."
       ],
@@ -309,7 +328,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Ignoring the coupon does not erase the account history."
+        "Yes. Ignoring the coupon doesn't erase the history. I wish I had a better answer for that."
       ],
       "nextTree": "map"
     },
@@ -319,7 +338,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. That is a real way to see it."
+        "Fair. That's a real way to see it. The normal price is always there. So is the record."
       ],
       "nextTree": "map"
     }

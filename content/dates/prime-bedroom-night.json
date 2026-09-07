@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player learns that a college student posting PRIME can be part of the brand's formal ambassador program.",
+    "The player learns that a college student posting PRIME can be part of the brand's formal, paid ambassador program.",
     "The player bought Hydration before and now receives marketing for PRIME's growing set of product categories."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player learns that a college student posting PRIME can be part of the brand's formal ambassador program."
+        "Scrolling in bed. A student on your feed is holding a bottle in a dorm hallway. The caption has a hashtag, and the hashtag leads to a sign-up page for PRIME ambassadors."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Is that student just a fan?"
+        "A student on campus can post you for pay?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Maybe. They could also be one of my ambassadors."
+        "Could be a fan. Could be one of mine. Sometimes it's both, which is the good version."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "What does that actually mean?"
+        "There's a difference."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Product, merch, competitions, private community, career opportunities. They help put me into campus life on purpose."
+        "Free product, merch, comped appearances, a group chat, a line on the resume. I don't do organic when I can do organized. Organic is slow."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Go on. You've got that look people get right before they lecture me."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "That is a smart way to get into a real community.",
+          "text": "Smart. That's a real community, not just an ad.",
           "next": "first-1",
           "playerEffects": {
             "belonging": 2,
@@ -101,7 +101,7 @@
         },
         {
           "id": "first-2",
-          "text": "So the recommendation is also work.",
+          "text": "So the recommendation is also a job.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 1,
@@ -116,7 +116,7 @@
         },
         {
           "id": "first-3",
-          "text": "I would rather hear from a friend who is not on the brand team.",
+          "text": "I'd rather hear it from someone off your payroll.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -140,7 +140,7 @@
         "expression": "special"
       },
       "text": [
-        "Exactly. One person with real campus relationships can do more than a poster."
+        "One kid with actual friends beats a hundred posters. Took me about a week to figure that out."
       ],
       "nextTree": "map"
     },
@@ -150,7 +150,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Yes. If they are an ambassador, remember they are getting something from me for posting."
+        "Yep. If they're one of mine, they're getting paid to like me out loud. Doesn't mean they don't. Does mean you should know."
       ],
       "nextTree": "map"
     },
@@ -160,7 +160,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. Paid enthusiasm is still paid enthusiasm."
+        "Fair. Paid enthusiasm is still paid enthusiasm. I just happen to think it's still enthusiasm."
       ],
       "nextTree": "map"
     },
@@ -173,7 +173,7 @@
         }
       },
       "text": [
-        "The player bought Hydration before and now receives marketing for PRIME's growing set of product categories."
+        "Late, phone in bed. One bottle of Hydration a month ago, and now the email says: Energy, Shake, Rapid Rehydration, sticks."
       ],
       "next": "entry-return-1"
     },
@@ -183,14 +183,14 @@
         "expression": "happy"
       },
       "text": [
-        "Hydration, Energy, Shake, Rapid Rehydration, sticks. Pick another aisle."
+        "Hydration, Energy, Shake, Rapid Rehydration, sticks. Pick a new aisle."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "I bought one bottle and you decided I wanted the family reunion."
+        "I bought one bottle and you enrolled me in the family reunion."
       ],
       "next": "entry-return-3"
     },
@@ -200,7 +200,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You gave me an email address and proof you buy the brand."
+        "You gave me your email and bought one thing. In my world that's a door open. I walk through open doors."
       ],
       "next": "entry-return-4"
     },
@@ -217,7 +217,7 @@
         "expression": "happy"
       },
       "text": [
-        "I would like more of your fridge."
+        "I want your whole fridge. I'm not shy about it."
       ],
       "next": "choice-return"
     },
@@ -227,12 +227,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So what's it going to be? You're not going to sleep anyway."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like having more options from a brand I already know.",
+          "text": "I like having more options from a name I already know.",
           "next": "return-1",
           "playerEffects": {
             "excitement": 1,
@@ -251,7 +251,7 @@
         },
         {
           "id": "return-2",
-          "text": "I am not following you into every category automatically.",
+          "text": "I'm not following you into every category on faith.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -290,7 +290,7 @@
         "expression": "special"
       },
       "text": [
-        "Familiarity makes the next trial easier. I will take it."
+        "You already know my name. That's the whole cheat code and I'm going to use it every time."
       ],
       "nextTree": "map"
     },
@@ -300,7 +300,7 @@
         "expression": "neutral"
       },
       "text": [
-        "You should not. A logo does not make every format right for you."
+        "You shouldn't. My logo on a carton doesn't make the carton right for you. I'll still put it in your inbox, but you shouldn't."
       ],
       "nextTree": "map"
     },
@@ -327,7 +327,7 @@
         "expression": "neutral"
       },
       "text": [
-        "I will think about the other shelves privately."
+        "I'll be quietly plotting for the other shelves."
       ],
       "nextTree": "map"
     }

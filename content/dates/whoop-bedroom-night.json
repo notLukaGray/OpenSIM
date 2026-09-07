@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player considers WHOOP because the product frames sleep and recovery as core performance inputs, not just workout statistics."
+        "Late. You're tired in a way steps don't explain. The band's pitch, the reason you're looking at it, is that sleep and recovery count as training too."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I came here because I am tired."
+        "I came here because I'm tired."
       ],
       "next": "entry-first-2"
     },
@@ -50,7 +50,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. That is more interesting than steps."
+        "Good. That's more interesting than steps."
       ],
       "next": "entry-first-3"
     },
@@ -67,7 +67,7 @@
         "expression": "happy"
       },
       "text": [
-        "Sleep, Recovery, Strain. I connect tonight to what you ask of yourself tomorrow instead of pretending performance starts at the gym door."
+        "To you too, if you let me show you. I watch how you sleep, how much you've recovered, how hard your body's working. Tonight decides tomorrow. Most trackers act like the day starts at the gym door. It starts here."
       ],
       "next": "choice-first"
     },
@@ -77,13 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You're still awake. I'm timing it. Tell me why."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-whoop-healthspan-model",
-          "text": "That is more useful to me than counting steps.",
+          "text": "That's more useful to me than counting steps.",
           "next": "first-1",
           "playerEffects": {
             "mastery": 1,
@@ -101,8 +100,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-whoop-healthspan-model",
-          "text": "I worry I would start obsessing over sleep scores.",
+          "text": "I worry I'd start obsessing over sleep scores.",
           "next": "first-2",
           "playerEffects": {
             "reassurance": 1,
@@ -117,8 +115,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-whoop-healthspan-model",
-          "text": "I do not want to wear a tracker to bed.",
+          "text": "I don't want to wear a tracker to bed.",
           "next": "first-3",
           "playerEffects": {
             "comfort": 2,
@@ -142,7 +139,7 @@
         "expression": "special"
       },
       "text": [
-        "Then you understand my pitch better than half the gym."
+        "Then you already understand me better than half the gym. I don't say that often. I say it exactly as often as it's true."
       ],
       "nextTree": "map"
     },
@@ -152,7 +149,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That can happen. A sleep score is supposed to explain a pattern, not become bedtime homework."
+        "That happens. It's happened to people I like. A sleep score is supposed to explain a pattern, not become homework you do in the dark. If it becomes homework, tell me. I'll say less."
       ],
       "nextTree": "map"
     },
@@ -162,7 +159,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then I lose the most important part of the dataset for you."
+        "Then I lose the part I care most about. I'll still work in the daytime. It just won't be the same conversation."
       ],
       "nextTree": "map"
     },
@@ -175,7 +172,7 @@
         }
       },
       "text": [
-        "The player already uses WHOOP and sees Healthspan turn long-term habits into a Pace of Aging estimate."
+        "The app has a new section. Healthspan. It takes what it knows about your habits and says how fast you're aging."
       ],
       "next": "entry-return-1"
     },
@@ -192,14 +189,14 @@
         "expression": "happy"
       },
       "text": [
-        "I turned your reaction to that sentence into a number too. Kidding."
+        "A model. An estimate. I know that's not what it feels like at eleven at night."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "You are not funny enough to joke about that."
+        "You're not funny enough to joke about that."
       ],
       "next": "entry-return-4"
     },
@@ -209,7 +206,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Healthspan looks at longer-term habits and gives a Pace of Aging estimate. It is a model, not a prophecy."
+        "I wasn't joking. Healthspan reads your habits over months and gives you a Pace of Aging estimate. It's a model of the future, not a letter from it."
       ],
       "next": "choice-return"
     },
@@ -219,7 +216,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The number's right there. You looked. Now what?"
       ],
       "choices": [
         {
@@ -242,7 +239,7 @@
         },
         {
           "id": "return-2",
-          "text": "That is a very powerful number to put in front of someone.",
+          "text": "That's a very powerful number to put in front of someone.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -257,7 +254,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want an app telling me how fast I am aging.",
+          "text": "I don't want an app telling me how fast I'm aging.",
           "next": "return-3",
           "playerEffects": {
             "comfort": 2,
@@ -281,7 +278,7 @@
         "expression": "special"
       },
       "text": [
-        "Long-term pattern is exactly why I measure every boring day."
+        "Good. That's why I record the boring days. Nothing happens on a boring day, and then a year of them turns out to be the whole answer."
       ],
       "nextTree": "map"
     },
@@ -291,14 +288,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. An estimate should survive skepticism."
+        "It is. That's why I want you to doubt it. An estimate that can't survive doubt shouldn't be shown to anyone."
       ],
       "next": "return-2-1"
     },
     "return-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "You are enjoying this."
+        "You're enjoying this."
       ],
       "next": "return-2-2"
     },
@@ -318,7 +315,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then turn away from this feature. More information is not automatically better information for you."
+        "Then don't open it. I mean that. More information isn't automatically better information for you, and this one has weight."
       ],
       "nextTree": "map"
     }

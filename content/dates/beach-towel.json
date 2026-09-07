@@ -1,14 +1,76 @@
 {
-  "id": "beach-towel", "brandId": "beach-towel", "title": "The Long Afternoon", "locationId": "beach-day",
-  "context": { "location": "beach-day", "occasion": "day-off" }, "music": null, "background": null, "cast": [], "startNode": "intro",
-  "lessons": ["leisure can be unoptimized", "belonging can happen without performing it"],
+  "id": "beach-towel",
+  "brandId": "beach-towel",
+  "title": "The Long Afternoon",
+  "locationId": "beach-day",
+  "context": {
+    "location": "beach-day",
+    "occasion": "day-off"
+  },
+  "music": null,
+  "background": null,
+  "cast": [],
+  "startNode": "intro",
+  "lessons": [
+    "leisure can be unoptimized",
+    "belonging can happen without performing it"
+  ],
   "nodes": {
-    "intro": { "speaker": "...", "text": ["The cooler is somebody else's problem today.", "Your towel holds a warm rectangle of sand and no agenda."], "next": "choose" },
-    "choose": { "speaker": "...", "text": ["The afternoon asks only that you spend it."], "choices": [
-      { "id": "float", "text": "Walk into the water and float for a while.", "next": "float-end", "playerEffects": { "comfort": 2, "reassurance": 1 }, "setFlags": ["control-beach-rest"] },
-      { "id": "join", "text": "Join the loose game happening by the shoreline.", "next": "join-end", "playerEffects": { "belonging": 2, "excitement": 1 }, "setFlags": ["control-beach-join"] }
-    ] },
-    "float-end": { "speaker": "...", "text": ["For a few minutes, the water carries the whole conversation.", "You let it."], "nextTree": "map" },
-    "join-end": { "speaker": "...", "text": ["Nobody keeps score for very long.", "That is why it works."], "nextTree": "map" }
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "Somebody else brought the cooler. Not my problem today.",
+        "Warm sand under the towel. Nothing on the calendar. I keep checking for the catch and there isn't one."
+      ],
+      "next": "choose"
+    },
+    "choose": {
+      "speaker": "...",
+      "text": [
+        "Okay. Whole afternoon. What do I actually want to do with it?"
+      ],
+      "choices": [
+        {
+          "id": "float",
+          "text": "Walk out into the water and just float for a while.",
+          "next": "float-end",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "setFlags": [
+            "control-beach-rest"
+          ]
+        },
+        {
+          "id": "join",
+          "text": "Go join whatever that game is by the shoreline.",
+          "next": "join-end",
+          "playerEffects": {
+            "belonging": 2,
+            "excitement": 1
+          },
+          "setFlags": [
+            "control-beach-join"
+          ]
+        }
+      ]
+    },
+    "float-end": {
+      "speaker": "...",
+      "text": [
+        "Salt in my ears, sky doing nothing in particular.",
+        "I could stay out here a while. So I do."
+      ],
+      "nextTree": "map"
+    },
+    "join-end": {
+      "speaker": "...",
+      "text": [
+        "I don't know half these people's names and nobody's asked for mine.",
+        "Someone lost count of the score twenty minutes ago. Nobody cared. That's why it works."
+      ],
+      "nextTree": "map"
+    }
   }
 }

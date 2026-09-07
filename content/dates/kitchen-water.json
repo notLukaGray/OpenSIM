@@ -1,14 +1,76 @@
 {
-  "id": "kitchen-water", "brandId": "kitchen-water", "title": "Before the Pitch", "locationId": "kitchen",
-  "context": { "location": "kitchen", "occasion": "morning" }, "music": null, "background": null, "cast": [], "startNode": "intro",
-  "lessons": ["ritual does not require a product", "care can be simple and repeatable"],
+  "id": "kitchen-water",
+  "brandId": "kitchen-water",
+  "title": "Before the Pitch",
+  "locationId": "kitchen",
+  "context": {
+    "location": "kitchen",
+    "occasion": "morning"
+  },
+  "music": null,
+  "background": null,
+  "cast": [],
+  "startNode": "intro",
+  "lessons": [
+    "ritual does not require a product",
+    "care can be simple and repeatable"
+  ],
   "nodes": {
-    "intro": { "speaker": "...", "text": ["Morning light finds the glass beside the sink.", "It has no flavor name. It has been waiting anyway."], "next": "choose" },
-    "choose": { "speaker": "...", "text": ["You are hungry, thirsty, late, and none of those facts are a personality."], "choices": [
-      { "id": "water", "text": "Fill the glass and drink it standing there.", "next": "water-end", "playerEffects": { "trust": 2, "comfort": 1 }, "setFlags": ["control-kitchen-plain"] },
-      { "id": "breakfast", "text": "Make something small and sit down to eat it.", "next": "breakfast-end", "playerEffects": { "comfort": 2, "reassurance": 1 }, "setFlags": ["control-kitchen-care"] }
-    ] },
-    "water-end": { "speaker": "...", "text": ["Cold water. A clean glass. No before-and-after photo.", "Your body accepts the arrangement."], "nextTree": "map" },
-    "breakfast-end": { "speaker": "...", "text": ["The first five minutes belong to nobody else.", "You eat them slowly."], "nextTree": "map" }
+    "intro": {
+      "speaker": "...",
+      "text": [
+        "Morning light on the glass by the sink.",
+        "No flavor name on it. It's just been sitting there, waiting."
+      ],
+      "next": "choose"
+    },
+    "choose": {
+      "speaker": "...",
+      "text": [
+        "I'm hungry, I'm thirsty, I'm late. None of that is who I am. It's just a morning."
+      ],
+      "choices": [
+        {
+          "id": "water",
+          "text": "Fill the glass. Drink it standing right here.",
+          "next": "water-end",
+          "playerEffects": {
+            "trust": 2,
+            "comfort": 1
+          },
+          "setFlags": [
+            "control-kitchen-plain"
+          ]
+        },
+        {
+          "id": "breakfast",
+          "text": "Make something small. Sit down to eat it.",
+          "next": "breakfast-end",
+          "playerEffects": {
+            "comfort": 2,
+            "reassurance": 1
+          },
+          "setFlags": [
+            "control-kitchen-care"
+          ]
+        }
+      ]
+    },
+    "water-end": {
+      "speaker": "...",
+      "text": [
+        "Cold water. Clean glass. No before-and-after photo.",
+        "My body accepts the arrangement."
+      ],
+      "nextTree": "map"
+    },
+    "breakfast-end": {
+      "speaker": "...",
+      "text": [
+        "First five minutes of the day. Nobody else gets these.",
+        "I eat them slowly."
+      ],
+      "nextTree": "map"
+    }
   }
 }

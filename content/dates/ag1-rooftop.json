@@ -1,7 +1,7 @@
 {
   "id": "ag1-rooftop",
   "brandId": "ag1",
-  "title": "The Scientist Endorsement and the Referral Link",
+  "title": "The Scientist Endorsement and the Renewing Invoice",
   "locationId": "rooftop",
   "context": {
     "location": "rooftop",
@@ -21,7 +21,7 @@
   ],
   "lessons": [
     "The player sees AG1 promoting early-career scientists through NIL endorsement deals, a sponsorship model more commonly associated with athletes.",
-    "The player already buys AG1 and receives a personal referral link that rewards both the friend and the existing member if the friend makes a first purchase."
+    "The player already buys AG1 and notices the subscription quietly renewed again this month while also getting a referral link to send a friend."
   ],
   "nodes": {
     "entry-first": {
@@ -33,7 +33,7 @@
         }
       },
       "text": [
-        "The player sees AG1 promoting early-career scientists through NIL endorsement deals, a sponsorship model more commonly associated with athletes."
+        "Rooftop, your phone, a post from an AG1 account: three early-career scientists, headshots, and the letters NIL, which you last saw next to a college quarterback."
       ],
       "next": "entry-first-1"
     },
@@ -43,14 +43,14 @@
         "expression": "neutral"
       },
       "text": [
-        "I gave NIL endorsement deals to three early-career scientists."
+        "I signed three scientists. NIL deals."
       ],
       "next": "entry-first-2"
     },
     "entry-first-2": {
       "speaker": "PLAYER",
       "text": [
-        "You say that like I am supposed to know what to do with it."
+        "You say that like I'm supposed to know what to do with it."
       ],
       "next": "entry-first-3"
     },
@@ -60,14 +60,14 @@
         "expression": "happy"
       },
       "text": [
-        "Think college-athlete sponsorship model, except the people I partnered with study sleep, nutrition, and the microbiome."
+        "Like a college athlete deal. Except they study sleep, nutrition, the gut. I wanted their names next to mine."
       ],
       "next": "entry-first-4"
     },
     "entry-first-4": {
       "speaker": "PLAYER",
       "text": [
-        "And the supplement brand is paying the scientists talking about science."
+        "So the supplement brand is paying the scientists who talk about science."
       ],
       "next": "entry-first-5"
     },
@@ -77,7 +77,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Yes. That is the tension. They are endorsement deals, so you should know they are sponsored before you decide how persuasive they are."
+        "Yes. It's an endorsement deal and the post says so. I'd rather you find that out from me than from the comments."
       ],
       "next": "choice-first"
     },
@@ -87,12 +87,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You went quiet."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I like seeing sponsorship money go to scientists.",
+          "text": "I like seeing sponsor money go to scientists for once.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
@@ -114,7 +114,7 @@
         },
         {
           "id": "first-2",
-          "text": "I still want to separate their research from your endorsement deal.",
+          "text": "I still want to keep their research and your deal in separate piles.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -130,7 +130,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want sponsored experts selling me supplements.",
+          "text": "I don't want sponsored experts selling me supplements.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -156,7 +156,7 @@
         "expression": "happy"
       },
       "text": [
-        "Good. Support the work, read what they actually study, and do not stop at my caption."
+        "Me too. Read what they actually work on, though. My caption is the least interesting thing about them."
       ],
       "nextTree": "map"
     },
@@ -166,14 +166,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Good. Sponsorship should change how you read the post."
+        "Good. Keep the piles separate. The money should change how you read the post."
       ],
       "next": "first-2-1"
     },
     "first-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "That is a strange thing for the sponsor to say."
+        "That's a strange thing for the sponsor to say."
       ],
       "next": "first-2-2"
     },
@@ -193,7 +193,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then do not use the partnership as evidence for the product. That is a reasonable line."
+        "Then don't count them as evidence for me. That's a fair line to draw. I'd still like you to read them for their own sake."
       ],
       "nextTree": "map"
     },
@@ -206,14 +206,14 @@
         }
       },
       "text": [
-        "The player already buys AG1 and receives a personal referral link that rewards both the friend and the existing member if the friend makes a first purchase."
+        "Your sister texts asking for your AG1 link. Under her text, a bank notification: $79, AG1, same as last month."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "My sister asked me for your link."
+        "My sister wants your link. Also, the renewal hit again this morning."
       ],
       "next": "entry-return-2"
     },
@@ -223,14 +223,14 @@
         "expression": "happy"
       },
       "text": [
-        "I have one for that."
+        "I have a link for her. And yes. It's the same day every month. That's on purpose."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Of course you do."
+        "Seventy-nine dollars, same day, every month. Like clockwork."
       ],
       "next": "entry-return-4"
     },
@@ -240,14 +240,14 @@
         "expression": "neutral"
       },
       "text": [
-        "She can get fifteen dollars off plus the referral offer, and you get fifteen dollars after she buys."
+        "I like clockwork. The kit got you to try me once. The renewal is how I stay. I'm not going to dress that up."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "PLAYER",
       "text": [
-        "So my recommendation comes with store credit."
+        "So my recommendation to her comes with a kickback on top of the invoice."
       ],
       "next": "entry-return-6"
     },
@@ -257,7 +257,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. If that makes it feel weird, send her the normal link."
+        "A credit. Yes. If it makes it feel weird, send her the plain link. I'll still be there."
       ],
       "next": "choice-return"
     },
@@ -267,12 +267,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "She's still waiting on the text."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "My sister already asked what I use. I could send it to her.",
+          "text": "She asked what I use. I'm sending it.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
@@ -294,7 +294,7 @@
         },
         {
           "id": "return-2",
-          "text": "I do not love getting rewarded for a friend's purchase.",
+          "text": "I don't love getting paid to recommend something that bills me quietly.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -309,7 +309,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want to turn my friends into customers for you.",
+          "text": "I'm not turning my sister into your renewal numbers.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -335,7 +335,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then send it without a sales speech. She can decide whether the offer is useful."
+        "Then send it with no speech attached. If she likes me, she'll figure out why on her own."
       ],
       "nextTree": "map"
     },
@@ -345,7 +345,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Fair. The credit changes the recommendation, even if you already liked the product."
+        "Fair. The credit changes what the recommendation is, even if you still mean it. I don't have a clean answer for that."
       ],
       "nextTree": "map"
     },
@@ -355,7 +355,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then do not use the referral link. You do not owe me a sales network."
+        "Then don't. You don't owe me a renewal pipeline. Tell her what you like about me, or don't."
       ],
       "nextTree": "map"
     }

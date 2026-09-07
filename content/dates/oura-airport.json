@@ -1,7 +1,7 @@
 {
   "id": "oura-airport",
   "brandId": "oura",
-  "title": "Try the Sizing Kit Before the Ring",
+  "title": "Ready?",
   "locationId": "airport",
   "context": {
     "location": "airport",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player encounters Oura in a physical retailer where sizing kits can be tried or purchased before choosing a ring.",
+    "The player spots the 'Ready?' campaign on a terminal digital ad: Harry Kane and Declan Rice fronting Oura instead of a wellness influencer.",
     "The player lands after a difficult trip and turns on Rest Mode instead of chasing a normal activity goal."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player encounters Oura in a physical retailer where sizing kits can be tried or purchased before choosing a ring."
+        "The screen above the gate cycles two footballers, Harry Kane and Declan Rice, under one word. Ready? Then the boarding lights come on."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "I can size this in a store now?"
+        "Since when do footballers front an ad like this?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "You no longer have to begin our relationship with waiting for plastic in the mail."
+        "Since this one. Kane and Rice, not someone filming their morning routine. I wanted a face that gets asked that question for a living."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "Romantic."
+        "That's a different kind of ready than mine right now."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Target and Best Buy can let you try sizing in person, and a purchased sizing kit can become credit toward the ring at that retailer."
+        "I know. You've been awake since four. The ad's for the person who sees it on the way to a match. You're seeing it on the way to a middle seat."
       ],
       "next": "choice-first"
     },
@@ -77,23 +77,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Boarding's in six minutes. You keep looking up at it."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "Trying the size in person makes this feel less risky.",
+          "text": "I trust an athlete's readiness more than an influencer's morning routine.",
           "next": "first-1",
           "playerEffects": {
-            "trust": 2,
-            "comfort": 1,
-            "control": 1
+            "aspiration": 2,
+            "trust": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": 1,
-              "comfort": 1,
-              "control": 1
+              "aspiration": 1,
+              "readiness": 1,
+              "trust": 1
             }
           },
           "relationshipEffects": {
@@ -102,33 +101,32 @@
         },
         {
           "id": "first-2",
-          "text": "I still have to understand the membership after I buy the hardware.",
+          "text": "Bigger stars, same question of what the ring actually measures.",
           "next": "first-2",
           "playerEffects": {
-            "control": 2,
-            "trust": 1
+            "mastery": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": -2,
-              "mastery": 1,
-              "control": -1
+              "trust": -1,
+              "mastery": 1
             }
           }
         },
         {
           "id": "first-3",
-          "text": "I would rather not buy a health tracker next to headphones and phone cases.",
+          "text": "I don't need Harry Kane to tell me how I slept.",
           "next": "first-3",
           "playerEffects": {
-            "trust": 2,
+            "control": 2,
             "comfort": 1
           },
           "brandPerceptionEffects": {
             "oura": {
-              "trust": -2,
+              "trust": -1,
               "comfort": -1,
-              "selfExpression": -1
+              "aspiration": -1
             }
           },
           "relationshipEffects": {
@@ -143,7 +141,7 @@
         "expression": "special"
       },
       "text": [
-        "Then retail solved the first trust problem: fit."
+        "Then the face on the screen did something before I was anywhere near your hand. I'll have to live up to that later. Quietly."
       ],
       "nextTree": "map"
     },
@@ -153,7 +151,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Correct. A store can simplify sizing. It does not simplify the subscription decision."
+        "That's fair. A bigger name on the screen doesn't answer a smaller question in the app. I'd rather you ask the small one."
       ],
       "nextTree": "map"
     },
@@ -163,7 +161,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the retail shelf is not enough to make the category feel right for you."
+        "No. He doesn't know how you slept. Neither do I, yet. That part was never his."
       ],
       "nextTree": "map"
     },
@@ -176,14 +174,14 @@
         }
       },
       "text": [
-        "The player lands after a difficult trip and turns on Rest Mode instead of chasing a normal activity goal."
+        "You land after a bad trip. The activity ring on your phone is nowhere near closed. There's an option you've never used: Rest Mode."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "My Activity goal is not happening today."
+        "My activity goal is not happening today."
       ],
       "next": "entry-return-2"
     },
@@ -200,7 +198,7 @@
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "You are telling me to do less?"
+        "You're telling me to do less?"
       ],
       "next": "entry-return-4"
     },
@@ -210,7 +208,7 @@
         "expression": "happy"
       },
       "text": [
-        "Jet lag is exactly the kind of reason Rest Mode exists. I can pause the activity goal and change the guidance toward recovery."
+        "Today. Jet lag is what Rest Mode is for. I pause the activity goal and stop nudging. The guidance turns toward sleep instead of steps."
       ],
       "next": "choice-return"
     },
@@ -220,12 +218,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Your call. I've said my one thing."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like that the system can stop pushing when the context changes.",
+          "text": "I like that you can stop pushing when the day changes.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -245,7 +243,7 @@
         },
         {
           "id": "return-2",
-          "text": "I should not need a setting to give myself permission to rest.",
+          "text": "I shouldn't need a setting to give myself permission to rest.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -261,7 +259,7 @@
         },
         {
           "id": "return-3",
-          "text": "If I am exhausted, I already know I am exhausted.",
+          "text": "If I'm exhausted, I already know I'm exhausted.",
           "next": "return-3",
           "playerEffects": {
             "comfort": 2,
@@ -286,7 +284,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the feature is helping the system get out of your way."
+        "Good. I'm most useful when I know when to go quiet. I'm still learning when that is."
       ],
       "nextTree": "map"
     },
@@ -296,7 +294,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "That is fair. Permission from an app is still permission from an app."
+        "That's fair. Permission from an app is still permission from an app. I'd rather you didn't need it from me."
       ],
       "nextTree": "map"
     },
@@ -306,7 +304,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Also fair. You do not need a score to justify sleep."
+        "Then you didn't need me for this one. You knew. Sleep."
       ],
       "nextTree": "map"
     }

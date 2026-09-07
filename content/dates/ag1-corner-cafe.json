@@ -1,7 +1,7 @@
 {
   "id": "ag1-corner-cafe",
   "brandId": "ag1",
-  "title": "The Podcast Code and the Next Shipment",
+  "title": "The Fourteenth Ad Read",
   "locationId": "corner-cafe",
   "context": {
     "location": "corner-cafe",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "A podcast host says they use AG1 every morning, then gives listeners a personal code and offer.",
+    "Walking to work with headphones in, the player hears a podcast host read the same AG1 ad they've heard a dozen times before, this time noticing it.",
     "The player already subscribes to AG1 and sees that the next pouch is scheduled to ship before the current one is finished."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "A podcast host says they use AG1 every morning, then gives listeners a personal code and offer."
+        "Headphones in, six minutes from the office. The podcast hits a familiar cadence. The host is about to talk about their morning, and you already know where it's going."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "There you are again."
+        "There you are. I could do this read from memory."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Podcast?"
+        "Which show?"
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "Podcast."
+        "Does it matter? Same read, different voice."
       ],
       "next": "entry-first-4"
     },
@@ -67,14 +67,14 @@
         "expression": "neutral"
       },
       "text": [
-        "The host talks about using me, then gives you a code. The code is the part that makes the sponsorship impossible to miss."
+        "It's the same read because I write the outline. They fill in their own morning. Their own code at the end, so I know which one of them sent you."
       ],
       "next": "entry-first-5"
     },
     "entry-first-5": {
       "speaker": "PLAYER",
       "text": [
-        "Even if they actually drink you every morning?"
+        "So even if they actually drink you, the code is what makes it a transaction."
       ],
       "next": "entry-first-6"
     },
@@ -84,7 +84,7 @@
         "expression": "neutral"
       },
       "text": [
-        "They can mean it and still be paid. Those things can happen at the same time."
+        "They can mean it and still be paid for it. You've had jobs."
       ],
       "next": "choice-first"
     },
@@ -94,13 +94,13 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Four minutes left. You going to skip me or not?"
       ],
       "choices": [
         {
           "id": "first-1",
           "evidence": "ev-ag1-host-adread",
-          "text": "I trust the host enough to listen.",
+          "text": "I trust this host. I'll keep listening.",
           "next": "first-1",
           "playerEffects": {
             "comfort": 2,
@@ -119,7 +119,7 @@
         {
           "id": "first-2",
           "evidence": "ev-ag1-host-adread",
-          "text": "I want to know where the recommendation ends and the sponsorship starts.",
+          "text": "I want to know where the recommendation ends and the paycheck starts.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -137,7 +137,7 @@
         {
           "id": "first-3",
           "evidence": "ev-ag1-host-adread",
-          "text": "I do not want breakfast advice from a podcast ad.",
+          "text": "I don't want breakfast advice piped into my commute.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -161,7 +161,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then the host got me a fair hearing. I still have to earn what happens after that."
+        "Then they got me through the door. After that it's on me, not them. I'm okay with that."
       ],
       "nextTree": "map"
     },
@@ -171,7 +171,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Good question. Treat the code as the cleanest clue that you are still inside the sponsorship."
+        "Honestly? The code. When you hear the code, you're still in the ad. Before that, I can't tell you where their morning stops and my script starts. Some days, neither can they."
       ],
       "nextTree": "map"
     },
@@ -181,7 +181,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Then skip the code and finish your coffee."
+        "Then skip it. There's a button."
       ],
       "next": "first-3-1"
     },
@@ -201,14 +201,14 @@
         }
       },
       "text": [
-        "The player already subscribes to AG1 and sees that the next pouch is scheduled to ship before the current one is finished."
+        "Member portal, open on your phone at the cafe counter. Next pouch ships Thursday. The current one is half full."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "Why are you shipping again? I still have half a pouch."
+        "Why are you shipping again? I've got half a pouch."
       ],
       "next": "entry-return-2"
     },
@@ -218,7 +218,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Because your subscription is still set to every thirty days."
+        "Because you're set to every thirty days, and it's been thirty days."
       ],
       "next": "entry-return-3"
     },
@@ -235,14 +235,14 @@
         "expression": "happy"
       },
       "text": [
-        "Yes. Push the date back, change the cadence, or cancel in the member portal."
+        "Yes. Push the date, change how often, or cancel. It's all in the portal. Takes a minute."
       ],
       "next": "entry-return-5"
     },
     "entry-return-5": {
       "speaker": "PLAYER",
       "text": [
-        "That answer was suspiciously painless."
+        "That was suspiciously painless."
       ],
       "next": "entry-return-6"
     },
@@ -252,7 +252,7 @@
         "expression": "happy"
       },
       "text": [
-        "I would like to keep you. I do not need to trap you."
+        "I'd like to keep you. I don't need to trap you."
       ],
       "next": "choice-return"
     },
@@ -262,12 +262,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So. Thursday, or later?"
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like being able to push the shipment back.",
+          "text": "I like that I can push it back.",
           "next": "return-1",
           "playerEffects": {
             "comfort": 2,
@@ -287,7 +287,7 @@
         },
         {
           "id": "return-2",
-          "text": "So if I do nothing, you just keep sending it every month.",
+          "text": "So if I do nothing, you just keep coming every month.",
           "next": "return-2",
           "playerEffects": {
             "control": 1,
@@ -302,7 +302,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not want my vitamins on auto-renew.",
+          "text": "I don't want my vitamins on auto-renew.",
           "next": "return-3",
           "playerEffects": {
             "control": 3,
@@ -326,7 +326,7 @@
         "expression": "happy"
       },
       "text": [
-        "Then make the schedule match how fast you actually use it."
+        "Then match it to how fast you actually drink me. I'd rather ship late than sit in a cupboard."
       ],
       "nextTree": "map"
     },
@@ -336,14 +336,14 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. If you do nothing, the thirty-day cadence keeps going."
+        "Yes. If you do nothing, I keep coming."
       ],
       "next": "return-2-1"
     },
     "return-2-1": {
       "speaker": "PLAYER",
       "text": [
-        "That is the part I wanted said out loud."
+        "That's the part I wanted said out loud."
       ],
       "next": "return-2-2"
     },
@@ -353,7 +353,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Fair."
+        "Said."
       ],
       "nextTree": "map"
     },
@@ -363,7 +363,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then a one-time purchase makes more sense for you. I am still a subscription if you choose the subscription."
+        "Then buy one pouch at a time. It costs more per pouch and nobody asks you anything. Some people like that better."
       ],
       "nextTree": "map"
     }

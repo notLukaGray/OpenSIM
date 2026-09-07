@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player sees a 2026 promotion where White Claw opened a large bar tab around basketball tournament viewing to change habitual drink orders."
+        "The office pool is going, the tournament's on the bar TV after work, and there's a sign by the taps: first round's partly on White Claw. Ask about it."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "You paid part of the first round?"
+        "You paid part of the first round during the office pool?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "In participating places, yes."
+        "In the bars that signed up, yes. This is new for me. Actually paying for attention, instead of just having it."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "That sounds generous until I remember you want me to switch what I order."
+        "Wait, you usually get it for free?"
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Correct. It was a promotion. Lower the cost of trying something else and habitual orders get a little less automatic."
+        "One summer I cut my ads and the internet made me bigger anyway. I got famous by accident. You can't plan an accident twice, so this time I'm just buying the round."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Bartender's looking at you. Usual, or mine?"
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I would try something new if the promotion covered it.",
+          "text": "That's honest. Fame you didn't make isn't fame you control.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -102,7 +102,7 @@
         },
         {
           "id": "first-2",
-          "text": "A free drink is a very direct way to buy trial.",
+          "text": "So the bar tab is you buying back the summer the internet gave you for free.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -118,7 +118,7 @@
         },
         {
           "id": "first-3",
-          "text": "I do not want an alcohol brand using sports to push one more round.",
+          "text": "I don't want an alcohol brand using sports and a bar tab to push one more round.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -144,7 +144,7 @@
         "expression": "special"
       },
       "text": [
-        "Then the incentive did its job and the product still has to earn the next order."
+        "Thank you. The tab gets me the first one. Whether you order a second is on the drink, not the sign."
       ],
       "nextTree": "map"
     },
@@ -154,7 +154,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Correct. I paid to make trying me easier. I still wanted the next order."
+        "Yeah. It is. That summer was free and it wasn't mine. This one costs money and it is. I know which one I'd rather have. I'm not sure I get to pick."
       ],
       "nextTree": "map"
     },
@@ -181,7 +181,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "The promotion lowers the barrier. It does not confiscate your free will."
+        "The promotion lowers the barrier. It doesn't confiscate your free will."
       ],
       "nextTree": "map"
     },
@@ -194,14 +194,14 @@
         }
       },
       "text": [
-        "The player already knows which White Claw line they want and uses the brand site to find it nearby or order delivery where available."
+        "You know exactly which line you want. Two stores near the office don't have it. The site has a Find Near Me button and a delivery option."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I know exactly which one I want and nobody nearby seems to have it."
+        "I know exactly which one I want and nobody near the office seems to have it."
       ],
       "next": "entry-return-2"
     },
@@ -211,14 +211,14 @@
         "expression": "neutral"
       },
       "text": [
-        "That is when I stop being a personality and become a locator."
+        "That's when I stop being a personality and become a locator."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
       "speaker": "PLAYER",
       "text": [
-        "Finally."
+        "Finally, something useful."
       ],
       "next": "entry-return-4"
     },
@@ -228,7 +228,7 @@
         "expression": "happy"
       },
       "text": [
-        "Find it nearby or use delivery where available. No need to make scarcity romantic."
+        "Find it nearby, or get it delivered if your area does that. I'm not going to make scarcity romantic just because it made a good meme once."
       ],
       "next": "choice-return"
     },
@@ -238,12 +238,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Two stores in walking distance have it. Delivery's forty minutes. Pick."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I like not driving around looking for one flavor.",
+          "text": "I like not driving around after work looking for one flavor.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -263,7 +263,7 @@
         },
         {
           "id": "return-2",
-          "text": "Convenience can make the purchase too automatic.",
+          "text": "If it's this easy to get, I stop thinking about whether I want it.",
           "next": "return-2",
           "playerEffects": {
             "control": 2,
@@ -279,7 +279,7 @@
         },
         {
           "id": "return-3",
-          "text": "If I cannot find it easily, I will buy something else.",
+          "text": "If I can't find it easily, I'll just buy something else.",
           "next": "return-3",
           "playerEffects": {
             "comfort": 2,
@@ -304,7 +304,7 @@
         "expression": "special"
       },
       "text": [
-        "Then availability is part of loyalty for you."
+        "Good. Being where you are is the least fun part of me and probably the most important one."
       ],
       "nextTree": "map"
     },
@@ -314,7 +314,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. Removing friction is good business and can also remove a pause in the decision."
+        "Yeah. Making it easy is good for me. It also takes away the moment where you might've walked past. I'd be lying if I said I hadn't thought about that."
       ],
       "nextTree": "map"
     },
@@ -324,7 +324,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then do not drive across town for me."
+        "Then don't drive across town for me. I'm a seltzer, not a scavenger hunt."
       ],
       "nextTree": "map"
     }

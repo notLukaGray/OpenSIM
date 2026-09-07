@@ -3,7 +3,10 @@
   "brandId": "sleep",
   "title": "The Original Manufacturer",
   "locationId": "bedroom-night",
-  "context": { "location": "bedroom-night", "occasion": "lights-out" },
+  "context": {
+    "location": "bedroom-night",
+    "occasion": "lights-out"
+  },
   "music": null,
   "background": null,
   "cast": [],
@@ -16,121 +19,117 @@
     "intro": {
       "speaker": "...",
       "text": [
-        "You put the phone face-down on the nightstand.",
-        "That's the whole invitation."
+        "Home. Tired in the good way, for once.",
+        "Early night. I'm actually going to do it."
       ],
       "next": "greet"
     },
-
     "greet": {
-      "speaker": "SLEEP",
+      "speaker": "...",
       "text": [
-        "Hey.",
-        "I was already here."
+        "Room goes quiet.",
+        "I remember when going to bed was just going to bed."
       ],
       "choices": [
         {
           "id": "owe",
-          "text": "I owe you about six years.",
+          "text": "I'm probably six years behind on sleep.",
           "next": "branch-owe",
-          "playerEffects": { "reassurance": 2, "control": -1 },
-          "relationshipEffects": { "sleep": 2 },
-          "setFlags": ["slept-honest"]
+          "playerEffects": {
+            "reassurance": 2,
+            "control": -1
+          },
+          "setFlags": [
+            "slept-honest"
+          ]
         },
         {
           "id": "only-one",
-          "text": "You're the only one who never asks me for anything.",
+          "text": "Weird. Nothing needs me right now.",
           "next": "branch-only",
-          "playerEffects": { "comfort": 2, "trust": 1 },
-          "brandPerceptionEffects": { "sleep": { "trust": 1 } },
-          "relationshipEffects": { "sleep": 2 }
+          "playerEffects": {
+            "comfort": 2,
+            "trust": 1
+          }
         },
         {
           "id": "cheating",
-          "text": "Full disclosure: I've been seeing your phone at midnight.",
+          "text": "Okay. One more video.",
           "next": "branch-cheating",
-          "playerEffects": { "control": 1, "comfort": -1 },
-          "relationshipEffects": { "sleep": -1 }
+          "playerEffects": {
+            "control": -1,
+            "comfort": -1
+          }
         }
       ]
     },
-
     "branch-owe": {
-      "speaker": "SLEEP",
-      "text": ["Six years, give or take.", "I don't do interest. Just show up and we're even."],
-      "next": "fall"
-    },
-
-    "branch-only": {
-      "speaker": "SLEEP",
-      "text": [
-        "Don't romanticize it.",
-        "I'm just really, really old."
-      ],
-      "next": "fall"
-    },
-
-    "branch-cheating": {
-      "speaker": "SLEEP",
-      "text": ["I know. It has a nice glow.", "So did the sun, once."],
-      "next": "fall"
-    },
-
-    "fall": {
       "speaker": "...",
       "text": [
-        "No score to check. No streak to protect.",
-        "Just the long dark, doing what it has always done, free of charge, no account required."
+        "Six years is probably being generous.",
+        "I'm drifting already."
       ],
       "next": "tension"
     },
-
-    "tension": {
-      "speaker": "SLEEP",
+    "branch-only": {
+      "speaker": "...",
       "text": [
-        "One honest thing before you drift.",
-        "Everything in that app drawer is priced against me. Every single one.",
-        "And most nights, you still choose them."
+        "The nightstand buzzes.",
+        "Spoke too soon. I leave it face-down and drift off anyway."
+      ],
+      "next": "tension"
+    },
+    "branch-cheating": {
+      "speaker": "...",
+      "text": [
+        "A few more minutes.",
+        "I'm mostly asleep and the video's still going on loop somewhere near my ear."
+      ],
+      "next": "tension"
+    },
+    "tension": {
+      "speaker": "...",
+      "text": [
+        "Almost under. Then it hits me.",
+        "The email. Of course it's the email."
       ],
       "choices": [
         {
           "id": "fair",
-          "text": "Fair. They make you feel like progress.",
-          "next": "closing",
-          "playerEffects": { "aspiration": 1, "comfort": 1 },
-          "relationshipEffects": { "sleep": 0 }
+          "text": "I should probably just handle it now.",
+          "next": "closing-now",
+          "playerEffects": {
+            "control": 1,
+            "comfort": -1
+          }
         },
         {
           "id": "wrong",
-          "text": "Not tonight. Tonight I pick the original.",
-          "next": "closing",
-          "playerEffects": { "comfort": 2, "control": 1 },
-          "brandPerceptionEffects": { "sleep": { "trust": 1 } },
-          "relationshipEffects": { "sleep": 2 },
-          "setFlags": ["picked-original"]
+          "text": "Not tonight. Nobody's reading it until tomorrow anyway.",
+          "next": "closing-later",
+          "playerEffects": {
+            "comfort": 2,
+            "control": 1
+          },
+          "setFlags": [
+            "picked-original"
+          ]
         }
       ]
     },
-
-    "closing": {
-      "speaker": "SLEEP",
-      "callbacks": [
-        {
-          "if": "cheating",
-          "text": ["Face-down next time.", "I'll take partial payment."]
-        },
-        {
-          "if": "wrong",
-          "text": ["Good.", "I was your first brand, you know.", "You just didn't have a word for it yet."]
-        },
-        {
-          "if": "owe",
-          "text": ["Six years forgiven.", "See you around ten thirty?"]
-        }
-      ],
+    "closing-now": {
+      "speaker": "...",
       "text": [
-        "See you tonight.",
-        "Same nothing, no subscription."
+        "Forty-five minutes. I write the email.",
+        "They read it tomorrow at two in the afternoon."
+      ],
+      "nextTree": "map"
+    },
+    "closing-later": {
+      "speaker": "...",
+      "text": [
+        "I roll over. Nothing happens.",
+        "I write it in the morning. It takes ten minutes."
       ],
       "nextTree": "map"
     }

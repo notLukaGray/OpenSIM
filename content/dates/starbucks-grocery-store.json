@@ -1,7 +1,7 @@
 {
   "id": "starbucks-grocery-store",
   "brandId": "starbucks",
-  "title": "Grocery-Store Pumpkin Spice and Seasonal Access",
+  "title": "A Cafe Where the Cereal Used to Be",
   "locationId": "grocery-store",
   "context": {
     "location": "grocery-store",
@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player encounters Starbucks Pumpkin Spice coffee, creamer, and ready-to-drink products in a grocery store before visiting a cafe that day.",
+    "A new licensed Starbucks counter has opened where the cereal aisle used to end, and a wall of Stanley Quencher tumblers sits a few aisles over.",
     "The player already uses Starbucks Rewards and receives early access to select seasonal beverages or products."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player encounters Starbucks Pumpkin Spice coffee, creamer, and ready-to-drink products in a grocery store before visiting a cafe that day."
+        "You're here for milk. Instead there's a green counter where the cereal end-cap used to be, and past it, a full wall of Stanley Quenchers in every color."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Why are you in the grocery aisle?"
+        "I came in for milk. Why is there a cafe here now?"
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "I left the coffeehouse."
+        "This one's licensed. I don't run it, but it runs on me."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "I can see that."
+        "And the wall of tumblers?"
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Coffee, creamer, ready-to-drink, seasonal cues. The shelf lets Starbucks show up before you ever walk near a barista."
+        "The pink one sold out in minutes and was going for four hundred dollars on eBay by the weekend. Now there's a wall of them between you and the dairy case. I didn't plan the aisle. I did plan the cup."
       ],
       "next": "choice-first"
     },
@@ -77,25 +77,24 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "The milk's behind me. You'll have to walk past."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I like being able to make the flavor at home.",
+          "evidence": "ev-starbucks-stanley-cup-grocery-cafe",
+          "text": "It's a little impressive that you're everywhere I already am.",
           "next": "first-1",
           "playerEffects": {
-            "comfort": 3,
-            "readiness": 2,
-            "excitement": 1,
-            "selfExpression": 1
+            "comfort": 2,
+            "aspiration": 2,
+            "belonging": 1
           },
           "brandPerceptionEffects": {
             "starbucks": {
-              "comfort": 3,
-              "readiness": 2,
-              "excitement": 1,
-              "selfExpression": 1
+              "comfort": 2,
+              "aspiration": 2,
+              "belonging": 1
             }
           },
           "relationshipEffects": {
@@ -104,7 +103,8 @@
         },
         {
           "id": "first-2",
-          "text": "This makes Starbucks feel more like a packaged-goods brand.",
+          "evidence": "ev-starbucks-stanley-cup-grocery-cafe",
+          "text": "A counter and a cup wall in the same trip feels less like coincidence and more like a plan.",
           "next": "first-2",
           "playerEffects": {
             "control": 1,
@@ -119,7 +119,8 @@
         },
         {
           "id": "first-3",
-          "text": "If I am at the grocery store, I would rather buy regular coffee.",
+          "evidence": "ev-starbucks-stanley-cup-grocery-cafe",
+          "text": "I came in for milk. I'm leaving with milk.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -143,27 +144,27 @@
         "expression": "special"
       },
       "text": [
-        "Then the cafe relationship just became a pantry relationship."
+        "Being where you already are is the whole idea. I'm glad it reads as impressive today. Some days it reads as a lot."
       ],
       "nextTree": "map"
     },
     "first-2": {
       "speaker": "STARBUCKS",
       "sprite": {
-        "expression": "neutral"
+        "expression": "embarrassed"
       },
       "text": [
-        "It is packaged goods. Scale changes what kind of brand I am."
+        "It's a plan. The counter's for the drink. The cup's for the photo of the drink. I'd like to say that was an accident, but you'd know."
       ],
       "nextTree": "map"
     },
     "first-3": {
       "speaker": "STARBUCKS",
       "sprite": {
-        "expression": "happy"
+        "expression": "neutral"
       },
       "text": [
-        "Perfectly reasonable. Home coffee does not need my logo."
+        "Fair. The milk was never mine to begin with."
       ],
       "nextTree": "map"
     },
@@ -176,7 +177,7 @@
         }
       },
       "text": [
-        "The player already uses Starbucks Rewards and receives early access to select seasonal beverages or products."
+        "A push notification while you're in the cereal aisle: as a Rewards member, you can order the new seasonal drink today. Everyone else gets it next week."
       ],
       "next": "entry-return-1"
     },
@@ -186,14 +187,14 @@
         "expression": "happy"
       },
       "text": [
-        "You get an early look."
+        "You get it first."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
       "speaker": "PLAYER",
       "text": [
-        "At a seasonal drink?"
+        "The seasonal drink?"
       ],
       "next": "entry-return-3"
     },
@@ -203,14 +204,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Select launches can reach Rewards members before the general crowd."
+        "Some launches open to Rewards members a few days before everyone else. This is one of them. It's you, then the line."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
       "speaker": "PLAYER",
       "text": [
-        "That is enough to make people keep the app?"
+        "That's enough to make people keep the app?"
       ],
       "next": "entry-return-5"
     },
@@ -220,7 +221,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "For some people, getting pumpkin first is enough to keep the app installed."
+        "For some people, getting the seasonal drink a week early is exactly enough to keep the app installed. I'd tell you it was more than that. It usually isn't."
       ],
       "next": "choice-return"
     },
@@ -230,7 +231,7 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "So. Are you ordering it, or are you just pleased you could?"
       ],
       "choices": [
         {
@@ -272,7 +273,7 @@
         },
         {
           "id": "return-3",
-          "text": "I do not need a launch calendar for drinks.",
+          "text": "I don't need a launch calendar for drinks.",
           "next": "return-3",
           "playerEffects": {
             "control": 2,
@@ -296,7 +297,7 @@
         "expression": "special"
       },
       "text": [
-        "You said the quiet part for me. Feeling chosen is part of the perk."
+        "You said the quiet part for me. Feeling picked is most of the perk."
       ],
       "nextTree": "map"
     },
@@ -306,7 +307,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. The access has emotional value even when the product would arrive soon anyway."
+        "Yes. It's a week. The drink was always coming. The week is the part you're feeling, and I'm the one who built the week."
       ],
       "nextTree": "map"
     },
@@ -316,7 +317,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the calendar can pass without you. Seasonal is optional."
+        "Then let the week pass without you. Seasonal is optional. Nobody's ever missed a season and been worse for it."
       ],
       "nextTree": "map"
     }

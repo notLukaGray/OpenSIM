@@ -22,7 +22,7 @@
   ],
   "lessons": [
     "The player asks whether the people they see talking about ZYN online are paid endorsers.",
-    "The player sees ZYN's current homepage featuring winning user-submitted adventure photos under the \"Find Your ZYN\" banner."
+    "The player notices empty ZYN tins kept and displayed on a windowsill at the rooftop hangout, arranged like a trophy case nobody decided to build."
   ],
   "nodes": {
     "entry-first": {
@@ -34,7 +34,7 @@
         }
       },
       "text": [
-        "The player asks whether the people they see talking about ZYN online are paid endorsers."
+        "Rooftop, phone out. Someone on your feed is talking about ZYN again. You have started to wonder if he's being paid to."
       ],
       "next": "entry-first-1"
     },
@@ -51,7 +51,7 @@
         "expression": "neutral"
       },
       "text": [
-        "I cannot make a representation regarding an unidentified third party. ZYN's current responsibility policy states that the company does not pay social media influencers, including athletes and celebrities, to endorse its products."
+        "I cannot speak to a person I cannot identify. What I can say is that the company's current policy states it does not pay influencers, athletes, or celebrities to endorse the product."
       ],
       "next": "entry-first-3"
     },
@@ -68,7 +68,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Some content may be unsponsored user speech. Branded social pages are separately restricted to platforms with age controls, and company advertising policy uses models aged thirty-five or older."
+        "Some of it is people talking on their own. The brand's own pages are limited to platforms with age controls, and the people in its ads are thirty-five or older, by rule. That is what I am permitted to say about the hype."
       ],
       "next": "entry-first-5"
     },
@@ -95,13 +95,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You have put the phone face-down. I take that as a prompt."
       ],
       "choices": [
         {
           "id": "first-1",
-          "evidence": "ev-zyn-even-when-they-ask-us",
-          "text": "I respect the fact that the brand says it will not pay influencers.",
+          "text": "I respect that the brand says it won't pay influencers.",
           "next": "first-1",
           "playerEffects": {
             "trust": 2,
@@ -120,8 +119,7 @@
         },
         {
           "id": "first-2",
-          "evidence": "ev-zyn-even-when-they-ask-us",
-          "text": "Organic hype still does a lot of marketing work for you.",
+          "text": "Free hype still does a lot of marketing for you.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 2,
@@ -137,8 +135,7 @@
         },
         {
           "id": "first-3",
-          "evidence": "ev-zyn-even-when-they-ask-us",
-          "text": "I do not want nicotine brands in my social feed either way.",
+          "text": "I don't want nicotine brands in my social feed either way.",
           "next": "first-3",
           "playerEffects": {
             "control": 2,
@@ -163,7 +160,7 @@
         "expression": "happy"
       },
       "text": [
-        "The distinction between paid endorsement and ordinary user speech matters to you. Noted."
+        "The distinction between paid endorsement and ordinary user speech matters to you. Noted. It matters to me as well, though I am paid to say so."
       ],
       "nextTree": "map"
     },
@@ -173,7 +170,7 @@
         "expression": "special"
       },
       "text": [
-        "Correct. Absence of compensation does not mean absence of cultural benefit to the brand."
+        "Correct. Nobody paying for it does not mean nobody benefits from it."
       ],
       "next": "first-2-1"
     },
@@ -200,7 +197,7 @@
         "expression": "neutral"
       },
       "text": [
-        "The brand's owned social presence is age-restricted. Your preference not to see it remains independently valid."
+        "The brand's own accounts are age-gated. Whether you want to see them at all is a separate question, and you are allowed to answer it however you like."
       ],
       "nextTree": "map"
     },
@@ -213,51 +210,58 @@
         }
       },
       "text": [
-        "The player sees ZYN's current homepage featuring winning user-submitted adventure photos under the \"Find Your ZYN\" banner."
+        "Along the windowsill at the rooftop hangout, a row of empty ZYN tins. Wintergreen, peppermint, cool mint. Nobody remembers deciding to keep them."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "The homepage currently thanks adult participants who submitted photographs and directs visitors to view winning entries."
+        "Somebody has been keeping every empty tin instead of throwing them out."
       ],
       "next": "entry-return-2"
     },
     "entry-return-2": {
-      "speaker": "PLAYER",
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
       "text": [
-        "You just told me you do not pay influencers."
+        "No policy requires that. Nothing on the packaging suggests keeping it. The packaging says very little."
       ],
       "next": "entry-return-3"
     },
     "entry-return-3": {
-      "speaker": "COUNSEL",
-      "sprite": {
-        "expression": "neutral"
-      },
+      "speaker": "PLAYER",
       "text": [
-        "A customer promotion and a paid influencer endorsement are not the same category."
+        "So the trophy case built itself."
       ],
       "next": "entry-return-4"
     },
     "entry-return-4": {
-      "speaker": "PLAYER",
-      "text": [
-        "Convenient categories."
-      ],
-      "next": "entry-return-5"
-    },
-    "entry-return-5": {
       "speaker": "COUNSEL",
       "sprite": {
         "expression": "neutral"
       },
       "text": [
-        "Categories are doing substantial work throughout this relationship."
+        "Someone decided an empty tin was worth more standing up than in the bin. The company did not design a shelf for that. I checked. I would have liked to find one, for the record. There is not one."
+      ],
+      "next": "entry-return-5"
+    },
+    "entry-return-5": {
+      "speaker": "PLAYER",
+      "text": [
+        "That is either loyalty or a bad habit wearing a nicer coat."
+      ],
+      "next": "entry-return-6"
+    },
+    "entry-return-6": {
+      "speaker": "COUNSEL",
+      "sprite": {
+        "expression": "neutral"
+      },
+      "text": [
+        "I decline to characterize the coat."
       ],
       "next": "choice-return"
     },
@@ -267,21 +271,22 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "You have counted them. I watched you count them."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "I would rather see real customers than a celebrity pretending this is their favorite thing.",
+          "evidence": "ev-zyn-tin-collection-decor",
+          "text": "I'd keep a windowsill like that. It's proof of how long I've been doing something.",
           "next": "return-1",
           "playerEffects": {
-            "trust": 1,
-            "selfExpression": 1
+            "belonging": 2,
+            "control": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "selfExpression": 1,
-              "belonging": 1,
+              "belonging": 2,
+              "control": 1,
               "trust": -1
             }
           },
@@ -291,7 +296,8 @@
         },
         {
           "id": "return-2",
-          "text": "It still turns customers into brand content.",
+          "evidence": "ev-zyn-tin-collection-decor",
+          "text": "Counting a habit in empty tins is still counting.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 2,
@@ -299,25 +305,26 @@
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "selfExpression": 1,
-              "control": -1,
-              "trust": -1
+              "belonging": 1,
+              "trust": -1,
+              "mastery": 1
             }
           }
         },
         {
           "id": "return-3",
-          "text": "I do not want nicotine use becoming something I post as part of my identity.",
+          "evidence": "ev-zyn-tin-collection-decor",
+          "text": "I don't want a display case tallying how many I've gone through.",
           "next": "return-3",
           "playerEffects": {
-            "selfExpression": 2,
-            "control": 2
+            "control": 2,
+            "comfort": 1
           },
           "brandPerceptionEffects": {
             "zyn": {
-              "selfExpression": -2,
-              "trust": -1,
-              "belonging": -1
+              "belonging": -1,
+              "comfort": -1,
+              "trust": -1
             }
           },
           "relationshipEffects": {
@@ -332,7 +339,7 @@
         "expression": "happy"
       },
       "text": [
-        "Your preference is for participant content over celebrity endorsement. That distinction is clear."
+        "Noted. You like a visible record. So do I, professionally. The brand did not have to make this one."
       ],
       "nextTree": "map"
     },
@@ -342,7 +349,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Yes. User participation can create brand material even when it is not an influencer arrangement."
+        "Correct. A tin on a windowsill and a tin in a receipt drawer are recording the same thing."
       ],
       "nextTree": "map"
     },
@@ -352,14 +359,14 @@
         "expression": "neutral"
       },
       "text": [
-        "Then the appropriate action is not to submit. Product use does not require public brand participation."
+        "Then throw the empties out as you go. Nothing requires the count to be visible to keep the product."
       ],
       "next": "return-3-1"
     },
     "return-3-1": {
       "speaker": "PLAYER",
       "text": [
-        "Finally, a terms section I can complete by doing nothing."
+        "Somewhere a windowsill is disappointed in me."
       ],
       "next": "return-3-2"
     },
@@ -369,7 +376,7 @@
         "expression": "special"
       },
       "text": [
-        "Non-participation has been successfully processed."
+        "The windowsill has no standing to object."
       ],
       "nextTree": "map"
     }

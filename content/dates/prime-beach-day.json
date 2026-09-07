@@ -20,7 +20,7 @@
     "entry-first"
   ],
   "lessons": [
-    "The player notices PRIME because a bright seasonal Summer Pop flavor is available for a limited run.",
+    "The player notices PRIME because a bright seasonal Summer Pop flavor just dropped for a limited run.",
     "The player wants a specific PRIME flavor that is unavailable online and uses the brand's store locator instead."
   ],
   "nodes": {
@@ -33,14 +33,14 @@
         }
       },
       "text": [
-        "The player notices PRIME because a bright seasonal Summer Pop flavor is available for a limited run."
+        "Beach. Somebody walks past with a bottle in a color you haven't seen before. Summer Pop. Limited run. It dropped this morning."
       ],
       "next": "entry-first-1"
     },
     "entry-first-1": {
       "speaker": "PLAYER",
       "text": [
-        "Summer Pop again?"
+        "Summer Pop. Again."
       ],
       "next": "entry-first-2"
     },
@@ -50,14 +50,14 @@
         "expression": "happy"
       },
       "text": [
-        "Seasonal. Loud. Limited window. Of course you looked."
+        "Every summer. Same trick. Works every single time."
       ],
       "next": "entry-first-3"
     },
     "entry-first-3": {
       "speaker": "PLAYER",
       "text": [
-        "So the flavor is partly an excuse to put you back in front of me."
+        "You sound proud of that."
       ],
       "next": "entry-first-4"
     },
@@ -67,7 +67,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Absolutely. Limited-time drops give a familiar brand a fresh entrance."
+        "I built a bottle people line up for. On a beach. In flip-flops. Yeah, I'm proud of it."
       ],
       "next": "choice-first"
     },
@@ -77,12 +77,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Go on, tell me you're above it. I've heard it before."
       ],
       "choices": [
         {
           "id": "first-1",
-          "text": "I like trying seasonal flavors.",
+          "text": "I love a countdown. Sign me up.",
           "next": "first-1",
           "playerEffects": {
             "excitement": 2,
@@ -101,7 +101,7 @@
         },
         {
           "id": "first-2",
-          "text": "Limited does not mean better.",
+          "text": "Limited doesn't mean better. It means scarce.",
           "next": "first-2",
           "playerEffects": {
             "mastery": 1,
@@ -116,7 +116,7 @@
         },
         {
           "id": "first-3",
-          "text": "I hate being rushed into buying a drink.",
+          "text": "I refuse to be rushed into buying a drink.",
           "next": "first-3",
           "playerEffects": {
             "control": 1,
@@ -140,7 +140,7 @@
         "expression": "special"
       },
       "text": [
-        "Then this is exactly your kind of nonsense."
+        "There it is. Most people don't get it until they're already standing in the line, and then they get it real fast."
       ],
       "nextTree": "map"
     },
@@ -150,7 +150,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Correct. Limited means limited, not automatically good."
+        "Fine. Scarce. You think I don't know that? Scarce is the business. I just make scarce taste like a popsicle."
       ],
       "nextTree": "map"
     },
@@ -160,7 +160,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then wait. There will be another flavor later."
+        "Then wait for fall. I'll have a new flavor to be smug about, and you'll be back to check."
       ],
       "nextTree": "map"
     },
@@ -173,14 +173,14 @@
         }
       },
       "text": [
-        "The player wants a specific PRIME flavor that is unavailable online and uses the brand's store locator instead."
+        "You want one specific flavor. Online says sold out. Two stores, two empty shelves. There's a Find In Store button you've been ignoring."
       ],
       "next": "entry-return-1"
     },
     "entry-return-1": {
       "speaker": "PLAYER",
       "text": [
-        "I checked two stores already."
+        "Two stores. Empty shelf both times."
       ],
       "next": "entry-return-2"
     },
@@ -190,7 +190,7 @@
         "expression": "annoyed"
       },
       "text": [
-        "Stop freestyle shopping. Use Find In Store."
+        "Because you're shopping like an amateur. Use Find In Store. It's right there on the site."
       ],
       "next": "entry-return-3"
     },
@@ -207,12 +207,12 @@
         "expression": "neutral"
       },
       "text": [
-        "What do you make of that?"
+        "Third store's eleven minutes away. Clock's running."
       ],
       "choices": [
         {
           "id": "return-1",
-          "text": "Fine. I care enough about the flavor to check.",
+          "text": "Fine. I care enough about the flavor to check a third store.",
           "next": "return-1",
           "playerEffects": {
             "readiness": 2,
@@ -231,7 +231,7 @@
         },
         {
           "id": "return-2",
-          "text": "If it takes three stores, I am giving up.",
+          "text": "Three stores for a drink is where I stop.",
           "next": "return-2",
           "playerEffects": {
             "mastery": 1,
@@ -246,7 +246,7 @@
         },
         {
           "id": "return-3",
-          "text": "I am not hunting across town for a sports drink.",
+          "text": "I'm not treasure-hunting for a sports drink.",
           "next": "return-3",
           "playerEffects": {
             "control": 1,
@@ -270,7 +270,7 @@
         "expression": "special"
       },
       "text": [
-        "You are really going to a third store for me. I respect the commitment."
+        "Look at you, doing the work. I respect a competitor. Even one hunting for me."
       ],
       "nextTree": "map"
     },
@@ -280,7 +280,7 @@
         "expression": "embarrassed"
       },
       "text": [
-        "Also fair. A locator helps, but it cannot make stock appear."
+        "Also fair. The locator finds stock. It can't make stock. That part's on me and I'm behind."
       ],
       "nextTree": "map"
     },
@@ -290,7 +290,7 @@
         "expression": "neutral"
       },
       "text": [
-        "Then pick another flavor or another drink. Scarcity has a limit."
+        "Then grab a flavor that isn't fighting you for shelf space. Even scarce has a limit. I hate that it does."
       ],
       "nextTree": "map"
     }
