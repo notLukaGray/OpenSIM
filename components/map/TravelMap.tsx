@@ -12,6 +12,7 @@ import type { DateTree } from "@/content/schema";
 import { resolveLines } from "@/game/engine";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { useGame } from "@/hooks/useGame";
+import { hasSeenAuditNudge, hasSeenMapHint, markAuditNudgeSeen, markMapHintSeen } from "@/game/save";
 import { useWorldPan } from "@/hooks/useWorldPan";
 import DateDebrief from "./DateDebrief";
 import ArchivePanel from "./ArchivePanel";
@@ -49,9 +50,23 @@ export default function TravelMap() {
   // been completed, returning to the map is navigation, not another greeting.
   const [mapPromptVisible, setMapPromptVisible] = useState(() => state.completedTrees.length === 0);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  // Controls hint: the map pans and zooms, and neither gesture is discoverable
+  // by looking at it. Shown once per device, and shown FIRST — it leads the
+  // intro dialogue, which is held below until the hint is dismissed, so the
+  // player learns to move before anything asks them to. Resolved in an effect
+  // because the storage read must not run during the prerendered first paint.
+  const [hintVisible, setHintVisible] = useState(false);
+  // The split-audit nudge. The same guidance is always on the map as a quiet
+  // line, but a line at the edge of a pannable world gets missed — so the
+  // first time the audit actually stalls, it gets said once, properly.
+  const [auditNudgeVisible, setAuditNudgeVisible] = useState(false);
 
   // Mirrors openLocationId for the dependency-free Escape handler below.
   const openLocRef = useRef<string | null>(null);
+  // Mirrors hintVisible so Escape can close the hint before it exits to title.
+  const hintRef = useRef(false);
+  // Mirrors auditNudgeVisible for the dependency-free Escape handler.
+  const auditNudgeRef = useRef(false);
 
   // Pan/tap camera (component-local presentation state only).
   const pan = useWorldPan<HTMLDivElement>({
@@ -95,6 +110,14 @@ export default function TravelMap() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
+      if (hintRef.current) {
+        dismissHint();
+        return;
+      }
+      if (auditNudgeRef.current) {
+        dismissAuditNudge();
+        return;
+      }
       if (openLocRef.current) {
         setOpenLocationId(null);
         openLocRef.current = null;
@@ -106,6 +129,25 @@ export default function TravelMap() {
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!hasSeenMapHint()) {
+      setHintVisible(true);
+      hintRef.current = true;
+    }
+  }, []);
+
+  const dismissAuditNudge = () => {
+    auditNudgeRef.current = false;
+    setAuditNudgeVisible(false);
+    markAuditNudgeSeen();
+  };
+
+  const dismissHint = () => {
+    hintRef.current = false;
+    setHintVisible(false);
+    markMapHintSeen();
+  };
 
   const openLocation = (id: string | null) => {
     openLocRef.current = id;
@@ -139,8 +181,17 @@ export default function TravelMap() {
   // The audit becomes available once its counterfactual read is stable (or at
   // the seven-encounter target); until then the player gets a useful next cue.
   const canReveal = audit.canReveal;
+  // The audit has banked enough nights to judge but still cannot call it.
+  const auditStalled = !canReveal && !allDone && state.completedTrees.length >= REVEAL_MIN_ENCOUNTERS;
   const bg = getAsset("map-location");
-  const { world, offset } = pan;
+  useEffect(() => {
+    if (auditStalled && !hasSeenAuditNudge()) {
+      setAuditNudgeVisible(true);
+      auditNudgeRef.current = true;
+    }
+  }, [auditStalled]);
+
+  const { world, offset, scale } = pan;
 
   return (
     <div className={styles.wrap}>
@@ -156,7 +207,8 @@ export default function TravelMap() {
             width: world.w || undefined,
             height: world.h || undefined,
             transform: `translate3d(${-offset.x}px, ${-offset.y}px, 0)`,
-          }}
+            "--zoom": scale,
+          } as CSSProperties}
         >
           <Image src={bg.src} alt="" fill priority sizes="100vw" draggable={false} className={styles.backdrop} />
 
@@ -218,7 +270,7 @@ export default function TravelMap() {
       </div>
 
       <div className={styles.mapUi}>
-        {(introActive || mapPromptVisible) && <DialogueBox
+        {(introActive || mapPromptVisible) && !hintVisible && <DialogueBox
           entryKey={introActive ? `${HUB_TREE_ID}/${game.nav.nodeId}` : "map-prompt"}
           speaker={introActive && introNode ? introNode.speaker : "..."}
           lines={
@@ -272,20 +324,106 @@ export default function TravelMap() {
         </motion.div>
       )}
 
-      {!canReveal && !allDone && state.completedTrees.length >= REVEAL_MIN_ENCOUNTERS && (
-        <div className={styles.globalActions}>
-          <p className={styles.actionsNote}>
-            The audit is still split on {audit.disputedNeed ?? "what matters most"}. Try another location — it needs a different angle.
-          </p>
-        </div>
-      )}
-
-      <div className={styles.controlsHint}>drag to explore · esc · title</div>
+      <div className={styles.controlsHint}>drag to explore · scroll to zoom · esc · title</div>
 
       <AnimatePresence>
         {/* Every direct child of AnimatePresence needs a unique explicit key:
             keyless children all collapse to framer-motion's "" key and collide
             whenever two overlays coexist (or one exits while another enters). */}
+        {/* Waits for a genuinely clear map. Without the debrief/panel guards this
+            mounts at z-index 68 OVER the z-index 50 debrief, and the click meant
+            for the debrief lands on this scrim instead — dismissing a
+            once-per-device nudge before it has been read. */}
+        {auditNudgeVisible &&
+          !hintVisible &&
+          !thresholdPopup &&
+          !openedLocation &&
+          !debriefTree &&
+          !archiveOpen &&
+          !settingsOpen && (
+          <motion.div
+            key="audit-nudge"
+            className={styles.hintWrap}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            role="dialog"
+            aria-label="the audit is still split"
+          >
+            <motion.div
+              className={styles.hintCard}
+              initial={{ scale: 0.94, y: 18 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.96, y: 10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
+              <div className={styles.hintKicker}>[ THE AUDIT IS SPLIT ]</div>
+              <h2 className={styles.hintTitle}>
+                IT STILL CAN&apos;T READ YOU ON {(audit.disputedNeed ?? "what matters most").toUpperCase()}.
+              </h2>
+              <p className={styles.hintBody}>
+                You&apos;ve banked enough nights for it to have an opinion, and it doesn&apos;t
+                — the evidence points both ways. Keep going: a place you haven&apos;t been
+                yet is what breaks the tie.
+              </p>
+              <button className={styles.hintCta} onClick={dismissAuditNudge} autoFocus>
+                KEEP GOING
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+        {hintVisible && !thresholdPopup && !openedLocation && (
+          <motion.div
+            key="map-hint"
+            className={styles.hintWrap}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            role="dialog"
+            aria-label="how to move around the map"
+            onClick={dismissHint}
+          >
+            <motion.div
+              className={styles.hintCard}
+              initial={{ scale: 0.94, y: 18 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.96, y: 10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className={styles.hintKicker}>[ GETTING AROUND ]</div>
+              <h2 className={styles.hintTitle}>THE CITY IS BIGGER THAN YOUR SCREEN.</h2>
+              <ul className={styles.hintList}>
+                <li>
+                  <span className={styles.hintVerb}>Move</span>
+                  <span className={styles.hintHow}>
+                    drag an empty patch of street, or hold the middle mouse button
+                    <em>two fingers on a touchscreen</em>
+                  </span>
+                </li>
+                <li>
+                  <span className={styles.hintVerb}>Zoom</span>
+                  <span className={styles.hintHow}>
+                    scroll the wheel
+                    <em>pinch on a touchscreen</em>
+                  </span>
+                </li>
+                <li>
+                  <span className={styles.hintVerb}>Visit</span>
+                  <span className={styles.hintHow}>
+                    click a place to see who&apos;s there tonight
+                    <em>tap on a touchscreen</em>
+                  </span>
+                </li>
+              </ul>
+              <button className={styles.hintCta} onClick={dismissHint} autoFocus>
+                GOT IT
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
         {thresholdPopup && (
           <motion.div
             key="threshold"

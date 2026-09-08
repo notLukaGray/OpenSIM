@@ -1,6 +1,8 @@
 // localStorage persistence (ADR-09): versioned save envelope + settings.
 // Version mismatch discards; every access is private-mode safe.
 import {
+  AUDIT_NUDGE_KEY,
+  MAP_HINT_KEY,
   SAVE_KEY,
   SAVE_VERSION,
   SETTINGS_KEY,
@@ -72,3 +74,43 @@ export function persistSettings(settings: Settings): void {
 }
 
 const clamp01 = (n: number) => Math.max(0, Math.min(1, n));
+
+/** Map control hint (pan/zoom) — shown once, then never again on this device.
+ *  Read from an effect, never during render: the map is statically prerendered
+ *  and a storage read at render time would desync the hydrated markup. */
+export function hasSeenMapHint(): boolean {
+  try {
+    return window.localStorage.getItem(MAP_HINT_KEY) === "1";
+  } catch {
+    // Storage blocked (private mode): treat as "already seen" so a player who
+    // cannot persist the dismissal is not shown the hint on every visit.
+    return true;
+  }
+}
+
+export function markMapHintSeen(): void {
+  try {
+    window.localStorage.setItem(MAP_HINT_KEY, "1");
+  } catch {
+    /* noop */
+  }
+}
+
+/** Split-audit nudge — shown once per device, then never again. Same
+ *  private-mode rule as the map hint: if storage is unreadable, treat it as
+ *  already seen rather than re-nagging every visit. */
+export function hasSeenAuditNudge(): boolean {
+  try {
+    return window.localStorage.getItem(AUDIT_NUDGE_KEY) === "1";
+  } catch {
+    return true;
+  }
+}
+
+export function markAuditNudgeSeen(): void {
+  try {
+    window.localStorage.setItem(AUDIT_NUDGE_KEY, "1");
+  } catch {
+    /* noop */
+  }
+}

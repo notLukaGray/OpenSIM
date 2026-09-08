@@ -94,7 +94,12 @@
   width: clamp(150px, 16vw, 230px);
   min-height: 44px;
   padding: 10px 16px;
-  transform: translate(-50%, -50%);
+  /* Markers track the zoom so they read as part of the world rather than
+     floating over it, with a 0.55 floor so a zoomed-out pill stays a readable
+     tap target. Labels never collide in the zoom range — the tightest case is
+     a portrait phone at full zoom-out, and this keeps ~40px of clearance. */
+  --marker-scale: max(0.55, min(1, var(--zoom, 1)));
+  transform: translate(-50%, -50%) scale(var(--marker-scale));
   color: #f4ecf2;
   background: linear-gradient(180deg, color-mix(in srgb, var(--location-color) 28%, #131829), rgba(11, 14, 23, 0.94));
   border: 1px solid color-mix(in srgb, var(--location-color) 78%, white);
@@ -111,13 +116,13 @@
 
 .locationButton:hover,
 .locationButton:focus-visible {
-  transform: translate(-50%, -50%) scale(1.06);
+  transform: translate(-50%, -50%) scale(calc(var(--marker-scale) * 1.06));
   background: linear-gradient(180deg, color-mix(in srgb, var(--location-color) 42%, #131829), rgba(11, 14, 23, 0.94));
   box-shadow: 0 14px 30px rgba(8, 12, 28, 0.5), 0 0 0 5px color-mix(in srgb, var(--location-color) 18%, transparent);
 }
 
 .locationButton:active {
-  transform: translate(-50%, calc(-50% + 2px));
+  transform: translate(-50%, calc(-50% + 2px)) scale(var(--marker-scale));
 }
 
 .locationName {
@@ -354,4 +359,125 @@
     max-width: 150px;
     text-align: right;
   }
+}
+
+/* ── first-visit controls hint ────────────────────────────────────────────────
+   The map pans and zooms and neither gesture announces itself, so the first
+   visit gets one dismissible card. Deliberately lighter than .thresholdCard —
+   that popup is a story beat, this is a tooltip that happens to be centered. */
+.hintWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(5, 8, 16, 0.58);
+  backdrop-filter: blur(2px);
+}
+
+.hintCard {
+  width: min(440px, 100%);
+  padding: 28px 30px 24px;
+  background: linear-gradient(180deg, rgba(19, 24, 41, 0.97), rgba(11, 14, 23, 0.99));
+  border: 1px solid rgba(242, 184, 198, 0.32);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+.hintKicker {
+  font-size: 9.5px;
+  letter-spacing: 0.42em;
+  color: rgba(242, 184, 198, 0.7);
+}
+
+.hintTitle {
+  margin: 12px 0 0;
+  font-size: 17px;
+  line-height: 1.45;
+  letter-spacing: 0.1em;
+  color: #f4ecf2;
+}
+
+.hintList {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hintList li {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.hintVerb {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242, 184, 198, 0.8);
+}
+
+.hintHow {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(232, 228, 240, 0.85);
+}
+
+/* The touch alternative for each row: present on every device rather than
+   sniffed, because hybrid laptops are both and guessing wrong hides the only
+   instruction that works. */
+.hintHow em {
+  display: block;
+  margin-top: 2px;
+  font-style: normal;
+  font-size: 12px;
+  color: rgba(232, 228, 240, 0.5);
+}
+
+.hintCta {
+  margin-top: 24px;
+  width: 100%;
+  padding: 11px 0;
+  font: inherit;
+  font-size: 11.5px;
+  letter-spacing: 0.26em;
+  color: #0b0e17;
+  background: rgba(242, 184, 198, 0.92);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hintCta:hover {
+  background: #f2b8c6;
+}
+
+.hintCta:focus-visible {
+  outline: 2px solid #f2b8c6;
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .hintCard {
+    padding: 24px 22px 20px;
+  }
+
+  .hintList li {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+/* Body copy for a hint card that explains rather than lists (the audit nudge). */
+.hintBody {
+  margin: 16px 0 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(232, 228, 240, 0.85);
 }

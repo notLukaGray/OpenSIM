@@ -58,6 +58,10 @@ export const REVEAL_MIN_ENCOUNTERS = 4;
 export const REVEAL_TARGET_ENCOUNTERS = 7;
 export const SAVE_KEY = "dsim.save.v1";
 export const SETTINGS_KEY = "dsim.settings.v1";
+/** One-shot flag: the map control hint is shown on a player's first map visit. */
+export const MAP_HINT_KEY = "dsim.maphint.v1";
+/** One-shot flag: the split-audit nudge, shown the first time the audit stalls. */
+export const AUDIT_NUDGE_KEY = "dsim.auditnudge.v1";
 
 // Player + brand state lives under one versioned envelope so a shape change is
 // a version bump, not archaeology.
