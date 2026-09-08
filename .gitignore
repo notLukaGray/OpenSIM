@@ -1,6 +1,28 @@
+# dependencies / build output
 node_modules/
-.env
 .next/
-tsconfig.tsbuildinfo
+out/
 *.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# env
+.env
+.env.*
+!.env.example
+
+# local-only working files: superseded art masters, retired content (~old),
+# research docs and evidence source material. Kept on disk, out of the repo.
+.hide/
+
+# agent + editor tooling
+AGENTS.md
+CLAUDE.md
+.claude/
+.vscode/
+.idea/
+
+# os / logs
 .DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
