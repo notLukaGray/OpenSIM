@@ -5,7 +5,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { getAsset, getBrandOrNull, getEvidenceForBrand, getLocationOrNull, getTree } from "@/content/registry";
+import { getAsset, getBrandOrNull, getEvidenceForDate, getLocationOrNull, getTree } from "@/content/registry";
 import type { Choice, DialogueNode } from "@/content/schema";
 import { AudioManager } from "@/game/audio/AudioManager";
 import { evalCondition } from "@/game/conditions";
@@ -148,7 +148,7 @@ export default function GameScreen({ isDev }: { isDev: boolean }) {
 
   const fallbackEvidenceId = () => {
     if (!tree?.brandId) return undefined;
-    return getEvidenceForBrand(tree.brandId).find((item) => !state.unlockedEvidence.includes(item.id))?.id;
+    return getEvidenceForDate(tree.id).find((item) => !state.unlockedEvidence.includes(item.id))?.id;
   };
 
   const presentEvidence = (

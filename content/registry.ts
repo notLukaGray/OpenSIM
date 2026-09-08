@@ -323,12 +323,6 @@ export function getEvidence(id: string): Evidence {
   return e;
 }
 
-/** Content-owned material available for a product. Presentation code can use
- * this generic lookup without knowing any product or evidence IDs. */
-export function getEvidenceForBrand(brandId: string): Evidence[] {
-  return evidence.filter((item) => item.brandId === brandId);
-}
-
 /** Material unlocked by a specific date tree (derived from node/choice `evidence` refs). */
 export function getEvidenceForDate(dateId: string): Evidence[] {
   return evidence.filter((item) => item.dateId === dateId);
