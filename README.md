@@ -1,4 +1,4 @@
-# DSIM — Love, Loyalty & Brand Preference
+# OpenSIM — Love, Loyalty & Brand Preference
 
 A browser-based, Japanese-style visual novel about brand perception and consumer expectation. You think you are dating brands and choosing which ones you like. In reality, every choice reveals the consumer you are playing — and every date teaches you what each brand actually means to them.
 
