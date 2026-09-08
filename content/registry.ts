@@ -136,7 +136,7 @@ export const assets: AssetReference[] = [
 export const audioTracks: AudioTrack[] = audioJson as AudioTrack[];
 
 // ── locations ────────────────────────────────────────────────────────────────
-const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "color", "map", "hitZone", "zoneArt"] as const;
+const LOCATION_FIELDS = ["id", "name", "blurb", "background", "music", "color", "map", "hitZone"] as const;
 
 // Map hit zones (P10-01): the drawn, tappable geometry of a location on the
 // world map, authored in normalized 0–100 space (percentages of the map
@@ -147,10 +147,8 @@ export type MapHitZone =
   | { shape: "rect"; x: number; y: number; w: number; h: number }
   | { shape: "poly"; points: [number, number][] };
 
-/** A location plus its drawn map presence — the tappable hit-zone geometry and
- *  its replaceable marker-art asset (svg or png under public/assets/map/zones/,
- *  swapped by file replacement, never code). */
-export type MappedGameLocation = GameLocation & { hitZone: MapHitZone; zoneArt: string };
+/** A location plus its drawn map presence — the tappable hit-zone geometry. */
+export type MappedGameLocation = GameLocation & { hitZone: MapHitZone };
 
 function hitZoneNumber(v: unknown, owner: string, field: string): number {
   if (typeof v !== "number" || Number.isNaN(v))
@@ -201,11 +199,6 @@ export const locations: MappedGameLocation[] = (locationsJson as unknown as Reco
       throw new ContentError(`locations.json[${i}] (${String(l.id)}): color must be a six-digit hex color`);
     if (!assets.some((a) => a.id === l.background))
       throw new ContentError(`locations.json[${i}]: unknown background asset "${String(l.background)}"`);
-    if (!assets.some((a) => a.id === l.zoneArt))
-      throw new ContentError(
-        `locations.json[${i}] (${String(l.id)}): unknown zoneArt asset "${String(l.zoneArt)}" — ` +
-          `register the marker file in assets.json (generate placeholders with: npm run art)`
-      );
     const base = {
       id: l.id as string,
       name: l.name as string,
@@ -217,7 +210,6 @@ export const locations: MappedGameLocation[] = (locationsJson as unknown as Reco
     } satisfies GameLocation;
     return {
       ...base,
-      zoneArt: l.zoneArt as string,
       hitZone: parseHitZone(l.hitZone, `locations.json[${i}] (${l.id})`),
     };
   }

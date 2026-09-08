@@ -11,7 +11,7 @@
  * Writes: public/assets/{characters,backgrounds,cg,evidence,ui,reveal}/*.svg
  *         plus public/assets/map/zones/*.svg (one replaceable marker per location)
  */
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 // ---------------------------------------------------------------- repo root
@@ -564,27 +564,6 @@ function render(entry) {
   throw new Error(`no renderer for entry: ${entry.id}`);
 }
 
-// ================================================================ MAP ZONES
-// One replaceable marker file per location (P10-01), generated straight from
-// content/locations.json so files always track the roster. Swap any file under
-// public/assets/map/zones/ — svg or png — to restyle a zone; components never
-// change. Deterministic tint derived from the location id.
-const ZONE_TINTS = ["#f2b8c6", "#b8b5e8", "#8ee8f2"]; // rose · violet · cyan
-function zoneArtSvg(id) {
-  let h = 0;
-  for (const ch of id) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  const tint = ZONE_TINTS[h % ZONE_TINTS.length];
-  const defs =
-    rg("zg", 0.5, 0.5, 0.5, [0, tint, 0.4], [0.6, tint, 0.12], [1, tint, 0]) +
-    lg("zr", 0, 0, 1, 1, [0, tint], [1, "#ffffff"]);
-  let b = circ(128, 128, 118, "url(#zg)");
-  b += `<circle cx="128" cy="128" r="86" fill="none" stroke="${tint}" stroke-opacity=".55" stroke-width="3"/>`;
-  b += `<circle cx="128" cy="128" r="64" fill="none" stroke="${tint}" stroke-opacity=".35" stroke-width="10" stroke-dasharray="14 22"/>`;
-  b += ell(128, 132, 40, 36, "url(#zr)", ' opacity=".9"');
-  b += circ(112, 120, 12, "#ffffff", ' opacity=".5"');
-  return doc(256, 256, defs, b);
-}
-
 // ================================================================ MAIN
 const seenIds = new Set();
 const seenPaths = new Set();
@@ -616,12 +595,3 @@ if (oversize.length) {
   console.error(`WARNING: exceeds ~4KB budget: ${oversize.map(([rel, bytes]) => `${rel} (${bytes}B)`).join(", ")}`);
   process.exitCode = 1;
 }
-
-// Zone marker art: one file per location, tracked from content (see MAP ZONES).
-const locationsForZones = JSON.parse(readFileSync(join(ROOT, "content", "locations.json"), "utf8"));
-mkdirSync(join(OUT, "map", "zones"), { recursive: true });
-for (const loc of locationsForZones) {
-  const dest = join(OUT, "map", "zones", `zone-art-${loc.id}.svg`);
-  writeFileSync(dest, zoneArtSvg(loc.id), "utf8");
-}
-console.log(`${locationsForZones.length} map zone markers written to public/assets/map/zones/`);

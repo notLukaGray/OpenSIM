@@ -15,8 +15,7 @@
       "cx": 18,
       "cy": 20,
       "r": 7
-    },
-    "zoneArt": "zone-art-airport"
+    }
   },
   {
     "id": "nightgym",
@@ -34,8 +33,7 @@
       "cx": 48,
       "cy": 20,
       "r": 7
-    },
-    "zoneArt": "zone-art-nightgym"
+    }
   },
   {
     "id": "rooftop",
@@ -53,8 +51,7 @@
       "cx": 63,
       "cy": 31,
       "r": 6
-    },
-    "zoneArt": "zone-art-rooftop"
+    }
   },
   {
     "id": "kitchen",
@@ -72,8 +69,7 @@
       "cx": 86,
       "cy": 21,
       "r": 6
-    },
-    "zoneArt": "zone-art-kitchen"
+    }
   },
   {
     "id": "office",
@@ -92,8 +88,7 @@
       "y": 44,
       "w": 16,
       "h": 16
-    },
-    "zoneArt": "zone-art-office"
+    }
   },
   {
     "id": "beach-day",
@@ -111,8 +106,7 @@
       "cx": 86,
       "cy": 51,
       "r": 7
-    },
-    "zoneArt": "zone-art-beach-day"
+    }
   },
   {
     "id": "music-festival",
@@ -145,8 +139,7 @@
           75
         ]
       ]
-    },
-    "zoneArt": "zone-art-music-festival"
+    }
   },
   {
     "id": "corner-cafe",
@@ -164,8 +157,7 @@
       "cx": 39,
       "cy": 84,
       "r": 6
-    },
-    "zoneArt": "zone-art-corner-cafe"
+    }
   },
   {
     "id": "bedroom-night",
@@ -183,8 +175,7 @@
       "cx": 64,
       "cy": 69,
       "r": 7
-    },
-    "zoneArt": "zone-art-bedroom-night"
+    }
   },
   {
     "id": "grocery-store",
@@ -202,7 +193,6 @@
       "cx": 82,
       "cy": 84,
       "r": 4
-    },
-    "zoneArt": "zone-art-grocery-store"
+    }
   }
 ]

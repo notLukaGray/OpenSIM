@@ -251,42 +251,6 @@ const geometry = hitZoneDiagnostics(locations);
 result.errors.push(...geometry.errors);
 result.warnings.push(...geometry.warnings);
 
-// ── P10-01: replaceable zone marker art ───────────────────────────────────────
-// Every location renders a marker file resolved through assets.json (`zoneArt`).
-// Swap the file — svg or png — to restyle a zone; the validator only cares that
-// the reference resolves to a declared asset and the file is actually on disk.
-function zoneArtDiagnostics(locations, assets) {
-  const errors = [];
-  const warnings = [];
-  const file = "content/locations.json";
-  const err = (path, message) => errors.push({ level: "error", file, path, message });
-  const warn = (path, message) => warnings.push({ level: "warning", file, path, message });
-
-  const byId = new Map(assets.map((a) => [a.id, a]));
-  for (const l of locations) {
-    const base = `location[${l.id}].zoneArt`;
-    if (typeof l.zoneArt !== "string" || !l.zoneArt) {
-      err(base, "missing zoneArt — every location needs a map marker asset id (generate placeholders with: npm run art)");
-      continue;
-    }
-    const asset = byId.get(l.zoneArt);
-    if (!asset) {
-      err(base, `unknown asset "${l.zoneArt}" — register the marker file in content/assets.json first`);
-      continue;
-    }
-    if (typeof asset.src !== "string" || !asset.src) {
-      err(base, `asset "${l.zoneArt}" has no src path`);
-      continue;
-    }
-    const onDisk = path.join(root, "public", asset.src.replace(/^\//, ""));
-    if (!existsSync(onDisk)) warn(base, `"${asset.src}" is not on disk yet — run: npm run art`);
-  }
-  return { errors, warnings };
-}
-
-const zoneArtChecks = zoneArtDiagnostics(locations, bundle.assets);
-result.errors.push(...zoneArtChecks.errors);
-result.warnings.push(...zoneArtChecks.warnings);
 result.ok = result.errors.length === 0;
 
 if (result.warnings.length) {
