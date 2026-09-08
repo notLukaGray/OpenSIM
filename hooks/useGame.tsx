@@ -190,10 +190,12 @@ function reducer(store: StoreState, action: Action): StoreState {
       return enter({ ...store, nav: { ...store.nav, phase: "play" } }, action.treeId, action.nodeId ?? t.startNode);
     }
     case "TRAVEL": {
-      // From the map into an encounter (P5-02).
+      // From the map into an encounter (P5-02). Omit the node id so `enter`
+      // picks between startNode and entryPoints by condition (first meeting
+      // vs. return) instead of always landing on startNode's "return" content.
       const t = getTreeOrNull(action.treeId);
       if (!t || !t.brandId) return store;
-      return enter({ ...store, nav: { ...store.nav, phase: "play" } }, action.treeId, t.startNode);
+      return enter({ ...store, nav: { ...store.nav, phase: "play" } }, action.treeId);
     }
     default:
       return store;
