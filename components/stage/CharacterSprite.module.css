@@ -14,7 +14,14 @@
 
 .actor {
   position: relative;
-  width: clamp(300px, 30vw, 480px);
+  /* Sprites are 1134x1387 (aspect 0.818), so width 30vw renders ~65% of stage
+     height on a 16:9 screen — the intended desktop framing. The old 480px
+     upper clamp froze that growth at 1600px wide, so a 4K stage showed the
+     sprite at ~27% of its height instead of ~65%. The 53svh term reproduces
+     30vw on 16:9 and takes over on short/ultrawide stages, which is what the
+     480px cap was really guarding against. Values are unchanged at every
+     viewport below 1600px wide; above it the sprite keeps scaling. */
+  width: max(300px, min(30vw, 53svh));
   pointer-events: none;
 }
 
