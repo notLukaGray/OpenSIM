@@ -284,10 +284,10 @@
     "brandId": "zyn",
     "type": "culture",
     "locationId": "rooftop",
-    "title": "The Tin Collection as Home Decor",
-    "description": "Some users keep empty ZYN tins and display them instead of throwing them out. One documented example on Wikimedia Commons is a Christmas tree assembled from stacked tins. The behavior is user-originated and is not part of any company campaign. Claims about other tin sculptures are anecdotal and not sourced here. Source: Wikimedia Commons, Zyn_christmas_tree.jpg.",
+    "title": "The Pile of Empties, Held Up to the Camera",
+    "description": "Used ZYN tins do not get thrown away — they get kept and shown. The Associated Press, reporting on the brand's spread through TikTok, describes young people posting videos \"displaying heaping piles of used canisters.\" The count is the point: an empty tin is proof of consumption, and the pile turns a habit into something with a visible score. The behaviour is user-originated; no company campaign asks for it.",
     "sourceIds": [
-      "src-zyn-tin-collection-wikimedia"
+      "src-zyn-tin-collection-ap"
     ],
     "effects": {
       "belonging": 1,
