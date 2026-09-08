@@ -87,3 +87,27 @@ Presentation state (camera, pan, zoom) never enters game state. The map's pan/zo
 Brand profiles are never mutated. Base profiles exist in `brands.json`. Modifiers stack onto them at read time only, and per-date perception deltas are stored separately. This preserves determinism: replaying a choice sequence always produces the same state.
 
 All game content is JSON. The content registry enforces schema, normalizes partial vectors to full need vectors, and exports typed registries. You author content naturally (partial vectors, no boilerplate); the registry layer adds rigor at the boundary.
+
+## License
+
+The code is MIT licensed — see [`LICENSE`](LICENSE). Use it, fork it, ship it.
+
+That licence covers the engine, the components and the tooling. It cannot
+cover everything in this repository, and the difference matters:
+
+- **Brand names and marks are not mine to license.** AG1, Athletic Brewing,
+  Celsius, Eight Sleep, Liquid Death, Liquid I.V., NA Spirits, Oura, Prime,
+  Red Bull, Starbucks, White Claw, Whoop, Zyn and the others are trademarks of
+  their respective owners. They appear here as the subject of commentary and
+  criticism. This project is not affiliated with, endorsed by, or sponsored by
+  any of them, and nothing here should be read as a statement from them.
+- **Evidence cards quote published reporting**, each with a citation in
+  `content/sources.json`. Those quotations are short, attributed, and used to
+  support commentary. The underlying articles belong to their publishers.
+- **Art and audio** are covered by the licence only to the extent they are my
+  own work. Check `content/sources.json` before redistributing anything under
+  `public/assets/`.
+
+The game makes factual claims about real companies. Every one is sourced, and
+that sourcing is a design constraint rather than decoration — if you fork this
+and change the claims, the citations no longer stand behind them.
