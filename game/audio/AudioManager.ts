@@ -156,9 +156,31 @@ class AudioManagerImpl {
         this.sfxBus.connect(this.master);
         this.voiceBus.connect(this.master);
         this.master.connect(this.ctx.destination);
-        document.addEventListener("visibilitychange", () => this.applyDucking());
+        // iOS routes WebAudio-only pages to the "ambient" session, which the
+        // ring/silent switch mutes. Asking for "playback" makes the game audible
+        // with the switch on silent, like a video would be. (iOS 16.4+; a no-op
+        // everywhere else.)
+        const session = (navigator as unknown as { audioSession?: { type: string } }).audioSession;
+        if (session) {
+          try {
+            session.type = "playback";
+          } catch {
+            /* not settable here — ambient session, silent switch applies */
+          }
+        }
+        document.addEventListener("visibilitychange", () => {
+          this.applyDucking();
+          // Mobile suspends the context on backgrounding and on interruptions
+          // (a call, another app taking audio) and never resumes it for us.
+          if (document.visibilityState === "visible") void this.resumeIfSuspended();
+        });
       }
       await this.ctx.resume();
+      // Only latch once the context is genuinely running. Mobile browsers
+      // resolve resume() on a context that stays suspended when there was no
+      // user gesture; latching there would make every later gesture a no-op
+      // and leave the game permanently silent.
+      if (this.ctx.state !== "running") return;
       this.unlocked = true;
       this.applyVolumes();
       if (this.pendingMusicId) {
@@ -172,7 +194,33 @@ class AudioManagerImpl {
   }
 
   isUnlocked(): boolean {
-    return this.unlocked;
+    return this.unlocked && this.ctx?.state === "running";
+  }
+
+  /**
+   * Nudge a context that was suspended out from under us back to life. Safe to
+   * call outside a gesture: if the browser refuses, the unlock listeners are
+   * still attached and the next real gesture takes over.
+   */
+  private async resumeIfSuspended(): Promise<void> {
+    const ctx = this.ctx;
+    // "interrupted" is Safari's state after a phone call or another app taking
+    // the audio session; it resumes the same way "suspended" does.
+    if (!ctx || ctx.state === "running") return;
+    try {
+      await ctx.resume();
+    } catch {
+      /* needs a gesture — GameRoot's listeners will retry */
+    }
+    if ((ctx.state as AudioContextState) === "running" && !this.unlocked) {
+      this.unlocked = true;
+      this.applyVolumes();
+      if (this.pendingMusicId) {
+        const id = this.pendingMusicId;
+        this.pendingMusicId = null;
+        void this.playMusic(id);
+      }
+    }
   }
 
   setSettings(s: Settings): void {
@@ -244,7 +292,8 @@ class AudioManagerImpl {
    * gesture instead of violating autoplay policy.
    */
   async playMusic(id: string): Promise<void> {
-    if (!this.unlocked || !this.ctx) {
+    if (this.ctx && this.ctx.state !== "running") await this.resumeIfSuspended();
+    if (!this.unlocked || !this.ctx || this.ctx.state !== "running") {
       // Queue latest intent; duplicate requests for the queued track are no-ops.
       if (this.pendingMusicId !== id || this.currentMusicId !== id) {
         this.pendingMusicId = id;
@@ -289,7 +338,7 @@ class AudioManagerImpl {
   }
 
   async playSfx(id: string): Promise<void> {
-    if (!this.unlocked || !this.ctx) return;
+    if (!this.isUnlocked() || !this.ctx) return;
     let buf: AudioBuffer;
     try {
       buf = (await this.bufferFor(id))!;
@@ -328,7 +377,7 @@ class AudioManagerImpl {
    * are a silent no-op — placeholder mode is file absence.
    */
   async speak(key: string): Promise<void> {
-    const ctx = this.unlocked ? this.ctx : null;
+    const ctx = this.isUnlocked() ? this.ctx : null;
     if (!ctx || !this.voiceBus || !this.musicBus) return;
     // Dialogue is a single-voice channel. This also invalidates an older clip
     // still decoding, so rushing forward cannot make it start late.
