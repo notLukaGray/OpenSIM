@@ -4,6 +4,114 @@ import { audioTracks } from "@/content/registry";
 import type { Settings } from "@/game/types";
 
 const MUSIC_FADE_S = 1.2;
+/** How far music drops under speech. VO is the point of this game, so the bed
+ *  goes well down rather than politely aside: at 0.22 the music sits ~15 dB
+ *  under a normalised line instead of ~10 dB. */
+const MUSIC_DUCK_UNDER_VO = 0.22;
+
+// ── voice loudness ──────────────────────────────────────────────────────────
+// Per-clip normalisation makes lines EQUAL; on its own it cannot make them
+// LOUD, because each clip's gain is capped by its own peaks (median crest
+// factor here is 15.8 dB). A bus limiter was tried and rejected: a
+// DynamicsCompressor is not a brickwall, consonant transients slip through
+// during its attack window, and the make-up then clips them. So the crest
+// factor is reduced per clip instead — soft-limit the peaks, which buys real
+// headroom and is bounded by construction: output can never exceed the
+// ceiling, with or without anything downstream.
+/** Soft-limiting starts here (linear). Below this samples pass untouched, so
+ *  ordinary speech is unaffected and only peaks are shaped. */
+const VO_SOFT_KNEE = 0.6;
+
+// ── VO loudness normalisation ────────────────────────────────────────────────
+// The recorded VO is not level-matched: measured across all 612 clips the
+// gated loudness spans 18.4 dB (quietest brand median -24.0, loudest -15.7),
+// and single brands vary by >10 dB internally, so some lines are inaudible
+// under the music bed while others jump. Rather than re-encode 65 MB of mp3,
+// each clip is measured once on decode and played through a make-up gain.
+/** Target gated loudness in dB. Reachable now that peaks are soft-limited
+ *  rather than merely gain-capped: -14 puts VO ~7 dB above where it used to
+ *  sit while the ceiling below still guarantees no clipping. This is the knob
+ *  for how loud VO is; VO_SOFT_KNEE trades peak shaping against it. */
+const VO_TARGET_DB = -14;
+/** Make-up gain limits. Beyond 4x a genuinely quiet clip only gains hiss. */
+const VO_GAIN_MIN = 0.25;
+const VO_GAIN_MAX = 4;
+/** Post-gain peak ceiling — a boost must never push a clip into clipping. */
+const VO_PEAK_CEILING = 0.98;
+/** Loudness window: BS.1770 uses 400 ms blocks; the quarter-block hop keeps
+ *  short lines from being measured on a single unlucky window. */
+const VO_BLOCK_S = 0.4;
+
+/**
+ * Gated loudness + true peak of a decoded clip, in one pass per channel.
+ * Gating (drop blocks more than 10 dB below the clip's own mean) is what makes
+ * this track perceived level: without it, leading silence and the pauses
+ * between sentences drag a clip's average down and it gets over-boosted.
+ */
+function measureLoudness(buf: AudioBuffer): { db: number; peak: number } {
+  const n = buf.length;
+  if (!n) return { db: VO_TARGET_DB, peak: 0 };
+  // Mono-sum once; loudness is a property of the clip, not of one channel.
+  const mono = new Float32Array(n);
+  const chans = buf.numberOfChannels;
+  for (let c = 0; c < chans; c++) {
+    const data = buf.getChannelData(c);
+    for (let i = 0; i < n; i++) mono[i] += data[i] / chans;
+  }
+  let peak = 0;
+  for (let i = 0; i < n; i++) {
+    const a = Math.abs(mono[i]);
+    if (a > peak) peak = a;
+  }
+  const block = Math.max(1, Math.floor(buf.sampleRate * VO_BLOCK_S));
+  const hop = Math.max(1, Math.floor(block / 4));
+  const blocks: number[] = [];
+  for (let i = 0; i + block <= n; i += hop) {
+    let sum = 0;
+    for (let j = i; j < i + block; j++) sum += mono[j] * mono[j];
+    blocks.push(sum / block);
+  }
+  if (!blocks.length) {
+    let sum = 0;
+    for (let i = 0; i < n; i++) sum += mono[i] * mono[i];
+    blocks.push(sum / n);
+  }
+  const audible = blocks.filter((b) => b > 1e-7);
+  if (!audible.length) return { db: VO_TARGET_DB, peak };
+  const mean = audible.reduce((a, b) => a + b, 0) / audible.length;
+  const gate = mean * 0.1; // -10 dB relative to the clip's own mean
+  const kept = audible.filter((b) => b > gate);
+  const use = kept.length ? kept : audible;
+  const ms = use.reduce((a, b) => a + b, 0) / use.length;
+  return { db: 10 * Math.log10(ms + 1e-12), peak };
+}
+
+/**
+ * Bring one clip to VO_TARGET_DB, in place. Samples are gained, then anything
+ * past VO_SOFT_KNEE is bent asymptotically toward the ceiling, so a loud target
+ * costs peak shape rather than headroom and the result cannot exceed
+ * VO_PEAK_CEILING. Returns the gain applied, for logging/tests.
+ */
+function levelClip(buf: AudioBuffer): number {
+  const { db } = measureLoudness(buf);
+  const gain = Math.min(VO_GAIN_MAX, Math.max(VO_GAIN_MIN, Math.pow(10, (VO_TARGET_DB - db) / 20)));
+  const knee = VO_SOFT_KNEE;
+  const span = VO_PEAK_CEILING - knee;
+  for (let c = 0; c < buf.numberOfChannels; c++) {
+    const data = buf.getChannelData(c);
+    for (let i = 0; i < data.length; i++) {
+      const v = data[i] * gain;
+      const a = Math.abs(v);
+      if (a <= knee) {
+        data[i] = v;
+      } else {
+        // tanh knee: continuous at the join, asymptotic to the ceiling.
+        data[i] = Math.sign(v) * (knee + span * Math.tanh((a - knee) / span));
+      }
+    }
+  }
+  return gain;
+}
 
 type Voice = { src: AudioBufferSourceNode; gain: GainNode };
 
@@ -17,6 +125,8 @@ class AudioManagerImpl {
   private loading = new Map<string, Promise<AudioBuffer>>();
   /** A monotonically increasing token invalidates superseded VO fetches. */
   private voiceRequest = 0;
+  /** Gain applied per VO key, kept for debugging (buffers are decoded fresh). */
+  private voiceGains = new Map<string, number>();
   private currentVoice: AudioBufferSourceNode | null = null;
   private musicVoices: Voice[] = [];
   private currentMusicId: string | null = null;
@@ -239,8 +349,11 @@ class AudioManagerImpl {
 
     // duck music under speech, restore when the clip ends
     this.musicBus.gain.cancelScheduledValues(now);
-    this.musicBus.gain.setTargetAtTime(this.settings.music * 0.35, now, 0.12);
+    this.musicBus.gain.setTargetAtTime(this.settings.music * MUSIC_DUCK_UNDER_VO, now, 0.12);
 
+    // Loudness match in place, before the buffer is handed to the graph. The
+    // player's voice setting still scales the whole channel on top of this.
+    this.voiceGains.set(key, levelClip(buf));
     const source = ctx.createBufferSource();
     source.buffer = buf;
     source.connect(this.voiceBus);
